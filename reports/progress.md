@@ -19,3 +19,13 @@ BLOCKED: Full ORFS physical flow has not yet been qualified. The Ubuntu package 
 NEXT: Build and qualify FAN_ATPG independently, then attempt a small ORFS smoke flow with version checks.
 
 EVIDENCE: `reports/openroad_dft_qualification.md` and `artifacts/raw/tool_qualification/openroad/`.
+
+## FAN_ATPG qualification
+
+DONE: Built the specified FAN_ATPG commit and passed supplied ATPG and fault-simulation examples for s27, s5378, s9234, and s15850. Inspected the actual .pat files and upstream writer field order. Parser unit test uses the saved s27 pattern.
+
+BLOCKED: FF identity across the ATPG netlist and a placed physical database is not yet proven. ATPG qualification alone does not admit spatial activity research claims.
+
+NEXT: Qualify a fixed-netlist Nangate45 placement, then verify exact PPI-to-placed-instance correspondence.
+
+EVIDENCE: `reports/fan_atpg_qualification.md`, `benchmarks/manifests/iscas89_from_fan.yaml`, and `artifacts/raw/tool_qualification/fan_atpg/`.

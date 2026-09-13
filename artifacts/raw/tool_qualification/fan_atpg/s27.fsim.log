@@ -1,0 +1,106 @@
+#  ==========================================================================
+#
+#                                   FAN ATPG
+#
+#                Copyright(c) Laboratory of Dependable Systems,
+#                Graduate Institute of Electronics Engineering,
+#                          National Taiwan University
+#                             All Rights Reserved.
+#
+#  ==========================================================================
+#
+#  Kernel:   Linux
+#  Platform: x86_64
+#  Memory:   3916.61 MB
+#
+/fsim_s27.script 1> read_lib techlib/mod_nangate45.mdt
+#  Reading technology library ...
+#  Finished reading library `techlib/mod_nangate45.mdt'    0.011272 s    9.37109 MB
+/fsim_s27.script 2> read_netlist mod_netlist/s27.v
+#  Reading netlist ...
+#  Finished reading netlist `mod_netlist/s27.v'    0.000431 s    9.37109 MB
+/fsim_s27.script 3> report_netlist
+#  netlist information
+#    number of modules: 1
+#    modules:           s27
+#    current module:    s27
+#    number of ports:   9
+#    number of cells:   13
+#    number of nets:    21
+/fsim_s27.script 4> build_circuit --frame 1
+#  Building circuit ...
+#  Finished building circuit    0.000315 s    9.37109 MB
+/fsim_s27.script 5> report_circuit
+#  circuit information
+#    netlist:         s27
+#    number of PIs:   4
+#    number of PPIs:  3
+#    number of POs:   1
+#    number of combs: 10
+#    number of gates: 21
+#    number of nets:  32
+/fsim_s27.script 6> read_pattern pat/FAN_s27.pat
+#  Reading pattern ...
+#  Finished reading pattern `pat/FAN_s27.pat'    7.9e-05 s    9.5 MB
+/fsim_s27.script 7> report_pattern
+#  pattern information
+#    number of pattern: 5
+#    pi order:  0 1 2 3
+#    ppi order: 4 5 6
+#    po order:  17
+#
+#    pattern 0
+#      pi1: 0000
+#      pi2: 
+#      ppi: 011
+#      po1: 0
+#      po2: 
+#      ppo: 011
+#
+#    pattern 1
+#      pi1: 0111
+#      pi2: 
+#      ppi: 000
+#      po1: 1
+#      po2: 
+#      ppo: 000
+#
+#    pattern 2
+#      pi1: 1010
+#      pi2: 
+#      ppi: 010
+#      po1: 1
+#      po2: 
+#      ppo: 100
+#
+#    pattern 3
+#      pi1: 1011
+#      pi2: 
+#      ppi: 000
+#      po1: 0
+#      po2: 
+#      ppo: 010
+#
+#    pattern 4
+#      pi1: 0001
+#      pi2: 
+#      ppi: 110
+#      po1: 1
+#      po2: 
+#      ppo: 000
+#
+/fsim_s27.script 8> set_fault_type saf
+#  fault type set to stuck-at fault
+/fsim_s27.script 9> add_fault -a
+#  Building fault list ...
+#  Finished building fault list    9.5e-05 s    9.5 MB
+/fsim_s27.script 10> run_fault_sim
+#  Performing fault simulation ...
+#  Finished fault simulation    9.6e-05 s    9.5 MB
+/fsim_s27.script 11> report_statistics > rpt/s27_fsim.rpt
+/fsim_s27.script 12> report_memory_usage
+#  Memory         current 9.5 MB        peak 9.5 MB
+/fsim_s27.script 13> exit
+#  Goodbye
+#  Runtime        real 0.07495 s        user 0.009156 s        sys 0.01095 s
+#  Memory         peak 9.5 MB

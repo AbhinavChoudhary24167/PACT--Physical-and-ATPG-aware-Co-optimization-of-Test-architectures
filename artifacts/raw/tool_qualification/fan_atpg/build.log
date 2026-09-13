@@ -1,0 +1,333 @@
+make: Entering directory '/root/pact-deps/FAN_ATPG'
+make[1]: Entering directory '/root/pact-deps/FAN_ATPG/pkg/common'
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+make[1]: Entering directory '/root/pact-deps/FAN_ATPG/pkg/interface'
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+  PKG   common (opt)
+  PKG   interface (opt)
+    EXE   common_test.exe
+    EXE   vlog2pmt.exe
+    DEP   tm_usage.d
+    EXE   lht_pat_test.exe
+    EXE   pat_test.exe
+    EXE   sdf_test.exe
+    EXE   vlog_test.exe
+    EXE   mdt_test.exe
+    YACC  vlog_file.tab.cpp
+    DEP   sys_cmd.d
+    DEP   vlog_file.tab.d
+    YACC  sdf_file.tab.cpp
+    DEP   get_opt.d
+    DEP   common_test.d
+    DEP   cmd.d
+    INS   ascii.h
+    DEP   sdf_file.tab.d
+    INS   cmd.h
+    INS   get_opt.h
+    INS   sys_cmd.h
+    INS   tm_usage.h
+    INS   vt100.h
+    CXX   cmd.cpp
+    YACC  pat_file.tab.cpp
+    DEP   pat_file.tab.d
+    YACC  mdt_file.tab.cpp
+    DEP   mdt_file.tab.d
+    YACC  lht_pat_file.tab.cpp
+    DEP   lht_pat_file.tab.d
+    LEX   vlog_file.yy.cpp
+    DEP   vlog_file.yy.d
+    LEX   sdf_file.yy.cpp
+    DEP   sdf_file.yy.d
+    LEX   pat_file.yy.cpp
+    DEP   pat_file.yy.d
+    LEX   mdt_file.yy.cpp
+    DEP   mdt_file.yy.d
+    LEX   lht_pat_file.yy.cpp
+    DEP   lht_pat_file.yy.d
+    DEP   vlog_test.d
+    DEP   vlog_file.d
+    DEP   vlog2pmt.d
+    DEP   techlib_builder.d
+    DEP   techlib.d
+    DEP   sdf_test.d
+    DEP   sdf_file.d
+    DEP   primitive.d
+    DEP   pat_test.d
+    DEP   pat_file.d
+    DEP   netlist_builder.d
+    DEP   netlist.d
+    DEP   mdt_test.d
+    DEP   mdt_file.d
+    DEP   lht_pat_test.d
+    DEP   lht_pat_file.d
+    DEP   cell.d
+    CXX   cell.cpp
+    CXX   lht_pat_file.cpp
+    CXX   mdt_file.cpp
+    CXX   get_opt.cpp
+    CXX   netlist.cpp
+    CXX   sys_cmd.cpp
+    CXX   netlist_builder.cpp
+    CXX   pat_file.cpp
+    CXX   primitive.cpp
+    CXX   tm_usage.cpp
+    AR    libcommon.a
+    INS   libcommon.a
+    CXX   common_test.cpp
+    CXX   sdf_file.cpp
+    CXX   techlib.cpp
+    LD    common_test
+    INS   common_test
+make[1]: Leaving directory '/root/pact-deps/FAN_ATPG/pkg/common'
+make[1]: Entering directory '/root/pact-deps/FAN_ATPG/pkg/core'
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+  PKG   core (opt)
+  CHECK interface
+  PKG   interface (opt)
+    CXX   techlib.cpp
+    CXX   techlib_builder.cpp
+    CXX   techlib_builder.cpp
+    CXX   vlog_file.cpp
+    CXX   lht_pat_file.yy.cpp
+    CXX   mdt_file.yy.cpp
+    CXX   pat_file.yy.cpp
+    CXX   sdf_file.yy.cpp
+    CXX   sdf_file.yy.cpp
+    CXX   vlog_file.yy.cpp
+    CXX   vlog_file.yy.cpp
+    CXX   lht_pat_file.tab.cpp
+    CXX   mdt_file.tab.cpp
+    CXX   mdt_file.tab.cpp
+    CXX   pat_file.tab.cpp
+    CXX   pat_file.tab.cpp
+    CXX   sdf_file.tab.cpp
+    CXX   sdf_file.tab.cpp
+    CXX   vlog_file.tab.cpp
+    CXX   vlog_file.tab.cpp
+    AR    libinterface.a
+    AR    libinterface.a
+    INS   libinterface.a
+    INS   libinterface.a
+    INS   cell.h
+    INS   cell.h
+    INS   global.h
+    INS   global.h
+    INS   lht_pat_file.h
+    INS   lht_pat_file.h
+    INS   mdt_file.h
+    INS   mdt_file.h
+    INS   netlist.h
+    INS   netlist.h
+    INS   netlist_builder.h
+    INS   netlist_builder.h
+    INS   pat_file.h
+    INS   pat_file.h
+    INS   primitive.h
+    INS   primitive.h
+    INS   sdf_file.h
+    INS   sdf_file.h
+    INS   techlib.h
+    INS   techlib.h
+    INS   techlib_builder.h
+    INS   techlib_builder.h
+    INS   vlog_file.h
+    INS   vlog_file.h
+    CXX   mdt_test.cpp
+    CXX   mdt_test.cpp
+    LD    mdt_test
+    LD    mdt_test
+    INS   mdt_test
+    INS   mdt_test
+    CXX   vlog_test.cpp
+    CXX   vlog_test.cpp
+    LD    vlog_test
+    LD    vlog_test
+    INS   vlog_test
+    CXX   sdf_test.cpp
+    INS   vlog_test
+    CXX   sdf_test.cpp
+    LD    sdf_test
+    LD    sdf_test
+    INS   sdf_test
+    CXX   pat_test.cpp
+    INS   sdf_test
+    CXX   pat_test.cpp
+    LD    pat_test
+    LD    pat_test
+    INS   pat_test
+    INS   pat_test
+    CXX   lht_pat_test.cpp
+    CXX   lht_pat_test.cpp
+    LD    lht_pat_test
+    LD    lht_pat_test
+    INS   lht_pat_test
+    INS   lht_pat_test
+    CXX   vlog2pmt.cpp
+    CXX   vlog2pmt.cpp
+    LD    vlog2pmt
+    LD    vlog2pmt
+    INS   vlog2pmt
+    DEP   simulator.d
+    INS   vlog2pmt
+make[1]: Leaving directory '/root/pact-deps/FAN_ATPG/pkg/interface'
+make[1]: Entering directory '/root/pact-deps/FAN_ATPG/pkg/fan'
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+  PKG   fan (opt)
+  CHECK common
+  PKG   common (opt)
+  CHECK interface
+    DEP   pattern_rw.d
+  PKG   interface (opt)
+  CHECK core
+  PKG   core (opt)
+  CHECK interface
+  PKG   interface (opt)
+    DEP   pattern_rw.d
+    DEP   logic.d
+    DEP   logic.d
+    DEP   fault.d
+    DEP   fault.d
+    DEP   circuit.d
+    DEP   atpg.d
+    DEP   circuit.d
+    DEP   atpg.d
+    INS   atpg.h
+    INS   circuit.h
+    INS   decision_tree.h
+    INS   fault.h
+    INS   gate.h
+    INS   logic.h
+    INS   pattern.h
+    INS   pattern_rw.h
+    INS   simulator.h
+    CXX   atpg.cpp
+    CXX   atpg.cpp
+src/atpg.cpp: In member function ‘void CoreNs::Atpg::generatePatternSet(CoreNs::PatternProcessor*, CoreNs::FaultListExtract*, bool)’:
+src/atpg.cpp:62:22: warning: unused variable ‘faultPtrListSize’ [-Wunused-variable]
+   62 |         const double faultPtrListSize = (double)(originalFaultPtrList.size());
+      |                      ^~~~~~~~~~~~~~~~
+src/atpg.cpp: In member function ‘void CoreNs::Atpg::generatePatternSet(CoreNs::PatternProcessor*, CoreNs::FaultListExtract*, bool)’:
+src/atpg.cpp:62:22: warning: unused variable ‘faultPtrListSize’ [-Wunused-variable]
+   62 |         const double faultPtrListSize = (double)(originalFaultPtrList.size());
+      |                      ^~~~~~~~~~~~~~~~
+src/atpg.cpp: In member function ‘void CoreNs::Atpg::updateDFrontiers()’:
+src/atpg.cpp:2020:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 2020 |         for (int i = 0; i < dFrontiers_.size();)
+      |                         ~~^~~~~~~~~~~~~~~~~~~~
+src/atpg.cpp: In member function ‘bool CoreNs::Atpg::checkForUnjustifiedBoundLines()’:
+src/atpg.cpp:2092:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 2092 |         for (int i = 0; i < unjustifiedGateIDs_.size(); ++i)
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/atpg.cpp: In member function ‘int CoreNs::Atpg::doUniquePathSensitization(CoreNs::Gate&)’:
+src/atpg.cpp:2649:59: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 2649 |                                         for (int j = 1; j < UniquePathList.size(); ++j)
+      |                                                         ~~^~~~~~~~~~~~~~~~~~~~~~~
+src/atpg.cpp: In member function ‘void CoreNs::Atpg::updateDFrontiers()’:
+src/atpg.cpp:2020:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 2020 |         for (int i = 0; i < dFrontiers_.size();)
+      |                         ~~^~~~~~~~~~~~~~~~~~~~
+src/atpg.cpp: In member function ‘bool CoreNs::Atpg::checkForUnjustifiedBoundLines()’:
+src/atpg.cpp:2092:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 2092 |         for (int i = 0; i < unjustifiedGateIDs_.size(); ++i)
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/atpg.cpp: In member function ‘void CoreNs::Atpg::staticTestCompressionByReverseFaultSimulation(CoreNs::PatternProcessor*, CoreNs::FaultPtrList&)’:
+src/atpg.cpp:3978:36: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::__cxx11::list<CoreNs::Fault*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 3978 |                 if (leftFaultCount > originalFaultList.size())
+      |                     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/atpg.cpp:3983:41: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::__cxx11::list<CoreNs::Fault*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 3983 |                 else if (leftFaultCount < originalFaultList.size())
+      |                          ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/atpg.cpp: In member function ‘int CoreNs::Atpg::doUniquePathSensitization(CoreNs::Gate&)’:
+src/atpg.cpp:2649:59: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 2649 |                                         for (int j = 1; j < UniquePathList.size(); ++j)
+      |                                                         ~~^~~~~~~~~~~~~~~~~~~~~~~
+src/atpg.cpp: In member function ‘void CoreNs::Atpg::staticTestCompressionByReverseFaultSimulation(CoreNs::PatternProcessor*, CoreNs::FaultPtrList&)’:
+src/atpg.cpp:3978:36: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::__cxx11::list<CoreNs::Fault*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 3978 |                 if (leftFaultCount > originalFaultList.size())
+      |                     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/atpg.cpp:3983:41: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::__cxx11::list<CoreNs::Fault*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 3983 |                 else if (leftFaultCount < originalFaultList.size())
+      |                          ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from src/atpg.cpp:8:
+In member function ‘void CoreNs::Atpg::vecDelete(std::vector<int>&, const int&)’,
+    inlined from ‘CoreNs::Atpg::BACKTRACE_RESULT CoreNs::Atpg::multipleBacktrace(BACKTRACE_STATUS, int&)’ at src/atpg.cpp:3379:14:
+src/atpg.h:884:27: warning: ‘index’ may be used uninitialized [-Wmaybe-uninitialized]
+  884 |                 list[index] = list.back();
+      |                           ^
+src/atpg.cpp: In member function ‘CoreNs::Atpg::BACKTRACE_RESULT CoreNs::Atpg::multipleBacktrace(BACKTRACE_STATUS, int&)’:
+src/atpg.cpp:3203:13: note: ‘index’ was declared here
+ 3203 |         int index;
+      |             ^~~~~
+In file included from src/atpg.cpp:8:
+In member function ‘void CoreNs::Atpg::vecDelete(std::vector<int>&, const int&)’,
+    inlined from ‘CoreNs::Atpg::BACKTRACE_RESULT CoreNs::Atpg::multipleBacktrace(BACKTRACE_STATUS, int&)’ at src/atpg.cpp:3379:14:
+src/atpg.h:884:27: warning: ‘index’ may be used uninitialized [-Wmaybe-uninitialized]
+  884 |                 list[index] = list.back();
+      |                           ^
+src/atpg.cpp: In member function ‘CoreNs::Atpg::BACKTRACE_RESULT CoreNs::Atpg::multipleBacktrace(BACKTRACE_STATUS, int&)’:
+src/atpg.cpp:3203:13: note: ‘index’ was declared here
+ 3203 |         int index;
+      |             ^~~~~
+    CXX   circuit.cpp
+    CXX   circuit.cpp
+    CXX   fault.cpp
+    CXX   fault.cpp
+    CXX   logic.cpp
+    CXX   logic.cpp
+    CXX   pattern_rw.cpp
+    CXX   pattern_rw.cpp
+    CXX   simulator.cpp
+    CXX   simulator.cpp
+    AR    libcore.a
+    INS   libcore.a
+make[1]: Leaving directory '/root/pact-deps/FAN_ATPG/pkg/core'
+    AR    libcore.a
+    INS   libcore.a
+    EXE   main.exe
+    DEP   setup_cmd.d
+    DEP   misc_cmd.d
+    DEP   main.d
+    DEP   atpg_cmd.d
+    INS   atpg_cmd.h
+    INS   fan_mgr.h
+    INS   misc_cmd.h
+    INS   setup_cmd.h
+    CXX   atpg_cmd.cpp
+src/atpg_cmd.cpp: In member function ‘void FanNs::AddFaultCmd::addAllFault()’:
+src/atpg_cmd.cpp:326:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<CoreNs::Fault>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  326 |         for (int i = 0; i < fanMgr_->fListExtract->extractedFaults_.size(); ++i, ++it)
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/atpg_cmd.cpp: In member function ‘virtual bool FanNs::ReportFaultCmd::exec(const std::vector<std::__cxx11::basic_string<char> >&)’:
+src/atpg_cmd.cpp:611:59: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+  611 |                                         for (int i = 0; i < pmt->getNPort(); ++i)
+      |                                                         ~~^~~~~~~~~~~~~~~~~
+src/atpg_cmd.cpp:643:51: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+  643 |                                 for (int i = 0; i < pmt->getNPort(); ++i)
+      |                                                 ~~^~~~~~~~~~~~~~~~~
+src/atpg_cmd.cpp: In member function ‘virtual bool FanNs::ReportGateCmd::exec(const std::vector<std::__cxx11::basic_string<char> >&)’:
+src/atpg_cmd.cpp:770:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+  770 |                 for (int i = 0; i < optMgr_.getNParsedArg(); ++i)
+      |                                 ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+src/atpg_cmd.cpp:776:51: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+  776 |                                 for (int j = 0; j < c->libc_->getNCell(); ++j)
+      |                                                 ~~^~~~~~~~~~~~~~~~~~~~~~
+src/atpg_cmd.cpp: In member function ‘virtual bool FanNs::ReportValueCmd::exec(const std::vector<std::__cxx11::basic_string<char> >&)’:
+src/atpg_cmd.cpp:867:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+  867 |                 for (int i = 0; i < optMgr_.getNParsedArg(); ++i)
+      |                                 ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+src/atpg_cmd.cpp:873:51: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+  873 |                                 for (int j = 0; j < c->libc_->getNCell(); ++j)
+      |                                                 ~~^~~~~~~~~~~~~~~~~~~~~~
+src/atpg_cmd.cpp: In member function ‘virtual bool FanNs::AddPinConsCmd::exec(const std::vector<std::__cxx11::basic_string<char> >&)’:
+src/atpg_cmd.cpp:1117:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 1117 |         for (int i = 0; i < npi; ++i)
+      |                         ~~^~~~~
+    CXX   misc_cmd.cpp
+    CXX   setup_cmd.cpp
+    AR    libfan.a
+    INS   libfan.a
+    CXX   main.cpp
+    LD    fan
+    INS   fan
+make[1]: Leaving directory '/root/pact-deps/FAN_ATPG/pkg/fan'
+make: Leaving directory '/root/pact-deps/FAN_ATPG'
