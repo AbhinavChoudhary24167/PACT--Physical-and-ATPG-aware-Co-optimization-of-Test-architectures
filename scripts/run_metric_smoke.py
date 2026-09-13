@@ -2,6 +2,7 @@
 """First bounded experiment: one mapped design, two orders, one seed."""
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 import re
@@ -20,23 +21,27 @@ from pact.test.shift_simulator import simulate_shift
 
 
 def main() -> None:
+    """Evaluate supplied and nearest orders for a placed FAN design."""
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--design", choices=("s5378", "s9234"), default="s5378")
+    design = parser.parse_args().design
     root = Path(__file__).resolve().parents[1]
-    inputs = root / "artifacts/derived/s5378"
+    inputs = root / f"artifacts/derived/{design}"
     raw = root / "artifacts/raw/tool_qualification/fan_atpg"
     ff_map_path = inputs / "ff_identity_map.json"
     ff_map = json.loads(ff_map_path.read_text(encoding="utf-8"))["records"]
     base = ScanArchitecture.from_json(inputs / "supplied_architecture.json")
     validate_ff_identity_map(ff_map, (c.name for c in base.cells))
     validate_scan(base)
-    parsed = parse_fan_pat(raw / "patterns/FAN_s5378.pat")
+    parsed = parse_fan_pat(raw / f"patterns/FAN_{design}.pat")
     patterns = map_ppi_patterns(parsed, ff_map)
-    report = (raw / "reports/FAN_s5378.rpt").read_text(encoding="utf-8")
+    report = (raw / f"reports/FAN_{design}.rpt").read_text(encoding="utf-8")
     coverage_match = re.search(r"#\s+fault coverage\s+([\d.]+)%", report)
     if not coverage_match:
         raise ValueError("Fault coverage absent from FAN report")
     coverage = float(coverage_match.group(1))
     schema = json.loads((root / "config/schemas/result.schema.json").read_text(encoding="utf-8"))
-    out = root / "artifacts/derived/phase0/smoke_s5378"
+    out = root / f"artifacts/derived/phase0/smoke_{design}"
     out.mkdir(parents=True, exist_ok=True)
     versions = {"openroad": (root / "artifacts/raw/tool_qualification/openroad/version.log").read_text(encoding="utf-8").strip(),
                 "yosys": "Ubuntu 0.33-5build2", "fan_atpg": (raw / "commit").read_text(encoding="utf-8").strip()}
@@ -52,7 +57,7 @@ def main() -> None:
         spatial = spatial_activity(trace, architecture.cells, placement_grid(architecture.cells, 8))
         record = {
             "schema_version": "0.1", "analysis_level": "FIXED_PLACEMENT_PROXY",
-            "design": "s5378", "platform": "nangate45", "seed": 11, "method": method,
+            "design": design, "platform": "nangate45", "seed": 11, "method": method,
             "architecture_sha256": architecture.sha256(), "tool_versions": versions,
             "scan": {"num_cells": len(architecture.cells), "num_chains": len(architecture.chains),
                      "total_hpwl_um": geometry["total_scan_hpwl_um"], "mean_edge_um": geometry["mean_scan_edge_um"],
@@ -73,8 +78,8 @@ def main() -> None:
             "runtime_s": time.perf_counter() - started,
             "status": "PASS",
             "evidence": [str(path.relative_to(root)) for path in (
-                ff_map_path, raw / "patterns/FAN_s5378.pat", raw / "reports/FAN_s5378.rpt",
-                root / "artifacts/raw/orfs_smoke/s5378/placed.def", architecture_path,
+                ff_map_path, raw / f"patterns/FAN_{design}.pat", raw / f"reports/FAN_{design}.rpt",
+                root / f"artifacts/raw/orfs_smoke/{design}/placed.def", architecture_path,
             )],
         }
         validate(record, schema)

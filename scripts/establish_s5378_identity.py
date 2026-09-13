@@ -2,6 +2,7 @@
 """Verify a one-to-one FAN PPI to ORFS placed scan FF map."""
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -15,12 +16,16 @@ from pact.test.pattern_parser import parse_fan_pat
 
 
 def main() -> None:
+    """Build a hash-linked PPI, source-FF, and placed-FF identity manifest."""
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--design", choices=("s5378", "s9234"), default="s5378")
+    design = parser.parse_args().design
     root = Path(__file__).resolve().parents[1]
     raw = root / "artifacts/raw/tool_qualification/fan_atpg"
-    source = raw / "benchmarks/s5378.v"
-    patterns_path = raw / "patterns/FAN_s5378.pat"
-    placed = root / "artifacts/raw/orfs_smoke/s5378/placed.v"
-    placed_def = root / "artifacts/raw/orfs_smoke/s5378/placed.def"
+    source = raw / f"benchmarks/{design}.v"
+    patterns_path = raw / f"patterns/FAN_{design}.pat"
+    placed = root / f"artifacts/raw/orfs_smoke/{design}/placed.v"
+    placed_def = root / f"artifacts/raw/orfs_smoke/{design}/placed.def"
     patterns = parse_fan_pat(patterns_path)
     records = ff_identity_map(source, placed, patterns)
     source_ff = {r.name: r for r in scan_ff_instances(source)}
@@ -36,12 +41,12 @@ def main() -> None:
     order = supplied_scan_order(source)
     architecture = ScanArchitecture(cells, (ScanChain("chain0", order, "test_si", "test_so"),))
     validate_scan(architecture)
-    out = root / "artifacts/derived/s5378"
+    out = root / f"artifacts/derived/{design}"
     out.mkdir(parents=True, exist_ok=True)
     (out / "ff_identity_map.json").write_text(json.dumps({
         "schema_version": "0.1",
         "status": "PASS",
-        "design": "s5378",
+        "design": design,
         "records": records,
         "inputs": {
             "source_netlist": str(source.relative_to(root)),

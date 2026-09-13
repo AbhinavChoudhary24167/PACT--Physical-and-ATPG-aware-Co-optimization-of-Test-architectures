@@ -1,0 +1,10 @@
+PACT_ROOT := $(abspath $(dir $(DESIGN_CONFIG))/../../..)
+export DESIGN_NAME = s9234f
+export PLATFORM = nangate45
+export FLOW_VARIANT = nearest_neighbor
+export SYNTH_NETLIST_FILES = $(PACT_ROOT)/artifacts/derived/s9234/s9234_nangate45_compatible.v
+export VERILOG_FILES = $(SYNTH_NETLIST_FILES)
+export SDC_FILE = $(PACT_ROOT)/experiments/phase0/s9234_orfs/constraint.sdc
+export CORE_UTILIZATION = 35
+export PLACE_DENSITY_LB_ADDON = 0.20
+export TNS_END_PERCENT = 100

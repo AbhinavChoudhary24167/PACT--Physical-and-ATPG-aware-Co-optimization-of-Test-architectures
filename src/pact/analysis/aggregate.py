@@ -37,6 +37,18 @@ def hotspot(record: dict[str, Any], grid: str = "8") -> float:
 
 def compare_results(records: list[dict[str, Any]]) -> dict[str, Any]:
     """Compute descriptive method summaries and an exact observed conflict test."""
+    by_design: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for record in records:
+        by_design[record["design"]].append(record)
+    if len(by_design) > 1:
+        designs = {name: compare_results(rows) for name, rows in sorted(by_design.items())}
+        conflict_count = sum(bool(summary["observed_wirelength_activity_conflict"]) for summary in designs.values())
+        return {
+            "record_count": len(records), "design_count": len(designs),
+            "design_summaries": designs,
+            "proxy_conflict_design_count": conflict_count,
+            "proxy_conflict_replicated": conflict_count >= 2,
+        }
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for record in records:
         grouped[record["method"]].append(record)

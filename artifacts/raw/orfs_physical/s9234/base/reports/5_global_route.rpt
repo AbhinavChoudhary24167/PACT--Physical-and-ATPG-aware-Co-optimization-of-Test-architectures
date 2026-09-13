@@ -1,0 +1,590 @@
+
+==========================================================================
+global route report_tns
+--------------------------------------------------------------------------
+tns max 0.00
+
+==========================================================================
+global route report_wns
+--------------------------------------------------------------------------
+wns max 0.00
+
+==========================================================================
+global route report_worst_slack
+--------------------------------------------------------------------------
+worst slack max 8.78
+
+==========================================================================
+global route report_clock_min_period
+--------------------------------------------------------------------------
+clk period_min = 1.22 fmax = 821.52
+
+==========================================================================
+global route report_clock_skew
+--------------------------------------------------------------------------
+Clock clk
+   0.13 source latency U_g663/CK ^
+  -0.13 target latency U_g664/CK ^
+   0.00 CRPR
+--------------
+   0.01 setup skew
+
+
+==========================================================================
+global route report_checks -path_delay min
+--------------------------------------------------------------------------
+Startpoint: g567 (input port clocked by clk)
+Endpoint: U_g284 (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock network delay (propagated)
+                          0.00    0.00 v input external delay
+     1    2.34    0.00    0.00    0.00 v g567 (in)
+                                         g567 (net)
+                  0.00    0.00    0.00 v input30/A (BUF_X1)
+     2    6.10    0.01    0.03    0.03 v input30/Z (BUF_X1)
+                                         net30 (net)
+                  0.01    0.00    0.03 v place98/A (BUF_X1)
+    14   35.80    0.04    0.07    0.10 v place98/Z (BUF_X1)
+                                         net97 (net)
+                  0.04    0.00    0.10 v U_g284/D (SDFF_X1)
+                                  0.10   data arrival time
+
+                          0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock source latency
+     1   11.31    0.00    0.00    0.00 ^ CK (in)
+                                         CK (net)
+                  0.00    0.00    0.00 ^ clkbuf_0_CK/A (CLKBUF_X3)
+     4   14.74    0.01    0.04    0.04 ^ clkbuf_0_CK/Z (CLKBUF_X3)
+                                         clknet_0_CK (net)
+                  0.01    0.00    0.04 ^ clkbuf_2_1__f_CK/A (CLKBUF_X3)
+     8   24.76    0.02    0.05    0.09 ^ clkbuf_2_1__f_CK/Z (CLKBUF_X3)
+                                         clknet_2_1__leaf_CK (net)
+                  0.02    0.00    0.09 ^ clkbuf_leaf_29_CK/A (CLKBUF_X3)
+     6   12.12    0.01    0.04    0.13 ^ clkbuf_leaf_29_CK/Z (CLKBUF_X3)
+                                         clknet_leaf_29_CK (net)
+                  0.01    0.00    0.13 ^ U_g284/CK (SDFF_X1)
+                          0.00    0.13   clock reconvergence pessimism
+                         -0.03    0.10   library hold time
+                                  0.10   data required time
+-----------------------------------------------------------------------------
+                                  0.10   data required time
+                                 -0.10   data arrival time
+-----------------------------------------------------------------------------
+                                  0.00   slack (MET)
+
+
+
+==========================================================================
+global route report_checks -path_delay max
+--------------------------------------------------------------------------
+Startpoint: U_g690 (rising edge-triggered flip-flop clocked by clk)
+Endpoint: U_g127 (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock source latency
+     1   11.31    0.00    0.00    0.00 ^ CK (in)
+                                         CK (net)
+                  0.00    0.00    0.00 ^ clkbuf_0_CK/A (CLKBUF_X3)
+     4   14.74    0.01    0.04    0.04 ^ clkbuf_0_CK/Z (CLKBUF_X3)
+                                         clknet_0_CK (net)
+                  0.01    0.00    0.04 ^ clkbuf_2_3__f_CK/A (CLKBUF_X3)
+    10   26.98    0.02    0.05    0.09 ^ clkbuf_2_3__f_CK/Z (CLKBUF_X3)
+                                         clknet_2_3__leaf_CK (net)
+                  0.02    0.00    0.09 ^ clkbuf_leaf_14_CK/A (CLKBUF_X3)
+     8   11.44    0.01    0.04    0.13 ^ clkbuf_leaf_14_CK/Z (CLKBUF_X3)
+                                         clknet_leaf_14_CK (net)
+                  0.01    0.00    0.13 ^ U_g690/CK (SDFF_X1)
+    18   32.28    0.07    0.14    0.27 ^ U_g690/Q (SDFF_X1)
+                                         g690 (net)
+                  0.07    0.00    0.28 ^ U_g3367/A1 (AND2_X1)
+     2    3.91    0.01    0.05    0.33 ^ U_g3367/ZN (AND2_X1)
+                                         g3367 (net)
+                  0.01    0.00    0.33 ^ U_g3925/A2 (NOR2_X1)
+     1    1.73    0.01    0.01    0.34 v U_g3925/ZN (NOR2_X1)
+                                         g3925 (net)
+                  0.01    0.00    0.34 v U_g4168/A1 (AND2_X1)
+     1    2.16    0.01    0.03    0.37 v U_g4168/ZN (AND2_X1)
+                                         g4168 (net)
+                  0.01    0.00    0.37 v U_g4584/A2 (NOR2_X1)
+     1    1.83    0.02    0.03    0.40 ^ U_g4584/ZN (NOR2_X1)
+                                         g4584 (net)
+                  0.02    0.00    0.40 ^ U_g4684/A1 (AND2_X1)
+     1    2.33    0.01    0.03    0.43 ^ U_g4684/ZN (AND2_X1)
+                                         g4684 (net)
+                  0.01    0.00    0.43 ^ U_g5093/A2 (NOR2_X1)
+     1    1.36    0.01    0.01    0.44 v U_g5093/ZN (NOR2_X1)
+                                         g5093 (net)
+                  0.01    0.00    0.44 v U_g5169/A1 (AND2_X1)
+     1    2.03    0.01    0.03    0.47 v U_g5169/ZN (AND2_X1)
+                                         g5169 (net)
+                  0.01    0.00    0.47 v U_g5418/A2 (NOR2_X1)
+     2    4.59    0.03    0.04    0.51 ^ U_g5418/ZN (NOR2_X1)
+                                         g5418 (net)
+                  0.03    0.00    0.51 ^ U_I8194/A2 (NAND2_X1)
+     2    4.05    0.02    0.02    0.53 v U_I8194/ZN (NAND2_X1)
+                                         I8194 (net)
+                  0.02    0.00    0.53 v U_I8196/A2 (NAND2_X1)
+     1    2.20    0.01    0.02    0.56 ^ U_I8196/ZN (NAND2_X1)
+                                         I8196 (net)
+                  0.01    0.00    0.56 ^ U_g6394/A2 (NAND2_X1)
+     2    2.99    0.01    0.02    0.57 v U_g6394/ZN (NAND2_X1)
+                                         g6394 (net)
+                  0.01    0.00    0.57 v U_g6468/A2 (AND3_X1)
+     1    1.66    0.01    0.03    0.61 v U_g6468/ZN (AND3_X1)
+                                         g6468 (net)
+                  0.01    0.00    0.61 v U_g6545/A1 (OR2_X1)
+     2    2.36    0.01    0.05    0.65 v U_g6545/ZN (OR2_X1)
+                                         g6545 (net)
+                  0.01    0.00    0.65 v U_g6634/A2 (AND2_X1)
+     2    2.10    0.01    0.03    0.68 v U_g6634/ZN (AND2_X1)
+                                         g6634 (net)
+                  0.01    0.00    0.68 v U_g6670/A2 (OR4_X1)
+     2    3.29    0.02    0.11    0.79 v U_g6670/ZN (OR4_X1)
+                                         g6670 (net)
+                  0.02    0.00    0.79 v U_g6714/A (INV_X1)
+     1    1.51    0.01    0.02    0.81 ^ U_g6714/ZN (INV_X1)
+                                         g6714 (net)
+                  0.01    0.00    0.81 ^ U_g6737/A1 (AND3_X1)
+     1    1.51    0.01    0.04    0.84 ^ U_g6737/ZN (AND3_X1)
+                                         g6737 (net)
+                  0.01    0.00    0.84 ^ U_g6754/A3 (OR3_X1)
+     3    5.59    0.02    0.04    0.88 ^ U_g6754/ZN (OR3_X1)
+                                         g6754 (net)
+                  0.02    0.00    0.88 ^ U_g6774/A1 (NAND2_X1)
+     2    3.97    0.01    0.02    0.90 v U_g6774/ZN (NAND2_X1)
+                                         g6774 (net)
+                  0.01    0.00    0.90 v U_g6846/A2 (OR2_X1)
+     1    1.04    0.01    0.05    0.95 v U_g6846/ZN (OR2_X1)
+                                         g6846 (net)
+                  0.01    0.00    0.95 v U_g6851/A1 (AND2_X1)
+     1    1.28    0.01    0.03    0.98 v U_g6851/ZN (AND2_X1)
+                                         g6851 (net)
+                  0.01    0.00    0.98 v U_g6855/A1 (OR2_X1)
+     2    2.31    0.01    0.04    1.02 v U_g6855/ZN (OR2_X1)
+                                         g6855 (net)
+                  0.01    0.00    1.02 v U_g6911/A2 (AND2_X1)
+     2    2.38    0.01    0.03    1.06 v U_g6911/ZN (AND2_X1)
+                                         g6911 (net)
+                  0.01    0.00    1.06 v U_g6917/A2 (OR2_X1)
+     2    2.57    0.01    0.05    1.11 v U_g6917/ZN (OR2_X1)
+                                         g6917 (net)
+                  0.01    0.00    1.11 v U_g6923/A2 (AND2_X1)
+     1    1.15    0.01    0.03    1.14 v U_g6923/ZN (AND2_X1)
+                                         g6923 (net)
+                  0.01    0.00    1.14 v U_g6926/A2 (OR2_X1)
+     1    2.10    0.01    0.05    1.19 v U_g6926/ZN (OR2_X1)
+                                         g6926 (net)
+                  0.01    0.00    1.19 v U_g6928/A2 (NAND2_X1)
+     1    1.16    0.01    0.02    1.20 ^ U_g6928/ZN (NAND2_X1)
+                                         g6928 (net)
+                  0.01    0.00    1.20 ^ U_g6930/A2 (OR2_X1)
+     1    1.16    0.01    0.02    1.22 ^ U_g6930/ZN (OR2_X1)
+                                         g6930 (net)
+                  0.01    0.00    1.22 ^ U_g6935/A1 (AND2_X1)
+     1    1.17    0.01    0.03    1.25 ^ U_g6935/ZN (AND2_X1)
+                                         g6935 (net)
+                  0.01    0.00    1.25 ^ U_g6936/A2 (OR2_X1)
+     1    1.72    0.01    0.02    1.27 ^ U_g6936/ZN (OR2_X1)
+                                         g6936 (net)
+                  0.01    0.00    1.27 ^ U_g127/D (SDFF_X1)
+                                  1.27   data arrival time
+
+                         10.00   10.00   clock clk (rise edge)
+                          0.00   10.00   clock source latency
+     1   11.31    0.00    0.00   10.00 ^ CK (in)
+                                         CK (net)
+                  0.00    0.00   10.00 ^ clkbuf_0_CK/A (CLKBUF_X3)
+     4   14.74    0.01    0.04   10.04 ^ clkbuf_0_CK/Z (CLKBUF_X3)
+                                         clknet_0_CK (net)
+                  0.01    0.00   10.04 ^ clkbuf_2_0__f_CK/A (CLKBUF_X3)
+     8   23.69    0.02    0.05   10.09 ^ clkbuf_2_0__f_CK/Z (CLKBUF_X3)
+                                         clknet_2_0__leaf_CK (net)
+                  0.02    0.00   10.09 ^ clkbuf_leaf_3_CK/A (CLKBUF_X3)
+     7    9.61    0.01    0.04   10.13 ^ clkbuf_leaf_3_CK/Z (CLKBUF_X3)
+                                         clknet_leaf_3_CK (net)
+                  0.01    0.00   10.13 ^ U_g127/CK (SDFF_X1)
+                          0.00   10.13   clock reconvergence pessimism
+                         -0.07   10.06   library setup time
+                                 10.06   data required time
+-----------------------------------------------------------------------------
+                                 10.06   data required time
+                                 -1.27   data arrival time
+-----------------------------------------------------------------------------
+                                  8.78   slack (MET)
+
+
+
+==========================================================================
+global route report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: U_g690 (rising edge-triggered flip-flop clocked by clk)
+Endpoint: U_g127 (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock source latency
+     1   11.31    0.00    0.00    0.00 ^ CK (in)
+                                         CK (net)
+                  0.00    0.00    0.00 ^ clkbuf_0_CK/A (CLKBUF_X3)
+     4   14.74    0.01    0.04    0.04 ^ clkbuf_0_CK/Z (CLKBUF_X3)
+                                         clknet_0_CK (net)
+                  0.01    0.00    0.04 ^ clkbuf_2_3__f_CK/A (CLKBUF_X3)
+    10   26.98    0.02    0.05    0.09 ^ clkbuf_2_3__f_CK/Z (CLKBUF_X3)
+                                         clknet_2_3__leaf_CK (net)
+                  0.02    0.00    0.09 ^ clkbuf_leaf_14_CK/A (CLKBUF_X3)
+     8   11.44    0.01    0.04    0.13 ^ clkbuf_leaf_14_CK/Z (CLKBUF_X3)
+                                         clknet_leaf_14_CK (net)
+                  0.01    0.00    0.13 ^ U_g690/CK (SDFF_X1)
+    18   32.28    0.07    0.14    0.27 ^ U_g690/Q (SDFF_X1)
+                                         g690 (net)
+                  0.07    0.00    0.28 ^ U_g3367/A1 (AND2_X1)
+     2    3.91    0.01    0.05    0.33 ^ U_g3367/ZN (AND2_X1)
+                                         g3367 (net)
+                  0.01    0.00    0.33 ^ U_g3925/A2 (NOR2_X1)
+     1    1.73    0.01    0.01    0.34 v U_g3925/ZN (NOR2_X1)
+                                         g3925 (net)
+                  0.01    0.00    0.34 v U_g4168/A1 (AND2_X1)
+     1    2.16    0.01    0.03    0.37 v U_g4168/ZN (AND2_X1)
+                                         g4168 (net)
+                  0.01    0.00    0.37 v U_g4584/A2 (NOR2_X1)
+     1    1.83    0.02    0.03    0.40 ^ U_g4584/ZN (NOR2_X1)
+                                         g4584 (net)
+                  0.02    0.00    0.40 ^ U_g4684/A1 (AND2_X1)
+     1    2.33    0.01    0.03    0.43 ^ U_g4684/ZN (AND2_X1)
+                                         g4684 (net)
+                  0.01    0.00    0.43 ^ U_g5093/A2 (NOR2_X1)
+     1    1.36    0.01    0.01    0.44 v U_g5093/ZN (NOR2_X1)
+                                         g5093 (net)
+                  0.01    0.00    0.44 v U_g5169/A1 (AND2_X1)
+     1    2.03    0.01    0.03    0.47 v U_g5169/ZN (AND2_X1)
+                                         g5169 (net)
+                  0.01    0.00    0.47 v U_g5418/A2 (NOR2_X1)
+     2    4.59    0.03    0.04    0.51 ^ U_g5418/ZN (NOR2_X1)
+                                         g5418 (net)
+                  0.03    0.00    0.51 ^ U_I8194/A2 (NAND2_X1)
+     2    4.05    0.02    0.02    0.53 v U_I8194/ZN (NAND2_X1)
+                                         I8194 (net)
+                  0.02    0.00    0.53 v U_I8196/A2 (NAND2_X1)
+     1    2.20    0.01    0.02    0.56 ^ U_I8196/ZN (NAND2_X1)
+                                         I8196 (net)
+                  0.01    0.00    0.56 ^ U_g6394/A2 (NAND2_X1)
+     2    2.99    0.01    0.02    0.57 v U_g6394/ZN (NAND2_X1)
+                                         g6394 (net)
+                  0.01    0.00    0.57 v U_g6468/A2 (AND3_X1)
+     1    1.66    0.01    0.03    0.61 v U_g6468/ZN (AND3_X1)
+                                         g6468 (net)
+                  0.01    0.00    0.61 v U_g6545/A1 (OR2_X1)
+     2    2.36    0.01    0.05    0.65 v U_g6545/ZN (OR2_X1)
+                                         g6545 (net)
+                  0.01    0.00    0.65 v U_g6634/A2 (AND2_X1)
+     2    2.10    0.01    0.03    0.68 v U_g6634/ZN (AND2_X1)
+                                         g6634 (net)
+                  0.01    0.00    0.68 v U_g6670/A2 (OR4_X1)
+     2    3.29    0.02    0.11    0.79 v U_g6670/ZN (OR4_X1)
+                                         g6670 (net)
+                  0.02    0.00    0.79 v U_g6714/A (INV_X1)
+     1    1.51    0.01    0.02    0.81 ^ U_g6714/ZN (INV_X1)
+                                         g6714 (net)
+                  0.01    0.00    0.81 ^ U_g6737/A1 (AND3_X1)
+     1    1.51    0.01    0.04    0.84 ^ U_g6737/ZN (AND3_X1)
+                                         g6737 (net)
+                  0.01    0.00    0.84 ^ U_g6754/A3 (OR3_X1)
+     3    5.59    0.02    0.04    0.88 ^ U_g6754/ZN (OR3_X1)
+                                         g6754 (net)
+                  0.02    0.00    0.88 ^ U_g6774/A1 (NAND2_X1)
+     2    3.97    0.01    0.02    0.90 v U_g6774/ZN (NAND2_X1)
+                                         g6774 (net)
+                  0.01    0.00    0.90 v U_g6846/A2 (OR2_X1)
+     1    1.04    0.01    0.05    0.95 v U_g6846/ZN (OR2_X1)
+                                         g6846 (net)
+                  0.01    0.00    0.95 v U_g6851/A1 (AND2_X1)
+     1    1.28    0.01    0.03    0.98 v U_g6851/ZN (AND2_X1)
+                                         g6851 (net)
+                  0.01    0.00    0.98 v U_g6855/A1 (OR2_X1)
+     2    2.31    0.01    0.04    1.02 v U_g6855/ZN (OR2_X1)
+                                         g6855 (net)
+                  0.01    0.00    1.02 v U_g6911/A2 (AND2_X1)
+     2    2.38    0.01    0.03    1.06 v U_g6911/ZN (AND2_X1)
+                                         g6911 (net)
+                  0.01    0.00    1.06 v U_g6917/A2 (OR2_X1)
+     2    2.57    0.01    0.05    1.11 v U_g6917/ZN (OR2_X1)
+                                         g6917 (net)
+                  0.01    0.00    1.11 v U_g6923/A2 (AND2_X1)
+     1    1.15    0.01    0.03    1.14 v U_g6923/ZN (AND2_X1)
+                                         g6923 (net)
+                  0.01    0.00    1.14 v U_g6926/A2 (OR2_X1)
+     1    2.10    0.01    0.05    1.19 v U_g6926/ZN (OR2_X1)
+                                         g6926 (net)
+                  0.01    0.00    1.19 v U_g6928/A2 (NAND2_X1)
+     1    1.16    0.01    0.02    1.20 ^ U_g6928/ZN (NAND2_X1)
+                                         g6928 (net)
+                  0.01    0.00    1.20 ^ U_g6930/A2 (OR2_X1)
+     1    1.16    0.01    0.02    1.22 ^ U_g6930/ZN (OR2_X1)
+                                         g6930 (net)
+                  0.01    0.00    1.22 ^ U_g6935/A1 (AND2_X1)
+     1    1.17    0.01    0.03    1.25 ^ U_g6935/ZN (AND2_X1)
+                                         g6935 (net)
+                  0.01    0.00    1.25 ^ U_g6936/A2 (OR2_X1)
+     1    1.72    0.01    0.02    1.27 ^ U_g6936/ZN (OR2_X1)
+                                         g6936 (net)
+                  0.01    0.00    1.27 ^ U_g127/D (SDFF_X1)
+                                  1.27   data arrival time
+
+                         10.00   10.00   clock clk (rise edge)
+                          0.00   10.00   clock source latency
+     1   11.31    0.00    0.00   10.00 ^ CK (in)
+                                         CK (net)
+                  0.00    0.00   10.00 ^ clkbuf_0_CK/A (CLKBUF_X3)
+     4   14.74    0.01    0.04   10.04 ^ clkbuf_0_CK/Z (CLKBUF_X3)
+                                         clknet_0_CK (net)
+                  0.01    0.00   10.04 ^ clkbuf_2_0__f_CK/A (CLKBUF_X3)
+     8   23.69    0.02    0.05   10.09 ^ clkbuf_2_0__f_CK/Z (CLKBUF_X3)
+                                         clknet_2_0__leaf_CK (net)
+                  0.02    0.00   10.09 ^ clkbuf_leaf_3_CK/A (CLKBUF_X3)
+     7    9.61    0.01    0.04   10.13 ^ clkbuf_leaf_3_CK/Z (CLKBUF_X3)
+                                         clknet_leaf_3_CK (net)
+                  0.01    0.00   10.13 ^ U_g127/CK (SDFF_X1)
+                          0.00   10.13   clock reconvergence pessimism
+                         -0.07   10.06   library setup time
+                                 10.06   data required time
+-----------------------------------------------------------------------------
+                                 10.06   data required time
+                                 -1.27   data arrival time
+-----------------------------------------------------------------------------
+                                  8.78   slack (MET)
+
+
+
+==========================================================================
+global route report_check_types -max_slew -max_cap -max_fanout -violators
+--------------------------------------------------------------------------
+
+==========================================================================
+global route max_slew_check_slack
+--------------------------------------------------------------------------
+0.09491708874702454
+
+==========================================================================
+global route max_slew_check_limit
+--------------------------------------------------------------------------
+0.1985349953174591
+
+==========================================================================
+global route max_slew_check_slack_limit
+--------------------------------------------------------------------------
+0.4781
+
+==========================================================================
+global route max_fanout_check_slack
+--------------------------------------------------------------------------
+1.0000000150474662e+30
+
+==========================================================================
+global route max_fanout_check_limit
+--------------------------------------------------------------------------
+1.0000000150474662e+30
+
+==========================================================================
+global route max_capacitance_check_slack
+--------------------------------------------------------------------------
+6.755990028381348
+
+==========================================================================
+global route max_capacitance_check_limit
+--------------------------------------------------------------------------
+10.47130012512207
+
+==========================================================================
+global route max_capacitance_check_slack_limit
+--------------------------------------------------------------------------
+0.6452
+
+==========================================================================
+global route max_slew_violation_count
+--------------------------------------------------------------------------
+max slew violation count 0
+
+==========================================================================
+global route max_fanout_violation_count
+--------------------------------------------------------------------------
+max fanout violation count 0
+
+==========================================================================
+global route max_cap_violation_count
+--------------------------------------------------------------------------
+max cap violation count 0
+
+==========================================================================
+global route setup_violation_count
+--------------------------------------------------------------------------
+setup violation count 0
+
+==========================================================================
+global route hold_violation_count
+--------------------------------------------------------------------------
+hold violation count 0
+
+==========================================================================
+global route report_checks -path_delay max reg to reg
+--------------------------------------------------------------------------
+Startpoint: U_g690 (rising edge-triggered flip-flop clocked by clk)
+Endpoint: U_g127 (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock source latency
+   0.00    0.00 ^ CK (in)
+   0.04    0.04 ^ clkbuf_0_CK/Z (CLKBUF_X3)
+   0.05    0.09 ^ clkbuf_2_3__f_CK/Z (CLKBUF_X3)
+   0.04    0.13 ^ clkbuf_leaf_14_CK/Z (CLKBUF_X3)
+   0.00    0.13 ^ U_g690/CK (SDFF_X1)
+   0.14    0.27 ^ U_g690/Q (SDFF_X1)
+   0.06    0.33 ^ U_g3367/ZN (AND2_X1)
+   0.01    0.34 v U_g3925/ZN (NOR2_X1)
+   0.03    0.37 v U_g4168/ZN (AND2_X1)
+   0.03    0.40 ^ U_g4584/ZN (NOR2_X1)
+   0.03    0.43 ^ U_g4684/ZN (AND2_X1)
+   0.01    0.44 v U_g5093/ZN (NOR2_X1)
+   0.03    0.47 v U_g5169/ZN (AND2_X1)
+   0.04    0.51 ^ U_g5418/ZN (NOR2_X1)
+   0.02    0.53 v U_I8194/ZN (NAND2_X1)
+   0.02    0.56 ^ U_I8196/ZN (NAND2_X1)
+   0.02    0.57 v U_g6394/ZN (NAND2_X1)
+   0.03    0.61 v U_g6468/ZN (AND3_X1)
+   0.05    0.65 v U_g6545/ZN (OR2_X1)
+   0.03    0.68 v U_g6634/ZN (AND2_X1)
+   0.11    0.79 v U_g6670/ZN (OR4_X1)
+   0.02    0.81 ^ U_g6714/ZN (INV_X1)
+   0.04    0.84 ^ U_g6737/ZN (AND3_X1)
+   0.04    0.88 ^ U_g6754/ZN (OR3_X1)
+   0.02    0.90 v U_g6774/ZN (NAND2_X1)
+   0.05    0.95 v U_g6846/ZN (OR2_X1)
+   0.03    0.98 v U_g6851/ZN (AND2_X1)
+   0.05    1.02 v U_g6855/ZN (OR2_X1)
+   0.03    1.06 v U_g6911/ZN (AND2_X1)
+   0.05    1.11 v U_g6917/ZN (OR2_X1)
+   0.03    1.14 v U_g6923/ZN (AND2_X1)
+   0.05    1.19 v U_g6926/ZN (OR2_X1)
+   0.02    1.20 ^ U_g6928/ZN (NAND2_X1)
+   0.02    1.22 ^ U_g6930/ZN (OR2_X1)
+   0.03    1.25 ^ U_g6935/ZN (AND2_X1)
+   0.02    1.27 ^ U_g6936/ZN (OR2_X1)
+   0.00    1.27 ^ U_g127/D (SDFF_X1)
+           1.27   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock source latency
+   0.00   10.00 ^ CK (in)
+   0.04   10.04 ^ clkbuf_0_CK/Z (CLKBUF_X3)
+   0.05   10.09 ^ clkbuf_2_0__f_CK/Z (CLKBUF_X3)
+   0.04   10.13 ^ clkbuf_leaf_3_CK/Z (CLKBUF_X3)
+   0.00   10.13 ^ U_g127/CK (SDFF_X1)
+   0.00   10.13   clock reconvergence pessimism
+  -0.07   10.06   library setup time
+          10.06   data required time
+---------------------------------------------------------
+          10.06   data required time
+          -1.27   data arrival time
+---------------------------------------------------------
+           8.78   slack (MET)
+
+
+
+==========================================================================
+global route report_checks -path_delay min reg to reg
+--------------------------------------------------------------------------
+Startpoint: U_g117 (rising edge-triggered flip-flop clocked by clk)
+Endpoint: U_g278 (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock source latency
+   0.00    0.00 ^ CK (in)
+   0.04    0.04 ^ clkbuf_0_CK/Z (CLKBUF_X3)
+   0.05    0.09 ^ clkbuf_2_2__f_CK/Z (CLKBUF_X3)
+   0.04    0.13 ^ clkbuf_leaf_12_CK/Z (CLKBUF_X3)
+   0.00    0.13 ^ U_g117/CK (SDFF_X1)
+   0.07    0.20 ^ U_g117/Q (SDFF_X1)
+   0.00    0.20 ^ U_g278/SI (SDFF_X1)
+           0.20   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock source latency
+   0.00    0.00 ^ CK (in)
+   0.04    0.04 ^ clkbuf_0_CK/Z (CLKBUF_X3)
+   0.05    0.09 ^ clkbuf_2_2__f_CK/Z (CLKBUF_X3)
+   0.04    0.13 ^ clkbuf_leaf_12_CK/Z (CLKBUF_X3)
+   0.00    0.13 ^ U_g278/CK (SDFF_X1)
+   0.00    0.13   clock reconvergence pessimism
+  -0.01    0.12   library hold time
+           0.12   data required time
+---------------------------------------------------------
+           0.12   data required time
+          -0.20   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+
+==========================================================================
+global route critical path target clock latency max path
+--------------------------------------------------------------------------
+0.1269
+
+==========================================================================
+global route critical path target clock latency min path
+--------------------------------------------------------------------------
+0.1303
+
+==========================================================================
+global route critical path source clock latency min path
+--------------------------------------------------------------------------
+0.0000
+
+==========================================================================
+global route critical path delay
+--------------------------------------------------------------------------
+1.2749
+
+==========================================================================
+global route critical path slack
+--------------------------------------------------------------------------
+8.7827
+
+==========================================================================
+global route slack div critical path delay
+--------------------------------------------------------------------------
+688.893247
+
+==========================================================================
+global route report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             2.68e-04   1.37e-04   2.10e-05   4.26e-04  37.3%
+Combinational          3.13e-04   2.40e-04   5.37e-05   6.06e-04  53.2%
+Clock                  4.94e-05   5.76e-05   1.68e-06   1.09e-04   9.5%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  6.30e-04   4.34e-04   7.64e-05   1.14e-03 100.0%
+                          55.2%      38.1%       6.7%

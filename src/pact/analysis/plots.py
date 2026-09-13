@@ -47,14 +47,31 @@ def plot_results(records: list[dict[str, Any]], root: Path, output: Path) -> lis
     """Generate required plots; missing physical metrics receive labeled no-data panels."""
     output.mkdir(parents=True, exist_ok=True)
     created: list[Path] = []
-    fig, ax = plt.subplots(figsize=(8, 6))
-    for row in records:
-        ax.scatter(row["scan"]["total_hpwl_um"], hotspot(row), s=35)
+    fig, ax = plt.subplots(figsize=(10, 6))
+    # Alpha endpoints duplicate the activity-only and nearest architectures.
+    unique = {row["architecture_sha256"]: row for row in reversed(records)}
+    categories = {
+        "supplied_fan": ("Supplied FAN", "#2563a6", "s"),
+        "nearest_neighbor": ("Nearest neighbor", "#d1493f", "D"),
+        "serpentine": ("Serpentine", "#238b45", "o"),
+        "activity_only": ("Activity only", "#8c42a3", "P"),
+        "random": ("Random", "#6b7280", "o"),
+        "physical_activity": ("Physical + activity", "#e39a20", "^"),
+    }
+    labeled: set[str] = set()
+    for row in unique.values():
+        category = "physical_activity" if row["method"].startswith("physical_activity") else row["method"]
+        name, color, marker = categories[category]
+        ax.scatter(row["scan"]["total_hpwl_um"], hotspot(row), s=46, color=color,
+                   marker=marker, label=name if name not in labeled else None)
+        labeled.add(name)
         if row["method"] in {"supplied_fan", "nearest_neighbor", "activity_only"}:
-            ax.annotate(_label(row), (row["scan"]["total_hpwl_um"], hotspot(row)), fontsize=7)
+            ax.annotate(name, (row["scan"]["total_hpwl_um"], hotspot(row)),
+                        xytext=(8, 5), textcoords="offset points", fontsize=8)
     ax.set_xlabel("Estimated scan HPWL (µm)")
     ax.set_ylabel("Distance-weighted hotspot, 8×8 (toggle density proxy)")
     ax.set_title("Fixed-placement scan wirelength vs ATPG shift-activity hotspot")
+    ax.legend(loc="upper left", bbox_to_anchor=(1.01, 1), fontsize=8)
     path = output / "scan_wirelength_vs_hotspot_activity.png"
     _save(fig, path); created.append(path)
 
@@ -71,7 +88,7 @@ def plot_results(records: list[dict[str, Any]], root: Path, output: Path) -> lis
     path = output / "timing_delta_by_method.png"
     if physical:
         baseline = next((row for row in physical if row["method"] == "supplied_fan"), physical[0])
-        _bar(physical, [float(row["physical"]["wns_ns"] - float(baseline["physical"]["wns_ns"]) for row in physical],
+        _bar(physical, [float(row["physical"]["wns_ns"]) - float(baseline["physical"]["wns_ns"]) for row in physical],
              "Global-route setup worst-slack delta vs supplied order", "ns", path)
     else:
         _no_data(path, "Timing delta", "No paired routed timing evidence")

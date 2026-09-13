@@ -2,6 +2,7 @@
 """Gate scan-only OpenDB edits on exact structural and placement invariants."""
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -49,10 +50,14 @@ def def_placements(path: Path) -> dict[str, tuple[str, str, str, str]]:
 
 
 def main() -> None:
+    """Verify scan-only edits, fixed placement, and target remapping."""
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--design", choices=("s5378", "s9234"), default="s5378")
+    design = parser.parse_args().design
     root = Path(__file__).resolve().parents[1]
-    base_dir = root / "artifacts/raw/orfs_smoke/s5378"
-    rewire_dir = root / "artifacts/raw/orfs_rewire/s5378/nearest_neighbor"
-    derived = root / "artifacts/derived/phase0/smoke_s5378"
+    base_dir = root / f"artifacts/raw/orfs_smoke/{design}"
+    rewire_dir = root / f"artifacts/raw/orfs_rewire/{design}/nearest_neighbor"
+    derived = root / f"artifacts/derived/phase0/smoke_{design}"
     endpoints = json.loads((derived / "nearest_neighbor.rewire_endpoints.json").read_text(encoding="utf-8"))
     arch = ScanArchitecture.from_json(derived / "nearest_neighbor.architecture.json")
     before = (base_dir / "placed.v").read_text(encoding="utf-8")
@@ -78,10 +83,10 @@ def main() -> None:
         net = matches[0].q_net
     if tuple(observed) != arch.chains[0].cells or net != endpoints["new_terminal_q"]:
         raise ValueError("Physical scan chain does not match requested architecture")
-    ff_map = json.loads((root / "artifacts/derived/s5378/ff_identity_map.json").read_text(encoding="utf-8"))["records"]
-    parsed = parse_fan_pat(root / "artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s5378.pat")
+    ff_map = json.loads((root / f"artifacts/derived/{design}/ff_identity_map.json").read_text(encoding="utf-8"))["records"]
+    parsed = parse_fan_pat(root / f"artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_{design}.pat")
     patterns = map_ppi_patterns(parsed, ff_map)
-    ff_identity_map(root / "artifacts/raw/tool_qualification/fan_atpg/benchmarks/s5378.v", rewire_dir / "rewired.v", parsed)
+    ff_identity_map(root / f"artifacts/raw/tool_qualification/fan_atpg/benchmarks/{design}.v", rewire_dir / "rewired.v", parsed)
     trace = simulate_shift(arch, patterns)
     record = {
         "status": "PASS", "architecture_sha256": arch.sha256(),

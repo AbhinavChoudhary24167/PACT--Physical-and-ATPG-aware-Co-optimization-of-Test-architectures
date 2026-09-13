@@ -2,6 +2,7 @@
 """Derive OpenDB rewire inputs from verified architecture and placed netlist."""
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 import re
@@ -12,10 +13,14 @@ from pact.scan.validate import validate_scan
 
 
 def main() -> None:
+    """Create a deterministic OpenDB SI-rewire plan for one verified design."""
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--design", choices=("s5378", "s9234"), default="s5378")
+    design = parser.parse_args().design
     root = Path(__file__).resolve().parents[1]
-    base_v = root / "artifacts/raw/orfs_smoke/s5378/placed.v"
-    base_arch = ScanArchitecture.from_json(root / "artifacts/derived/s5378/supplied_architecture.json")
-    next_arch = ScanArchitecture.from_json(root / "artifacts/derived/phase0/smoke_s5378/nearest_neighbor.architecture.json")
+    base_v = root / f"artifacts/raw/orfs_smoke/{design}/placed.v"
+    base_arch = ScanArchitecture.from_json(root / f"artifacts/derived/{design}/supplied_architecture.json")
+    next_arch = ScanArchitecture.from_json(root / f"artifacts/derived/phase0/smoke_{design}/nearest_neighbor.architecture.json")
     validate_scan(next_arch)
     if {c.name for c in base_arch.cells} != {c.name for c in next_arch.cells}:
         raise ValueError("Scan cell inventory changed")
@@ -36,7 +41,7 @@ def main() -> None:
             buffer_matches.append(match.group(1))
     if len(buffer_matches) != 1:
         raise ValueError("Cannot identify unique placed scan-out buffer")
-    out = root / "artifacts/derived/phase0/smoke_s5378"
+    out = root / f"artifacts/derived/phase0/smoke_{design}"
     lines = [f"set scan_root_net {{{root_net}}}", f"set scan_out_buffer {{{buffer_matches[0]}}}", "set scan_out_buffer_pin {A}"]
     lines.append("set scan_order {" + " ".join(next_arch.chains[0].cells) + "}")
     lines.append("set q_by_ff {" + " ".join(f"{name} {ff[name].q_net}" for name in next_arch.chains[0].cells) + "}")

@@ -2,6 +2,7 @@
 """Evaluate conventional scan baselines on one fixed placed ATPG-mapped design."""
 from __future__ import annotations
 
+import argparse
 import gc
 import gzip
 import json
@@ -33,13 +34,13 @@ def save_trace(trace: ShiftTrace, names: list[str], path: Path) -> None:
             stream.write(json.dumps(row, separators=(",", ":")) + "\n")
 
 
-def physical_metrics(root: Path, variant: str | None) -> tuple[dict[str, object], list[str]]:
+def physical_metrics(root: Path, design: str, variant: str | None) -> tuple[dict[str, object], list[str]]:
     """Read ORFS JSON only; absent physical reruns remain null."""
     empty = {"wns_ns": None, "tns_ns": None, "congestion_metric": None,
              "drv_count": None, "routed_wirelength_um": None}
     if variant is None:
         return empty, []
-    folder = root / f"artifacts/raw/orfs_physical/s5378/{variant}/metrics"
+    folder = root / f"artifacts/raw/orfs_physical/{design}/{variant}/metrics"
     global_path, detailed_path = folder / "5_1_grt.json", folder / "5_2_route.json"
     grt = json.loads(global_path.read_text(encoding="utf-8"))
     drt = json.loads(detailed_path.read_text(encoding="utf-8"))
@@ -56,16 +57,20 @@ def physical_metrics(root: Path, variant: str | None) -> tuple[dict[str, object]
 
 
 def main() -> None:
+    """Evaluate all registered conventional orderings on one fixed placement."""
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--design", choices=("s5378", "s9234"), default="s5378")
+    design = parser.parse_args().design
     root = Path(__file__).resolve().parents[1]
-    source = root / "artifacts/derived/s5378"
+    source = root / f"artifacts/derived/{design}"
     raw = root / "artifacts/raw/tool_qualification/fan_atpg"
     base = ScanArchitecture.from_json(source / "supplied_architecture.json")
     validate_scan(base)
     ff_map = json.loads((source / "ff_identity_map.json").read_text(encoding="utf-8"))["records"]
     validate_ff_identity_map(ff_map, (cell.name for cell in base.cells))
-    parsed = parse_fan_pat(raw / "patterns/FAN_s5378.pat")
+    parsed = parse_fan_pat(raw / f"patterns/FAN_{design}.pat")
     patterns = map_ppi_patterns(parsed, ff_map)
-    fan_report = (raw / "reports/FAN_s5378.rpt").read_text(encoding="utf-8")
+    fan_report = (raw / f"reports/FAN_{design}.rpt").read_text(encoding="utf-8")
     coverage_match = re.search(r"#\s+fault coverage\s+([\d.]+)%", fan_report)
     if not coverage_match:
         raise ValueError("FAN coverage absent")
@@ -79,8 +84,8 @@ def main() -> None:
         "yosys": yosys_match.group(0),
         "fan_atpg": (raw / "commit").read_text(encoding="utf-8").strip(),
     }
-    out = root / "artifacts/derived/phase0/s5378"
-    trace_out = root / "artifacts/raw/metric_campaign/s5378"
+    out = root / f"artifacts/derived/phase0/{design}"
+    trace_out = root / f"artifacts/raw/metric_campaign/{design}"
     out.mkdir(parents=True, exist_ok=True)
     trace_out.mkdir(parents=True, exist_ok=True)
     variants: list[tuple[str, int, ScanArchitecture, str | None]] = [
@@ -109,11 +114,11 @@ def main() -> None:
                        for size in (8, 16, 32)}
             (out / f"{label}.spatial.json").write_text(json.dumps(spatial, indent=2, sort_keys=True) + "\n", encoding="utf-8")
             geometry = scan_wirelength(architecture)
-            physical, physical_evidence = physical_metrics(root, physical_variant)
+            physical, physical_evidence = physical_metrics(root, design, physical_variant)
             record = {
                 "schema_version": "0.1",
                 "analysis_level": "PHYSICAL_RERUN" if physical_variant is not None else "FIXED_PLACEMENT_PROXY",
-                "design": "s5378", "platform": "nangate45", "seed": seed, "method": method,
+                "design": design, "platform": "nangate45", "seed": seed, "method": method,
                 "architecture_sha256": architecture.sha256(), "tool_versions": versions,
                 "scan": {
                     "num_cells": len(architecture.cells), "num_chains": len(architecture.chains),
@@ -145,8 +150,8 @@ def main() -> None:
                 "pdn": {"classification": "NOT_RUN", "worst_drop_v": None},
                 "runtime_s": time.perf_counter() - started, "status": "PASS",
                 "evidence": [str(path.relative_to(root)) for path in (
-                    source / "ff_identity_map.json", raw / "patterns/FAN_s5378.pat",
-                    raw / "reports/FAN_s5378.rpt", root / "artifacts/raw/orfs_smoke/s5378/placed.def",
+                    source / "ff_identity_map.json", raw / f"patterns/FAN_{design}.pat",
+                    raw / f"reports/FAN_{design}.rpt", root / f"artifacts/raw/orfs_smoke/{design}/placed.def",
                     arch_path, trace_path, out / f"{label}.spatial.json",
                 )] + physical_evidence,
             }

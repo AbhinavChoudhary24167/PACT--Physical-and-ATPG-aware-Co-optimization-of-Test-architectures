@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Reproduce the qualified s5378 subset. The full Phase-0 success gate needs a
-# second design or multiple physical seeds and a routed activity-aware order.
+# Reproduce the qualified s5378 and s9234 subset. The full Phase-0 success
+# gate still needs a replicated physical hotspot conflict and native ordering.
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 : "${PACT_VENV:?Set PACT_VENV to a Python environment with pyproject dependencies}"
@@ -24,5 +24,24 @@ bash scripts/run_orfs_nearest_route.sh
 PACT_ORFS_VARIANT=nearest_neighbor bash scripts/collect_orfs_route_metrics.sh
 bash scripts/run_metric_campaign.sh
 bash scripts/run_cli_checks.sh
-printf '%s\n' 'Observed subset reproduced. Full Phase-0 gate remains open: G5/G7 and physical activity-order routing.' >&2
+timeout 30s "$PACT_VENV/bin/python" scripts/audit_nangate_compat.py --design s9234
+bash scripts/run_s9234_translation.sh
+bash scripts/run_orfs_s9234_smoke.sh place
+bash scripts/export_orfs_s9234_placement.sh
+bash scripts/run_s9234_identity.sh
+bash scripts/run_orfs_s9234_smoke.sh route
+PACT_DESIGN=s9234 PACT_ORFS_VARIANT=base bash scripts/collect_orfs_route_metrics.sh
+PACT_DESIGN=s9234 bash scripts/run_metric_smoke.sh
+PACT_DESIGN=s9234 bash scripts/rewire_orfs_nearest.sh
+PACT_DESIGN=s9234 bash scripts/run_rewire_verification.sh
+PACT_DESIGN=s9234 bash scripts/run_orfs_nearest_route.sh
+PACT_DESIGN=s9234 PACT_ORFS_VARIANT=nearest_neighbor bash scripts/collect_orfs_route_metrics.sh
+PACT_DESIGN=s9234 bash scripts/run_metric_campaign.sh
+PACT_DESIGN=s9234 bash scripts/run_cli_checks.sh
+timeout 60s "$PACT_VENV/bin/python" scripts/merge_phase0_results.py
+timeout 60s "$PACT_VENV/bin/python" -m pact.cli compare \
+  --results artifacts/derived/phase0/results.jsonl \
+  --out artifacts/derived/phase0/comparison_all.json
+timeout 60s "$PACT_VENV/bin/python" scripts/freeze_evidence.py
+printf '%s\n' 'Observed subset reproduced. Full Phase-0 gate remains open: native order and replicated physical hotspot conflict.' >&2
 exit 2
