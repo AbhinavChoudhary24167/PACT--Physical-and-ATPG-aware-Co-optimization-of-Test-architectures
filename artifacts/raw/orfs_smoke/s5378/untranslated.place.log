@@ -1,0 +1,36 @@
+make: Entering directory '/root/pact-deps/OpenROAD-flow-scripts/flow'
+mkdir -p ./results/nangate45/s5378/untranslated_failure/
+echo 10.0 > ./results/nangate45/s5378/untranslated_failure/clock_period.txt
+/root/pact-deps/OpenROAD-flow-scripts/flow/scripts/synth.sh /root/pact-deps/OpenROAD-flow-scripts/flow/scripts/synth_canonicalize.tcl ./logs/nangate45/s5378/untranslated_failure/1_1_yosys_canonicalize.log
+exec cp /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/benchmarks/s5378.v ./results/nangate45/s5378/untranslated_failure/1_2_yosys.v
+exec touch -r /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/benchmarks/s5378.v ./results/nangate45/s5378/untranslated_failure/1_2_yosys.v
+Elapsed time: 0:00.09[h:]min:sec. CPU time: user 0.05 sys 0.02 (80%). Peak memory: 13844KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+1_1_yosys_canonicalize                    0             13                  N/A
+/root/pact-deps/OpenROAD-flow-scripts/flow/scripts/synth.sh /root/pact-deps/OpenROAD-flow-scripts/flow/scripts/synth.tcl ./logs/nangate45/s5378/untranslated_failure/1_2_yosys.log
+exec cp /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/benchmarks/s5378.v ./results/nangate45/s5378/untranslated_failure/1_2_yosys.v
+exec touch -r /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/benchmarks/s5378.v ./results/nangate45/s5378/untranslated_failure/1_2_yosys.v
+Elapsed time: 0:00.09[h:]min:sec. CPU time: user 0.06 sys 0.01 (80%). Peak memory: 14036KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+1_2_yosys                 .v              0             13 79f7f8e427b0baf59e8a
+cp /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s5378_orfs/constraint.sdc results/nangate45/s5378/untranslated_failure/1_2_yosys.sdc
+touch -r /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s5378_orfs/constraint.sdc results/nangate45/s5378/untranslated_failure/1_2_yosys.sdc
+OpenROAD 26Q2-1164-g08f67ee5ec 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+mkdir -p ./objects/nangate45/s5378/untranslated_failure
+/root/pact-deps/OpenROAD-flow-scripts/flow/scripts/flow.sh 1_synth synth_odb
+Running synth_odb.tcl, stage 1_synth
+read_liberty /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+[INFO ODB-0227] LEF file: /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lef/NangateOpenCellLibrary.tech.lef, created 22 layers, 27 vias
+[INFO ODB-0227] LEF file: /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lef/NangateOpenCellLibrary.macro.mod.lef, created 135 library cells
+link_design s5378
+[WARNING STA-0198] ./results/nangate45/s5378/untranslated_failure/1_2_yosys.v line 1978, module BUF_X3 not found. Creating black box for FE_OFC46_n851gat.
+[ERROR ORD-2013] instance FE_OFC0_n93gat LEF master BUF_X3 not found.
+Error: synth_odb.tcl, 5 ORD-2013
+Elapsed time: 0:00.70[h:]min:sec. CPU time: user 0.51 sys 0.18 (97%). Peak memory: 112516KB.
+make[1]: *** [Makefile:445: do-1_synth] Error 1
+make: *** [Makefile:445: results/nangate45/s5378/untranslated_failure/1_synth.odb] Error 2
+make: Leaving directory '/root/pact-deps/OpenROAD-flow-scripts/flow'

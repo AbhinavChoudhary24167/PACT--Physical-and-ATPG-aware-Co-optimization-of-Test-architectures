@@ -1,0 +1,9 @@
+PACT_ROOT := $(abspath $(dir $(DESIGN_CONFIG))/../../..)
+export DESIGN_NAME = s5378
+export PLATFORM = nangate45
+export SYNTH_NETLIST_FILES = $(PACT_ROOT)/artifacts/derived/s5378/s5378_nangate45_compatible.v
+export VERILOG_FILES = $(SYNTH_NETLIST_FILES)
+export SDC_FILE = $(PACT_ROOT)/experiments/phase0/s5378_orfs/constraint.sdc
+export CORE_UTILIZATION = 35
+export PLACE_DENSITY_LB_ADDON = 0.20
+export TNS_END_PERCENT = 100

@@ -3,6 +3,7 @@ set -u
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 OUT="$ROOT/artifacts/raw/tool_qualification/environment"
 mkdir -p "$OUT"
+TAG="${PACT_VERSION_TAG:-system}"
 {
   date -u +'%Y-%m-%dT%H:%M:%SZ'
   uname -a
@@ -26,6 +27,7 @@ mkdir -p "$OUT"
   for p in "$HOME/OpenROAD-flow-scripts" "$HOME/OpenROAD/OpenROAD-flow-scripts" "$HOME/Desktop/OpenROAD/OpenROAD-flow-scripts" "$HOME/Desktop/OpenROAD-flow-scripts"; do
     if [ -d "$p" ]; then printf '%s\n' "$p"; fi
   done
-} > "$OUT/system.txt" 2>&1
-sha256sum "$OUT/system.txt" > "$OUT/system.sha256"
-printf '%s\n' "$OUT/system.txt"
+} > "$OUT/${TAG}.txt" 2>&1
+cd "$ROOT" || exit 2
+sha256sum "artifacts/raw/tool_qualification/environment/${TAG}.txt" > "$OUT/${TAG}.sha256"
+printf '%s\n' "$OUT/${TAG}.txt"

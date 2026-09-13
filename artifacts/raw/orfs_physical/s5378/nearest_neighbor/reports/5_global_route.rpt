@@ -1,0 +1,481 @@
+
+==========================================================================
+global route report_tns
+--------------------------------------------------------------------------
+tns max 0.00
+
+==========================================================================
+global route report_wns
+--------------------------------------------------------------------------
+wns max 0.00
+
+==========================================================================
+global route report_worst_slack
+--------------------------------------------------------------------------
+worst slack max 9.12
+
+==========================================================================
+global route report_clock_min_period
+--------------------------------------------------------------------------
+clk period_min = 0.88 fmax = 1136.47
+
+==========================================================================
+global route report_clock_skew
+--------------------------------------------------------------------------
+Clock clk
+   0.11 source latency U_n842gat/CK ^
+  -0.12 target latency U_n2522gat/CK ^
+   0.00 CRPR
+--------------
+  -0.01 setup skew
+
+
+==========================================================================
+global route report_checks -path_delay min
+--------------------------------------------------------------------------
+Startpoint: n3070gat (input port clocked by clk)
+Endpoint: U_n618gat (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock network delay (propagated)
+                          0.00    0.00 ^ input external delay
+     1    1.04    0.00    0.00    0.00 ^ n3070gat (in)
+                                         n3070gat (net)
+                  0.00    0.00    0.00 ^ hold123/A (CLKBUF_X1)
+     1    1.31    0.01    0.02    0.02 ^ hold123/Z (CLKBUF_X1)
+                                         net122 (net)
+                  0.01    0.00    0.02 ^ input6/A (BUF_X1)
+     2    5.60    0.02    0.03    0.05 ^ input6/Z (BUF_X1)
+                                         net6 (net)
+                  0.02    0.00    0.05 ^ hold124/A (CLKBUF_X1)
+     3    9.87    0.02    0.05    0.11 ^ hold124/Z (CLKBUF_X1)
+                                         net123 (net)
+                  0.02    0.00    0.11 ^ U_n618gat/D (SDFF_X1)
+                                  0.11   data arrival time
+
+                          0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock source latency
+     1   10.30    0.00    0.00    0.00 ^ CK (in)
+                                         CK (net)
+                  0.00    0.00    0.00 ^ clkbuf_0_CK/A (CLKBUF_X3)
+    16   41.46    0.03    0.06    0.06 ^ clkbuf_0_CK/Z (CLKBUF_X3)
+                                         clknet_0_CK (net)
+                  0.03    0.00    0.06 ^ clkbuf_4_10_0_CK/A (CLKBUF_X3)
+    10   25.09    0.02    0.06    0.12 ^ clkbuf_4_10_0_CK/Z (CLKBUF_X3)
+                                         clknet_4_10_0_CK (net)
+                  0.02    0.00    0.12 ^ U_n618gat/CK (SDFF_X1)
+                          0.00    0.12   clock reconvergence pessimism
+                         -0.01    0.11   library hold time
+                                  0.11   data required time
+-----------------------------------------------------------------------------
+                                  0.11   data required time
+                                 -0.11   data arrival time
+-----------------------------------------------------------------------------
+                                  0.00   slack (MET)
+
+
+
+==========================================================================
+global route report_checks -path_delay max
+--------------------------------------------------------------------------
+Startpoint: U_n318gat (rising edge-triggered flip-flop clocked by clk)
+Endpoint: n3144gat (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock source latency
+     1   10.30    0.00    0.00    0.00 ^ CK (in)
+                                         CK (net)
+                  0.00    0.00    0.00 ^ clkbuf_0_CK/A (CLKBUF_X3)
+    16   41.46    0.03    0.06    0.06 ^ clkbuf_0_CK/Z (CLKBUF_X3)
+                                         clknet_0_CK (net)
+                  0.03    0.00    0.06 ^ clkbuf_4_15_0_CK/A (CLKBUF_X3)
+    13   24.53    0.02    0.06    0.12 ^ clkbuf_4_15_0_CK/Z (CLKBUF_X3)
+                                         clknet_4_15_0_CK (net)
+                  0.02    0.00    0.12 ^ U_n318gat/CK (SDFF_X1)
+     6   11.48    0.02    0.09    0.21 v U_n318gat/Q (SDFF_X1)
+                                         n318gat (net)
+                  0.02    0.00    0.21 v U_I2153/A (INV_X1)
+     2    4.28    0.01    0.03    0.23 ^ U_I2153/ZN (INV_X1)
+                                         I2153 (net)
+                  0.01    0.00    0.23 ^ U_n225gat/A2 (NOR3_X1)
+     1    1.55    0.01    0.01    0.25 v U_n225gat/ZN (NOR3_X1)
+                                         n225gat (net)
+                  0.01    0.00    0.25 v U_n221gat/A4 (OR4_X1)
+     3    6.05    0.02    0.13    0.37 v U_n221gat/ZN (OR4_X1)
+                                         n221gat (net)
+                  0.02    0.00    0.37 v U_n34gat/A (INV_X1)
+     2    4.73    0.01    0.03    0.40 ^ U_n34gat/ZN (INV_X1)
+                                         n34gat (net)
+                  0.01    0.00    0.40 ^ U_n124gat/A3 (NOR3_X1)
+     1    1.10    0.01    0.01    0.41 v U_n124gat/ZN (NOR3_X1)
+                                         n124gat (net)
+                  0.01    0.00    0.41 v U_n120gat/A4 (OR4_X1)
+     3    6.24    0.02    0.13    0.54 v U_n120gat/ZN (OR4_X1)
+                                         n120gat (net)
+                  0.02    0.00    0.54 v U_n1601gat/A (INV_X1)
+     3    5.99    0.02    0.03    0.57 ^ U_n1601gat/ZN (INV_X1)
+                                         n1601gat (net)
+                  0.02    0.00    0.57 ^ U_n2421gat/A1 (NOR2_X1)
+     1    1.36    0.01    0.01    0.58 v U_n2421gat/ZN (NOR2_X1)
+                                         n2421gat (net)
+                  0.01    0.00    0.58 v U_n3013gat/A2 (OR2_X1)
+     1    2.03    0.01    0.05    0.63 v U_n3013gat/ZN (OR2_X1)
+                                         n3013gat (net)
+                  0.01    0.00    0.63 v U_n2422gat/A (INV_X1)
+     1    2.12    0.01    0.01    0.65 ^ U_n2422gat/ZN (INV_X1)
+                                         n2422gat (net)
+                  0.01    0.00    0.65 ^ U_n1598gat/A2 (NOR2_X1)
+     1    1.63    0.00    0.01    0.66 v U_n1598gat/ZN (NOR2_X1)
+                                         n1598gat (net)
+                  0.00    0.00    0.66 v U_n1154gat/A1 (NOR3_X1)
+     1    4.30    0.04    0.05    0.71 ^ U_n1154gat/ZN (NOR3_X1)
+                                         n1154gat (net)
+                  0.04    0.00    0.71 ^ U_n1411gat/A1 (NOR2_X1)
+     1    1.62    0.01    0.01    0.72 v U_n1411gat/ZN (NOR2_X1)
+                                         n1411gat (net)
+                  0.01    0.00    0.72 v U_n1412gat/A1 (NOR3_X1)
+     2    3.30    0.04    0.05    0.77 ^ U_n1412gat/ZN (NOR3_X1)
+                                         n1412gat (net)
+                  0.04    0.00    0.77 ^ U_n2158gat/A (INV_X1)
+     3    3.36    0.01    0.01    0.78 v U_n2158gat/ZN (INV_X1)
+                                         n2158gat (net)
+                  0.01    0.00    0.78 v U_n2744gat/A1 (OR2_X1)
+     1    4.45    0.01    0.05    0.83 v U_n2744gat/ZN (OR2_X1)
+                                         n2744gat (net)
+                  0.01    0.00    0.83 v U_I4014/A (INV_X1)
+     1    2.26    0.01    0.02    0.85 ^ U_I4014/ZN (INV_X1)
+                                         I4014 (net)
+                  0.01    0.00    0.85 ^ U_n3144gat/A (INV_X1)
+     1    1.78    0.00    0.01    0.86 v U_n3144gat/ZN (INV_X1)
+                                         net78 (net)
+                  0.00    0.00    0.86 v output79/A (BUF_X1)
+     1    0.63    0.00    0.02    0.88 v output79/Z (BUF_X1)
+                                         n3144gat (net)
+                  0.00    0.00    0.88 v n3144gat (out)
+                                  0.88   data arrival time
+
+                         10.00   10.00   clock clk (rise edge)
+                          0.00   10.00   clock network delay (propagated)
+                          0.00   10.00   clock reconvergence pessimism
+                          0.00   10.00   output external delay
+                                 10.00   data required time
+-----------------------------------------------------------------------------
+                                 10.00   data required time
+                                 -0.88   data arrival time
+-----------------------------------------------------------------------------
+                                  9.12   slack (MET)
+
+
+
+==========================================================================
+global route report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: U_n318gat (rising edge-triggered flip-flop clocked by clk)
+Endpoint: n3144gat (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock source latency
+     1   10.30    0.00    0.00    0.00 ^ CK (in)
+                                         CK (net)
+                  0.00    0.00    0.00 ^ clkbuf_0_CK/A (CLKBUF_X3)
+    16   41.46    0.03    0.06    0.06 ^ clkbuf_0_CK/Z (CLKBUF_X3)
+                                         clknet_0_CK (net)
+                  0.03    0.00    0.06 ^ clkbuf_4_15_0_CK/A (CLKBUF_X3)
+    13   24.53    0.02    0.06    0.12 ^ clkbuf_4_15_0_CK/Z (CLKBUF_X3)
+                                         clknet_4_15_0_CK (net)
+                  0.02    0.00    0.12 ^ U_n318gat/CK (SDFF_X1)
+     6   11.48    0.02    0.09    0.21 v U_n318gat/Q (SDFF_X1)
+                                         n318gat (net)
+                  0.02    0.00    0.21 v U_I2153/A (INV_X1)
+     2    4.28    0.01    0.03    0.23 ^ U_I2153/ZN (INV_X1)
+                                         I2153 (net)
+                  0.01    0.00    0.23 ^ U_n225gat/A2 (NOR3_X1)
+     1    1.55    0.01    0.01    0.25 v U_n225gat/ZN (NOR3_X1)
+                                         n225gat (net)
+                  0.01    0.00    0.25 v U_n221gat/A4 (OR4_X1)
+     3    6.05    0.02    0.13    0.37 v U_n221gat/ZN (OR4_X1)
+                                         n221gat (net)
+                  0.02    0.00    0.37 v U_n34gat/A (INV_X1)
+     2    4.73    0.01    0.03    0.40 ^ U_n34gat/ZN (INV_X1)
+                                         n34gat (net)
+                  0.01    0.00    0.40 ^ U_n124gat/A3 (NOR3_X1)
+     1    1.10    0.01    0.01    0.41 v U_n124gat/ZN (NOR3_X1)
+                                         n124gat (net)
+                  0.01    0.00    0.41 v U_n120gat/A4 (OR4_X1)
+     3    6.24    0.02    0.13    0.54 v U_n120gat/ZN (OR4_X1)
+                                         n120gat (net)
+                  0.02    0.00    0.54 v U_n1601gat/A (INV_X1)
+     3    5.99    0.02    0.03    0.57 ^ U_n1601gat/ZN (INV_X1)
+                                         n1601gat (net)
+                  0.02    0.00    0.57 ^ U_n2421gat/A1 (NOR2_X1)
+     1    1.36    0.01    0.01    0.58 v U_n2421gat/ZN (NOR2_X1)
+                                         n2421gat (net)
+                  0.01    0.00    0.58 v U_n3013gat/A2 (OR2_X1)
+     1    2.03    0.01    0.05    0.63 v U_n3013gat/ZN (OR2_X1)
+                                         n3013gat (net)
+                  0.01    0.00    0.63 v U_n2422gat/A (INV_X1)
+     1    2.12    0.01    0.01    0.65 ^ U_n2422gat/ZN (INV_X1)
+                                         n2422gat (net)
+                  0.01    0.00    0.65 ^ U_n1598gat/A2 (NOR2_X1)
+     1    1.63    0.00    0.01    0.66 v U_n1598gat/ZN (NOR2_X1)
+                                         n1598gat (net)
+                  0.00    0.00    0.66 v U_n1154gat/A1 (NOR3_X1)
+     1    4.30    0.04    0.05    0.71 ^ U_n1154gat/ZN (NOR3_X1)
+                                         n1154gat (net)
+                  0.04    0.00    0.71 ^ U_n1411gat/A1 (NOR2_X1)
+     1    1.62    0.01    0.01    0.72 v U_n1411gat/ZN (NOR2_X1)
+                                         n1411gat (net)
+                  0.01    0.00    0.72 v U_n1412gat/A1 (NOR3_X1)
+     2    3.30    0.04    0.05    0.77 ^ U_n1412gat/ZN (NOR3_X1)
+                                         n1412gat (net)
+                  0.04    0.00    0.77 ^ U_n2158gat/A (INV_X1)
+     3    3.36    0.01    0.01    0.78 v U_n2158gat/ZN (INV_X1)
+                                         n2158gat (net)
+                  0.01    0.00    0.78 v U_n2744gat/A1 (OR2_X1)
+     1    4.45    0.01    0.05    0.83 v U_n2744gat/ZN (OR2_X1)
+                                         n2744gat (net)
+                  0.01    0.00    0.83 v U_I4014/A (INV_X1)
+     1    2.26    0.01    0.02    0.85 ^ U_I4014/ZN (INV_X1)
+                                         I4014 (net)
+                  0.01    0.00    0.85 ^ U_n3144gat/A (INV_X1)
+     1    1.78    0.00    0.01    0.86 v U_n3144gat/ZN (INV_X1)
+                                         net78 (net)
+                  0.00    0.00    0.86 v output79/A (BUF_X1)
+     1    0.63    0.00    0.02    0.88 v output79/Z (BUF_X1)
+                                         n3144gat (net)
+                  0.00    0.00    0.88 v n3144gat (out)
+                                  0.88   data arrival time
+
+                         10.00   10.00   clock clk (rise edge)
+                          0.00   10.00   clock network delay (propagated)
+                          0.00   10.00   clock reconvergence pessimism
+                          0.00   10.00   output external delay
+                                 10.00   data required time
+-----------------------------------------------------------------------------
+                                 10.00   data required time
+                                 -0.88   data arrival time
+-----------------------------------------------------------------------------
+                                  9.12   slack (MET)
+
+
+
+==========================================================================
+global route report_check_types -max_slew -max_cap -max_fanout -violators
+--------------------------------------------------------------------------
+
+==========================================================================
+global route max_slew_check_slack
+--------------------------------------------------------------------------
+0.09579567611217499
+
+==========================================================================
+global route max_slew_check_limit
+--------------------------------------------------------------------------
+0.1985349953174591
+
+==========================================================================
+global route max_slew_check_slack_limit
+--------------------------------------------------------------------------
+0.4825
+
+==========================================================================
+global route max_fanout_check_slack
+--------------------------------------------------------------------------
+1.0000000150474662e+30
+
+==========================================================================
+global route max_fanout_check_limit
+--------------------------------------------------------------------------
+1.0000000150474662e+30
+
+==========================================================================
+global route max_capacitance_check_slack
+--------------------------------------------------------------------------
+2.1319572925567627
+
+==========================================================================
+global route max_capacitance_check_limit
+--------------------------------------------------------------------------
+10.47130012512207
+
+==========================================================================
+global route max_capacitance_check_slack_limit
+--------------------------------------------------------------------------
+0.2036
+
+==========================================================================
+global route max_slew_violation_count
+--------------------------------------------------------------------------
+max slew violation count 0
+
+==========================================================================
+global route max_fanout_violation_count
+--------------------------------------------------------------------------
+max fanout violation count 0
+
+==========================================================================
+global route max_cap_violation_count
+--------------------------------------------------------------------------
+max cap violation count 0
+
+==========================================================================
+global route setup_violation_count
+--------------------------------------------------------------------------
+setup violation count 0
+
+==========================================================================
+global route hold_violation_count
+--------------------------------------------------------------------------
+hold violation count 0
+
+==========================================================================
+global route report_checks -path_delay max reg to reg
+--------------------------------------------------------------------------
+Startpoint: U_n722gat (rising edge-triggered flip-flop clocked by clk)
+Endpoint: U_n777gat (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock source latency
+   0.00    0.00 ^ CK (in)
+   0.06    0.06 ^ clkbuf_0_CK/Z (CLKBUF_X3)
+   0.06    0.12 ^ clkbuf_4_6_0_CK/Z (CLKBUF_X3)
+   0.00    0.12 ^ U_n722gat/CK (SDFF_X1)
+   0.10    0.22 ^ U_n722gat/Q (SDFF_X1)
+   0.02    0.24 v U_n720gat/ZN (INV_X1)
+   0.03    0.28 ^ U_n1376gat/ZN (NOR2_X1)
+   0.02    0.29 v U_n1448gat/ZN (INV_X1)
+   0.03    0.32 ^ U_n1617gat/ZN (NOR2_X1)
+   0.01    0.33 v U_n1701gat/ZN (INV_X1)
+   0.08    0.41 ^ U_n1700gat/ZN (NOR2_X1)
+   0.04    0.45 v U_n1604gat/ZN (NOR4_X1)
+   0.07    0.52 v U_I1734/ZN (OR3_X1)
+   0.08    0.61 ^ U_n2148gat/ZN (INV_X1)
+   0.02    0.62 v U_n854gat/ZN (NOR2_X1)
+   0.02    0.64 ^ U_n852gat/ZN (INV_X1)
+   0.01    0.65 v FE_OFC18_n852gat/ZN (INV_X1)
+   0.01    0.66 ^ FE_OFC20_n852gat/ZN (INV_X1)
+   0.01    0.67 v FE_OFC36_n852gat/ZN (INV_X1)
+   0.01    0.68 ^ FE_OFC38_n852gat/ZN (INV_X1)
+   0.01    0.68 v FE_OFC47_n852gat/ZN (INV_X1)
+   0.01    0.70 ^ FE_OFC49_n852gat/ZN (INV_X1)
+   0.01    0.70 v FE_OFC50_n852gat/ZN (INV_X1)
+   0.03    0.73 ^ FE_OFC51_n852gat/ZN (INV_X1)
+   0.01    0.75 v U_n960gat/ZN (NOR2_X1)
+   0.08    0.82 v U_n2915gat/ZN (OR3_X1)
+   0.00    0.82 v U_n777gat/D (SDFF_X1)
+           0.82   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock source latency
+   0.00   10.00 ^ CK (in)
+   0.06   10.06 ^ clkbuf_0_CK/Z (CLKBUF_X3)
+   0.06   10.12 ^ clkbuf_4_13_0_CK/Z (CLKBUF_X3)
+   0.00   10.12 ^ U_n777gat/CK (SDFF_X1)
+   0.00   10.12   clock reconvergence pessimism
+  -0.08   10.04   library setup time
+          10.04   data required time
+---------------------------------------------------------
+          10.04   data required time
+          -0.82   data arrival time
+---------------------------------------------------------
+           9.22   slack (MET)
+
+
+
+==========================================================================
+global route report_checks -path_delay min reg to reg
+--------------------------------------------------------------------------
+Startpoint: U_n2091gat (rising edge-triggered flip-flop clocked by clk)
+Endpoint: U_n1675gat (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock source latency
+   0.00    0.00 ^ CK (in)
+   0.06    0.06 ^ clkbuf_0_CK/Z (CLKBUF_X3)
+   0.06    0.12 ^ clkbuf_4_1_0_CK/Z (CLKBUF_X3)
+   0.00    0.12 ^ U_n2091gat/CK (SDFF_X1)
+   0.07    0.19 ^ U_n2091gat/Q (SDFF_X1)
+   0.00    0.19 ^ U_n1675gat/SI (SDFF_X1)
+           0.19   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock source latency
+   0.00    0.00 ^ CK (in)
+   0.06    0.06 ^ clkbuf_0_CK/Z (CLKBUF_X3)
+   0.06    0.12 ^ clkbuf_4_0_0_CK/Z (CLKBUF_X3)
+   0.00    0.12 ^ U_n1675gat/CK (SDFF_X1)
+   0.00    0.12   clock reconvergence pessimism
+  -0.01    0.11   library hold time
+           0.11   data required time
+---------------------------------------------------------
+           0.11   data required time
+          -0.19   data arrival time
+---------------------------------------------------------
+           0.08   slack (MET)
+
+
+
+==========================================================================
+global route critical path target clock latency max path
+--------------------------------------------------------------------------
+0.1165
+
+==========================================================================
+global route critical path target clock latency min path
+--------------------------------------------------------------------------
+0.1174
+
+==========================================================================
+global route critical path source clock latency min path
+--------------------------------------------------------------------------
+0.0000
+
+==========================================================================
+global route critical path delay
+--------------------------------------------------------------------------
+0.8799
+
+==========================================================================
+global route critical path slack
+--------------------------------------------------------------------------
+9.1201
+
+==========================================================================
+global route slack div critical path delay
+--------------------------------------------------------------------------
+1036.492783
+
+==========================================================================
+global route report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             1.45e-04   3.31e-05   1.76e-05   1.95e-04  40.7%
+Combinational          7.14e-05   8.27e-05   3.59e-05   1.90e-04  39.6%
+Clock                  3.73e-05   5.51e-05   1.95e-06   9.43e-05  19.7%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  2.53e-04   1.71e-04   5.54e-05   4.80e-04 100.0%
+                          52.8%      35.6%      11.6%

@@ -1,0 +1,11 @@
+{
+  "from_master": "BUF_X3",
+  "output": "artifacts/derived/s5378/s5378_nangate45_compatible.v",
+  "output_sha256": "5abfc15ddecc2b2ddc09b6b9f3edc2b0c7b09f2738d09fbb12f7b9b73a82f9dd",
+  "physical_impact": "Drive strength differs; use this one translated netlist for all architecture comparisons",
+  "reason": "FAN BUF_X3 is Boolean buffer; ORFS Nangate45 lacks it; BUF_X4 is an available Boolean buffer",
+  "replacement_count": 34,
+  "source": "artifacts/raw/tool_qualification/fan_atpg/benchmarks/s5378.v",
+  "source_sha256": "10d258eff2287e4e737023c90fe10e6d4561afa18491ce1a414aa04fd964b158",
+  "to_master": "BUF_X4"
+}

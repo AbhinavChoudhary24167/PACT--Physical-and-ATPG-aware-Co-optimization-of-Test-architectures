@@ -1,0 +1,26 @@
+make: Entering directory '/root/pact-deps/OpenROAD-flow-scripts/flow'
+/root/pact-deps/OpenROAD-flow-scripts/flow/scripts/synth.sh /root/pact-deps/OpenROAD-flow-scripts/flow/scripts/synth_canonicalize.tcl ./logs/nangate45/s5378/base/1_1_yosys_canonicalize.log
+exec cp /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s5378/s5378_nangate45_compatible.v ./results/nangate45/s5378/base/1_2_yosys.v
+exec touch -r /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s5378/s5378_nangate45_compatible.v ./results/nangate45/s5378/base/1_2_yosys.v
+Elapsed time: 0:00.08[h:]min:sec. CPU time: user 0.04 sys 0.03 (83%). Peak memory: 13976KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+1_1_yosys_canonicalize                    0             13                  N/A
+/root/pact-deps/OpenROAD-flow-scripts/flow/scripts/synth.sh /root/pact-deps/OpenROAD-flow-scripts/flow/scripts/synth.tcl ./logs/nangate45/s5378/base/1_2_yosys.log
+exec cp /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s5378/s5378_nangate45_compatible.v ./results/nangate45/s5378/base/1_2_yosys.v
+exec touch -r /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s5378/s5378_nangate45_compatible.v ./results/nangate45/s5378/base/1_2_yosys.v
+Elapsed time: 0:00.08[h:]min:sec. CPU time: user 0.05 sys 0.01 (86%). Peak memory: 14008KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+1_2_yosys                 .v              0             13 ffe4e98c6ffb404d8e27
+1_2_yosys                 .sdc                             95afc1217332162f7ef2
+/root/pact-deps/OpenROAD-flow-scripts/flow/scripts/flow.sh 1_synth synth_odb
+Running synth_odb.tcl, stage 1_synth
+read_liberty /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+[INFO ODB-0227] LEF file: /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lef/NangateOpenCellLibrary.tech.lef, created 22 layers, 27 vias
+[INFO ODB-0227] LEF file: /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lef/NangateOpenCellLibrary.macro.mod.lef, created 135 library cells
+link_design s5378
+read_sdc ./results/nangate45/s5378/base/1_2_yosys.sdc
+Error: 1_2_yosys.sdc, 2 invalid command name "remove_from_collection"
+Elapsed time: 0:00.68[h:]min:sec. CPU time: user 0.59 sys 0.11 (101%). Peak memory: 113816KB.
+make[1]: *** [Makefile:445: do-1_synth] Error 1
+make: *** [Makefile:445: results/nangate45/s5378/base/1_synth.odb] Error 2
+make: Leaving directory '/root/pact-deps/OpenROAD-flow-scripts/flow'

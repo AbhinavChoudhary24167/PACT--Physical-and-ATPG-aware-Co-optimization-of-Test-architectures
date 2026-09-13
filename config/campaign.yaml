@@ -1,7 +1,9 @@
 schema_version: '0.1'
-platform: sky130hd
+platform: nangate45
 seeds: [11, 13, 17, 19, 23]
 grid_sizes: [8, 16, 32]
+primary_hotspot_metric: distance_weighted_hotspot
+primary_grid_size: 8
 alpha_values: [0.0, 0.25, 0.5, 0.75, 1.0]
 scan:
   chains: 1
