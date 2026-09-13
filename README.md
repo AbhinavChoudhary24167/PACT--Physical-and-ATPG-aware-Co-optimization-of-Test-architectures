@@ -6,15 +6,14 @@ The hypothesis is open. A missing tool, unverified flip-flop identity map, or fa
 
 ## Quick start
 
-Run from this repository in Ubuntu WSL:
+Run from this repository in Ubuntu WSL. External ORFS and FAN_ATPG checkouts are kept outside this Git repository; set the three environment variables to the qualified installations before reproducing the observed s5378/s9234 subset:
 
 ```bash
-./scripts/collect_versions.sh
-python3 -m venv .venv
-. .venv/bin/activate
-pip install -e '.[dev]'
-python -m pact.cli doctor
-pytest -q
+bash scripts/collect_versions.sh
+export PACT_ORFS_ROOT=/path/to/OpenROAD-flow-scripts
+export PACT_FAN_ATPG_ROOT=/path/to/FAN_ATPG
+export PACT_VENV=/path/to/pact-venv
+bash scripts/run_phase0.sh
 ```
 
-See `reports/progress.md` for the current gate status and `docs/methodology.md` for metric definitions.
+`run_phase0.sh` intentionally returns status 2 after reproducing the available subset because the central conflict did not replicate and OpenROAD-native ordering was not extracted for these designs. To recheck saved campaigns without repeating physical implementation, run `bash scripts/finalize_phase0.sh`. See `reports/PHASE0_FINAL_REPORT.md` for measured results and `docs/methodology.md` for metric definitions.

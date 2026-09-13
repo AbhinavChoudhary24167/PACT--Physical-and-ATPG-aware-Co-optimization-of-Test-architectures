@@ -1,31 +1,31 @@
 # Phase-0 progress
 
-## Bootstrap
+## Bootstrap and tool qualification
 
-DONE: Independent repository initialized with source, config, evidence, and report conventions.
+DONE: Independent PACT Git repository initialized. Ubuntu WSL2 inventoried. OpenROAD DFT SKY130 replacement/planning/stitching passed; `scan_opt` warned that it is unimplemented and left the netlist unchanged. FAN_ATPG built and its ATPG plus fault-simulation examples passed for s27, s5378, s9234, and s15850.
 
-BLOCKED: None for bootstrap.
+BLOCKED: The OpenROAD binary's full build commit was not recovered; its release/version and package checksum are recorded. Original ISCAS89 benchmark rights have not been independently resolved.
 
-NEXT: Inspect and qualify the installed WSL toolchain before tool integration.
+NEXT: Preserve the pinned tool versions when extending the benchmark matrix.
 
-EVIDENCE: `artifacts/raw/tool_qualification/environment/` and Git history.
+EVIDENCE: `artifacts/raw/tool_qualification/`, `reports/openroad_dft_qualification.md`, `reports/fan_atpg_qualification.md`, and `benchmarks/manifests/iscas89_from_fan.yaml`.
 
-## OpenROAD DFT qualification
+## Sanity model, ATPG identity, and shift simulation
 
-DONE: Installed pinned OpenROAD prebuilt; cloned upstream OpenROAD and ORFS to isolated WSL storage with exact source commit hashes; passed two SKY130 DFT regressions; observed `scan_opt` no-op.
+DONE: Self-authored 64-FF `pact_sanity` synthesized for tool debugging. Canonical scan architecture validation and deterministic hashes, FAN `.pat` parsing, manually checked serial-shift tests, spatial metrics, and all required baseline ordering algorithms are implemented. Exact 179-way s5378 and 211-way s9234 bijections connect FAN PPIs to source and placed SDFF_X1 instances and DEF positions. The final unit suite passed 24 tests; doctor, scan validation, shift activity, comparison, and plots passed on both designs.
 
-BLOCKED: Full ORFS physical flow has not yet been qualified. The Ubuntu package Yosys 0.33 predates the version required by current ORFS documentation.
+BLOCKED: A full-scan extraction from the self-authored sanity RTL into FAN_ATPG's combinational format was not implemented; both research designs rely on FAN's supplied pre-scanned netlists.
 
-NEXT: Build and qualify FAN_ATPG independently, then attempt a small ORFS smoke flow with version checks.
+NEXT: Validate a general sanity full-scan abstraction before admitting new RTL benchmarks.
 
-EVIDENCE: `reports/openroad_dft_qualification.md` and `artifacts/raw/tool_qualification/openroad/`.
+EVIDENCE: `artifacts/raw/benchmarks/pact_sanity/`, `artifacts/raw/tests/pytest.log`, `artifacts/raw/cli_checks/`, both `artifacts/derived/{s5378,s9234}/ff_identity_map.json` manifests, and `tests/unit/`.
 
-## FAN_ATPG qualification
+## Fixed-placement two-design physical campaign
 
-DONE: Built the specified FAN_ATPG commit and passed supplied ATPG and fault-simulation examples for s27, s5378, s9234, and s15850. Inspected the actual .pat files and upstream writer field order. Parser unit test uses the saved s27 pattern.
+DONE: Explicit BUF_X3→BUF_X4 translations (34 s5378, 96 s9234 cells) allowed Nangate45 ORFS placement and detailed routes of both FAN fixed netlists. Scan-only OpenDB edits produced nearest-neighbor variants. Structural comparison excluding SI/scan-out, all component masters/locations, physical chain order, and ATPG target remappings passed for 117 s5378 and 156 s9234 patterns. Both orders per design completed CTS, global routing, and detailed routing with final DRC 0. Both 14-record campaigns completed with compressed per-clock traces and grids 8, 16, and 32. The cross-design comparison finds a strict proxy wirelength/hotspot conflict in s5378 only.
 
-BLOCKED: FF identity across the ATPG netlist and a placed physical database is not yet proven. ATPG qualification alone does not admit spatial activity research claims.
+BLOCKED: Only supplied and nearest-neighbor orders were routed per design. The supplied order is FAN's pre-stitched chain, not OpenROAD's `execute_dft_plan` order. The small s5378 hotspot conflict did not replicate on s9234; no independent physical seeds, routed hotspot-minimizing random/activity-aware variants, structured congestion metric, or PDNSim run exist. The initial WSL CLI request was rejected by automatic review for a usage limit; after its stated reset time the same direct request ran, exposed a plotting syntax error, and passed after repair. Failure logs remain archived.
 
-NEXT: Qualify a fixed-netlist Nangate45 placement, then verify exact PPI-to-placed-instance correspondence.
+NEXT: Extract OpenROAD-native ordering for the research scan cells or document inapplicability; route the candidate random/activity-aware orders; repeat on additional physical seeds or designs; then reassess the conflict and Phase-1 gate.
 
-EVIDENCE: `reports/fan_atpg_qualification.md`, `benchmarks/manifests/iscas89_from_fan.yaml`, and `artifacts/raw/tool_qualification/fan_atpg/`.
+EVIDENCE: `artifacts/raw/orfs_smoke/`, `artifacts/raw/orfs_rewire/`, `artifacts/raw/orfs_physical/`, `artifacts/derived/phase0/{s5378,s9234}/results.jsonl`, `artifacts/derived/phase0/comparison_all.json`, `artifacts/raw/metric_campaign/`, `reports/figures/`, and `reports/PHASE0_FINAL_REPORT.md`.
