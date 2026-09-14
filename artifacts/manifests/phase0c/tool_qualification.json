@@ -1,0 +1,31 @@
+{
+  "schema_version": "phase0c-tool-qualification-1",
+  "observation_date_utc": "2026-09-14",
+  "parent_commit": "06fe31583b9822368cebe5b98c0e16766969af7f",
+  "starting_branch": "main",
+  "phase0b_pre_edit_sha256_list": "artifacts/manifests/phase0c/phase0b_pre_edit.sha256",
+  "phase0b_pre_edit_hashed_files": 4127,
+  "phase0b_reproduction": {
+    "completed_design_seed_pairs": 15,
+    "qualified_routed_architectures": 90,
+    "practical_threshold_hits": 2,
+    "saved_pairs_match_recomputed_pairs": true,
+    "phase0_frozen_checks_passed": 447,
+    "classification": "PACT_PHASE0B_CONFLICT_NOT_REPLICATED_PHASE1_NO_GO"
+  },
+  "WSL": {
+    "kernel": "Linux 6.18.33.2-microsoft-standard-WSL2",
+    "OpenROAD": {"path": "/usr/bin/openroad", "version": "26Q2-1164-g08f67ee5ec", "binary_sha256": "fcd7dcfc37d329bd43a7ede75805319a2e70e6879da11d42b4fd1c2e50e645c3"},
+    "ORFS": {"path": "/root/pact-deps/OpenROAD-flow-scripts/flow", "commit": "5e8b1450d19263f797a27c4f371b9dd19f32a3aa"},
+    "Yosys": {"path": "/usr/bin/yosys", "version": "0.33 (git sha1 2584903a060)", "binary_sha256": "88c0a12bb814a1a8716b1ae10b482e35d3005ed558e1f5f626b3dc983ea3abd0"},
+    "FAN_ATPG": {"path": "/root/pact-deps/FAN_ATPG/bin/opt/fan", "repository_commit": "26b2b36c0e9db11a4b6d9e759df6e44357121f39", "binary_sha256": "f868b389d4fab6fb402b0bd8ecb1c952796eebfab09f633b083339e5e58c7cfd", "version_note": "Executable exposes help, but no release-version field; commit and binary hash are the executable identity. FAN worktree contains prior generated pattern changes and is not used for pattern regeneration."},
+    "Python": {"path": "/root/pact-deps/pact-venv/bin/python", "version": "3.12.3", "binary_sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f"},
+    "Tcl": {"path": "/usr/bin/tclsh", "version": "8.6.14"},
+    "Nangate45": {"liberty_path": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib", "liberty_sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1", "PDK": "FreePDK45 via pinned ORFS"},
+    "introduced_graph_partitioning_package": null,
+    "introduced_optimization_package": null,
+    "installation_commands_this_phase": []
+  },
+  "analysis_entrypoints": ["scripts/phase0c_prepare.py", "src/pact/scan/phase0c.py", "src/pact/analysis/phase0c_activity.py"],
+  "configuration_paths": ["config/phase0c_campaign.json", "config/phase0c_analysis_contract.json", "config/phase0c_seed_method.json", "config/phase0c_objectives.json"]
+}
