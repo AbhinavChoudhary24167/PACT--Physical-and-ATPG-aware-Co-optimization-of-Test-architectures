@@ -1,0 +1,15 @@
+{
+  "schema_version": "phase0c-candidate-1",
+  "status": "CANDIDATE_NOT_FROZEN_FOR_FINAL_CAMPAIGN",
+  "qualification": "A routed row needs exact FF inventory, parallel ATPG loading and scan-out verification, unchanged functional structure and placement, same-stage physical and timing records, and zero detailed-route DRC.",
+  "C1": "All planned architectures deterministic; source/placed FF bijection and every pattern's K-chain loading and scan-out verified; input and tool hashes complete",
+  "C2": {"minimum_route_completion_fraction": 0.9, "minimum_complete_designs": 3, "scope": "all planned design x physical_seed x K x method runs"},
+  "C3": {"H_eff_improvement_min_percent": 5.0, "physical_penalty_min_percent": 10.0, "rule": "same design-seed-K qualified physical optimum versus activity optimum; both practical thresholds must hold"},
+  "C4": {"minimum_supporting_seeds_per_design": 4, "denominator": 5},
+  "C5": {"minimum_replicated_designs": 2},
+  "C6": {"simple_heuristic_epsilon_fraction": 0.02, "maximum_fraction_of_pairs_covered_by_one_simple_heuristic": 0.8, "methods": ["B0", "B1", "P", "A", "T"], "rule": "no one simple method is within 2 percent of every discovered primary Pareto point in 80 percent or more of complete design-seed-K cases"},
+  "C7": {"minimum_designs": 2, "minimum_seeds_per_design": 4, "minimum_matched_interventions_per_pair": 20, "minimum_opposite_sign_fraction_per_class": 0.2, "rule": "at least one intervention class has both positive and negative primary-objective deltas, each at least 20 percent of matched cases, in 4 seeds on 2 designs"},
+  "C8": {"minimum_log10_legal_architectures": 100, "count_model": "N! * binomial(N-1,K-1) labelled nonempty ordered chains"},
+  "C9": "PASS only when C1-C8 all PASS on a frozen completed campaign; otherwise top-level FAIL",
+  "incomplete_policy": "Unassessable gates are NOT QUALIFIED; top-level classification is FAIL, never GO"
+}

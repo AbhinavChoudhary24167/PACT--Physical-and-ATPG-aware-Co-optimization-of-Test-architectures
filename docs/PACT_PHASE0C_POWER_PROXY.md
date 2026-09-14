@@ -1,0 +1,10 @@
+# Phase-0C effective-switching proxy
+
+PACT has no silicon current waveform, capture-state trace, calibrated power model, or signoff IR-drop result. None of the following quantities is measured power or current.
+
+* **L0:** Exact simulated logical shift toggles per parallel clock, including simultaneous peak, P95 and P99. The serial/parallel input streams exactly reconstruct each frozen ATPG PPI target. Between patterns the simulator carries the loaded state, without modeling capture.
+* **L1:** H8/H16/H32 spatial density from placed FF origins. For each clock and bin, the exact toggle count is divided by resident FF count and convolved with the frozen 3×3 kernel `1/(1+Manhattan bin distance)`. This is directly comparable to Phase-0B H8 for `K=1`.
+* **L2:** `w_i = max(1, direct sink-terminal count on the placed Q net of FF i)`. This dimensionless integer approximates local switched-load exposure. It is not capacitance. The floor of one represents an observable Q transition; its effect is an explicit modeling assumption. Buffering and mixed functional/scan branches mean direct fanout can understate transitive load. The exact source is the frozen placed Verilog for each design and seed.
+* **L3:** For each 8×8 bin and clock, sum `w_i × toggle_i`; convolve with the same fixed kernel and take the campaign peak `H_eff8`. This preserves spatial concentration without claiming amperes or watts. The bin grid is fixed from the paired placement, so within-design/seed/K comparisons use the same locations.
+
+The typical Nangate45 Liberty contains input capacitance and internal-power tables. ORFS calls `report_power`, but a meaningful shift-mode value needs explicit activity annotation for the actual parallel SI streams and capture assumptions. Static average toggle factors would discard peak and spatial timing. A deterministic VCD/SAIF-to-OpenSTA qualification has not yet been completed; `shift_mode_power` remains null. PDNSim requires a defensible per-instance current/power input for test mode; none is qualified. The correct status remains `TEST_MODE_IR_DROP_UNQUALIFIED`, and no test IR-drop number is emitted.

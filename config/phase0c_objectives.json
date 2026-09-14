@@ -1,0 +1,12 @@
+{
+  "schema_version": "phase0c-candidate-1",
+  "primary_physical": "scan_hpwl_proxy_um until exact scan-only route length is qualified consistently within a pair",
+  "primary_activity": "H_eff_8_direct_sink_weighted",
+  "activity_proxy_weight": "max(1, direct sink terminal count on placed FF Q net)",
+  "activity_spatial_kernel": "fixed 3x3 bin kernel 1/(1+Manhattan bin distance), zero outside",
+  "activity_grid": "8x8 over frozen placed FF extent",
+  "secondary": ["setup_wns_ns", "hold_wns_ns", "parallel_shift_cycles", "normalized_imbalance", "DRC_errors"],
+  "unavailable_fields_are_null": ["exact_scan_only_routed_length_um", "congestion", "shift_mode_power", "test_mode_IR_drop"],
+  "comparison_scope": "same design, physical seed and K for architecture conflict; K effects analysed separately",
+  "measurement_caveat": "H_eff is a dimensionless effective-switching proxy, not measured power or current; capture is not modelled"
+}

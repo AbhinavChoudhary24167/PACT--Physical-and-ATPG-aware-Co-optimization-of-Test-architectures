@@ -1,0 +1,19 @@
+{
+  "schema_version": "phase0c-candidate-1",
+  "status": "CANDIDATE_PENDING_SMALL_PHYSICAL_QUALIFICATION",
+  "designs": ["s5378", "s9234", "s15850"],
+  "physical_seeds": [11, 13, 17, 19, 23],
+  "architecture_randomization_seed": 101,
+  "bootstrap_seed": 0,
+  "K_values": [1, 2, 4, 8],
+  "route_families_each_K": ["B0", "P", "A", "J50", "T", "R"],
+  "native_B1_policy": "K=1 only: reuse qualified frozen Phase-0B native order; K>1 requires a separate executed native DFT plan and is unavailable until qualified",
+  "planned_routes_if_qualified": 375,
+  "source_placement_policy": "Use Phase-0B frozen seed-specific 3_place.odb; every method for a design, seed starts from this identical ODB",
+  "pattern_policy": "Use frozen FAN PPI vectors with fixed FF bijection, tail-first parallel loading with leading zero padding on short chains",
+  "routing_screen_policy": "All six predeclared families for every qualified design-seed-K; no post-hoc selection. B1 K=1 references frozen qualified routes.",
+  "per_run_timeout_s": 900,
+  "campaign_cap_s": 43200,
+  "run_id_rule": "first 20 hex SHA256 of canonical JSON [PACT_PHASE0C,design,physical_seed,K,method,architecture_sha256,contract_sha256]",
+  "additional_benchmarks": []
+}

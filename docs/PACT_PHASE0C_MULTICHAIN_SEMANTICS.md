@@ -1,0 +1,11 @@
+# Phase-0C parallel scan semantics
+
+The frozen FAN pattern supplies one known target bit for every scan FF through the verified PPI-to-FF bijection. A Phase-0C architecture is a partition into labelled chains `C00...C(K-1)`, each listed from scan-in to scan-out. The FF inventory and functional D, clock, set/reset and combinational connectivity must stay fixed. New independent SI and SO ports are physical test infrastructure, not additional FFs.
+
+For a target `S` and chain `C=[f0,...,f(L-1)]`, the last `L` SI values are `S[f(L-1)],...,S[f0]`. All chains receive exactly `Lmax` clocks. A shorter chain receives `Lmax-L` **leading zero pad bits**, so it is still physically shifted during those clocks. Treating it as frozen after `L` cycles would be incorrect unless clock gating were built and verified. The first `L` SO samples return the prior FF state in the order `f(L-1),...,f0`; remaining SO samples are shifted-in data. No capture behavior is inferred from the FAN one-frame PPI pattern stream.
+
+`parallel_schedule` builds the streams. `verify_parallel_schedule` independently clocks every FF for every cycle, checks the final state against all PPI targets, and checks scan-out traversal against the initial state. Qualification repeats this for every frozen pattern, carrying the loaded state between patterns. A capture-state waveform could change toggle activity; Phase-0C currently labels `carry_loaded_no_capture_model` explicitly.
+
+For `N` FFs and `K` chains, the planned balance policy fixes lengths to `floor(N/K)` or `ceil(N/K)`. The longest-chain shift cost is `patterns × Lmax` parallel clocks. `patterns × N` is serial shift work, not parallel tester time. One extra capture clock per pattern is reported only as a stated approximation.
+
+The original supplied order `B0` is split contiguously at fixed balance boundaries for `K>1`. This preserves source-relative order inside each chain but is a new multi-chain architecture. It is never described as the original physical single chain. `B1` means an actually executed OpenROAD-native DFT architecture; the frozen Phase-0B `K=1` B1 is available, while `K>1` B1 remains unqualified until OpenROAD emits and verifies those chains.
