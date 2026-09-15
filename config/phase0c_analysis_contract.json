@@ -1,6 +1,6 @@
 {
-  "schema_version": "phase0c-candidate-1",
-  "status": "CANDIDATE_NOT_FROZEN_FOR_FINAL_CAMPAIGN",
+  "schema_version": "phase0c-frozen-1",
+  "status": "FROZEN_FOR_FINAL_CAMPAIGN",
   "qualification": "A routed row needs exact FF inventory, parallel ATPG loading and scan-out verification, unchanged functional structure and placement, same-stage physical and timing records, and zero detailed-route DRC.",
   "C1": "All planned architectures deterministic; source/placed FF bijection and every pattern's K-chain loading and scan-out verified; input and tool hashes complete",
   "C2": {"minimum_route_completion_fraction": 0.9, "minimum_complete_pair_fraction": 0.8, "minimum_complete_designs": 3, "scope": "all planned design x physical_seed x K x method runs; complete pairs contain every predeclared method for that design x seed x K"},
@@ -11,5 +11,13 @@
   "C7": {"minimum_designs": 2, "minimum_seeds_per_design": 4, "minimum_matched_interventions_per_pair": 20, "minimum_opposite_sign_fraction_per_class": 0.2, "metric": "port-aware scan HPWL proxy delta around a physically qualified parent; child has independent structural and ATPG-load verification but is not presumed routed", "rule": "at least one legal intervention class has both positive and negative port-aware physical-proxy deltas, each at least 20 percent of at least 20 matched cases, in 4 seeds on 2 designs"},
   "C8": {"minimum_log10_legal_architectures": 100, "count_model": "N! * binomial(N-1,K-1) labelled nonempty ordered chains"},
   "C9": "PASS only when C1-C8 all PASS on a frozen completed campaign; otherwise top-level FAIL",
+  "threshold_justification": {
+    "C2": "A 90% row floor permits at most 37 isolated physical failures while the 80% complete-pair floor preserves at least 48 fully paired design-seed-K comparisons; all three designs remain mandatory.",
+    "C3": "The 5% H_eff and 10% port-aware HPWL thresholds retain the prospective engineering relevance levels proposed before the final campaign and exclude the small numerical separations that failed to replicate in Phase-0B.",
+    "C4_C5": "Four of five conditional placement seeds is a conservative within-design supermajority; requiring two designs prevents one netlist from establishing generality.",
+    "C6": "A 2% two-objective tolerance treats near-equivalent deterministic outcomes as covered, while the strict below-80% rule requires measurable failure across more than one fifth of complete contexts.",
+    "C7": "Twenty fixed proposals provide a minimum count of four positive and four negative effects at the 20% sign threshold; four seeds on two designs mirrors the conflict-replication standard.",
+    "C8": "A log10 space size of 100 is already far beyond enumeration and is conservative for the qualified FF inventories."
+  },
   "incomplete_policy": "Unassessable gates are NOT QUALIFIED; top-level classification is FAIL, never GO"
 }

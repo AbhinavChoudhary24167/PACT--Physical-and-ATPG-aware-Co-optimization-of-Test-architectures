@@ -1,51 +1,43 @@
 {
-  "schema_version": "phase0c-tool-qualification-1",
-  "observation_date_utc": "2026-09-14",
-  "parent_commit": "06fe31583b9822368cebe5b98c0e16766969af7f",
-  "starting_branch": "main",
-  "phase0b_pre_edit_sha256_list": "artifacts/manifests/phase0c/phase0b_pre_edit.sha256",
-  "phase0b_pre_edit_hashed_files": 4127,
-  "phase0b_reproduction": {
-    "completed_design_seed_pairs": 15,
-    "qualified_routed_architectures": 90,
-    "practical_threshold_hits": 2,
-    "saved_pairs_match_recomputed_pairs": true,
-    "phase0_frozen_checks_passed": 447,
-    "classification": "PACT_PHASE0B_CONFLICT_NOT_REPLICATED_PHASE1_NO_GO"
-  },
-  "logical_qualification_host_runtime": {
-    "OS": "Windows",
-    "Python_path": "D:\\Python\\python.exe",
-    "Python_version": "3.12.5",
-    "numpy": "2.1.3",
-    "scipy": "1.15.2",
-    "matplotlib": "3.9.2",
-    "pytest": "8.4.1",
-    "note": "Candidate proxy generation and qualification figures used this host runtime; physical routes and OpenDB checks used WSL. An independent WSL recomputation of s5378/s11/K2/B0 exactly matched total toggles and H_eff8. The frozen campaign records all runtime and implementation hashes per row."
-  },
   "WSL": {
-    "kernel": "Linux 6.18.33.2-microsoft-standard-WSL2",
-    "OpenROAD": {"path": "/usr/bin/openroad", "version": "26Q2-1164-g08f67ee5ec", "binary_sha256": "fcd7dcfc37d329bd43a7ede75805319a2e70e6879da11d42b4fd1c2e50e645c3"},
-    "ORFS": {"path": "/root/pact-deps/OpenROAD-flow-scripts/flow", "commit": "5e8b1450d19263f797a27c4f371b9dd19f32a3aa"},
-    "Yosys": {"path": "/usr/bin/yosys", "version": "0.33 (git sha1 2584903a060)", "binary_sha256": "88c0a12bb814a1a8716b1ae10b482e35d3005ed558e1f5f626b3dc983ea3abd0"},
-    "FAN_ATPG": {"path": "/root/pact-deps/FAN_ATPG/bin/opt/fan", "repository_commit": "26b2b36c0e9db11a4b6d9e759df6e44357121f39", "binary_sha256": "f868b389d4fab6fb402b0bd8ecb1c952796eebfab09f633b083339e5e58c7cfd", "version_note": "Executable exposes help, but no release-version field; commit and binary hash are the executable identity. FAN worktree contains prior generated pattern changes and is not used for pattern regeneration."},
-    "Python": {"path": "/root/pact-deps/pact-venv/bin/python", "version": "3.12.3", "binary_sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f"},
-    "Tcl": {"path": "/usr/bin/tclsh", "version": "8.6.14"},
-    "Nangate45": {"liberty_path": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib", "liberty_sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1", "PDK": "FreePDK45 via pinned ORFS"},
+    "FAN_ATPG": {
+      "binary_sha256": "f868b389d4fab6fb402b0bd8ecb1c952796eebfab09f633b083339e5e58c7cfd",
+      "path": "/root/pact-deps/FAN_ATPG/bin/opt/fan",
+      "repository_commit": "26b2b36c0e9db11a4b6d9e759df6e44357121f39",
+      "version_note": "Executable exposes help, but no release-version field; commit and binary hash are the executable identity. FAN worktree contains prior generated pattern changes and is not used for pattern regeneration."
+    },
+    "Nangate45": {
+      "PDK": "FreePDK45 via pinned ORFS",
+      "liberty_path": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+      "liberty_sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1"
+    },
+    "ORFS": {
+      "commit": "5e8b1450d19263f797a27c4f371b9dd19f32a3aa",
+      "path": "/root/pact-deps/OpenROAD-flow-scripts/flow"
+    },
+    "OpenROAD": {
+      "binary_sha256": "fcd7dcfc37d329bd43a7ede75805319a2e70e6879da11d42b4fd1c2e50e645c3",
+      "path": "/usr/bin/openroad",
+      "version": "26Q2-1164-g08f67ee5ec"
+    },
+    "Python": {
+      "binary_sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+      "path": "/root/pact-deps/pact-venv/bin/python",
+      "version": "3.12.3"
+    },
+    "Tcl": {
+      "path": "/usr/bin/tclsh",
+      "version": "8.6.14"
+    },
+    "Yosys": {
+      "binary_sha256": "88c0a12bb814a1a8716b1ae10b482e35d3005ed558e1f5f626b3dc983ea3abd0",
+      "path": "/usr/bin/yosys",
+      "version": "0.33 (git sha1 2584903a060)"
+    },
+    "installation_commands_this_phase": [],
     "introduced_graph_partitioning_package": null,
     "introduced_optimization_package": null,
-    "installation_commands_this_phase": []
-  },
-  "physical_qualification": {
-    "status": "PASS",
-    "one_design_one_seed_full_matrix": {"design": "s5378", "physical_seed": 11, "planned": 25, "qualified": 25, "zero_DRC": 25},
-    "cross_design_stress_checks": [
-      {"design": "s9234", "physical_seed": 11, "K": 8, "method": "B0", "status": "QUALIFIED", "DRC_errors": 0},
-      {"design": "s15850", "physical_seed": 11, "K": 8, "method": "B0", "status": "QUALIFIED", "DRC_errors": 0}
-    ],
-    "prefreeze_audit": "artifacts/manifests/phase0c/prefreeze_audit.json",
-    "power_mode_status": "COMMANDS_AVAILABLE_SHIFT_MODE_ACTIVITY_AND_POWER_NOT_QUALIFIED",
-    "PDNSim_status": "COMMAND_AVAILABLE_SHIFT_MODE_INSTANCE_POWER_NOT_QUALIFIED"
+    "kernel": "Linux 6.18.33.2-microsoft-standard-WSL2"
   },
   "analysis_entrypoints": [
     "scripts/phase0c_prepare.py",
@@ -57,5 +49,98 @@
     "src/pact/scan/phase0c.py",
     "src/pact/analysis/phase0c_activity.py"
   ],
-  "configuration_paths": ["config/phase0c_campaign.json", "config/phase0c_analysis_contract.json", "config/phase0c_seed_method.json", "config/phase0c_objectives.json"]
+  "campaign_freeze_readiness": {
+    "configuration_sha256": {
+      "config/phase0c_analysis_contract.json": "ccb6c0745775d7d08e98d12b9a1120d0e9bc11fbe1b6cc735773cd65524728e0",
+      "config/phase0c_campaign.json": "7b1d2a180a1ce6f85b582be7da94a7d748dfc5fad9a86b776a8841998448f300",
+      "config/phase0c_objectives.json": "2867ec19ded4ef517fae88cd3d796ff1b8c8acaaa0705dc40de7b1326aa5fe6f",
+      "config/phase0c_seed_method.json": "85f7524e4958dbd6aa02b761c01aa595db5e7c443472af2d7b0a43a2c22fd02b"
+    },
+    "implementation_sha256": {
+      "scripts/phase0c_campaign_run.py": "e110603e05e26d32f48b8ee9ee14ff9584f3cea970c3de6646bbd62727cd66b3",
+      "scripts/phase0c_classify.py": "cf33841d4ac76ef1bcc7f9ece7664ffadd73584a2b7e50e9e15e406a12cefaf7",
+      "scripts/phase0c_interventions.py": "ba559f9dd320f213795825a2986dfcbfbc67484c5643d551231856c209f5b2b1",
+      "scripts/phase0c_prefreeze_audit.py": "cb414455e044cdc93463059929d9d4aee75769a8c1445379168ef3ee31c83ad9",
+      "scripts/phase0c_prepare.py": "5355e6be634d75657cfb9ce94bfaf76e24dec621b88192337d738d2b7e1b520a",
+      "scripts/phase0c_rewire_odb.py": "7f655d611891fe7ec74370fd2598cfb12ee5f1babd6d976c109ac158014763dc",
+      "scripts/phase0c_run_intervention_screen.py": "15d1385552396f2698e31312113db56e7d02d7dbba156c6b0cef29c460e7bbd8",
+      "scripts/phase0c_run_route.py": "fdca6f89f2841bfc7299a4b0ab5ed16393f4b08485bd0ffbba2f44ff31009c0a",
+      "scripts/phase0c_verify_routed.py": "12041ae298568a402b6b0ed83accae59c771b98579347c24135570f0776dbccf",
+      "src/pact/analysis/phase0c_activity.py": "19d79450c479f5c9e56f464102316b60a4fd2d899f00f3e523020e307123c401",
+      "src/pact/physical/phase0c_congestion.py": "160c7bd20e7685225afb613ae8d5dcd4dbe34f480e774a5b4f878b78f8cd4d3e",
+      "src/pact/physical/phase0c_port_policy.py": "440cf538cc8ff56dfc5e6c3adabbf5eed818e686a1463553e78694414a071923",
+      "src/pact/physical/phase0c_scan_geometry.py": "0d7d61ebd5dc26c4c0cebf062667bb520677603b6cd5256186047a350a7e0c1c",
+      "src/pact/scan/phase0c.py": "e43da79d76d363fe67ae120d5e53a3c2d04a9a2f44549601d8df2daabc05cf3e",
+      "src/pact/scan/phase0c_interventions.py": "af57aa5d71b344997ab19540b2ae2ab7a87263a346a3aec322417af61db168ac"
+    },
+    "planned_routes": 375,
+    "qualification_commit": "233f348",
+    "qualification_evidence_sha256": {
+      "artifacts/manifests/phase0c/benchmark_candidate_audit.json": "02182af0b64ecf5e8e6c47f361faea7d37d7aa27ae21d52957a7a25db9a283a0",
+      "artifacts/manifests/phase0c/phase0b_pre_edit.sha256": "c29c40ac8ba536b7eafeab399bcd30a36f665b0685b8e9f36d3eba5595b1451b",
+      "artifacts/manifests/phase0c/prefreeze_audit.json": "9ba55ed43daaaea6f54fe802195f9f953cb6d145b5669a6548ec384e02f7b6a6"
+    },
+    "status": "READY_TO_FREEZE"
+  },
+  "configuration_paths": [
+    "config/phase0c_campaign.json",
+    "config/phase0c_analysis_contract.json",
+    "config/phase0c_seed_method.json",
+    "config/phase0c_objectives.json"
+  ],
+  "logical_qualification_host_runtime": {
+    "OS": "Windows",
+    "Python_path": "D:\\Python\\python.exe",
+    "Python_version": "3.12.5",
+    "matplotlib": "3.9.2",
+    "note": "Candidate proxy generation and qualification figures used this host runtime; physical routes and OpenDB checks used WSL. An independent WSL recomputation of s5378/s11/K2/B0 exactly matched total toggles and H_eff8. The frozen campaign records all runtime and implementation hashes per row.",
+    "numpy": "2.1.3",
+    "pytest": "8.4.1",
+    "scipy": "1.15.2"
+  },
+  "observation_date_utc": "2026-09-14",
+  "parent_commit": "06fe31583b9822368cebe5b98c0e16766969af7f",
+  "phase0b_pre_edit_hashed_files": 4127,
+  "phase0b_pre_edit_sha256_list": "artifacts/manifests/phase0c/phase0b_pre_edit.sha256",
+  "phase0b_reproduction": {
+    "classification": "PACT_PHASE0B_CONFLICT_NOT_REPLICATED_PHASE1_NO_GO",
+    "completed_design_seed_pairs": 15,
+    "phase0_frozen_checks_passed": 447,
+    "practical_threshold_hits": 2,
+    "qualified_routed_architectures": 90,
+    "saved_pairs_match_recomputed_pairs": true
+  },
+  "physical_qualification": {
+    "PDNSim_status": "COMMAND_AVAILABLE_SHIFT_MODE_INSTANCE_POWER_NOT_QUALIFIED",
+    "cross_design_stress_checks": [
+      {
+        "DRC_errors": 0,
+        "K": 8,
+        "design": "s9234",
+        "method": "B0",
+        "physical_seed": 11,
+        "status": "QUALIFIED"
+      },
+      {
+        "DRC_errors": 0,
+        "K": 8,
+        "design": "s15850",
+        "method": "B0",
+        "physical_seed": 11,
+        "status": "QUALIFIED"
+      }
+    ],
+    "one_design_one_seed_full_matrix": {
+      "design": "s5378",
+      "physical_seed": 11,
+      "planned": 25,
+      "qualified": 25,
+      "zero_DRC": 25
+    },
+    "power_mode_status": "COMMANDS_AVAILABLE_SHIFT_MODE_ACTIVITY_AND_POWER_NOT_QUALIFIED",
+    "prefreeze_audit": "artifacts/manifests/phase0c/prefreeze_audit.json",
+    "status": "PASS"
+  },
+  "schema_version": "phase0c-tool-qualification-1",
+  "starting_branch": "main"
 }
