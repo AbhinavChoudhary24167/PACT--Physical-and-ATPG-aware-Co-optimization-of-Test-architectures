@@ -13,6 +13,16 @@
     "phase0_frozen_checks_passed": 447,
     "classification": "PACT_PHASE0B_CONFLICT_NOT_REPLICATED_PHASE1_NO_GO"
   },
+  "logical_qualification_host_runtime": {
+    "OS": "Windows",
+    "Python_path": "D:\\Python\\python.exe",
+    "Python_version": "3.12.5",
+    "numpy": "2.1.3",
+    "scipy": "1.15.2",
+    "matplotlib": "3.9.2",
+    "pytest": "8.4.1",
+    "note": "Candidate proxy generation and qualification figures used this host runtime; physical routes and OpenDB checks used WSL. An independent WSL recomputation of s5378/s11/K2/B0 exactly matched total toggles and H_eff8. The frozen campaign records all runtime and implementation hashes per row."
+  },
   "WSL": {
     "kernel": "Linux 6.18.33.2-microsoft-standard-WSL2",
     "OpenROAD": {"path": "/usr/bin/openroad", "version": "26Q2-1164-g08f67ee5ec", "binary_sha256": "fcd7dcfc37d329bd43a7ede75805319a2e70e6879da11d42b4fd1c2e50e645c3"},
@@ -26,6 +36,26 @@
     "introduced_optimization_package": null,
     "installation_commands_this_phase": []
   },
-  "analysis_entrypoints": ["scripts/phase0c_prepare.py", "src/pact/scan/phase0c.py", "src/pact/analysis/phase0c_activity.py"],
+  "physical_qualification": {
+    "status": "PASS",
+    "one_design_one_seed_full_matrix": {"design": "s5378", "physical_seed": 11, "planned": 25, "qualified": 25, "zero_DRC": 25},
+    "cross_design_stress_checks": [
+      {"design": "s9234", "physical_seed": 11, "K": 8, "method": "B0", "status": "QUALIFIED", "DRC_errors": 0},
+      {"design": "s15850", "physical_seed": 11, "K": 8, "method": "B0", "status": "QUALIFIED", "DRC_errors": 0}
+    ],
+    "prefreeze_audit": "artifacts/manifests/phase0c/prefreeze_audit.json",
+    "power_mode_status": "COMMANDS_AVAILABLE_SHIFT_MODE_ACTIVITY_AND_POWER_NOT_QUALIFIED",
+    "PDNSim_status": "COMMAND_AVAILABLE_SHIFT_MODE_INSTANCE_POWER_NOT_QUALIFIED"
+  },
+  "analysis_entrypoints": [
+    "scripts/phase0c_prepare.py",
+    "scripts/phase0c_campaign_run.py",
+    "scripts/phase0c_run_intervention_screen.py",
+    "scripts/phase0c_classify.py",
+    "scripts/phase0c_figures.py",
+    "scripts/phase0c_report.py",
+    "src/pact/scan/phase0c.py",
+    "src/pact/analysis/phase0c_activity.py"
+  ],
   "configuration_paths": ["config/phase0c_campaign.json", "config/phase0c_analysis_contract.json", "config/phase0c_seed_method.json", "config/phase0c_objectives.json"]
 }

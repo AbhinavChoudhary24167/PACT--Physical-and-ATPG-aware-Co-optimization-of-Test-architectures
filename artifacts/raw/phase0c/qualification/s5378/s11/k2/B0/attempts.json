@@ -1,0 +1,32 @@
+{
+  "schema_version": "phase0c-qualification-attempts-1",
+  "design": "s5378",
+  "physical_seed": 11,
+  "K": 2,
+  "method": "B0",
+  "attempts": [
+    {
+      "variant": "phase0c_s11_k2_B0",
+      "command": "make -o ./results/nangate45/s5378/phase0c_s11_k2_B0/3_place.odb -o ./results/nangate45/s5378/phase0c_s11_k2_B0/3_place.sdc DESIGN_CONFIG=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s5378_orfs/config.mk FLOW_VARIANT=phase0c_s11_k2_B0 GRT_SEED=11 OPENROAD_EXE=/usr/bin/openroad YOSYS_EXE=/usr/bin/yosys route",
+      "cwd": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+      "exit_code": 1,
+      "status": "GLOBAL_ROUTE_PIN_ACCESS_FAILED_OFFGRID",
+      "stdout": "artifacts/raw/phase0c/qualification/s5378/s11/k2/B0/route.stdout.log",
+      "stderr": "artifacts/raw/phase0c/qualification/s5378/s11/k2/B0/route.stderr.log",
+      "failure": "DRT-0416: added test_si_1 metal5 pin y-coordinate was not on manufacturing grid 10 DBU"
+    },
+    {
+      "variant": "phase0c_s11_k2_B0_v2",
+      "command": "make -o ./results/nangate45/s5378/phase0c_s11_k2_B0_v2/3_place.odb -o ./results/nangate45/s5378/phase0c_s11_k2_B0_v2/3_place.sdc DESIGN_CONFIG=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s5378_orfs/config.mk FLOW_VARIANT=phase0c_s11_k2_B0_v2 GRT_SEED=11 OPENROAD_EXE=/usr/bin/openroad YOSYS_EXE=/usr/bin/yosys route",
+      "cwd": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+      "exit_code": 0,
+      "status": "ROUTED_DRC_FAIL",
+      "detailed_route_DRC_errors": 6,
+      "postroute_scan_topology": "PASS",
+      "stdout": "artifacts/raw/phase0c/qualification/s5378/s11/k2/B0/route.v2.stdout.log",
+      "stderr": "artifacts/raw/phase0c/qualification/s5378/s11/k2/B0/route.v2.stderr.log",
+      "DRC_report": "artifacts/raw/phase0c/qualification/s5378/s11/k2/B0/5_route_drc.rpt",
+      "failure": "Metal5 spacing and NS metal violations around inherited test_so pin and n1588gat"
+    }
+  ]
+}

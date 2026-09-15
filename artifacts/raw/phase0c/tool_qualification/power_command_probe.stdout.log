@@ -1,0 +1,30 @@
+OpenROAD 26Q2-1164-g08f67ee5ec 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+PHASE0C_COMMAND read_vcd
+read_vcd [-scope scope] [-mode mode_name] filename  
+PHASE0C_AVAILABLE read_vcd
+PHASE0C_COMMAND read_saif
+read_saif [-scope scope] filename  
+PHASE0C_AVAILABLE read_saif
+PHASE0C_COMMAND report_power
+report_power [-instances instances] [-highest_power_instances count]
+   [-scene scene] [-digits digits] [-format format] [> filename] [>> filename]  
+PHASE0C_AVAILABLE report_power
+PHASE0C_COMMAND report_activity_annotation
+report_activity_annotation [-report_unannotated] [-report_annotated]  
+PHASE0C_AVAILABLE report_activity_annotation
+PHASE0C_COMMAND set_power_activity
+set_power_activity [-global] [-input] [-input_ports ports] [-pins pins]
+   [-activity activity | -density density] [-duty duty] [-clock clock] 
+PHASE0C_AVAILABLE set_power_activity
+PHASE0C_COMMAND set_pdnsim_inst_power
+set_pdnsim_inst_power -inst instance -power power [-corner corner] 
+PHASE0C_AVAILABLE set_pdnsim_inst_power
+PHASE0C_COMMAND analyze_power_grid
+analyze_power_grid -net net_name [-corner corner] [-error_file error_file]
+   [-voltage_file voltage_file] [-enable_em] [-em_outfile em_file]
+   [-vsrc voltage_source_file] [-source_type FULL|BUMPS|STRAPS] [-allow_reuse] 
+
+PHASE0C_AVAILABLE analyze_power_grid

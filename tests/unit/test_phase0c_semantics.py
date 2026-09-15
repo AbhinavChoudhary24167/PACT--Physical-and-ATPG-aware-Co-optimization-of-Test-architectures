@@ -7,7 +7,7 @@ from pact.scan.phase0c import (architecture_space_log10, chain_statistics,
                                 generate_architecture, parallel_schedule,
                                 verify_parallel_schedule)
 from pact.analysis.phase0c_activity import parallel_activity_metrics
-from pact.scan.phase0c_interventions import apply_intervention
+from pact.scan.phase0c_interventions import apply_intervention, sampled_local_swaps
 
 
 def fixture():
@@ -77,3 +77,14 @@ def test_intervention_legality_and_hashing(operation):
     assert record["child_sha256"] == child.sha256()
     assert record["added_edges"] and record["removed_edges"]
     assert set(name for chain in child.chains for name in chain.cells) == {c.name for c in base.cells}
+
+
+def test_sampled_local_swap_proposals_are_unique_deterministic_and_legal():
+    base, patterns = fixture()
+    arch = generate_architecture(base, 2, "P", patterns)
+    first = sampled_local_swaps(arch, 10)
+    assert first == sampled_local_swaps(arch, 10)
+    assert len({(item["chain"], item["i"], item["j"]) for item in first}) == 10
+    for operation in first:
+        child, record = apply_intervention(arch, operation)
+        assert child.sha256() == record["child_sha256"]

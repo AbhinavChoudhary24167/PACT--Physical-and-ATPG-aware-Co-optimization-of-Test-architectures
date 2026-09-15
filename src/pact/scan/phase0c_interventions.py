@@ -1,6 +1,8 @@
 """Legal, hash-addressable local scan interventions."""
 from __future__ import annotations
 
+import hashlib
+
 from pact.scan.model import ScanArchitecture, ScanChain
 from pact.scan.validate import validate_scan
 
@@ -9,6 +11,24 @@ def edges(arch: ScanArchitecture) -> set[tuple[str, str]]:
     return {(left, right) for chain in arch.chains
             for left, right in zip((f"SI:{chain.chain_id}",) + chain.cells,
                                    chain.cells + (f"SO:{chain.chain_id}",))}
+
+
+def sampled_local_swaps(arch: ScanArchitecture, count: int,
+                        proposal_seed: int = 101) -> list[dict]:
+    """Fixed position-pair proposals, independent of physical-seed randomness."""
+    candidates = []
+    for ci, chain in enumerate(arch.chains):
+        n = len(chain.cells)
+        radius = max(2, n // 10)
+        for i in range(n):
+            for j in range(i + 1, min(n, i + radius + 1)):
+                operation = {"type": "swap", "chain": ci, "i": i, "j": j}
+                label = f"phase0c-{proposal_seed}-swap-{ci}-{i}-{j}"
+                candidates.append((hashlib.sha256(label.encode()).digest(), operation))
+    candidates.sort(key=lambda item: item[0])
+    if len(candidates) < count:
+        raise ValueError("Not enough distinct legal local swaps")
+    return [operation for _, operation in candidates[:count]]
 
 
 def apply_intervention(arch: ScanArchitecture, operation: dict) -> tuple[ScanArchitecture, dict]:
