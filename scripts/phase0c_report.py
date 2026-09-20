@@ -1,139 +1,302 @@
 #!/usr/bin/env python3
-"""Render an evidence-backed Phase-0C qualification report from saved JSON."""
+"""Render the final evidence-backed Phase-0C report."""
 from __future__ import annotations
 
+from collections import Counter, defaultdict
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 
-from phase0c_classify import ROOT, classify
+import numpy as np
+
+from phase0c_classify import ROOT
+from phase0c_classify_recovery import classify
 
 
 def read(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def med_iqr(values) -> str:
+    values = [float(value) for value in values if value is not None]
+    if not values:
+        return "unavailable"
+    median = np.median(values)
+    iqr = np.quantile(values, .75) - np.quantile(values, .25)
+    return f"{median:,.3f} (IQR {iqr:,.3f}; range {min(values):,.3f}–{max(values):,.3f}; n={len(values)})"
+
+
+def compact(value) -> str:
+    if isinstance(value, float):
+        return f"{value:.6g}"
+    if isinstance(value, (dict, list)):
+        return json.dumps(value, sort_keys=True, separators=(",", ":"))
+    return str(value)
+
+
 def main() -> None:
     analysis = classify()
-    manifest = read(ROOT / "artifacts/manifests/phase0b/benchmark_manifest.json")
+    analysis_path = ROOT / "artifacts/derived/phase0c/gate_analysis.json"
+    analysis_path.write_bytes((json.dumps(analysis, indent=2, sort_keys=True) + "\n").encode())
+    execution = read(ROOT / "artifacts/manifests/phase0c/campaign_execution.json")
+    recovery_execution = read(ROOT / "artifacts/manifests/phase0c/campaign_recovery.json")
+    campaign = read(ROOT / "config/phase0c_campaign.json")
+    contract = read(ROOT / "config/phase0c_analysis_contract.json")
+    benchmark = read(ROOT / "artifacts/manifests/phase0b/benchmark_manifest.json")
+    tool = read(ROOT / "artifacts/manifests/phase0c/tool_qualification.json")
+    source = read(ROOT / "artifacts/derived/phase0c/figure_source_data.json")
+    rows = source["rows"]
     proxies = [read(path) for path in sorted((ROOT / "artifacts/derived/phase0c").glob("*/s*/k*/*.proxy.json"))]
-    b0 = [r for r in proxies if r["design"] == "s5378" and r["physical_seed"] == 11 and r["method"] == "B0"]
-    b0.sort(key=lambda row: row["K"])
-    route_records = [read(path) for path in sorted((ROOT / "artifacts/raw/phase0c").glob("physical/*/s*/k*/*/route_metrics.json"))]
-    qualification = ROOT / "artifacts/raw/phase0c/qualification/s5378/s11/k2/B0"
-    qual_metrics = None
-    if (qualification / "5_1_grt.json").is_file() and (qualification / "5_2_route.json").is_file():
-        from pact.physical.phase0b_structured_metrics import extract_structured_metrics
-        qual_metrics = extract_structured_metrics(read(qualification / "5_1_grt.json"),
-                                                  read(qualification / "5_2_route.json"))
-    fig_manifest = ROOT / "reports/figures/phase0c/figures_manifest.json"
-    figs = read(fig_manifest) if fig_manifest.exists() else []
-    bench_rows = "\n".join(f"| {r['design']} | {r['scan_ff_count']} | {r['pattern_count']} | {r['stuck_at_coverage_percent']:.2f}% |"
-                           for r in manifest["designs"])
-    k_rows = "\n".join(f"| {r['K']} | {', '.join(map(str, r['chain_statistics']['chain_lengths']))} | "
-                       f"{r['chain_statistics']['parallel_shift_cycles']:,} | "
-                       f"{r['scan_geometry']['total_scan_hpwl_um']:,.2f} | "
-                       f"{r['activity']['grids']['8']['H_eff']:.3f} |"
-                       for r in b0)
-    gates = "\n".join(f"| {name} | {record['status']} | {record['reason']}; " +
-                      ", ".join(f"{key}={value}" for key, value in record.items() if key not in ("status", "reason")) + " |"
-                      for name, record in analysis["gates"].items())
-    drc = "unavailable" if qual_metrics is None else str(qual_metrics["detailed_route_drc_errors"])
-    setup = "unavailable" if qual_metrics is None else f"{qual_metrics['setup_wns_ns']:.5f} ns"
-    hold = "unavailable" if qual_metrics is None else f"{qual_metrics['hold_wns_ns']:.5f} ns"
-    wire = "unavailable" if qual_metrics is None else f"{qual_metrics['total_detailed_route_wirelength_um']:,.0f} µm"
-    figure_lines = "\n".join(f"- [{Path(row['figure']).name}](../{row['figure']}): {row['description']}"
-                             for row in figs)
+    final_routes = [read(path) for path in sorted((ROOT / "artifacts/raw/phase0c/physical").glob(
+        "*/s*/k*/*/route_metrics.json")) if read(path).get("campaign_freeze_commit") == execution["freeze_commit"]]
+    original_qualified = {key: value for key, value in execution["runs"].items()
+                          if value.get("status") == "QUALIFIED"}
+    combined_runs = {**original_qualified, **recovery_execution["runs"]}
+    status_counts = Counter(record.get("status") for record in combined_runs.values())
+    unattempted_labels = {"CAMPAIGN_CAP_REACHED", "WORKSPACE_DISK_FLOOR_REACHED"}
+    physically_attempted = sum(status not in unattempted_labels for status in
+                               (record.get("status") for record in combined_runs.values()))
+    qualified = [record for record in final_routes
+                 if record.get("status") == "QUALIFIED" and record.get("DRC_errors") == 0]
+    proofs = [read(ROOT / record["postroute_verification"]) for record in qualified]
+    exact_scan = [record["exact_scan_only_routed_length_um"] for record in qualified
+                  if record.get("exact_scan_only_routed_length_um") is not None]
+    figures = read(ROOT / "reports/figures/phase0c/figures_manifest.json")
+    interventions = source["interventions"]
+
+    benchmark_rows = "\n".join(
+        f"| {row['design']} | {row['scan_ff_count']} | {row['pattern_count']} | "
+        f"{row['stuck_at_coverage_percent']:.2f}% |"
+        for row in benchmark["designs"])
+
+    k_rows = []
+    for k in campaign["K_values"]:
+        subset = [row for row in rows if row["K"] == k]
+        k_rows.append(
+            f"| {k} | {len(subset)} | {med_iqr(row['chain_imbalance'] for row in subset)} | "
+            f"{med_iqr(row['shift_cycles'] for row in subset)} | "
+            f"{med_iqr(row['physical_um'] for row in subset)} | "
+            f"{med_iqr(row['H_eff8'] for row in subset)} | "
+            f"{med_iqr(row['setup_wns_ns'] for row in subset)} | "
+            f"{med_iqr(row['global_route_usage_percent'] for row in subset)} |")
+    k_table = "\n".join(k_rows)
+
+    design_rows = []
+    for design in campaign["designs"]:
+        subset = [row for row in rows if row["design"] == design]
+        design_rows.append(
+            f"| {design} | {len(subset)} | {med_iqr(row['physical_um'] for row in subset)} | "
+            f"{med_iqr(row['H_eff8'] for row in subset)} | "
+            f"{med_iqr(row['detailed_route_wirelength_um'] for row in subset)} | "
+            f"{med_iqr(row['routed_scan_path_upper_bound_um'] for row in subset)} | "
+            f"{med_iqr(row['route_s'] for row in subset)} |")
+    design_table = "\n".join(design_rows)
+
+    conflict_rows = []
+    for design in campaign["designs"]:
+        subset = [row for row in analysis["conflicts"] if row["design"] == design]
+        seeds = {row["physical_seed"] for row in subset if row["practical_conflict"]}
+        conflict_rows.append(
+            f"| {design} | {sum(row['practical_conflict'] for row in subset)}/{len(subset)} design-seed-K groups | "
+            f"{len(seeds)}/5 | {med_iqr(row['physical_penalty_percent'] for row in subset)} | "
+            f"{med_iqr(row['H_eff_gain_percent'] for row in subset)} |")
+    conflict_table = "\n".join(conflict_rows)
+
+    regret = analysis["descriptive_statistics"]["method_regret"]
+    regret_rows = []
+    for method, values in regret.items():
+        regret_rows.append(
+            f"| {method} | {values['physical_percent']['median']:.3f}% | "
+            f"{values['physical_percent']['iqr']:.3f}% | "
+            f"{values['activity_percent']['median']:.3f}% | "
+            f"{values['activity_percent']['iqr']:.3f}% | "
+            f"{analysis['descriptive_statistics']['pareto_membership_counts'].get(method, 0)} |")
+    regret_table = "\n".join(regret_rows)
+
+    contexts = defaultdict(list)
+    for record in interventions:
+        contexts[(record["design"], record["physical_seed"])].append(
+            record["delta"]["scan_hpwl_proxy_um"])
+    intervention_rows = []
+    for design in campaign["designs"]:
+        design_values = [value for (item, _), values in contexts.items() if item == design for value in values]
+        passing = sum(len(values) >= contract["C7"]["minimum_matched_interventions_per_pair"]
+                      and sum(value > 0 for value in values) / len(values) >= .2
+                      and sum(value < 0 for value in values) / len(values) >= .2
+                      for (item, _), values in contexts.items() if item == design)
+        intervention_rows.append(
+            f"| {design} | {sum(len(values) for (item, _), values in contexts.items() if item == design)} | "
+            f"{passing}/5 | {sum(value < 0 for value in design_values)} | "
+            f"{sum(value > 0 for value in design_values)} | {med_iqr(design_values)} |")
+    intervention_table = "\n".join(intervention_rows)
+
+    gate_rows = []
+    for name in (f"C{i}" for i in range(1, 10)):
+        record = analysis["gates"][name]
+        numbers = "; ".join(f"{key}={compact(value)}" for key, value in record.items()
+                            if key not in ("status", "reason"))
+        gate_rows.append(f"| {name} | **{record['status']}** | {record['reason']}; {numbers} |")
+    gates = "\n".join(gate_rows)
+
+    figure_lines = "\n".join(
+        f"- [{Path(row['figure']).name}](../{row['figure']}): {row['description']} "
+        f"(`{row['sha256'][:12]}…`)" for row in figures)
+    phase1_answer = ("Yes. The frozen gate justifies investigating a learned intervention model; it does not "
+                     "predict that ML will work." if analysis["gates"]["C9"]["status"] == "PASS" else
+                     "No. The frozen evidence does not satisfy every prerequisite for investigating a learned intervention model.")
+
     answers = [
-        "3 previously qualified ISCAS89 designs; no new benchmark admitted.",
-        "s5378=179, s9234=211, s15850=534 FFs.",
-        "s5378=117, s9234=156, s15850=133 frozen FAN patterns.",
-        "s5378=96.04%, s9234=94.14%, s15850=94.62% stuck-at coverage from frozen FAN reports.",
-        "K=1,2,4,8 are logically qualified on s5378 seed 11; no K is yet qualified across the full route campaign.",
-        "1 of 5 physical seeds has qualification proxy rows; 0 of 15 design×seed physical campaign units complete.",
-        f"{len(proxies)} proxy variants generated of 360 planned fresh routes; 15 native K=1 reference cases are specified separately.",
-        f"{len(route_records)} fresh Phase-0C route records archived; qualified routed variants={analysis['qualified_new_routes']}.",
-        f"{len(proxies)} generated variants pass FF, loading and scan-out checks; post-route topology proof is separate.",
-        f"Qualification s5378/s11/K2/B0 has {drc} detailed-route DRC errors and is excluded; zero-DRC route qualification is pending.",
-        "Exact scan-only routed length: unavailable for the qualification case; total detailed-route wirelength is exact tool output for its full netlist.",
-        "Scan FF-origin HPWL, Manhattan edge lengths and long-edge estimates are placement proxies.",
-        "Logical shift toggles and binary PPI target reconstruction are exact within the stated no-capture simulator.",
-        "H8/H16/H32 and direct-sink-weighted H_eff are explicitly dimensionless activity proxies.",
-        "No activity-driven shift-mode OpenSTA/OpenROAD power flow has been qualified; power remains null.",
-        "TEST_MODE_IR_DROP_UNQUALIFIED; no PDNSim test-mode run or silicon IR-drop claim.",
-        "For s5378 B0 seed 11, approximate parallel shift clocks are 20,943 / 10,530 / 5,265 / 2,691 for K=1/2/4/8; capture excluded.",
-        "s5378 B0 seed-11 HPWL proxies appear in the K table; the K effect on qualified routed scan cost is unavailable.",
-        "s5378 B0 seed-11 H_eff8 proxies appear in the K table; no physical-current correlation is claimed.",
-        f"One excluded K2 B0 route has global-route setup WNS {setup} and hold WNS {hold}; the cross-K timing effect is unavailable.",
-        "No C3 practical physical/activity conflict can be assessed on a qualified replicated route set.",
-        "No seed-level practical conflict replication assessable; 0 of 5 seeds complete on each design.",
-        "No cross-design conflict replication assessable; 0 of 3 designs complete.",
-        "No deterministic heuristic insufficiency claim is assessable from routed outcomes.",
-        "Qualified routed heuristic regret unavailable; proxy-only ordering differences are not gate evidence.",
-        f"{analysis['intervention_records']} proxy-only intervention records; routed context-dependent sign effects unavailable.",
-        "The legal labelled ordered-chain count exceeds 10^100 for all three designs; physical legality and heuristic difficulty are separate questions.",
-        "Phase 1 NO-GO at present: the script emits FAIL because C1-C7 are unqualified, not because a completed Phase-0C campaign disproved learning value.",
+        f"{len(benchmark['designs'])} benchmarks qualified; Ibex and JPEG were audited but not admitted.",
+        ", ".join(f"{row['design']}={row['scan_ff_count']}" for row in benchmark["designs"]) + " scan FFs.",
+        ", ".join(f"{row['design']}={row['pattern_count']}" for row in benchmark["designs"]) + " frozen FAN patterns.",
+        ", ".join(f"{row['design']}={row['stuck_at_coverage_percent']:.2f}%" for row in benchmark["designs"]) + " stuck-at coverage.",
+        f"K={campaign['K_values']} qualified under the final physical campaign.",
+        f"{len({(row['design'], row['seed']) for row in rows})} design-seed units and {len({row['seed'] for row in rows})}/5 physical seeds completed qualified rows.",
+        f"{len(proxies)} architecture variants were generated; planned={execution['planned_routes']}.",
+        f"{physically_attempted} final variants were physically attempted; qualified={len(qualified)}.",
+        f"{sum(proof.get('status') == 'PASS' for proof in proofs)} final routed variants passed structural verification.",
+        f"{sum(record.get('DRC_errors') == 0 for record in final_routes)} final variants had zero detailed-route DRC; status counts={dict(status_counts)}.",
+        f"Exact tool outputs include full-netlist detailed-route wirelength, via count, DRC, global-route timing and initial global-route utilization/overflow; exact exclusive scan-only routed length exists for {len(exact_scan)} rows.",
+        "Port-aware FF-origin scan HPWL and mixed-net full-scan-path length upper bounds are physical proxies/bounds.",
+        "Per-clock logical scan toggles, totals, peaks, quantiles and ATPG target reconstruction are exact within the frozen no-capture shift simulator.",
+        "H8/H16/H32 and direct-sink-weighted H_eff are dimensionless activity proxies.",
+        f"Shift-mode power status: {tool['physical_qualification']['power_mode_status']}; no watts are reported.",
+        f"PDNSim status: {tool['physical_qualification']['PDNSim_status']}; no test-mode IR drop is reported.",
+        "K effects on exact shift cycles are reported in the K table; capture cycles are excluded and reported separately in proxy rows.",
+        "K effects on the port-aware physical proxy are reported as median/IQR/range in the K table.",
+        "K effects on H_eff8 and exact cumulative hotspot maps are reported in the K table and figures 04–05.",
+        "K effects on global-route setup WNS are reported in the K table; negative values, if present, are retained.",
+        f"C3={analysis['gates']['C3']['status']}; practical conflict hits={analysis['gates']['C3']['practical_hits']}/{analysis['gates']['C3']['assessed_pairs']} assessed groups.",
+        f"C4={analysis['gates']['C4']['status']}; qualifying seed counts={analysis['gates']['C4']['qualifying_seed_counts']}.",
+        f"C5={analysis['gates']['C5']['status']}; replicated design count={analysis['gates']['C5']['replicated_design_count']}.",
+        f"C6={analysis['gates']['C6']['status']}; maximum single-method 2% coverage={analysis['gates']['C6']['max_simple_heuristic_coverage']:.3f}, fixed-portfolio coverage={analysis['gates']['C6']['deterministic_portfolio_coverage']:.3f}.",
+        "Median/IQR physical and activity regret for every deterministic method is reported in the heuristic table.",
+        f"{len(interventions)} frozen local-swap records were eligible; C7={analysis['gates']['C7']['status']} with qualifying design count={analysis['gates']['C7']['qualifying_design_count']}.",
+        f"C8={analysis['gates']['C8']['status']}; formal log10 architecture counts={analysis['gates']['C8']['log10_architecture_counts']}.",
+        f"Phase 1 decision: {analysis['classification']}; {phase1_answer}",
     ]
-    question_rows = "\n".join(f"| {i} | {answer} |" for i, answer in enumerate(answers, 1))
-    text = f"""# PACT Phase-0C qualification report
+    question_rows = "\n".join(f"| {index} | {answer} |" for index, answer in enumerate(answers, 1))
+    current_commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
 
-**Current decision:** `{analysis['classification']}`. This is an incomplete-campaign gate failure, not an evidentiary conclusion that deterministic multi-chain methods are sufficient. The contract is still candidate and must be frozen in a commit before any final campaign. No ML was trained.
+    report = f"""# PACT Phase-0C final report
 
-The frozen Phase-0B result remains `PACT_PHASE0B_CONFLICT_NOT_REPLICATED_PHASE1_NO_GO`: 15/15 complete design×seed pairs, 90 routed variants, only 2 practical threshold hits. The [pre-edit SHA256 list](../artifacts/manifests/phase0c/phase0b_pre_edit.sha256) covers 4,127 files. The [tool qualification](../artifacts/manifests/phase0c/tool_qualification.json) records live WSL binaries, commits and PDK collateral.
+**Script-generated decision:** `{analysis['classification']}`
 
-## Benchmark population
+**Frozen analysis commit:** `{execution['freeze_commit']}`
 
-| Design | Scan FFs | FAN patterns | Stuck-at coverage |
+**Report-generation parent:** `{current_commit}`
+**Scientific answer:** **{phase1_answer}**
+
+No ML model was trained or evaluated. A PASS means only that a later investigation of learned intervention guidance is scientifically justified under this qualified benchmark regime.
+
+## Provenance and benchmark population
+
+The starting commit was `{tool['parent_commit']}`. Phase-0B remains byte-for-byte preserved across {tool['phase0b_pre_edit_hashed_files']:,} hashed files and retains `PACT_PHASE0B_CONFLICT_NOT_REPLICATED_PHASE1_NO_GO`. The Phase-0C contract, campaign, objectives, methods, hashes, toolchain and benchmark audit were frozen before final execution. The campaign used OpenROAD `{tool['WSL']['OpenROAD']['version']}`, ORFS `{tool['WSL']['ORFS']['commit']}`, Yosys `{tool['WSL']['Yosys']['version']}`, FAN commit `{tool['WSL']['FAN_ATPG']['repository_commit']}`, and Nangate45 Liberty `{tool['WSL']['Nangate45']['liberty_sha256']}`.
+
+| Design | Scan FFs | FAN patterns | Frozen stuck-at coverage |
 |---|---:|---:|---:|
-{bench_rows}
+{benchmark_rows}
 
-Original ISCAS89 netlist rights were not independently resolved, and no additional benchmark passed license plus ATPG/FF qualification. These three designs support conditional findings only.
+No additional benchmark was admitted: the saved audit found no reproducible FAN full-scan/PPI-to-FF mapping for the otherwise licensed Ibex and JPEG candidates. The three ISCAS89 designs therefore support conditional conclusions within this benchmark regime.
 
-## Small logical qualification, s5378 seed 11
+## Campaign and infrastructure qualification
 
-Six predeclared families (B0/P/A/J50/T/R) were generated for each K. All {len(proxies)} rows retain the 179-FF inventory, exactly reconstruct every one of 117 FAN PPI target states under fully clocked parallel shifting, and verify scan-out traversal. K=1 B0 reproduces the frozen Phase-0B 1,954,773 logical toggles and H8=4.15556 exactly. Physical seed 11 is a perturb-and-legalize realization from one source placement, not an independent global placement.
+The frozen matrix contains 3 designs × 5 physical seeds × 4 K values × 6 common families, plus native B1 at K=1: **{execution['planned_routes']} planned physical rows**. The original session stopped at the frozen disk floor after 27 qualified rows; its manifest is immutable. The precommitted recovery ledger contains {len(recovery_execution['runs'])} eligible rows and status `{recovery_execution['status']}`. Combined ledger rows={len(combined_runs)}, physically attempted={physically_attempted}, qualified zero-DRC rows={len(qualified)}, status counts={dict(status_counts)}. All {len(proxies)} architecture rows use frozen input hashes and deterministic run IDs. Routed structural proofs passed={sum(proof.get('status') == 'PASS' for proof in proofs)}/{len(proofs)}; fixed-port proofs passed={sum(proof.get('fixed_port_positions_verified') is True for proof in proofs)}/{len(proofs)}; K-chain SI/SO proofs passed={sum(proof.get('all_chain_inputs_outputs_verified') is True for proof in proofs)}/{len(proofs)}.
 
-| K | Balanced chain lengths, B0 | Approx. shift clocks | Scan HPWL proxy (µm) | H_eff8 proxy |
-|---:|---|---:|---:|---:|
-{k_rows}
+Each architecture preserves the placed FF bijection and reconstructs all frozen ATPG PPI targets through fully clocked parallel loading, including leading padding on short chains. Every final route begins from its design/seed's identical Phase-0B `3_place.odb`. Failed and superseded attempts retain commands, return codes, logs and partial artifacts.
 
-H_eff8 uses direct Q-net sink counts as dimensionless weights, not capacitance, watts or current. Functional capture between patterns is unmodelled. Shift clocks omit any assumed capture clock.
+## Physical, activity and scaling results
 
-## Physical qualification
+The primary physical quantity is the **port-aware FF-origin scan HPWL proxy**, measured at fixed placement after including all 2K SI/SO links. It is a proxy, not routed scan wirelength. Full-netlist detailed-route wirelength/vias, detailed-route DRC, global-route setup/hold results, and initial global-route utilization/overflow are tool outputs. The verified mixed-net SI-to-SO total is an upper bound. Exact exclusive scan-only routed length qualified in {len(exact_scan)} rows.
 
-The first K2 B0 route failed at an off-grid added SI pin; its logs are retained. A grid-aligned rerun under a new variant completed with **{drc} DRC errors** at/near the original `test_so` pin. It is structurally verifiable after transparent route-inserted BUF/CLKBUF cells, but it is **excluded** from qualified routed comparisons. Its full-netlist detailed-route wirelength is {wire}; global-route setup WNS is {setup}, hold WNS {hold}. These are measurements of an excluded attempt, not proof of a practical conflict. Structured congestion, exact scan-only routed length, shift-mode power and test-mode IR drop remain unavailable. Additional per-run route records: {len(route_records)}. Zero-DRC qualified new routes: {analysis['qualified_new_routes']}.
+| Design | Qualified rows | HPWL proxy median/IQR/range (µm) | H_eff8 median/IQR/range | Full-net DR wirelength (µm) | Full scan-path upper bound (µm) | Route runtime (s) |
+|---|---:|---|---|---|---|---|
+{design_table}
 
-The planned matrix is 3 designs × 5 physical seeds × 4 K values × 6 methods = **360 fresh routes**, plus 15 frozen K=1 native B1 references, or 375 comparison rows. {len(proxies)} logical/proxy rows have been generated. No final campaign was launched. The candidate 12-hour cap prevents an accidental unbounded Cartesian run; observed qualification detailed routing took about 13 minutes for the excluded B0 K2 rerun. This is not a full-campaign scaling estimate.
+Logical shift toggles are exact within the no-capture model; H_eff8 is a dimensionless direct-sink-weighted spatial proxy. Shift-mode power and test-mode PDNSim were not qualified, so watts, current and IR drop remain null. Median exact total toggles={med_iqr(row['total_toggles'] for row in rows)}; peak simultaneous toggles={med_iqr(row['peak_toggles'] for row in rows)}. Compressed routed ODB size per row={med_iqr(row['odb_archive_bytes'] / 1048576 for row in rows)} MiB.
 
-## Legal interventions and figures
+## Effect of K
 
-The [intervention dataset](../artifacts/derived/phase0c/intervention_dataset.jsonl) has {analysis['intervention_records']} proxy-only records with parent/child architecture hashes, operations, affected edges, before/after quantities and deltas. None has a qualified routed physical delta. Figures are generated from their hashed machine-readable inputs:
+| K | Qualified rows | Normalized chain imbalance | Exact shift clocks | HPWL proxy (µm) | H_eff8 | Setup WNS (ns) | Initial GRT usage (%) |
+|---:|---:|---|---|---|---|---|---|
+{k_table}
 
-{figure_lines}
+K changes the number and location of fixed SI/SO ports, chain balance, exact parallel test time, physical proxy, activity concentration, routed timing and congestion together. Results are paired within design×physical-seed contexts; architecture variants are not counted as independent design samples.
 
-## Predeclared candidate learning gates
+## Conflict and replication
 
-| Gate | Status | Mechanical reason and counts |
+The frozen C3 test compares the physically best and H_eff8-best qualified methods inside each complete design-seed-K group. A hit requires at least 5% H_eff8 improvement with at least 10% physical penalty.
+
+| Design | Practical hits | Seeds with ≥1 hit | Physical penalty % | H_eff8 gain % |
+|---|---:|---:|---|---|
+{conflict_table}
+
+The seed replicas are conditional perturb-and-legalize placements around a source placement. Medians and IQRs are descriptive; no population p-values or independence claim is made.
+
+## Deterministic heuristics and intervention landscape
+
+| Method | Median physical regret | Physical IQR | Median activity regret | Activity IQR | Pareto memberships |
+|---|---:|---:|---:|---:|---:|
+{regret_table}
+
+C6 tests both each simple method and the frozen deterministic portfolio at 2% two-objective coverage. Its measured maximum single-method coverage is {analysis['gates']['C6']['max_simple_heuristic_coverage']:.3f}; portfolio coverage is {analysis['gates']['C6']['deterministic_portfolio_coverage']:.3f} over {analysis['gates']['C6']['complete_pairs']} complete groups.
+
+The C7 screen applies 20 predeclared, deterministic local swaps around every qualified P/K2 parent. Children preserve FF inventory and exact ATPG loading; their physical response is the port-aware HPWL proxy and is not called routed.
+
+| Design | Eligible swaps | Contexts passing both-sign rule | Negative ΔHPWL | Positive ΔHPWL | ΔHPWL median/IQR/range (µm) |
+|---|---:|---:|---:|---:|---|
+{intervention_table}
+
+## Frozen learning gates
+
+| Gate | Status | Exact mechanical reason and counts |
 |---|---|---|
 {gates}
 
-The [gate analysis](../artifacts/derived/phase0c/gate_analysis.json) is script-generated by `scripts/phase0c_classify.py`. C8 demonstrates a vast formal search space; it does not by itself demonstrate physical conflict, replicated effects or heuristic regret. The top-level classifier requires all C1–C8 to pass. A GO would only justify *investigating* a learned intervention model; it would not predict ML success.
+## Reproducible figures
 
-## Answers to the 28 required report questions
+The figure source dataset records hashes for every proxy, final route, execution manifest, analysis and intervention input. The figure manifest records each output and generator hash.
+
+{figure_lines}
+
+## Answers to the 28 required questions
 
 | # | Evidence-based answer |
 |---:|---|
 {question_rows}
 
-The current evidence does **not** demonstrate that investigating a learned intervention model is justified. The proper next step is physical-port/DRC qualification, freezing a final contract, then running paired seed/K/method routes under the saved cap before drawing a scientific Phase-0C conclusion.
+## Scientific conclusion
+
+**Has PACT demonstrated a problem for which investigating a learned intervention model is justified?** **{phase1_answer}** The conclusion follows the frozen C1–C9 contract and remains valid whether it is GO or NO-GO.
 
 `{analysis['classification']}`
 """
     target = ROOT / "reports/PACT_PHASE0C_REPORT.md"
-    target.write_text(text, encoding="utf-8")
-    (ROOT / "artifacts/derived/phase0c/gate_analysis.json").write_text(json.dumps(analysis, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    target.write_bytes(report.encode())
+    report_manifest = {
+        "schema_version": "phase0c-report-manifest-1",
+        "classification": analysis["classification"],
+        "report": target.relative_to(ROOT).as_posix(),
+        "report_sha256": sha256(target),
+        "sources": {path.relative_to(ROOT).as_posix(): sha256(path) for path in (
+            analysis_path, ROOT / "artifacts/manifests/phase0c/campaign_execution.json",
+            ROOT / "artifacts/manifests/phase0c/campaign_execution_interrupted.json",
+            ROOT / "artifacts/manifests/phase0c/campaign_recovery.json",
+            ROOT / "artifacts/derived/phase0c/figure_source_data.json",
+            ROOT / "reports/figures/phase0c/figures_manifest.json",
+            ROOT / "config/phase0c_campaign.json", ROOT / "config/phase0c_analysis_contract.json",
+            ROOT / "artifacts/manifests/phase0c/tool_qualification.json",
+            ROOT / "artifacts/manifests/phase0b/benchmark_manifest.json")},
+    }
+    manifest_path = ROOT / "artifacts/manifests/phase0c/report_manifest.json"
+    manifest_path.write_bytes((json.dumps(report_manifest, indent=2, sort_keys=True) + "\n").encode())
     print(json.dumps({"report": str(target), "classification": analysis["classification"],
-                      "sha256": hashlib.sha256(target.read_bytes()).hexdigest()}))
+                      "sha256": report_manifest["report_sha256"]}))
 
 
 if __name__ == "__main__":

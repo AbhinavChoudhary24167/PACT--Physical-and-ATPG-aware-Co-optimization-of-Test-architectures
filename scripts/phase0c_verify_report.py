@@ -33,12 +33,29 @@ def main() -> None:
     if broken:
         raise ValueError(f"Broken report links: {broken}")
     figures = json.loads((ROOT / "reports/figures/phase0c/figures_manifest.json").read_text())
+    if len(figures) < 17:
+        raise ValueError(f"Required at least 17 final figures, found {len(figures)}")
     for figure in figures:
         if sha(ROOT / figure["figure"]) != figure["sha256"]:
             raise ValueError("Figure hash mismatch")
         for source in figure["sources"]:
             if sha(ROOT / source["path"]) != source["sha256"]:
                 raise ValueError("Figure source changed since generation")
+    execution = json.loads((ROOT / "artifacts/manifests/phase0c/campaign_execution.json").read_text())
+    if execution.get("freeze_commit") is None or execution.get("planned_routes") != 375:
+        raise ValueError("Final campaign manifest is missing its frozen 375-row identity")
+    if not all((ROOT / path).is_file() and sha(ROOT / path) == expected
+               for path, expected in execution.get("frozen_input_sha256", {}).items()):
+        raise ValueError("Frozen final-campaign inputs changed")
+    recovery = json.loads((ROOT / "artifacts/manifests/phase0c/campaign_recovery.json").read_text())
+    if recovery.get("eligible_routes") != 348 or analysis.get("recovery", {}).get("errors"):
+        raise ValueError("Disk-floor recovery ledger is incomplete or invalid")
+    report_manifest = json.loads((ROOT / "artifacts/manifests/phase0c/report_manifest.json").read_text())
+    if report_manifest["report_sha256"] != sha(report):
+        raise ValueError("Report manifest hash mismatch")
+    if any(analysis["gates"].get(f"C{i}", {}).get("status") not in
+           ("PASS", "FAIL", "NOT QUALIFIED") for i in range(1, 10)):
+        raise ValueError("Gate status missing or invalid")
     lines = (ROOT / "artifacts/manifests/phase0c/phase0b_pre_edit.sha256").read_text().splitlines()
     mismatches = [path for line in lines for expected, path in [line.split("  ", 1)]
                   if not (ROOT / path).is_file() or sha(ROOT / path) != expected]
@@ -46,6 +63,8 @@ def main() -> None:
         raise ValueError(f"Frozen Phase-0B evidence changed: {mismatches[:5]}")
     print(json.dumps({"classification": analysis["classification"], "answers": 28,
                       "figures": len(figures), "phase0b_hashes_verified": len(lines),
+                      "freeze_commit": execution["freeze_commit"],
+                      "recovery_freeze_commit": recovery["recovery_freeze_commit"],
                       "report_sha256": sha(report)}))
 
 

@@ -2,21 +2,18 @@
   "DRC_errors": 0,
   "K": 1,
   "architecture_sha256": "44d44de765b5b6b8a4aed35f357cb6cddda12672cca1bf4ac40b0496483c8286",
+  "campaign_freeze_commit": "3e7b516a6a3b68950aad624b3474bf0c45b78b97",
   "design": "s5378",
   "exact_scan_only_routed_length_um": null,
   "method": "R",
   "physical_primary_um": 8513.565,
   "physical_seed": 11,
-  "postroute_verification": "artifacts/raw/phase0c/physical/s5378/s11/k1/R/routed_verification_v2.json",
+  "postroute_verification": "artifacts/raw/phase0c/physical/s5378/s11/k1/R/routed_verification.json",
   "rewire_script_sha256": "7f655d611891fe7ec74370fd2598cfb12ee5f1babd6d976c109ac158014763dc",
   "routed_full_scan_path_net_length_upper_bound_um": 11159.64,
   "routed_odb_archive": "artifacts/raw/phase0c/physical/s5378/s11/k1/R/5_2_route.odb.gz",
   "routed_odb_gzip_sha256": "2babf9bea5b9fdb850b86937ee365dffeeeeccdc167d1ecd59c99e5d8c7607e5",
   "routed_odb_sha256": "a14d7b87ec4d9954643ec9aea08e7cf443628cfeebac42f39e6ceef21c6d172f",
-  "scan_hpwl_proxy_components_um": {
-    "SI_SO_port_links": 165.13500000000002,
-    "internal_ff": 8348.43
-  },
   "scan_hpwl_proxy_um": 8513.565,
   "source_placement_odb": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
   "status": "QUALIFIED",
@@ -105,7 +102,7 @@
         }
       },
       "quantity_type": "reported routing resource/demand and overflow, not detailed-route congestion",
-      "source_stdout_sha256": "682fc61ab9f23d47c71610a6e4cfcb9add26a2a9ded1704ccd716bb3923dde3b",
+      "source_stdout_sha256": "f10d5da174c7ca5e5ae5cfe360d773fab0b0f49f81e303795fe7bf7e45a665c9",
       "stage": "initial_global_route_before_incremental_repairs",
       "total": {
         "demand": 11326,
@@ -146,5 +143,5 @@
     "timing_stage": "global_route",
     "total_detailed_route_wirelength_um": 32711
   },
-  "variant": "phase0c_s11_k1_R_44d44de7_7f655d61"
+  "variant": "phase0c_f3e7b516a_s11_k1_R_44d44de7_7f655d61"
 }

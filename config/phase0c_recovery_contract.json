@@ -1,0 +1,21 @@
+{
+  "schema_version": "phase0c-recovery-1",
+  "status": "FROZEN_FOR_DISK_FLOOR_RECOVERY",
+  "reason": "The frozen campaign stopped after 3353.453573 seconds because workspace free space fell below 536870912 bytes; no route failure or outcome-based selection triggered recovery",
+  "original_campaign_manifest": "artifacts/manifests/phase0c/campaign_execution_interrupted.json",
+  "original_campaign_manifest_sha256": "5907a04fd4a1e23cd599e49918a3c191c327073d5d6cc1cae16f315af4ce2104",
+  "original_freeze_commit": "3e7b516a6a3b68950aad624b3474bf0c45b78b97",
+  "original_status": "CAP_REACHED",
+  "original_qualified_routes": 27,
+  "eligible_original_status": "WORKSPACE_DISK_FLOOR_REACHED",
+  "eligible_routes": 348,
+  "original_session_elapsed_s": 3353,
+  "original_campaign_cap_s": 72000,
+  "recovery_cap_s": 68647,
+  "cap_derivation": "72000 minus floor(original finished_utc - started_utc); the two execution-session wall times may not exceed the original 20-hour budget",
+  "per_run_timeout_s": 900,
+  "minimum_workspace_free_bytes_before_route": 536870912,
+  "route_variant_policy": "Use the original freeze commit in every route variant and route record; the recovery commit identifies only the immutable recovery ledger and code",
+  "analysis_policy": "C1-C9 thresholds and original frozen inputs are unchanged. Final eligibility requires an exact, nonoverlapping union of the 27 original qualified rows and the recovery ledger for the 348 predeclared disk-floor rows.",
+  "outcome_selection_prohibited": true
+}
