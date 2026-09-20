@@ -45,7 +45,8 @@ def deterministic_run_id(*parts: Any) -> str:
 def atomic_write_json(path: Path, value: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
-    temporary.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    with temporary.open("w", encoding="utf-8", newline="\n") as stream:
+        stream.write(json.dumps(value, indent=2, sort_keys=True) + "\n")
     os.replace(temporary, path)
 
 
@@ -145,5 +146,6 @@ def write_status(json_path: Path, markdown_path: Path, status: dict[str, Any]) -
     atomic_write_json(json_path, payload)
     markdown_path.parent.mkdir(parents=True, exist_ok=True)
     temporary = markdown_path.with_suffix(markdown_path.suffix + ".tmp")
-    temporary.write_text("\n".join(lines), encoding="utf-8")
+    with temporary.open("w", encoding="utf-8", newline="\n") as stream:
+        stream.write("\n".join(lines))
     os.replace(temporary, markdown_path)

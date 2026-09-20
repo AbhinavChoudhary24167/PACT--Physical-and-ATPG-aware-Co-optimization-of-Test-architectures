@@ -33,4 +33,5 @@ def test_source_hashes_cover_frozen_search_components() -> None:
     assert all(len(value) == 64 for value in hashes.values())
     scientific = pilot._scientific_source_hashes()
     assert "scripts/phase0d_pilot.py" not in scientific
+    assert "src/pact/phase0d/campaign.py" not in scientific
     assert pilot._sources_compatible(hashes)

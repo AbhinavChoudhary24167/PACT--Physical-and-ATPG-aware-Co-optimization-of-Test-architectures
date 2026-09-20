@@ -99,7 +99,9 @@ def main() -> int:
         "dependency_records": dependency_records,
     }
     output_dir.mkdir(parents=True, exist_ok=True)
-    (output_dir / "phase0c_evidence.sha256").write_text("\n".join(digest_lines) + "\n", encoding="utf-8")
+    digest_path = output_dir / "phase0c_evidence.sha256"
+    with digest_path.open("w", encoding="utf-8", newline="\n") as stream:
+        stream.write("\n".join(digest_lines) + "\n")
     atomic_write_json(output_dir / "phase0c_audit.json", audit)
     print(json.dumps({key: audit[key] for key in (
         "starting_branch", "starting_commit", "phase0c_decision", "tracked_phase0c_file_count",

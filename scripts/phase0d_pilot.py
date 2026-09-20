@@ -72,6 +72,7 @@ def _source_hashes() -> dict[str, str]:
 def _scientific_source_hashes() -> dict[str, str]:
     hashes = _source_hashes()
     hashes.pop("scripts/phase0d_pilot.py")
+    hashes.pop("src/pact/phase0d/campaign.py")
     return hashes
 
 
@@ -286,7 +287,7 @@ def _metrics_csv(operator_screen: dict, searches: dict[str, dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(".csv.tmp")
     with temporary.open("w", newline="", encoding="utf-8") as stream:
-        writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     temporary.replace(path)
@@ -455,7 +456,9 @@ The naive full 60-context x four-optimizer x maximum-budget matrix is therefore 
 
 This is one ISCAS89-scale context, not a cross-seed or cross-design result. H_eff is a dimensionless proxy; shift-mode power and test-mode IR drop remain unavailable. A completed pilot does not evaluate D4-D6 and cannot establish either Phase-0D final decision. No ML model was trained.
 """
-    (REPORTS / "PILOT_REPORT.md").write_text(report, encoding="utf-8")
+    report_path = REPORTS / "PILOT_REPORT.md"
+    with report_path.open("w", encoding="utf-8", newline="\n") as stream:
+        stream.write(report)
     summary = {
         "schema_version": "phase0d-pilot-summary-1",
         "status": pilot_status,
