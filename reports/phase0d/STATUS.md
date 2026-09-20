@@ -1,0 +1,21 @@
+# PACT Phase-0D Status
+
+- Timestamp: `2026-09-20T19:10:33.328945+00:00`
+- Git commit: `81f1cb35973f40a00a340a02a7627a05e598f5aa`
+- Campaign ID: `phase0d-pilot-1785bd6ca436`
+- Current phase: `PILOT_COMPLETE`
+- Total planned contexts: `1`
+- Completed contexts: `1`
+- Qualified contexts: `1`
+- Failed contexts: `0`
+- Current design: `s5378`
+- Current seed: `11`
+- Current K: `2`
+- Current optimizer: `None`
+- Proxy evaluations completed: `39`
+- Routed evaluations completed: `0`
+- Elapsed wall time (s): `2.3440000000045984`
+- Estimated remaining time (s): `0`
+- Free disk bytes: `12357255168`
+- Latest error: `None`
+- Next expected step: `freeze reduced-campaign thresholds`

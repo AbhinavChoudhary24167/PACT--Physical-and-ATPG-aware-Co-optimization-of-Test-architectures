@@ -1,0 +1,771 @@
+{
+  "analytical_neighborhood_sizes": {
+    "block_relocation": 61964,
+    "cross_chain_block_move": 63710,
+    "cross_chain_move": 16199,
+    "cross_chain_swap": 8010,
+    "endpoint_reassignment": 354,
+    "swap": 7921,
+    "two_opt": 7921
+  },
+  "context": "s5378/s11/k2",
+  "contract_sha256": "1785bd6ca4367bb3bace9fffb7fff2ef66d03b7b9fa27b1317d157370fd7b5ad",
+  "entries": [
+    {
+      "evaluation_metadata": {
+        "H_eff16": 37.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "candidate_directory": "artifacts/derived/phase0d/pilot/s5378/s11/k2/candidates/c2b9ff9172278c29156a70ae7fc5ee345ca6a79387043ba6b618d87763bfc50a",
+        "evaluation_wall_seconds": 1.3982324000025983,
+        "operator": "swap",
+        "peak_simultaneous_toggles": 106.0,
+        "proxy_sha256": "69a858ffc9c56e9b939c43bab3d0a5b7d6e05da062ca84e18199e1fcfd3c09f5",
+        "status": "EXECUTED_NEW",
+        "total_shift_toggles": 936237
+      },
+      "objective_delta_from_start": [
+        95.77999999999997,
+        1.5,
+        0.0
+      ],
+      "objectives": [
+        1476.6100000000001,
+        64.83333333333333,
+        10530.0
+      ],
+      "operation": {
+        "chain": 0,
+        "i": 59,
+        "j": 11,
+        "type": "swap"
+      },
+      "operator_record": {
+        "added_edges": [
+          [
+            "U_n1588gat",
+            "U_n2658gat"
+          ],
+          [
+            "U_n1678gat",
+            "U_n2029gat"
+          ],
+          [
+            "U_n2029gat",
+            "U_n1871gat"
+          ],
+          [
+            "U_n2033gat",
+            "U_n1588gat"
+          ]
+        ],
+        "affected_FFs": [
+          "U_n2029gat",
+          "U_n1588gat"
+        ],
+        "chain_lengths_after": [
+          90,
+          89
+        ],
+        "chain_lengths_before": [
+          90,
+          89
+        ],
+        "changes_K": false,
+        "child_sha256": "c2b9ff9172278c29156a70ae7fc5ee345ca6a79387043ba6b618d87763bfc50a",
+        "constraints": {
+          "maximum_block_length": 4,
+          "maximum_chain_length_difference": 2,
+          "minimum_chain_length": 8
+        },
+        "legal": true,
+        "operation": {
+          "chain": 0,
+          "i": 59,
+          "j": 11,
+          "type": "swap"
+        },
+        "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+        "removed_edges": [
+          [
+            "U_n1588gat",
+            "U_n1871gat"
+          ],
+          [
+            "U_n1678gat",
+            "U_n1588gat"
+          ],
+          [
+            "U_n2029gat",
+            "U_n2658gat"
+          ],
+          [
+            "U_n2033gat",
+            "U_n2029gat"
+          ]
+        ],
+        "requires_SI_SO_recalculation": false,
+        "schema_version": "phase0d-operator-record-1",
+        "type": "swap"
+      }
+    },
+    {
+      "evaluation_metadata": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "candidate_directory": "artifacts/derived/phase0d/pilot/s5378/s11/k2/candidates/dab3c24e294ec0cf1e606663ba0c46b7a3caf36cc4341c72eb832be8d80b3353",
+        "evaluation_wall_seconds": 1.350690500003111,
+        "operator": "two_opt",
+        "peak_simultaneous_toggles": 108.0,
+        "proxy_sha256": "5683a5498bde1497126be4bc4b45fb6fd00761e3fa4e84159823d7ec6c71b928",
+        "status": "EXECUTED_NEW",
+        "total_shift_toggles": 939943
+      },
+      "objective_delta_from_start": [
+        4.460000000000036,
+        2.0,
+        0.0
+      ],
+      "objectives": [
+        1385.2900000000002,
+        65.33333333333333,
+        10530.0
+      ],
+      "operation": {
+        "chain": 1,
+        "i": 10,
+        "j": 13,
+        "type": "two_opt"
+      },
+      "operator_record": {
+        "added_edges": [
+          [
+            "U_n152gat",
+            "U_n838gat"
+          ],
+          [
+            "U_n156gat",
+            "U_n707gat"
+          ],
+          [
+            "U_n470gat",
+            "U_n152gat"
+          ],
+          [
+            "U_n707gat",
+            "U_n470gat"
+          ],
+          [
+            "U_n838gat",
+            "U_n2203gat"
+          ]
+        ],
+        "affected_FFs": [
+          "U_n838gat",
+          "U_n152gat",
+          "U_n470gat",
+          "U_n707gat"
+        ],
+        "chain_lengths_after": [
+          90,
+          89
+        ],
+        "chain_lengths_before": [
+          90,
+          89
+        ],
+        "changes_K": false,
+        "child_sha256": "dab3c24e294ec0cf1e606663ba0c46b7a3caf36cc4341c72eb832be8d80b3353",
+        "constraints": {
+          "maximum_block_length": 4,
+          "maximum_chain_length_difference": 2,
+          "minimum_chain_length": 8
+        },
+        "legal": true,
+        "operation": {
+          "chain": 1,
+          "i": 10,
+          "j": 13,
+          "type": "two_opt"
+        },
+        "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+        "removed_edges": [
+          [
+            "U_n152gat",
+            "U_n470gat"
+          ],
+          [
+            "U_n156gat",
+            "U_n838gat"
+          ],
+          [
+            "U_n470gat",
+            "U_n707gat"
+          ],
+          [
+            "U_n707gat",
+            "U_n2203gat"
+          ],
+          [
+            "U_n838gat",
+            "U_n152gat"
+          ]
+        ],
+        "requires_SI_SO_recalculation": false,
+        "schema_version": "phase0d-operator-record-1",
+        "type": "two_opt"
+      }
+    },
+    {
+      "evaluation_metadata": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "candidate_directory": "artifacts/derived/phase0d/pilot/s5378/s11/k2/candidates/388c04ce9bbeea95c2db7812ada74b41e82a4dff7f1bbb60943397a621359aca",
+        "evaluation_wall_seconds": 1.31468699999823,
+        "operator": "block_relocation",
+        "peak_simultaneous_toggles": 107.0,
+        "proxy_sha256": "ff6477ae7a363fdcba7fee3082fcc9181416a67c52a54334940f2515f1b4eba6",
+        "status": "EXECUTED_NEW",
+        "total_shift_toggles": 942977
+      },
+      "objective_delta_from_start": [
+        89.83999999999992,
+        1.0,
+        0.0
+      ],
+      "objectives": [
+        1470.67,
+        64.33333333333333,
+        10530.0
+      ],
+      "operation": {
+        "chain": 1,
+        "length": 4,
+        "start": 9,
+        "to_index": 77,
+        "type": "block_relocation"
+      },
+      "operator_record": {
+        "added_edges": [
+          [
+            "U_n283gat",
+            "U_n156gat"
+          ],
+          [
+            "U_n470gat",
+            "U_n160gat"
+          ],
+          [
+            "U_n834gat",
+            "U_n707gat"
+          ]
+        ],
+        "affected_FFs": [
+          "U_n156gat",
+          "U_n838gat",
+          "U_n152gat",
+          "U_n470gat"
+        ],
+        "chain_lengths_after": [
+          90,
+          89
+        ],
+        "chain_lengths_before": [
+          90,
+          89
+        ],
+        "changes_K": false,
+        "child_sha256": "388c04ce9bbeea95c2db7812ada74b41e82a4dff7f1bbb60943397a621359aca",
+        "constraints": {
+          "maximum_block_length": 4,
+          "maximum_chain_length_difference": 2,
+          "minimum_chain_length": 8
+        },
+        "legal": true,
+        "operation": {
+          "chain": 1,
+          "length": 4,
+          "start": 9,
+          "to_index": 77,
+          "type": "block_relocation"
+        },
+        "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+        "removed_edges": [
+          [
+            "U_n283gat",
+            "U_n160gat"
+          ],
+          [
+            "U_n470gat",
+            "U_n707gat"
+          ],
+          [
+            "U_n834gat",
+            "U_n156gat"
+          ]
+        ],
+        "requires_SI_SO_recalculation": false,
+        "schema_version": "phase0d-operator-record-1",
+        "type": "block_relocation"
+      }
+    },
+    {
+      "evaluation_metadata": {
+        "H_eff16": 37.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "candidate_directory": "artifacts/derived/phase0d/pilot/s5378/s11/k2/candidates/44c13d4165dbe40be6b66f30f1734e01e0c4d76ee7a2ddc01330b927ddf1dad3",
+        "evaluation_wall_seconds": 1.3190280999988317,
+        "operator": "cross_chain_move",
+        "peak_simultaneous_toggles": 109.0,
+        "proxy_sha256": "152f9aa06de20dc12de3fbe8d84be08297fbf015b7deedffa030c8f2b3d18cbe",
+        "status": "EXECUTED_NEW",
+        "total_shift_toggles": 939569
+      },
+      "objective_delta_from_start": [
+        54.33999999999992,
+        2.1666666666666714,
+        0.0
+      ],
+      "objectives": [
+        1435.17,
+        65.5,
+        10530.0
+      ],
+      "operation": {
+        "from_chain": 0,
+        "index": 84,
+        "to_chain": 1,
+        "to_index": 70,
+        "type": "cross_chain_move"
+      },
+      "operator_record": {
+        "added_edges": [
+          [
+            "U_n2207gat",
+            "U_n2347gat"
+          ],
+          [
+            "U_n2440gat",
+            "U_n2476gat"
+          ],
+          [
+            "U_n398gat",
+            "U_n2440gat"
+          ]
+        ],
+        "affected_FFs": [
+          "U_n2440gat"
+        ],
+        "chain_lengths_after": [
+          89,
+          90
+        ],
+        "chain_lengths_before": [
+          90,
+          89
+        ],
+        "changes_K": false,
+        "child_sha256": "44c13d4165dbe40be6b66f30f1734e01e0c4d76ee7a2ddc01330b927ddf1dad3",
+        "constraints": {
+          "maximum_block_length": 4,
+          "maximum_chain_length_difference": 2,
+          "minimum_chain_length": 8
+        },
+        "legal": true,
+        "operation": {
+          "from_chain": 0,
+          "index": 84,
+          "to_chain": 1,
+          "to_index": 70,
+          "type": "cross_chain_move"
+        },
+        "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+        "removed_edges": [
+          [
+            "U_n2207gat",
+            "U_n2440gat"
+          ],
+          [
+            "U_n2440gat",
+            "U_n2347gat"
+          ],
+          [
+            "U_n398gat",
+            "U_n2476gat"
+          ]
+        ],
+        "requires_SI_SO_recalculation": false,
+        "schema_version": "phase0d-operator-record-1",
+        "type": "cross_chain_move"
+      }
+    },
+    {
+      "evaluation_metadata": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "candidate_directory": "artifacts/derived/phase0d/pilot/s5378/s11/k2/candidates/a7c702888b60e31d681e20f258a1de0215c754087b742be492483892fb52024b",
+        "evaluation_wall_seconds": 1.3038059000027715,
+        "operator": "cross_chain_swap",
+        "peak_simultaneous_toggles": 108.0,
+        "proxy_sha256": "913ec050282bf240ff3d8d1e7b090ac295b80b7cd123105d20d665026a36aa32",
+        "status": "EXECUTED_NEW",
+        "total_shift_toggles": 944043
+      },
+      "objective_delta_from_start": [
+        145.15999999999985,
+        1.5,
+        0.0
+      ],
+      "objectives": [
+        1525.99,
+        64.83333333333333,
+        10530.0
+      ],
+      "operation": {
+        "from_chain": 1,
+        "from_index": 49,
+        "to_chain": 0,
+        "to_index": 63,
+        "type": "cross_chain_swap"
+      },
+      "operator_record": {
+        "added_edges": [
+          [
+            "U_n2179gat",
+            "U_n883gat"
+          ],
+          [
+            "U_n2309gat",
+            "U_n680gat"
+          ],
+          [
+            "U_n580gat",
+            "U_n2179gat"
+          ],
+          [
+            "U_n680gat",
+            "U_n2506gat"
+          ]
+        ],
+        "affected_FFs": [
+          "U_n680gat",
+          "U_n2179gat"
+        ],
+        "chain_lengths_after": [
+          90,
+          89
+        ],
+        "chain_lengths_before": [
+          90,
+          89
+        ],
+        "changes_K": false,
+        "child_sha256": "a7c702888b60e31d681e20f258a1de0215c754087b742be492483892fb52024b",
+        "constraints": {
+          "maximum_block_length": 4,
+          "maximum_chain_length_difference": 2,
+          "minimum_chain_length": 8
+        },
+        "legal": true,
+        "operation": {
+          "from_chain": 1,
+          "from_index": 49,
+          "to_chain": 0,
+          "to_index": 63,
+          "type": "cross_chain_swap"
+        },
+        "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+        "removed_edges": [
+          [
+            "U_n2179gat",
+            "U_n2506gat"
+          ],
+          [
+            "U_n2309gat",
+            "U_n2179gat"
+          ],
+          [
+            "U_n580gat",
+            "U_n680gat"
+          ],
+          [
+            "U_n680gat",
+            "U_n883gat"
+          ]
+        ],
+        "requires_SI_SO_recalculation": false,
+        "schema_version": "phase0d-operator-record-1",
+        "type": "cross_chain_swap"
+      }
+    },
+    {
+      "evaluation_metadata": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "candidate_directory": "artifacts/derived/phase0d/pilot/s5378/s11/k2/candidates/2fb2b4ff3d98f206f91c6cd482447f7a7b6b63b2fcea02b38f875336a5458ade",
+        "evaluation_wall_seconds": 1.39715779999824,
+        "operator": "endpoint_reassignment",
+        "peak_simultaneous_toggles": 108.0,
+        "proxy_sha256": "09e6634cd4b544526113ada6e113923c119ce5350aa43425b90f39c2f0dd35e1",
+        "status": "EXECUTED_NEW",
+        "total_shift_toggles": 940655
+      },
+      "objective_delta_from_start": [
+        186.33999999999992,
+        0.0,
+        0.0
+      ],
+      "objectives": [
+        1567.17,
+        63.33333333333333,
+        10530.0
+      ],
+      "operation": {
+        "chain": 1,
+        "endpoint": "SO",
+        "index": 73,
+        "type": "endpoint_reassignment"
+      },
+      "operator_record": {
+        "added_edges": [
+          [
+            "U_n1026gat",
+            "SO:C01"
+          ],
+          [
+            "U_n2270gat",
+            "U_n1026gat"
+          ],
+          [
+            "U_n2339gat",
+            "U_n275gat"
+          ],
+          [
+            "U_n2526gat",
+            "U_n2339gat"
+          ]
+        ],
+        "affected_FFs": [
+          "U_n2339gat",
+          "U_n1026gat"
+        ],
+        "chain_lengths_after": [
+          90,
+          89
+        ],
+        "chain_lengths_before": [
+          90,
+          89
+        ],
+        "changes_K": false,
+        "child_sha256": "2fb2b4ff3d98f206f91c6cd482447f7a7b6b63b2fcea02b38f875336a5458ade",
+        "constraints": {
+          "maximum_block_length": 4,
+          "maximum_chain_length_difference": 2,
+          "minimum_chain_length": 8
+        },
+        "legal": true,
+        "operation": {
+          "chain": 1,
+          "endpoint": "SO",
+          "index": 73,
+          "type": "endpoint_reassignment"
+        },
+        "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+        "removed_edges": [
+          [
+            "U_n1026gat",
+            "U_n275gat"
+          ],
+          [
+            "U_n2270gat",
+            "U_n2339gat"
+          ],
+          [
+            "U_n2339gat",
+            "SO:C01"
+          ],
+          [
+            "U_n2526gat",
+            "U_n1026gat"
+          ]
+        ],
+        "requires_SI_SO_recalculation": true,
+        "schema_version": "phase0d-operator-record-1",
+        "type": "endpoint_reassignment"
+      }
+    },
+    {
+      "evaluation_metadata": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "candidate_directory": "artifacts/derived/phase0d/pilot/s5378/s11/k2/candidates/dc3412752c19e7db1dc6d33c0cd2722237ffadf4d0e1b078fa044e30729507ed",
+        "evaluation_wall_seconds": 1.339704600002733,
+        "operator": "cross_chain_block_move",
+        "peak_simultaneous_toggles": 107.0,
+        "proxy_sha256": "6a4486e95269187468c9fb057ea7635db858eb101cd9de1f3581e1537702a629",
+        "status": "EXECUTED_NEW",
+        "total_shift_toggles": 943559
+      },
+      "objective_delta_from_start": [
+        55.319999999999936,
+        1.6666666666666714,
+        0.0
+      ],
+      "objectives": [
+        1436.15,
+        65.0,
+        10530.0
+      ],
+      "operation": {
+        "from_chain": 0,
+        "length": 1,
+        "start": 62,
+        "to_chain": 1,
+        "to_index": 31,
+        "type": "cross_chain_block_move"
+      },
+      "operator_record": {
+        "added_edges": [
+          [
+            "U_n2309gat",
+            "U_n1226gat"
+          ],
+          [
+            "U_n2588gat",
+            "U_n2309gat"
+          ],
+          [
+            "U_n271gat",
+            "U_n2179gat"
+          ]
+        ],
+        "affected_FFs": [
+          "U_n2309gat"
+        ],
+        "chain_lengths_after": [
+          89,
+          90
+        ],
+        "chain_lengths_before": [
+          90,
+          89
+        ],
+        "changes_K": false,
+        "child_sha256": "dc3412752c19e7db1dc6d33c0cd2722237ffadf4d0e1b078fa044e30729507ed",
+        "constraints": {
+          "maximum_block_length": 4,
+          "maximum_chain_length_difference": 2,
+          "minimum_chain_length": 8
+        },
+        "legal": true,
+        "operation": {
+          "from_chain": 0,
+          "length": 1,
+          "start": 62,
+          "to_chain": 1,
+          "to_index": 31,
+          "type": "cross_chain_block_move"
+        },
+        "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+        "removed_edges": [
+          [
+            "U_n2309gat",
+            "U_n2179gat"
+          ],
+          [
+            "U_n2588gat",
+            "U_n1226gat"
+          ],
+          [
+            "U_n271gat",
+            "U_n2309gat"
+          ]
+        ],
+        "requires_SI_SO_recalculation": false,
+        "schema_version": "phase0d-operator-record-1",
+        "type": "cross_chain_block_move"
+      }
+    }
+  ],
+  "operator_catalog": {
+    "block_relocation": {
+      "balance_effect": "none",
+      "changes_K": false,
+      "generation_complexity": "O(n_i) apply; O(B) sampling",
+      "legality": "remove a bounded contiguous block and reinsert at a position that changes the chain",
+      "name": "block_relocation",
+      "neighborhood_size": "O(sum_i n_i^2 * L), L is frozen maximum block length",
+      "requires_SI_SO_recalculation": true
+    },
+    "cross_chain_block_move": {
+      "balance_effect": "changes two chain lengths by block length",
+      "changes_K": false,
+      "generation_complexity": "O(n_i+n_j) apply; O(B) sampling",
+      "legality": "move a bounded contiguous block between chains while preserving minimum length and balance bound",
+      "name": "cross_chain_block_move",
+      "neighborhood_size": "O(sum_(i!=j) n_i*n_j*L), before legality filtering",
+      "requires_SI_SO_recalculation": true
+    },
+    "cross_chain_move": {
+      "balance_effect": "changes two chain lengths by one",
+      "changes_K": false,
+      "generation_complexity": "O(n_i+n_j) apply; O(B) sampling",
+      "legality": "move one FF between distinct chains while preserving minimum length and balance bound",
+      "name": "cross_chain_move",
+      "neighborhood_size": "sum_(i!=j) n_i(n_j+1), before legality filtering",
+      "requires_SI_SO_recalculation": true
+    },
+    "cross_chain_swap": {
+      "balance_effect": "none",
+      "changes_K": false,
+      "generation_complexity": "O(1) apply; O(B) sampling",
+      "legality": "exchange one FF in each of two distinct chains",
+      "name": "cross_chain_swap",
+      "neighborhood_size": "sum_(i<j) n_i*n_j",
+      "requires_SI_SO_recalculation": true
+    },
+    "endpoint_reassignment": {
+      "balance_effect": "none",
+      "changes_K": false,
+      "generation_complexity": "O(1) apply; O(B) sampling",
+      "legality": "exchange an SI- or SO-adjacent FF with a nonidentical position in the same chain",
+      "name": "endpoint_reassignment",
+      "neighborhood_size": "sum_i 2(n_i-1)",
+      "requires_SI_SO_recalculation": true
+    },
+    "swap": {
+      "balance_effect": "none",
+      "changes_K": false,
+      "generation_complexity": "O(1) apply; O(B) bounded sampling",
+      "legality": "two distinct positions in one legal chain",
+      "name": "swap",
+      "neighborhood_size": "sum_i binomial(n_i,2)",
+      "requires_SI_SO_recalculation": true
+    },
+    "two_opt": {
+      "balance_effect": "none",
+      "changes_K": false,
+      "generation_complexity": "O(segment length) apply; O(B) sampling",
+      "legality": "reverse a nontrivial inclusive segment in one chain",
+      "name": "two_opt",
+      "neighborhood_size": "sum_i binomial(n_i,2)",
+      "requires_SI_SO_recalculation": true
+    }
+  },
+  "schema_version": "phase0d-operator-screen-1",
+  "source_sha256": {
+    "config/phase0d_pilot_contract.json": "1785bd6ca4367bb3bace9fffb7fff2ef66d03b7b9fa27b1317d157370fd7b5ad",
+    "scripts/phase0d_pilot.py": "37fa6a5ea7e1672fdccd26ceea75f748d97adb113bca80b77e9523dcb680bcf2",
+    "src/pact/phase0d/campaign.py": "c9bbadf1912c318faf998c799d9da8a44539f6b28b7dd02f3f187397e5ecd4b0",
+    "src/pact/phase0d/funnel.py": "3d6bb0645506094031110e996f5dcf1d4a6aea562ac7c47a9262f02eda76fb04",
+    "src/pact/phase0d/pareto.py": "c666aed2dec0b21adc7a7cbd09f48d213785dda04bebd7ac8c1575d7bea554fe",
+    "src/pact/phase0d/search.py": "41ba70ba08eb64d2204d1518df9cdc9134156735e9578295fbf306a166eb8d89",
+    "src/pact/scan/phase0d_operators.py": "326769308fe8b4272a65a4375bae8eace76a3b2b5eabb497fecef8ed695bbfff"
+  },
+  "start_architecture_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+  "start_objectives": [
+    1380.8300000000002,
+    63.33333333333333,
+    10530.0
+  ]
+}

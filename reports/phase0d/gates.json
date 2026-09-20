@@ -1,0 +1,32 @@
+{
+  "schema_version": "phase0d-pilot-gates-1",
+  "status": "PILOT_ONLY_NO_FINAL_DECISION",
+  "final_decision": null,
+  "D1": {
+    "status": "PASS_FOR_PILOT",
+    "reason": "pilot contract, Phase-0C audit, all required operator proofs, four search results, manifest, status, metrics and runtime/storage projection are complete"
+  },
+  "D2": {
+    "status": "NOT_DEMONSTRATED_IN_PILOT",
+    "reason": "all seven one-step preflight children had nonnegative physical and H_eff8 deltas relative to the P start; one context cannot establish replication"
+  },
+  "D3": {
+    "status": "NOT_DEMONSTRATED_IN_PILOT",
+    "reason": "no bounded optimizer discovered a new nondominated architecture beyond its P start"
+  },
+  "D4": {"status": "NOT_EVALUATED", "reason": "pilot contains one physical seed"},
+  "D5": {"status": "NOT_EVALUATED", "reason": "pilot contains one design"},
+  "D6": {"status": "NOT_EVALUATED", "reason": "no proxy-nondominated child qualified for new routing"},
+  "D7": {
+    "status": "HISTORICAL_EVIDENCE_ONLY",
+    "reason": "375 reused Phase-0C successful routes have median runtime 109.18433516299996 seconds; no new dominated child was routed"
+  },
+  "D8": {
+    "status": "PASS_FOR_PILOT",
+    "reason": "analytical neighborhood sizes, bounded generation timing, proxy timing, historical route timing and storage projection are recorded"
+  },
+  "D9": {
+    "status": "NOT_EVALUATED",
+    "reason": "pilot evidence cannot issue PACT_PHASE0D_LEARNING_OPPORTUNITY_ESTABLISHED or PACT_PHASE0D_LEARNING_OPPORTUNITY_NOT_ESTABLISHED"
+  }
+}

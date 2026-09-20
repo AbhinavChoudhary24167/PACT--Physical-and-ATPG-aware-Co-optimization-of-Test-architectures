@@ -1,0 +1,1217 @@
+{
+  "accepted_moves": 0,
+  "config": {
+    "annealing_final_temperature": 0.01,
+    "annealing_initial_temperature": 0.25,
+    "beam_width": 3,
+    "candidate_batch_size": 8,
+    "hypervolume_window": 8,
+    "minimum_relative_hypervolume_improvement": 0.005,
+    "plateau_legal_evaluations": 8,
+    "proposal_seed": 101,
+    "proxy_budget": 16,
+    "wall_clock_seconds": 120
+  },
+  "context": "s5378/s11/k2",
+  "contract_sha256": "1785bd6ca4367bb3bace9fffb7fff2ef66d03b7b9fa27b1317d157370fd7b5ad",
+  "duplicate_candidates": 0,
+  "final_hypervolume": 0.7043478260869565,
+  "frozen_bounds": {
+    "ideal": [
+      1380.8300000000002,
+      60.5,
+      10530.0
+    ],
+    "reference": [
+      10426.805,
+      70.08333333333331,
+      11583.0
+    ]
+  },
+  "invalid_candidates": 0,
+  "legal_candidates": 8,
+  "method": "beam_search",
+  "pareto_archive": [
+    {
+      "architecture_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+      "metadata": {
+        "method": "P",
+        "source": "artifacts/derived/phase0c/s5378/s11/k2/P.architecture.json",
+        "status": "REUSED_VERIFIED"
+      },
+      "objectives": [
+        1380.8300000000002,
+        63.33333333333333,
+        10530.0
+      ]
+    }
+  ],
+  "proposed_candidates": 8,
+  "proxy_evaluations": 8,
+  "rejected_moves": 8,
+  "routed_evaluations": 0,
+  "schema_version": "phase0d-search-result-1",
+  "source_sha256": {
+    "config/phase0d_pilot_contract.json": "1785bd6ca4367bb3bace9fffb7fff2ef66d03b7b9fa27b1317d157370fd7b5ad",
+    "scripts/phase0d_pilot.py": "37fa6a5ea7e1672fdccd26ceea75f748d97adb113bca80b77e9523dcb680bcf2",
+    "src/pact/phase0d/campaign.py": "c9bbadf1912c318faf998c799d9da8a44539f6b28b7dd02f3f187397e5ecd4b0",
+    "src/pact/phase0d/funnel.py": "3d6bb0645506094031110e996f5dcf1d4a6aea562ac7c47a9262f02eda76fb04",
+    "src/pact/phase0d/pareto.py": "c666aed2dec0b21adc7a7cbd09f48d213785dda04bebd7ac8c1575d7bea554fe",
+    "src/pact/phase0d/search.py": "41ba70ba08eb64d2204d1518df9cdc9134156735e9578295fbf306a166eb8d89",
+    "src/pact/scan/phase0d_operators.py": "326769308fe8b4272a65a4375bae8eace76a3b2b5eabb497fecef8ed695bbfff"
+  },
+  "start_architecture_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+  "start_objectives": [
+    1380.8300000000002,
+    63.33333333333333,
+    10530.0
+  ],
+  "stop_reason": "PARETO_PLATEAU",
+  "trace": [
+    {
+      "accepted_move": false,
+      "child_sha256": "e53746570a6403231cfd0735a1b2a143e4291107ef52a87d4dc4965081a76ff3",
+      "evaluation_index": 1,
+      "evaluation_seconds": 0.0,
+      "event": "PROXY_EVALUATION",
+      "hypervolume_after": 0.7043478260869565,
+      "hypervolume_before": 0.7043478260869565,
+      "metadata": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "candidate_directory": "artifacts/derived/phase0d/pilot/s5378/s11/k2/candidates/e53746570a6403231cfd0735a1b2a143e4291107ef52a87d4dc4965081a76ff3",
+        "evaluation_wall_seconds": 0.0,
+        "operator": "swap",
+        "peak_simultaneous_toggles": 108.0,
+        "proxy_sha256": "fd61e5f3d973b213f4b1035f3a422f82cd87cd723238fcfeb678854535247a21",
+        "status": "REUSED_VERIFIED",
+        "total_shift_toggles": 944781
+      },
+      "objectives": [
+        1495.3500000000001,
+        63.33333333333333,
+        10530.0
+      ],
+      "operation": {
+        "chain": 0,
+        "i": 65,
+        "j": 52,
+        "type": "swap"
+      },
+      "operator_record": {
+        "added_edges": [
+          [
+            "U_n1825gat",
+            "U_n1389gat"
+          ],
+          [
+            "U_n2502gat",
+            "U_n2634gat"
+          ],
+          [
+            "U_n2506gat",
+            "U_n1825gat"
+          ],
+          [
+            "U_n2634gat",
+            "U_n2190gat"
+          ]
+        ],
+        "affected_FFs": [
+          "U_n2634gat",
+          "U_n1825gat"
+        ],
+        "chain_lengths_after": [
+          90,
+          89
+        ],
+        "chain_lengths_before": [
+          90,
+          89
+        ],
+        "changes_K": false,
+        "child_sha256": "e53746570a6403231cfd0735a1b2a143e4291107ef52a87d4dc4965081a76ff3",
+        "constraints": {
+          "maximum_block_length": 4,
+          "maximum_chain_length_difference": 2,
+          "minimum_chain_length": 8
+        },
+        "legal": true,
+        "operation": {
+          "chain": 0,
+          "i": 65,
+          "j": 52,
+          "type": "swap"
+        },
+        "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+        "removed_edges": [
+          [
+            "U_n1825gat",
+            "U_n2190gat"
+          ],
+          [
+            "U_n2502gat",
+            "U_n1825gat"
+          ],
+          [
+            "U_n2506gat",
+            "U_n2634gat"
+          ],
+          [
+            "U_n2634gat",
+            "U_n1389gat"
+          ]
+        ],
+        "requires_SI_SO_recalculation": false,
+        "schema_version": "phase0d-operator-record-1",
+        "type": "swap"
+      },
+      "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+      "pareto_archive_changed": false
+    },
+    {
+      "accepted_move": false,
+      "child_sha256": "364806d76ac4589a5b5e6a4cea0d495e33b0fcd3f4bda7bb1c5086f944d0ef4a",
+      "evaluation_index": 2,
+      "evaluation_seconds": 0.0,
+      "event": "PROXY_EVALUATION",
+      "hypervolume_after": 0.7043478260869565,
+      "hypervolume_before": 0.7043478260869565,
+      "metadata": {
+        "H_eff16": 37.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "candidate_directory": "artifacts/derived/phase0d/pilot/s5378/s11/k2/candidates/364806d76ac4589a5b5e6a4cea0d495e33b0fcd3f4bda7bb1c5086f944d0ef4a",
+        "evaluation_wall_seconds": 0.0,
+        "operator": "two_opt",
+        "peak_simultaneous_toggles": 107.0,
+        "proxy_sha256": "537cfcf89a31a286570d9b5eb669a42a87b64fdb735fcc3a091f44ff2593e886",
+        "status": "REUSED_VERIFIED",
+        "total_shift_toggles": 941165
+      },
+      "objectives": [
+        1476.45,
+        64.83333333333333,
+        10530.0
+      ],
+      "operation": {
+        "chain": 0,
+        "i": 10,
+        "j": 51,
+        "type": "two_opt"
+      },
+      "operator_record": {
+        "added_edges": [
+          [
+            "U_n1312gat",
+            "U_n1775gat"
+          ],
+          [
+            "U_n1316gat",
+            "U_n2095gat"
+          ],
+          [
+            "U_n1336gat",
+            "U_n2502gat"
+          ],
+          [
+            "U_n1363gat",
+            "U_n2514gat"
+          ],
+          [
+            "U_n1394gat",
+            "U_n2084gat"
+          ],
+          [
+            "U_n1433gat",
+            "U_n1316gat"
+          ],
+          [
+            "U_n1496gat",
+            "U_n1748gat"
+          ],
+          [
+            "U_n1508gat",
+            "U_n1496gat"
+          ],
+          [
+            "U_n1588gat",
+            "U_n1678gat"
+          ],
+          [
+            "U_n1678gat",
+            "U_n1825gat"
+          ],
+          [
+            "U_n1748gat",
+            "U_n1394gat"
+          ],
+          [
+            "U_n1763gat",
+            "U_n1771gat"
+          ],
+          [
+            "U_n1767gat",
+            "U_n1763gat"
+          ],
+          [
+            "U_n1771gat",
+            "U_n1880gat"
+          ],
+          [
+            "U_n1775gat",
+            "U_n1871gat"
+          ],
+          [
+            "U_n1821gat",
+            "U_n2176gat"
+          ],
+          [
+            "U_n1829gat",
+            "U_n2446gat"
+          ],
+          [
+            "U_n1834gat",
+            "U_n2458gat"
+          ],
+          [
+            "U_n1871gat",
+            "U_n1588gat"
+          ],
+          [
+            "U_n1880gat",
+            "U_n2040gat"
+          ],
+          [
+            "U_n2021gat",
+            "U_n1834gat"
+          ],
+          [
+            "U_n2025gat",
+            "U_n2169gat"
+          ],
+          [
+            "U_n2037gat",
+            "U_n2044gat"
+          ],
+          [
+            "U_n2040gat",
+            "U_n2454gat"
+          ],
+          [
+            "U_n2044gat",
+            "U_n1363gat"
+          ],
+          [
+            "U_n2084gat",
+            "U_n2021gat"
+          ],
+          [
+            "U_n2095gat",
+            "U_n1829gat"
+          ],
+          [
+            "U_n2099gat",
+            "U_n2037gat"
+          ],
+          [
+            "U_n2110gat",
+            "U_n2117gat"
+          ],
+          [
+            "U_n2117gat",
+            "U_n2099gat"
+          ],
+          [
+            "U_n2125gat",
+            "U_n2025gat"
+          ],
+          [
+            "U_n2169gat",
+            "U_n2592gat"
+          ],
+          [
+            "U_n2176gat",
+            "U_n2110gat"
+          ],
+          [
+            "U_n2182gat",
+            "U_n1433gat"
+          ],
+          [
+            "U_n2319gat",
+            "U_n2640gat"
+          ],
+          [
+            "U_n2446gat",
+            "U_n2125gat"
+          ],
+          [
+            "U_n2450gat",
+            "U_n2319gat"
+          ],
+          [
+            "U_n2454gat",
+            "U_n1508gat"
+          ],
+          [
+            "U_n2458gat",
+            "U_n2450gat"
+          ],
+          [
+            "U_n2502gat",
+            "U_n1821gat"
+          ],
+          [
+            "U_n2514gat",
+            "U_n1767gat"
+          ],
+          [
+            "U_n2592gat",
+            "U_n1312gat"
+          ],
+          [
+            "U_n2640gat",
+            "U_n2182gat"
+          ]
+        ],
+        "affected_FFs": [
+          "U_n1678gat",
+          "U_n1588gat",
+          "U_n1871gat",
+          "U_n1775gat",
+          "U_n1312gat",
+          "U_n2592gat",
+          "U_n2169gat",
+          "U_n2025gat",
+          "U_n2125gat",
+          "U_n2446gat",
+          "U_n1829gat",
+          "U_n2095gat",
+          "U_n1316gat",
+          "U_n1433gat",
+          "U_n2182gat",
+          "U_n2640gat",
+          "U_n2319gat",
+          "U_n2450gat",
+          "U_n2458gat",
+          "U_n1834gat",
+          "U_n2021gat",
+          "U_n2084gat",
+          "U_n1394gat",
+          "U_n1748gat",
+          "U_n1496gat",
+          "U_n1508gat",
+          "U_n2454gat",
+          "U_n2040gat",
+          "U_n1880gat",
+          "U_n1771gat",
+          "U_n1763gat",
+          "U_n1767gat",
+          "U_n2514gat",
+          "U_n1363gat",
+          "U_n2044gat",
+          "U_n2037gat",
+          "U_n2099gat",
+          "U_n2117gat",
+          "U_n2110gat",
+          "U_n2176gat",
+          "U_n1821gat",
+          "U_n2502gat"
+        ],
+        "chain_lengths_after": [
+          90,
+          89
+        ],
+        "chain_lengths_before": [
+          90,
+          89
+        ],
+        "changes_K": false,
+        "child_sha256": "364806d76ac4589a5b5e6a4cea0d495e33b0fcd3f4bda7bb1c5086f944d0ef4a",
+        "constraints": {
+          "maximum_block_length": 4,
+          "maximum_chain_length_difference": 2,
+          "minimum_chain_length": 8
+        },
+        "legal": true,
+        "operation": {
+          "chain": 0,
+          "i": 10,
+          "j": 51,
+          "type": "two_opt"
+        },
+        "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+        "removed_edges": [
+          [
+            "U_n1312gat",
+            "U_n2592gat"
+          ],
+          [
+            "U_n1316gat",
+            "U_n1433gat"
+          ],
+          [
+            "U_n1336gat",
+            "U_n1678gat"
+          ],
+          [
+            "U_n1363gat",
+            "U_n2044gat"
+          ],
+          [
+            "U_n1394gat",
+            "U_n1748gat"
+          ],
+          [
+            "U_n1433gat",
+            "U_n2182gat"
+          ],
+          [
+            "U_n1496gat",
+            "U_n1508gat"
+          ],
+          [
+            "U_n1508gat",
+            "U_n2454gat"
+          ],
+          [
+            "U_n1588gat",
+            "U_n1871gat"
+          ],
+          [
+            "U_n1678gat",
+            "U_n1588gat"
+          ],
+          [
+            "U_n1748gat",
+            "U_n1496gat"
+          ],
+          [
+            "U_n1763gat",
+            "U_n1767gat"
+          ],
+          [
+            "U_n1767gat",
+            "U_n2514gat"
+          ],
+          [
+            "U_n1771gat",
+            "U_n1763gat"
+          ],
+          [
+            "U_n1775gat",
+            "U_n1312gat"
+          ],
+          [
+            "U_n1821gat",
+            "U_n2502gat"
+          ],
+          [
+            "U_n1829gat",
+            "U_n2095gat"
+          ],
+          [
+            "U_n1834gat",
+            "U_n2021gat"
+          ],
+          [
+            "U_n1871gat",
+            "U_n1775gat"
+          ],
+          [
+            "U_n1880gat",
+            "U_n1771gat"
+          ],
+          [
+            "U_n2021gat",
+            "U_n2084gat"
+          ],
+          [
+            "U_n2025gat",
+            "U_n2125gat"
+          ],
+          [
+            "U_n2037gat",
+            "U_n2099gat"
+          ],
+          [
+            "U_n2040gat",
+            "U_n1880gat"
+          ],
+          [
+            "U_n2044gat",
+            "U_n2037gat"
+          ],
+          [
+            "U_n2084gat",
+            "U_n1394gat"
+          ],
+          [
+            "U_n2095gat",
+            "U_n1316gat"
+          ],
+          [
+            "U_n2099gat",
+            "U_n2117gat"
+          ],
+          [
+            "U_n2110gat",
+            "U_n2176gat"
+          ],
+          [
+            "U_n2117gat",
+            "U_n2110gat"
+          ],
+          [
+            "U_n2125gat",
+            "U_n2446gat"
+          ],
+          [
+            "U_n2169gat",
+            "U_n2025gat"
+          ],
+          [
+            "U_n2176gat",
+            "U_n1821gat"
+          ],
+          [
+            "U_n2182gat",
+            "U_n2640gat"
+          ],
+          [
+            "U_n2319gat",
+            "U_n2450gat"
+          ],
+          [
+            "U_n2446gat",
+            "U_n1829gat"
+          ],
+          [
+            "U_n2450gat",
+            "U_n2458gat"
+          ],
+          [
+            "U_n2454gat",
+            "U_n2040gat"
+          ],
+          [
+            "U_n2458gat",
+            "U_n1834gat"
+          ],
+          [
+            "U_n2502gat",
+            "U_n1825gat"
+          ],
+          [
+            "U_n2514gat",
+            "U_n1363gat"
+          ],
+          [
+            "U_n2592gat",
+            "U_n2169gat"
+          ],
+          [
+            "U_n2640gat",
+            "U_n2319gat"
+          ]
+        ],
+        "requires_SI_SO_recalculation": false,
+        "schema_version": "phase0d-operator-record-1",
+        "type": "two_opt"
+      },
+      "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+      "pareto_archive_changed": false
+    },
+    {
+      "accepted_move": false,
+      "child_sha256": "314afa8517a1aa19a02e608cd0d667f665f1b0ad6c955a6fc64feea12898248e",
+      "evaluation_index": 3,
+      "evaluation_seconds": 0.0,
+      "event": "PROXY_EVALUATION",
+      "hypervolume_after": 0.7043478260869565,
+      "hypervolume_before": 0.7043478260869565,
+      "metadata": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "candidate_directory": "artifacts/derived/phase0d/pilot/s5378/s11/k2/candidates/314afa8517a1aa19a02e608cd0d667f665f1b0ad6c955a6fc64feea12898248e",
+        "evaluation_wall_seconds": 0.0,
+        "operator": "block_relocation",
+        "peak_simultaneous_toggles": 108.0,
+        "proxy_sha256": "01b1c33cc425d7606736bd3813350702aaaf72870bfbfb8730e51b6e19a40348",
+        "status": "REUSED_VERIFIED",
+        "total_shift_toggles": 944419
+      },
+      "objectives": [
+        1397.21,
+        63.33333333333333,
+        10530.0
+      ],
+      "operation": {
+        "chain": 1,
+        "length": 1,
+        "start": 85,
+        "to_index": 26,
+        "type": "block_relocation"
+      },
+      "operator_record": {
+        "added_edges": [
+          [
+            "U_n337gat",
+            "U_n842gat"
+          ],
+          [
+            "U_n341gat",
+            "U_n2390gat"
+          ],
+          [
+            "U_n842gat",
+            "U_n279gat"
+          ]
+        ],
+        "affected_FFs": [
+          "U_n842gat"
+        ],
+        "chain_lengths_after": [
+          90,
+          89
+        ],
+        "chain_lengths_before": [
+          90,
+          89
+        ],
+        "changes_K": false,
+        "child_sha256": "314afa8517a1aa19a02e608cd0d667f665f1b0ad6c955a6fc64feea12898248e",
+        "constraints": {
+          "maximum_block_length": 4,
+          "maximum_chain_length_difference": 2,
+          "minimum_chain_length": 8
+        },
+        "legal": true,
+        "operation": {
+          "chain": 1,
+          "length": 1,
+          "start": 85,
+          "to_index": 26,
+          "type": "block_relocation"
+        },
+        "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+        "removed_edges": [
+          [
+            "U_n337gat",
+            "U_n279gat"
+          ],
+          [
+            "U_n341gat",
+            "U_n842gat"
+          ],
+          [
+            "U_n842gat",
+            "U_n2390gat"
+          ]
+        ],
+        "requires_SI_SO_recalculation": false,
+        "schema_version": "phase0d-operator-record-1",
+        "type": "block_relocation"
+      },
+      "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+      "pareto_archive_changed": false
+    },
+    {
+      "accepted_move": false,
+      "child_sha256": "718f9d0c24e0035d3142f063393820e247bc4c45b63f75375a6a0f145906a790",
+      "evaluation_index": 4,
+      "evaluation_seconds": 0.01600000000325963,
+      "event": "PROXY_EVALUATION",
+      "hypervolume_after": 0.7043478260869565,
+      "hypervolume_before": 0.7043478260869565,
+      "metadata": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "candidate_directory": "artifacts/derived/phase0d/pilot/s5378/s11/k2/candidates/718f9d0c24e0035d3142f063393820e247bc4c45b63f75375a6a0f145906a790",
+        "evaluation_wall_seconds": 0.0,
+        "operator": "cross_chain_move",
+        "peak_simultaneous_toggles": 107.0,
+        "proxy_sha256": "3e3fa6937d9aeacc9c0923fa7a1564de945905973b5b6b080a224521ffbb076f",
+        "status": "REUSED_VERIFIED",
+        "total_shift_toggles": 943885
+      },
+      "objectives": [
+        1528.47,
+        65.66666666666667,
+        10530.0
+      ],
+      "operation": {
+        "from_chain": 0,
+        "index": 17,
+        "to_chain": 1,
+        "to_index": 10,
+        "type": "cross_chain_move"
+      },
+      "operator_record": {
+        "added_edges": [
+          [
+            "U_n156gat",
+            "U_n2025gat"
+          ],
+          [
+            "U_n2025gat",
+            "U_n838gat"
+          ],
+          [
+            "U_n2169gat",
+            "U_n2125gat"
+          ]
+        ],
+        "affected_FFs": [
+          "U_n2025gat"
+        ],
+        "chain_lengths_after": [
+          89,
+          90
+        ],
+        "chain_lengths_before": [
+          90,
+          89
+        ],
+        "changes_K": false,
+        "child_sha256": "718f9d0c24e0035d3142f063393820e247bc4c45b63f75375a6a0f145906a790",
+        "constraints": {
+          "maximum_block_length": 4,
+          "maximum_chain_length_difference": 2,
+          "minimum_chain_length": 8
+        },
+        "legal": true,
+        "operation": {
+          "from_chain": 0,
+          "index": 17,
+          "to_chain": 1,
+          "to_index": 10,
+          "type": "cross_chain_move"
+        },
+        "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+        "removed_edges": [
+          [
+            "U_n156gat",
+            "U_n838gat"
+          ],
+          [
+            "U_n2025gat",
+            "U_n2125gat"
+          ],
+          [
+            "U_n2169gat",
+            "U_n2025gat"
+          ]
+        ],
+        "requires_SI_SO_recalculation": false,
+        "schema_version": "phase0d-operator-record-1",
+        "type": "cross_chain_move"
+      },
+      "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+      "pareto_archive_changed": false
+    },
+    {
+      "accepted_move": false,
+      "child_sha256": "e67ce6445fa9768058e9c8d637fcf838207e5b6bc43e8b288fb84f747b4c51f9",
+      "evaluation_index": 5,
+      "evaluation_seconds": 0.0,
+      "event": "PROXY_EVALUATION",
+      "hypervolume_after": 0.7043478260869565,
+      "hypervolume_before": 0.7043478260869565,
+      "metadata": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "candidate_directory": "artifacts/derived/phase0d/pilot/s5378/s11/k2/candidates/e67ce6445fa9768058e9c8d637fcf838207e5b6bc43e8b288fb84f747b4c51f9",
+        "evaluation_wall_seconds": 0.0,
+        "operator": "cross_chain_swap",
+        "peak_simultaneous_toggles": 107.0,
+        "proxy_sha256": "77f2eb934cad933b8aa865c9a71a8b4c7824a3f7154d2d4805c8c50ccde42a6f",
+        "status": "REUSED_VERIFIED",
+        "total_shift_toggles": 940289
+      },
+      "objectives": [
+        1435.99,
+        63.33333333333333,
+        10530.0
+      ],
+      "operation": {
+        "from_chain": 1,
+        "from_index": 87,
+        "to_chain": 0,
+        "to_index": 25,
+        "type": "cross_chain_swap"
+      },
+      "operator_record": {
+        "added_edges": [
+          [
+            "U_n2182gat",
+            "U_n2270gat"
+          ],
+          [
+            "U_n2270gat",
+            "U_n2319gat"
+          ],
+          [
+            "U_n2390gat",
+            "U_n2640gat"
+          ],
+          [
+            "U_n2640gat",
+            "U_n2339gat"
+          ]
+        ],
+        "affected_FFs": [
+          "U_n2270gat",
+          "U_n2640gat"
+        ],
+        "chain_lengths_after": [
+          90,
+          89
+        ],
+        "chain_lengths_before": [
+          90,
+          89
+        ],
+        "changes_K": false,
+        "child_sha256": "e67ce6445fa9768058e9c8d637fcf838207e5b6bc43e8b288fb84f747b4c51f9",
+        "constraints": {
+          "maximum_block_length": 4,
+          "maximum_chain_length_difference": 2,
+          "minimum_chain_length": 8
+        },
+        "legal": true,
+        "operation": {
+          "from_chain": 1,
+          "from_index": 87,
+          "to_chain": 0,
+          "to_index": 25,
+          "type": "cross_chain_swap"
+        },
+        "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+        "removed_edges": [
+          [
+            "U_n2182gat",
+            "U_n2640gat"
+          ],
+          [
+            "U_n2270gat",
+            "U_n2339gat"
+          ],
+          [
+            "U_n2390gat",
+            "U_n2270gat"
+          ],
+          [
+            "U_n2640gat",
+            "U_n2319gat"
+          ]
+        ],
+        "requires_SI_SO_recalculation": false,
+        "schema_version": "phase0d-operator-record-1",
+        "type": "cross_chain_swap"
+      },
+      "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+      "pareto_archive_changed": false
+    },
+    {
+      "accepted_move": false,
+      "child_sha256": "67e5fe10358620529e733f97527cf04dd3c23f17c3d4b0c355978d790548138f",
+      "evaluation_index": 6,
+      "evaluation_seconds": 0.014999999999417923,
+      "event": "PROXY_EVALUATION",
+      "hypervolume_after": 0.7043478260869565,
+      "hypervolume_before": 0.7043478260869565,
+      "metadata": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "candidate_directory": "artifacts/derived/phase0d/pilot/s5378/s11/k2/candidates/67e5fe10358620529e733f97527cf04dd3c23f17c3d4b0c355978d790548138f",
+        "evaluation_wall_seconds": 0.0,
+        "operator": "endpoint_reassignment",
+        "peak_simultaneous_toggles": 108.0,
+        "proxy_sha256": "788e52f91d725fc68ad2b04d20b45a2418d841e714b8973b98752462fdd8b8be",
+        "status": "REUSED_VERIFIED",
+        "total_shift_toggles": 940741
+      },
+      "objectives": [
+        1404.0700000000002,
+        63.33333333333333,
+        10530.0
+      ],
+      "operation": {
+        "chain": 0,
+        "endpoint": "SO",
+        "index": 40,
+        "type": "endpoint_reassignment"
+      },
+      "operator_record": {
+        "added_edges": [
+          [
+            "U_n1462gat",
+            "U_n1763gat"
+          ],
+          [
+            "U_n1763gat",
+            "SO:C00"
+          ],
+          [
+            "U_n1771gat",
+            "U_n2121gat"
+          ],
+          [
+            "U_n2121gat",
+            "U_n1767gat"
+          ]
+        ],
+        "affected_FFs": [
+          "U_n2121gat",
+          "U_n1763gat"
+        ],
+        "chain_lengths_after": [
+          90,
+          89
+        ],
+        "chain_lengths_before": [
+          90,
+          89
+        ],
+        "changes_K": false,
+        "child_sha256": "67e5fe10358620529e733f97527cf04dd3c23f17c3d4b0c355978d790548138f",
+        "constraints": {
+          "maximum_block_length": 4,
+          "maximum_chain_length_difference": 2,
+          "minimum_chain_length": 8
+        },
+        "legal": true,
+        "operation": {
+          "chain": 0,
+          "endpoint": "SO",
+          "index": 40,
+          "type": "endpoint_reassignment"
+        },
+        "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+        "removed_edges": [
+          [
+            "U_n1462gat",
+            "U_n2121gat"
+          ],
+          [
+            "U_n1763gat",
+            "U_n1767gat"
+          ],
+          [
+            "U_n1771gat",
+            "U_n1763gat"
+          ],
+          [
+            "U_n2121gat",
+            "SO:C00"
+          ]
+        ],
+        "requires_SI_SO_recalculation": true,
+        "schema_version": "phase0d-operator-record-1",
+        "type": "endpoint_reassignment"
+      },
+      "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+      "pareto_archive_changed": false
+    },
+    {
+      "accepted_move": false,
+      "child_sha256": "7690c4896e3df902bd97d21f81c4e823217280527516c03d2ec58d6f2a410024",
+      "evaluation_index": 7,
+      "evaluation_seconds": 0.0,
+      "event": "PROXY_EVALUATION",
+      "hypervolume_after": 0.7043478260869565,
+      "hypervolume_before": 0.7043478260869565,
+      "metadata": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "candidate_directory": "artifacts/derived/phase0d/pilot/s5378/s11/k2/candidates/7690c4896e3df902bd97d21f81c4e823217280527516c03d2ec58d6f2a410024",
+        "evaluation_wall_seconds": 0.0,
+        "operator": "cross_chain_block_move",
+        "peak_simultaneous_toggles": 107.0,
+        "proxy_sha256": "09d51e8b87b438f5d33245c7f76e8c38125e1b121576285f187b4f9b0871a22b",
+        "status": "REUSED_VERIFIED",
+        "total_shift_toggles": 945755
+      },
+      "objectives": [
+        1482.65,
+        65.0,
+        10530.0
+      ],
+      "operation": {
+        "from_chain": 0,
+        "length": 1,
+        "start": 34,
+        "to_chain": 1,
+        "to_index": 74,
+        "type": "cross_chain_block_move"
+      },
+      "operator_record": {
+        "added_edges": [
+          [
+            "U_n1026gat",
+            "U_n1496gat"
+          ],
+          [
+            "U_n1496gat",
+            "U_n275gat"
+          ],
+          [
+            "U_n1748gat",
+            "U_n1508gat"
+          ]
+        ],
+        "affected_FFs": [
+          "U_n1496gat"
+        ],
+        "chain_lengths_after": [
+          89,
+          90
+        ],
+        "chain_lengths_before": [
+          90,
+          89
+        ],
+        "changes_K": false,
+        "child_sha256": "7690c4896e3df902bd97d21f81c4e823217280527516c03d2ec58d6f2a410024",
+        "constraints": {
+          "maximum_block_length": 4,
+          "maximum_chain_length_difference": 2,
+          "minimum_chain_length": 8
+        },
+        "legal": true,
+        "operation": {
+          "from_chain": 0,
+          "length": 1,
+          "start": 34,
+          "to_chain": 1,
+          "to_index": 74,
+          "type": "cross_chain_block_move"
+        },
+        "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+        "removed_edges": [
+          [
+            "U_n1026gat",
+            "U_n275gat"
+          ],
+          [
+            "U_n1496gat",
+            "U_n1508gat"
+          ],
+          [
+            "U_n1748gat",
+            "U_n1496gat"
+          ]
+        ],
+        "requires_SI_SO_recalculation": false,
+        "schema_version": "phase0d-operator-record-1",
+        "type": "cross_chain_block_move"
+      },
+      "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+      "pareto_archive_changed": false
+    },
+    {
+      "accepted_move": false,
+      "child_sha256": "a1598142676e5c50b26756ab3ad5031ab0ed4bcd8038549dc755cdbbd69b08a0",
+      "evaluation_index": 8,
+      "evaluation_seconds": 0.0,
+      "event": "PROXY_EVALUATION",
+      "hypervolume_after": 0.7043478260869565,
+      "hypervolume_before": 0.7043478260869565,
+      "metadata": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "candidate_directory": "artifacts/derived/phase0d/pilot/s5378/s11/k2/candidates/a1598142676e5c50b26756ab3ad5031ab0ed4bcd8038549dc755cdbbd69b08a0",
+        "evaluation_wall_seconds": 0.0,
+        "operator": "swap",
+        "peak_simultaneous_toggles": 106.0,
+        "proxy_sha256": "58556d5f5229803dd01d0b6aaa5428e9c1406445f4929027a77af7af27d7f71a",
+        "status": "REUSED_VERIFIED",
+        "total_shift_toggles": 941937
+      },
+      "objectives": [
+        1474.49,
+        63.33333333333333,
+        10530.0
+      ],
+      "operation": {
+        "chain": 1,
+        "i": 15,
+        "j": 71,
+        "type": "swap"
+      },
+      "operator_record": {
+        "added_edges": [
+          [
+            "U_n2203gat",
+            "U_n402gat"
+          ],
+          [
+            "U_n2476gat",
+            "U_n2562gat"
+          ],
+          [
+            "U_n2562gat",
+            "U_n2526gat"
+          ],
+          [
+            "U_n402gat",
+            "U_n2644gat"
+          ]
+        ],
+        "affected_FFs": [
+          "U_n2562gat",
+          "U_n402gat"
+        ],
+        "chain_lengths_after": [
+          90,
+          89
+        ],
+        "chain_lengths_before": [
+          90,
+          89
+        ],
+        "changes_K": false,
+        "child_sha256": "a1598142676e5c50b26756ab3ad5031ab0ed4bcd8038549dc755cdbbd69b08a0",
+        "constraints": {
+          "maximum_block_length": 4,
+          "maximum_chain_length_difference": 2,
+          "minimum_chain_length": 8
+        },
+        "legal": true,
+        "operation": {
+          "chain": 1,
+          "i": 15,
+          "j": 71,
+          "type": "swap"
+        },
+        "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+        "removed_edges": [
+          [
+            "U_n2203gat",
+            "U_n2562gat"
+          ],
+          [
+            "U_n2476gat",
+            "U_n402gat"
+          ],
+          [
+            "U_n2562gat",
+            "U_n2644gat"
+          ],
+          [
+            "U_n402gat",
+            "U_n2526gat"
+          ]
+        ],
+        "requires_SI_SO_recalculation": false,
+        "schema_version": "phase0d-operator-record-1",
+        "type": "swap"
+      },
+      "parent_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+      "pareto_archive_changed": false
+    }
+  ],
+  "unique_pareto_solutions": 1,
+  "wall_clock_seconds": 0.28100000000267755
+}

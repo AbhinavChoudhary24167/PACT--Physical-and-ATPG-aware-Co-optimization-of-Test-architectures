@@ -1,0 +1,67 @@
+{
+  "candidate_generation_benchmark": {
+    "bounded_operations_generated": 128,
+    "context": "s5378/s11/k2",
+    "contract_sha256": "1785bd6ca4367bb3bace9fffb7fff2ef66d03b7b9fa27b1317d157370fd7b5ad",
+    "operator_counts": {
+      "block_relocation": 18,
+      "cross_chain_block_move": 18,
+      "cross_chain_move": 18,
+      "cross_chain_swap": 18,
+      "endpoint_reassignment": 18,
+      "swap": 19,
+      "two_opt": 19
+    },
+    "operator_source_sha256": "326769308fe8b4272a65a4375bae8eace76a3b2b5eabb497fecef8ed695bbfff",
+    "schema_version": "phase0d-candidate-generation-benchmark-1",
+    "seconds_per_operation": 0.007254982031270174,
+    "wall_seconds": 0.9286377000025823
+  },
+  "context": "s5378/s11/k2",
+  "contract_sha256": "1785bd6ca4367bb3bace9fffb7fff2ef66d03b7b9fa27b1317d157370fd7b5ad",
+  "full_campaign_projection": {
+    "contexts": 60,
+    "decision": "DO_NOT_LAUNCH_FULL_MATRIX; reduce and stage because serial projection is several hours",
+    "optimizers": 4,
+    "projected_new_odb_archive_bytes": 1418609280.0,
+    "projected_new_routes": 1920,
+    "projected_proxy_evaluations": 30720,
+    "projected_proxy_seconds": 42937.19347201288,
+    "projected_route_seconds_from_historical_median": 209633.9235129599,
+    "projected_total_seconds_serial": 252571.1169849728,
+    "proxy_budget_each": 128,
+    "route_budget_each": 8,
+    "runtime_policy": "VERY_LONG_REDUCE_AND_STAGE"
+  },
+  "historical_route_resources": {
+    "existing_qualified_routes_reused": 375,
+    "historical_odb_archive_bytes_median": 738859.0,
+    "historical_odb_archives": 402,
+    "historical_route_seconds_max": 232.52762612700099,
+    "historical_route_seconds_median": 109.18433516299996,
+    "historical_route_seconds_min": 75.85248313400007,
+    "historical_successful_route_samples": 375
+  },
+  "historical_route_seconds_reused": 45440.29481719594,
+  "new_routed_evaluations": 0,
+  "operator_evaluations": 7,
+  "resource_reuse": {
+    "existing_phase0c_qualified_routes_reused": 375,
+    "runs_skipped_existing": 17
+  },
+  "route_status": "NOT_RUN_NO_PROXY_NONDOMINATED_CANDIDATE",
+  "schema_version": "phase0d-pilot-summary-1",
+  "search_proxy_evaluations": 32,
+  "selected_route_candidate": {
+    "architecture_sha256": null,
+    "candidate_directory": null,
+    "context": "s5378/s11/k2",
+    "contract_sha256": "1785bd6ca4367bb3bace9fffb7fff2ef66d03b7b9fa27b1317d157370fd7b5ad",
+    "route_budget": 0,
+    "schema_version": "phase0d-route-shortlist-1",
+    "selection_rule": "route only a new proxy-nondominated candidate; no searched child qualified",
+    "status": "NO_NEW_PROXY_NONDOMINATED_CANDIDATE"
+  },
+  "status": "PILOT_COMPLETE_NO_ROUTE_QUALIFIED",
+  "unique_proxy_artifacts": 22
+}
