@@ -22,6 +22,7 @@ def test_bounds_serialization_and_route_result_location() -> None:
     }
     route = pilot._route_result_path({"architecture_sha256": "a" * 64})
     assert route == ROOT / "artifacts/raw/phase0d/pilot/s5378/s11/k2" / ("a" * 64) / "route_result.json"
+    assert pilot._route_result_path({"architecture_sha256": None}) is None
 
 
 def test_source_hashes_cover_frozen_search_components() -> None:
@@ -30,3 +31,6 @@ def test_source_hashes_cover_frozen_search_components() -> None:
     assert "config/phase0d_pilot_contract.json" in hashes
     assert "src/pact/phase0d/search.py" in hashes
     assert all(len(value) == 64 for value in hashes.values())
+    scientific = pilot._scientific_source_hashes()
+    assert "scripts/phase0d_pilot.py" not in scientific
+    assert pilot._sources_compatible(hashes)

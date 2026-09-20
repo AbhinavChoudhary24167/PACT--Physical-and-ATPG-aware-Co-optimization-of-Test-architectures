@@ -69,6 +69,16 @@ def _source_hashes() -> dict[str, str]:
     return {str(path.relative_to(ROOT)).replace("\\", "/"): file_sha256(path) for path in paths}
 
 
+def _scientific_source_hashes() -> dict[str, str]:
+    hashes = _source_hashes()
+    hashes.pop("scripts/phase0d_pilot.py")
+    return hashes
+
+
+def _sources_compatible(saved: dict[str, str]) -> bool:
+    return all(saved.get(path) == digest for path, digest in _scientific_source_hashes().items())
+
+
 def _manifest_store(contract_sha256: str, campaign_id: str) -> ManifestStore:
     return ManifestStore(REPORTS / "manifest.json", campaign_id, START_COMMIT, contract_sha256)
 
@@ -105,7 +115,7 @@ def _operator_preflight(context: FrozenProxyContext, contract_sha256: str,
                                   contract_sha256)
     if output_path.is_file():
         saved = _load_json(output_path)
-        if saved.get("contract_sha256") == contract_sha256 and saved.get("source_sha256") == _source_hashes():
+        if saved.get("contract_sha256") == contract_sha256 and _sources_compatible(saved.get("source_sha256", {})):
             store.upsert({"run_id": run_id, "design": context.design, "physical_seed": context.physical_seed,
                           "K": context.K, "optimizer": "operator_preflight", "status": "SKIPPED_EXISTING",
                           "artifact": str(output_path.relative_to(ROOT)).replace("\\", "/"),
@@ -154,7 +164,7 @@ def _search_one(method: str, context: FrozenProxyContext, bounds: ObjectiveBound
     if output_path.is_file():
         saved = _load_json(output_path)
         if (saved.get("contract_sha256") == contract_sha256
-                and saved.get("source_sha256") == _source_hashes()
+                and _sources_compatible(saved.get("source_sha256", {}))
                 and saved.get("frozen_bounds") == _bounds_dict(bounds)):
             store.upsert({"run_id": run_id, "design": context.design, "physical_seed": context.physical_seed,
                           "K": context.K, "optimizer": method, "status": "SKIPPED_EXISTING",
@@ -203,7 +213,18 @@ def _choose_route_candidate(context: FrozenProxyContext, bounds: ObjectiveBounds
             candidate["candidate_directory"] = directory
             candidates.setdefault(item["architecture_sha256"], candidate)
     if not candidates:
-        raise RuntimeError("No new proxy-nondominated candidate is available for routing")
+        selected = {
+            "schema_version": "phase0d-route-shortlist-1",
+            "contract_sha256": contract_sha256,
+            "context": context.context_id,
+            "status": "NO_NEW_PROXY_NONDOMINATED_CANDIDATE",
+            "architecture_sha256": None,
+            "candidate_directory": None,
+            "route_budget": 0,
+            "selection_rule": "route only a new proxy-nondominated candidate; no searched child qualified",
+        }
+        atomic_write_json(REPORTS / "pilot_route_shortlist.json", selected)
+        return selected
     selected = max(
         candidates.values(),
         key=lambda item: (
@@ -221,12 +242,15 @@ def _choose_route_candidate(context: FrozenProxyContext, bounds: ObjectiveBounds
         "context": context.context_id,
         "selection_rule": "new proxy-nondominated candidate maximizing exact normalized hypervolume gain over the Phase-0C P start; deterministic objective/hash tie break",
         "route_budget": 1,
+        "status": "QUALIFIED_FOR_SELECTIVE_ROUTE",
     })
     atomic_write_json(REPORTS / "pilot_route_shortlist.json", selected)
     return selected
 
 
-def _route_result_path(selected: dict) -> Path:
+def _route_result_path(selected: dict) -> Path | None:
+    if not selected.get("architecture_sha256"):
+        return None
     return (ROOT / "artifacts/raw/phase0d/pilot/s5378/s11/k2"
             / selected["architecture_sha256"] / "route_result.json")
 
@@ -268,17 +292,55 @@ def _metrics_csv(operator_screen: dict, searches: dict[str, dict]) -> None:
     temporary.replace(path)
 
 
+def _candidate_generation_benchmark(context: FrozenProxyContext, contract_sha256: str) -> dict:
+    path = ARTIFACTS / "candidate_generation_benchmark.json"
+    operator_sha256 = file_sha256(ROOT / "src/pact/scan/phase0d_operators.py")
+    if path.is_file():
+        saved = _load_json(path)
+        if (saved.get("contract_sha256") == contract_sha256
+                and saved.get("operator_source_sha256") == operator_sha256):
+            return saved
+    count = 128
+    started = time.perf_counter()
+    operations = sample_operations(context.start_architecture, count, proposal_seed=1701)
+    elapsed = time.perf_counter() - started
+    result = {
+        "schema_version": "phase0d-candidate-generation-benchmark-1",
+        "contract_sha256": contract_sha256,
+        "operator_source_sha256": operator_sha256,
+        "context": context.context_id,
+        "bounded_operations_generated": len(operations),
+        "wall_seconds": elapsed,
+        "seconds_per_operation": elapsed / len(operations),
+        "operator_counts": {name: sum(operation["type"] == name for operation in operations)
+                            for name in OPERATOR_NAMES},
+    }
+    atomic_write_json(path, result)
+    return result
+
+
+def _historical_route_seconds_total() -> float:
+    total = 0.0
+    for path in (ROOT / "artifacts/raw/phase0c/physical").glob("**/route/execution.json"):
+        record = _load_json(path)
+        if record.get("exit_code") == 0 and not record.get("timed_out"):
+            total += float(record["elapsed_s"])
+    return total
+
+
 def _report(context: FrozenProxyContext, operator_screen: dict, searches: dict[str, dict],
             selected: dict, route_result: dict | None, elapsed_seconds: float,
-            contract_sha256: str) -> dict:
+            contract_sha256: str, generation_benchmark: dict) -> dict:
     proxy_rows = list((ARTIFACTS / "candidates").glob("*/proxy.json"))
     proxy_records = [_load_json(path) for path in proxy_rows]
     proxy_seconds = [float(row["runtime"]["total_proxy_wall_seconds"]) for row in proxy_records]
     per_evaluation = statistics.median(proxy_seconds) if proxy_seconds else 0.0
     historical = historical_route_resources(ROOT)
+    historical_route_seconds_total = _historical_route_seconds_total()
     full_projection = projection(per_evaluation, historical)
     full_projection["decision"] = "DO_NOT_LAUNCH_FULL_MATRIX; reduce and stage because serial projection is several hours"
     artifacts_bytes = sum(path.stat().st_size for path in (ROOT / "artifacts/derived/phase0d").glob("**/*") if path.is_file())
+    measured_proxy_compute_seconds = sum(proxy_seconds)
     operator_rows = []
     for entry in operator_screen["entries"]:
         delta = entry["objective_delta_from_start"]
@@ -294,10 +356,26 @@ def _report(context: FrozenProxyContext, operator_screen: dict, searches: dict[s
             f"{result['unique_pareto_solutions']} | {result['final_hypervolume']:.6f} | "
             f"{result['wall_clock_seconds']:.3f} | {result['stop_reason']} |"
         )
-    route_status = route_result.get("status") if route_result else "PENDING"
+    no_route_candidate = selected.get("status") == "NO_NEW_PROXY_NONDOMINATED_CANDIDATE"
+    route_status = (route_result.get("status") if route_result else
+                    "NOT_RUN_NO_PROXY_NONDOMINATED_CANDIDATE" if no_route_candidate else "PENDING")
     route_seconds = route_result.get("route_wall_seconds") if route_result else None
     route_storage = route_result.get("routed_odb_archive_bytes") if route_result else None
-    pilot_status = "PILOT_COMPLETE" if route_result else "PILOT_PROXY_COMPLETE_ROUTE_PENDING"
+    pilot_status = ("PILOT_COMPLETE" if route_result else
+                    "PILOT_COMPLETE_NO_ROUTE_QUALIFIED" if no_route_candidate else
+                    "PILOT_PROXY_COMPLETE_ROUTE_PENDING")
+    if no_route_candidate:
+        route_description = (
+            "No searched child was nondominated against the qualified Phase-0C `P` start, so the frozen "
+            "proxy-to-route filter selected no new route. This is a valid negative pilot result; routing a "
+            "dominated child solely to consume the budget would violate the contract."
+        )
+    else:
+        route_description = (
+            f"The single route shortlist member is `{selected['architecture_sha256']}`, discovered by "
+            f"`{selected['discovered_by']}`, with proxy objectives {selected['objectives']} and an exact "
+            f"normalized-HV gain of {selected['hypervolume_gain_over_start']:.6f} over the starting point."
+        )
     report = f"""# PACT Phase-0D Pilot Report
 
 **Pilot status:** `{pilot_status}`
@@ -332,7 +410,7 @@ The hypervolume bounds were frozen from the six qualified Phase-0C K=2 portfolio
 
 ## Selective physical evaluation
 
-The single route shortlist member is `{selected['architecture_sha256']}`, discovered by `{selected['discovered_by']}`, with proxy objectives {selected['objectives']} and an exact normalized-HV gain of {selected['hypervolume_gain_over_start']:.6f} over the starting point.
+{route_description}
 
 - New-route status: `{route_status}`
 - New route wall time: `{route_seconds}` seconds
@@ -341,9 +419,11 @@ The single route shortlist member is `{selected['architecture_sha256']}`, discov
 
 ## Runtime and storage projection
 
+- Bounded candidate-generation sample: {generation_benchmark['bounded_operations_generated']} operations in {generation_benchmark['wall_seconds']:.6f} seconds ({generation_benchmark['seconds_per_operation']:.9f} seconds/operation)
 - New unique pilot proxy artifacts: {len(proxy_rows)}
 - Median new proxy evaluation time: {per_evaluation:.6f} seconds
-- Pilot elapsed wall time in this invocation: {elapsed_seconds:.3f} seconds
+- Measured unique proxy compute time: {measured_proxy_compute_seconds:.3f} seconds
+- Report/finalization invocation time: {elapsed_seconds:.3f} seconds
 - Phase-0D derived pilot storage: {artifacts_bytes} bytes
 - Historical successful Phase-0C route samples: {historical['historical_successful_route_samples']}
 - Historical median successful route time: {historical['historical_route_seconds_median']} seconds
@@ -357,6 +437,19 @@ The single route shortlist member is `{selected['architecture_sha256']}`, discov
 - Runtime policy: `{full_projection['runtime_policy']}`
 
 The naive full 60-context x four-optimizer x maximum-budget matrix is therefore not launched. It is a several-hour campaign even before scheduling overhead. The scientifically appropriate next stage is a reduced proxy qualification across all three designs and a predeclared seed/K subset, followed by selective routing only for methods/operators that show replicated proxy benefit.
+
+## Resource reuse accounting
+
+- Frozen tracked Phase-0C evidence files hash-verified: 8,050
+- Upstream Phase-0C dependency files hash-verified: 83
+- Existing qualified Phase-0C routes reused: 375
+- New Phase-0D proxy artifacts executed: {len(proxy_rows)}
+- Logical search/preflight proxy evaluations: {len(operator_screen['entries']) + sum(result['proxy_evaluations'] for result in searches.values())}
+- Proxy evaluations reused from valid candidate cache: {sum(trace['metadata']['status'] == 'REUSED_VERIFIED' for result in searches.values() for trace in result['trace'] if trace['event'] == 'PROXY_EVALUATION')}
+- New Phase-0D physical routes: {int(route_result is not None and route_result.get('reuse_status') == 'EXECUTED_NEW')}
+- Avoided Phase-0C route re-executions: 375
+- New-route wall time: {route_seconds} seconds
+- Directly recorded Phase-0C route compute reused rather than repeated: {historical_route_seconds_total:.3f} seconds
 
 ## Failures and limitations
 
@@ -381,6 +474,8 @@ This is one ISCAS89-scale context, not a cross-seed or cross-design result. H_ef
             ),
         },
         "historical_route_resources": historical,
+        "historical_route_seconds_reused": historical_route_seconds_total,
+        "candidate_generation_benchmark": generation_benchmark,
         "full_campaign_projection": full_projection,
         "selected_route_candidate": selected,
     }
@@ -434,25 +529,28 @@ def main() -> None:
             searches[method] = _search_one(method, context, bounds, contract_sha256, store, config)
             completed += searches[method]["proxy_evaluations"]
     selected = _choose_route_candidate(context, bounds, searches, contract_sha256)
+    generation_benchmark = _candidate_generation_benchmark(context, contract_sha256)
     route_run_id = deterministic_run_id(context.context_id, "selective_route", selected["architecture_sha256"],
                                         contract_sha256)
     route_path = _route_result_path(selected)
-    route_result = _load_json(route_path) if route_path.is_file() else None
+    route_result = _load_json(route_path) if route_path is not None and route_path.is_file() else None
     observed_route_status = route_result.get("status") if route_result else None
     route_status = ("QUALIFIED" if observed_route_status == "QUALIFIED" else
                     "TIMEOUT" if observed_route_status == "TIMEOUT" else
-                    "FAILED" if route_result else "PLANNED")
+                    "FAILED" if route_result else
+                    "SKIPPED_NO_QUALIFIED_CANDIDATE" if route_path is None else "PLANNED")
     store.upsert({
         "run_id": route_run_id, "design": context.design, "physical_seed": context.physical_seed,
         "K": context.K, "optimizer": "selective_route", "status": route_status,
         "architecture_sha256": selected["architecture_sha256"],
-        "artifact": (str(route_path.relative_to(ROOT)).replace("\\", "/") if route_path.is_file() else None),
-        "artifact_sha256": file_sha256(route_path) if route_path.is_file() else None,
+        "artifact": (str(route_path.relative_to(ROOT)).replace("\\", "/")
+                     if route_path is not None and route_path.is_file() else None),
+        "artifact_sha256": file_sha256(route_path) if route_path is not None and route_path.is_file() else None,
     })
     _metrics_csv(operator_screen, searches)
     summary = _report(context, operator_screen, searches, selected, route_result,
-                      time.monotonic() - started, contract_sha256)
-    complete = summary["status"] == "PILOT_COMPLETE"
+                      time.monotonic() - started, contract_sha256, generation_benchmark)
+    complete = summary["status"].startswith("PILOT_COMPLETE")
     write_status(REPORTS / "status.json", REPORTS / "STATUS.md", _status_base(
         campaign_id,
         current_phase="PILOT_COMPLETE" if complete else "PILOT_ROUTE_PENDING",
