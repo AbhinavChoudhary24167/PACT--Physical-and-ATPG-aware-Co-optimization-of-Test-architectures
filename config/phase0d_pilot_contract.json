@@ -1,0 +1,105 @@
+{
+  "schema_version": "phase0d-pilot-contract-1",
+  "status": "FROZEN_FOR_PILOT",
+  "research_question": "Under bounded compute and physical-evaluation budgets, do deterministic search methods leave a reproducible optimization gap large enough that investigating learned guidance is scientifically justified?",
+  "phase0d_starting_branch": "codex/pact-phase0c-multichain-conflict",
+  "phase0d_starting_commit": "06d97d82263b3671d8a56c9e6ed104cf88d40266",
+  "phase0c_frozen_commit": "06d97d82263b3671d8a56c9e6ed104cf88d40266",
+  "phase0c_decision": "PACT_PHASE0C_LEARNING_GATE_FAIL",
+  "phase0c_sha256_root_at_audit": "28a00096d0c9eaa20c4854e3b6e2e409384e1ba47b93bba2fd4030b39a353571",
+  "benchmark_population": {
+    "designs": ["s5378", "s9234", "s15850"],
+    "physical_seeds": [11, 13, 17, 19, 23],
+    "K_values": [1, 2, 4, 8],
+    "pilot": {"design": "s5378", "physical_seed": 11, "K": 2, "starting_method": "P"},
+    "additional_benchmarks": []
+  },
+  "primary_objectives": [
+    "port_aware_scan_hpwl_proxy_um",
+    "H_eff_8_direct_sink_weighted",
+    "exact_parallel_shift_cycles"
+  ],
+  "objective_semantics": {
+    "port_aware_scan_hpwl_proxy_um": "FF-origin Manhattan proxy including all fixed SI/SO port links; never called routed scan wirelength",
+    "H_eff_8_direct_sink_weighted": "dimensionless direct-sink-weighted effective switching proxy",
+    "exact_parallel_shift_cycles": "frozen ATPG pattern count times longest chain length under fully clocked parallel loading"
+  },
+  "operators": [
+    "swap",
+    "two_opt",
+    "block_relocation",
+    "cross_chain_move",
+    "cross_chain_swap",
+    "endpoint_reassignment",
+    "cross_chain_block_move"
+  ],
+  "optimizers": [
+    "greedy_best_improvement",
+    "greedy_first_improvement",
+    "beam_search",
+    "simulated_annealing"
+  ],
+  "pilot_budgets": {
+    "proxy_evaluations_per_optimizer": 16,
+    "new_routed_evaluations_total": 1,
+    "candidate_batch_size": 8,
+    "beam_width": 3,
+    "wall_clock_seconds_per_optimizer": 120
+  },
+  "primary_campaign_budget_candidates": {
+    "proxy_evaluations_per_optimizer_context": [16, 32, 64, 128],
+    "routed_evaluations_per_optimizer_context": [2, 4, 8],
+    "hard_proxy_maximum": 128,
+    "hard_route_maximum": 8
+  },
+  "legality": {
+    "K_fixed": true,
+    "minimum_chain_length": 8,
+    "maximum_chain_length_difference": 2,
+    "require_FF_bijection": true,
+    "require_unique_SI_SO": true,
+    "require_exact_ATPG_reconstruction": true,
+    "require_leading_padding": true
+  },
+  "early_stopping": {
+    "pilot_plateau_legal_evaluations": 8,
+    "pilot_hypervolume_window": 8,
+    "pilot_minimum_relative_hypervolume_improvement": 0.005,
+    "final_defaults_pending_pilot": true
+  },
+  "normalization": {
+    "pilot_rule": "freeze ideal and reference bounds from the Phase-0C qualified portfolio in the pilot context before evaluating any Phase-0D child",
+    "reference_margin_fraction_of_portfolio_range": 0.25,
+    "zero_range_margin_fraction": 0.10,
+    "final_bounds_pending_pilot": true
+  },
+  "routing": {
+    "route_timeout_seconds": 600,
+    "maximum_transient_retry_count": 1,
+    "minimum_free_disk_bytes": 5368709120,
+    "route_only_proxy_nondominated_shortlist": true
+  },
+  "evidence_reuse": {
+    "reuse_phase0c_qualified_routes": true,
+    "rerun_phase0c": false,
+    "verify_hashes_before_reuse": true,
+    "record_reuse_as": "REUSED_VERIFIED"
+  },
+  "gate_draft": {
+    "D1": "complete required pilot/final manifests, proofs, contexts and provenance",
+    "D2": "richer operators show replicated both-sign material response and nondominated-child creation; exact material threshold pending pilot",
+    "D3": "at least one bounded optimizer discovers a new nondominated architecture beyond its start",
+    "D4": "benefit replicates across a predeclared seed count pending pilot",
+    "D5": "benefit replicates on at least two designs",
+    "D6": "deterministic budgeted gap threshold pending pilot and frozen before final campaign",
+    "D7": "new physical evaluations have measured nontrivial runtime cost",
+    "D8": "report formal search-space and empirical evaluation-cost scaling",
+    "D9": "all frozen prerequisite gates must pass for PACT_PHASE0D_LEARNING_OPPORTUNITY_ESTABLISHED"
+  },
+  "statistics": {
+    "pairing_unit": "design x physical_seed x K",
+    "descriptives": ["median", "IQR", "range", "sample_count"],
+    "candidate_independence_claim": false,
+    "population_p_values": false
+  }
+}

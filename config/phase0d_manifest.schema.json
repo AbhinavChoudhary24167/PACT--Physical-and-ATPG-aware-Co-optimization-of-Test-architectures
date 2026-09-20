@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pact.local/schemas/phase0d-manifest-1.json",
+  "title": "PACT Phase-0D execution manifest",
+  "type": "object",
+  "required": ["schema_version", "campaign_id", "phase0d_starting_commit", "contract_sha256", "rows"],
+  "properties": {
+    "schema_version": {"const": "phase0d-manifest-1"},
+    "campaign_id": {"type": "string", "minLength": 1},
+    "phase0d_starting_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "contract_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["run_id", "design", "physical_seed", "K", "optimizer", "status"],
+        "properties": {
+          "run_id": {"type": "string", "pattern": "^[0-9a-f]{20}$"},
+          "design": {"enum": ["s5378", "s9234", "s15850"]},
+          "physical_seed": {"enum": [11, 13, 17, 19, 23]},
+          "K": {"enum": [1, 2, 4, 8]},
+          "optimizer": {"type": "string"},
+          "status": {
+            "enum": ["PLANNED", "RUNNING", "QUALIFIED", "INVALID", "TIMEOUT", "FAILED", "SKIPPED_EXISTING", "REUSED_VERIFIED"]
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
