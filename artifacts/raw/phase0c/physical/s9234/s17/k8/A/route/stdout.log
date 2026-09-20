@@ -1,0 +1,1151 @@
+OpenROAD 26Q2-1164-g08f67ee5ec 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+mkdir -p ./objects/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61
+/root/pact-deps/OpenROAD-flow-scripts/flow/scripts/flow.sh 4_1_cts cts
+Running cts.tcl, stage 4_1_cts
+read_liberty /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/3_place.odb
+read_sdc ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/3_place.sdc
+source /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+clock_tree_synthesis -sink_clustering_enable -repair_clock_nets
+[INFO CTS-0050] Root buffer is CLKBUF_X3.
+[INFO CTS-0051] Sink buffer is CLKBUF_X3.
+[INFO CTS-0052] The following clock buffers will be used for CTS:
+                    CLKBUF_X3
+[INFO CTS-0049] Characterization buffer is CLKBUF_X3.
+[INFO CTS-0007] Net "CK" found for clock "clk".
+[INFO CTS-0010]  Clock net "CK" has 211 sinks.
+[INFO CTS-0008] TritonCTS found 1 clock nets.
+[INFO CTS-0097] Characterization used 1 buffer(s) types.
+[INFO CTS-0201] 0 blockages from hard placement blockages and placed macros will be used.
+[INFO CTS-0027] Generating H-Tree topology for net CK.
+[INFO CTS-0028]  Total number of sinks: 211.
+[INFO CTS-0090]  Sinks will be clustered based on buffer max cap.
+[INFO CTS-0030]  Number of static layers: 0.
+[INFO CTS-0020]  Wire segment unit: 14000  dbu (7 um).
+[INFO CTS-0206] Best clustering solution was found from max clustering size of 8 and max clustering diameter of 28.
+[INFO CTS-0019]  Total number of sinks after clustering: 33.
+[INFO CTS-0024]  Normalized sink region: [(2.55155, 1.6), (12.7437, 12.7971)].
+[INFO CTS-0025]     Width:  10.1921.
+[INFO CTS-0026]     Height: 11.1971.
+ Level 1
+    Direction: Vertical
+    Sinks per sub-region: 17
+    Sub-region size: 10.1921 X 5.5986
+[INFO CTS-0034]     Segment length (rounded): 2.
+ Level 2
+    Direction: Horizontal
+    Sinks per sub-region: 9
+    Sub-region size: 5.0961 X 5.5986
+[INFO CTS-0034]     Segment length (rounded): 2.
+[INFO CTS-0032]  Stop criterion found. Max number of sinks is 15.
+[INFO CTS-0035]  Number of sinks covered: 33.
+[INFO CTS-0018]     Created 38 clock buffers.
+[INFO CTS-0012]     Minimum number of buffers in the clock path: 3.
+[INFO CTS-0013]     Maximum number of buffers in the clock path: 3.
+[INFO CTS-0015]     Created 38 clock nets.
+[INFO CTS-0016]     Fanout distribution for the current clock = 4:1, 5:4, 6:13, 7:13, 8:4, 9:1, 10:1..
+[INFO CTS-0017]     Max level of the clock tree: 2.
+[INFO CTS-0098] Clock net "CK"
+[INFO CTS-0099]  Sinks 241
+[INFO CTS-0100]  Leaf buffers 33
+[INFO CTS-0101]  Average sink wire length 142.43 um
+[INFO CTS-0102]  Path depth 2 - 3
+[INFO CTS-0207]  Dummy loads inserted 30
+estimate_parasitics -placement
+detailed_placement
+[INFO DPL-0006] Core area: 10208.02 um^2, Instances area: 3604.03 um^2, Utilization: 35.3%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1101] Legalizing using diamond search.
+Movements Summary
+---------------------------------------
+Total cells:                    2612
+Diamond Move Success:           2612 (100.00%)
+Diamond Move Failure:              0
+Rip-up and replace Success:        0 (  0.00% of diamond failures)
+Rip-up and replace Failure:        0
+Total Placement Failures:          0
+---------------------------------------
+Placement Analysis
+---------------------------------
+total displacement        131.0 u
+average displacement        0.0 u
+max displacement            2.8 u
+original HPWL           39809.5 u
+legalized HPWL          39844.3 u
+delta HPWL                    0 %
+
+estimate_parasitics -placement
+repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -verbose
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove BufferMove CloneMove SplitLoadMove 
+[INFO RSZ-0098] No setup violations found
+[INFO RSZ-0046] Found 60 endpoints with hold violations.
+Iteration | Resized | Buffers | Cloned Gates |   Area   |   WNS   |   TNS   | Endpoint
+--------------------------------------------------------------------------------------
+        0 |       0 |       0 |            0 |    +0.0% |  -0.093 |  -1.923 | U_g666/D
+       10 |       0 |      17 |            0 |    +0.4% |  -0.077 |  -1.357 | U_g687/D
+       20 |       0 |      31 |            0 |    +0.7% |  -0.037 |  -0.324 | U_g666/D
+       30 |       0 |      31 |            0 |    +0.7% |  -0.037 |  -0.324 | U_g666/D
+       40 |       0 |      31 |            0 |    +0.7% |  -0.037 |  -0.324 | U_g666/D
+       50 |       0 |      34 |            0 |    +0.8% |  -0.037 |  -0.238 | U_g666/D
+       60 |       0 |      36 |            0 |    +0.8% |  -0.037 |  -0.226 | U_g666/D
+    final |       0 |      50 |            0 |    +1.1% |   0.001 |   0.000 | U_g685/D
+--------------------------------------------------------------------------------------
+[INFO RSZ-0032] Inserted 50 hold buffers.
+detailed_placement
+[INFO DPL-0006] Core area: 10208.02 um^2, Instances area: 3643.93 um^2, Utilization: 35.7%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1101] Legalizing using diamond search.
+Movements Summary
+---------------------------------------
+Total cells:                    2662
+Diamond Move Success:           2662 (100.00%)
+Diamond Move Failure:              0
+Rip-up and replace Success:        0 (  0.00% of diamond failures)
+Rip-up and replace Failure:        0
+Total Placement Failures:          0
+---------------------------------------
+Placement Analysis
+---------------------------------
+total displacement         67.6 u
+average displacement        0.0 u
+max displacement            3.1 u
+original HPWL           39931.2 u
+legalized HPWL          39973.2 u
+delta HPWL                    0 %
+
+estimate_parasitics -placement
+Report metrics stage 4, cts final...
+
+==========================================================================
+cts final report_design_area
+--------------------------------------------------------------------------
+Design area 3644 um^2 36% utilization.
+write_db ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/4_1_cts.odb
+write_sdc -no_timestamp ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/4_cts.sdc
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+4_1_cts                   .odb            4            159 7e13714431fcb27d2500
+cp ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/4_1_cts.odb ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/4_cts.odb
+/root/pact-deps/OpenROAD-flow-scripts/flow/scripts/flow.sh 5_1_grt global_route
+Running global_route.tcl, stage 5_1_grt
+read_liberty /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/4_cts.odb
+read_sdc ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/4_cts.sdc
+source /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+pin_access
+[INFO DRT-0149] Reading tech and libs.
+
+Units:                2000
+Number of layers:     21
+Number of macros:     135
+Number of vias:       33
+Number of viarulegen: 19
+
+[INFO DRT-0150] Reading design.
+
+Design:                   s9234f
+Die area:                 ( 0 0 ) ( 206880 206880 )
+Number of track patterns: 20
+Number of DEF vias:       0
+Number of components:     2806
+Number of terminals:      95
+Number of snets:          2
+Number of nets:           2678
+
+[INFO DRT-0167] List of default vias:
+  Layer via2
+    default via: via2_5
+  Layer via3
+    default via: via3_2
+  Layer via4
+    default via: via4_0
+  Layer via5
+    default via: via5_0
+  Layer via6
+    default via: via6_0
+  Layer via7
+    default via: via7_0
+  Layer via8
+    default via: via8_0
+  Layer via9
+    default via: via9_0
+[INFO DRT-0162] Library cell analysis.
+[INFO DRT-0163] Instance analysis.
+[INFO DRT-0164] Number of unique instances = 49.
+[INFO DRT-0168] Init region query.
+[INFO DRT-0024]   Complete active.
+[INFO DRT-0024]   Complete Fr_VIA.
+[INFO DRT-0024]   Complete metal1.
+[INFO DRT-0024]   Complete via1.
+[INFO DRT-0024]   Complete metal2.
+[INFO DRT-0024]   Complete via2.
+[INFO DRT-0024]   Complete metal3.
+[INFO DRT-0024]   Complete via3.
+[INFO DRT-0024]   Complete metal4.
+[INFO DRT-0024]   Complete via4.
+[INFO DRT-0024]   Complete metal5.
+[INFO DRT-0024]   Complete via5.
+[INFO DRT-0024]   Complete metal6.
+[INFO DRT-0024]   Complete via6.
+[INFO DRT-0024]   Complete metal7.
+[INFO DRT-0024]   Complete via7.
+[INFO DRT-0024]   Complete metal8.
+[INFO DRT-0024]   Complete via8.
+[INFO DRT-0024]   Complete metal9.
+[INFO DRT-0024]   Complete via9.
+[INFO DRT-0024]   Complete metal10.
+[INFO DRT-0033] active shape region query size = 0.
+[INFO DRT-0033] FR_VIA shape region query size = 0.
+[INFO DRT-0033] metal1 shape region query size = 42660.
+[INFO DRT-0033] via1 shape region query size = 438.
+[INFO DRT-0033] metal2 shape region query size = 292.
+[INFO DRT-0033] via2 shape region query size = 438.
+[INFO DRT-0033] metal3 shape region query size = 292.
+[INFO DRT-0033] via3 shape region query size = 438.
+[INFO DRT-0033] metal4 shape region query size = 164.
+[INFO DRT-0033] via4 shape region query size = 140.
+[INFO DRT-0033] metal5 shape region query size = 76.
+[INFO DRT-0033] via5 shape region query size = 140.
+[INFO DRT-0033] metal6 shape region query size = 73.
+[INFO DRT-0033] via6 shape region query size = 56.
+[INFO DRT-0033] metal7 shape region query size = 28.
+[INFO DRT-0033] via7 shape region query size = 0.
+[INFO DRT-0033] metal8 shape region query size = 0.
+[INFO DRT-0033] via8 shape region query size = 0.
+[INFO DRT-0033] metal9 shape region query size = 0.
+[INFO DRT-0033] via9 shape region query size = 0.
+[INFO DRT-0033] metal10 shape region query size = 0.
+[INFO DRT-0165] Start pin access.
+[INFO DRT-0078]   Complete 249 pins.
+[INFO DRT-0081]   Complete 49 unique inst patterns.
+[INFO DRT-0084]   Complete 1505 groups.
+#scanned instances     = 2806
+#unique  instances     = 49
+#stdCellGenAp          = 1067
+#stdCellValidPlanarAp  = 0
+#stdCellValidViaAp     = 854
+#stdCellPinNoAp        = 0
+#stdCellPinCnt         = 8136
+#instTermValidViaApCnt = 0
+#macroGenAp            = 0
+#macroValidPlanarAp    = 0
+#macroValidViaAp       = 0
+#macroNoAp             = 0
+[INFO DRT-0166] Complete pin access.
+[INFO DRT-0267] cpu time = 00:00:29, elapsed time = 00:00:06, memory = 119.33 (MB), peak = 118.97 (MB)
+Took 7 seconds: pin_access
+set_global_routing_random -seed 17
+global_route -congestion_report_file ./reports/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/congestion.rpt -congestion_iterations 30 -congestion_report_iter_step 5 -verbose
+[INFO GRT-0020] Min routing layer: metal2
+[INFO GRT-0021] Max routing layer: metal10
+[INFO GRT-0022] Global adjustment: 0%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0088] Layer metal1  Track-Pitch = 0.1400  line-2-Via Pitch: 0.1350
+[INFO GRT-0088] Layer metal2  Track-Pitch = 0.1900  line-2-Via Pitch: 0.1400
+[INFO GRT-0088] Layer metal3  Track-Pitch = 0.1400  line-2-Via Pitch: 0.1400
+[INFO GRT-0088] Layer metal4  Track-Pitch = 0.2800  line-2-Via Pitch: 0.2800
+[INFO GRT-0088] Layer metal5  Track-Pitch = 0.2800  line-2-Via Pitch: 0.2800
+[INFO GRT-0088] Layer metal6  Track-Pitch = 0.2800  line-2-Via Pitch: 0.2800
+[INFO GRT-0088] Layer metal7  Track-Pitch = 0.8000  line-2-Via Pitch: 0.8000
+[INFO GRT-0088] Layer metal8  Track-Pitch = 0.8000  line-2-Via Pitch: 0.8000
+[INFO GRT-0088] Layer metal9  Track-Pitch = 1.6000  line-2-Via Pitch: 1.6000
+[INFO GRT-0088] Layer metal10 Track-Pitch = 1.6000  line-2-Via Pitch: 1.6000
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0004] Blockages: 0
+[INFO GRT-0019] Found 39 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 63
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+metal1     Horizontal          0             0          0.00%
+metal2     Vertical        18585          8750          52.92%
+metal3     Horizontal      25711         12607          50.97%
+metal4     Vertical        12600          8890          29.44%
+metal5     Horizontal      12839          9040          29.59%
+metal6     Vertical        12882          9077          29.54%
+metal7     Horizontal       3920          2800          28.57%
+metal8     Vertical         4480          3220          28.12%
+metal9     Horizontal       2240          1260          43.75%
+metal10    Vertical         2240          1260          43.75%
+---------------------------------------------------------------
+
+[INFO GRT-0197] Via related to pin nodes: 15841
+[INFO GRT-0198] Via related Steiner nodes: 332
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 20990
+[INFO GRT-0112] Final usage 3D: 78354
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+metal1               0             0            0.00%             0 /  0 /  0
+metal2            8750          4866           55.61%             0 /  0 /  0
+metal3           12607          6155           48.82%             0 /  0 /  0
+metal4            8890          2466           27.74%             0 /  0 /  0
+metal5            9040          1449           16.03%             0 /  0 /  0
+metal6            9077           434            4.78%             0 /  0 /  0
+metal7            2800            14            0.50%             0 /  0 /  0
+metal8            3220             0            0.00%             0 /  0 /  0
+metal9            1260             0            0.00%             0 /  0 /  0
+metal10           1260             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total            56904         15384           27.04%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 64509 um
+[INFO GRT-0014] Routed nets: 2678
+[INFO GRT-0303] Global routing runtime = 00:00:00
+estimate_parasitics -global_routing
+Perform buffer insertion and gate resizing...
+repair_design -verbose
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      2919
+       10 |     +0.0% |       0 |       0 |             0 |      2909
+       20 |     +0.0% |       0 |       0 |             0 |      2899
+       30 |     +0.0% |       0 |       0 |             0 |      2889
+       40 |     +0.0% |       0 |       0 |             0 |      2879
+       50 |     +0.0% |       0 |       0 |             0 |      2869
+       60 |     +0.0% |       0 |       0 |             0 |      2859
+       70 |     +0.0% |       0 |       0 |             0 |      2849
+       80 |     +0.0% |       0 |       0 |             0 |      2839
+       90 |     +0.0% |       0 |       0 |             0 |      2829
+      100 |     +0.0% |       0 |       0 |             0 |      2819
+      110 |     +0.0% |       0 |       0 |             0 |      2809
+      120 |     +0.0% |       0 |       0 |             0 |      2799
+      130 |     +0.0% |       0 |       0 |             0 |      2789
+      140 |     +0.0% |       0 |       0 |             0 |      2779
+      150 |     +0.0% |       0 |       0 |             0 |      2769
+      160 |     +0.0% |       0 |       0 |             0 |      2759
+      170 |     +0.0% |       0 |       0 |             0 |      2749
+      180 |     +0.0% |       0 |       0 |             0 |      2739
+      190 |     +0.0% |       0 |       0 |             0 |      2729
+      200 |     +0.0% |       0 |       0 |             0 |      2719
+      210 |     +0.0% |       0 |       0 |             0 |      2709
+      220 |     +0.0% |       0 |       0 |             0 |      2699
+      230 |     +0.0% |       0 |       0 |             0 |      2689
+      240 |     +0.0% |       0 |       0 |             0 |      2679
+      250 |     +0.0% |       0 |       0 |             0 |      2669
+      260 |     +0.0% |       0 |       0 |             0 |      2659
+      270 |     +0.0% |       0 |       0 |             0 |      2649
+      280 |     +0.0% |       0 |       0 |             0 |      2639
+      290 |     +0.0% |       0 |       0 |             0 |      2629
+      300 |     +0.0% |       0 |       0 |             0 |      2619
+      310 |     +0.0% |       0 |       0 |             0 |      2609
+      320 |     +0.0% |       0 |       0 |             0 |      2599
+      330 |     +0.0% |       0 |       0 |             0 |      2589
+      340 |     +0.0% |       0 |       0 |             0 |      2579
+      350 |     +0.0% |       0 |       0 |             0 |      2569
+      360 |     +0.0% |       0 |       0 |             0 |      2559
+      370 |     +0.0% |       0 |       0 |             0 |      2549
+      380 |     +0.0% |       0 |       0 |             0 |      2539
+      390 |     +0.0% |       0 |       0 |             0 |      2529
+      400 |     +0.0% |       0 |       0 |             0 |      2519
+      410 |     +0.0% |       0 |       0 |             0 |      2509
+      420 |     +0.0% |       0 |       0 |             0 |      2499
+      430 |     +0.0% |       0 |       0 |             0 |      2489
+      440 |     +0.0% |       0 |       0 |             0 |      2479
+      450 |     +0.0% |       0 |       0 |             0 |      2469
+      460 |     +0.0% |       0 |       0 |             0 |      2459
+      470 |     +0.0% |       0 |       0 |             0 |      2449
+      480 |     +0.0% |       0 |       0 |             0 |      2439
+      490 |     +0.0% |       0 |       0 |             0 |      2429
+      500 |     +0.0% |       0 |       0 |             0 |      2419
+      510 |     +0.0% |       0 |       0 |             0 |      2409
+      520 |     +0.0% |       0 |       0 |             0 |      2399
+      530 |     +0.0% |       0 |       0 |             0 |      2389
+      540 |     +0.0% |       0 |       0 |             0 |      2379
+      550 |     +0.0% |       0 |       0 |             0 |      2369
+      560 |     +0.0% |       0 |       0 |             0 |      2359
+      570 |     +0.0% |       0 |       0 |             0 |      2349
+      580 |     +0.0% |       0 |       0 |             0 |      2339
+      590 |     +0.0% |       0 |       0 |             0 |      2329
+      600 |     +0.0% |       0 |       0 |             0 |      2319
+      610 |     +0.0% |       0 |       0 |             0 |      2309
+      620 |     +0.0% |       0 |       0 |             0 |      2299
+      630 |     +0.0% |       0 |       0 |             0 |      2289
+      640 |     +0.0% |       0 |       0 |             0 |      2279
+      650 |     +0.0% |       0 |       0 |             0 |      2269
+      660 |     +0.0% |       0 |       0 |             0 |      2259
+      670 |     +0.0% |       0 |       0 |             0 |      2249
+      680 |     +0.0% |       0 |       0 |             0 |      2239
+      690 |     +0.0% |       0 |       0 |             0 |      2229
+      700 |     +0.0% |       0 |       0 |             0 |      2219
+      710 |     +0.0% |       0 |       0 |             0 |      2209
+      720 |     +0.0% |       0 |       0 |             0 |      2199
+      730 |     +0.0% |       0 |       0 |             0 |      2189
+      740 |     +0.0% |       0 |       0 |             0 |      2179
+      750 |     +0.0% |       0 |       0 |             0 |      2169
+      760 |     +0.0% |       0 |       0 |             0 |      2159
+      770 |     +0.0% |       0 |       0 |             0 |      2149
+      780 |     +0.0% |       0 |       0 |             0 |      2139
+      790 |     +0.0% |       0 |       0 |             0 |      2129
+      800 |     +0.0% |       0 |       0 |             0 |      2119
+      810 |     +0.0% |       0 |       0 |             0 |      2109
+      820 |     +0.0% |       0 |       0 |             0 |      2099
+      830 |     +0.0% |       0 |       0 |             0 |      2089
+      840 |     +0.0% |       0 |       0 |             0 |      2079
+      850 |     +0.0% |       0 |       0 |             0 |      2069
+      860 |     +0.0% |       0 |       0 |             0 |      2059
+      870 |     +0.0% |       0 |       0 |             0 |      2049
+      880 |     +0.0% |       0 |       0 |             0 |      2039
+      890 |     +0.0% |       0 |       0 |             0 |      2029
+      900 |     +0.0% |       0 |       0 |             0 |      2019
+      910 |     +0.0% |       0 |       0 |             0 |      2009
+      920 |     +0.0% |       0 |       0 |             0 |      1999
+      930 |     +0.0% |       0 |       0 |             0 |      1989
+      940 |     +0.0% |       0 |       0 |             0 |      1979
+      950 |     +0.0% |       0 |       0 |             0 |      1969
+      960 |     +0.0% |       0 |       0 |             0 |      1959
+      970 |     +0.0% |       0 |       0 |             0 |      1949
+      980 |     +0.0% |       0 |       0 |             0 |      1939
+      990 |     +0.0% |       0 |       0 |             0 |      1929
+     1000 |     +0.0% |       0 |       0 |             0 |      1919
+     1010 |     +0.0% |       0 |       0 |             0 |      1909
+     1020 |     +0.0% |       0 |       0 |             0 |      1899
+     1030 |     +0.0% |       0 |       0 |             0 |      1889
+     1040 |     +0.0% |       0 |       0 |             0 |      1879
+     1050 |     +0.0% |       0 |       0 |             0 |      1869
+     1060 |     +0.0% |       0 |       0 |             0 |      1859
+     1070 |     +0.0% |       0 |       0 |             0 |      1849
+     1080 |     +0.0% |       0 |       0 |             0 |      1839
+     1090 |     +0.0% |       0 |       0 |             0 |      1829
+     1100 |     +0.0% |       0 |       0 |             0 |      1819
+     1110 |     +0.0% |       0 |       0 |             0 |      1809
+     1120 |     +0.0% |       0 |       0 |             0 |      1799
+     1130 |     +0.0% |       0 |       0 |             0 |      1789
+     1140 |     +0.0% |       0 |       0 |             0 |      1779
+     1150 |     +0.0% |       0 |       0 |             0 |      1769
+     1160 |     +0.0% |       0 |       0 |             0 |      1759
+     1170 |     +0.0% |       0 |       0 |             0 |      1749
+     1180 |     +0.0% |       0 |       0 |             0 |      1739
+     1190 |     +0.0% |       0 |       0 |             0 |      1729
+     1200 |     +0.0% |       0 |       0 |             0 |      1719
+     1210 |     +0.0% |       0 |       0 |             0 |      1709
+     1220 |     +0.0% |       0 |       0 |             0 |      1699
+     1230 |     +0.0% |       0 |       0 |             0 |      1689
+     1240 |     +0.0% |       0 |       0 |             0 |      1679
+     1250 |     +0.0% |       0 |       0 |             0 |      1669
+     1260 |     +0.0% |       0 |       0 |             0 |      1659
+     1270 |     +0.0% |       0 |       0 |             0 |      1649
+     1280 |     +0.0% |       0 |       0 |             0 |      1639
+     1290 |     +0.0% |       0 |       0 |             0 |      1629
+     1300 |     +0.0% |       0 |       0 |             0 |      1619
+     1310 |     +0.0% |       0 |       0 |             0 |      1609
+     1320 |     +0.0% |       0 |       0 |             0 |      1599
+     1330 |     +0.0% |       0 |       0 |             0 |      1589
+     1340 |     +0.0% |       0 |       0 |             0 |      1579
+     1350 |     +0.0% |       0 |       0 |             0 |      1569
+     1360 |     +0.0% |       0 |       0 |             0 |      1559
+     1370 |     +0.0% |       0 |       0 |             0 |      1549
+     1380 |     +0.0% |       0 |       0 |             0 |      1539
+     1390 |     +0.0% |       0 |       0 |             0 |      1529
+     1400 |     +0.0% |       0 |       0 |             0 |      1519
+     1410 |     +0.0% |       0 |       0 |             0 |      1509
+     1420 |     +0.0% |       0 |       0 |             0 |      1499
+     1430 |     +0.0% |       0 |       0 |             0 |      1489
+     1440 |     +0.0% |       0 |       0 |             0 |      1479
+     1450 |     +0.0% |       0 |       0 |             0 |      1469
+     1460 |     +0.0% |       0 |       0 |             0 |      1459
+     1470 |     +0.0% |       0 |       0 |             0 |      1449
+     1480 |     +0.0% |       0 |       0 |             0 |      1439
+     1490 |     +0.0% |       0 |       0 |             0 |      1429
+     1500 |     +0.0% |       0 |       0 |             0 |      1419
+     1510 |     +0.0% |       0 |       0 |             0 |      1409
+     1520 |     +0.0% |       0 |       0 |             0 |      1399
+     1530 |     +0.0% |       0 |       0 |             0 |      1389
+     1540 |     +0.0% |       0 |       0 |             0 |      1379
+     1550 |     +0.0% |       0 |       0 |             0 |      1369
+     1560 |     +0.0% |       0 |       0 |             0 |      1359
+     1570 |     +0.0% |       0 |       0 |             0 |      1349
+     1580 |     +0.0% |       0 |       0 |             0 |      1339
+     1590 |     +0.0% |       0 |       0 |             0 |      1329
+     1600 |     +0.0% |       0 |       0 |             0 |      1319
+     1610 |     +0.0% |       0 |       0 |             0 |      1309
+     1620 |     +0.0% |       0 |       0 |             0 |      1299
+     1630 |     +0.0% |       0 |       0 |             0 |      1289
+     1640 |     +0.0% |       0 |       0 |             0 |      1279
+     1650 |     +0.0% |       0 |       0 |             0 |      1269
+     1660 |     +0.0% |       0 |       0 |             0 |      1259
+     1670 |     +0.0% |       0 |       0 |             0 |      1249
+     1680 |     +0.0% |       0 |       0 |             0 |      1239
+     1690 |     +0.0% |       0 |       0 |             0 |      1229
+     1700 |     +0.0% |       0 |       0 |             0 |      1219
+     1710 |     +0.0% |       0 |       0 |             0 |      1209
+     1720 |     +0.0% |       0 |       0 |             0 |      1199
+     1730 |     +0.0% |       0 |       0 |             0 |      1189
+     1740 |     +0.0% |       0 |       0 |             0 |      1179
+     1750 |     +0.0% |       0 |       0 |             0 |      1169
+     1760 |     +0.0% |       0 |       0 |             0 |      1159
+     1770 |     +0.0% |       0 |       0 |             0 |      1149
+     1780 |     +0.0% |       0 |       0 |             0 |      1139
+     1790 |     +0.0% |       0 |       0 |             0 |      1129
+     1800 |     +0.0% |       0 |       0 |             0 |      1119
+     1810 |     +0.0% |       0 |       0 |             0 |      1109
+     1820 |     +0.0% |       0 |       0 |             0 |      1099
+     1830 |     +0.0% |       0 |       0 |             0 |      1089
+     1840 |     +0.0% |       0 |       0 |             0 |      1079
+     1850 |     +0.0% |       0 |       0 |             0 |      1069
+     1860 |     +0.0% |       0 |       0 |             0 |      1059
+     1870 |     +0.0% |       0 |       0 |             0 |      1049
+     1880 |     +0.0% |       0 |       0 |             0 |      1039
+     1890 |     +0.0% |       0 |       0 |             0 |      1029
+     1900 |     +0.0% |       0 |       0 |             0 |      1019
+     1910 |     +0.0% |       0 |       0 |             0 |      1009
+     1920 |     +0.0% |       0 |       0 |             0 |       999
+     1930 |     +0.0% |       0 |       0 |             0 |       989
+     1940 |     +0.0% |       0 |       0 |             0 |       979
+     1950 |     +0.0% |       0 |       0 |             0 |       969
+     1960 |     +0.0% |       0 |       0 |             0 |       959
+     1970 |     +0.0% |       0 |       0 |             0 |       949
+     1980 |     +0.0% |       0 |       0 |             0 |       939
+     1990 |     +0.0% |       0 |       0 |             0 |       929
+     2000 |     +0.0% |       0 |       0 |             0 |       919
+     2010 |     +0.0% |       0 |       0 |             0 |       909
+     2020 |     +0.0% |       0 |       0 |             0 |       899
+     2030 |     +0.0% |       0 |       0 |             0 |       889
+     2040 |     +0.0% |       0 |       0 |             0 |       879
+     2050 |     +0.0% |       0 |       0 |             0 |       869
+     2060 |     +0.0% |       0 |       0 |             0 |       859
+     2070 |     +0.0% |       0 |       0 |             0 |       849
+     2080 |     +0.0% |       0 |       0 |             0 |       839
+     2090 |     +0.0% |       0 |       0 |             0 |       829
+     2100 |     +0.0% |       0 |       0 |             0 |       819
+     2110 |     +0.0% |       0 |       0 |             0 |       809
+     2120 |     +0.0% |       0 |       0 |             0 |       799
+     2130 |     +0.0% |       0 |       0 |             0 |       789
+     2140 |     +0.0% |       0 |       0 |             0 |       779
+     2150 |     +0.0% |       0 |       0 |             0 |       769
+     2160 |     +0.0% |       0 |       0 |             0 |       759
+     2170 |     +0.0% |       0 |       0 |             0 |       749
+     2180 |     +0.0% |       0 |       0 |             0 |       739
+     2190 |     +0.0% |       0 |       0 |             0 |       729
+     2200 |     +0.0% |       0 |       0 |             0 |       719
+     2210 |     +0.0% |       0 |       0 |             0 |       709
+     2220 |     +0.0% |       0 |       0 |             0 |       699
+     2230 |     +0.0% |       0 |       0 |             0 |       689
+     2240 |     +0.0% |       0 |       0 |             0 |       679
+     2250 |     +0.0% |       0 |       0 |             0 |       669
+     2260 |     +0.0% |       0 |       0 |             0 |       659
+     2270 |     +0.0% |       0 |       0 |             0 |       649
+     2280 |     +0.0% |       0 |       0 |             0 |       639
+     2290 |     +0.0% |       0 |       0 |             0 |       629
+     2300 |     +0.0% |       0 |       0 |             0 |       619
+     2310 |     +0.0% |       0 |       0 |             0 |       609
+     2320 |     +0.0% |       0 |       0 |             0 |       599
+     2330 |     +0.0% |       0 |       0 |             0 |       589
+     2340 |     +0.0% |       0 |       0 |             0 |       579
+     2350 |     +0.0% |       0 |       0 |             0 |       569
+     2360 |     +0.0% |       0 |       0 |             0 |       559
+     2370 |     +0.0% |       0 |       0 |             0 |       549
+     2380 |     +0.0% |       0 |       0 |             0 |       539
+     2390 |     +0.0% |       0 |       0 |             0 |       529
+     2400 |     +0.0% |       0 |       0 |             0 |       519
+     2410 |     +0.0% |       0 |       0 |             0 |       509
+     2420 |     +0.0% |       0 |       0 |             0 |       499
+     2430 |     +0.0% |       0 |       0 |             0 |       489
+     2440 |     +0.0% |       0 |       0 |             0 |       479
+     2450 |     +0.0% |       0 |       0 |             0 |       469
+     2460 |     +0.0% |       0 |       0 |             0 |       459
+     2470 |     +0.0% |       0 |       0 |             0 |       449
+     2480 |     +0.0% |       0 |       0 |             0 |       439
+     2490 |     +0.0% |       0 |       0 |             0 |       429
+     2500 |     +0.0% |       0 |       0 |             0 |       419
+     2510 |     +0.0% |       0 |       0 |             0 |       409
+     2520 |     +0.0% |       0 |       0 |             0 |       399
+     2530 |     +0.0% |       0 |       0 |             0 |       389
+     2540 |     +0.0% |       0 |       0 |             0 |       379
+     2550 |     +0.0% |       0 |       0 |             0 |       369
+     2560 |     +0.0% |       0 |       0 |             0 |       359
+     2570 |     +0.0% |       0 |       0 |             0 |       349
+     2580 |     +0.0% |       0 |       0 |             0 |       339
+     2590 |     +0.0% |       0 |       0 |             0 |       329
+     2600 |     +0.0% |       0 |       0 |             0 |       319
+     2610 |     +0.0% |       0 |       0 |             0 |       309
+     2620 |     +0.0% |       0 |       0 |             0 |       299
+     2630 |     +0.0% |       0 |       0 |             0 |       289
+     2640 |     +0.0% |       0 |       0 |             0 |       279
+     2650 |     +0.0% |       0 |       0 |             0 |       269
+     2660 |     +0.0% |       0 |       0 |             0 |       259
+     2670 |     +0.0% |       0 |       0 |             0 |       249
+     2680 |     +0.0% |       0 |       0 |             0 |       239
+     2690 |     +0.0% |       0 |       0 |             0 |       229
+     2700 |     +0.0% |       0 |       0 |             0 |       219
+     2710 |     +0.0% |       0 |       0 |             0 |       209
+     2720 |     +0.0% |       0 |       0 |             0 |       199
+     2730 |     +0.0% |       0 |       0 |             0 |       189
+     2740 |     +0.0% |       0 |       0 |             0 |       179
+     2750 |     +0.0% |       0 |       0 |             0 |       169
+     2760 |     +0.0% |       0 |       0 |             0 |       159
+     2770 |     +0.0% |       0 |       0 |             0 |       149
+     2780 |     +0.0% |       0 |       0 |             0 |       139
+     2790 |     +0.0% |       0 |       0 |             0 |       129
+     2800 |     +0.0% |       0 |       0 |             0 |       119
+     2810 |     +0.0% |       0 |       0 |             0 |       109
+     2820 |     +0.0% |       0 |       0 |             0 |        99
+     2830 |     +0.0% |       0 |       0 |             0 |        89
+     2840 |     +0.0% |       0 |       0 |             0 |        79
+     2850 |     +0.0% |       0 |       0 |             0 |        69
+     2860 |     +0.0% |       0 |       0 |             0 |        59
+     2870 |     +0.0% |       0 |       0 |             0 |        49
+     2880 |     +0.0% |       0 |       0 |             0 |        39
+     2890 |     +0.0% |       0 |       0 |             0 |        29
+     2900 |     +0.0% |       0 |       0 |             0 |        19
+     2910 |     +0.0% |       0 |       0 |             0 |         9
+    final |     +0.0% |       0 |       0 |             0 |         0
+---------------------------------------------------------------------
+global_route -start_incremental
+detailed_placement
+[INFO DPL-0006] Core area: 10208.02 um^2, Instances area: 3643.93 um^2, Utilization: 35.7%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1101] Legalizing using diamond search.
+Movements Summary
+---------------------------------------
+Total cells:                    2662
+Diamond Move Success:           2662 (100.00%)
+Diamond Move Failure:              0
+Rip-up and replace Success:        0 (  0.00% of diamond failures)
+Rip-up and replace Failure:        0
+Total Placement Failures:          0
+---------------------------------------
+Placement Analysis
+---------------------------------
+total displacement          0.0 u
+average displacement        0.0 u
+max displacement            0.0 u
+original HPWL           39973.2 u
+legalized HPWL          39973.2 u
+delta HPWL                    0 %
+
+global_route -end_incremental -congestion_report_file ./reports/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/congestion_post_repair_design.rpt
+Repair setup and hold violations...
+estimate_parasitics -global_routing
+repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -verbose
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove BufferMove CloneMove SplitLoadMove 
+[INFO RSZ-0098] No setup violations found
+[INFO RSZ-0046] Found 4 endpoints with hold violations.
+Iteration | Resized | Buffers | Cloned Gates |   Area   |   WNS   |   TNS   | Endpoint
+--------------------------------------------------------------------------------------
+        0 |       0 |       0 |            0 |    +0.0% |  -0.001 |  -0.003 | U_g685/D
+    final |       0 |       3 |            0 |    +0.1% |   0.001 |   0.000 | U_g574/SE
+--------------------------------------------------------------------------------------
+[INFO RSZ-0032] Inserted 3 hold buffers.
+global_route -start_incremental
+detailed_placement
+[INFO DPL-0006] Core area: 10208.02 um^2, Instances area: 3646.33 um^2, Utilization: 35.7%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1101] Legalizing using diamond search.
+Movements Summary
+---------------------------------------
+Total cells:                    2665
+Diamond Move Success:           2665 (100.00%)
+Diamond Move Failure:              0
+Rip-up and replace Success:        0 (  0.00% of diamond failures)
+Rip-up and replace Failure:        0
+Total Placement Failures:          0
+---------------------------------------
+Placement Analysis
+---------------------------------
+total displacement          2.1 u
+average displacement        0.0 u
+max displacement            0.8 u
+original HPWL           39972.9 u
+legalized HPWL          39973.4 u
+delta HPWL                    0 %
+
+check_placement -verbose
+global_route -end_incremental -congestion_report_file ./reports/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/congestion_post_repair_timing.rpt
+estimate_parasitics -global_routing
+global_route -start_incremental
+global_route -end_incremental -congestion_report_file ./reports/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/congestion_post_recover_power.rpt
+Repair antennas...
+[WARNING GRT-0246] No diode with LEF class CORE ANTENNACELL found.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+Estimate parasitics...
+estimate_parasitics -global_routing
+Report metrics stage 5, global route...
+
+==========================================================================
+global route report_design_area
+--------------------------------------------------------------------------
+Design area 3646 um^2 36% utilization.
+[INFO FLW-0007] clock clk period 10.000000
+[INFO FLW-0008] Clock clk period 1.214
+[INFO FLW-0009] Clock clk slack 8.722
+write_sdc -no_timestamp ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/updated_clks.sdc
+[INFO FLW-0011] Path endpoint path count 921
+write_db ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/5_1_grt.odb
+write_sdc -no_timestamp ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/5_1_grt.sdc
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+5_1_grt                   .odb           12            312 97c447fb90c1119d33e0
+5_1_grt                   .sdc                             ef79d21436d690ebafd1
+/root/pact-deps/OpenROAD-flow-scripts/flow/scripts/flow.sh 5_2_route detail_route
+Running detail_route.tcl, stage 5_2_route
+read_liberty /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/5_1_grt.odb
+read_sdc ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/5_1_grt.sdc
+source /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+detailed_route -output_drc ./reports/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/5_route_drc.rpt -output_maze ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/maze.log -droute_end_iter 64 -verbose 1 -drc_report_iter_step 5
+[INFO DRT-0149] Reading tech and libs.
+
+Units:                2000
+Number of layers:     21
+Number of macros:     135
+Number of vias:       33
+Number of viarulegen: 19
+
+[INFO DRT-0150] Reading design.
+
+Design:                   s9234f
+Die area:                 ( 0 0 ) ( 206880 206880 )
+Number of track patterns: 20
+Number of DEF vias:       0
+Number of components:     2809
+Number of terminals:      95
+Number of snets:          2
+Number of nets:           2681
+
+[INFO DRT-0167] List of default vias:
+  Layer via2
+    default via: via2_5
+  Layer via3
+    default via: via3_2
+  Layer via4
+    default via: via4_0
+  Layer via5
+    default via: via5_0
+  Layer via6
+    default via: via6_0
+  Layer via7
+    default via: via7_0
+  Layer via8
+    default via: via8_0
+  Layer via9
+    default via: via9_0
+[INFO DRT-0162] Library cell analysis.
+[INFO DRT-0163] Instance analysis.
+[INFO DRT-0164] Number of unique instances = 49.
+[INFO DRT-0168] Init region query.
+[INFO DRT-0024]   Complete active.
+[INFO DRT-0024]   Complete Fr_VIA.
+[INFO DRT-0024]   Complete metal1.
+[INFO DRT-0024]   Complete via1.
+[INFO DRT-0024]   Complete metal2.
+[INFO DRT-0024]   Complete via2.
+[INFO DRT-0024]   Complete metal3.
+[INFO DRT-0024]   Complete via3.
+[INFO DRT-0024]   Complete metal4.
+[INFO DRT-0024]   Complete via4.
+[INFO DRT-0024]   Complete metal5.
+[INFO DRT-0024]   Complete via5.
+[INFO DRT-0024]   Complete metal6.
+[INFO DRT-0024]   Complete via6.
+[INFO DRT-0024]   Complete metal7.
+[INFO DRT-0024]   Complete via7.
+[INFO DRT-0024]   Complete metal8.
+[INFO DRT-0024]   Complete via8.
+[INFO DRT-0024]   Complete metal9.
+[INFO DRT-0024]   Complete via9.
+[INFO DRT-0024]   Complete metal10.
+[INFO DRT-0033] active shape region query size = 0.
+[INFO DRT-0033] FR_VIA shape region query size = 0.
+[INFO DRT-0033] metal1 shape region query size = 42693.
+[INFO DRT-0033] via1 shape region query size = 438.
+[INFO DRT-0033] metal2 shape region query size = 292.
+[INFO DRT-0033] via2 shape region query size = 438.
+[INFO DRT-0033] metal3 shape region query size = 292.
+[INFO DRT-0033] via3 shape region query size = 438.
+[INFO DRT-0033] metal4 shape region query size = 164.
+[INFO DRT-0033] via4 shape region query size = 140.
+[INFO DRT-0033] metal5 shape region query size = 76.
+[INFO DRT-0033] via5 shape region query size = 140.
+[INFO DRT-0033] metal6 shape region query size = 73.
+[INFO DRT-0033] via6 shape region query size = 56.
+[INFO DRT-0033] metal7 shape region query size = 28.
+[INFO DRT-0033] via7 shape region query size = 0.
+[INFO DRT-0033] metal8 shape region query size = 0.
+[INFO DRT-0033] via8 shape region query size = 0.
+[INFO DRT-0033] metal9 shape region query size = 0.
+[INFO DRT-0033] via9 shape region query size = 0.
+[INFO DRT-0033] metal10 shape region query size = 0.
+[INFO DRT-0165] Start pin access.
+[INFO DRT-0078]   Complete 249 pins.
+[INFO DRT-0081]   Complete 49 unique inst patterns.
+[INFO DRT-0084]   Complete 1505 groups.
+#scanned instances     = 2809
+#unique  instances     = 49
+#stdCellGenAp          = 1067
+#stdCellValidPlanarAp  = 0
+#stdCellValidViaAp     = 854
+#stdCellPinNoAp        = 0
+#stdCellPinCnt         = 8142
+#instTermValidViaApCnt = 0
+#macroGenAp            = 0
+#macroValidPlanarAp    = 0
+#macroValidViaAp       = 0
+#macroNoAp             = 0
+[INFO DRT-0166] Complete pin access.
+[INFO DRT-0267] cpu time = 00:00:29, elapsed time = 00:00:07, memory = 266.62 (MB), peak = 266.35 (MB)
+
+[INFO DRT-0157] Number of guides:     23087
+
+[INFO DRT-0169] Post process guides.
+[INFO DRT-0176] GCELLGRID X 0 DO 36 STEP 5700 ;
+[INFO DRT-0177] GCELLGRID Y 0 DO 36 STEP 5700 ;
+[INFO DRT-0028]   Complete active.
+[INFO DRT-0028]   Complete Fr_VIA.
+[INFO DRT-0028]   Complete metal1.
+[INFO DRT-0028]   Complete via1.
+[INFO DRT-0028]   Complete metal2.
+[INFO DRT-0028]   Complete via2.
+[INFO DRT-0028]   Complete metal3.
+[INFO DRT-0028]   Complete via3.
+[INFO DRT-0028]   Complete metal4.
+[INFO DRT-0028]   Complete via4.
+[INFO DRT-0028]   Complete metal5.
+[INFO DRT-0028]   Complete via5.
+[INFO DRT-0028]   Complete metal6.
+[INFO DRT-0028]   Complete via6.
+[INFO DRT-0028]   Complete metal7.
+[INFO DRT-0028]   Complete via7.
+[INFO DRT-0028]   Complete metal8.
+[INFO DRT-0028]   Complete via8.
+[INFO DRT-0028]   Complete metal9.
+[INFO DRT-0028]   Complete via9.
+[INFO DRT-0028]   Complete metal10.
+[INFO DRT-0178] Init guide query.
+[INFO DRT-0035]   Complete active (guide).
+[INFO DRT-0035]   Complete Fr_VIA (guide).
+[INFO DRT-0035]   Complete metal1 (guide).
+[INFO DRT-0035]   Complete via1 (guide).
+[INFO DRT-0035]   Complete metal2 (guide).
+[INFO DRT-0035]   Complete via2 (guide).
+[INFO DRT-0035]   Complete metal3 (guide).
+[INFO DRT-0035]   Complete via3 (guide).
+[INFO DRT-0035]   Complete metal4 (guide).
+[INFO DRT-0035]   Complete via4 (guide).
+[INFO DRT-0035]   Complete metal5 (guide).
+[INFO DRT-0035]   Complete via5 (guide).
+[INFO DRT-0035]   Complete metal6 (guide).
+[INFO DRT-0035]   Complete via6 (guide).
+[INFO DRT-0035]   Complete metal7 (guide).
+[INFO DRT-0035]   Complete via7 (guide).
+[INFO DRT-0035]   Complete metal8 (guide).
+[INFO DRT-0035]   Complete via8 (guide).
+[INFO DRT-0035]   Complete metal9 (guide).
+[INFO DRT-0035]   Complete via9 (guide).
+[INFO DRT-0035]   Complete metal10 (guide).
+[INFO DRT-0036] active guide region query size = 0.
+[INFO DRT-0036] FR_VIA guide region query size = 0.
+[INFO DRT-0036] metal1 guide region query size = 7177.
+[INFO DRT-0036] via1 guide region query size = 0.
+[INFO DRT-0036] metal2 guide region query size = 6595.
+[INFO DRT-0036] via2 guide region query size = 0.
+[INFO DRT-0036] metal3 guide region query size = 3928.
+[INFO DRT-0036] via3 guide region query size = 0.
+[INFO DRT-0036] metal4 guide region query size = 904.
+[INFO DRT-0036] via4 guide region query size = 0.
+[INFO DRT-0036] metal5 guide region query size = 372.
+[INFO DRT-0036] via5 guide region query size = 0.
+[INFO DRT-0036] metal6 guide region query size = 91.
+[INFO DRT-0036] via6 guide region query size = 0.
+[INFO DRT-0036] metal7 guide region query size = 3.
+[INFO DRT-0036] via7 guide region query size = 0.
+[INFO DRT-0036] metal8 guide region query size = 0.
+[INFO DRT-0036] via8 guide region query size = 0.
+[INFO DRT-0036] metal9 guide region query size = 0.
+[INFO DRT-0036] via9 guide region query size = 0.
+[INFO DRT-0036] metal10 guide region query size = 0.
+[INFO DRT-0179] Init gr pin query.
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 275.04 (MB), peak = 274.47 (MB)
+[INFO DRT-0245] skipped writing guide updates to database.
+[INFO DRT-0181] Start track assignment.
+[INFO DRT-0184] Done with 7590 vertical wires in 1 frboxes and 11480 horizontal wires in 1 frboxes.
+[INFO DRT-0186] Done with 2297 vertical wires in 1 frboxes and 2862 horizontal wires in 1 frboxes.
+[INFO DRT-0182] Complete track assignment.
+[INFO DRT-0267] cpu time = 00:00:02, elapsed time = 00:00:01, memory = 328.99 (MB), peak = 328.69 (MB)
+[INFO DRT-0187] Start routing data preparation.
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 329.05 (MB), peak = 328.87 (MB)
+[INFO DRT-0194] Start detail routing.
+[INFO DRT-0195] Start 0th optimization iteration.
+    Completing 10% with 0 violations.
+    elapsed time = 00:00:00, memory = 373.81 (MB).
+    Completing 20% with 0 violations.
+    elapsed time = 00:00:05, memory = 377.61 (MB).
+    Completing 30% with 112 violations.
+    elapsed time = 00:00:06, memory = 409.57 (MB).
+    Completing 40% with 112 violations.
+    elapsed time = 00:00:08, memory = 442.94 (MB).
+    Completing 50% with 112 violations.
+    elapsed time = 00:00:11, memory = 411.84 (MB).
+    Completing 60% with 202 violations.
+    elapsed time = 00:00:11, memory = 449.26 (MB).
+    Completing 70% with 202 violations.
+    elapsed time = 00:00:14, memory = 454.41 (MB).
+    Completing 80% with 337 violations.
+    elapsed time = 00:00:18, memory = 495.94 (MB).
+    Completing 90% with 337 violations.
+    elapsed time = 00:00:18, memory = 495.94 (MB).
+    Completing 100% with 414 violations.
+    elapsed time = 00:00:20, memory = 448.23 (MB).
+[INFO DRT-0199]   Number of violations = 600.
+Viol/Layer      metal1   via1 metal2   via2 metal3 metal4   via4
+Cut Spacing          0      0      0      2      0      0      3
+Metal Spacing        0      0     38      0      5      0      0
+Recheck              2      0    116      0     58     10      0
+Short                0      1    304      0     57      4      0
+[INFO DRT-0267] cpu time = 00:01:02, elapsed time = 00:00:21, memory = 966.54 (MB), peak = 966.42 (MB)
+Total wire length = 45151 um.
+Total wire length on LAYER metal1 = 0 um.
+Total wire length on LAYER metal2 = 14856 um.
+Total wire length on LAYER metal3 = 18464 um.
+Total wire length on LAYER metal4 = 6694 um.
+Total wire length on LAYER metal5 = 3876 um.
+Total wire length on LAYER metal6 = 1247 um.
+Total wire length on LAYER metal7 = 12 um.
+Total wire length on LAYER metal8 = 0 um.
+Total wire length on LAYER metal9 = 0 um.
+Total wire length on LAYER metal10 = 0 um.
+Total number of vias = 18999.
+Up-via summary (total 18999):
+
+----------------
+ active        0
+ metal1     8189
+ metal2     8946
+ metal3     1193
+ metal4      527
+ metal5      138
+ metal6        6
+ metal7        0
+ metal8        0
+ metal9        0
+----------------
+       18999
+
+
+[INFO DRT-0195] Start 1st optimization iteration.
+    Completing 10% with 600 violations.
+    elapsed time = 00:00:00, memory = 994.39 (MB).
+    Completing 20% with 600 violations.
+    elapsed time = 00:00:03, memory = 1013.80 (MB).
+    Completing 30% with 474 violations.
+    elapsed time = 00:00:05, memory = 992.96 (MB).
+    Completing 40% with 474 violations.
+    elapsed time = 00:00:07, memory = 992.96 (MB).
+    Completing 50% with 474 violations.
+    elapsed time = 00:00:12, memory = 992.96 (MB).
+    Completing 60% with 361 violations.
+    elapsed time = 00:00:13, memory = 993.07 (MB).
+    Completing 70% with 361 violations.
+    elapsed time = 00:00:17, memory = 1007.57 (MB).
+    Completing 80% with 258 violations.
+    elapsed time = 00:00:21, memory = 1007.57 (MB).
+    Completing 90% with 258 violations.
+    elapsed time = 00:00:21, memory = 1007.57 (MB).
+    Completing 100% with 172 violations.
+    elapsed time = 00:00:22, memory = 1007.57 (MB).
+[INFO DRT-0199]   Number of violations = 172.
+Viol/Layer      metal2 metal3
+Metal Spacing       23      1
+Short              139      9
+[INFO DRT-0267] cpu time = 00:01:00, elapsed time = 00:00:23, memory = 1010.57 (MB), peak = 1013.55 (MB)
+Total wire length = 44819 um.
+Total wire length on LAYER metal1 = 0 um.
+Total wire length on LAYER metal2 = 14686 um.
+Total wire length on LAYER metal3 = 18405 um.
+Total wire length on LAYER metal4 = 6638 um.
+Total wire length on LAYER metal5 = 3827 um.
+Total wire length on LAYER metal6 = 1255 um.
+Total wire length on LAYER metal7 = 5 um.
+Total wire length on LAYER metal8 = 0 um.
+Total wire length on LAYER metal9 = 0 um.
+Total wire length on LAYER metal10 = 0 um.
+Total number of vias = 18805.
+Up-via summary (total 18805):
+
+----------------
+ active        0
+ metal1     8198
+ metal2     8775
+ metal3     1187
+ metal4      512
+ metal5      131
+ metal6        2
+ metal7        0
+ metal8        0
+ metal9        0
+----------------
+       18805
+
+
+[INFO DRT-0195] Start 2nd optimization iteration.
+    Completing 10% with 172 violations.
+    elapsed time = 00:00:00, memory = 1010.57 (MB).
+    Completing 20% with 172 violations.
+    elapsed time = 00:00:03, memory = 1010.57 (MB).
+    Completing 30% with 179 violations.
+    elapsed time = 00:00:04, memory = 1012.54 (MB).
+    Completing 40% with 179 violations.
+    elapsed time = 00:00:05, memory = 1012.54 (MB).
+    Completing 50% with 179 violations.
+    elapsed time = 00:00:09, memory = 1012.54 (MB).
+    Completing 60% with 206 violations.
+    elapsed time = 00:00:10, memory = 1014.29 (MB).
+    Completing 70% with 206 violations.
+    elapsed time = 00:00:12, memory = 1014.29 (MB).
+    Completing 80% with 223 violations.
+    elapsed time = 00:00:14, memory = 1014.29 (MB).
+    Completing 90% with 223 violations.
+    elapsed time = 00:00:17, memory = 1014.29 (MB).
+    Completing 100% with 206 violations.
+    elapsed time = 00:00:19, memory = 1014.29 (MB).
+[INFO DRT-0199]   Number of violations = 206.
+Viol/Layer      metal2 metal3 metal4
+Metal Spacing       19      3     11
+Short              146     21      6
+[INFO DRT-0267] cpu time = 00:00:52, elapsed time = 00:00:20, memory = 1014.29 (MB), peak = 1014.05 (MB)
+Total wire length = 44746 um.
+Total wire length on LAYER metal1 = 0 um.
+Total wire length on LAYER metal2 = 14635 um.
+Total wire length on LAYER metal3 = 18381 um.
+Total wire length on LAYER metal4 = 6653 um.
+Total wire length on LAYER metal5 = 3813 um.
+Total wire length on LAYER metal6 = 1256 um.
+Total wire length on LAYER metal7 = 5 um.
+Total wire length on LAYER metal8 = 0 um.
+Total wire length on LAYER metal9 = 0 um.
+Total wire length on LAYER metal10 = 0 um.
+Total number of vias = 18784.
+Up-via summary (total 18784):
+
+----------------
+ active        0
+ metal1     8197
+ metal2     8762
+ metal3     1187
+ metal4      507
+ metal5      129
+ metal6        2
+ metal7        0
+ metal8        0
+ metal9        0
+----------------
+       18784
+
+
+[INFO DRT-0195] Start 3rd optimization iteration.
+    Completing 10% with 206 violations.
+    elapsed time = 00:00:00, memory = 1042.52 (MB).
+    Completing 20% with 206 violations.
+    elapsed time = 00:00:01, memory = 1014.36 (MB).
+    Completing 30% with 158 violations.
+    elapsed time = 00:00:02, memory = 1014.36 (MB).
+    Completing 40% with 158 violations.
+    elapsed time = 00:00:02, memory = 1014.36 (MB).
+    Completing 50% with 158 violations.
+    elapsed time = 00:00:05, memory = 1014.36 (MB).
+    Completing 60% with 123 violations.
+    elapsed time = 00:00:05, memory = 1014.36 (MB).
+    Completing 70% with 123 violations.
+    elapsed time = 00:00:07, memory = 1014.36 (MB).
+    Completing 80% with 26 violations.
+    elapsed time = 00:00:08, memory = 1014.36 (MB).
+    Completing 90% with 26 violations.
+    elapsed time = 00:00:08, memory = 1014.36 (MB).
+    Completing 100% with 0 violations.
+    elapsed time = 00:00:09, memory = 1014.36 (MB).
+[INFO DRT-0199]   Number of violations = 0.
+[INFO DRT-0267] cpu time = 00:00:23, elapsed time = 00:00:09, memory = 1014.36 (MB), peak = 1042.17 (MB)
+Total wire length = 44733 um.
+Total wire length on LAYER metal1 = 0 um.
+Total wire length on LAYER metal2 = 14378 um.
+Total wire length on LAYER metal3 = 18410 um.
+Total wire length on LAYER metal4 = 6874 um.
+Total wire length on LAYER metal5 = 3807 um.
+Total wire length on LAYER metal6 = 1256 um.
+Total wire length on LAYER metal7 = 5 um.
+Total wire length on LAYER metal8 = 0 um.
+Total wire length on LAYER metal9 = 0 um.
+Total wire length on LAYER metal10 = 0 um.
+Total number of vias = 18912.
+Up-via summary (total 18912):
+
+----------------
+ active        0
+ metal1     8197
+ metal2     8829
+ metal3     1251
+ metal4      504
+ metal5      129
+ metal6        2
+ metal7        0
+ metal8        0
+ metal9        0
+----------------
+       18912
+
+
+[INFO DRT-0198] Complete detail routing.
+Total wire length = 44733 um.
+Total wire length on LAYER metal1 = 0 um.
+Total wire length on LAYER metal2 = 14378 um.
+Total wire length on LAYER metal3 = 18410 um.
+Total wire length on LAYER metal4 = 6874 um.
+Total wire length on LAYER metal5 = 3807 um.
+Total wire length on LAYER metal6 = 1256 um.
+Total wire length on LAYER metal7 = 5 um.
+Total wire length on LAYER metal8 = 0 um.
+Total wire length on LAYER metal9 = 0 um.
+Total wire length on LAYER metal10 = 0 um.
+Total number of vias = 18912.
+Up-via summary (total 18912):
+
+----------------
+ active        0
+ metal1     8197
+ metal2     8829
+ metal3     1251
+ metal4      504
+ metal5      129
+ metal6        2
+ metal7        0
+ metal8        0
+ metal9        0
+----------------
+       18912
+
+
+[INFO DRT-0267] cpu time = 00:03:19, elapsed time = 00:01:14, memory = 1014.42 (MB), peak = 1042.17 (MB)
+
+[INFO DRT-0180] Post processing.
+Took 85 seconds: detailed_route -output_drc ./reports/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/5_route_drc.rpt -output_maze ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/maze.log -droute_end_iter 64 -verbose 1 -drc_report_iter_step 5
+[WARNING GRT-0246] No diode with LEF class CORE ANTENNACELL found.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+Design area 3646 um^2 36% utilization.
+write_db ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/5_2_route.odb
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+5_2_route                 .odb           90           1042 170eaa6985d88300deb0
+/root/pact-deps/OpenROAD-flow-scripts/flow/scripts/flow.sh 5_3_fillcell fillcell
+Running fillcell.tcl, stage 5_3_fillcell
+read_liberty /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/5_2_route.odb
+read_sdc ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/5_1_grt.sdc
+source /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+filler_placement "FILLCELL_X1 FILLCELL_X2 FILLCELL_X4 FILLCELL_X8 FILLCELL_X16 FILLCELL_X32"
+[INFO DPL-0001] Placed 3360 filler instances.
+Design area 3646 um^2 36% utilization.
+write_db ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/5_3_fillcell.odb
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+5_3_fillcell              .odb            0            119 0907297d2ee364c02d63
+cp ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/5_3_fillcell.odb ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/5_route.odb
+cp ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/5_1_grt.sdc ./results/nangate45/s9234f/phase0c_f3e7b516a_s17_k8_A_93e8941f_7f655d61/5_route.sdc

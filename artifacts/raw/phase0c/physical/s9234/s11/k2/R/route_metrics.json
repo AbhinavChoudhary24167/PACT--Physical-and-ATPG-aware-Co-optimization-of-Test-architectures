@@ -1,0 +1,147 @@
+{
+  "DRC_errors": 0,
+  "K": 2,
+  "architecture_sha256": "6e988fb89f55f3425c429b4caec69ce1b97dcaa046e3c756253e51e5e5a8e078",
+  "campaign_freeze_commit": "3e7b516a6a3b68950aad624b3474bf0c45b78b97",
+  "design": "s9234",
+  "exact_scan_only_routed_length_um": null,
+  "method": "R",
+  "physical_primary_um": 10884.635,
+  "physical_seed": 11,
+  "postroute_verification": "artifacts/raw/phase0c/physical/s9234/s11/k2/R/routed_verification.json",
+  "rewire_script_sha256": "7f655d611891fe7ec74370fd2598cfb12ee5f1babd6d976c109ac158014763dc",
+  "routed_full_scan_path_net_length_upper_bound_um": 17746.58,
+  "routed_odb_archive": "artifacts/raw/phase0c/physical/s9234/s11/k2/R/5_2_route.odb.gz",
+  "routed_odb_gzip_sha256": "2fa266793b617b2678e6dcca2a27ba86e7b1ea6fcc4a9f96f1f4e5f4813f1740",
+  "routed_odb_sha256": "b13d3a26539f9e4faa013208c079ac463c79300018b7c577dd397b4f5bcb409f",
+  "scan_hpwl_proxy_um": 10884.635,
+  "source_placement_odb": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.odb",
+  "status": "QUALIFIED",
+  "structured_metrics": {
+    "congestion": {
+      "layers": {
+        "metal1": {
+          "demand": 0,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 0,
+          "total_overflow": 0,
+          "usage_percent": 0.0
+        },
+        "metal10": {
+          "demand": 0,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 1260,
+          "total_overflow": 0,
+          "usage_percent": 0.0
+        },
+        "metal2": {
+          "demand": 4814,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 8750,
+          "total_overflow": 0,
+          "usage_percent": 55.02
+        },
+        "metal3": {
+          "demand": 5773,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 12607,
+          "total_overflow": 0,
+          "usage_percent": 45.79
+        },
+        "metal4": {
+          "demand": 2260,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 8890,
+          "total_overflow": 0,
+          "usage_percent": 25.42
+        },
+        "metal5": {
+          "demand": 1544,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 9040,
+          "total_overflow": 0,
+          "usage_percent": 17.08
+        },
+        "metal6": {
+          "demand": 865,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 9077,
+          "total_overflow": 0,
+          "usage_percent": 9.53
+        },
+        "metal7": {
+          "demand": 18,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 2800,
+          "total_overflow": 0,
+          "usage_percent": 0.64
+        },
+        "metal8": {
+          "demand": 44,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 3220,
+          "total_overflow": 0,
+          "usage_percent": 1.37
+        },
+        "metal9": {
+          "demand": 0,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 1260,
+          "total_overflow": 0,
+          "usage_percent": 0.0
+        }
+      },
+      "quantity_type": "reported routing resource/demand and overflow, not detailed-route congestion",
+      "source_stdout_sha256": "7bcfb46c845699b58ef77f0b38f23353666773ded30e80f3a25cb21769b98f9f",
+      "stage": "initial_global_route_before_incremental_repairs",
+      "total": {
+        "demand": 15318,
+        "max_horizontal_overflow": 0,
+        "max_vertical_overflow": 0,
+        "resource": 56904,
+        "total_overflow": 0,
+        "usage_percent": 26.92
+      }
+    },
+    "congestion_classification": "QUALIFIED_INITIAL_GLOBAL_ROUTE_REPORT",
+    "detailed_route_drc_errors": 0,
+    "detailed_route_vias": 18631,
+    "global_route_overflow": 0,
+    "global_route_wirelength_um": 63797,
+    "hold_tns_ns": 0,
+    "hold_violated_endpoints": 0,
+    "hold_wns_ns": 0.000981756,
+    "layer_utilization": {
+      "metal1": 0.0,
+      "metal10": 0.0,
+      "metal2": 55.02,
+      "metal3": 45.79,
+      "metal4": 25.42,
+      "metal5": 17.08,
+      "metal6": 9.53,
+      "metal7": 0.64,
+      "metal8": 1.37,
+      "metal9": 0.0
+    },
+    "max_cap_violations": 0,
+    "max_fanout_violations": 0,
+    "max_slew_violations": 0,
+    "pdnsim_classification": "NOT_RUN_NO_QUALIFIED_TEST_CURRENT_MODEL",
+    "setup_tns_ns": 0,
+    "setup_violated_endpoints": 0,
+    "setup_wns_ns": 8.73594,
+    "timing_stage": "global_route",
+    "total_detailed_route_wirelength_um": 44509
+  },
+  "variant": "phase0c_f3e7b516a_s11_k2_R_6e988fb8_7f655d61"
+}

@@ -3,12 +3,12 @@ Features included (+) or not (-): +GPU +GUI +Python
 This program is licensed under the BSD-3 license. See the LICENSE file for details.
 Components of this program may be licensed under more restrictive licenses which must be honored.
 [INFO ORD-0030] Using 4 thread(s).
-mkdir -p ./objects/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61
+mkdir -p ./objects/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61
 /root/pact-deps/OpenROAD-flow-scripts/flow/scripts/flow.sh 4_1_cts cts
 Running cts.tcl, stage 4_1_cts
 read_liberty /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
-read_db ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/3_place.odb
-read_sdc ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/3_place.sdc
+read_db ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/3_place.odb
+read_sdc ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/3_place.sdc
 source /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
 clock_tree_synthesis -sink_clustering_enable -repair_clock_nets
 [INFO CTS-0050] Root buffer is CLKBUF_X3.
@@ -136,16 +136,16 @@ Report metrics stage 4, cts final...
 cts final report_design_area
 --------------------------------------------------------------------------
 Design area 2601 um^2 38% utilization.
-write_db ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/4_1_cts.odb
-write_sdc -no_timestamp ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/4_cts.sdc
+write_db ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/4_1_cts.odb
+write_sdc -no_timestamp ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/4_cts.sdc
 Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
-4_1_cts                   .odb            3            155 b6f5e1f68f56ee1bc96e
-cp ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/4_1_cts.odb ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/4_cts.odb
+4_1_cts                   .odb            3            147 b6f5e1f68f56ee1bc96e
+cp ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/4_1_cts.odb ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/4_cts.odb
 /root/pact-deps/OpenROAD-flow-scripts/flow/scripts/flow.sh 5_1_grt global_route
 Running global_route.tcl, stage 5_1_grt
 read_liberty /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
-read_db ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/4_cts.odb
-read_sdc ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/4_cts.sdc
+read_db ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/4_cts.odb
+read_sdc ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/4_cts.sdc
 source /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
 pin_access
 [INFO DRT-0149] Reading tech and libs.
@@ -247,9 +247,9 @@ Number of nets:           2001
 #macroValidViaAp       = 0
 #macroNoAp             = 0
 [INFO DRT-0166] Complete pin access.
-[INFO DRT-0267] cpu time = 00:00:13, elapsed time = 00:00:03, memory = 116.78 (MB), peak = 116.25 (MB)
+[INFO DRT-0267] cpu time = 00:00:13, elapsed time = 00:00:03, memory = 116.36 (MB), peak = 115.96 (MB)
 set_global_routing_random -seed 11
-global_route -congestion_report_file ./reports/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/congestion.rpt -congestion_iterations 30 -congestion_report_iter_step 5 -verbose
+global_route -congestion_report_file ./reports/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/congestion.rpt -congestion_iterations 30 -congestion_report_iter_step 5 -verbose
 [INFO GRT-0020] Min routing layer: metal2
 [INFO GRT-0021] Max routing layer: metal10
 [INFO GRT-0022] Global adjustment: 0%
@@ -561,7 +561,7 @@ original HPWL           24558.8 u
 legalized HPWL          24558.8 u
 delta HPWL                    0 %
 
-global_route -end_incremental -congestion_report_file ./reports/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/congestion_post_repair_design.rpt
+global_route -end_incremental -congestion_report_file ./reports/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/congestion_post_repair_design.rpt
 Repair setup and hold violations...
 estimate_parasitics -global_routing
 repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -verbose
@@ -592,10 +592,10 @@ legalized HPWL          24558.8 u
 delta HPWL                    0 %
 
 check_placement -verbose
-global_route -end_incremental -congestion_report_file ./reports/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/congestion_post_repair_timing.rpt
+global_route -end_incremental -congestion_report_file ./reports/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/congestion_post_repair_timing.rpt
 estimate_parasitics -global_routing
 global_route -start_incremental
-global_route -end_incremental -congestion_report_file ./reports/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/congestion_post_recover_power.rpt
+global_route -end_incremental -congestion_report_file ./reports/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/congestion_post_recover_power.rpt
 Repair antennas...
 [WARNING GRT-0246] No diode with LEF class CORE ANTENNACELL found.
 [INFO ANT-0002] Found 0 net violations.
@@ -611,20 +611,20 @@ Design area 2601 um^2 38% utilization.
 [INFO FLW-0007] clock clk period 10.000000
 [INFO FLW-0008] Clock clk period 0.872
 [INFO FLW-0009] Clock clk slack 9.082
-write_sdc -no_timestamp ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/updated_clks.sdc
+write_sdc -no_timestamp ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/updated_clks.sdc
 [INFO FLW-0011] Path endpoint path count 788
-write_db ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/5_1_grt.odb
-write_sdc -no_timestamp ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/5_1_grt.sdc
+write_db ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/5_1_grt.odb
+write_sdc -no_timestamp ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/5_1_grt.sdc
 Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
 5_1_grt                   .odb            7            302 4c98d5fcc47d2135c9a2
 5_1_grt                   .sdc                             dc3b136b356fec3f3ef5
 /root/pact-deps/OpenROAD-flow-scripts/flow/scripts/flow.sh 5_2_route detail_route
 Running detail_route.tcl, stage 5_2_route
 read_liberty /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
-read_db ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/5_1_grt.odb
-read_sdc ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/5_1_grt.sdc
+read_db ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/5_1_grt.odb
+read_sdc ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/5_1_grt.sdc
 source /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
-detailed_route -output_drc ./reports/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/5_route_drc.rpt -output_maze ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/maze.log -droute_end_iter 64 -verbose 1 -drc_report_iter_step 5
+detailed_route -output_drc ./reports/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/5_route_drc.rpt -output_maze ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/maze.log -droute_end_iter 64 -verbose 1 -drc_report_iter_step 5
 [INFO DRT-0149] Reading tech and libs.
 
 Units:                2000
@@ -724,7 +724,7 @@ Number of nets:           2001
 #macroValidViaAp       = 0
 #macroNoAp             = 0
 [INFO DRT-0166] Complete pin access.
-[INFO DRT-0267] cpu time = 00:00:13, elapsed time = 00:00:03, memory = 261.56 (MB), peak = 261.11 (MB)
+[INFO DRT-0267] cpu time = 00:00:14, elapsed time = 00:00:02, memory = 261.87 (MB), peak = 261.52 (MB)
 
 [INFO DRT-0157] Number of guides:     16425
 
@@ -796,43 +796,43 @@ Number of nets:           2001
 [INFO DRT-0036] via9 guide region query size = 0.
 [INFO DRT-0036] metal10 guide region query size = 0.
 [INFO DRT-0179] Init gr pin query.
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 267.38 (MB), peak = 266.86 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 267.74 (MB), peak = 267.39 (MB)
 [INFO DRT-0245] skipped writing guide updates to database.
 [INFO DRT-0181] Start track assignment.
 [INFO DRT-0184] Done with 5420 vertical wires in 1 frboxes and 8265 horizontal wires in 1 frboxes.
 [INFO DRT-0186] Done with 1668 vertical wires in 1 frboxes and 1796 horizontal wires in 1 frboxes.
 [INFO DRT-0182] Complete track assignment.
-[INFO DRT-0267] cpu time = 00:00:01, elapsed time = 00:00:01, memory = 306.28 (MB), peak = 306.02 (MB)
+[INFO DRT-0267] cpu time = 00:00:01, elapsed time = 00:00:01, memory = 289.12 (MB), peak = 288.79 (MB)
 [INFO DRT-0187] Start routing data preparation.
-[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 307.45 (MB), peak = 307.02 (MB)
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 290.23 (MB), peak = 289.79 (MB)
 [INFO DRT-0194] Start detail routing.
 [INFO DRT-0195] Start 0th optimization iteration.
     Completing 10% with 0 violations.
-    elapsed time = 00:00:00, memory = 345.56 (MB).
+    elapsed time = 00:00:00, memory = 333.43 (MB).
     Completing 20% with 0 violations.
-    elapsed time = 00:00:00, memory = 346.07 (MB).
+    elapsed time = 00:00:00, memory = 340.49 (MB).
     Completing 30% with 0 violations.
-    elapsed time = 00:00:01, memory = 335.20 (MB).
+    elapsed time = 00:00:01, memory = 333.62 (MB).
     Completing 40% with 79 violations.
-    elapsed time = 00:00:04, memory = 379.39 (MB).
+    elapsed time = 00:00:04, memory = 376.84 (MB).
     Completing 50% with 79 violations.
-    elapsed time = 00:00:05, memory = 371.32 (MB).
+    elapsed time = 00:00:05, memory = 366.48 (MB).
     Completing 60% with 79 violations.
-    elapsed time = 00:00:06, memory = 343.19 (MB).
+    elapsed time = 00:00:07, memory = 338.35 (MB).
     Completing 70% with 148 violations.
-    elapsed time = 00:00:07, memory = 394.39 (MB).
+    elapsed time = 00:00:07, memory = 382.71 (MB).
     Completing 80% with 148 violations.
-    elapsed time = 00:00:10, memory = 378.15 (MB).
+    elapsed time = 00:00:11, memory = 369.80 (MB).
     Completing 90% with 245 violations.
-    elapsed time = 00:00:12, memory = 406.96 (MB).
+    elapsed time = 00:00:13, memory = 401.20 (MB).
     Completing 100% with 336 violations.
-    elapsed time = 00:00:15, memory = 390.49 (MB).
+    elapsed time = 00:00:15, memory = 388.72 (MB).
 [INFO DRT-0199]   Number of violations = 441.
 Viol/Layer      metal1   via1 metal2 metal3 metal4
 Metal Spacing        0      0     30      5      3
 Recheck              2      0     52     44      7
 Short                0      3    257     38      0
-[INFO DRT-0267] cpu time = 00:00:38, elapsed time = 00:00:16, memory = 916.35 (MB), peak = 916.08 (MB)
+[INFO DRT-0267] cpu time = 00:00:40, elapsed time = 00:00:17, memory = 911.25 (MB), peak = 911.07 (MB)
 Total wire length = 27739 um.
 Total wire length on LAYER metal1 = 0 um.
 Total wire length on LAYER metal2 = 10214 um.
@@ -864,30 +864,30 @@ Up-via summary (total 13433):
 
 [INFO DRT-0195] Start 1st optimization iteration.
     Completing 10% with 441 violations.
-    elapsed time = 00:00:00, memory = 916.35 (MB).
+    elapsed time = 00:00:00, memory = 934.95 (MB).
     Completing 20% with 441 violations.
-    elapsed time = 00:00:00, memory = 916.50 (MB).
+    elapsed time = 00:00:00, memory = 936.94 (MB).
     Completing 30% with 441 violations.
-    elapsed time = 00:00:01, memory = 916.50 (MB).
+    elapsed time = 00:00:01, memory = 938.50 (MB).
     Completing 40% with 379 violations.
-    elapsed time = 00:00:03, memory = 924.97 (MB).
+    elapsed time = 00:00:04, memory = 940.29 (MB).
     Completing 50% with 379 violations.
-    elapsed time = 00:00:04, memory = 924.97 (MB).
+    elapsed time = 00:00:05, memory = 941.04 (MB).
     Completing 60% with 379 violations.
-    elapsed time = 00:00:06, memory = 924.97 (MB).
+    elapsed time = 00:00:07, memory = 942.26 (MB).
     Completing 70% with 328 violations.
-    elapsed time = 00:00:06, memory = 944.75 (MB).
+    elapsed time = 00:00:07, memory = 947.72 (MB).
     Completing 80% with 328 violations.
-    elapsed time = 00:00:09, memory = 924.97 (MB).
+    elapsed time = 00:00:09, memory = 947.72 (MB).
     Completing 90% with 248 violations.
-    elapsed time = 00:00:13, memory = 934.41 (MB).
+    elapsed time = 00:00:13, memory = 951.62 (MB).
     Completing 100% with 128 violations.
-    elapsed time = 00:00:14, memory = 936.94 (MB).
+    elapsed time = 00:00:13, memory = 951.62 (MB).
 [INFO DRT-0199]   Number of violations = 128.
 Viol/Layer      metal2 metal3 metal4
 Metal Spacing       20      2      9
 Short               84      8      5
-[INFO DRT-0267] cpu time = 00:00:37, elapsed time = 00:00:14, memory = 939.94 (MB), peak = 944.46 (MB)
+[INFO DRT-0267] cpu time = 00:00:38, elapsed time = 00:00:14, memory = 954.62 (MB), peak = 954.50 (MB)
 Total wire length = 27491 um.
 Total wire length on LAYER metal1 = 0 um.
 Total wire length on LAYER metal2 = 10125 um.
@@ -919,30 +919,30 @@ Up-via summary (total 13371):
 
 [INFO DRT-0195] Start 2nd optimization iteration.
     Completing 10% with 128 violations.
-    elapsed time = 00:00:00, memory = 939.94 (MB).
+    elapsed time = 00:00:00, memory = 954.62 (MB).
     Completing 20% with 128 violations.
-    elapsed time = 00:00:00, memory = 939.94 (MB).
+    elapsed time = 00:00:00, memory = 954.62 (MB).
     Completing 30% with 128 violations.
-    elapsed time = 00:00:02, memory = 939.94 (MB).
+    elapsed time = 00:00:02, memory = 954.62 (MB).
     Completing 40% with 138 violations.
-    elapsed time = 00:00:03, memory = 939.94 (MB).
+    elapsed time = 00:00:03, memory = 954.62 (MB).
     Completing 50% with 138 violations.
-    elapsed time = 00:00:05, memory = 939.94 (MB).
+    elapsed time = 00:00:05, memory = 954.62 (MB).
     Completing 60% with 138 violations.
-    elapsed time = 00:00:06, memory = 939.94 (MB).
+    elapsed time = 00:00:06, memory = 954.62 (MB).
     Completing 70% with 153 violations.
-    elapsed time = 00:00:06, memory = 939.94 (MB).
+    elapsed time = 00:00:06, memory = 954.62 (MB).
     Completing 80% with 153 violations.
-    elapsed time = 00:00:10, memory = 948.04 (MB).
+    elapsed time = 00:00:11, memory = 961.85 (MB).
     Completing 90% with 137 violations.
-    elapsed time = 00:00:13, memory = 971.50 (MB).
+    elapsed time = 00:00:14, memory = 961.99 (MB).
     Completing 100% with 138 violations.
-    elapsed time = 00:00:15, memory = 948.04 (MB).
+    elapsed time = 00:00:15, memory = 961.99 (MB).
 [INFO DRT-0199]   Number of violations = 138.
 Viol/Layer      metal2 metal3
 Metal Spacing       31      2
 Short               94     11
-[INFO DRT-0267] cpu time = 00:00:35, elapsed time = 00:00:15, memory = 948.04 (MB), peak = 971.19 (MB)
+[INFO DRT-0267] cpu time = 00:00:35, elapsed time = 00:00:16, memory = 961.99 (MB), peak = 961.75 (MB)
 Total wire length = 27460 um.
 Total wire length on LAYER metal1 = 0 um.
 Total wire length on LAYER metal2 = 10094 um.
@@ -974,27 +974,27 @@ Up-via summary (total 13357):
 
 [INFO DRT-0195] Start 3rd optimization iteration.
     Completing 10% with 138 violations.
-    elapsed time = 00:00:00, memory = 948.04 (MB).
+    elapsed time = 00:00:00, memory = 961.99 (MB).
     Completing 20% with 138 violations.
-    elapsed time = 00:00:00, memory = 948.04 (MB).
+    elapsed time = 00:00:00, memory = 961.99 (MB).
     Completing 30% with 138 violations.
-    elapsed time = 00:00:00, memory = 949.84 (MB).
+    elapsed time = 00:00:01, memory = 961.99 (MB).
     Completing 40% with 122 violations.
-    elapsed time = 00:00:02, memory = 972.68 (MB).
+    elapsed time = 00:00:02, memory = 961.99 (MB).
     Completing 50% with 122 violations.
-    elapsed time = 00:00:02, memory = 972.68 (MB).
+    elapsed time = 00:00:02, memory = 961.99 (MB).
     Completing 60% with 122 violations.
-    elapsed time = 00:00:03, memory = 972.68 (MB).
+    elapsed time = 00:00:03, memory = 961.99 (MB).
     Completing 70% with 81 violations.
-    elapsed time = 00:00:03, memory = 973.36 (MB).
+    elapsed time = 00:00:04, memory = 961.99 (MB).
     Completing 80% with 81 violations.
-    elapsed time = 00:00:04, memory = 977.15 (MB).
+    elapsed time = 00:00:05, memory = 961.99 (MB).
     Completing 90% with 35 violations.
-    elapsed time = 00:00:06, memory = 977.15 (MB).
+    elapsed time = 00:00:07, memory = 963.12 (MB).
     Completing 100% with 0 violations.
-    elapsed time = 00:00:07, memory = 977.15 (MB).
+    elapsed time = 00:00:09, memory = 963.12 (MB).
 [INFO DRT-0199]   Number of violations = 0.
-[INFO DRT-0267] cpu time = 00:00:18, elapsed time = 00:00:07, memory = 977.15 (MB), peak = 976.80 (MB)
+[INFO DRT-0267] cpu time = 00:00:20, elapsed time = 00:00:08, memory = 963.12 (MB), peak = 962.88 (MB)
 Total wire length = 27456 um.
 Total wire length on LAYER metal1 = 0 um.
 Total wire length on LAYER metal2 = 9922 um.
@@ -1054,30 +1054,30 @@ Up-via summary (total 13470):
        13470
 
 
-[INFO DRT-0267] cpu time = 00:02:09, elapsed time = 00:00:53, memory = 977.21 (MB), peak = 976.93 (MB)
+[INFO DRT-0267] cpu time = 00:02:14, elapsed time = 00:00:57, memory = 963.24 (MB), peak = 963.00 (MB)
 
 [INFO DRT-0180] Post processing.
-Took 59 seconds: detailed_route -output_drc ./reports/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/5_route_drc.rpt -output_maze ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/maze.log -droute_end_iter 64 -verbose 1 -drc_report_iter_step 5
+Took 62 seconds: detailed_route -output_drc ./reports/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/5_route_drc.rpt -output_maze ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/maze.log -droute_end_iter 64 -verbose 1 -drc_report_iter_step 5
 [WARNING GRT-0246] No diode with LEF class CORE ANTENNACELL found.
 [INFO ANT-0002] Found 0 net violations.
 [INFO ANT-0001] Found 0 pin violations.
 [INFO ANT-0002] Found 0 net violations.
 [INFO ANT-0001] Found 0 pin violations.
 Design area 2601 um^2 38% utilization.
-write_db ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/5_2_route.odb
+write_db ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/5_2_route.odb
 Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
-5_2_route                 .odb           59            976 9f45eaa29b07ddc6c56b
+5_2_route                 .odb           67            963 9f45eaa29b07ddc6c56b
 /root/pact-deps/OpenROAD-flow-scripts/flow/scripts/flow.sh 5_3_fillcell fillcell
 Running fillcell.tcl, stage 5_3_fillcell
 read_liberty /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
-read_db ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/5_2_route.odb
-read_sdc ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/5_1_grt.sdc
+read_db ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/5_2_route.odb
+read_sdc ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/5_1_grt.sdc
 source /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
 filler_placement "FILLCELL_X1 FILLCELL_X2 FILLCELL_X4 FILLCELL_X8 FILLCELL_X16 FILLCELL_X32"
 [INFO DPL-0001] Placed 2558 filler instances.
 Design area 2601 um^2 38% utilization.
-write_db ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/5_3_fillcell.odb
+write_db ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/5_3_fillcell.odb
 Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
-5_3_fillcell              .odb            0            116 c2890e2d753455e5cf64
-cp ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/5_3_fillcell.odb ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/5_route.odb
-cp ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/5_1_grt.sdc ./results/nangate45/s5378/phase0c_s11_k8_B0_c899f812_7f655d61/5_route.sdc
+5_3_fillcell              .odb            0            117 c2890e2d753455e5cf64
+cp ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/5_3_fillcell.odb ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/5_route.odb
+cp ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/5_1_grt.sdc ./results/nangate45/s5378/phase0c_f3e7b516a_s11_k8_B0_c899f812_7f655d61/5_route.sdc
