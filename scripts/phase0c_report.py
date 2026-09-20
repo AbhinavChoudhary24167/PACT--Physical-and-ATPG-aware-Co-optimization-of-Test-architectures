@@ -181,7 +181,9 @@ def main() -> None:
         f"Phase 1 decision: {analysis['classification']}; {phase1_answer}",
     ]
     question_rows = "\n".join(f"| {index} | {answer} |" for index, answer in enumerate(answers, 1))
-    current_commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    evidence_commit = subprocess.check_output(
+        ["git", "log", "-1", "--format=%H", "--",
+         "artifacts/derived/phase0c/gate_analysis.json"], cwd=ROOT, text=True).strip()
 
     report = f"""# PACT Phase-0C final report
 
@@ -189,7 +191,7 @@ def main() -> None:
 
 **Frozen analysis commit:** `{execution['freeze_commit']}`
 
-**Report-generation parent:** `{current_commit}`
+**Report-generation evidence commit:** `{evidence_commit}`
 **Scientific answer:** **{phase1_answer}**
 
 No ML model was trained or evaluated. A PASS means only that a later investigation of learned intervention guidance is scientifically justified under this qualified benchmark regime.

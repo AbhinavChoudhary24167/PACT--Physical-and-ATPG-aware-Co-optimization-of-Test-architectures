@@ -24,7 +24,7 @@ def main() -> None:
     analysis = json.loads((ROOT / "artifacts/derived/phase0c/gate_analysis.json").read_text())
     if text.rstrip().splitlines()[-1] != f"`{analysis['classification']}`":
         raise ValueError("Report classification does not match script")
-    answers_text = text.split("## Answers to the 28 required report questions", 1)[1]
+    answers_text = text.split("## Answers to the 28 required questions", 1)[1]
     if len(re.findall(r"(?m)^\| (?:[1-9]|1[0-9]|2[0-8]) \|", answers_text)) != 28:
         raise ValueError("Missing required report answers")
     links = re.findall(r"\]\(([^)]+)\)", text)
