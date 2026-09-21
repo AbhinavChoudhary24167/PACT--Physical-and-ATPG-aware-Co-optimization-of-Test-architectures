@@ -1,0 +1,14 @@
+{
+  "schema_version": "phase0b-1",
+  "reason_for_addendum": "Pinned OpenROAD 26Q2-1164 rejects ORFS GPL_RANDOM_SEED because installed global_placement lacks -random_seed. A second bounded test showed place_pins -random/-random_seed are obsolete and skipped by this binary. Both failures are archived.",
+  "physical_seed_intervention": "Apply a seeded, deterministic coordinate perturbation to movable instances in one common ORFS 3_place.odb, legalize with detailed_placement, and freeze five distinct placed ODBs before scan rewiring",
+  "global_placement_seed": null,
+  "io_placement_seed": null,
+  "perturbation_seed": "physical_seed via Tcl expr srand(seed)",
+  "perturbation_probability_per_movable_instance": 0.4,
+  "max_abs_axis_jitter_um": 8.0,
+  "legalization_command": "detailed_placement -max_displacement 50; check_placement -verbose",
+  "global_route_seed": "physical_seed",
+  "qualification": "Treat a seed as a physical replica only if the resulting 3_place.odb differs in actual placed FF and/or other instance coordinates from every other seed, and all architectures of that design and seed start from this identical database.",
+  "limitation": "These are seeded perturb-and-legalize physical realizations from one global placement, not independent global-placement optimizations. Correlation among realizations must be reported; this method may be weaker than a full placer-seed experiment."
+}

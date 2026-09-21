@@ -1,0 +1,34 @@
+{
+  "schema_version": "phase0b-1",
+  "campaign": "PACT_PHASE0B",
+  "designs_predeclared": ["s5378", "s9234", "s15850"],
+  "additional_benchmark_policy": "Admit one nontrivial sequential benchmark only after source rights, ATPG, and scan-FF identity are qualified; never substitute silently.",
+  "physical_seeds": [11, 13, 17, 19, 23],
+  "random_order_seeds": [11, 13, 17, 19, 23],
+  "architectures": ["B0", "B1", "P", "S", "A", "J25", "J50", "J75", "Rstar"],
+  "architecture_selection": {
+    "B0": "supplied FAN scan chain",
+    "B1": "observed execute_dft_plan chain only, unavailable otherwise",
+    "P": "existing deterministic nearest_neighbor",
+    "S": "existing deterministic serpentine with 8 y-bins",
+    "A": "existing deterministic activity_only",
+    "J25": "existing physical_activity alpha 0.25",
+    "J50": "existing physical_activity alpha 0.50",
+    "J75": "existing physical_activity alpha 0.75",
+    "Rstar": "minimum H8 among the five predeclared Phase-0 random orders; ties by architecture SHA256"
+  },
+  "primary_physical_metric_priority": ["qualified_routed_scan_net_length_um", "proxy_scan_hpwl_um"],
+  "primary_activity_metric": "distance_weighted_hotspot_grid8",
+  "meaningful_conflict_rule": {
+    "physical_cost_penalty_min_pct": 10.0,
+    "hotspot_improvement_min_pct": 5.0,
+    "minimum_supporting_physical_seeds_within_design": 4,
+    "minimum_supporting_designs": 2,
+    "denominator": "physical-optimum architecture in each design and physical seed",
+    "notes": "A distinct H8 optimum must improve H8 by at least 5% and cost at least 10% more physical length. Both directions must repeat in at least four of five independent placements per design. This is a deliberately conservative engineering threshold, not a statistical significance test."
+  },
+  "route_policy": ["B0", "B1_if_available", "P", "A", "best_J_by_H8_then_physical_cost", "Rstar"],
+  "analysis_stage": "compare structured metrics from the same ORFS global-route and detailed-route stages",
+  "run_id_rule": "sha256(canonical JSON of campaign, design, physical_seed, method, architecture_sha256, OpenROAD version, ORFS commit); first 20 hexadecimal digits",
+  "learning_gate": "No ML until G5, G6, G7a, G7b, G8 pass"
+}

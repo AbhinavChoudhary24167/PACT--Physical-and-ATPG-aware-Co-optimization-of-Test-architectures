@@ -1,0 +1,11 @@
+{
+  "schema_version": "phase0b-pdnsim-feasibility-1",
+  "documentation": "https://openroad.readthedocs.io/en/latest/main/src/psm/README.html",
+  "documented_capability": "Static IR and current-density analysis on a placed, PDN-synthesized design; per-instance power can be overridden via set_pdnsim_inst_power.",
+  "observed_test_input": "FAN BASIC_SCAN target patterns and exact logical FF shift toggles only; no calibrated per-instance test-mode power, clock period/duty, glitch activity, supply model, or current waveform.",
+  "qualified_test_mode_power_integrity_result": false,
+  "pdnsim_run": false,
+  "classification": "UNAVAILABLE_NO_DEFENSIBLE_ACTIVITY_TO_CURRENT_MODEL",
+  "sensitivity_model": "NOT_RUN",
+  "reason": "Converting the shift hotspot or logical toggles into per-instance power requires assumptions that cannot be calibrated from this campaign. A PDNSim value under arbitrary current overrides would not answer the test-mode IR question."
+}

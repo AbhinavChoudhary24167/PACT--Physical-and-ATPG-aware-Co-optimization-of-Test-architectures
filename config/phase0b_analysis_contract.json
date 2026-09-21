@@ -1,0 +1,11 @@
+{
+  "schema_version": "phase0b-1",
+  "candidate_qualification": "A routed architecture enters the paired Pareto calculation only if its exact-order and serial-target verification passes, its detailed-route DRC count is zero, and structured route, timing, and scan-net records exist.",
+  "primary_physical_metric_selection": "Use exact routed scan-net-only length only when every qualified architecture in the pair has an all-exclusive Q/SI net extraction; otherwise use scan HPWL for every architecture in that pair and label it a proxy.",
+  "pareto_tie_epsilon": 1e-9,
+  "within_design_replication": "All five predeclared physical seeds complete, pair placements distinct, and at least four of five pairs meet the predeclared practical-conflict thresholds.",
+  "across_design_replication": "At least two nontrivial designs satisfy within-design replication.",
+  "simple_heuristic_sufficiency": "Nearest-neighbor P trivially dominates when it is the sole Pareto architecture in every completed seed of a design. G8 passes only when two designs each have at least four completed seeds with a non-P architecture on the frontier.",
+  "bootstrap": "Paired within-design median percentile bootstrap, deterministic seed 0 and 10000 resamples, only after all five physical seeds complete; descriptive and no population claim.",
+  "phase1_gate": "G5 G6 G7a G7b G8 all true; incomplete campaigns never count as GO."
+}

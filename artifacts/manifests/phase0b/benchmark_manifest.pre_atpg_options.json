@@ -1,0 +1,122 @@
+{
+  "additional_benchmark_audit": {
+    "additional_FAN_ISCAS89": {
+      "reason": "Original ISCAS89 netlist redistribution rights not independently established; no additional source has completed the ATPG-to-placed-FF identity qualification",
+      "source": "https://github.com/NTU-LaDS-II/FAN_ATPG/tree/26b2b36c0e9db11a4b6d9e759df6e44357121f39/mod_netlist",
+      "status": "NOT_ADMITTED"
+    },
+    "pact_sanity": {
+      "reason": "No verified FAN full-scan abstraction or PPI patterns",
+      "source": "benchmarks/pact_sanity/pact_sanity.v",
+      "status": "NOT_COMPATIBLE"
+    }
+  },
+  "designs": [
+    {
+      "compatibility_translations": [
+        {
+          "from_cell": "BUF_X3",
+          "instance_count": 34,
+          "reason": "BUF_X3 absent from ORFS Nangate45 Liberty",
+          "to_cell": "BUF_X4"
+        }
+      ],
+      "design": "s5378",
+      "evidence": [
+        {
+          "path": "artifacts/raw/tool_qualification/fan_atpg/benchmarks/s5378.v",
+          "sha256": "10d258eff2287e4e737023c90fe10e6d4561afa18491ce1a414aa04fd964b158"
+        },
+        {
+          "path": "artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s5378.pat",
+          "sha256": "2b812b60516c784dfe2a61815e6c89043515332d6563059d2d40184e4909e888"
+        },
+        {
+          "path": "artifacts/raw/tool_qualification/fan_atpg/reports/FAN_s5378.rpt",
+          "sha256": "a43690dd2ed46674f6ffb8d15612877cf2cf1f74fd309c91985d23b6492a09da"
+        }
+      ],
+      "fault_model": "SAF",
+      "license_provenance": "FAN_ATPG repository MIT; original ISCAS89 netlist redistribution rights not independently established",
+      "pattern_count": 117,
+      "pattern_type": "BASIC",
+      "scan_ff_count": 179,
+      "source_url": "https://github.com/NTU-LaDS-II/FAN_ATPG/blob/26b2b36c0e9db11a4b6d9e759df6e44357121f39/mod_netlist/s5378.v",
+      "stuck_at_coverage_percent": 96.04,
+      "technology": "Nangate45 / FreePDK45 ORFS flow",
+      "upstream_commit": "26b2b36c0e9db11a4b6d9e759df6e44357121f39",
+      "upstream_repository": "https://github.com/NTU-LaDS-II/FAN_ATPG"
+    },
+    {
+      "compatibility_translations": [
+        {
+          "from_cell": "BUF_X3",
+          "instance_count": 96,
+          "reason": "BUF_X3 absent from ORFS Nangate45 Liberty",
+          "to_cell": "BUF_X4"
+        }
+      ],
+      "design": "s9234",
+      "evidence": [
+        {
+          "path": "artifacts/raw/tool_qualification/fan_atpg/benchmarks/s9234.v",
+          "sha256": "668647f66a005b830ff92bf075db8f583aaa3165ff8f9f2d716ab9f8a24326c6"
+        },
+        {
+          "path": "artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s9234.pat",
+          "sha256": "977c17142285679fc79aefaf5d4733f1df0a157ace48caf7fe924607edee20e4"
+        },
+        {
+          "path": "artifacts/raw/tool_qualification/fan_atpg/reports/FAN_s9234.rpt",
+          "sha256": "b4fe64c3997300f5424767d4ba5c7c70fbeb66b5110b04999370509d27f1fe5b"
+        }
+      ],
+      "fault_model": "SAF",
+      "license_provenance": "FAN_ATPG repository MIT; original ISCAS89 netlist redistribution rights not independently established",
+      "pattern_count": 156,
+      "pattern_type": "BASIC",
+      "scan_ff_count": 211,
+      "source_url": "https://github.com/NTU-LaDS-II/FAN_ATPG/blob/26b2b36c0e9db11a4b6d9e759df6e44357121f39/mod_netlist/s9234.v",
+      "stuck_at_coverage_percent": 94.14,
+      "technology": "Nangate45 / FreePDK45 ORFS flow",
+      "upstream_commit": "26b2b36c0e9db11a4b6d9e759df6e44357121f39",
+      "upstream_repository": "https://github.com/NTU-LaDS-II/FAN_ATPG"
+    },
+    {
+      "compatibility_translations": [
+        {
+          "from_cell": "BUF_X3",
+          "instance_count": 172,
+          "reason": "BUF_X3 absent from ORFS Nangate45 Liberty",
+          "to_cell": "BUF_X4"
+        }
+      ],
+      "design": "s15850",
+      "evidence": [
+        {
+          "path": "artifacts/raw/tool_qualification/fan_atpg/benchmarks/s15850.v",
+          "sha256": "3ab8d259c9977082e5a5f0677b952ed170f20f74f9896954168770b148d1b9b4"
+        },
+        {
+          "path": "artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s15850.pat",
+          "sha256": "477c4d973264739c049869a47782021e58042795b539e664d49a5811e730f9ec"
+        },
+        {
+          "path": "artifacts/raw/tool_qualification/fan_atpg/reports/FAN_s15850.rpt",
+          "sha256": "f17d89386dcf27ed6dee3892616b0fc19e831a27d49b80b1e21c66510002941b"
+        }
+      ],
+      "fault_model": "SAF",
+      "license_provenance": "FAN_ATPG repository MIT; original ISCAS89 netlist redistribution rights not independently established",
+      "pattern_count": 133,
+      "pattern_type": "BASIC",
+      "scan_ff_count": 534,
+      "source_url": "https://github.com/NTU-LaDS-II/FAN_ATPG/blob/26b2b36c0e9db11a4b6d9e759df6e44357121f39/mod_netlist/s15850.v",
+      "stuck_at_coverage_percent": 94.62,
+      "technology": "Nangate45 / FreePDK45 ORFS flow",
+      "upstream_commit": "26b2b36c0e9db11a4b6d9e759df6e44357121f39",
+      "upstream_repository": "https://github.com/NTU-LaDS-II/FAN_ATPG"
+    }
+  ],
+  "schema_version": "phase0b-benchmarks-1"
+}
