@@ -1,0 +1,172 @@
+{
+  "schema_version": "pact-phase0d-routed-pareto-metrics-1",
+  "classification": "PACT_PHASE0D_ROUTED_PARETO_CONFIRMED",
+  "context": {
+    "design": "s5378",
+    "physical_seed": 11,
+    "K": 2,
+    "new_openroad_routes_executed": 4,
+    "prior_optimizer_routes_reused": 1,
+    "phase0c_routes_reused": 4
+  },
+  "availability_semantics": "Every populated metric inherits the row evidence_status (MEASURED_EXISTING or MEASURED_NEW); null fields are explicitly listed in not_available_fields and are NOT_AVAILABLE.",
+  "routed_physical_cost_metric": {
+    "name": "routed_full_scan_path_net_length_upper_bound_um",
+    "definition": "Sum of routed net-length upper bounds for the two SI-to-first-FF links, 177 reconstructed FF-to-FF scan links, and two last-FF-to-SO links.",
+    "link_count": 181,
+    "rationale": "This is the existing qualified routed metric that most directly corresponds to the port-aware full scan-path HPWL proxy. Exact scan-only routed length is unavailable because routed scan connectivity is not exclusive to scan-only nets."
+  },
+  "rows": [
+    {
+      "label": "P",
+      "source_group": "phase0c",
+      "architecture_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+      "evidence_status": "MEASURED_EXISTING",
+      "qualification_status": "QUALIFIED",
+      "structural": {"K": 2, "FF_count": 179, "expected_scan_edges": 177, "reconstructed_scan_edges": 177, "reconstruction": "PASS", "chain_membership_bijection_valid": true},
+      "routing": {"global_route_completion": "PASS", "detailed_route_completion": "PASS", "detailed_route_DRC_count": 0, "overflow": 0, "initial_global_route_utilization_percent": 23.55, "failure_reason": null},
+      "metrics": {"proxy_hpwl_um": 1380.83, "H_eff8": 63.33333333333333, "routed_full_scan_path_upper_bound_um": 5172.87, "exact_scan_only_routed_length_um": null, "full_netlist_detailed_route_wirelength_um": 26691, "detailed_route_vias": 13409, "setup_WNS_ns": 9.08788, "hold_WNS_ns": 0.0027291, "route_wall_seconds": 78.41865995199987},
+      "fidelity": {"proxy_rank": 5, "routed_rank": 5, "rank_change": 0, "routed_minus_proxy_um": 3792.04, "routed_minus_proxy_percent": 274.6203370436622},
+      "routed_pareto_member": false,
+      "not_available_fields": ["metrics.exact_scan_only_routed_length_um"]
+    },
+    {
+      "label": "T",
+      "source_group": "phase0c",
+      "architecture_sha256": "37deaa7b3eee9623d40fe7ceb4163773bfda2f0953a72fb7b9babd69f088b04f",
+      "evidence_status": "MEASURED_EXISTING",
+      "qualification_status": "QUALIFIED",
+      "structural": {"K": 2, "FF_count": 179, "expected_scan_edges": 177, "reconstructed_scan_edges": 177, "reconstruction": "PASS", "chain_membership_bijection_valid": true},
+      "routing": {"global_route_completion": "PASS", "detailed_route_completion": "PASS", "detailed_route_DRC_count": 0, "overflow": 0, "initial_global_route_utilization_percent": 23.61, "failure_reason": null},
+      "metrics": {"proxy_hpwl_um": 1421.17, "H_eff8": 62.33333333333333, "routed_full_scan_path_upper_bound_um": 5281.515, "exact_scan_only_routed_length_um": null, "full_netlist_detailed_route_wirelength_um": 26781, "detailed_route_vias": 13458, "setup_WNS_ns": 9.08786, "hold_WNS_ns": 0.00270743, "route_wall_seconds": 77.89641511399986},
+      "fidelity": {"proxy_rank": 6, "routed_rank": 6, "rank_change": 0, "routed_minus_proxy_um": 3860.345, "routed_minus_proxy_percent": 271.63147265985066},
+      "routed_pareto_member": false,
+      "not_available_fields": ["metrics.exact_scan_only_routed_length_um"]
+    },
+    {
+      "label": "J50",
+      "source_group": "phase0c",
+      "architecture_sha256": "9c54b48f2ab8c0d7ebd94dd6c5de6ad6f04883f972277372ae90fecb4ce7f9ee",
+      "evidence_status": "MEASURED_EXISTING",
+      "qualification_status": "QUALIFIED",
+      "structural": {"K": 2, "FF_count": 179, "expected_scan_edges": 177, "reconstructed_scan_edges": 177, "reconstruction": "PASS", "chain_membership_bijection_valid": true},
+      "routing": {"global_route_completion": "PASS", "detailed_route_completion": "PASS", "detailed_route_DRC_count": 0, "overflow": 0, "initial_global_route_utilization_percent": 24.17, "failure_reason": null},
+      "metrics": {"proxy_hpwl_um": 2634.75, "H_eff8": 61.66666666666667, "routed_full_scan_path_upper_bound_um": 5911.57, "exact_scan_only_routed_length_um": null, "full_netlist_detailed_route_wirelength_um": 27404, "detailed_route_vias": 13488, "setup_WNS_ns": 9.08673, "hold_WNS_ns": 0.00273859, "route_wall_seconds": 78.99661978599988},
+      "fidelity": {"proxy_rank": 8, "routed_rank": 8, "rank_change": 0, "routed_minus_proxy_um": 3276.82, "routed_minus_proxy_percent": 124.36929499952556},
+      "routed_pareto_member": false,
+      "not_available_fields": ["metrics.exact_scan_only_routed_length_um"]
+    },
+    {
+      "label": "A",
+      "source_group": "phase0c",
+      "architecture_sha256": "16904eaa0db2f733be62aebed6ba183f37c1d672a02d210e964bf96d1bc71f54",
+      "evidence_status": "MEASURED_EXISTING",
+      "qualification_status": "QUALIFIED",
+      "structural": {"K": 2, "FF_count": 179, "expected_scan_edges": 177, "reconstructed_scan_edges": 177, "reconstruction": "PASS", "chain_membership_bijection_valid": true},
+      "routing": {"global_route_completion": "PASS", "detailed_route_completion": "PASS", "detailed_route_DRC_count": 0, "overflow": 0, "initial_global_route_utilization_percent": 27.34, "failure_reason": null},
+      "metrics": {"proxy_hpwl_um": 6850.21, "H_eff8": 60.5, "routed_full_scan_path_upper_bound_um": 9593.485, "exact_scan_only_routed_length_um": null, "full_netlist_detailed_route_wirelength_um": 31158, "detailed_route_vias": 13892, "setup_WNS_ns": 9.07944, "hold_WNS_ns": 0.00272724, "route_wall_seconds": 86.4702731110001},
+      "fidelity": {"proxy_rank": 9, "routed_rank": 9, "rank_change": 0, "routed_minus_proxy_um": 2743.275, "routed_minus_proxy_percent": 40.04658251352879},
+      "routed_pareto_member": false,
+      "not_available_fields": ["metrics.exact_scan_only_routed_length_um"]
+    },
+    {
+      "label": "44b1a2ab5a1e",
+      "source_group": "optimizer_v1",
+      "architecture_sha256": "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+      "evidence_status": "MEASURED_NEW",
+      "qualification_status": "QUALIFIED",
+      "structural": {"K": 2, "FF_count": 179, "expected_scan_edges": 177, "reconstructed_scan_edges": 177, "reconstruction": "PASS", "chain_membership_bijection_valid": true},
+      "routing": {"global_route_completion": "PASS", "detailed_route_completion": "PASS", "detailed_route_DRC_count": 0, "overflow": 0, "initial_global_route_utilization_percent": 23.25, "failure_reason": null},
+      "metrics": {"proxy_hpwl_um": 1180.75, "H_eff8": 64.83333333333333, "routed_full_scan_path_upper_bound_um": 4891.025, "exact_scan_only_routed_length_um": null, "full_netlist_detailed_route_wirelength_um": 26347, "detailed_route_vias": 13337, "setup_WNS_ns": 9.0879, "hold_WNS_ns": 0.00273845, "route_wall_seconds": 95.16109491},
+      "fidelity": {"proxy_rank": 1, "routed_rank": 3, "rank_change": 2, "routed_minus_proxy_um": 3710.275, "routed_minus_proxy_percent": 314.23036205801395},
+      "routed_pareto_member": false,
+      "not_available_fields": ["metrics.exact_scan_only_routed_length_um"]
+    },
+    {
+      "label": "0348f2cc6b9d",
+      "source_group": "optimizer_v1",
+      "architecture_sha256": "0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1",
+      "evidence_status": "MEASURED_NEW",
+      "qualification_status": "QUALIFIED",
+      "structural": {"K": 2, "FF_count": 179, "expected_scan_edges": 177, "reconstructed_scan_edges": 177, "reconstruction": "PASS", "chain_membership_bijection_valid": true},
+      "routing": {"global_route_completion": "PASS", "detailed_route_completion": "PASS", "detailed_route_DRC_count": 0, "overflow": 0, "initial_global_route_utilization_percent": 23.25, "failure_reason": null},
+      "metrics": {"proxy_hpwl_um": 1305.77, "H_eff8": 62.83333333333333, "routed_full_scan_path_upper_bound_um": 4892.57, "exact_scan_only_routed_length_um": null, "full_netlist_detailed_route_wirelength_um": 26423, "detailed_route_vias": 13395, "setup_WNS_ns": 9.08716, "hold_WNS_ns": 0.00272916, "route_wall_seconds": 85.14331029699997},
+      "fidelity": {"proxy_rank": 2, "routed_rank": 4, "rank_change": 2, "routed_minus_proxy_um": 3586.8, "routed_minus_proxy_percent": 274.68849797437525},
+      "routed_pareto_member": false,
+      "not_available_fields": ["metrics.exact_scan_only_routed_length_um"]
+    },
+    {
+      "label": "a78c6ce1a5a1",
+      "source_group": "optimizer_v1",
+      "architecture_sha256": "a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7",
+      "evidence_status": "MEASURED_NEW",
+      "qualification_status": "QUALIFIED",
+      "structural": {"K": 2, "FF_count": 179, "expected_scan_edges": 177, "reconstructed_scan_edges": 177, "reconstruction": "PASS", "chain_membership_bijection_valid": true},
+      "routing": {"global_route_completion": "PASS", "detailed_route_completion": "PASS", "detailed_route_DRC_count": 0, "overflow": 0, "initial_global_route_utilization_percent": 23.24, "failure_reason": null},
+      "metrics": {"proxy_hpwl_um": 1306.55, "H_eff8": 62.666666666666664, "routed_full_scan_path_upper_bound_um": 4864.58, "exact_scan_only_routed_length_um": null, "full_netlist_detailed_route_wirelength_um": 26395, "detailed_route_vias": 13361, "setup_WNS_ns": 9.08775, "hold_WNS_ns": 0.00272829, "route_wall_seconds": 78.97094958299999},
+      "fidelity": {"proxy_rank": 3, "routed_rank": 1, "rank_change": -2, "routed_minus_proxy_um": 3558.03, "routed_minus_proxy_percent": 272.32252879721403},
+      "routed_pareto_member": true,
+      "not_available_fields": ["metrics.exact_scan_only_routed_length_um"]
+    },
+    {
+      "label": "75ea663523d9",
+      "source_group": "optimizer_v1",
+      "architecture_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+      "evidence_status": "MEASURED_NEW",
+      "qualification_status": "QUALIFIED",
+      "structural": {"K": 2, "FF_count": 179, "expected_scan_edges": 177, "reconstructed_scan_edges": 177, "reconstruction": "PASS", "chain_membership_bijection_valid": true},
+      "routing": {"global_route_completion": "PASS", "detailed_route_completion": "PASS", "detailed_route_DRC_count": 0, "overflow": 0, "initial_global_route_utilization_percent": 23.24, "failure_reason": null},
+      "metrics": {"proxy_hpwl_um": 1319.11, "H_eff8": 60.83333333333333, "routed_full_scan_path_upper_bound_um": 4872.25, "exact_scan_only_routed_length_um": null, "full_netlist_detailed_route_wirelength_um": 26355, "detailed_route_vias": 13395, "setup_WNS_ns": 9.08775, "hold_WNS_ns": 0.00272889, "route_wall_seconds": 84.89736077799995},
+      "fidelity": {"proxy_rank": 4, "routed_rank": 2, "rank_change": -2, "routed_minus_proxy_um": 3553.14, "routed_minus_proxy_percent": 269.3588859155037},
+      "routed_pareto_member": true,
+      "not_available_fields": ["metrics.exact_scan_only_routed_length_um"]
+    },
+    {
+      "label": "1f1a3a458946",
+      "source_group": "optimizer_v1",
+      "architecture_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+      "evidence_status": "MEASURED_EXISTING",
+      "qualification_status": "QUALIFIED",
+      "structural": {"K": 2, "FF_count": 179, "expected_scan_edges": 177, "reconstructed_scan_edges": 177, "reconstruction": "PASS", "chain_membership_bijection_valid": true},
+      "routing": {"global_route_completion": "PASS", "detailed_route_completion": "PASS", "detailed_route_DRC_count": 0, "overflow": 0, "initial_global_route_utilization_percent": 23.81, "failure_reason": null},
+      "metrics": {"proxy_hpwl_um": 2157.81, "H_eff8": 59.0, "routed_full_scan_path_upper_bound_um": 5494.14, "exact_scan_only_routed_length_um": null, "full_netlist_detailed_route_wirelength_um": 26982, "detailed_route_vias": 13469, "setup_WNS_ns": 9.08672, "hold_WNS_ns": 0.00273018, "route_wall_seconds": 78.069736662},
+      "fidelity": {"proxy_rank": 7, "routed_rank": 7, "rank_change": 0, "routed_minus_proxy_um": 3336.33, "routed_minus_proxy_percent": 154.61648615957847},
+      "routed_pareto_member": true,
+      "not_available_fields": ["metrics.exact_scan_only_routed_length_um"]
+    }
+  ],
+  "proxy_to_route_fidelity": {
+    "all_available_points": {"n": 9, "pearson_r": 0.9959117685564836, "spearman_rho": 0.8666666666666667},
+    "optimizer_v1_points_only": {"n": 5, "pearson_r": 0.985536017462992, "spearman_rho": 0.2},
+    "interpretation": "Descriptive only. Broad-scale association is strong, but local ordering among the five Optimizer-v1 points is weak: four points move by two rank positions. No statistical significance is claimed."
+  },
+  "proxy_space_front": [
+    "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+    "0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1",
+    "a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7",
+    "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+    "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685"
+  ],
+  "routed_space_front": [
+    "a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7",
+    "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+    "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685"
+  ],
+  "critical_P_vs_75ea": {
+    "proxy_hpwl_delta_75ea_minus_P_um": -61.72,
+    "proxy_hpwl_percent_75ea_vs_P": -4.469775424925591,
+    "H_eff8_delta_75ea_minus_P": -2.5,
+    "H_eff8_percent_75ea_vs_P": -3.947368421052632,
+    "routed_scan_cost_delta_75ea_minus_P_um": -300.62,
+    "routed_scan_cost_percent_75ea_vs_P": -5.811474094651516,
+    "dominance_survives_routing": true
+  },
+  "optimizer_v1_routability": {
+    "QUALIFIED": 5,
+    "DRC_FAIL": 0,
+    "TIMING_FAIL": 0,
+    "STRUCTURAL_FAIL": 0,
+    "FLOW_FAIL": 0,
+    "PROVENANCE_BLOCKED": 0
+  }
+}

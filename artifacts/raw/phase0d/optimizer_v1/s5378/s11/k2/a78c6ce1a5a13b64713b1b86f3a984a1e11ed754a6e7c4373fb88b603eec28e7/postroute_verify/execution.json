@@ -1,0 +1,30 @@
+{
+  "command": [
+    "openroad",
+    "-python",
+    "-no_init",
+    "-exit",
+    "/root/pact-routed-pareto-qualification/scripts/phase0d_verify_routed.py",
+    "--routed",
+    "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0d_optimizer_v1_s11_k2_a78c6ce1a5a1/5_2_route.odb",
+    "--architecture",
+    "/root/pact-routed-pareto-qualification/artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7/architecture.json",
+    "--frozen-def",
+    "/root/pact-routed-pareto-qualification/artifacts/raw/phase0b/placements/s5378/s11/placed.def",
+    "--output",
+    "/root/pact-routed-pareto-qualification/artifacts/raw/phase0d/optimizer_v1/s5378/s11/k2/a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7/routed_verification.json"
+  ],
+  "cwd": "/root/pact-routed-pareto-qualification",
+  "elapsed_s": 0.6160646439999482,
+  "end_utc": "2026-09-21T04:44:56.532154+00:00",
+  "exit_code": 0,
+  "outputs": {
+    "/root/pact-routed-pareto-qualification/artifacts/raw/phase0d/optimizer_v1/s5378/s11/k2/a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7/routed_verification.json": "09cce0178fd304aceb23e758cb775d890e040ad198189afc55d3472f73e5d7b6"
+  },
+  "required_outputs_present": true,
+  "start_utc": "2026-09-21T04:44:55.916094+00:00",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "f7a84d4ee1d22e41d3279a3a6bfb8f8de1c171f0b76228bb10ac756c4b712558",
+  "timed_out": false,
+  "timeout_s": 90
+}

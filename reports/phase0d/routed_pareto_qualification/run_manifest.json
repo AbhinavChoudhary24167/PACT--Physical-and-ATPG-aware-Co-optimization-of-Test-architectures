@@ -1,0 +1,133 @@
+{
+  "schema_version": "pact-phase0d-routed-pareto-run-manifest-1",
+  "generated_utc": "2026-09-21T04:53:07.7475417Z",
+  "classification": "PACT_PHASE0D_ROUTED_PARETO_CONFIRMED",
+  "experiment_contract": {
+    "design": "s5378",
+    "physical_seed": 11,
+    "K": 2,
+    "new_optimization": false,
+    "machine_learning": false,
+    "new_architectures_generated": 0,
+    "new_openroad_routes_executed": 4,
+    "prior_optimizer_routes_reused": 1,
+    "phase0c_routes_reused": 4,
+    "per_candidate_cap_seconds": 750,
+    "route_stage_timeout_seconds": 600
+  },
+  "repository": {
+    "branch": "codex/pact-phase0d-budgeted-search",
+    "prompt_base_commit": "4242c0d5f97d9f2e440e9c0a4a7277ee7b188f1c",
+    "pre_experiment_commit": "386f25201c29d50d11ac18fe25cd334ff0e2667f",
+    "pre_experiment_clean": true,
+    "prompt_base_is_ancestor": true,
+    "pre_experiment_delta": "README.md only"
+  },
+  "environment": {
+    "execution": "WSL as root",
+    "openroad_executable": "/usr/bin/openroad",
+    "yosys_executable": "/usr/bin/yosys",
+    "orfs_flow": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+    "base_placement_odb": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+    "base_placement_sdc": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.sdc",
+    "nangate45": true
+  },
+  "frozen_input_sha256": {
+    "scripts/phase0d_run_route.py": "394454cf94f2237cfdca1c5628a86b75324a23e9c763fa439bf6b69d438341a7",
+    "scripts/phase0d_verify_routed.py": "d8d89f9b5ea82c57238f33460201fcbce8a7b75ed4cc0a39fc7e20a81099fdfb",
+    "scripts/phase0c_rewire_odb.py": "7f655d611891fe7ec74370fd2598cfb12ee5f1babd6d976c109ac158014763dc",
+    "config/phase0d_pilot_contract.json": "1785bd6ca4367bb3bace9fffb7fff2ef66d03b7b9fa27b1317d157370fd7b5ad",
+    "config/phase0d_optimizer_v1_contract.json": "88d8ee812f492aef92d0e3b95441615dabf172d6cccce49b1daf260d033b9fdf",
+    "experiments/phase0/s5378_orfs/config.mk": "32d8fbae1d9975f8d239e769d8c5fc870600e9a6c25d8dd416d32d84f3dce503",
+    "artifacts/raw/phase0b/placements/s5378/s11/placed.def": "e906065d75f3f3ecab2c723a33259f33d0c14089a73adb3c34d4daf82001c2fb"
+  },
+  "route_order": [
+    "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+    "0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1",
+    "a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7",
+    "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c"
+  ],
+  "route_results": [
+    {
+      "architecture_sha256": "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+      "status": "QUALIFIED",
+      "DRC_errors": 0,
+      "route_wall_seconds": 95.16109491,
+      "execution_root": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "evidence": "artifacts/raw/phase0d/optimizer_v1/s5378/s11/k2/44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b"
+    },
+    {
+      "architecture_sha256": "0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1",
+      "status": "QUALIFIED",
+      "DRC_errors": 0,
+      "route_wall_seconds": 85.14331029699997,
+      "execution_root": "/root/pact-routed-pareto-qualification",
+      "evidence": "artifacts/raw/phase0d/optimizer_v1/s5378/s11/k2/0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1"
+    },
+    {
+      "architecture_sha256": "a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7",
+      "status": "QUALIFIED",
+      "DRC_errors": 0,
+      "route_wall_seconds": 78.97094958299999,
+      "execution_root": "/root/pact-routed-pareto-qualification",
+      "evidence": "artifacts/raw/phase0d/optimizer_v1/s5378/s11/k2/a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7"
+    },
+    {
+      "architecture_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+      "status": "QUALIFIED",
+      "DRC_errors": 0,
+      "route_wall_seconds": 84.89736077799995,
+      "execution_root": "/root/pact-routed-pareto-qualification",
+      "evidence": "artifacts/raw/phase0d/optimizer_v1/s5378/s11/k2/75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c"
+    }
+  ],
+  "pre_route_safety_events": [
+    {
+      "architecture_sha256": "0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1",
+      "event": "DISK_FLOOR_REACHED",
+      "stage": "before rewire",
+      "openroad_route_started": false,
+      "resolution": "Copied only hash-identical route inputs to a 1.5 MiB WSL staging root on the same host and reused the identical ORFS flow; the frozen 5 GiB safety floor was not changed."
+    }
+  ],
+  "staging_validation": {
+    "source_config_placement_and_candidate_inputs_byte_identical": true,
+    "physical_settings_changed": false,
+    "candidate_specific_tuning": false
+  },
+  "audit_artifacts": {
+    "metrics_csv": "reports/phase0d/routed_pareto_qualification/routed_pareto_metrics.csv",
+    "metrics_json": "reports/phase0d/routed_pareto_qualification/routed_pareto_metrics.json",
+    "provenance": "reports/phase0d/routed_pareto_qualification/provenance.json",
+    "report": "reports/phase0d/routed_pareto_qualification/ROUTED_PARETO_REPORT.md",
+    "hashes": "reports/phase0d/routed_pareto_qualification/new_evidence.sha256"
+  },
+  "verification": {
+    "regression_tests": {
+      "status": "PASS",
+      "passed": 120,
+      "failed": 0,
+      "elapsed_seconds": 22.39,
+      "command": "python -c \"import sys,pytest; sys.path.insert(0,'src'); raise SystemExit(pytest.main(['-q']))\"",
+      "pre_collection_environment_attempts": [
+        "Windows python -m pytest: no tests collected because the src-layout package was not on sys.path",
+        "WSL .venv/bin/python -m pytest: no tests collected because pytest was not installed in that environment"
+      ]
+    },
+    "phase0c_frozen_hashes": {
+      "status": "PASS",
+      "checked": 8050,
+      "mismatches": 0,
+      "missing": 0,
+      "manifest": "reports/phase0d/phase0c_evidence.sha256"
+    },
+    "phase0c_tree_unchanged": "PASS",
+    "phase0d_pilot_manifest": {"status": "PASS", "mismatches": 0},
+    "phase0d_pilot_tree_unchanged": "PASS",
+    "optimizer_v1_manifest": {"status": "PASS", "mismatches": 0},
+    "optimizer_v1_existing_evidence_unchanged": "PASS",
+    "new_route_input_hash_maps": "PASS_4_OF_4",
+    "new_routed_odb_archive_verification": "PASS_4_OF_4",
+    "credential_scan": "PASS"
+  }
+}
