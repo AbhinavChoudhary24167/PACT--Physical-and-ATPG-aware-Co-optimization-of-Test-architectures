@@ -1,0 +1,95 @@
+{
+  "artifacts": [
+    {
+      "bytes": 116332,
+      "path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/optimizer_state.json",
+      "sha256": "94bdde3bce3b5907e3f8acfdd782c5dd524e7efb1bad8d4b1443c1827f6bf6f8"
+    },
+    {
+      "bytes": 8242,
+      "path": "reports/phase0d/optimizer_v1/optimizer_v1_metrics.csv",
+      "sha256": "7177dc90b4978095145dbdb9f3ce3ad2d399906af9d72532d1ffd608662a350c"
+    },
+    {
+      "bytes": 91337,
+      "path": "reports/phase0d/optimizer_v1/optimizer_v1_status.json",
+      "sha256": "95f26390b7ad9379537f616fdd2b71bf2ff24eb89e968039a2463254706c6bfa"
+    },
+    {
+      "bytes": 3974,
+      "path": "reports/phase0d/optimizer_v1/route_shortlist.json",
+      "sha256": "793b5cb036bcf7f3042fc24615c44a51aa21a342fbc02b3731a04e06b91a98b8"
+    },
+    {
+      "bytes": 3427,
+      "path": "reports/phase0d/optimizer_v1/OPTIMIZER_V1_METHOD.md",
+      "sha256": "3036c01cdaafe8227197ee5addc089e04e309903a31463fe5bc987b2916bd632"
+    },
+    {
+      "bytes": 2797,
+      "path": "reports/phase0d/optimizer_v1/OPTIMIZER_V1_REPORT.md",
+      "sha256": "f0004c6bcc374f706615d439de23c3ca937a28fb63b597caedf9fc04942e29c5"
+    },
+    {
+      "bytes": 956,
+      "path": "reports/phase0d/optimizer_v1/OPTIMIZER_V1_STATUS.md",
+      "sha256": "11eaf5fe97c96da3968c601886541431701c2027e169405e869db00fcb69807f"
+    },
+    {
+      "bytes": 60607,
+      "path": "reports/phase0d/optimizer_v1/figures/01_reference_vs_pact_front.png",
+      "sha256": "0300c7d71072d135265cbe4e776b9a826dc4cc53c6b4cb6176546a95558eff3d"
+    },
+    {
+      "bytes": 28315,
+      "path": "reports/phase0d/optimizer_v1/figures/02_archive_evolution.png",
+      "sha256": "ae653184a076db020f284c8b190a2a9cc60efc1c62fc5c2192260d58bb597f0b"
+    },
+    {
+      "bytes": 31397,
+      "path": "reports/phase0d/optimizer_v1/figures/03_hypervolume_vs_time.png",
+      "sha256": "9af80ea8c86ad3ba9bc20ca50c5c8c495c105df5c4f46578e79b491619136111"
+    },
+    {
+      "bytes": 52966,
+      "path": "reports/phase0d/optimizer_v1/figures/04_candidates_by_source.png",
+      "sha256": "79228c2802f7ff21410880b7ec82e10ad65a890bddb0da0b80801b19e49d29ed"
+    },
+    {
+      "bytes": 26092,
+      "path": "reports/phase0d/optimizer_v1/figures/05_candidate_funnel.png",
+      "sha256": "f32afd184adf43c8d6a5440df5240d1d9d10a140444b2c8960ee5a23b88e3a76"
+    },
+    {
+      "bytes": 37703,
+      "path": "reports/phase0d/optimizer_v1/figures/06_operator_contribution.png",
+      "sha256": "fece3e8eed6c22478231677c2e04bd9bfd16206f28eeba262d6234a09c9dba33"
+    },
+    {
+      "bytes": 51576,
+      "path": "reports/phase0d/optimizer_v1/figures/07_unique_duplicate_cache.png",
+      "sha256": "b8d6ac528e4beac9c3fe4c976c8e0a36402adfdf28ba9201472c8194cad170f1"
+    }
+  ],
+  "contract_sha256": "88d8ee812f492aef92d0e3b95441615dabf172d6cccce49b1daf260d033b9fdf",
+  "inputs": {
+    "config/phase0d_optimizer_v1_contract.json": "88d8ee812f492aef92d0e3b95441615dabf172d6cccce49b1daf260d033b9fdf",
+    "scripts/phase0d_optimizer_v1.py": "12cf120f2e70288d3374e2d2580d68a2c2fe4a4c2115d8c83ea6dd6607a844b6",
+    "src/pact/analysis/phase0c_activity.py": "19d79450c479f5c9e56f464102316b60a4fd2d899f00f3e523020e307123c401",
+    "src/pact/phase0d/funnel.py": "3d6bb0645506094031110e996f5dcf1d4a6aea562ac7c47a9262f02eda76fb04",
+    "src/pact/phase0d/optimizer_v1.py": "345a7f871f39d4d50d4dfeff7759863c74c40543a9b52e715f09c1ca35fb5990",
+    "src/pact/physical/phase0c_port_policy.py": "440cf538cc8ff56dfc5e6c3adabbf5eed818e686a1463553e78694414a071923",
+    "src/pact/physical/phase0c_scan_geometry.py": "0d7d61ebd5dc26c4c0cebf062667bb520677603b6cd5256186047a350a7e0c1c",
+    "src/pact/scan/phase0d_operators.py": "326769308fe8b4272a65a4375bae8eace76a3b2b5eabb497fecef8ed695bbfff"
+  },
+  "new_optimizer_routes": 1,
+  "phase0c_reference_reuse": "REUSED_VERIFIED",
+  "phase0c_routes_executed_new": 0,
+  "reporting_generator": {
+    "path": "scripts/phase0d_optimizer_v1_finalize.py",
+    "sha256": "c4f38b9d07d22f53bb6bb87b27cef6b6b9b22f67d176adf074a54d62fa590060"
+  },
+  "run_signature": "9bbd9df2ffc010d2929d92b0fb0dea80483fb964ee768382e6d291a4050bb924",
+  "schema_version": "pact-optimizer-v1-manifest-1",
+  "status": "PACT_OPTIMIZER_V1_PROXY_ADVANCE"
+}

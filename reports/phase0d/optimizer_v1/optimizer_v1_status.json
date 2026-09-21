@@ -1,0 +1,2626 @@
+{
+  "activity_heuristic_validation": {
+    "pearson_r": 0.2338014779665888,
+    "sample_count": 19
+  },
+  "checkpoints": [
+    {
+      "accepted_lane_moves": 0,
+      "archive_size": 5,
+      "best_H_eff8": 60.5,
+      "best_physical_proxy_um": 1209.61,
+      "cache_hits": 0,
+      "candidates_proposed": 1,
+      "duplicate_candidates": 0,
+      "executed_new_exact_proxy_evaluations": 1,
+      "invalid_candidates": 0,
+      "normalized_hypervolume": 0.9246798906599945,
+      "observed_search_wall_seconds": 5.077999999994063,
+      "target_seconds": 5.0,
+      "unique_candidates": 1,
+      "unique_exact_proxy_evaluations": 1
+    },
+    {
+      "accepted_lane_moves": 0,
+      "archive_size": 4,
+      "best_H_eff8": 60.5,
+      "best_physical_proxy_um": 1209.61,
+      "cache_hits": 0,
+      "candidates_proposed": 2,
+      "duplicate_candidates": 0,
+      "executed_new_exact_proxy_evaluations": 2,
+      "invalid_candidates": 0,
+      "normalized_hypervolume": 0.9291826475310843,
+      "observed_search_wall_seconds": 12.062999999994645,
+      "target_seconds": 10.0,
+      "unique_candidates": 2,
+      "unique_exact_proxy_evaluations": 2
+    },
+    {
+      "accepted_lane_moves": 0,
+      "archive_size": 4,
+      "best_H_eff8": 60.33333333333333,
+      "best_physical_proxy_um": 1209.61,
+      "cache_hits": 0,
+      "candidates_proposed": 4,
+      "duplicate_candidates": 0,
+      "executed_new_exact_proxy_evaluations": 4,
+      "invalid_candidates": 0,
+      "normalized_hypervolume": 0.9727413044739934,
+      "observed_search_wall_seconds": 23.547000000005937,
+      "target_seconds": 20.0,
+      "unique_candidates": 4,
+      "unique_exact_proxy_evaluations": 4
+    },
+    {
+      "accepted_lane_moves": 0,
+      "archive_size": 4,
+      "best_H_eff8": 60.33333333333333,
+      "best_physical_proxy_um": 1209.61,
+      "cache_hits": 0,
+      "candidates_proposed": 5,
+      "duplicate_candidates": 0,
+      "executed_new_exact_proxy_evaluations": 5,
+      "invalid_candidates": 0,
+      "normalized_hypervolume": 0.9727413044739934,
+      "observed_search_wall_seconds": 30.077999999994063,
+      "target_seconds": 30.0,
+      "unique_candidates": 5,
+      "unique_exact_proxy_evaluations": 5
+    },
+    {
+      "accepted_lane_moves": 6,
+      "archive_size": 5,
+      "best_H_eff8": 59.0,
+      "best_physical_proxy_um": 1180.75,
+      "cache_hits": 0,
+      "candidates_proposed": 24,
+      "duplicate_candidates": 0,
+      "executed_new_exact_proxy_evaluations": 24,
+      "invalid_candidates": 1,
+      "normalized_hypervolume": 1.1553867832402525,
+      "observed_search_wall_seconds": 61.29700000000594,
+      "target_seconds": 60.0,
+      "unique_candidates": 24,
+      "unique_exact_proxy_evaluations": 24
+    }
+  ],
+  "context": "s5378/s11/k2",
+  "contract_sha256": "88d8ee812f492aef92d0e3b95441615dabf172d6cccce49b1daf260d033b9fdf",
+  "counters": {
+    "accepted_lane_moves": 6,
+    "cache_hits": 0,
+    "candidates_proposed": 24,
+    "duplicate_candidates": 0,
+    "executed_new_exact_proxy_evaluations": 24,
+    "invalid_candidates": 1,
+    "unique_candidates": 24,
+    "unique_exact_proxy_evaluations": 24
+  },
+  "new_nondominated_point_found": true,
+  "new_pact_front": [
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b/architecture.json",
+      "architecture_sha256": "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+      "evaluation_index": 15,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.3828252000093926,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 89.58119658119658
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_segment_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 1180.75,
+          "max_internal_edge_um": 35.42999999999999,
+          "mean_internal_edge_um": 6.511807909604519
+        }
+      },
+      "hypervolume_after": 1.0653453824106498,
+      "hypervolume_before": 1.0642941149540812,
+      "labels": {
+        "delta_H_eff8": -0.3333333333333286,
+        "delta_physical_proxy_um": -10.059999999999945,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 37.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 112.0,
+        "total_shift_toggles": 950055
+      },
+      "move": {
+        "activity_heuristic_child": 89.58119658119658,
+        "activity_heuristic_parent": 89.44017094017093,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+        "destroy_operator": "segment",
+        "incremental_physical_delta_um": -10.06000000000006,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "7807b6a77fcd4431fd045a650e9dac7806cf62dc91fa59f48115895874c7fe48",
+          "proof_sha256": "57bc54ff7001b7fd589f2bdc799c3dee589891a86e05d2f646f57dbed39c5933",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "7807b6a77fcd4431fd045a650e9dac7806cf62dc91fa59f48115895874c7fe48",
+        "removed_FFs": [
+          "U_n622gat",
+          "U_n626gat",
+          "U_n614gat",
+          "U_n919gat",
+          "U_n846gat",
+          "U_n256gat",
+          "U_n470gat",
+          "U_n707gat",
+          "U_n148gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_segment_physical_best"
+      },
+      "objectives": [
+        1180.75,
+        64.83333333333333,
+        10530.0
+      ],
+      "parent_objectives": [
+        1190.81,
+        65.16666666666666,
+        10530.0
+      ],
+      "parent_sha256": "7807b6a77fcd4431fd045a650e9dac7806cf62dc91fa59f48115895874c7fe48",
+      "search_wall_seconds": 44.23500000000058,
+      "source_kind": "lns",
+      "source_name": "segment+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1/architecture.json",
+      "architecture_sha256": "0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1",
+      "evaluation_index": 7,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.3444010999955935,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 73.72649572649573
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_region_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 1305.77,
+          "max_internal_edge_um": 25.47,
+          "mean_internal_edge_um": 7.148305084745763
+        }
+      },
+      "hypervolume_after": 0.9758136101126892,
+      "hypervolume_before": 0.9748284974689082,
+      "labels": {
+        "delta_H_eff8": 0.6666666666666643,
+        "delta_physical_proxy_um": -36.59999999999991,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 35.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 104.0,
+        "total_shift_toggles": 813027
+      },
+      "move": {
+        "activity_heuristic_child": 73.72649572649573,
+        "activity_heuristic_parent": 72.11324786324786,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1",
+        "destroy_operator": "region",
+        "incremental_physical_delta_um": -36.59999999999991,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+          "proof_sha256": "e9838a894841657da3c0cd14f319a336c4f3a914dafecc8be83716adf0f7e50d",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+        "removed_FFs": [
+          "U_n667gat",
+          "U_n1135gat",
+          "U_n366gat",
+          "U_n314gat",
+          "U_n322gat",
+          "U_n1045gat",
+          "U_n318gat",
+          "U_n824gat",
+          "U_n561gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_region_physical_best"
+      },
+      "objectives": [
+        1305.77,
+        62.83333333333333,
+        10530.0
+      ],
+      "parent_objectives": [
+        1342.37,
+        62.166666666666664,
+        10530.0
+      ],
+      "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+      "search_wall_seconds": 33.09399999999732,
+      "source_kind": "lns",
+      "source_name": "region+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7/architecture.json",
+      "architecture_sha256": "a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7",
+      "evaluation_index": 21,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 2.3712120999989565,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 76.95299145299145
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_cross_chain_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 1306.5500000000002,
+          "max_internal_edge_um": 27.589999999999996,
+          "mean_internal_edge_um": 7.1771186440677965
+        }
+      },
+      "hypervolume_after": 1.1553867832402525,
+      "hypervolume_before": 1.155380746445363,
+      "labels": {
+        "delta_H_eff8": 1.8333333333333357,
+        "delta_physical_proxy_um": -12.559999999999945,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 102.0,
+        "total_shift_toggles": 830749
+      },
+      "move": {
+        "activity_heuristic_child": 76.95299145299145,
+        "activity_heuristic_parent": 74.75213675213675,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7",
+        "destroy_operator": "cross_chain",
+        "incremental_physical_delta_um": -12.559999999999945,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+          "proof_sha256": "2b52088adb9e728dc2f4193db812c49cb07e1f280acb9fa20dfa4180acb15604",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+        "removed_FFs": [
+          "U_n2464gat",
+          "U_n618gat",
+          "U_n673gat",
+          "U_n398gat",
+          "U_n626gat",
+          "U_n2450gat",
+          "U_n2458gat",
+          "U_n2309gat",
+          "U_n2179gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_cross_chain_physical_best"
+      },
+      "objectives": [
+        1306.55,
+        62.666666666666664,
+        10530.0
+      ],
+      "parent_objectives": [
+        1319.11,
+        60.83333333333333,
+        10530.0
+      ],
+      "parent_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+      "search_wall_seconds": 53.42200000000594,
+      "source_kind": "lns",
+      "source_name": "cross_chain+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c/architecture.json",
+      "architecture_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+      "evaluation_index": 11,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.2817014000029303,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 74.75213675213675
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_hotspot_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 1319.1100000000001,
+          "max_internal_edge_um": 25.47,
+          "mean_internal_edge_um": 7.223672316384181
+        }
+      },
+      "hypervolume_after": 1.0642941149540812,
+      "hypervolume_before": 1.029044692829396,
+      "labels": {
+        "delta_H_eff8": -1.3333333333333357,
+        "delta_physical_proxy_um": -23.25999999999999,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 37.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 99.0,
+        "total_shift_toggles": 814383
+      },
+      "move": {
+        "activity_heuristic_child": 74.75213675213675,
+        "activity_heuristic_parent": 72.11324786324786,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+        "destroy_operator": "hotspot",
+        "incremental_physical_delta_um": -23.25999999999999,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+          "proof_sha256": "254342ec924f43784ca0bd4e8e58456c96ddbb42a33fe07f71d36e141af32956",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+        "removed_FFs": [
+          "U_n2454gat",
+          "U_n553gat",
+          "U_n846gat",
+          "U_n865gat",
+          "U_n152gat",
+          "U_n279gat",
+          "U_n322gat",
+          "U_n2061gat",
+          "U_n699gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_hotspot_physical_best"
+      },
+      "objectives": [
+        1319.11,
+        60.83333333333333,
+        10530.0
+      ],
+      "parent_objectives": [
+        1342.37,
+        62.166666666666664,
+        10530.0
+      ],
+      "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+      "search_wall_seconds": 38.65600000000268,
+      "source_kind": "lns",
+      "source_name": "hotspot+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685/architecture.json",
+      "architecture_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+      "evaluation_index": 17,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.2456145000032848,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 65.78205128205128
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_segment_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 2157.8100000000004,
+          "max_internal_edge_um": 49.98,
+          "mean_internal_edge_um": 11.50135593220339
+        }
+      },
+      "hypervolume_after": 1.155380746445363,
+      "hypervolume_before": 1.0653634927953188,
+      "labels": {
+        "delta_H_eff8": -4.333333333333336,
+        "delta_physical_proxy_um": -66.55999999999995,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 35.0,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 102.0,
+        "total_shift_toggles": 732237
+      },
+      "move": {
+        "activity_heuristic_child": 65.78205128205128,
+        "activity_heuristic_parent": 64.38461538461539,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+        "destroy_operator": "segment",
+        "incremental_physical_delta_um": -66.55999999999995,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+          "proof_sha256": "2a0d469ce22c2d1bdd68b69eb1c55d9346636e54f4320eeb96834b8edeba6eb1",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+        "removed_FFs": [
+          "U_n1148gat",
+          "U_n865gat",
+          "U_n883gat",
+          "U_n824gat",
+          "U_n1241gat",
+          "U_n2640gat",
+          "U_n2472gat",
+          "U_n165gat",
+          "U_n2522gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_segment_physical_best"
+      },
+      "objectives": [
+        2157.81,
+        59.0,
+        10530.0
+      ],
+      "parent_objectives": [
+        2224.37,
+        63.333333333333336,
+        10530.0
+      ],
+      "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+      "search_wall_seconds": 46.90600000000268,
+      "source_kind": "lns",
+      "source_name": "segment+physical_best"
+    }
+  ],
+  "phase0c_reference_front": [
+    {
+      "architecture_path": "artifacts/derived/phase0c/s5378/s11/k2/P.architecture.json",
+      "architecture_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+      "metrics": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530,
+        "peak_simultaneous_toggles": 108.0,
+        "total_shift_toggles": 941901
+      },
+      "objectives": [
+        1380.8300000000002,
+        63.33333333333333,
+        10530.0
+      ],
+      "source_kind": "phase0c_reference",
+      "source_name": "P"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0c/s5378/s11/k2/T.architecture.json",
+      "architecture_sha256": "37deaa7b3eee9623d40fe7ceb4163773bfda2f0953a72fb7b9babd69f088b04f",
+      "metrics": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530,
+        "peak_simultaneous_toggles": 109.0,
+        "total_shift_toggles": 935989
+      },
+      "objectives": [
+        1421.17,
+        62.333333333333336,
+        10530.0
+      ],
+      "source_kind": "phase0c_reference",
+      "source_name": "T"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0c/s5378/s11/k2/J50.architecture.json",
+      "architecture_sha256": "9c54b48f2ab8c0d7ebd94dd6c5de6ad6f04883f972277372ae90fecb4ce7f9ee",
+      "metrics": {
+        "H_eff16": 34.83333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530,
+        "peak_simultaneous_toggles": 93.0,
+        "total_shift_toggles": 688291
+      },
+      "objectives": [
+        2634.75,
+        61.666666666666664,
+        10530.0
+      ],
+      "source_kind": "phase0c_reference",
+      "source_name": "J50"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0c/s5378/s11/k2/A.architecture.json",
+      "architecture_sha256": "16904eaa0db2f733be62aebed6ba183f37c1d672a02d210e964bf96d1bc71f54",
+      "metrics": {
+        "H_eff16": 34.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530,
+        "peak_simultaneous_toggles": 92.0,
+        "total_shift_toggles": 604035
+      },
+      "objectives": [
+        6850.21,
+        60.5,
+        10530.0
+      ],
+      "source_kind": "phase0c_reference",
+      "source_name": "A"
+    }
+  ],
+  "phase0c_status_preserved": "PACT_PHASE0C_LEARNING_GATE_FAIL",
+  "phase0d_pilot_status_preserved": "PILOT_COMPLETE_NO_ROUTE_QUALIFIED",
+  "route_results": [
+    {
+      "DRC_errors": 0,
+      "K": 2,
+      "architecture_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+      "design": "s5378",
+      "evidence_namespace": "optimizer_v1",
+      "exact_scan_only_routed_length_um": null,
+      "input_sha256": {
+        "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685/architecture.json": "8a7c575976fbf17298f99303f0a171c6e1d15c05135bee9b57f9c305b33d033e",
+        "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685/proxy.json": "3d722705cc4e53a40405c85e918d8681eec8460846dd2190acacdf170a6225c0",
+        "artifacts/raw/phase0b/placements/s5378/s11/placed.def": "e906065d75f3f3ecab2c723a33259f33d0c14089a73adb3c34d4daf82001c2fb",
+        "config/phase0d_optimizer_v1_contract.json": "88d8ee812f492aef92d0e3b95441615dabf172d6cccce49b1daf260d033b9fdf",
+        "config/phase0d_pilot_contract.json": "1785bd6ca4367bb3bace9fffb7fff2ef66d03b7b9fa27b1317d157370fd7b5ad",
+        "external/3_place.odb": "2792c3863d10e34823ebb7aa404770dc1aeff55456f0fbb15f704bcd9fc57cd0",
+        "external/3_place.sdc": "0108ee0e1b38190c138878c3d49e255a701e197219b8a7106d08badc0f24fb9a",
+        "scripts/phase0c_rewire_odb.py": "7f655d611891fe7ec74370fd2598cfb12ee5f1babd6d976c109ac158014763dc",
+        "scripts/phase0d_run_route.py": "394454cf94f2237cfdca1c5628a86b75324a23e9c763fa439bf6b69d438341a7",
+        "scripts/phase0d_verify_routed.py": "d8d89f9b5ea82c57238f33460201fcbce8a7b75ed4cc0a39fc7e20a81099fdfb"
+      },
+      "path": "artifacts/raw/phase0d/optimizer_v1/s5378/s11/k2/1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685/route_result.json",
+      "physical_seed": 11,
+      "postroute_verification": {
+        "K": 2,
+        "all_chain_inputs_outputs_verified": true,
+        "bounded_scan_path_link_count": 181,
+        "edges": [
+          {
+            "chain": 0,
+            "dest_ff": "U_n463gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 48.18,
+            "source_ff": "U_n331gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n384gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 15.69,
+            "source_ff": "U_n463gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2526gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 21.13,
+            "source_ff": "U_n384gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2476gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 36.67,
+            "source_ff": "U_n2526gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n820gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 20.04,
+            "source_ff": "U_n2476gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n275gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 53.62,
+            "source_ff": "U_n820gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n584gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 52.41,
+            "source_ff": "U_n275gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n699gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 51.46,
+            "source_ff": "U_n584gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1068gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 53.94,
+            "source_ff": "U_n699gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n388gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 50.41,
+            "source_ff": "U_n1068gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n327gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 44.89,
+            "source_ff": "U_n388gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n865gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 34.43,
+            "source_ff": "U_n327gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n883gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 53.56,
+            "source_ff": "U_n865gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n842gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 73.26,
+            "source_ff": "U_n883gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n703gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 39.74,
+            "source_ff": "U_n842gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1026gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 32.89,
+            "source_ff": "U_n703gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n726gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 44.31,
+            "source_ff": "U_n1026gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1035gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 24.94,
+            "source_ff": "U_n726gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1072gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 35.84,
+            "source_ff": "U_n1035gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2640gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 59.51,
+            "source_ff": "U_n1072gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2472gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 41.09,
+            "source_ff": "U_n2640gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n165gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 26.62,
+            "source_ff": "U_n2472gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2522gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 51.65,
+            "source_ff": "U_n165gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1045gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 27.19,
+            "source_ff": "U_n2522gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1135gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 72.11,
+            "source_ff": "U_n1045gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n659gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 74.14,
+            "source_ff": "U_n1135gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n777gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 16.91,
+            "source_ff": "U_n659gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n318gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 14.12,
+            "source_ff": "U_n777gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n314gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 22.49,
+            "source_ff": "U_n318gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n561gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 17.14,
+            "source_ff": "U_n314gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n366gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 21.48,
+            "source_ff": "U_n561gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n322gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 21.15,
+            "source_ff": "U_n366gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n553gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 29.45,
+            "source_ff": "U_n322gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n667gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 37.56,
+            "source_ff": "U_n553gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1241gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 38.73,
+            "source_ff": "U_n667gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n824gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 42.19,
+            "source_ff": "U_n1241gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n580gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 67.0,
+            "source_ff": "U_n824gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n680gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 40.0,
+            "source_ff": "U_n580gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n957gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 45.4,
+            "source_ff": "U_n680gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1294gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 32.77,
+            "source_ff": "U_n957gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1298gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 47.64,
+            "source_ff": "U_n1294gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1080gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 40.85,
+            "source_ff": "U_n1298gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2468gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 38.34,
+            "source_ff": "U_n1080gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n861gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 33.16,
+            "source_ff": "U_n2468gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n816gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 33.84,
+            "source_ff": "U_n861gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1148gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 48.02,
+            "source_ff": "U_n816gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n684gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 37.18,
+            "source_ff": "U_n1148gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2464gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 51.22,
+            "source_ff": "U_n684gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n618gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 20.02,
+            "source_ff": "U_n2464gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n491gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 26.89,
+            "source_ff": "U_n618gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n707gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 29.5,
+            "source_ff": "U_n491gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n830gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 40.92,
+            "source_ff": "U_n707gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n626gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 39.21,
+            "source_ff": "U_n830gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n673gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 51.48,
+            "source_ff": "U_n626gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n398gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 74.98,
+            "source_ff": "U_n673gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2347gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 47.73,
+            "source_ff": "U_n398gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2061gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 20.91,
+            "source_ff": "U_n2347gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2139gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 50.26,
+            "source_ff": "U_n2061gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2143gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 52.87,
+            "source_ff": "U_n2139gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2394gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 54.54,
+            "source_ff": "U_n2143gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2626gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 27.27,
+            "source_ff": "U_n2394gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2407gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 19.06,
+            "source_ff": "U_n2626gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2343gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 17.7,
+            "source_ff": "U_n2407gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2562gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 23.85,
+            "source_ff": "U_n2343gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2399gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 18.74,
+            "source_ff": "U_n2562gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2440gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 15.73,
+            "source_ff": "U_n2399gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n919gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 35.51,
+            "source_ff": "U_n2440gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n470gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 45.94,
+            "source_ff": "U_n919gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n846gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 21.61,
+            "source_ff": "U_n470gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n148gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 49.82,
+            "source_ff": "U_n846gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n256gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 30.17,
+            "source_ff": "U_n148gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n152gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 20.99,
+            "source_ff": "U_n256gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2644gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 26.06,
+            "source_ff": "U_n152gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2490gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 34.32,
+            "source_ff": "U_n2644gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2622gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 11.65,
+            "source_ff": "U_n2490gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2543gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 12.88,
+            "source_ff": "U_n2622gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2630gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 18.47,
+            "source_ff": "U_n2543gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1850gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 15.91,
+            "source_ff": "U_n2630gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n2155gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 20.19,
+            "source_ff": "U_n1850gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1975gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 27.16,
+            "source_ff": "U_n2155gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1675gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 11.01,
+            "source_ff": "U_n1975gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1332gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 7.29,
+            "source_ff": "U_n1675gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1807gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 6.01,
+            "source_ff": "U_n1332gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1740gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 3.39,
+            "source_ff": "U_n1807gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1462gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 23.71,
+            "source_ff": "U_n1740gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1496gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 16.64,
+            "source_ff": "U_n1462gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1508gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 15.74,
+            "source_ff": "U_n1496gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1678gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 10.42,
+            "source_ff": "U_n1508gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_n1336gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 19.87,
+            "source_ff": "U_n1678gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1763gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 69.28,
+            "source_ff": "U_n2454gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1771gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 13.22,
+            "source_ff": "U_n1763gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2309gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 20.61,
+            "source_ff": "U_n1771gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2458gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 7.9,
+            "source_ff": "U_n2309gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1767gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 7.88,
+            "source_ff": "U_n2458gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1829gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 17.87,
+            "source_ff": "U_n1767gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2176gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 17.93,
+            "source_ff": "U_n1829gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2110gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 10.21,
+            "source_ff": "U_n2176gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2514gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 25.14,
+            "source_ff": "U_n2110gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2319gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 19.05,
+            "source_ff": "U_n2514gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n279gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 27.94,
+            "source_ff": "U_n2319gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n271gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 56.91,
+            "source_ff": "U_n279gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n337gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 32.58,
+            "source_ff": "U_n271gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n160gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 32.97,
+            "source_ff": "U_n337gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2588gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 37.69,
+            "source_ff": "U_n160gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2518gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 29.37,
+            "source_ff": "U_n2588gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1226gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 2.52,
+            "source_ff": "U_n2518gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2599gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 62.23,
+            "source_ff": "U_n1226gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1197gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 9.75,
+            "source_ff": "U_n2599gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1282gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 27.23,
+            "source_ff": "U_n1197gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n341gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 62.66,
+            "source_ff": "U_n1282gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2510gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 35.23,
+            "source_ff": "U_n341gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2182gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 16.12,
+            "source_ff": "U_n2510gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2658gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 27.92,
+            "source_ff": "U_n2182gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2506gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 17.04,
+            "source_ff": "U_n2658gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n722gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 27.72,
+            "source_ff": "U_n2506gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1121gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 25.24,
+            "source_ff": "U_n722gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n614gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 62.84,
+            "source_ff": "U_n1121gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n838gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 50.34,
+            "source_ff": "U_n614gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n834gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 43.43,
+            "source_ff": "U_n838gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n622gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 44.44,
+            "source_ff": "U_n834gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n402gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 30.88,
+            "source_ff": "U_n622gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2403gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 64.07,
+            "source_ff": "U_n402gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1596gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 56.76,
+            "source_ff": "U_n2403gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2091gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 22.22,
+            "source_ff": "U_n1596gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1340gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 13.53,
+            "source_ff": "U_n2091gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1525gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 22.78,
+            "source_ff": "U_n1340gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1456gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 19.59,
+            "source_ff": "U_n1525gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2102gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 22.0,
+            "source_ff": "U_n1456gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1899gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 35.79,
+            "source_ff": "U_n2102gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2203gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 73.47,
+            "source_ff": "U_n1899gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2207gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 12.7,
+            "source_ff": "U_n2203gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n156gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 20.45,
+            "source_ff": "U_n2207gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1389gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 48.37,
+            "source_ff": "U_n156gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n394gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 29.38,
+            "source_ff": "U_n1389gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2634gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 40.42,
+            "source_ff": "U_n394gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1394gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 21.33,
+            "source_ff": "U_n2634gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1748gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 29.13,
+            "source_ff": "U_n1394gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2084gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 16.43,
+            "source_ff": "U_n1748gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2021gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 14.09,
+            "source_ff": "U_n2084gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2179gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 16.02,
+            "source_ff": "U_n2021gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1433gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 28.07,
+            "source_ff": "U_n2179gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1316gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 3.06,
+            "source_ff": "U_n1433gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2029gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 22.71,
+            "source_ff": "U_n1316gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2495gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 12.49,
+            "source_ff": "U_n2029gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n931gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 34.4,
+            "source_ff": "U_n2495gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n283gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 76.04,
+            "source_ff": "U_n931gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2270gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 66.23,
+            "source_ff": "U_n283gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2339gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 5.65,
+            "source_ff": "U_n2270gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2390gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 10.61,
+            "source_ff": "U_n2339gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2262gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 15.0,
+            "source_ff": "U_n2390gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2135gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 14.98,
+            "source_ff": "U_n2262gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2190gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 16.14,
+            "source_ff": "U_n2135gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1825gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 16.32,
+            "source_ff": "U_n2190gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1821gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 11.47,
+            "source_ff": "U_n1825gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2502gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 14.34,
+            "source_ff": "U_n1821gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2033gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 20.6,
+            "source_ff": "U_n2502gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2125gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 14.05,
+            "source_ff": "U_n2033gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2592gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 20.63,
+            "source_ff": "U_n2125gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1312gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 34.54,
+            "source_ff": "U_n2592gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2044gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 14.62,
+            "source_ff": "U_n1312gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2025gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 24.29,
+            "source_ff": "U_n2044gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2266gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 19.85,
+            "source_ff": "U_n2025gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2450gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 22.09,
+            "source_ff": "U_n2266gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2095gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 6.74,
+            "source_ff": "U_n2450gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1363gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 7.0,
+            "source_ff": "U_n2095gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2446gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 12.63,
+            "source_ff": "U_n1363gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2117gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 29.46,
+            "source_ff": "U_n2446gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2099gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 23.91,
+            "source_ff": "U_n2117gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2121gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 23.1,
+            "source_ff": "U_n2099gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2037gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 14.84,
+            "source_ff": "U_n2121gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1775gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 15.69,
+            "source_ff": "U_n2037gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2169gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 18.32,
+            "source_ff": "U_n1775gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n2040gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 22.18,
+            "source_ff": "U_n2169gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1834gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 24.76,
+            "source_ff": "U_n2040gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1880gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 7.36,
+            "source_ff": "U_n1834gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1871gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 19.49,
+            "source_ff": "U_n1880gat",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_n1588gat",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 10.8,
+            "source_ff": "U_n1871gat",
+            "transparent_buffers": []
+          }
+        ],
+        "exact_internal_ff_scan_only_total_um": null,
+        "exact_scan_only_total_um": null,
+        "exclusive_exact_edge_count": 0,
+        "fixed_port_positions_verified": true,
+        "port_centers_dbu": {
+          "test_si": [
+            171830,
+            51660
+          ],
+          "test_si_1": [
+            171830,
+            114380
+          ],
+          "test_so": [
+            140,
+            85820
+          ],
+          "test_so_1": [
+            140,
+            114380
+          ]
+        },
+        "port_links": [
+          {
+            "chain": 0,
+            "kind": "SI_to_first_FF",
+            "net_length_upper_bound_um": 31.57,
+            "transparent_buffers": [
+              "hold141",
+              "hold99",
+              "hold142",
+              "input37",
+              "hold100"
+            ]
+          },
+          {
+            "chain": 0,
+            "kind": "last_FF_to_SO",
+            "net_length_upper_bound_um": 44.26,
+            "transparent_buffers": [
+              "output38"
+            ]
+          },
+          {
+            "chain": 1,
+            "kind": "SI_to_first_FF",
+            "net_length_upper_bound_um": 74.16,
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "kind": "last_FF_to_SO",
+            "net_length_upper_bound_um": 6.24,
+            "transparent_buffers": []
+          }
+        ],
+        "routed_full_scan_path_net_length_upper_bound_um": 5494.14,
+        "scan_edges": 177,
+        "scan_ff_count": 179,
+        "status": "PASS"
+      },
+      "postroute_verify_wall_seconds": 1.5413324730000113,
+      "proxy_sha256": "3d722705cc4e53a40405c85e918d8681eec8460846dd2190acacdf170a6225c0",
+      "reuse_status": "EXECUTED_NEW",
+      "rewire_wall_seconds": 1.488619049999997,
+      "route_wall_seconds": 78.069736662,
+      "routed_full_scan_path_net_length_upper_bound_um": 5494.14,
+      "routed_odb_archive": "artifacts/raw/phase0d/optimizer_v1/s5378/s11/k2/1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685/5_2_route.odb.gz",
+      "routed_odb_archive_bytes": 564115,
+      "routed_odb_gzip_sha256": "4de2449041a57e997267d2f43163959bef0c72d118c499946a61224381328e80",
+      "routed_odb_sha256": "3c8a7fd003c0ef6f2f9105a0fc3913e443d67accad1e94bfffa15a996cf90868",
+      "scan_hpwl_proxy_um": 2157.81,
+      "schema_version": "phase0d-route-result-1",
+      "source_placement": "${PACT_ORFS_FLOW}/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+      "status": "QUALIFIED",
+      "structured_metrics": {
+        "congestion": null,
+        "detailed_route_drc_errors": 0,
+        "detailed_route_vias": 13469,
+        "global_route_overflow": 0,
+        "global_route_wirelength_um": 41176,
+        "hold_tns_ns": 0,
+        "hold_violated_endpoints": 0,
+        "hold_wns_ns": 0.00273018,
+        "initial_global_route_congestion": {
+          "layers": {
+            "metal1": {
+              "demand": 0,
+              "max_horizontal_overflow": 0,
+              "max_vertical_overflow": 0,
+              "resource": 0,
+              "total_overflow": 0,
+              "usage_percent": 0.0
+            },
+            "metal10": {
+              "demand": 0,
+              "max_horizontal_overflow": 0,
+              "max_vertical_overflow": 0,
+              "resource": 870,
+              "total_overflow": 0,
+              "usage_percent": 0.0
+            },
+            "metal2": {
+              "demand": 3444,
+              "max_horizontal_overflow": 0,
+              "max_vertical_overflow": 0,
+              "resource": 6032,
+              "total_overflow": 0,
+              "usage_percent": 57.1
+            },
+            "metal3": {
+              "demand": 3985,
+              "max_horizontal_overflow": 0,
+              "max_vertical_overflow": 0,
+              "resource": 8695,
+              "total_overflow": 0,
+              "usage_percent": 45.83
+            },
+            "metal4": {
+              "demand": 1215,
+              "max_horizontal_overflow": 0,
+              "max_vertical_overflow": 0,
+              "resource": 6148,
+              "total_overflow": 0,
+              "usage_percent": 19.76
+            },
+            "metal5": {
+              "demand": 476,
+              "max_horizontal_overflow": 0,
+              "max_vertical_overflow": 0,
+              "resource": 6255,
+              "total_overflow": 0,
+              "usage_percent": 7.61
+            },
+            "metal6": {
+              "demand": 245,
+              "max_horizontal_overflow": 0,
+              "max_vertical_overflow": 0,
+              "resource": 6276,
+              "total_overflow": 0,
+              "usage_percent": 3.9
+            },
+            "metal7": {
+              "demand": 3,
+              "max_horizontal_overflow": 0,
+              "max_vertical_overflow": 0,
+              "resource": 1972,
+              "total_overflow": 0,
+              "usage_percent": 0.15
+            },
+            "metal8": {
+              "demand": 0,
+              "max_horizontal_overflow": 0,
+              "max_vertical_overflow": 0,
+              "resource": 2233,
+              "total_overflow": 0,
+              "usage_percent": 0.0
+            },
+            "metal9": {
+              "demand": 0,
+              "max_horizontal_overflow": 0,
+              "max_vertical_overflow": 0,
+              "resource": 870,
+              "total_overflow": 0,
+              "usage_percent": 0.0
+            }
+          },
+          "quantity_type": "reported routing resource/demand and overflow, not detailed-route congestion",
+          "stage": "initial_global_route_before_incremental_repairs",
+          "total": {
+            "demand": 9368,
+            "max_horizontal_overflow": 0,
+            "max_vertical_overflow": 0,
+            "resource": 39351,
+            "total_overflow": 0,
+            "usage_percent": 23.81
+          }
+        },
+        "layer_utilization": {
+          "metal1": 0.0,
+          "metal10": 0.0,
+          "metal2": 57.1,
+          "metal3": 45.83,
+          "metal4": 19.76,
+          "metal5": 7.61,
+          "metal6": 3.9,
+          "metal7": 0.15,
+          "metal8": 0.0,
+          "metal9": 0.0
+        },
+        "max_cap_violations": 0,
+        "max_fanout_violations": 0,
+        "max_slew_violations": 0,
+        "pdnsim_classification": "NOT_RUN_NO_QUALIFIED_TEST_CURRENT_MODEL",
+        "setup_tns_ns": 0,
+        "setup_violated_endpoints": 0,
+        "setup_wns_ns": 9.08672,
+        "timing_stage": "global_route",
+        "total_detailed_route_wirelength_um": 26982
+      }
+    }
+  ],
+  "route_status": "PACT_OPTIMIZER_V1_ROUTE_QUALIFIED",
+  "run_signature": "9bbd9df2ffc010d2929d92b0fb0dea80483fb964ee768382e6d291a4050bb924",
+  "runtime": {
+    "accumulated_new_proxy_wall_seconds": 39.971490400028415,
+    "historical_pilot_erratum": "pilot STATUS elapsed measured its current/finalization invocation; summed proxy wall time measured cached work created across earlier invocations. Neither historical value was rewritten.",
+    "process_invocation_definition": "cumulative optimizer process interval from search entry through search completion; report finalization is recorded separately",
+    "process_invocation_wall_seconds": 61.312999999994645,
+    "report_finalization_wall_seconds_to_status_write": 3.3589999999967404,
+    "rewire_wall_seconds": 1.488619049999997,
+    "route_wall_seconds": 78.069736662,
+    "search_wall_clock_seconds": 61.312999999994645,
+    "successful_postroute_verification_wall_seconds": 1.5413324730000113,
+    "superseded_postroute_verification_wall_seconds": 1.1824741239999952,
+    "total_campaign_elapsed_definition": "sum of recorded active optimizer, rewire, route, all verification attempts, and finalization intervals; excludes idle time between invocations",
+    "total_campaign_elapsed_seconds": 146.95416230899139
+  },
+  "schema_version": "pact-optimizer-v1-status-1",
+  "selected_route_candidates": [
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685/architecture.json",
+      "architecture_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+      "evaluation_index": 17,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.2456145000032848,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 65.78205128205128
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_segment_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 2157.8100000000004,
+          "max_internal_edge_um": 49.98,
+          "mean_internal_edge_um": 11.50135593220339
+        }
+      },
+      "hypervolume_after": 1.155380746445363,
+      "hypervolume_before": 1.0653634927953188,
+      "labels": {
+        "delta_H_eff8": -4.333333333333336,
+        "delta_physical_proxy_um": -66.55999999999995,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 35.0,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 102.0,
+        "total_shift_toggles": 732237
+      },
+      "move": {
+        "activity_heuristic_child": 65.78205128205128,
+        "activity_heuristic_parent": 64.38461538461539,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+        "destroy_operator": "segment",
+        "incremental_physical_delta_um": -66.55999999999995,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+          "proof_sha256": "2a0d469ce22c2d1bdd68b69eb1c55d9346636e54f4320eeb96834b8edeba6eb1",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+        "removed_FFs": [
+          "U_n1148gat",
+          "U_n865gat",
+          "U_n883gat",
+          "U_n824gat",
+          "U_n1241gat",
+          "U_n2640gat",
+          "U_n2472gat",
+          "U_n165gat",
+          "U_n2522gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_segment_physical_best"
+      },
+      "objectives": [
+        2157.81,
+        59.0,
+        10530.0
+      ],
+      "parent_objectives": [
+        2224.37,
+        63.333333333333336,
+        10530.0
+      ],
+      "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+      "search_wall_seconds": 46.90600000000268,
+      "source_kind": "lns",
+      "source_name": "segment+physical_best"
+    }
+  ],
+  "status": "PACT_OPTIMIZER_V1_PROXY_ADVANCE"
+}

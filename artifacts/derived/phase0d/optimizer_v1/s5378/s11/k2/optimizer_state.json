@@ -1,0 +1,3067 @@
+{
+  "archive": [
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b/architecture.json",
+      "architecture_sha256": "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+      "evaluation_index": 15,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.3828252000093926,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 89.58119658119658
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_segment_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 1180.75,
+          "max_internal_edge_um": 35.42999999999999,
+          "mean_internal_edge_um": 6.511807909604519
+        }
+      },
+      "hypervolume_after": 1.0653453824106498,
+      "hypervolume_before": 1.0642941149540812,
+      "labels": {
+        "delta_H_eff8": -0.3333333333333286,
+        "delta_physical_proxy_um": -10.059999999999945,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 37.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 112.0,
+        "total_shift_toggles": 950055
+      },
+      "move": {
+        "activity_heuristic_child": 89.58119658119658,
+        "activity_heuristic_parent": 89.44017094017093,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+        "destroy_operator": "segment",
+        "incremental_physical_delta_um": -10.06000000000006,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "7807b6a77fcd4431fd045a650e9dac7806cf62dc91fa59f48115895874c7fe48",
+          "proof_sha256": "57bc54ff7001b7fd589f2bdc799c3dee589891a86e05d2f646f57dbed39c5933",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "7807b6a77fcd4431fd045a650e9dac7806cf62dc91fa59f48115895874c7fe48",
+        "removed_FFs": [
+          "U_n622gat",
+          "U_n626gat",
+          "U_n614gat",
+          "U_n919gat",
+          "U_n846gat",
+          "U_n256gat",
+          "U_n470gat",
+          "U_n707gat",
+          "U_n148gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_segment_physical_best"
+      },
+      "objectives": [
+        1180.75,
+        64.83333333333333,
+        10530.0
+      ],
+      "parent_objectives": [
+        1190.81,
+        65.16666666666666,
+        10530.0
+      ],
+      "parent_sha256": "7807b6a77fcd4431fd045a650e9dac7806cf62dc91fa59f48115895874c7fe48",
+      "search_wall_seconds": 44.23500000000058,
+      "source_kind": "lns",
+      "source_name": "segment+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1/architecture.json",
+      "architecture_sha256": "0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1",
+      "evaluation_index": 7,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.3444010999955935,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 73.72649572649573
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_region_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 1305.77,
+          "max_internal_edge_um": 25.47,
+          "mean_internal_edge_um": 7.148305084745763
+        }
+      },
+      "hypervolume_after": 0.9758136101126892,
+      "hypervolume_before": 0.9748284974689082,
+      "labels": {
+        "delta_H_eff8": 0.6666666666666643,
+        "delta_physical_proxy_um": -36.59999999999991,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 35.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 104.0,
+        "total_shift_toggles": 813027
+      },
+      "move": {
+        "activity_heuristic_child": 73.72649572649573,
+        "activity_heuristic_parent": 72.11324786324786,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1",
+        "destroy_operator": "region",
+        "incremental_physical_delta_um": -36.59999999999991,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+          "proof_sha256": "e9838a894841657da3c0cd14f319a336c4f3a914dafecc8be83716adf0f7e50d",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+        "removed_FFs": [
+          "U_n667gat",
+          "U_n1135gat",
+          "U_n366gat",
+          "U_n314gat",
+          "U_n322gat",
+          "U_n1045gat",
+          "U_n318gat",
+          "U_n824gat",
+          "U_n561gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_region_physical_best"
+      },
+      "objectives": [
+        1305.77,
+        62.83333333333333,
+        10530.0
+      ],
+      "parent_objectives": [
+        1342.37,
+        62.166666666666664,
+        10530.0
+      ],
+      "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+      "search_wall_seconds": 33.09399999999732,
+      "source_kind": "lns",
+      "source_name": "region+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7/architecture.json",
+      "architecture_sha256": "a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7",
+      "evaluation_index": 21,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 2.3712120999989565,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 76.95299145299145
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_cross_chain_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 1306.5500000000002,
+          "max_internal_edge_um": 27.589999999999996,
+          "mean_internal_edge_um": 7.1771186440677965
+        }
+      },
+      "hypervolume_after": 1.1553867832402525,
+      "hypervolume_before": 1.155380746445363,
+      "labels": {
+        "delta_H_eff8": 1.8333333333333357,
+        "delta_physical_proxy_um": -12.559999999999945,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 102.0,
+        "total_shift_toggles": 830749
+      },
+      "move": {
+        "activity_heuristic_child": 76.95299145299145,
+        "activity_heuristic_parent": 74.75213675213675,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7",
+        "destroy_operator": "cross_chain",
+        "incremental_physical_delta_um": -12.559999999999945,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+          "proof_sha256": "2b52088adb9e728dc2f4193db812c49cb07e1f280acb9fa20dfa4180acb15604",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+        "removed_FFs": [
+          "U_n2464gat",
+          "U_n618gat",
+          "U_n673gat",
+          "U_n398gat",
+          "U_n626gat",
+          "U_n2450gat",
+          "U_n2458gat",
+          "U_n2309gat",
+          "U_n2179gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_cross_chain_physical_best"
+      },
+      "objectives": [
+        1306.55,
+        62.666666666666664,
+        10530.0
+      ],
+      "parent_objectives": [
+        1319.11,
+        60.83333333333333,
+        10530.0
+      ],
+      "parent_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+      "search_wall_seconds": 53.42200000000594,
+      "source_kind": "lns",
+      "source_name": "cross_chain+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c/architecture.json",
+      "architecture_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+      "evaluation_index": 11,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.2817014000029303,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 74.75213675213675
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_hotspot_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 1319.1100000000001,
+          "max_internal_edge_um": 25.47,
+          "mean_internal_edge_um": 7.223672316384181
+        }
+      },
+      "hypervolume_after": 1.0642941149540812,
+      "hypervolume_before": 1.029044692829396,
+      "labels": {
+        "delta_H_eff8": -1.3333333333333357,
+        "delta_physical_proxy_um": -23.25999999999999,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 37.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 99.0,
+        "total_shift_toggles": 814383
+      },
+      "move": {
+        "activity_heuristic_child": 74.75213675213675,
+        "activity_heuristic_parent": 72.11324786324786,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+        "destroy_operator": "hotspot",
+        "incremental_physical_delta_um": -23.25999999999999,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+          "proof_sha256": "254342ec924f43784ca0bd4e8e58456c96ddbb42a33fe07f71d36e141af32956",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+        "removed_FFs": [
+          "U_n2454gat",
+          "U_n553gat",
+          "U_n846gat",
+          "U_n865gat",
+          "U_n152gat",
+          "U_n279gat",
+          "U_n322gat",
+          "U_n2061gat",
+          "U_n699gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_hotspot_physical_best"
+      },
+      "objectives": [
+        1319.11,
+        60.83333333333333,
+        10530.0
+      ],
+      "parent_objectives": [
+        1342.37,
+        62.166666666666664,
+        10530.0
+      ],
+      "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+      "search_wall_seconds": 38.65600000000268,
+      "source_kind": "lns",
+      "source_name": "hotspot+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685/architecture.json",
+      "architecture_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+      "evaluation_index": 17,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.2456145000032848,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 65.78205128205128
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_segment_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 2157.8100000000004,
+          "max_internal_edge_um": 49.98,
+          "mean_internal_edge_um": 11.50135593220339
+        }
+      },
+      "hypervolume_after": 1.155380746445363,
+      "hypervolume_before": 1.0653634927953188,
+      "labels": {
+        "delta_H_eff8": -4.333333333333336,
+        "delta_physical_proxy_um": -66.55999999999995,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 35.0,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 102.0,
+        "total_shift_toggles": 732237
+      },
+      "move": {
+        "activity_heuristic_child": 65.78205128205128,
+        "activity_heuristic_parent": 64.38461538461539,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+        "destroy_operator": "segment",
+        "incremental_physical_delta_um": -66.55999999999995,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+          "proof_sha256": "2a0d469ce22c2d1bdd68b69eb1c55d9346636e54f4320eeb96834b8edeba6eb1",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+        "removed_FFs": [
+          "U_n1148gat",
+          "U_n865gat",
+          "U_n883gat",
+          "U_n824gat",
+          "U_n1241gat",
+          "U_n2640gat",
+          "U_n2472gat",
+          "U_n165gat",
+          "U_n2522gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_segment_physical_best"
+      },
+      "objectives": [
+        2157.81,
+        59.0,
+        10530.0
+      ],
+      "parent_objectives": [
+        2224.37,
+        63.333333333333336,
+        10530.0
+      ],
+      "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+      "search_wall_seconds": 46.90600000000268,
+      "source_kind": "lns",
+      "source_name": "segment+physical_best"
+    }
+  ],
+  "bounds": {
+    "ideal": [
+      1380.8300000000002,
+      60.5
+    ],
+    "reference": [
+      10426.805,
+      70.08333333333331
+    ]
+  },
+  "budget_seconds": 60.0,
+  "candidate_records": [
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/1963924d7ccb03a1a7c8e7c458decf0e342a76a667c89968623c5d368fd3c80c/architecture.json",
+      "architecture_sha256": "1963924d7ccb03a1a7c8e7c458decf0e342a76a667c89968623c5d368fd3c80c",
+      "evaluation_index": 1,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 2.1076259999972535,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 89.97222222222223
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "global_construction",
+        "neighborhood_fraction": 1.0,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 1209.6100000000001,
+          "max_internal_edge_um": 35.42999999999999,
+          "mean_internal_edge_um": 6.66141242937853
+        }
+      },
+      "hypervolume_after": 0.9246798906599945,
+      "hypervolume_before": 0.9162858427186629,
+      "labels": {
+        "delta_H_eff8": null,
+        "delta_physical_proxy_um": null,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 37.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 108.0,
+        "total_shift_toggles": 952885
+      },
+      "move": {
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "activity_weight": 0.0,
+        "construction_method": "physical",
+        "insertion": "cheapest",
+        "origin": "empty_balanced_chains",
+        "physical_weight": 1.0,
+        "schema_version": "pact-optimizer-v1-construction-1",
+        "type": "global_construction"
+      },
+      "objectives": [
+        1209.61,
+        65.83333333333334,
+        10530.0
+      ],
+      "parent_objectives": null,
+      "parent_sha256": null,
+      "search_wall_seconds": 5.077999999994063,
+      "source_kind": "global_construction",
+      "source_name": "physical"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca/architecture.json",
+      "architecture_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+      "evaluation_index": 2,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 2.107459100006963,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 72.11324786324786
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "global_construction",
+        "neighborhood_fraction": 1.0,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 1342.37,
+          "max_internal_edge_um": 25.47,
+          "mean_internal_edge_um": 7.355084745762712
+        }
+      },
+      "hypervolume_after": 0.9291826475310843,
+      "hypervolume_before": 0.9246798906599945,
+      "labels": {
+        "delta_H_eff8": null,
+        "delta_physical_proxy_um": null,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 35.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 100.0,
+        "total_shift_toggles": 800195
+      },
+      "move": {
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "activity_weight": 0.19999999999999996,
+        "construction_method": "mostly_physical",
+        "insertion": "cheapest",
+        "origin": "empty_balanced_chains",
+        "physical_weight": 0.8,
+        "schema_version": "pact-optimizer-v1-construction-1",
+        "type": "global_construction"
+      },
+      "objectives": [
+        1342.37,
+        62.166666666666664,
+        10530.0
+      ],
+      "parent_objectives": null,
+      "parent_sha256": null,
+      "search_wall_seconds": 12.062999999994645,
+      "source_kind": "global_construction",
+      "source_name": "mostly_physical"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/e65ad49e8efd5a58fbbba91aaaebd22dc25822a549b91ca9be7fc1600828df8f/architecture.json",
+      "architecture_sha256": "e65ad49e8efd5a58fbbba91aaaebd22dc25822a549b91ca9be7fc1600828df8f",
+      "evaluation_index": 3,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 2.184139899996808,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 63.438034188034194
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "global_construction",
+        "neighborhood_fraction": 1.0,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 2258.75,
+          "max_internal_edge_um": 53.599999999999994,
+          "mean_internal_edge_um": 12.071638418079095
+        }
+      },
+      "hypervolume_after": 0.9291826475310843,
+      "hypervolume_before": 0.9291826475310843,
+      "labels": {
+        "delta_H_eff8": null,
+        "delta_physical_proxy_um": null,
+        "pareto_acceptance": false,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 37.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 98.0,
+        "total_shift_toggles": 710155
+      },
+      "move": {
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "activity_weight": 0.5,
+        "construction_method": "balanced_regret",
+        "insertion": "regret",
+        "origin": "empty_balanced_chains",
+        "physical_weight": 0.5,
+        "schema_version": "pact-optimizer-v1-construction-1",
+        "type": "global_construction"
+      },
+      "objectives": [
+        2258.75,
+        63.333333333333336,
+        10530.0
+      ],
+      "parent_objectives": null,
+      "parent_sha256": null,
+      "search_wall_seconds": 18.5,
+      "source_kind": "global_construction",
+      "source_name": "balanced_regret"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/b9061277e20aeb2cc4a9f5298ffdb6f114446062c12c330adbea6fe12218f7e2/architecture.json",
+      "architecture_sha256": "b9061277e20aeb2cc4a9f5298ffdb6f114446062c12c330adbea6fe12218f7e2",
+      "evaluation_index": 4,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 2.0378218999976525,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 59.87820512820513
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "global_construction",
+        "neighborhood_fraction": 1.0,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 4465.1900000000005,
+          "max_internal_edge_um": 83.43,
+          "mean_internal_edge_um": 24.591638418079096
+        }
+      },
+      "hypervolume_after": 0.9727413044739934,
+      "hypervolume_before": 0.9291826475310843,
+      "labels": {
+        "delta_H_eff8": null,
+        "delta_physical_proxy_um": null,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 34.83333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 95.0,
+        "total_shift_toggles": 653183
+      },
+      "move": {
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "activity_weight": 0.8,
+        "construction_method": "mostly_activity",
+        "insertion": "cheapest",
+        "origin": "empty_balanced_chains",
+        "physical_weight": 0.2,
+        "schema_version": "pact-optimizer-v1-construction-1",
+        "type": "global_construction"
+      },
+      "objectives": [
+        4465.19,
+        60.33333333333333,
+        10530.0
+      ],
+      "parent_objectives": null,
+      "parent_sha256": null,
+      "search_wall_seconds": 23.547000000005937,
+      "source_kind": "global_construction",
+      "source_name": "mostly_activity"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/f41823f894712b3416cc909aee4c560077eeb9c1f4974b98c9fbf0ec5e32b09b/architecture.json",
+      "architecture_sha256": "f41823f894712b3416cc909aee4c560077eeb9c1f4974b98c9fbf0ec5e32b09b",
+      "evaluation_index": 5,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 2.117123599993647,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 57.08974358974359
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "global_construction",
+        "neighborhood_fraction": 1.0,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 7106.509999999999,
+          "max_internal_edge_um": 107.13999999999999,
+          "mean_internal_edge_um": 38.79898305084746
+        }
+      },
+      "hypervolume_after": 0.9727413044739934,
+      "hypervolume_before": 0.9727413044739934,
+      "labels": {
+        "delta_H_eff8": null,
+        "delta_physical_proxy_um": null,
+        "pareto_acceptance": false,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 97.0,
+        "total_shift_toggles": 630677
+      },
+      "move": {
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "activity_weight": 1.0,
+        "construction_method": "activity",
+        "insertion": "cheapest",
+        "origin": "empty_balanced_chains",
+        "physical_weight": 0.0,
+        "schema_version": "pact-optimizer-v1-construction-1",
+        "type": "global_construction"
+      },
+      "objectives": [
+        7106.51,
+        61.666666666666664,
+        10530.0
+      ],
+      "parent_objectives": null,
+      "parent_sha256": null,
+      "search_wall_seconds": 30.077999999994063,
+      "source_kind": "global_construction",
+      "source_name": "activity"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/7807b6a77fcd4431fd045a650e9dac7806cf62dc91fa59f48115895874c7fe48/architecture.json",
+      "architecture_sha256": "7807b6a77fcd4431fd045a650e9dac7806cf62dc91fa59f48115895874c7fe48",
+      "evaluation_index": 6,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.4570810000004712,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 89.44017094017093
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_region_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 1190.8100000000002,
+          "max_internal_edge_um": 35.42999999999999,
+          "mean_internal_edge_um": 6.568644067796611
+        }
+      },
+      "hypervolume_after": 0.9748284974689082,
+      "hypervolume_before": 0.9727413044739934,
+      "labels": {
+        "delta_H_eff8": -0.6666666666666856,
+        "delta_physical_proxy_um": -18.799999999999955,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 37.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 110.0,
+        "total_shift_toggles": 948797
+      },
+      "move": {
+        "activity_heuristic_child": 89.44017094017093,
+        "activity_heuristic_parent": 89.97222222222223,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "7807b6a77fcd4431fd045a650e9dac7806cf62dc91fa59f48115895874c7fe48",
+        "destroy_operator": "region",
+        "incremental_physical_delta_um": -18.799999999999898,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "7807b6a77fcd4431fd045a650e9dac7806cf62dc91fa59f48115895874c7fe48",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "1963924d7ccb03a1a7c8e7c458decf0e342a76a667c89968623c5d368fd3c80c",
+          "proof_sha256": "5a50fac883cce5e4556b9d5010c6a0d2f5b7e7abdc88f7fb0059665a5dd08f95",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "1963924d7ccb03a1a7c8e7c458decf0e342a76a667c89968623c5d368fd3c80c",
+        "removed_FFs": [
+          "U_n957gat",
+          "U_n1294gat",
+          "U_n2468gat",
+          "U_n861gat",
+          "U_n1148gat",
+          "U_n1298gat",
+          "U_n816gat",
+          "U_n580gat",
+          "U_n680gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_region_physical_best"
+      },
+      "objectives": [
+        1190.81,
+        65.16666666666666,
+        10530.0
+      ],
+      "parent_objectives": [
+        1209.61,
+        65.83333333333334,
+        10530.0
+      ],
+      "parent_sha256": "1963924d7ccb03a1a7c8e7c458decf0e342a76a667c89968623c5d368fd3c80c",
+      "search_wall_seconds": 31.64100000000326,
+      "source_kind": "lns",
+      "source_name": "region+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1/architecture.json",
+      "architecture_sha256": "0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1",
+      "evaluation_index": 7,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.3444010999955935,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 73.72649572649573
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_region_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 1305.77,
+          "max_internal_edge_um": 25.47,
+          "mean_internal_edge_um": 7.148305084745763
+        }
+      },
+      "hypervolume_after": 0.9758136101126892,
+      "hypervolume_before": 0.9748284974689082,
+      "labels": {
+        "delta_H_eff8": 0.6666666666666643,
+        "delta_physical_proxy_um": -36.59999999999991,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 35.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 104.0,
+        "total_shift_toggles": 813027
+      },
+      "move": {
+        "activity_heuristic_child": 73.72649572649573,
+        "activity_heuristic_parent": 72.11324786324786,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1",
+        "destroy_operator": "region",
+        "incremental_physical_delta_um": -36.59999999999991,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+          "proof_sha256": "e9838a894841657da3c0cd14f319a336c4f3a914dafecc8be83716adf0f7e50d",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+        "removed_FFs": [
+          "U_n667gat",
+          "U_n1135gat",
+          "U_n366gat",
+          "U_n314gat",
+          "U_n322gat",
+          "U_n1045gat",
+          "U_n318gat",
+          "U_n824gat",
+          "U_n561gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_region_physical_best"
+      },
+      "objectives": [
+        1305.77,
+        62.83333333333333,
+        10530.0
+      ],
+      "parent_objectives": [
+        1342.37,
+        62.166666666666664,
+        10530.0
+      ],
+      "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+      "search_wall_seconds": 33.09399999999732,
+      "source_kind": "lns",
+      "source_name": "region+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e/architecture.json",
+      "architecture_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+      "evaluation_index": 8,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.2787920999980997,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 64.38461538461539
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_region_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 2224.37,
+          "max_internal_edge_um": 53.599999999999994,
+          "mean_internal_edge_um": 11.877401129943502
+        }
+      },
+      "hypervolume_after": 0.9758136101126892,
+      "hypervolume_before": 0.9758136101126892,
+      "labels": {
+        "delta_H_eff8": 0.0,
+        "delta_physical_proxy_um": -34.38000000000011,
+        "pareto_acceptance": false,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 37.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 102.0,
+        "total_shift_toggles": 721551
+      },
+      "move": {
+        "activity_heuristic_child": 64.38461538461539,
+        "activity_heuristic_parent": 63.438034188034194,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+        "destroy_operator": "region",
+        "incremental_physical_delta_um": -34.38000000000011,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "e65ad49e8efd5a58fbbba91aaaebd22dc25822a549b91ca9be7fc1600828df8f",
+          "proof_sha256": "c8a01a160077ff0ffae1d3e2c896d6c6f72611946c929a31edb913f856ec8eaa",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "e65ad49e8efd5a58fbbba91aaaebd22dc25822a549b91ca9be7fc1600828df8f",
+        "removed_FFs": [
+          "U_n2390gat",
+          "U_n2135gat",
+          "U_n2190gat",
+          "U_n2270gat",
+          "U_n2262gat",
+          "U_n2339gat",
+          "U_n1825gat",
+          "U_n283gat",
+          "U_n2495gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_region_physical_best"
+      },
+      "objectives": [
+        2224.37,
+        63.333333333333336,
+        10530.0
+      ],
+      "parent_objectives": [
+        2258.75,
+        63.333333333333336,
+        10530.0
+      ],
+      "parent_sha256": "e65ad49e8efd5a58fbbba91aaaebd22dc25822a549b91ca9be7fc1600828df8f",
+      "search_wall_seconds": 34.45299999999406,
+      "source_kind": "lns",
+      "source_name": "region+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/8a894018161e96f60aad3bdba56fc9022c7240c88fc6279ff0fdf4732fc4c593/architecture.json",
+      "architecture_sha256": "8a894018161e96f60aad3bdba56fc9022c7240c88fc6279ff0fdf4732fc4c593",
+      "evaluation_index": 9,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.320223700007773,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 62.6517094017094
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_region_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 4178.07,
+          "max_internal_edge_um": 83.43,
+          "mean_internal_edge_um": 23.054689265536723
+        }
+      },
+      "hypervolume_after": 0.9785736173558818,
+      "hypervolume_before": 0.9758136101126892,
+      "labels": {
+        "delta_H_eff8": 0.5,
+        "delta_physical_proxy_um": -287.1199999999999,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 35.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 95.0,
+        "total_shift_toggles": 675181
+      },
+      "move": {
+        "activity_heuristic_child": 62.6517094017094,
+        "activity_heuristic_parent": 59.87820512820513,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "8a894018161e96f60aad3bdba56fc9022c7240c88fc6279ff0fdf4732fc4c593",
+        "destroy_operator": "region",
+        "incremental_physical_delta_um": -287.1200000000001,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "8a894018161e96f60aad3bdba56fc9022c7240c88fc6279ff0fdf4732fc4c593",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "b9061277e20aeb2cc4a9f5298ffdb6f114446062c12c330adbea6fe12218f7e2",
+          "proof_sha256": "a895edd3499f8f6ebb192b735331d738f5d8f649c850dc6634a517380c5d8bb9",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "b9061277e20aeb2cc4a9f5298ffdb6f114446062c12c330adbea6fe12218f7e2",
+        "removed_FFs": [
+          "U_n384gat",
+          "U_n673gat",
+          "U_n327gat",
+          "U_n618gat",
+          "U_n491gat",
+          "U_n2464gat",
+          "U_n331gat",
+          "U_n463gat",
+          "U_n699gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_region_physical_best"
+      },
+      "objectives": [
+        4178.07,
+        60.83333333333333,
+        10530.0
+      ],
+      "parent_objectives": [
+        4465.19,
+        60.33333333333333,
+        10530.0
+      ],
+      "parent_sha256": "b9061277e20aeb2cc4a9f5298ffdb6f114446062c12c330adbea6fe12218f7e2",
+      "search_wall_seconds": 35.875,
+      "source_kind": "lns",
+      "source_name": "region+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/2970154eff18468bd5a24acf53c3b4a7080e93f03569bf5c8f4cc18588e64a2f/architecture.json",
+      "architecture_sha256": "2970154eff18468bd5a24acf53c3b4a7080e93f03569bf5c8f4cc18588e64a2f",
+      "evaluation_index": 10,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.299188500008313,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 58.636752136752136
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_region_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 6676.49,
+          "max_internal_edge_um": 107.13999999999999,
+          "mean_internal_edge_um": 36.4019209039548
+        }
+      },
+      "hypervolume_after": 1.029044692829396,
+      "hypervolume_before": 0.9785736173558818,
+      "labels": {
+        "delta_H_eff8": -2.5,
+        "delta_physical_proxy_um": -430.02000000000044,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 101.0,
+        "total_shift_toggles": 646007
+      },
+      "move": {
+        "activity_heuristic_child": 58.636752136752136,
+        "activity_heuristic_parent": 57.08974358974359,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "2970154eff18468bd5a24acf53c3b4a7080e93f03569bf5c8f4cc18588e64a2f",
+        "destroy_operator": "region",
+        "incremental_physical_delta_um": -430.0199999999995,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "2970154eff18468bd5a24acf53c3b4a7080e93f03569bf5c8f4cc18588e64a2f",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "f41823f894712b3416cc909aee4c560077eeb9c1f4974b98c9fbf0ec5e32b09b",
+          "proof_sha256": "307519372c9d80e380779602e7c5e7246a2d4ac99e723eefb3e9f05df583c39f",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "f41823f894712b3416cc909aee4c560077eeb9c1f4974b98c9fbf0ec5e32b09b",
+        "removed_FFs": [
+          "U_n2522gat",
+          "U_n165gat",
+          "U_n931gat",
+          "U_n283gat",
+          "U_n1226gat",
+          "U_n2588gat",
+          "U_n279gat",
+          "U_n160gat",
+          "U_n2518gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_region_physical_best"
+      },
+      "objectives": [
+        6676.49,
+        59.166666666666664,
+        10530.0
+      ],
+      "parent_objectives": [
+        7106.51,
+        61.666666666666664,
+        10530.0
+      ],
+      "parent_sha256": "f41823f894712b3416cc909aee4c560077eeb9c1f4974b98c9fbf0ec5e32b09b",
+      "search_wall_seconds": 37.25,
+      "source_kind": "lns",
+      "source_name": "region+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c/architecture.json",
+      "architecture_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+      "evaluation_index": 11,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.2817014000029303,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 74.75213675213675
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_hotspot_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 1319.1100000000001,
+          "max_internal_edge_um": 25.47,
+          "mean_internal_edge_um": 7.223672316384181
+        }
+      },
+      "hypervolume_after": 1.0642941149540812,
+      "hypervolume_before": 1.029044692829396,
+      "labels": {
+        "delta_H_eff8": -1.3333333333333357,
+        "delta_physical_proxy_um": -23.25999999999999,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 37.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 99.0,
+        "total_shift_toggles": 814383
+      },
+      "move": {
+        "activity_heuristic_child": 74.75213675213675,
+        "activity_heuristic_parent": 72.11324786324786,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+        "destroy_operator": "hotspot",
+        "incremental_physical_delta_um": -23.25999999999999,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+          "proof_sha256": "254342ec924f43784ca0bd4e8e58456c96ddbb42a33fe07f71d36e141af32956",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+        "removed_FFs": [
+          "U_n2454gat",
+          "U_n553gat",
+          "U_n846gat",
+          "U_n865gat",
+          "U_n152gat",
+          "U_n279gat",
+          "U_n322gat",
+          "U_n2061gat",
+          "U_n699gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_hotspot_physical_best"
+      },
+      "objectives": [
+        1319.11,
+        60.83333333333333,
+        10530.0
+      ],
+      "parent_objectives": [
+        1342.37,
+        62.166666666666664,
+        10530.0
+      ],
+      "parent_sha256": "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+      "search_wall_seconds": 38.65600000000268,
+      "source_kind": "lns",
+      "source_name": "hotspot+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/b581dcb1230cfca3d00da5ef1682d1a1bbf8ac989eeb2364649893fbdbbc8e71/architecture.json",
+      "architecture_sha256": "b581dcb1230cfca3d00da5ef1682d1a1bbf8ac989eeb2364649893fbdbbc8e71",
+      "evaluation_index": 12,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.2561622000066563,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 69.50213675213675
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_hotspot_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 2120.35,
+          "max_internal_edge_um": 53.599999999999994,
+          "mean_internal_edge_um": 11.31960451977401
+        }
+      },
+      "hypervolume_after": 1.0642941149540812,
+      "hypervolume_before": 1.0642941149540812,
+      "labels": {
+        "delta_H_eff8": 0.1666666666666643,
+        "delta_physical_proxy_um": -104.01999999999998,
+        "pareto_acceptance": false,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 36.0,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 104.0,
+        "total_shift_toggles": 750379
+      },
+      "move": {
+        "activity_heuristic_child": 69.50213675213675,
+        "activity_heuristic_parent": 64.38461538461539,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "b581dcb1230cfca3d00da5ef1682d1a1bbf8ac989eeb2364649893fbdbbc8e71",
+        "destroy_operator": "hotspot",
+        "incremental_physical_delta_um": -104.02000000000021,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "b581dcb1230cfca3d00da5ef1682d1a1bbf8ac989eeb2364649893fbdbbc8e71",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+          "proof_sha256": "5cac03f9858a2517a0e8ecd928414d2a82162ea63a3fd3e433b39f91ff9427cf",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+        "removed_FFs": [
+          "U_n2454gat",
+          "U_n553gat",
+          "U_n846gat",
+          "U_n865gat",
+          "U_n152gat",
+          "U_n279gat",
+          "U_n322gat",
+          "U_n2061gat",
+          "U_n699gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_hotspot_physical_best"
+      },
+      "objectives": [
+        2120.35,
+        63.5,
+        10530.0
+      ],
+      "parent_objectives": [
+        2224.37,
+        63.333333333333336,
+        10530.0
+      ],
+      "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+      "search_wall_seconds": 40.0,
+      "source_kind": "lns",
+      "source_name": "hotspot+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/3b30373f3a2f9c962934d6cff0ec875188b6310aa7b644d905b805289504ccc5/architecture.json",
+      "architecture_sha256": "3b30373f3a2f9c962934d6cff0ec875188b6310aa7b644d905b805289504ccc5",
+      "evaluation_index": 13,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.2747778000048129,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 63.136752136752136
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_hotspot_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 4187.89,
+          "max_internal_edge_um": 83.43,
+          "mean_internal_edge_um": 23.28920903954802
+        }
+      },
+      "hypervolume_after": 1.0642941149540812,
+      "hypervolume_before": 1.0642941149540812,
+      "labels": {
+        "delta_H_eff8": 2.0,
+        "delta_physical_proxy_um": -277.2999999999993,
+        "pareto_acceptance": false,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 34.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 95.0,
+        "total_shift_toggles": 675381
+      },
+      "move": {
+        "activity_heuristic_child": 63.136752136752136,
+        "activity_heuristic_parent": 59.87820512820513,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "3b30373f3a2f9c962934d6cff0ec875188b6310aa7b644d905b805289504ccc5",
+        "destroy_operator": "hotspot",
+        "incremental_physical_delta_um": -277.3000000000002,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "3b30373f3a2f9c962934d6cff0ec875188b6310aa7b644d905b805289504ccc5",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "b9061277e20aeb2cc4a9f5298ffdb6f114446062c12c330adbea6fe12218f7e2",
+          "proof_sha256": "9410476efa6d2e07a11ffebf42bd266b40f7c034bc214ddb7b0827a9d411c046",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "b9061277e20aeb2cc4a9f5298ffdb6f114446062c12c330adbea6fe12218f7e2",
+        "removed_FFs": [
+          "U_n2454gat",
+          "U_n553gat",
+          "U_n846gat",
+          "U_n865gat",
+          "U_n152gat",
+          "U_n279gat",
+          "U_n322gat",
+          "U_n2061gat",
+          "U_n699gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_hotspot_physical_best"
+      },
+      "objectives": [
+        4187.89,
+        62.33333333333333,
+        10530.0
+      ],
+      "parent_objectives": [
+        4465.19,
+        60.33333333333333,
+        10530.0
+      ],
+      "parent_sha256": "b9061277e20aeb2cc4a9f5298ffdb6f114446062c12c330adbea6fe12218f7e2",
+      "search_wall_seconds": 41.32799999999406,
+      "source_kind": "lns",
+      "source_name": "hotspot+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/3837514f7f61aa8611dbabc82faa0e07cafa81373056fe4e38fa32e26903dce6/architecture.json",
+      "architecture_sha256": "3837514f7f61aa8611dbabc82faa0e07cafa81373056fe4e38fa32e26903dce6",
+      "evaluation_index": 14,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.356959700002335,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 61.98931623931624
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_hotspot_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 6476.73,
+          "max_internal_edge_um": 107.13999999999999,
+          "mean_internal_edge_um": 35.29949152542373
+        }
+      },
+      "hypervolume_after": 1.0642941149540812,
+      "hypervolume_before": 1.0642941149540812,
+      "labels": {
+        "delta_H_eff8": 2.5,
+        "delta_physical_proxy_um": -199.76000000000022,
+        "pareto_acceptance": false,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 100.0,
+        "total_shift_toggles": 670845
+      },
+      "move": {
+        "activity_heuristic_child": 61.98931623931624,
+        "activity_heuristic_parent": 58.636752136752136,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "3837514f7f61aa8611dbabc82faa0e07cafa81373056fe4e38fa32e26903dce6",
+        "destroy_operator": "hotspot",
+        "incremental_physical_delta_um": -199.76000000000022,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "3837514f7f61aa8611dbabc82faa0e07cafa81373056fe4e38fa32e26903dce6",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "2970154eff18468bd5a24acf53c3b4a7080e93f03569bf5c8f4cc18588e64a2f",
+          "proof_sha256": "a7e4db1b90a713d5411cb3643a8d0b52d02885593c874d1c823ea9dd34651cf0",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "2970154eff18468bd5a24acf53c3b4a7080e93f03569bf5c8f4cc18588e64a2f",
+        "removed_FFs": [
+          "U_n2454gat",
+          "U_n553gat",
+          "U_n846gat",
+          "U_n865gat",
+          "U_n152gat",
+          "U_n279gat",
+          "U_n322gat",
+          "U_n2061gat",
+          "U_n699gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_hotspot_physical_best"
+      },
+      "objectives": [
+        6476.73,
+        61.666666666666664,
+        10530.0
+      ],
+      "parent_objectives": [
+        6676.49,
+        59.166666666666664,
+        10530.0
+      ],
+      "parent_sha256": "2970154eff18468bd5a24acf53c3b4a7080e93f03569bf5c8f4cc18588e64a2f",
+      "search_wall_seconds": 42.78100000000268,
+      "source_kind": "lns",
+      "source_name": "hotspot+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b/architecture.json",
+      "architecture_sha256": "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+      "evaluation_index": 15,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.3828252000093926,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 89.58119658119658
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_segment_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 1180.75,
+          "max_internal_edge_um": 35.42999999999999,
+          "mean_internal_edge_um": 6.511807909604519
+        }
+      },
+      "hypervolume_after": 1.0653453824106498,
+      "hypervolume_before": 1.0642941149540812,
+      "labels": {
+        "delta_H_eff8": -0.3333333333333286,
+        "delta_physical_proxy_um": -10.059999999999945,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 37.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 112.0,
+        "total_shift_toggles": 950055
+      },
+      "move": {
+        "activity_heuristic_child": 89.58119658119658,
+        "activity_heuristic_parent": 89.44017094017093,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+        "destroy_operator": "segment",
+        "incremental_physical_delta_um": -10.06000000000006,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "7807b6a77fcd4431fd045a650e9dac7806cf62dc91fa59f48115895874c7fe48",
+          "proof_sha256": "57bc54ff7001b7fd589f2bdc799c3dee589891a86e05d2f646f57dbed39c5933",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "7807b6a77fcd4431fd045a650e9dac7806cf62dc91fa59f48115895874c7fe48",
+        "removed_FFs": [
+          "U_n622gat",
+          "U_n626gat",
+          "U_n614gat",
+          "U_n919gat",
+          "U_n846gat",
+          "U_n256gat",
+          "U_n470gat",
+          "U_n707gat",
+          "U_n148gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_segment_physical_best"
+      },
+      "objectives": [
+        1180.75,
+        64.83333333333333,
+        10530.0
+      ],
+      "parent_objectives": [
+        1190.81,
+        65.16666666666666,
+        10530.0
+      ],
+      "parent_sha256": "7807b6a77fcd4431fd045a650e9dac7806cf62dc91fa59f48115895874c7fe48",
+      "search_wall_seconds": 44.23500000000058,
+      "source_kind": "lns",
+      "source_name": "segment+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/6faced5e13294ddb6efec1044aae84e9633c098e601386273cd9dbffb4ca5b53/architecture.json",
+      "architecture_sha256": "6faced5e13294ddb6efec1044aae84e9633c098e601386273cd9dbffb4ca5b53",
+      "evaluation_index": 16,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.2600820999941789,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 75.48290598290598
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_segment_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 1309.69,
+          "max_internal_edge_um": 25.47,
+          "mean_internal_edge_um": 7.170451977401129
+        }
+      },
+      "hypervolume_after": 1.0653634927953188,
+      "hypervolume_before": 1.0653453824106498,
+      "labels": {
+        "delta_H_eff8": 1.8333333333333357,
+        "delta_physical_proxy_um": -9.420000000000073,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 37.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 100.0,
+        "total_shift_toggles": 833123
+      },
+      "move": {
+        "activity_heuristic_child": 75.48290598290598,
+        "activity_heuristic_parent": 74.75213675213675,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "6faced5e13294ddb6efec1044aae84e9633c098e601386273cd9dbffb4ca5b53",
+        "destroy_operator": "segment",
+        "incremental_physical_delta_um": -9.419999999999959,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "6faced5e13294ddb6efec1044aae84e9633c098e601386273cd9dbffb4ca5b53",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+          "proof_sha256": "b239a871d6df5deaa1795fd11efc4a9a6f0cef00413e9870300e9c6c9935ff4b",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+        "removed_FFs": [
+          "U_n1880gat",
+          "U_n2040gat",
+          "U_n2454gat",
+          "U_n1871gat",
+          "U_n1775gat",
+          "U_n2169gat",
+          "U_n2110gat",
+          "U_n2176gat",
+          "U_n2033gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_segment_physical_best"
+      },
+      "objectives": [
+        1309.6899999999998,
+        62.666666666666664,
+        10530.0
+      ],
+      "parent_objectives": [
+        1319.11,
+        60.83333333333333,
+        10530.0
+      ],
+      "parent_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+      "search_wall_seconds": 45.59399999999732,
+      "source_kind": "lns",
+      "source_name": "segment+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685/architecture.json",
+      "architecture_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+      "evaluation_index": 17,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.2456145000032848,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 65.78205128205128
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_segment_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 2157.8100000000004,
+          "max_internal_edge_um": 49.98,
+          "mean_internal_edge_um": 11.50135593220339
+        }
+      },
+      "hypervolume_after": 1.155380746445363,
+      "hypervolume_before": 1.0653634927953188,
+      "labels": {
+        "delta_H_eff8": -4.333333333333336,
+        "delta_physical_proxy_um": -66.55999999999995,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 35.0,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 102.0,
+        "total_shift_toggles": 732237
+      },
+      "move": {
+        "activity_heuristic_child": 65.78205128205128,
+        "activity_heuristic_parent": 64.38461538461539,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+        "destroy_operator": "segment",
+        "incremental_physical_delta_um": -66.55999999999995,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+          "proof_sha256": "2a0d469ce22c2d1bdd68b69eb1c55d9346636e54f4320eeb96834b8edeba6eb1",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+        "removed_FFs": [
+          "U_n1148gat",
+          "U_n865gat",
+          "U_n883gat",
+          "U_n824gat",
+          "U_n1241gat",
+          "U_n2640gat",
+          "U_n2472gat",
+          "U_n165gat",
+          "U_n2522gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_segment_physical_best"
+      },
+      "objectives": [
+        2157.81,
+        59.0,
+        10530.0
+      ],
+      "parent_objectives": [
+        2224.37,
+        63.333333333333336,
+        10530.0
+      ],
+      "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+      "search_wall_seconds": 46.90600000000268,
+      "source_kind": "lns",
+      "source_name": "segment+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/d252e4aa397e31663078fc1359677609581a6d0ac0ed763d6d2f44ed46e66c19/architecture.json",
+      "architecture_sha256": "d252e4aa397e31663078fc1359677609581a6d0ac0ed763d6d2f44ed46e66c19",
+      "evaluation_index": 18,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.2335428000078537,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 62.39102564102564
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_segment_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 4288.45,
+          "max_internal_edge_um": 83.43,
+          "mean_internal_edge_um": 23.593107344632767
+        }
+      },
+      "hypervolume_after": 1.155380746445363,
+      "hypervolume_before": 1.155380746445363,
+      "labels": {
+        "delta_H_eff8": 0.8333333333333357,
+        "delta_physical_proxy_um": -176.73999999999978,
+        "pareto_acceptance": false,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 35.0,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 95.0,
+        "total_shift_toggles": 672769
+      },
+      "move": {
+        "activity_heuristic_child": 62.39102564102564,
+        "activity_heuristic_parent": 59.87820512820513,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "d252e4aa397e31663078fc1359677609581a6d0ac0ed763d6d2f44ed46e66c19",
+        "destroy_operator": "segment",
+        "incremental_physical_delta_um": -176.74000000000024,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "d252e4aa397e31663078fc1359677609581a6d0ac0ed763d6d2f44ed46e66c19",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "b9061277e20aeb2cc4a9f5298ffdb6f114446062c12c330adbea6fe12218f7e2",
+          "proof_sha256": "f4929c8b69f269bafb2d957c46b4471d957ee3b3df0900713bae6f853d195068",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "b9061277e20aeb2cc4a9f5298ffdb6f114446062c12c330adbea6fe12218f7e2",
+        "removed_FFs": [
+          "U_n2347gat",
+          "U_n1678gat",
+          "U_n2640gat",
+          "U_n341gat",
+          "U_n1068gat",
+          "U_n618gat",
+          "U_n553gat",
+          "U_n680gat",
+          "U_n580gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_segment_physical_best"
+      },
+      "objectives": [
+        4288.45,
+        61.166666666666664,
+        10530.0
+      ],
+      "parent_objectives": [
+        4465.19,
+        60.33333333333333,
+        10530.0
+      ],
+      "parent_sha256": "b9061277e20aeb2cc4a9f5298ffdb6f114446062c12c330adbea6fe12218f7e2",
+      "search_wall_seconds": 48.21899999999732,
+      "source_kind": "lns",
+      "source_name": "segment+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/39b3529b4a007fb7d01cf202c453198ff3419bffb784dac1ab250de048f798c9/architecture.json",
+      "architecture_sha256": "39b3529b4a007fb7d01cf202c453198ff3419bffb784dac1ab250de048f798c9",
+      "evaluation_index": 19,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.2771296999999322,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 60.75213675213675
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_segment_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 6278.23,
+          "max_internal_edge_um": 107.13999999999999,
+          "mean_internal_edge_um": 34.17802259887006
+        }
+      },
+      "hypervolume_after": 1.155380746445363,
+      "hypervolume_before": 1.155380746445363,
+      "labels": {
+        "delta_H_eff8": 3.6666666666666643,
+        "delta_physical_proxy_um": -398.2600000000002,
+        "pareto_acceptance": false,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 36.0,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 99.0,
+        "total_shift_toggles": 665507
+      },
+      "move": {
+        "activity_heuristic_child": 60.75213675213675,
+        "activity_heuristic_parent": 58.636752136752136,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "39b3529b4a007fb7d01cf202c453198ff3419bffb784dac1ab250de048f798c9",
+        "destroy_operator": "segment",
+        "incremental_physical_delta_um": -398.2600000000002,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "39b3529b4a007fb7d01cf202c453198ff3419bffb784dac1ab250de048f798c9",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "2970154eff18468bd5a24acf53c3b4a7080e93f03569bf5c8f4cc18588e64a2f",
+          "proof_sha256": "aa6f6b2b0044432f3a54bf90c423314cb71e3a0fa78d52762f75de087da1a134",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "2970154eff18468bd5a24acf53c3b4a7080e93f03569bf5c8f4cc18588e64a2f",
+        "removed_FFs": [
+          "U_n2203gat",
+          "U_n865gat",
+          "U_n1241gat",
+          "U_n2403gat",
+          "U_n402gat",
+          "U_n846gat",
+          "U_n1456gat",
+          "U_n2099gat",
+          "U_n1748gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_segment_physical_best"
+      },
+      "objectives": [
+        6278.23,
+        62.83333333333333,
+        10530.0
+      ],
+      "parent_objectives": [
+        6676.49,
+        59.166666666666664,
+        10530.0
+      ],
+      "parent_sha256": "2970154eff18468bd5a24acf53c3b4a7080e93f03569bf5c8f4cc18588e64a2f",
+      "search_wall_seconds": 49.54700000000594,
+      "source_kind": "lns",
+      "source_name": "segment+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/6b60fa30da3af7b199acca16f71bf7370897cbd8513ed55df23bd0884721b26d/architecture.json",
+      "architecture_sha256": "6b60fa30da3af7b199acca16f71bf7370897cbd8513ed55df23bd0884721b26d",
+      "evaluation_index": 20,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.2874171000003116,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 89.5042735042735
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_cross_chain_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 1223.79,
+          "max_internal_edge_um": 38.61,
+          "mean_internal_edge_um": 6.75497175141243
+        }
+      },
+      "hypervolume_after": 1.155380746445363,
+      "hypervolume_before": 1.155380746445363,
+      "labels": {
+        "delta_H_eff8": 1.3333333333333286,
+        "delta_physical_proxy_um": 43.039999999999964,
+        "pareto_acceptance": false,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 37.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 108.0,
+        "total_shift_toggles": 946679
+      },
+      "move": {
+        "activity_heuristic_child": 89.5042735042735,
+        "activity_heuristic_parent": 89.58119658119658,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "6b60fa30da3af7b199acca16f71bf7370897cbd8513ed55df23bd0884721b26d",
+        "destroy_operator": "cross_chain",
+        "incremental_physical_delta_um": 43.04000000000002,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "6b60fa30da3af7b199acca16f71bf7370897cbd8513ed55df23bd0884721b26d",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+          "proof_sha256": "af33dc725b4ada5dc9be714146457aeb1d8c5919ea8164a6345ef3b8f57b5d98",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+        "removed_FFs": [
+          "U_n622gat",
+          "U_n626gat",
+          "U_n919gat",
+          "U_n614gat",
+          "U_n846gat",
+          "U_n931gat",
+          "U_n1226gat",
+          "U_n2522gat",
+          "U_n165gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_cross_chain_physical_best"
+      },
+      "objectives": [
+        1223.79,
+        66.16666666666666,
+        10530.0
+      ],
+      "parent_objectives": [
+        1180.75,
+        64.83333333333333,
+        10530.0
+      ],
+      "parent_sha256": "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+      "search_wall_seconds": 50.937999999994645,
+      "source_kind": "lns",
+      "source_name": "cross_chain+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7/architecture.json",
+      "architecture_sha256": "a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7",
+      "evaluation_index": 21,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 2.3712120999989565,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 76.95299145299145
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_cross_chain_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 1306.5500000000002,
+          "max_internal_edge_um": 27.589999999999996,
+          "mean_internal_edge_um": 7.1771186440677965
+        }
+      },
+      "hypervolume_after": 1.1553867832402525,
+      "hypervolume_before": 1.155380746445363,
+      "labels": {
+        "delta_H_eff8": 1.8333333333333357,
+        "delta_physical_proxy_um": -12.559999999999945,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 102.0,
+        "total_shift_toggles": 830749
+      },
+      "move": {
+        "activity_heuristic_child": 76.95299145299145,
+        "activity_heuristic_parent": 74.75213675213675,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7",
+        "destroy_operator": "cross_chain",
+        "incremental_physical_delta_um": -12.559999999999945,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+          "proof_sha256": "2b52088adb9e728dc2f4193db812c49cb07e1f280acb9fa20dfa4180acb15604",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+        "removed_FFs": [
+          "U_n2464gat",
+          "U_n618gat",
+          "U_n673gat",
+          "U_n398gat",
+          "U_n626gat",
+          "U_n2450gat",
+          "U_n2458gat",
+          "U_n2309gat",
+          "U_n2179gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_cross_chain_physical_best"
+      },
+      "objectives": [
+        1306.55,
+        62.666666666666664,
+        10530.0
+      ],
+      "parent_objectives": [
+        1319.11,
+        60.83333333333333,
+        10530.0
+      ],
+      "parent_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+      "search_wall_seconds": 53.42200000000594,
+      "source_kind": "lns",
+      "source_name": "cross_chain+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/be569eb7d9d1e5e5647f500c7277528796847c9a9e70bee1d6b1f59862367c36/architecture.json",
+      "architecture_sha256": "be569eb7d9d1e5e5647f500c7277528796847c9a9e70bee1d6b1f59862367c36",
+      "evaluation_index": 22,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 2.460231599994586,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 67.13888888888889
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_cross_chain_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 2089.11,
+          "max_internal_edge_um": 53.84,
+          "mean_internal_edge_um": 11.417401129943503
+        }
+      },
+      "hypervolume_after": 1.1553867832402525,
+      "hypervolume_before": 1.1553867832402525,
+      "labels": {
+        "delta_H_eff8": 1.8333333333333357,
+        "delta_physical_proxy_um": -68.69999999999982,
+        "pareto_acceptance": false,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 35.0,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 104.0,
+        "total_shift_toggles": 741459
+      },
+      "move": {
+        "activity_heuristic_child": 67.13888888888889,
+        "activity_heuristic_parent": 65.78205128205128,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "be569eb7d9d1e5e5647f500c7277528796847c9a9e70bee1d6b1f59862367c36",
+        "destroy_operator": "cross_chain",
+        "incremental_physical_delta_um": -68.70000000000016,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "be569eb7d9d1e5e5647f500c7277528796847c9a9e70bee1d6b1f59862367c36",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+          "proof_sha256": "ce06014ccfa29e2074a5bc3b9ede207623ac3feae062ee3eb85fc7ea41c18db0",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+        "removed_FFs": [
+          "U_n553gat",
+          "U_n667gat",
+          "U_n1241gat",
+          "U_n824gat",
+          "U_n580gat",
+          "U_n1389gat",
+          "U_n394gat",
+          "U_n2634gat",
+          "U_n1394gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_cross_chain_physical_best"
+      },
+      "objectives": [
+        2089.11,
+        60.833333333333336,
+        10530.0
+      ],
+      "parent_objectives": [
+        2157.81,
+        59.0,
+        10530.0
+      ],
+      "parent_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+      "search_wall_seconds": 56.01600000000326,
+      "source_kind": "lns",
+      "source_name": "cross_chain+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/1d7e99bb2c21a07f4fa888c5fa4a6f476497e1d58b9a3c41422fe25d12b553cf/architecture.json",
+      "architecture_sha256": "1d7e99bb2c21a07f4fa888c5fa4a6f476497e1d58b9a3c41422fe25d12b553cf",
+      "evaluation_index": 23,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 2.613326300008339,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 62.06837606837607
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_cross_chain_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 4314.490000000001,
+          "max_internal_edge_um": 83.43,
+          "mean_internal_edge_um": 23.74022598870057
+        }
+      },
+      "hypervolume_after": 1.1553867832402525,
+      "hypervolume_before": 1.1553867832402525,
+      "labels": {
+        "delta_H_eff8": 2.0,
+        "delta_physical_proxy_um": -150.69999999999982,
+        "pareto_acceptance": false,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 95.0,
+        "total_shift_toggles": 677357
+      },
+      "move": {
+        "activity_heuristic_child": 62.06837606837607,
+        "activity_heuristic_parent": 59.87820512820513,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "1d7e99bb2c21a07f4fa888c5fa4a6f476497e1d58b9a3c41422fe25d12b553cf",
+        "destroy_operator": "cross_chain",
+        "incremental_physical_delta_um": -150.69999999999982,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "1d7e99bb2c21a07f4fa888c5fa4a6f476497e1d58b9a3c41422fe25d12b553cf",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "b9061277e20aeb2cc4a9f5298ffdb6f114446062c12c330adbea6fe12218f7e2",
+          "proof_sha256": "93c5eae6c23cde21d04ad00a4b79cb3e50695c60ea8179b090723c25961cd481",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "b9061277e20aeb2cc4a9f5298ffdb6f114446062c12c330adbea6fe12218f7e2",
+        "removed_FFs": [
+          "U_n1316gat",
+          "U_n2495gat",
+          "U_n366gat",
+          "U_n561gat",
+          "U_n463gat",
+          "U_n1241gat",
+          "U_n865gat",
+          "U_n2203gat",
+          "U_n673gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_cross_chain_physical_best"
+      },
+      "objectives": [
+        4314.49,
+        62.33333333333333,
+        10530.0
+      ],
+      "parent_objectives": [
+        4465.19,
+        60.33333333333333,
+        10530.0
+      ],
+      "parent_sha256": "b9061277e20aeb2cc4a9f5298ffdb6f114446062c12c330adbea6fe12218f7e2",
+      "search_wall_seconds": 58.76600000000326,
+      "source_kind": "lns",
+      "source_name": "cross_chain+physical_best"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/ccc681c96f51da24eea25c39ec6a52a44efb41407713d057605725ed377d7f82/architecture.json",
+      "architecture_sha256": "ccc681c96f51da24eea25c39ec6a52a44efb41407713d057605725ed377d7f82",
+      "evaluation_index": 24,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 2.416650999992271,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 61.60042735042735
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_cross_chain_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 6360.91,
+          "max_internal_edge_um": 99.85,
+          "mean_internal_edge_um": 34.61898305084746
+        }
+      },
+      "hypervolume_after": 1.1553867832402525,
+      "hypervolume_before": 1.1553867832402525,
+      "labels": {
+        "delta_H_eff8": 3.0,
+        "delta_physical_proxy_um": -315.5799999999999,
+        "pareto_acceptance": false,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 98.0,
+        "total_shift_toggles": 678725
+      },
+      "move": {
+        "activity_heuristic_child": 61.60042735042735,
+        "activity_heuristic_parent": 58.636752136752136,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "ccc681c96f51da24eea25c39ec6a52a44efb41407713d057605725ed377d7f82",
+        "destroy_operator": "cross_chain",
+        "incremental_physical_delta_um": -315.5799999999999,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "ccc681c96f51da24eea25c39ec6a52a44efb41407713d057605725ed377d7f82",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "2970154eff18468bd5a24acf53c3b4a7080e93f03569bf5c8f4cc18588e64a2f",
+          "proof_sha256": "1885e58daef86938303f0d3d661541e46e39a86cf1d6432c4b0f0e4c1793c59c",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "2970154eff18468bd5a24acf53c3b4a7080e93f03569bf5c8f4cc18588e64a2f",
+        "removed_FFs": [
+          "U_n2270gat",
+          "U_n1045gat",
+          "U_n614gat",
+          "U_n838gat",
+          "U_n834gat",
+          "U_n1226gat",
+          "U_n2468gat",
+          "U_n491gat",
+          "U_n2207gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_cross_chain_physical_best"
+      },
+      "objectives": [
+        6360.91,
+        62.166666666666664,
+        10530.0
+      ],
+      "parent_objectives": [
+        6676.49,
+        59.166666666666664,
+        10530.0
+      ],
+      "parent_sha256": "2970154eff18468bd5a24acf53c3b4a7080e93f03569bf5c8f4cc18588e64a2f",
+      "search_wall_seconds": 61.29700000000594,
+      "source_kind": "lns",
+      "source_name": "cross_chain+physical_best"
+    }
+  ],
+  "checkpoints": [
+    {
+      "accepted_lane_moves": 0,
+      "archive_size": 5,
+      "best_H_eff8": 60.5,
+      "best_physical_proxy_um": 1209.61,
+      "cache_hits": 0,
+      "candidates_proposed": 1,
+      "duplicate_candidates": 0,
+      "executed_new_exact_proxy_evaluations": 1,
+      "invalid_candidates": 0,
+      "normalized_hypervolume": 0.9246798906599945,
+      "observed_search_wall_seconds": 5.077999999994063,
+      "target_seconds": 5.0,
+      "unique_candidates": 1,
+      "unique_exact_proxy_evaluations": 1
+    },
+    {
+      "accepted_lane_moves": 0,
+      "archive_size": 4,
+      "best_H_eff8": 60.5,
+      "best_physical_proxy_um": 1209.61,
+      "cache_hits": 0,
+      "candidates_proposed": 2,
+      "duplicate_candidates": 0,
+      "executed_new_exact_proxy_evaluations": 2,
+      "invalid_candidates": 0,
+      "normalized_hypervolume": 0.9291826475310843,
+      "observed_search_wall_seconds": 12.062999999994645,
+      "target_seconds": 10.0,
+      "unique_candidates": 2,
+      "unique_exact_proxy_evaluations": 2
+    },
+    {
+      "accepted_lane_moves": 0,
+      "archive_size": 4,
+      "best_H_eff8": 60.33333333333333,
+      "best_physical_proxy_um": 1209.61,
+      "cache_hits": 0,
+      "candidates_proposed": 4,
+      "duplicate_candidates": 0,
+      "executed_new_exact_proxy_evaluations": 4,
+      "invalid_candidates": 0,
+      "normalized_hypervolume": 0.9727413044739934,
+      "observed_search_wall_seconds": 23.547000000005937,
+      "target_seconds": 20.0,
+      "unique_candidates": 4,
+      "unique_exact_proxy_evaluations": 4
+    },
+    {
+      "accepted_lane_moves": 0,
+      "archive_size": 4,
+      "best_H_eff8": 60.33333333333333,
+      "best_physical_proxy_um": 1209.61,
+      "cache_hits": 0,
+      "candidates_proposed": 5,
+      "duplicate_candidates": 0,
+      "executed_new_exact_proxy_evaluations": 5,
+      "invalid_candidates": 0,
+      "normalized_hypervolume": 0.9727413044739934,
+      "observed_search_wall_seconds": 30.077999999994063,
+      "target_seconds": 30.0,
+      "unique_candidates": 5,
+      "unique_exact_proxy_evaluations": 5
+    },
+    {
+      "accepted_lane_moves": 6,
+      "archive_size": 5,
+      "best_H_eff8": 59.0,
+      "best_physical_proxy_um": 1180.75,
+      "cache_hits": 0,
+      "candidates_proposed": 24,
+      "duplicate_candidates": 0,
+      "executed_new_exact_proxy_evaluations": 24,
+      "invalid_candidates": 1,
+      "normalized_hypervolume": 1.1553867832402525,
+      "observed_search_wall_seconds": 61.29700000000594,
+      "target_seconds": 60.0,
+      "unique_candidates": 24,
+      "unique_exact_proxy_evaluations": 24
+    }
+  ],
+  "completed_utc": "2026-09-21T03:27:04.151839+00:00",
+  "context": "s5378/s11/k2",
+  "contract_sha256": "88d8ee812f492aef92d0e3b95441615dabf172d6cccce49b1daf260d033b9fdf",
+  "counters": {
+    "accepted_lane_moves": 6,
+    "cache_hits": 0,
+    "candidates_proposed": 24,
+    "duplicate_candidates": 0,
+    "executed_new_exact_proxy_evaluations": 24,
+    "invalid_candidates": 1,
+    "unique_candidates": 24,
+    "unique_exact_proxy_evaluations": 24
+  },
+  "global_completed_methods": [
+    "physical",
+    "mostly_physical",
+    "balanced_regret",
+    "mostly_activity",
+    "activity"
+  ],
+  "implementation_sha256": {
+    "config/phase0d_optimizer_v1_contract.json": "88d8ee812f492aef92d0e3b95441615dabf172d6cccce49b1daf260d033b9fdf",
+    "scripts/phase0d_optimizer_v1.py": "12cf120f2e70288d3374e2d2580d68a2c2fe4a4c2115d8c83ea6dd6607a844b6",
+    "src/pact/analysis/phase0c_activity.py": "19d79450c479f5c9e56f464102316b60a4fd2d899f00f3e523020e307123c401",
+    "src/pact/phase0d/funnel.py": "3d6bb0645506094031110e996f5dcf1d4a6aea562ac7c47a9262f02eda76fb04",
+    "src/pact/phase0d/optimizer_v1.py": "345a7f871f39d4d50d4dfeff7759863c74c40543a9b52e715f09c1ca35fb5990",
+    "src/pact/physical/phase0c_port_policy.py": "440cf538cc8ff56dfc5e6c3adabbf5eed818e686a1463553e78694414a071923",
+    "src/pact/physical/phase0c_scan_geometry.py": "0d7d61ebd5dc26c4c0cebf062667bb520677603b6cd5256186047a350a7e0c1c",
+    "src/pact/scan/phase0d_operators.py": "326769308fe8b4272a65a4375bae8eace76a3b2b5eabb497fecef8ed695bbfff"
+  },
+  "invalid_records": [
+    {
+      "fraction": 0.05,
+      "iteration": 5,
+      "operator": "hotspot",
+      "reason": "LNS repair reproduced its parent",
+      "repair_strategy": "physical_best"
+    }
+  ],
+  "lanes": [
+    {
+      "alpha": 1.0,
+      "current_architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b/architecture.json",
+      "current_objectives": [
+        1180.75,
+        64.83333333333333,
+        10530.0
+      ],
+      "current_sha256": "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+      "name": "physical",
+      "trajectory": [
+        "1963924d7ccb03a1a7c8e7c458decf0e342a76a667c89968623c5d368fd3c80c",
+        "7807b6a77fcd4431fd045a650e9dac7806cf62dc91fa59f48115895874c7fe48",
+        "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b"
+      ]
+    },
+    {
+      "alpha": 0.8,
+      "current_architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c/architecture.json",
+      "current_objectives": [
+        1319.11,
+        60.83333333333333,
+        10530.0
+      ],
+      "current_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+      "name": "mostly_physical",
+      "trajectory": [
+        "c6daa53e1f37e25df972648a81a0fc860efa0b331f2e7942e515a8f6f226bfca",
+        "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c"
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "current_architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685/architecture.json",
+      "current_objectives": [
+        2157.81,
+        59.0,
+        10530.0
+      ],
+      "current_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+      "name": "balanced_regret",
+      "trajectory": [
+        "e65ad49e8efd5a58fbbba91aaaebd22dc25822a549b91ca9be7fc1600828df8f",
+        "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+        "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685"
+      ]
+    },
+    {
+      "alpha": 0.2,
+      "current_architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/b9061277e20aeb2cc4a9f5298ffdb6f114446062c12c330adbea6fe12218f7e2/architecture.json",
+      "current_objectives": [
+        4465.19,
+        60.33333333333333,
+        10530.0
+      ],
+      "current_sha256": "b9061277e20aeb2cc4a9f5298ffdb6f114446062c12c330adbea6fe12218f7e2",
+      "name": "mostly_activity",
+      "trajectory": [
+        "b9061277e20aeb2cc4a9f5298ffdb6f114446062c12c330adbea6fe12218f7e2"
+      ]
+    },
+    {
+      "alpha": 0.0,
+      "current_architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/2970154eff18468bd5a24acf53c3b4a7080e93f03569bf5c8f4cc18588e64a2f/architecture.json",
+      "current_objectives": [
+        6676.49,
+        59.166666666666664,
+        10530.0
+      ],
+      "current_sha256": "2970154eff18468bd5a24acf53c3b4a7080e93f03569bf5c8f4cc18588e64a2f",
+      "name": "activity",
+      "trajectory": [
+        "f41823f894712b3416cc909aee4c560077eeb9c1f4974b98c9fbf0ec5e32b09b",
+        "2970154eff18468bd5a24acf53c3b4a7080e93f03569bf5c8f4cc18588e64a2f"
+      ]
+    }
+  ],
+  "lns_iterations_attempted": 20,
+  "process_invocations": [
+    {
+      "completed_utc": "2026-09-21T03:27:04.151839+00:00",
+      "invocation_search_wall_seconds": 61.312999999994645,
+      "search_wall_seconds_after": 61.312999999994645,
+      "search_wall_seconds_before": 0.0
+    }
+  ],
+  "reference_entries": [
+    {
+      "architecture_path": "artifacts/derived/phase0c/s5378/s11/k2/A.architecture.json",
+      "architecture_sha256": "16904eaa0db2f733be62aebed6ba183f37c1d672a02d210e964bf96d1bc71f54",
+      "metrics": {
+        "H_eff16": 34.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530,
+        "peak_simultaneous_toggles": 92.0,
+        "total_shift_toggles": 604035
+      },
+      "objectives": [
+        6850.21,
+        60.5,
+        10530.0
+      ],
+      "source_kind": "phase0c_reference",
+      "source_name": "A"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0c/s5378/s11/k2/B0.architecture.json",
+      "architecture_sha256": "ae86d9068718134a0016c7dc484716e3e4439c0978f5cfcdef79c037ac566f86",
+      "metrics": {
+        "H_eff16": 37.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530,
+        "peak_simultaneous_toggles": 114.0,
+        "total_shift_toggles": 985705
+      },
+      "objectives": [
+        2259.53,
+        67.83333333333333,
+        10530.0
+      ],
+      "source_kind": "phase0c_reference",
+      "source_name": "B0"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0c/s5378/s11/k2/J50.architecture.json",
+      "architecture_sha256": "9c54b48f2ab8c0d7ebd94dd6c5de6ad6f04883f972277372ae90fecb4ce7f9ee",
+      "metrics": {
+        "H_eff16": 34.83333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530,
+        "peak_simultaneous_toggles": 93.0,
+        "total_shift_toggles": 688291
+      },
+      "objectives": [
+        2634.75,
+        61.666666666666664,
+        10530.0
+      ],
+      "source_kind": "phase0c_reference",
+      "source_name": "J50"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0c/s5378/s11/k2/P.architecture.json",
+      "architecture_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+      "metrics": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530,
+        "peak_simultaneous_toggles": 108.0,
+        "total_shift_toggles": 941901
+      },
+      "objectives": [
+        1380.8300000000002,
+        63.33333333333333,
+        10530.0
+      ],
+      "source_kind": "phase0c_reference",
+      "source_name": "P"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0c/s5378/s11/k2/R.architecture.json",
+      "architecture_sha256": "b46d8e0d4772b9d6dd9d9ff223c6ab34a3afd470b1a7b3bbdca3b8f25c24803d",
+      "metrics": {
+        "H_eff16": 37.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530,
+        "peak_simultaneous_toggles": 111.0,
+        "total_shift_toggles": 947763
+      },
+      "objectives": [
+        8617.61,
+        68.16666666666666,
+        10530.0
+      ],
+      "source_kind": "phase0c_reference",
+      "source_name": "R"
+    },
+    {
+      "architecture_path": "artifacts/derived/phase0c/s5378/s11/k2/T.architecture.json",
+      "architecture_sha256": "37deaa7b3eee9623d40fe7ceb4163773bfda2f0953a72fb7b9babd69f088b04f",
+      "metrics": {
+        "H_eff16": 36.33333333333333,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530,
+        "peak_simultaneous_toggles": 109.0,
+        "total_shift_toggles": 935989
+      },
+      "objectives": [
+        1421.17,
+        62.333333333333336,
+        10530.0
+      ],
+      "source_kind": "phase0c_reference",
+      "source_name": "T"
+    }
+  ],
+  "run_signature": "9bbd9df2ffc010d2929d92b0fb0dea80483fb964ee768382e6d291a4050bb924",
+  "schema_version": "pact-optimizer-v1-state-1",
+  "search_wall_seconds": 61.312999999994645,
+  "started_utc": "2026-09-21T03:26:02.819122+00:00",
+  "status": "COMPLETE",
+  "stop_reason": "SEARCH_WALL_CLOCK_BUDGET_REACHED"
+}

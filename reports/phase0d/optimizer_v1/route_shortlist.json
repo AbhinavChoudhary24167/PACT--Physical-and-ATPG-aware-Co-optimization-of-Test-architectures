@@ -1,0 +1,106 @@
+{
+  "candidates": [
+    {
+      "architecture_path": "artifacts/derived/phase0d/optimizer_v1/s5378/s11/k2/candidates/1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685/architecture.json",
+      "architecture_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+      "evaluation_index": 17,
+      "evaluation_status": "EXECUTED_NEW",
+      "evaluation_wall_seconds": 1.2456145000032848,
+      "features": {
+        "activity_descriptors": {
+          "definition": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+          "target_compatibility_score": 65.78205128205128
+        },
+        "chain_descriptors": {
+          "K": 2,
+          "lengths": [
+            90,
+            89
+          ],
+          "maximum_length_difference": 1
+        },
+        "move_type": "lns_segment_physical_best",
+        "neighborhood_fraction": 0.05,
+        "physical_descriptors": {
+          "exact_proxy_from_decomposition_um": 2157.8100000000004,
+          "max_internal_edge_um": 49.98,
+          "mean_internal_edge_um": 11.50135593220339
+        }
+      },
+      "hypervolume_after": 1.155380746445363,
+      "hypervolume_before": 1.0653634927953188,
+      "labels": {
+        "delta_H_eff8": -4.333333333333336,
+        "delta_physical_proxy_um": -66.55999999999995,
+        "pareto_acceptance": true,
+        "routed_qualification": null
+      },
+      "metrics": {
+        "H_eff16": 35.0,
+        "H_eff32": 16.666666666666668,
+        "normalized_chain_imbalance": 0.0111731843575419,
+        "parallel_shift_cycles": 10530.0,
+        "peak_simultaneous_toggles": 102.0,
+        "total_shift_toggles": 732237
+      },
+      "move": {
+        "activity_heuristic_child": 65.78205128205128,
+        "activity_heuristic_parent": 64.38461538461539,
+        "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+        "child_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+        "destroy_operator": "segment",
+        "incremental_physical_delta_um": -66.55999999999995,
+        "legality": {
+          "ATPG_patterns_verified": 0,
+          "FF_identity_and_placement_unchanged": true,
+          "FF_inventory_verified": true,
+          "K_fixed": true,
+          "SI_SO_identity_verified": true,
+          "chain_lengths": [
+            90,
+            89
+          ],
+          "child_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+          "exact_parallel_loading_verified": false,
+          "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+          "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+          "proof_sha256": "2a0d469ce22c2d1bdd68b69eb1c55d9346636e54f4320eeb96834b8edeba6eb1",
+          "schema_version": "phase0d-structural-proof-1"
+        },
+        "neighborhood_fraction": 0.05,
+        "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+        "removed_FFs": [
+          "U_n1148gat",
+          "U_n865gat",
+          "U_n883gat",
+          "U_n824gat",
+          "U_n1241gat",
+          "U_n2640gat",
+          "U_n2472gat",
+          "U_n165gat",
+          "U_n2522gat"
+        ],
+        "removed_count": 9,
+        "repair_strategy": "physical_best",
+        "schema_version": "pact-optimizer-v1-lns-move-1",
+        "type": "lns_segment_physical_best"
+      },
+      "objectives": [
+        2157.81,
+        59.0,
+        10530.0
+      ],
+      "parent_objectives": [
+        2224.37,
+        63.333333333333336,
+        10530.0
+      ],
+      "parent_sha256": "0d92391ff41818ae151e7c9c3a814993356b9c7beef03cdc75c147568cb12d4e",
+      "search_wall_seconds": 46.90600000000268,
+      "source_kind": "lns",
+      "source_name": "segment+physical_best"
+    }
+  ],
+  "selection_rule": "balanced normalized compromise, then activity extreme; maximum two",
+  "status": "SELECTED"
+}
