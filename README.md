@@ -1,6 +1,12 @@
-# PACT Phase 0
+# PACT — Physical- and ATPG-aware Co-optimization of Test Architectures
 
 PACT (Physical- and ATPG-aware Co-optimization of Test Architectures) tests whether legal scan-chain orderings create a reproducible conflict between physical scan cost and ATPG-derived shift-activity hotspots. This repository contains the experimental infrastructure, raw evidence, and a gate-based Phase-0 report. It does not contain machine learning.
+
+The original research question is:
+
+> Can an intervention-aware learning model jointly reason over physical-design state and ATPG-derived activity to predict the marginal impact of legal scan-architecture transformations, enabling closed-loop optimization of test power integrity, routability, timing, and test cost while preserving test quality by construction?
+
+The work evaluates test-mode power and IR-drop risk, scan-chain routing congestion, timing degradation, excessive scan wirelength, test time, physical locality, and costly iteration between DFT and physical-design teams.
 
 The hypothesis is open. A missing tool, unverified flip-flop identity map, or failed physical rerun is recorded as a failed gate, not replaced with simulated research evidence.
 
