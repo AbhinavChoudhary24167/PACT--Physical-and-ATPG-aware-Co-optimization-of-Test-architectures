@@ -1,0 +1,60 @@
+{
+  "schema_version": "pact-optimizer-v1-contract-1",
+  "scientific_status": "FROZEN_BEFORE_60_SECOND_RUN",
+  "context": {
+    "design": "s5378",
+    "physical_seed": 11,
+    "K": 2,
+    "phase0c_reference_discovery": "all qualified *.proxy.json rows in the exact context",
+    "frozen_placement": "artifacts/raw/phase0b/placements/s5378/s11/placed.def"
+  },
+  "primary_objectives": [
+    "qualified_port_aware_FF_origin_scan_HPWL_proxy_um",
+    "exact_H_eff8"
+  ],
+  "secondary_metrics": [
+    "exact_H_eff16",
+    "exact_H_eff32",
+    "exact_total_shift_toggles",
+    "exact_peak_simultaneous_toggles",
+    "normalized_chain_imbalance",
+    "exact_parallel_shift_cycles"
+  ],
+  "global_construction": {
+    "method": "balanced endpoint-aware cheapest/regret insertion from empty chains",
+    "physical_distance": "Manhattan distance identical to the qualified Phase-0C proxy decomposition",
+    "activity_ranking_metric": "static_direct_sink_weighted_target_compatibility_not_H_eff8",
+    "physical_weights": [1.0, 0.8, 0.5, 0.2, 0.0],
+    "family_size": 5
+  },
+  "lns": {
+    "destroy_operators": ["region", "hotspot", "segment", "cross_chain", "guided"],
+    "repair_strategies": ["physical_best", "balanced", "activity_best", "regret"],
+    "neighborhood_fractions": [0.05, 0.1, 0.2],
+    "proposal_seed": 20260921,
+    "acceptance": "lane-weighted normalized improvement or exact pairwise dominance"
+  },
+  "runtime": {
+    "search_wall_clock_seconds": 60.0,
+    "checkpoint_targets_seconds": [5.0, 10.0, 20.0, 30.0, 60.0],
+    "debug_wall_clock_seconds": 10.0,
+    "accounting": [
+      "process_invocation_wall_seconds",
+      "search_wall_clock_seconds",
+      "accumulated_new_proxy_wall_seconds",
+      "route_wall_seconds",
+      "total_campaign_elapsed_seconds"
+    ]
+  },
+  "routing": {
+    "maximum_new_candidates": 2,
+    "policy": "route only new candidates on the combined Phase-0C plus PACT proxy Pareto front",
+    "per_candidate_cap_seconds": 750
+  },
+  "scope": {
+    "machine_learning": false,
+    "additional_designs": false,
+    "additional_seeds": false,
+    "openroad_inside_optimizer": false
+  }
+}
