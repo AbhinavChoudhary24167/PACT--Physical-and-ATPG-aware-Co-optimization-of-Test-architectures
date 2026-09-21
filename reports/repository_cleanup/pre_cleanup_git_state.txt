@@ -1,0 +1,79 @@
+PACT repository pre-cleanup Git state
+Captured: 2026-09-21 Asia/Calcutta
+
+$ git rev-parse --show-toplevel
+C:/Users/Abhinav/OneDrive/Desktop/PACT/PACT
+
+$ git branch --show-current
+codex/pact-phase0d-budgeted-search
+
+$ git rev-parse HEAD
+134eaa2becbdb57ec6ef087b829156aa28480916
+
+$ git status --short
+Untracked Phase-0B evidence/source trees only (3,889 individual paths with -uall):
+  artifacts/derived/phase0b/
+  artifacts/derived/s15850/
+  artifacts/manifests/phase0b/
+  artifacts/raw/phase0b/
+  config/phase0b_analysis_contract.json
+  config/phase0b_campaign.json
+  config/phase0b_seed_method.json
+  experiments/phase0b/
+  reports/PHASE0B_CONFLICT_ESTABLISHMENT_REPORT.md
+  reports/figures/phase0b/
+  scripts/phase0b_*.py
+  scripts/tcl/phase0b_*.tcl
+  src/pact/analysis/phase0b_*.py
+  src/pact/physical/phase0b_*.py
+  src/pact/scan/phase0b_identity.py
+  tests/unit/test_phase0b_*.py
+
+$ git status --ignored --short
+The same untracked Phase-0B trees above, plus already-ignored local/transient data:
+  .pytest_cache/
+  .venv/
+  external/OpenROAD-flow-scripts/
+  external/OpenROAD/
+  external/openroad_prebuilt/
+  **/__pycache__/
+  src/pact_phase0.egg-info/
+  artifacts/raw/**/*.odb
+  artifacts/raw/**/*.def
+No ignored path was removed during this snapshot.
+
+$ git remote -v
+origin  git@github.com:Abhinav-hash/PACT.git (fetch)
+origin  git@github.com:Abhinav-hash/PACT.git (push)
+
+$ git log --oneline --decorate -20
+134eaa2 (HEAD -> codex/pact-phase0d-budgeted-search) results: add Phase-0D pilot qualification evidence
+81f1cb3 fix: emit deterministic LF in Phase-0D artifacts
+1045db7 docs: document Phase-0D pilot status and reproducibility
+c17a49c phase0d: record empty shortlist and pilot resource accounting
+0abfa24 phase0d: add proxy funnel and selective physical evaluation
+684d70d phase0d: add budgeted deterministic search baselines
+58818e5 phase0d: add rich scan architecture intervention operators
+cbfed5d phase0d: freeze pilot contract and add campaign infrastructure
+06d97d8 (codex/pact-phase0c-multichain-conflict) phase0c: publish final evidence report
+8ce4985 phase0c: analyze interventions and frozen gates
+7250bee phase0c: execute recovered physical campaign
+997afaa phase0c: preserve interruption and freeze recovery
+3e7b516 phase0c: freeze analysis contract
+233f348 phase0c: qualify physical and activity metrics
+6bb9dd5 phase0c: add multichain model and exact parallel shift semantics
+4968628 phase0c: preserve and audit phase0b baseline
+06fe315 (main) freeze phase0 evidence
+e3219d3 replicate phase0 on s9234
+0e95f3b run phase0 campaign
+2df9bc3 add baseline ordering algorithms
+
+$ git diff --stat
+(empty)
+
+$ git diff
+(empty)
+
+Interpretation: tracked content was clean at capture time. The only pre-existing
+worktree changes were inherited untracked Phase-0B research paths. They are
+preserved pending classification; no cleanup or deletion has occurred.

@@ -1,0 +1,19 @@
+PACT repository cleanup test summary
+
+Command:
+  $env:PYTHONPATH='src'; python -m pytest -q
+
+Result:
+  passed: 120
+  failed: 0
+  skipped: 0
+  total: 120
+  pytest runtime: 6.16 seconds
+  exit code: 0
+
+Targeted development checks completed before the frozen run:
+  tests/unit/test_optimizer_v1.py: 10 passed
+  Phase-0D optimizer/funnel/pilot/search/operator subset: 34 passed
+
+No historical placement, ATPG, Phase-0C route, or completed pilot experiment
+was rerun by these tests.

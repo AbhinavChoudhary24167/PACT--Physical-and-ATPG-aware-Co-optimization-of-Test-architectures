@@ -1,0 +1,24 @@
+PACT scientific preservation verification
+
+Phase-0C decision: PACT_PHASE0C_LEARNING_GATE_FAIL
+Phase-0D pilot decision: PILOT_COMPLETE_NO_ROUTE_QUALIFIED
+
+The following frozen worktree files exactly match their HEAD Git objects:
+  artifacts/derived/phase0c/gate_analysis.json
+  reports/PACT_PHASE0C_REPORT.md
+  reports/phase0d/status.json
+  reports/phase0d/PILOT_REPORT.md
+  reports/phase0d/pilot_summary.json
+
+`git diff --name-only HEAD` was empty for the frozen Phase-0C derived/raw
+namespaces and the Phase-0D pilot status, report, summary, gates, metrics, and
+manifest. The Phase-0D PATCH_NOTES.md file is intentionally extended with a
+new Optimizer-v1 section; the completed pilot evidence itself is unchanged.
+
+The Optimizer-v1 outputs are isolated under:
+  artifacts/derived/phase0d/optimizer_v1/
+  artifacts/raw/phase0d/optimizer_v1/
+  reports/phase0d/optimizer_v1/
+
+Phase-0C proxy rows and 375 qualified routes were reused as existing evidence.
+No Phase-0C placement, ATPG, architecture, proxy, or route was rerun.
