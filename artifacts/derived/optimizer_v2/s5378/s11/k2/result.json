@@ -1,0 +1,374 @@
+{
+  "archive": [
+    {
+      "architecture_key": "1d25d2d136ab960ab29709d3a2dc742e",
+      "architecture_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+      "chain_lengths": [
+        90,
+        89
+      ],
+      "move_index": 0,
+      "objectives": [
+        1380.8300000000002,
+        63.33333333333333
+      ],
+      "source": "input_architecture"
+    },
+    {
+      "architecture_key": "38f594dbdf76157799c29fc7cb0c108e",
+      "architecture_sha256": "37deaa7b3eee9623d40fe7ceb4163773bfda2f0953a72fb7b9babd69f088b04f",
+      "chain_lengths": [
+        90,
+        89
+      ],
+      "move_index": 0,
+      "objectives": [
+        1421.17,
+        62.333333333333336
+      ],
+      "source": "qualified_T"
+    },
+    {
+      "architecture_key": "c8fb9b513a373ef983484f02dc60ce6c",
+      "architecture_sha256": "3e63a5802320886b131ede64542f5e525ef4181bc5b1f0b8858eb2d051810b9a",
+      "chain_lengths": [
+        90,
+        89
+      ],
+      "move_index": 5,
+      "objectives": [
+        1480.8700000000001,
+        62.0
+      ],
+      "source": "cross_chain_swap"
+    },
+    {
+      "architecture_key": "217a5fe8cba60591080fdb6c6d9db1d0",
+      "architecture_sha256": "73645741fcc431e31e69b3c70ec89b5def9f6479edadb090dd14c6b9a8961dcc",
+      "chain_lengths": [
+        89,
+        90
+      ],
+      "move_index": 10,
+      "objectives": [
+        1678.8700000000001,
+        61.49999999999999
+      ],
+      "source": "migration"
+    },
+    {
+      "architecture_key": "874a68ea14936a7fd9bdf547b191d3f8",
+      "architecture_sha256": "cb1b6160aecb3f9054a6e6ca22dc8421965a2d3c9eb1e7215f5906dbfcbc9b31",
+      "chain_lengths": [
+        90,
+        89
+      ],
+      "move_index": 0,
+      "objectives": [
+        4766.99,
+        61.33333333333333
+      ],
+      "source": "activity_aware_greedy"
+    },
+    {
+      "architecture_key": "142b8bca63c9a7f2c1c6305636271010",
+      "architecture_sha256": "3017c86bb99fe6728c00d50ce32abf014cb2bf2eb561152586d220ee5924ccc1",
+      "chain_lengths": [
+        90,
+        89
+      ],
+      "move_index": 13,
+      "objectives": [
+        6822.47,
+        60.166666666666664
+      ],
+      "source": "swap"
+    }
+  ],
+  "config": {
+    "activity_candidates": 6,
+    "archive_epsilon_fraction": 0.01,
+    "constructor_lambdas": [
+      1.0,
+      0.75,
+      0.5,
+      0.25,
+      0.0
+    ],
+    "graph_k": 12,
+    "maximum_archive_size": 16,
+    "maximum_chain_length_difference": 1,
+    "maximum_exact_evaluations": 24,
+    "maximum_local_moves": 32,
+    "maximum_neighborhood_size": 24,
+    "maximum_segment_length": 8,
+    "minimum_chain_length": 1,
+    "parent_refresh_interval": 12,
+    "random_nonlocal_candidates": 3,
+    "seed": 20260921,
+    "seen_cache_size": 4096,
+    "wall_clock_seconds": 20.0
+  },
+  "counters": {
+    "average_candidate_neighborhood_size": 20.055555555555557,
+    "cache_evictions": 0,
+    "candidates_accepted": 8,
+    "candidates_considered": 24,
+    "candidates_dominated": 16,
+    "candidates_pruned_archive_size": 0,
+    "complete_architecture_copies": 33,
+    "duplicate_candidates": 0,
+    "evaluations_per_second": 8.146054687543453,
+    "exact_evaluations": 24,
+    "final_archive_size": 6,
+    "full_h_eff8_recomputations": 13,
+    "full_physical_recomputations": 17,
+    "incremental_h_eff8_evaluations": 13,
+    "incremental_physical_evaluations": 13,
+    "invalid_moves": 0,
+    "local_moves_accepted": 3,
+    "local_moves_attempted": 13,
+    "local_moves_per_second": 4.412446289086036,
+    "neighborhood_samples": 18,
+    "neighborhood_total": 361,
+    "parent_restarts": 1,
+    "screened_move_options": 119
+  },
+  "graph": {
+    "backend": "scipy.spatial.cKDTree_exact_manhattan",
+    "construction_seconds": 0.020208500005537644,
+    "directed_edge_count": 2148,
+    "k": 12,
+    "memory_bytes": 25776,
+    "undirected_edge_count": 1234
+  },
+  "memory": {
+    "current_h_eff8_state_bytes": 16174080,
+    "seen_cache_entries": 24,
+    "sparse_graph_bytes": 25776,
+    "tracemalloc_peak_bytes": 54277016
+  },
+  "runtime": {
+    "graph_construction_seconds": 0.020208500005537644,
+    "openroad_calls": 0,
+    "optimizer_wall_seconds": 2.9462114999914775
+  },
+  "schema_version": "pact-optimizer-v2-result-1",
+  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED",
+  "trace": [
+    {
+      "added_arcs": 3,
+      "affected_chains": [
+        0
+      ],
+      "archive_retained": false,
+      "local_accepted": false,
+      "move": 1,
+      "objectives": [
+        1423.97,
+        62.333333333333336
+      ],
+      "operator": "swap",
+      "physical_delta": 2.799999999999997,
+      "removed_arcs": 3
+    },
+    {
+      "added_arcs": 3,
+      "affected_chains": [
+        0
+      ],
+      "archive_retained": false,
+      "local_accepted": false,
+      "move": 2,
+      "objectives": [
+        1428.77,
+        62.333333333333336
+      ],
+      "operator": "relocate",
+      "physical_delta": 7.600000000000001,
+      "removed_arcs": 3
+    },
+    {
+      "added_arcs": 4,
+      "affected_chains": [
+        0
+      ],
+      "archive_retained": false,
+      "local_accepted": false,
+      "move": 3,
+      "objectives": [
+        1426.25,
+        62.333333333333336
+      ],
+      "operator": "two_opt",
+      "physical_delta": 5.079999999999998,
+      "removed_arcs": 4
+    },
+    {
+      "added_arcs": 3,
+      "affected_chains": [
+        0,
+        1
+      ],
+      "archive_retained": false,
+      "local_accepted": false,
+      "move": 4,
+      "objectives": [
+        1438.5900000000001,
+        67.16666666666666
+      ],
+      "operator": "migration",
+      "physical_delta": 17.42,
+      "removed_arcs": 3
+    },
+    {
+      "added_arcs": 4,
+      "affected_chains": [
+        0,
+        1
+      ],
+      "archive_retained": true,
+      "local_accepted": true,
+      "move": 5,
+      "objectives": [
+        1480.8700000000001,
+        62.0
+      ],
+      "operator": "cross_chain_swap",
+      "physical_delta": 59.69999999999999,
+      "removed_arcs": 4
+    },
+    {
+      "added_arcs": 14,
+      "affected_chains": [
+        0,
+        1
+      ],
+      "archive_retained": false,
+      "local_accepted": false,
+      "move": 6,
+      "objectives": [
+        1574.3300000000002,
+        63.83333333333333
+      ],
+      "operator": "segment_exchange",
+      "physical_delta": 93.46,
+      "removed_arcs": 14
+    },
+    {
+      "added_arcs": 3,
+      "affected_chains": [
+        0
+      ],
+      "archive_retained": false,
+      "local_accepted": false,
+      "move": 7,
+      "objectives": [
+        1483.67,
+        62.0
+      ],
+      "operator": "swap",
+      "physical_delta": 2.799999999999997,
+      "removed_arcs": 3
+    },
+    {
+      "added_arcs": 3,
+      "affected_chains": [
+        1
+      ],
+      "archive_retained": false,
+      "local_accepted": false,
+      "move": 8,
+      "objectives": [
+        1487.0500000000002,
+        62.0
+      ],
+      "operator": "relocate",
+      "physical_delta": 6.180000000000007,
+      "removed_arcs": 3
+    },
+    {
+      "added_arcs": 3,
+      "affected_chains": [
+        0
+      ],
+      "archive_retained": false,
+      "local_accepted": false,
+      "move": 9,
+      "objectives": [
+        1486.3300000000002,
+        62.33333333333333
+      ],
+      "operator": "two_opt",
+      "physical_delta": 5.460000000000001,
+      "removed_arcs": 3
+    },
+    {
+      "added_arcs": 3,
+      "affected_chains": [
+        0,
+        1
+      ],
+      "archive_retained": true,
+      "local_accepted": true,
+      "move": 10,
+      "objectives": [
+        1678.8700000000001,
+        61.49999999999999
+      ],
+      "operator": "migration",
+      "physical_delta": 198.00000000000003,
+      "removed_arcs": 3
+    },
+    {
+      "added_arcs": 4,
+      "affected_chains": [
+        0,
+        1
+      ],
+      "archive_retained": false,
+      "local_accepted": false,
+      "move": 11,
+      "objectives": [
+        1709.8700000000001,
+        61.49999999999999
+      ],
+      "operator": "cross_chain_swap",
+      "physical_delta": 30.99999999999999,
+      "removed_arcs": 4
+    },
+    {
+      "added_arcs": 10,
+      "affected_chains": [
+        0,
+        1
+      ],
+      "archive_retained": false,
+      "local_accepted": false,
+      "move": 12,
+      "objectives": [
+        1824.0500000000002,
+        62.5
+      ],
+      "operator": "segment_exchange",
+      "physical_delta": 145.18,
+      "removed_arcs": 10
+    },
+    {
+      "added_arcs": 4,
+      "affected_chains": [
+        1
+      ],
+      "archive_retained": true,
+      "local_accepted": true,
+      "move": 13,
+      "objectives": [
+        6822.47,
+        60.166666666666664
+      ],
+      "operator": "swap",
+      "physical_delta": -27.74000000000001,
+      "removed_arcs": 4
+    }
+  ]
+}

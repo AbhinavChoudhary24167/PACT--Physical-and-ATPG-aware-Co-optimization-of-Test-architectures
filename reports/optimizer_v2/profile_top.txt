@@ -1,0 +1,67 @@
+CUMULATIVE TIME
+         1518555 function calls (1490933 primitive calls) in 9.497 seconds
+
+   Ordered by: cumulative time
+   List reduced from 258 to 25 due to restriction <25>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.020    0.020    9.497    9.497 optimizer_v2.py:418(optimize_v2)
+        1    0.303    0.303    6.027    6.027 v2_sparse.py:218(construct_architectures_v2)
+        5    2.832    0.566    4.700    0.940 v2_sparse.py:136(construct_orders)
+    20146    0.248    0.000    1.229    0.000 {built-in method builtins.min}
+       16    0.045    0.003    0.903    0.056 v2_architecture.py:197(_full_key)
+       10    0.210    0.021    0.882    0.088 v2_architecture.py:114(from_orders)
+    58414    0.224    0.000    0.783    0.000 v2_sparse.py:205(<lambda>)
+        1    0.573    0.573    0.777    0.777 v2_sparse.py:40(build)
+    16230    0.245    0.000    0.722    0.000 v2_architecture.py:35(_arc_token)
+       11    0.010    0.001    0.624    0.057 v2_architecture.py:71(__init__)
+    32460    0.477    0.000    0.477    0.000 v2_architecture.py:27(_mix64)
+     4990    0.193    0.000    0.461    0.000 v2_sparse.py:115(random_candidates)
+        5    0.000    0.000    0.444    0.089 v2_architecture.py:490(restore)
+        5    0.003    0.001    0.440    0.088 model.py:46(sha256)
+193929/191429    0.426    0.000    0.428    0.000 {built-in method builtins.len}
+    90646    0.290    0.000    0.426    0.000 optimizer_v1.py:212(relation)
+        5    0.076    0.015    0.420    0.084 v2_architecture.py:460(validate_internal)
+       11    0.000    0.000    0.399    0.036 optimizer_v2.py:116(full_cost)
+       77    0.226    0.003    0.389    0.005 v2_architecture.py:146(order)
+    58414    0.046    0.000    0.361    0.000 v2_sparse.py:168(relation)
+    11105    0.174    0.000    0.317    0.000 {built-in method builtins.sorted}
+     2130    0.010    0.000    0.311    0.000 {built-in method builtins.sum}
+       16    0.193    0.012    0.298    0.019 v2_activity.py:80(_chain_field)
+    11033    0.014    0.000    0.290    0.000 optimizer_v2.py:117(<genexpr>)
+    11220    0.107    0.000    0.283    0.000 optimizer_v2.py:108(arc_cost)
+
+
+
+SELF CPU TIME
+         1518555 function calls (1490933 primitive calls) in 9.497 seconds
+
+   Ordered by: internal time
+   List reduced from 258 to 25 due to restriction <25>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        5    2.832    0.566    4.700    0.940 v2_sparse.py:136(construct_orders)
+        1    0.573    0.573    0.777    0.777 v2_sparse.py:40(build)
+    32460    0.477    0.000    0.477    0.000 v2_architecture.py:27(_mix64)
+193929/191429    0.426    0.000    0.428    0.000 {built-in method builtins.len}
+        1    0.303    0.303    6.027    6.027 v2_sparse.py:218(construct_architectures_v2)
+    90646    0.290    0.000    0.426    0.000 optimizer_v1.py:212(relation)
+    20146    0.248    0.000    1.229    0.000 {built-in method builtins.min}
+    16230    0.245    0.000    0.722    0.000 v2_architecture.py:35(_arc_token)
+    27108    0.227    0.000    0.227    0.000 v2_architecture.py:185(_arcs_for_chain)
+       77    0.226    0.003    0.389    0.005 v2_architecture.py:146(order)
+    58414    0.224    0.000    0.783    0.000 v2_sparse.py:205(<lambda>)
+       10    0.210    0.021    0.882    0.088 v2_architecture.py:114(from_orders)
+        5    0.195    0.039    0.195    0.039 encoder.py:205(iterencode)
+       16    0.193    0.012    0.298    0.019 v2_activity.py:80(_chain_field)
+     4990    0.193    0.000    0.461    0.000 v2_sparse.py:115(random_candidates)
+    11105    0.174    0.000    0.317    0.000 {built-in method builtins.sorted}
+     9995    0.168    0.000    0.198    0.000 v2_sparse.py:175(<lambda>)
+    44104    0.145    0.000    0.145    0.000 {method 'add' of 'set' objects}
+    11220    0.143    0.000    0.175    0.000 optimizer_v2.py:104(_distance)
+   159278    0.140    0.000    0.140    0.000 {built-in method builtins.abs}
+    90646    0.136    0.000    0.136    0.000 {method 'bit_count' of 'int' objects}
+    58414    0.119    0.000    0.198    0.000 optimizer_v1.py:144(distance)
+    43814    0.119    0.000    0.119    0.000 {method 'append' of 'list' objects}
+    42629    0.119    0.000    0.211    0.000 random.py:242(_randbelow_with_getrandbits)
+    18057    0.111    0.000    0.111    0.000 {built-in method builtins.max}
