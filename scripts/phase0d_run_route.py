@@ -38,9 +38,18 @@ def _archived_odb_matches(path: Path, expected_sha256: str) -> bool:
     return digest.hexdigest() == expected_sha256
 
 
-def route_one(design: str, seed: int, K: int, candidate_dir: Path, cap_seconds: int) -> dict:
-    contract = json.loads((ROOT / "config/phase0d_pilot_contract.json").read_text(encoding="utf-8"))
-    campaign = contract["benchmark_population"]
+def route_one(design: str, seed: int, K: int, candidate_dir: Path, cap_seconds: int,
+              evidence_namespace: str = "pilot") -> dict:
+    if evidence_namespace not in {"pilot", "optimizer_v1"}:
+        raise ValueError("Unsupported Phase-0D evidence namespace")
+    pilot_contract_path = ROOT / "config/phase0d_pilot_contract.json"
+    pilot_contract = json.loads(pilot_contract_path.read_text(encoding="utf-8"))
+    if evidence_namespace == "pilot":
+        contract_path = pilot_contract_path
+        campaign = pilot_contract["benchmark_population"]
+    else:
+        contract_path = ROOT / "config/phase0d_optimizer_v1_contract.json"
+        campaign = json.loads((ROOT / "config/phase0c_campaign.json").read_text(encoding="utf-8"))
     if design not in campaign["designs"] or seed not in campaign["physical_seeds"] or K not in campaign["K_values"]:
         raise ValueError("Route context is outside the frozen population")
     candidate_dir = candidate_dir.resolve()
@@ -54,17 +63,17 @@ def route_one(design: str, seed: int, K: int, candidate_dir: Path, cap_seconds: 
     flow = Path(os.environ.get("PACT_ORFS_FLOW", "/root/pact-deps/OpenROAD-flow-scripts/flow"))
     block = BLOCK[design]
     base = flow / f"results/nangate45/{block}/phase0b_s{seed}_B0"
-    variant_name = f"phase0d_pilot_s{seed}_k{K}_{architecture.sha256()[:12]}"
+    variant_name = f"phase0d_{evidence_namespace}_s{seed}_k{K}_{architecture.sha256()[:12]}"
     variant = flow / f"results/nangate45/{block}/{variant_name}"
     logs = flow / f"logs/nangate45/{block}/{variant_name}"
     frozen_def = ROOT / f"artifacts/raw/phase0b/placements/{design}/s{seed}/placed.def"
-    evidence = ROOT / f"artifacts/raw/phase0d/pilot/{design}/s{seed}/k{K}/{architecture.sha256()}"
+    evidence = ROOT / f"artifacts/raw/phase0d/{evidence_namespace}/{design}/s{seed}/k{K}/{architecture.sha256()}"
     evidence.mkdir(parents=True, exist_ok=True)
     result_path = evidence / "route_result.json"
     archive_path = evidence / "5_2_route.odb.gz"
     route_inputs = [
         architecture_path, proxy_path, frozen_def, base / "3_place.odb", base / "3_place.sdc",
-        ROOT / "config/phase0d_pilot_contract.json", ROOT / "scripts/phase0c_rewire_odb.py",
+        contract_path, pilot_contract_path, ROOT / "scripts/phase0c_rewire_odb.py",
         ROOT / "scripts/phase0d_verify_routed.py", ROOT / "scripts/phase0d_run_route.py",
     ]
     route_input_sha256 = {
@@ -79,7 +88,7 @@ def route_one(design: str, seed: int, K: int, candidate_dir: Path, cap_seconds: 
                 and _archived_odb_matches(archive_path, prior.get("routed_odb_sha256", ""))):
             return {**prior, "reuse_status": "REUSED_VERIFIED"}
 
-    disk_floor = int(contract["routing"]["minimum_free_disk_bytes"])
+    disk_floor = int(pilot_contract["routing"]["minimum_free_disk_bytes"])
     check_disk_floor(ROOT, disk_floor)
     check_disk_floor(flow, disk_floor)
     deadline = time.monotonic() + cap_seconds
@@ -108,7 +117,7 @@ def route_one(design: str, seed: int, K: int, candidate_dir: Path, cap_seconds: 
         "OPENROAD_EXE=/usr/bin/openroad", "YOSYS_EXE=/usr/bin/yosys", "route",
     ]
     required = [logs / "5_1_grt.json", logs / "5_2_route.json", variant / "5_2_route.odb"]
-    route_budget = _remaining(deadline, int(contract["routing"]["route_timeout_seconds"]))
+    route_budget = _remaining(deadline, int(pilot_contract["routing"]["route_timeout_seconds"]))
     if route_budget == 0:
         result = {"status": "TIMEOUT", "stage": "BEFORE_ROUTE"}
         atomic_write_json(result_path, result)
@@ -154,6 +163,7 @@ def route_one(design: str, seed: int, K: int, candidate_dir: Path, cap_seconds: 
         "design": design,
         "physical_seed": seed,
         "K": K,
+        "evidence_namespace": evidence_namespace,
         "architecture_sha256": architecture.sha256(),
         "proxy_sha256": file_sha256(proxy_path),
         "scan_hpwl_proxy_um": proxy["scan_geometry"]["total_scan_hpwl_um"],
@@ -188,8 +198,10 @@ def main() -> None:
     parser.add_argument("--k", type=int, required=True)
     parser.add_argument("--candidate-dir", type=Path, required=True)
     parser.add_argument("--cap-seconds", type=int, default=750)
+    parser.add_argument("--evidence-namespace", choices=("pilot", "optimizer_v1"), default="pilot")
     args = parser.parse_args()
-    result = route_one(args.design, args.seed, args.k, args.candidate_dir, args.cap_seconds)
+    result = route_one(args.design, args.seed, args.k, args.candidate_dir, args.cap_seconds,
+                       args.evidence_namespace)
     print(json.dumps({key: result.get(key) for key in (
         "status", "reuse_status", "architecture_sha256", "DRC_errors", "route_wall_seconds")}, sort_keys=True))
     if result.get("status") not in {"QUALIFIED", "TIMEOUT"}:
