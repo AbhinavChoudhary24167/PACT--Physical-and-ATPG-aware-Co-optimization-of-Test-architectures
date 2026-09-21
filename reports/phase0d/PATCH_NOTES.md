@@ -59,3 +59,40 @@
 - shift-mode power and test-mode IR-drop evidence remain unavailable;
 - the selective physical route stage was not invoked because no candidate qualified;
 - the working tree had 3,889 inherited untracked Phase-0B paths before Phase-0D began, so Git cleanliness must be reported relative to Phase-0D work rather than by discarding those files.
+
+## Optimizer v1
+
+### Added
+
+- a five-start global constructor using endpoint-aware balanced cheapest/regret insertion from empty chains;
+- a labeled static direct-sink-weighted ATPG target-compatibility relation for construction only;
+- region, hotspot, segment, cross-chain, and seeded guided LNS destroy operators;
+- physical-best, balanced, activity-best, and regret repair strategies at 5%, 10%, and 20% neighborhood sizes;
+- an exact two-objective fixed-K Pareto archive over the qualified HPWL proxy and exact H_eff8;
+- exact chain-local incremental physical deltas, asserted against the full proxy after each new LNS evaluation;
+- cumulative wall-clock checkpoints, resumable state, exact candidate records, cache accounting, and seven focused figures;
+- a selective routing namespace and corrected post-route verifier bootstrap;
+- cleanup classification, large-file audit, and a SHA256 manifest for the preserved external raw Phase-0B archive.
+
+### Runtime-accounting correction
+
+The historical pilot files were not rewritten. Its STATUS elapsed value described the current/finalization invocation, whereas the larger summed proxy time described unique cached proxy work created across earlier invocations. Optimizer v1 now records process invocation, cumulative search wall time, accumulated new-proxy time, rewire time, route time, all post-route verification attempts, report finalization, and total active campaign time as distinct quantities.
+
+### Validation and result
+
+- 120/120 unit tests passed before the frozen run;
+- the frozen s5378/seed11/K2 run proposed and exactly evaluated 24 unique architectures in 61.313 seconds of measured search time;
+- five PACT architectures entered the combined Phase-0C/PACT proxy Pareto front;
+- the prior Phase-0C front was P (1380.83, 63.33), T (1421.17, 62.33), J50 (2634.75, 61.67), and A (6850.21, 60.50), in (HPWL proxy µm, H_eff8);
+- the selected PACT representative was (2157.81, 59.00);
+- its new route had zero detailed-route DRC, 26,982 µm full-netlist detailed-route wirelength, 13,469 vias, 9.08672 ns setup WNS, 0.00273018 ns hold WNS, 23.81% initial global-route utilization, zero overflow, and a passing structural reconstruction proof;
+- exact status: `PACT_OPTIMIZER_V1_PROXY_ADVANCE` and `PACT_OPTIMIZER_V1_ROUTE_QUALIFIED`;
+- no ML model was introduced and no multi-design/multi-seed campaign was launched.
+
+### Resource reuse and limitations
+
+- all six qualified Phase-0C proxy rows and all 375 Phase-0C routes remained existing evidence; none was recomputed;
+- the final optimizer run had zero cache hits because all 24 generated architectures were unique, while frozen Phase-0C rows were reused directly as the reference set;
+- H_eff remains a dimensionless proxy rather than power/current, and the construction activity relation is explicitly not H_eff8;
+- the v1 global insertion implementation is O(N^3) worst-case time with O(N) working storage and does not claim 100K-FF scalability;
+- activity-heuristic delta versus exact H_eff8 delta had Pearson r=0.234 over 19 LNS samples, so the relation is useful only as a weak ranking heuristic and warrants deliberate refinement before scale-up.
