@@ -1,0 +1,28 @@
+{
+  "available_sdc": {
+    "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s5378_orfs/constraint.sdc": "7ec3d84b59dc5e69e9ecb7ddaf2b3487f6f2ff54fbaf034bfd130b7ab2a44627",
+    "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s9234_orfs/constraint.sdc": "7ec3d84b59dc5e69e9ecb7ddaf2b3487f6f2ff54fbaf034bfd130b7ab2a44627",
+    "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0b/s15850_orfs/constraint.sdc": "7ec3d84b59dc5e69e9ecb7ddaf2b3487f6f2ff54fbaf034bfd130b7ab2a44627"
+  },
+  "commands": {
+    "extract": "PYTHONDONTWRITEBYTECODE=1 openroad -python -no_init -exit scripts/phase2b_extract.py",
+    "focused": "PYTHONPATH=src:/mnt/d/PACT_EXPERIMENTS/cache/phase2a_python PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 TMPDIR=/mnt/d/PACT_EXPERIMENTS/tmp MPLCONFIGDIR=/mnt/d/PACT_EXPERIMENTS/cache/matplotlib /root/pact-deps/pact-venv/bin/python -m pytest -q --capture=sys --basetemp=/mnt/d/PACT_EXPERIMENTS/pytest_tmp/phase2b_focused tests/unit/test_phase2b_activity.py tests/unit/test_phase2a_shift.py tests/unit/test_phase2a_physical_stats.py",
+    "freeze": "PYTHONDONTWRITEBYTECODE=1 /root/pact-deps/pact-venv/bin/python scripts/phase2b_freeze.py",
+    "measure": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 /root/pact-deps/pact-venv/bin/python scripts/phase2b_measure.py",
+    "regression": "PYTHONPATH=src:/mnt/d/PACT_EXPERIMENTS/cache/phase2a_python PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 TMPDIR=/mnt/d/PACT_EXPERIMENTS/tmp MPLCONFIGDIR=/mnt/d/PACT_EXPERIMENTS/cache/matplotlib /root/pact-deps/pact-venv/bin/python -m pytest -q --capture=sys --basetemp=/mnt/d/PACT_EXPERIMENTS/pytest_tmp/phase2b_regression",
+    "report": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 MPLCONFIGDIR=/mnt/d/PACT_EXPERIMENTS/cache/matplotlib /root/pact-deps/pact-venv/bin/python scripts/phase2b_report.py",
+    "waveform": "PYTHONDONTWRITEBYTECODE=1 /root/pact-deps/pact-venv/bin/python scripts/phase2b_waveform.py"
+  },
+  "extraction_needs": "Exact detailed-routed ODB already contains LEF technology and topology; rules model supplies wire RC. SDC not needed for static RC. No route DEF rewriting.",
+  "iverilog": "Icarus Verilog version 12.0 (stable) ()",
+  "openroad": "26Q2-1164-g08f67ee5ec",
+  "packages": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.3",
+    "pytest": "9.1.1",
+    "scipy": "1.18.1",
+    "threadpoolctl": "3.7.0"
+  },
+  "python": "3.12.3",
+  "source_binary_mismatch": "Installed binary lacks newer source set_extraction_rules_file API; used supported -ext_model_file with identical frozen rule file. No RC model change."
+}

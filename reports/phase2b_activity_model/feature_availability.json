@@ -1,0 +1,52 @@
+{
+  "H_eff8": {
+    "definition": "exact frozen Phase-2A value, no retuning",
+    "role": "predictor",
+    "stage": "POST-PLACEMENT"
+  },
+  "SPEF_capacitance": {
+    "definition": "LABEL ONLY; never accepted by predictor API",
+    "role": "label_only",
+    "stage": "POST-ROUTE"
+  },
+  "fanout": {
+    "definition": "placed DEF connectivity projected to selected scan order; no routed graph",
+    "role": "predictor",
+    "stage": "POST-SYNTHESIS"
+  },
+  "ff_xy_sink_xy_ports": {
+    "definition": "frozen pre-route placed DEF, cell origins; fixed Phase-0C port policy",
+    "role": "predictor",
+    "stage": "POST-PLACEMENT"
+  },
+  "hpwl_star_scan_length": {
+    "definition": "computed solely from pre-route graph and coordinates",
+    "role": "predictor",
+    "stage": "POST-PLACEMENT"
+  },
+  "layer3_cap_per_um": {
+    "definition": "technology setRC.tcl metal3 0.103981 fF/um; fixed, not fitted",
+    "role": "predictor",
+    "stage": "PRE-SYNTHESIS"
+  },
+  "pattern_bits": {
+    "definition": "frozen FAN PPI, architecture-defined shift order",
+    "role": "predictor",
+    "stage": "POST-SYNTHESIS"
+  },
+  "pin_cap_ff": {
+    "definition": "typical Liberty input pin capacitance, fF",
+    "role": "predictor",
+    "stage": "POST-SYNTHESIS"
+  },
+  "routed_wirelength": {
+    "definition": "LABEL ONLY; never accepted by predictor API",
+    "role": "label_only",
+    "stage": "POST-ROUTE"
+  },
+  "spatial_windows": {
+    "definition": "Phase-2A fixed 10x10 bins, all wholly contained 2x2 windows",
+    "role": "predictor",
+    "stage": "POST-PLACEMENT"
+  }
+}
