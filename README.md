@@ -1,5 +1,16 @@
 # PACT — Physical- and ATPG-aware Co-optimization of Test Architectures
 
+The working optimizer is now available as `pact-optimize` (or
+`python scripts/pact_optimize.py` from this checkout). Install with
+`pip install -e '.[optimizer]'`, then run
+`pact-optimize --design s5378 --chains 2 --time-budget 60 --output run/s5378`.
+It uses exact incremental repaired M3/M5 activity costs, spatial construction,
+bounded Pareto search and anytime checkpoints. See
+[usage and implementation](docs/working_optimizer.md),
+[current implementation note](current_solution.md), and
+[measured solution status](solution_status.md).
+The historical experiment descriptions below remain as background.
+
 PACT (Physical- and ATPG-aware Co-optimization of Test Architectures) tests whether legal scan-chain orderings create a reproducible conflict between physical scan cost and ATPG-derived shift-activity hotspots. This repository contains the experimental infrastructure, raw evidence, and a gate-based Phase-0 report. It does not contain machine learning.
 
 The original research question is:

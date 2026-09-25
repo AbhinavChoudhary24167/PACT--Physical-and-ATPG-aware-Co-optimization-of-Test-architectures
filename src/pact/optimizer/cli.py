@@ -3,6 +3,7 @@ import argparse
 import cProfile
 from dataclasses import asdict
 import json
+import hashlib
 from pathlib import Path
 import platform
 import time
@@ -63,8 +64,9 @@ def main():
     args.output.mkdir(parents=True,exist_ok=True)
     # Always leave a valid supplied architecture, even if no exact score fits.
     arch.to_json(args.output/'supplied.architecture.json')
+    write_json(args.output/'ff_names.json',costs.names,compact=True)
     def checkpoint(rows,progress):
-        write_json(args.output/'checkpoint.json',dict(progress=progress,frontier=[dict(label=r['label'],metrics=dict(zip(METRICS,r['score'].tolist())),chains=[[costs.names[int(j)] for j in o] for o in r['orders']]) for r in rows]))
+        write_json(args.output/'checkpoint.json',dict(schema='indexed_scan_chains_v1',names_file='ff_names.json',progress=progress,frontier=[dict(label=r['label'],metrics=dict(zip(METRICS,r['score'].tolist())),chains=[o.tolist() for o in r['orders']]) for r in rows]),compact=True)
     profiler=cProfile.Profile() if args.profile else None
     if profiler:profiler.enable()
     result=optimize(costs,patterns,starts,config,checkpoint)
@@ -76,9 +78,18 @@ def main():
     recommended=result.pop('recommended',None)
     front=[]
     for i,row in enumerate(rows):
-        path=args.output/f'pareto_{i:02d}.architecture.json'
-        selected=architecture_from(arch,costs,row['orders']);selected.to_json(path)
-        front.append(dict(label=row['label'],metrics=dict(zip(METRICS,row['score'].tolist())),architecture=str(path.resolve()),architecture_sha256=selected.sha256()))
+        if len(arch.cells)>10000:
+            path=args.output/f'pareto_{i:02d}.chains.json'
+            digest=hashlib.sha256()
+            for o in row['orders']:
+                digest.update(len(o).to_bytes(8,'little'));digest.update(np.asarray(o,dtype='<i4').tobytes())
+            write_json(path,dict(schema='indexed_scan_chains_v1',cells_from='supplied.architecture.json',names_file='ff_names.json',chains=[o.tolist() for o in row['orders']]),compact=True)
+            identity=dict(format='indexed_scan_chains_v1',chain_order_sha256=digest.hexdigest())
+        else:
+            path=args.output/f'pareto_{i:02d}.architecture.json'
+            selected=architecture_from(arch,costs,row['orders']);selected.to_json(path)
+            identity=dict(format='canonical_scan_architecture',architecture_sha256=selected.sha256())
+        front.append(dict(label=row['label'],metrics=dict(zip(METRICS,row['score'].tolist())),architecture=str(path.resolve()),**identity))
     if recommended is not None:
         selected_arch=architecture_from(arch,costs,recommended['orders'])
         selected_arch.to_json(args.output/'optimized.architecture.json')

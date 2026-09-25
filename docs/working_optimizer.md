@@ -79,12 +79,20 @@ A tiny budget returns the supplied legal architecture with unscored status.
 
 `optimized.architecture.json`, canonical Pareto architectures, `result.json`,
 `convergence.json` and atomic `checkpoint.json` are written. Checkpoints contain
-complete best-known chain lists while the solver runs. Results report qualified
+complete indexed best-known chain lists, mapped by `ff_names.json`, while the
+solver runs. Above 10K FF, Pareto outputs use the same compact indexed format
+and reference shared cells in `supplied.architecture.json`; the recommended
+`optimized.architecture.json` remains fully canonical. Results report qualified
 costs, evaluations, accepted moves, per-stage time, retained-array bytes and
 absolute process peak RSS (including Python/Numba imports). `--profile` writes
 human-readable and cProfile data. A full field rebuild occurs only at construction
 or archive restart, not each local proposal. Selected architectures are compatible
 with the existing rewire/route tools.
+
+Measured restart work is limited to approximately 10% of elapsed solver time
+(one restart may exceed the estimate). Objective preferences still rotate when
+a restart is skipped. Checkpoint intervals start after each write completes;
+their measured duration also imposes a duty-cycle limit to prevent I/O starvation.
 
 ## Bounded routing
 

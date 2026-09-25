@@ -22,12 +22,14 @@ class Config:
     wire_allowance: float=.10
     seed: int=11
     log_interval: float=1.
+    restart_fraction: float=.10
 
     def __post_init__(self):
         if not np.isfinite(self.time_budget) or self.time_budget<=0: raise ValueError('time budget must be positive')
         if self.archive_size<5 or self.neighbors<1 or self.segment<2: raise ValueError('Invalid search bounds')
         if not np.isfinite(self.wire_allowance) or self.wire_allowance<0: raise ValueError('Invalid wire allowance')
         if not np.isfinite(self.log_interval) or self.log_interval<=0: raise ValueError('Invalid log interval')
+        if not 0<=self.restart_fraction<=1:raise ValueError('Invalid restart time fraction')
 
 
 def dominates(a,b):
@@ -143,7 +145,7 @@ def update_locations(state,patch):
 def optimize(costs,patterns,starts,config=Config(),checkpoint=None):
     started=time.perf_counter();deadline=started+config.time_budget
     archive=Archive(config.archive_size);evaluations=accepted=attempts=0
-    timings=dict(initialization=0.,construction=0.,delta=0.,reduction=0.,archive=0.,restart=0.)
+    timings=dict(initialization=0.,construction=0.,delta=0.,reduction=0.,archive=0.,restart=0.,checkpoint=0.)
     baseline=[];log=[];operators={};state=None;best=np.full(5,np.inf)
     next_log=started;peak_state_bytes=0;recommended=None
     supplied=starts[0][1];capacities=list(map(len,supplied))
@@ -153,8 +155,13 @@ def optimize(costs,patterns,starts,config=Config(),checkpoint=None):
                  archive_size=len(archive.rows),best=dict(zip(METRICS,map(float,best))),stage=label,
                  frontier=[r['score'].tolist() for r in archive.rows])
         if recommended is not None:row['recommended']=dict(zip(METRICS,recommended['score'].tolist()))
-        log.append(row);next_log=time.perf_counter()+config.log_interval
+        log.append(row)
+        tick=time.perf_counter()
         if checkpoint:checkpoint(archive.rows+([dict(recommended,label='recommended')] if recommended is not None else []),row)
+        duration=time.perf_counter()-tick;timings['checkpoint']+=duration
+        # Schedule from completion, not start: slow writes must never trigger
+        # a new checkpoint after just one move. Bound measured I/O duty cycle.
+        next_log=time.perf_counter()+max(config.log_interval,4*duration)
     # Initial exact scoring is indivisible per chain, with checks between chains.
     for label,orders in starts:
         if time.perf_counter()>=deadline:break
@@ -207,6 +214,7 @@ def optimize(costs,patterns,starts,config=Config(),checkpoint=None):
     neighbor=np.asarray(neighbor,np.int32).reshape(len(costs.names),-1)
     timings['construction']+=time.perf_counter()-tick
     rng=np.random.default_rng(config.seed);stalled=0;epoch=0
+    restart_estimate=timings['initialization']/max(1,len(baseline))
     while time.perf_counter()<deadline:
         patch,kind=proposal(state,neighbor,rng,attempts,config.segment);attempts+=1
         if patch is None:continue
@@ -235,12 +243,15 @@ def optimize(costs,patterns,starts,config=Config(),checkpoint=None):
             if not eligible:eligible=archive.rows
             parent=min(eligible,key=lambda r:(r['score'][priority],r['score'][0]))
             # Restart only when useful; initialization has cooperative deadline.
-            if not np.allclose(current,parent['score'],rtol=1e-10):
+            can_restart=(timings['restart']+restart_estimate<=config.restart_fraction*(time.perf_counter()-started)
+                         and time.perf_counter()+restart_estimate<deadline)
+            if can_restart and not np.allclose(current,parent['score'],rtol=1e-10):
                 tick=time.perf_counter()
                 try:replacement=ShiftState(costs,patterns,parent['orders'],deadline)
                 except TimeoutError:break
                 state=replacement;locate(state);current=np.r_[state.physical,state.metrics]
-                timings['restart']+=time.perf_counter()-tick
+                restart_estimate=time.perf_counter()-tick
+                timings['restart']+=restart_estimate
     record('complete')
     elapsed=time.perf_counter()-started
     return dict(status='WORKING_SOLVER',archive=archive.rows,baselines=baseline,convergence=log,

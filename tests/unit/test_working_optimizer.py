@@ -115,3 +115,16 @@ def test_fft_initialization_matches_direct_kernel():
     direct_field=np.zeros((2,len(o),100,2));fft=direct_field.copy()
     kernels.add_chain(direct_field,d,b,w);add_long_chain(fft,d,b,w,None)
     np.testing.assert_allclose(fft,direct_field,rtol=1e-11,atol=1e-8)
+
+
+def test_slow_checkpoints_leave_time_for_search():
+    warmup();_,costs,p,starts,_=synthetic(16,2,2)
+    writes=[]
+    def slow_writer(rows,progress):
+        writes.append(progress['evaluations'])
+        time.sleep(.02)
+    result=optimize(costs,p,starts,Config(time_budget=.6,log_interval=.001),slow_writer)
+    assert result['local_evaluations']>50
+    # Previously every move immediately rewrote a slow checkpoint.
+    assert len(writes)<15
+    assert result['timings']['checkpoint']>=.02*len(writes)
