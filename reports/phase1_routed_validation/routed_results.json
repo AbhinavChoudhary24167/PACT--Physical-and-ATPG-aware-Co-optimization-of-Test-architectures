@@ -1,0 +1,1067 @@
+{
+  "analysis": {
+    "s15850": {
+      "PACT_only_proxy_inversions": [],
+      "PACT_routed_survival": true,
+      "balanced_distinct": true,
+      "balanced_useful": true,
+      "pareto_labels_with_roundoff_equivalence": [
+        "T",
+        "balanced",
+        "activity_extreme"
+      ],
+      "proxy_concordant_pairs": 33,
+      "proxy_discordant_pairs": 3,
+      "proxy_inversions": [
+        [
+          "P",
+          "T"
+        ],
+        [
+          "P",
+          "physical_extreme"
+        ],
+        [
+          "T",
+          "physical_extreme"
+        ]
+      ],
+      "proxy_tied_pairs": 0,
+      "routed_pareto_labels": [
+        "T",
+        "balanced",
+        "activity_extreme"
+      ],
+      "sufficient_valid_comparison": true
+    },
+    "s9234": {
+      "PACT_only_proxy_inversions": [],
+      "PACT_routed_survival": true,
+      "balanced_distinct": true,
+      "balanced_useful": true,
+      "pareto_labels_with_roundoff_equivalence": [
+        "T",
+        "balanced",
+        "activity_extreme"
+      ],
+      "proxy_concordant_pairs": 35,
+      "proxy_discordant_pairs": 1,
+      "proxy_inversions": [
+        [
+          "T",
+          "physical_extreme"
+        ]
+      ],
+      "proxy_tied_pairs": 0,
+      "routed_pareto_labels": [
+        "T",
+        "balanced",
+        "activity_extreme"
+      ],
+      "sufficient_valid_comparison": true
+    }
+  },
+  "classification": "PACT_PHASE1_MULTI_DESIGN_ROUTED_VALIDATION_CONFIRMED",
+  "rows": [
+    {
+      "ATPG_coverage_percent": 94.62,
+      "DRC_errors": 0,
+      "H_eff8": 162.83333333333331,
+      "architecture_sha256": "541edd9b8a402c089751f83af6753d6efd438d9bd803e1309e64bc5fa614d4db",
+      "chain_lengths": [
+        267,
+        267
+      ],
+      "design": "s15850",
+      "dominated_by": [
+        "J50",
+        "T",
+        "balanced"
+      ],
+      "exact_scan_only_length_um": null,
+      "group": "baseline",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.000848696,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 27.05,
+      "label": "B0",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 133,
+      "physical_proxy_um": 20052.01,
+      "postroute_structure_pass": true,
+      "proxy_rank": 6,
+      "reported_area": {
+        "globalroute__design__instance__area": 7618.51
+      },
+      "route_evidence": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s15850/s11/k2/B0/route_metrics.json",
+      "route_seconds": 155.82525280000004,
+      "routed_pareto_member": false,
+      "routed_path_upper_bound_um": 35457.69,
+      "routed_rank": 6,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.13062,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "FF_inventory_verified": true,
+        "all_patterns_parallel_load_verified": true,
+        "all_patterns_scan_out_verified": true
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 91376,
+      "valid": true,
+      "vias": 35555
+    },
+    {
+      "ATPG_coverage_percent": 94.62,
+      "DRC_errors": 0,
+      "H_eff8": 166.33333333333334,
+      "architecture_sha256": "f58717aa863acd666346580fa4a3fca3fdea25f88ec768be3b8839f2ea7307a9",
+      "chain_lengths": [
+        267,
+        267
+      ],
+      "design": "s15850",
+      "dominated_by": [
+        "T"
+      ],
+      "exact_scan_only_length_um": null,
+      "group": "baseline",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.000547187,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 23.65,
+      "label": "P",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 133,
+      "physical_proxy_um": 3525.47,
+      "postroute_structure_pass": true,
+      "proxy_rank": 2,
+      "reported_area": {
+        "globalroute__design__instance__area": 7616.91
+      },
+      "route_evidence": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s15850/s11/k2/P/route_metrics.json",
+      "route_seconds": 154.23979727799986,
+      "routed_pareto_member": false,
+      "routed_path_upper_bound_um": 24095.05,
+      "routed_rank": 2,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.13298,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "FF_inventory_verified": true,
+        "all_patterns_parallel_load_verified": true,
+        "all_patterns_scan_out_verified": true
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 79993,
+      "valid": true,
+      "vias": 34645
+    },
+    {
+      "ATPG_coverage_percent": 94.62,
+      "DRC_errors": 0,
+      "H_eff8": 142.83333333333331,
+      "architecture_sha256": "e1867cc98b3d1afa4f231daa6c38652ed38be26bf58ed32499449fb51fd1f7ea",
+      "chain_lengths": [
+        267,
+        267
+      ],
+      "design": "s15850",
+      "dominated_by": [
+        "balanced",
+        "activity_extreme"
+      ],
+      "exact_scan_only_length_um": null,
+      "group": "baseline",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.000455594,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 31.9,
+      "label": "A",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 133,
+      "physical_proxy_um": 37150.39,
+      "postroute_structure_pass": true,
+      "proxy_rank": 8,
+      "reported_area": {
+        "globalroute__design__instance__area": 7616.91
+      },
+      "route_evidence": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s15850/s11/k2/A/route_metrics.json",
+      "route_seconds": 172.14552834999995,
+      "routed_pareto_member": false,
+      "routed_path_upper_bound_um": 51657.94,
+      "routed_rank": 8,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.1316,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "FF_inventory_verified": true,
+        "all_patterns_parallel_load_verified": true,
+        "all_patterns_scan_out_verified": true
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 107638,
+      "valid": true,
+      "vias": 36770
+    },
+    {
+      "ATPG_coverage_percent": 94.62,
+      "DRC_errors": 0,
+      "H_eff8": 144.66666666666666,
+      "architecture_sha256": "fdf44a74a70de6097e4087b4760fce7fd18c6f454f82cbbbb07121eed956b965",
+      "chain_lengths": [
+        267,
+        267
+      ],
+      "design": "s15850",
+      "dominated_by": [
+        "balanced"
+      ],
+      "exact_scan_only_length_um": null,
+      "group": "baseline",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.00136233,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 24.73,
+      "label": "J50",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 133,
+      "physical_proxy_um": 9052.29,
+      "postroute_structure_pass": true,
+      "proxy_rank": 5,
+      "reported_area": {
+        "globalroute__design__instance__area": 7618.51
+      },
+      "route_evidence": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s15850/s11/k2/J50/route_metrics.json",
+      "route_seconds": 166.98290982899994,
+      "routed_pareto_member": false,
+      "routed_path_upper_bound_um": 27774.43,
+      "routed_rank": 5,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.13268,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "FF_inventory_verified": true,
+        "all_patterns_parallel_load_verified": true,
+        "all_patterns_scan_out_verified": true
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 83622,
+      "valid": true,
+      "vias": 35081
+    },
+    {
+      "ATPG_coverage_percent": 94.62,
+      "DRC_errors": 0,
+      "H_eff8": 161.83333333333331,
+      "architecture_sha256": "f0ec44569fab2217d7aa9f8dd4bb03a265c3d352c935343052f3505432cea877",
+      "chain_lengths": [
+        267,
+        267
+      ],
+      "design": "s15850",
+      "dominated_by": [],
+      "exact_scan_only_length_um": null,
+      "group": "baseline",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.00129391,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 23.63,
+      "label": "T",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 133,
+      "physical_proxy_um": 3631.5299999999997,
+      "postroute_structure_pass": true,
+      "proxy_rank": 3,
+      "reported_area": {
+        "globalroute__design__instance__area": 7617.71
+      },
+      "route_evidence": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s15850/s11/k2/T/route_metrics.json",
+      "route_seconds": 159.42159453499994,
+      "routed_pareto_member": true,
+      "routed_path_upper_bound_um": 23996.48,
+      "routed_rank": 1,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.13192,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "FF_inventory_verified": true,
+        "all_patterns_parallel_load_verified": true,
+        "all_patterns_scan_out_verified": true
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 79891,
+      "valid": true,
+      "vias": 34712
+    },
+    {
+      "ATPG_coverage_percent": 94.62,
+      "DRC_errors": 0,
+      "H_eff8": 172.49999999999997,
+      "architecture_sha256": "152eb1cc435f184f27b42f337100f575f84f5b8a0cfc5ca0db2bc66c540b87d0",
+      "chain_lengths": [
+        267,
+        267
+      ],
+      "design": "s15850",
+      "dominated_by": [
+        "B0",
+        "P",
+        "A",
+        "J50",
+        "T",
+        "physical_extreme",
+        "balanced",
+        "activity_extreme"
+      ],
+      "exact_scan_only_length_um": null,
+      "group": "baseline",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.0011036,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 32.48,
+      "label": "R",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 133,
+      "physical_proxy_um": 39182.07,
+      "postroute_structure_pass": true,
+      "proxy_rank": 9,
+      "reported_area": {
+        "globalroute__design__instance__area": 7617.71
+      },
+      "route_evidence": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s15850/s11/k2/R/route_metrics.json",
+      "route_seconds": 190.26291639400006,
+      "routed_pareto_member": false,
+      "routed_path_upper_bound_um": 53763.495,
+      "routed_rank": 9,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.13187,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "FF_inventory_verified": true,
+        "all_patterns_parallel_load_verified": true,
+        "all_patterns_scan_out_verified": true
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 109789,
+      "valid": true,
+      "vias": 36840
+    },
+    {
+      "ATPG_coverage_percent": 94.62,
+      "DRC_errors": 0,
+      "H_eff8": 166.33333333333331,
+      "architecture_sha256": "1b389009b4640bcd87aac67bfb7555418ee7909d6b0cc66d994e4b4670ca4201",
+      "chain_lengths": [
+        267,
+        267
+      ],
+      "design": "s15850",
+      "dominated_by": [
+        "T"
+      ],
+      "exact_scan_only_length_um": null,
+      "group": "PACT",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.000547187,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 23.66,
+      "label": "physical_extreme",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 133,
+      "physical_proxy_um": 3513.5699999999997,
+      "postroute_structure_pass": true,
+      "proxy_rank": 1,
+      "reported_area": {
+        "globalroute__design__instance__area": 7616.91
+      },
+      "route_evidence": "/mnt/d/PACT_EXPERIMENTS/results/phase1_routed_validation/s15850/1b389009b4640bcd87aac67bfb7555418ee7909d6b0cc66d994e4b4670ca4201/route_result.json",
+      "route_seconds": 163.46207829800005,
+      "routed_pareto_member": false,
+      "routed_path_upper_bound_um": 24121.445,
+      "routed_rank": 3,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.13297,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "ATPG_patterns_verified": 133,
+        "FF_identity_and_placement_unchanged": true,
+        "FF_inventory_verified": true,
+        "K_fixed": true,
+        "SI_SO_identity_verified": true,
+        "chain_lengths": [
+          267,
+          267
+        ],
+        "child_sha256": "1b389009b4640bcd87aac67bfb7555418ee7909d6b0cc66d994e4b4670ca4201",
+        "exact_parallel_loading_verified": true,
+        "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+        "parent_sha256": "f58717aa863acd666346580fa4a3fca3fdea25f88ec768be3b8839f2ea7307a9",
+        "proof_sha256": "3eba631346f932324492ca107b59f20497591c457edec390ce2e79f8c258bb59",
+        "schema_version": "phase0d-structural-proof-1"
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 80066,
+      "valid": true,
+      "vias": 34733
+    },
+    {
+      "ATPG_coverage_percent": 94.62,
+      "DRC_errors": 0,
+      "H_eff8": 140.33333333333334,
+      "architecture_sha256": "c59deca1ac58ed7903f5baa6e82c81263b768d429134eeef408225691a69e3b9",
+      "chain_lengths": [
+        267,
+        267
+      ],
+      "design": "s15850",
+      "dominated_by": [],
+      "exact_scan_only_length_um": null,
+      "group": "PACT",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.00136392,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 24.7,
+      "label": "balanced",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 133,
+      "physical_proxy_um": 8984.410000000003,
+      "postroute_structure_pass": true,
+      "proxy_rank": 4,
+      "reported_area": {
+        "globalroute__design__instance__area": 7618.51
+      },
+      "route_evidence": "/mnt/d/PACT_EXPERIMENTS/results/phase1_routed_validation/s15850/c59deca1ac58ed7903f5baa6e82c81263b768d429134eeef408225691a69e3b9/route_result.json",
+      "route_seconds": 221.435104314,
+      "routed_pareto_member": true,
+      "routed_path_upper_bound_um": 27667.89,
+      "routed_rank": 4,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.13247,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "ATPG_patterns_verified": 133,
+        "FF_identity_and_placement_unchanged": true,
+        "FF_inventory_verified": true,
+        "K_fixed": true,
+        "SI_SO_identity_verified": true,
+        "chain_lengths": [
+          267,
+          267
+        ],
+        "child_sha256": "c59deca1ac58ed7903f5baa6e82c81263b768d429134eeef408225691a69e3b9",
+        "exact_parallel_loading_verified": true,
+        "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+        "parent_sha256": "f58717aa863acd666346580fa4a3fca3fdea25f88ec768be3b8839f2ea7307a9",
+        "proof_sha256": "9845cdfaa98868d5d8325a7722a58249eadfece3d69b1831c3a73f0d076719f6",
+        "schema_version": "phase0d-structural-proof-1"
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 83548,
+      "valid": true,
+      "vias": 35080
+    },
+    {
+      "ATPG_coverage_percent": 94.62,
+      "DRC_errors": 0,
+      "H_eff8": 139.16666666666669,
+      "architecture_sha256": "b114446060130f88bb0f258b5915937146e12ca040037900c1bf44c4e5e657a1",
+      "chain_lengths": [
+        267,
+        267
+      ],
+      "design": "s15850",
+      "dominated_by": [],
+      "exact_scan_only_length_um": null,
+      "group": "PACT",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.000405176,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 31.77,
+      "label": "activity_extreme",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 133,
+      "physical_proxy_um": 36740.61,
+      "postroute_structure_pass": true,
+      "proxy_rank": 7,
+      "reported_area": {
+        "globalroute__design__instance__area": 7616.91
+      },
+      "route_evidence": "/mnt/d/PACT_EXPERIMENTS/results/phase1_routed_validation/s15850/b114446060130f88bb0f258b5915937146e12ca040037900c1bf44c4e5e657a1/route_result.json",
+      "route_seconds": 180.36869755099997,
+      "routed_pareto_member": true,
+      "routed_path_upper_bound_um": 51269.13,
+      "routed_rank": 7,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.13164,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "ATPG_patterns_verified": 133,
+        "FF_identity_and_placement_unchanged": true,
+        "FF_inventory_verified": true,
+        "K_fixed": true,
+        "SI_SO_identity_verified": true,
+        "chain_lengths": [
+          267,
+          267
+        ],
+        "child_sha256": "b114446060130f88bb0f258b5915937146e12ca040037900c1bf44c4e5e657a1",
+        "exact_parallel_loading_verified": true,
+        "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+        "parent_sha256": "f58717aa863acd666346580fa4a3fca3fdea25f88ec768be3b8839f2ea7307a9",
+        "proof_sha256": "65c79c18aeaf4bb3274ec6fe18a5a6a1458a12d0a37ef5bb76b7d9f5824fe633",
+        "schema_version": "phase0d-structural-proof-1"
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 107251,
+      "valid": true,
+      "vias": 36696
+    },
+    {
+      "ATPG_coverage_percent": 94.14,
+      "DRC_errors": 0,
+      "H_eff8": 177.83333333333331,
+      "architecture_sha256": "3cbfe6e3d55be494743cb263dedb95c916791638592d28c70d6440c31b05f316",
+      "chain_lengths": [
+        106,
+        105
+      ],
+      "design": "s9234",
+      "dominated_by": [
+        "P",
+        "J50",
+        "T",
+        "physical_extreme",
+        "balanced",
+        "activity_extreme"
+      ],
+      "exact_scan_only_length_um": null,
+      "group": "baseline",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.000634312,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 24.24,
+      "label": "B0",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 156,
+      "physical_proxy_um": 6941.554999999999,
+      "postroute_structure_pass": true,
+      "proxy_rank": 7,
+      "reported_area": {
+        "globalroute__design__instance__area": 3645.26
+      },
+      "route_evidence": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s9234/s11/k2/B0/route_metrics.json",
+      "route_seconds": 102.765844313,
+      "routed_pareto_member": false,
+      "routed_path_upper_bound_um": 13480.005,
+      "routed_rank": 7,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.75295,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "FF_inventory_verified": true,
+        "all_patterns_parallel_load_verified": true,
+        "all_patterns_scan_out_verified": true
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 40206,
+      "valid": true,
+      "vias": 18355
+    },
+    {
+      "ATPG_coverage_percent": 94.14,
+      "DRC_errors": 0,
+      "H_eff8": 175.00000000000003,
+      "architecture_sha256": "169ed6bfc885161ffb6e65df93983a818a4ee75fa347c639b11077f4a5c9be13",
+      "chain_lengths": [
+        106,
+        105
+      ],
+      "design": "s9234",
+      "dominated_by": [
+        "T",
+        "physical_extreme",
+        "balanced"
+      ],
+      "exact_scan_only_length_um": null,
+      "group": "baseline",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.000693653,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 22.55,
+      "label": "P",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 156,
+      "physical_proxy_um": 1807.825,
+      "postroute_structure_pass": true,
+      "proxy_rank": 4,
+      "reported_area": {
+        "globalroute__design__instance__area": 3644.47
+      },
+      "route_evidence": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s9234/s11/k2/P/route_metrics.json",
+      "route_seconds": 101.20206284600002,
+      "routed_pareto_member": false,
+      "routed_path_upper_bound_um": 10671.18,
+      "routed_rank": 4,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.75035,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "FF_inventory_verified": true,
+        "all_patterns_parallel_load_verified": true,
+        "all_patterns_scan_out_verified": true
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 37356,
+      "valid": true,
+      "vias": 18048
+    },
+    {
+      "ATPG_coverage_percent": 94.14,
+      "DRC_errors": 0,
+      "H_eff8": 161.33333333333334,
+      "architecture_sha256": "71afe0e235bbdcef058e540b59180401b82f37f48d0b3c1313fe6750cc2e8c35",
+      "chain_lengths": [
+        106,
+        105
+      ],
+      "design": "s9234",
+      "dominated_by": [
+        "J50",
+        "activity_extreme"
+      ],
+      "exact_scan_only_length_um": null,
+      "group": "baseline",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.00132622,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 26.3,
+      "label": "A",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 156,
+      "physical_proxy_um": 10083.085,
+      "postroute_structure_pass": true,
+      "proxy_rank": 8,
+      "reported_area": {
+        "globalroute__design__instance__area": 3645.26
+      },
+      "route_evidence": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s9234/s11/k2/A/route_metrics.json",
+      "route_seconds": 109.59838979299997,
+      "routed_pareto_member": false,
+      "routed_path_upper_bound_um": 16764.025,
+      "routed_rank": 8,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.74469,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "FF_inventory_verified": true,
+        "all_patterns_parallel_load_verified": true,
+        "all_patterns_scan_out_verified": true
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 43567,
+      "valid": true,
+      "vias": 18583
+    },
+    {
+      "ATPG_coverage_percent": 94.14,
+      "DRC_errors": 0,
+      "H_eff8": 155.66666666666669,
+      "architecture_sha256": "2f6e012e12ba16621b425a458c0d0d7cf410abc6a724a1f139e84e84f12e55a1",
+      "chain_lengths": [
+        106,
+        105
+      ],
+      "design": "s9234",
+      "dominated_by": [
+        "activity_extreme"
+      ],
+      "exact_scan_only_length_um": null,
+      "group": "baseline",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.000693653,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 23.09,
+      "label": "J50",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 156,
+      "physical_proxy_um": 3069.885,
+      "postroute_structure_pass": true,
+      "proxy_rank": 6,
+      "reported_area": {
+        "globalroute__design__instance__area": 3644.47
+      },
+      "route_evidence": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s9234/s11/k2/J50/route_metrics.json",
+      "route_seconds": 109.18433516299996,
+      "routed_pareto_member": false,
+      "routed_path_upper_bound_um": 11490.195,
+      "routed_rank": 6,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.7492,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "FF_inventory_verified": true,
+        "all_patterns_parallel_load_verified": true,
+        "all_patterns_scan_out_verified": true
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 38195,
+      "valid": true,
+      "vias": 18246
+    },
+    {
+      "ATPG_coverage_percent": 94.14,
+      "DRC_errors": 0,
+      "H_eff8": 172.33333333333331,
+      "architecture_sha256": "237fb9ad7f2ffd5c2bc0a8c4bc0306e97cc0e3004cb5fb11dd35244619138aef",
+      "chain_lengths": [
+        106,
+        105
+      ],
+      "design": "s9234",
+      "dominated_by": [],
+      "exact_scan_only_length_um": null,
+      "group": "baseline",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.000690018,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 22.5,
+      "label": "T",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 156,
+      "physical_proxy_um": 1723.9450000000002,
+      "postroute_structure_pass": true,
+      "proxy_rank": 2,
+      "reported_area": {
+        "globalroute__design__instance__area": 3644.47
+      },
+      "route_evidence": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s9234/s11/k2/T/route_metrics.json",
+      "route_seconds": 99.92144122000002,
+      "routed_pareto_member": true,
+      "routed_path_upper_bound_um": 10520.985,
+      "routed_rank": 1,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.74351,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "FF_inventory_verified": true,
+        "all_patterns_parallel_load_verified": true,
+        "all_patterns_scan_out_verified": true
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 37189,
+      "valid": true,
+      "vias": 18090
+    },
+    {
+      "ATPG_coverage_percent": 94.14,
+      "DRC_errors": 0,
+      "H_eff8": 170.99999999999997,
+      "architecture_sha256": "6e988fb89f55f3425c429b4caec69ce1b97dcaa046e3c756253e51e5e5a8e078",
+      "chain_lengths": [
+        106,
+        105
+      ],
+      "design": "s9234",
+      "dominated_by": [
+        "A",
+        "J50",
+        "balanced",
+        "activity_extreme"
+      ],
+      "exact_scan_only_length_um": null,
+      "group": "baseline",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.000981756,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 26.92,
+      "label": "R",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 156,
+      "physical_proxy_um": 10884.635,
+      "postroute_structure_pass": true,
+      "proxy_rank": 9,
+      "reported_area": {
+        "globalroute__design__instance__area": 3646.06
+      },
+      "route_evidence": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s9234/s11/k2/R/route_metrics.json",
+      "route_seconds": 101.82846163600004,
+      "routed_pareto_member": false,
+      "routed_path_upper_bound_um": 17746.58,
+      "routed_rank": 9,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.73594,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "FF_inventory_verified": true,
+        "all_patterns_parallel_load_verified": true,
+        "all_patterns_scan_out_verified": true
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 44509,
+      "valid": true,
+      "vias": 18631
+    },
+    {
+      "ATPG_coverage_percent": 94.14,
+      "DRC_errors": 0,
+      "H_eff8": 172.33333333333331,
+      "architecture_sha256": "364093541627aa2b70f8beb1710287b2a8adb3ce5c841a4b1b74637121aa505d",
+      "chain_lengths": [
+        106,
+        105
+      ],
+      "design": "s9234",
+      "dominated_by": [
+        "T"
+      ],
+      "exact_scan_only_length_um": null,
+      "group": "PACT",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.000690018,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 22.51,
+      "label": "physical_extreme",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 156,
+      "physical_proxy_um": 1723.565,
+      "postroute_structure_pass": true,
+      "proxy_rank": 1,
+      "reported_area": {
+        "globalroute__design__instance__area": 3644.47
+      },
+      "route_evidence": "/mnt/d/PACT_EXPERIMENTS/results/phase1_routed_validation/s9234/364093541627aa2b70f8beb1710287b2a8adb3ce5c841a4b1b74637121aa505d/route_result.json",
+      "route_seconds": 106.321161663,
+      "routed_pareto_member": false,
+      "routed_path_upper_bound_um": 10526.205,
+      "routed_rank": 2,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.74351,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "ATPG_patterns_verified": 156,
+        "FF_identity_and_placement_unchanged": true,
+        "FF_inventory_verified": true,
+        "K_fixed": true,
+        "SI_SO_identity_verified": true,
+        "chain_lengths": [
+          106,
+          105
+        ],
+        "child_sha256": "364093541627aa2b70f8beb1710287b2a8adb3ce5c841a4b1b74637121aa505d",
+        "exact_parallel_loading_verified": true,
+        "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+        "parent_sha256": "169ed6bfc885161ffb6e65df93983a818a4ee75fa347c639b11077f4a5c9be13",
+        "proof_sha256": "8f27ad35d7a5d8060291b4d27cbdd450d9e06d12aee003e945c896eef7452d94",
+        "schema_version": "phase0d-structural-proof-1"
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 37225,
+      "valid": true,
+      "vias": 18117
+    },
+    {
+      "ATPG_coverage_percent": 94.14,
+      "DRC_errors": 0,
+      "H_eff8": 167.33333333333334,
+      "architecture_sha256": "42ab942ed206f2312b9ded3de31e50a1202687a5e9adeb74276377bf998117be",
+      "chain_lengths": [
+        105,
+        106
+      ],
+      "design": "s9234",
+      "dominated_by": [],
+      "exact_scan_only_length_um": null,
+      "group": "PACT",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.000690018,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 22.51,
+      "label": "balanced",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 156,
+      "physical_proxy_um": 1773.1850000000002,
+      "postroute_structure_pass": true,
+      "proxy_rank": 3,
+      "reported_area": {
+        "globalroute__design__instance__area": 3644.47
+      },
+      "route_evidence": "/mnt/d/PACT_EXPERIMENTS/results/phase1_routed_validation/s9234/42ab942ed206f2312b9ded3de31e50a1202687a5e9adeb74276377bf998117be/route_result.json",
+      "route_seconds": 106.55630128000001,
+      "routed_pareto_member": true,
+      "routed_path_upper_bound_um": 10557.545,
+      "routed_rank": 3,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.74358,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "ATPG_patterns_verified": 156,
+        "FF_identity_and_placement_unchanged": true,
+        "FF_inventory_verified": true,
+        "K_fixed": true,
+        "SI_SO_identity_verified": true,
+        "chain_lengths": [
+          105,
+          106
+        ],
+        "child_sha256": "42ab942ed206f2312b9ded3de31e50a1202687a5e9adeb74276377bf998117be",
+        "exact_parallel_loading_verified": true,
+        "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+        "parent_sha256": "169ed6bfc885161ffb6e65df93983a818a4ee75fa347c639b11077f4a5c9be13",
+        "proof_sha256": "0844277515aeb057784e4dc191aa28406e5099b8dc4a4719c5b2841c9fb70b12",
+        "schema_version": "phase0d-structural-proof-1"
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 37257,
+      "valid": true,
+      "vias": 18091
+    },
+    {
+      "ATPG_coverage_percent": 94.14,
+      "DRC_errors": 0,
+      "H_eff8": 150.83333333333331,
+      "architecture_sha256": "7df0fb60c2a837f9d068d616fafe76bd33956b8b924f301ed3328e8881bc12ac",
+      "chain_lengths": [
+        106,
+        105
+      ],
+      "design": "s9234",
+      "dominated_by": [],
+      "exact_scan_only_length_um": null,
+      "group": "PACT",
+      "hold_TNS_ns": 0,
+      "hold_WNS_ns": 0.000704936,
+      "hold_violated_endpoints": 0,
+      "initial_grt_utilization_percent": 23.08,
+      "label": "activity_extreme",
+      "not_available_fields": [
+        "exact_scan_only_length_um"
+      ],
+      "overflow": 0,
+      "pattern_count": 156,
+      "physical_proxy_um": 3063.8050000000003,
+      "postroute_structure_pass": true,
+      "proxy_rank": 5,
+      "reported_area": {
+        "globalroute__design__instance__area": 3644.47
+      },
+      "route_evidence": "/mnt/d/PACT_EXPERIMENTS/results/phase1_routed_validation/s9234/7df0fb60c2a837f9d068d616fafe76bd33956b8b924f301ed3328e8881bc12ac/route_result.json",
+      "route_seconds": 109.16297526599999,
+      "routed_pareto_member": true,
+      "routed_path_upper_bound_um": 11487.665,
+      "routed_rank": 5,
+      "setup_TNS_ns": 0,
+      "setup_WNS_ns": 8.74936,
+      "setup_violated_endpoints": 0,
+      "status": "QUALIFIED",
+      "structural_proof": {
+        "ATPG_patterns_verified": 156,
+        "FF_identity_and_placement_unchanged": true,
+        "FF_inventory_verified": true,
+        "K_fixed": true,
+        "SI_SO_identity_verified": true,
+        "chain_lengths": [
+          106,
+          105
+        ],
+        "child_sha256": "7df0fb60c2a837f9d068d616fafe76bd33956b8b924f301ed3328e8881bc12ac",
+        "exact_parallel_loading_verified": true,
+        "leading_padding_semantics": "tail-first target bits with fully clocked leading zero padding",
+        "parent_sha256": "169ed6bfc885161ffb6e65df93983a818a4ee75fa347c639b11077f4a5c9be13",
+        "proof_sha256": "9c69c9507d5ca7b85fd7e755e6c5ffa22282e6af2911230b3a4c7fa9bc0d146e",
+        "schema_version": "phase0d-structural-proof-1"
+      },
+      "test_quality_preserved": true,
+      "timing_stage": "global_route",
+      "total_detailed_wirelength_um": 38145,
+      "valid": true,
+      "vias": 18151
+    }
+  ],
+  "timing_caveat": "Timing is global-route stage; detailed-route timing not provided by qualified flow."
+}

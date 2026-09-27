@@ -1,0 +1,30 @@
+{
+  "initial_regression_investigation": "The first full run had 200 passes and one existing historical_route_resources filesystem-scandir ENOMEM exception during concurrent routing. Original failure log retained. No test/source weakened; isolated full rerun determines final status.",
+  "runs": {
+    "focused": {
+      "counts": {
+        "passed": 44
+      },
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/phase2c/focused.log",
+      "runtime_seconds": 10.14,
+      "sha256": "b42a97af4bed0ccb9c2931e5b625ab5971b1c97b40bcdd854fdcc74e0b9e7bed"
+    },
+    "regression": {
+      "counts": {
+        "failed": 1,
+        "passed": 200
+      },
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/phase2c/regression.log",
+      "runtime_seconds": 119.98,
+      "sha256": "b1ca77bd44d41dcaa51fb3854866f2504d8e4268660884caf83d923ac9325122"
+    },
+    "regression_isolated": {
+      "counts": {
+        "passed": 203
+      },
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/phase2c/regression_isolated.log",
+      "runtime_seconds": 133.48,
+      "sha256": "7e4363787a99f60fd5a389fef010d9b5f1f3de8d00f7f5ddf4cfa922b8ecf85e"
+    }
+  }
+}

@@ -11,6 +11,33 @@ bounded Pareto search and anytime checkpoints. See
 [measured solution status](solution_status.md).
 The historical experiment descriptions below remain as background.
 
+## Working solver
+
+Current engineering status: **WORKING_SOLVER**. The maintained entry point is
+`pact-optimize`; the older v1/v2 scripts remain available for reproducing their
+recorded experiments. The working solver preserves repaired M3/M5 semantics
+and returns optimized chains, a bounded Pareto set, objective values, runtime,
+peak memory, evaluation counts and convergence checkpoints.
+
+```bash
+pip install -e '.[optimizer,dev]'
+# Self-contained algorithm-scaling example; no placed-design archives required.
+pact-optimize --synthetic 10000 --time-budget 60 --output run/scaling_10k
+# Requires the placed design, mapped ATPG inputs and Liberty described in the guide.
+pact-optimize --design s5378 --chains 2 --time-budget 60 --output run/s5378
+```
+
+The three real 60-second runs improved M3 total by 5.87%, 3.04% and 1.44%
+against their strongest existing physical starts, with improved local peaks.
+Six selected new routes passed with zero DRC errors. Synthetic 100K-FF scaling
+completed in 60.31 seconds at 349 MiB with 200 chains; two long chains required
+1.25 GiB and substantially reduced throughput. These measurements do not claim
+industrial-scale ATPG performance or signoff power improvement.
+
+See [measured results and limitations](solution_status.md),
+[input schema and CLI guide](docs/working_optimizer.md), and the
+[repository update and experiment index](docs/repository_update.md).
+
 PACT (Physical- and ATPG-aware Co-optimization of Test Architectures) tests whether legal scan-chain orderings create a reproducible conflict between physical scan cost and ATPG-derived shift-activity hotspots. This repository contains the experimental infrastructure, raw evidence, and a gate-based Phase-0 report. It does not contain machine learning.
 
 The original research question is:
@@ -21,7 +48,7 @@ The work evaluates test-mode power and IR-drop risk, scan-chain routing congesti
 
 The hypothesis is open. A missing tool, unverified flip-flop identity map, or failed physical rerun is recorded as a failed gate, not replaced with simulated research evidence.
 
-## Quick start
+## Historical Phase-0 reproduction
 
 Run from this repository in Ubuntu WSL. External ORFS and FAN_ATPG checkouts are kept outside this Git repository; set the three environment variables to the qualified installations before reproducing the observed s5378/s9234 subset:
 
@@ -35,7 +62,7 @@ bash scripts/run_phase0.sh
 
 `run_phase0.sh` intentionally returns status 2 after reproducing the available subset because the central conflict did not replicate and OpenROAD-native ordering was not extracted for these designs. To recheck saved campaigns without repeating physical implementation, run `bash scripts/finalize_phase0.sh`. See `reports/PHASE0_FINAL_REPORT.md` for measured results and `docs/methodology.md` for metric definitions.
 
-## Research Status
+## Historical research status
 
 PACT is progressing through a staged qualification process for physical- and ATPG-aware scan-architecture optimization.
 
@@ -57,7 +84,7 @@ The frozen one-context pilot verified all seven intervention classes and all 117
 
 This pilot is not a Phase-0D PASS or FAIL decision. Current evidence and progress are in `reports/phase0d/STATUS.md` and `reports/phase0d/PILOT_REPORT.md`.
 
-### Current direction — PACT Optimizer v1
+### Optimizer v1 milestone
 
 Optimizer-v1 status: `PACT_OPTIMIZER_V1_PROXY_ADVANCE`
 

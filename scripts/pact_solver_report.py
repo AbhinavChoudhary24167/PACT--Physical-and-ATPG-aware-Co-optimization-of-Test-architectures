@@ -102,7 +102,7 @@ def main():
         '13. **Next improvement:** screen physically infeasible moves using cheap edge deltas before exact activity work, then add a tiled/block-maximum activity field so cost and memory depend on touched time/window blocks. Benchmark this against the current measured reduction bottleneck before introducing parallel workers.',
         '', '## Correctness and use','',
         'The final milestone full regression passed **238 tests in 126.21 s**. The subsequent focused run passed **10 tests in 8.93 s**, adding the slow-checkpoint regression to randomized exact deltas/rollback, independent cycle replay, inherited endpoint transfer, FFT equivalence, archive bounds, input validation and deadline fallback. Exported real recommendations/physical extremes are also checked independently against the qualified load/scoring implementations; per-run independent_check.json records those outcomes.',
-        '', 'Usage and input schema: [working_optimizer.md](docs/working_optimizer.md). Initial repository reconstruction: [current_solution.md](current_solution.md). Original uncommitted work and historical evidence were preserved. Changes were committed on the existing development branch; nothing was pushed.']
+        '', 'Usage and input schema: [working_optimizer.md](docs/working_optimizer.md). Initial repository reconstruction: [current_solution.md](current_solution.md). Historical evidence is preserved. See [repository update](docs/repository_update.md) for the implementation and experiment files included in the development branch.']
     (ROOT/'solution_status.md').write_text('\n'.join(text)+'\n',encoding='utf-8')
 
 

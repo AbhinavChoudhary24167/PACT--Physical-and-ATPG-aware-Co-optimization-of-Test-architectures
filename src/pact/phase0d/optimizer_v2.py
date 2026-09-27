@@ -12,13 +12,20 @@ from typing import Any, Callable, Mapping, Sequence
 import numpy as np
 
 from pact.phase0d.optimizer_v1 import PhysicalCostModel, TargetCompatibility, dominates2
-from pact.phase0d.v2_activity import HEffCandidate, HEffState, IncrementalHEff8
+from pact.phase0d.v2_activity import (
+    HEffCandidate,
+    HEffState,
+    IncrementalHEff8,
+    RetainedIncrementalHEff8,
+)
 from pact.phase0d.v2_architecture import (
     ArchitecturePatch,
     ArchitectureSnapshot,
     MutableScanArchitecture,
     NONE,
 )
+from pact.phase0d.v2_constructor_metrics import ConstructorStats
+from pact.phase0d.v2_shared_frontier import construct_architectures_v2_1
 from pact.phase0d.v2_sparse import SparsePhysicalGraph, construct_architectures_v2
 from pact.scan.model import ScanArchitecture
 
@@ -46,6 +53,14 @@ class OptimizerV2Config:
     seen_cache_size: int = 4096
     seed: int = 20260921
     constructor_lambdas: tuple[float, ...] = (1.0, 0.75, 0.5, 0.25, 0.0)
+    constructor_mode: str = "shared_frontier"
+    constructor_frontier_bound: int = 4
+    constructor_parallel_backend: str = "sequential"
+    h_eff8_tile_patterns: int = 8
+    h_eff8_workers: int = 1
+    h_eff8_parallel_backend: str = "thread"
+    h_eff8_backend: str = "tiled"
+    generate_constructor_starts: bool = True
 
     def __post_init__(self) -> None:
         positive = (
@@ -58,6 +73,9 @@ class OptimizerV2Config:
             self.maximum_segment_length,
             self.minimum_chain_length,
             self.seen_cache_size,
+            self.constructor_frontier_bound,
+            self.h_eff8_tile_patterns,
+            self.h_eff8_workers,
         )
         if any(value <= 0 for value in positive):
             raise ValueError("Optimizer-v2 budgets and sizes must be positive")
@@ -67,6 +85,16 @@ class OptimizerV2Config:
             raise ValueError("Invalid archive epsilon fraction")
         if any(not 0.0 <= value <= 1.0 for value in self.constructor_lambdas):
             raise ValueError("Constructor lambdas must be in [0,1]")
+        if self.constructor_mode not in {"sequential", "shared_frontier"}:
+            raise ValueError("Constructor mode must be sequential or shared_frontier")
+        if self.constructor_parallel_backend not in {"sequential", "thread", "process"}:
+            raise ValueError("Constructor parallel backend must be sequential, thread, or process")
+        if self.h_eff8_parallel_backend not in {"sequential", "thread"}:
+            raise ValueError("H_eff8 parallel backend must be sequential or thread")
+        if self.h_eff8_backend not in {"retained_v2_1", "tiled"}:
+            raise ValueError("H_eff8 backend must be retained_v2_1 or tiled")
+        if self.constructor_frontier_bound < 2:
+            raise ValueError("Regret construction requires at least two frontier entries")
 
 
 @dataclass
@@ -254,6 +282,7 @@ class OptimizerV2Result:
     stop_reason: str
     trace: list[Mapping[str, Any]] = field(default_factory=list)
     architecture_objects: dict[str, ScanArchitecture] = field(default_factory=dict, repr=False)
+    evaluation_keys: list[str] = field(default_factory=list, repr=False)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -434,7 +463,17 @@ def optimize_v2(
     graph = SparsePhysicalGraph.build(coordinates, config.graph_k)
     physical = PhysicalArcCost(base, physical_model)
     activity_heuristic = TargetCompatibility(patterns, weights)
-    h_evaluator = IncrementalHEff8(base, patterns, weights)
+    if config.h_eff8_backend == "retained_v2_1":
+        h_evaluator = RetainedIncrementalHEff8(base, patterns, weights)
+    else:
+        h_evaluator = IncrementalHEff8(
+            base,
+            patterns,
+            weights,
+            tile_patterns=config.h_eff8_tile_patterns,
+            workers=config.h_eff8_workers,
+            parallel_backend=config.h_eff8_parallel_backend,
+        )
     constructors = [("input_architecture", MutableScanArchitecture.from_scan_architecture(base))]
     base_names = tuple(cell.name for cell in base.cells)
     base_topology = tuple((chain.chain_id, chain.scan_in, chain.scan_out) for chain in base.chains)
@@ -444,9 +483,31 @@ def optimize_v2(
         if tuple((chain.chain_id, chain.scan_in, chain.scan_out) for chain in seed.chains) != base_topology:
             raise ValueError("Seed K or endpoint topology differs from the base")
         constructors.append((label, MutableScanArchitecture.from_scan_architecture(seed)))
-    generated = construct_architectures_v2(
-        base, graph, physical_model, activity_heuristic, config.constructor_lambdas, config.seed
-    )
+    if not config.generate_constructor_starts:
+        generated = []
+        constructor_stats = ConstructorStats(mode="disabled")
+    elif config.constructor_mode == "sequential":
+        constructor_stats = ConstructorStats(mode="sequential_greedy")
+        generated = construct_architectures_v2(
+            base,
+            graph,
+            physical_model,
+            activity_heuristic,
+            config.constructor_lambdas,
+            config.seed,
+            instrumentation=constructor_stats,
+        )
+    else:
+        generated, constructor_stats = construct_architectures_v2_1(
+            base,
+            graph,
+            physical_model,
+            activity_heuristic,
+            config.constructor_lambdas,
+            config.seed,
+            frontier_bound=config.constructor_frontier_bound,
+            parallel_backend=config.constructor_parallel_backend,
+        )
     # Evaluate the two named extremes before mixed starts when a tight wall
     # budget cannot cover every constructor.
     constructors.extend([row for row in generated if row[0] == "physical_greedy"])
@@ -456,6 +517,7 @@ def optimize_v2(
 
     initial: list[tuple[ArchiveEntry, MutableScanArchitecture]] = []
     initial_keys: set[int] = set()
+    evaluation_keys: list[str] = []
     for label, architecture in constructors:
         if architecture.architecture_key in initial_keys:
             continue
@@ -467,6 +529,7 @@ def optimize_v2(
         counters.full_physical_recomputations += 1
         h_state = h_evaluator.full_state(architecture.orders())
         counters.exact_evaluations += 1
+        evaluation_keys.append(f"{architecture.architecture_key:032x}")
         entry = ArchiveEntry(
             architecture.architecture_key,
             (physical_value, h_state.value),
@@ -548,6 +611,7 @@ def optimize_v2(
             current_h, patch.before_orders, after_orders, architecture.lengths, all_orders
         )
         counters.exact_evaluations += 1
+        evaluation_keys.append(f"{patch.hash_after:032x}")
         counters.incremental_physical_evaluations += 1
         candidate_point = (current_physical + patch.physical_delta, h_candidate.value)
         candidate = ArchiveEntry(
@@ -632,6 +696,7 @@ def optimize_v2(
     counter_dict["average_candidate_neighborhood_size"] = average_neighborhood
     counter_dict["evaluations_per_second"] = counters.exact_evaluations / max(elapsed, 1e-12)
     counter_dict["local_moves_per_second"] = counters.local_moves_attempted / max(elapsed, 1e-12)
+    counter_dict["constructor"] = constructor_stats.to_dict()
     graph_dict = asdict(graph.stats)
     return OptimizerV2Result(
         config=config,
@@ -641,15 +706,21 @@ def optimize_v2(
         runtime={
             "optimizer_wall_seconds": elapsed,
             "graph_construction_seconds": graph.stats.construction_seconds,
+            "constructor_wall_seconds": constructor_stats.total_seconds,
+            "exact_evaluator_seconds": h_evaluator.exact_seconds,
             "openroad_calls": 0,
         },
         memory={
             "tracemalloc_peak_bytes": int(peak_memory),
             "sparse_graph_bytes": graph.stats.memory_bytes,
-            "current_h_eff8_state_bytes": IncrementalHEff8.memory_bytes(current_h),
+            "current_h_eff8_state_bytes": h_evaluator.memory_bytes(current_h),
+            "persistent_global_h_eff8_bytes": h_evaluator.persistent_global_bytes(current_h),
+            "persistent_per_chain_h_eff8_bytes": h_evaluator.persistent_per_chain_bytes(current_h),
+            "peak_transient_h_eff8_tile_bytes": h_evaluator.peak_transient_tile_bytes,
             "seen_cache_entries": len(seen.values),
         },
         stop_reason=stop_reason,
         trace=trace,
         architecture_objects=architecture_objects,
+        evaluation_keys=evaluation_keys,
     )

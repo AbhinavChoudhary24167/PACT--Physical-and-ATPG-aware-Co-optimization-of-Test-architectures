@@ -1,0 +1,465 @@
+[
+  {
+    "K": 2,
+    "N": 1000,
+    "modes": {
+      "process": {
+        "architecture_hashes": [
+          "456a19a366b6af08b9118815178a0fd1e9046cf78a5d90b96bf1f1802f38aec1",
+          "76e63ab3cfcf6431524ce652258f3c439b077b9f0315d9c100b3f7e5d1d3631d",
+          "3374eea9b7bde8d7b0dfd8159631b825dbe255d3be1e8bf5bc27a6fd2c7a843a",
+          "2c612e9e123cfbdc0f973a26a1025c6a12c3428105c799e2fae972a05bd3491c",
+          "485a1a7a1acd78c1acfc541e819bc7d840842264cb94528a3b73b040c0814718"
+        ],
+        "peak_main_process_traced_bytes": 1507980,
+        "stats": {
+          "accepted_insertions": 4990,
+          "activity_heuristic_computations": 35167,
+          "activity_heuristic_lookups": 36435,
+          "candidate_feature_cache_resets": 1,
+          "candidate_feature_computations": 4435,
+          "candidates_discarded": 15235,
+          "candidates_invalidated": 263,
+          "candidates_refreshed": 9684,
+          "exhausted_frontier_fallbacks": 0,
+          "frontier_rebuilds": 998,
+          "frontier_refreshes": 1032,
+          "full_chain_traversals": 12,
+          "head_candidates_scored": 3998,
+          "heap_rebuilds": 0,
+          "insertion_candidates_generated": 21278,
+          "insertion_candidates_scored": 21278,
+          "lane_seconds": {
+            "activity_aware_greedy": 0.19297769927652553,
+            "mixed_lambda_0.25": 0.1857177998754196,
+            "mixed_lambda_0.50": 0.18167170046945103,
+            "mixed_lambda_0.75": 0.19930139937787317,
+            "physical_greedy": 0.23945829994045198
+          },
+          "maximum_activity_cache_entries": 3167,
+          "maximum_candidate_feature_cache_entries": 4000,
+          "maximum_frontier_entries": 80,
+          "maximum_heap_entries": 0,
+          "mode": "shared_frontier_sparse_regret",
+          "physical_delta_computations": 16029,
+          "repeated_equivalent_candidate_evaluations_across_lanes": 5226,
+          "shared_candidate_feature_hits": 5249,
+          "stale_candidates_rejected": 263,
+          "total_seconds": 3.736493000003975
+        },
+        "wall_seconds": 3.7413105000159703
+      },
+      "sequential": {
+        "architecture_hashes": [
+          "456a19a366b6af08b9118815178a0fd1e9046cf78a5d90b96bf1f1802f38aec1",
+          "76e63ab3cfcf6431524ce652258f3c439b077b9f0315d9c100b3f7e5d1d3631d",
+          "3374eea9b7bde8d7b0dfd8159631b825dbe255d3be1e8bf5bc27a6fd2c7a843a",
+          "2c612e9e123cfbdc0f973a26a1025c6a12c3428105c799e2fae972a05bd3491c",
+          "485a1a7a1acd78c1acfc541e819bc7d840842264cb94528a3b73b040c0814718"
+        ],
+        "peak_main_process_traced_bytes": 1337566,
+        "stats": {
+          "accepted_insertions": 4990,
+          "activity_heuristic_computations": 35167,
+          "activity_heuristic_lookups": 36435,
+          "candidate_feature_cache_resets": 1,
+          "candidate_feature_computations": 4435,
+          "candidates_discarded": 15235,
+          "candidates_invalidated": 263,
+          "candidates_refreshed": 9684,
+          "exhausted_frontier_fallbacks": 0,
+          "frontier_rebuilds": 998,
+          "frontier_refreshes": 1032,
+          "full_chain_traversals": 12,
+          "head_candidates_scored": 3998,
+          "heap_rebuilds": 0,
+          "insertion_candidates_generated": 21278,
+          "insertion_candidates_scored": 21278,
+          "lane_seconds": {
+            "activity_aware_greedy": 0.16108070011250675,
+            "mixed_lambda_0.25": 0.16582660030690022,
+            "mixed_lambda_0.50": 0.16134300056728534,
+            "mixed_lambda_0.75": 0.16316540059051476,
+            "physical_greedy": 0.8232284012774471
+          },
+          "maximum_activity_cache_entries": 3167,
+          "maximum_candidate_feature_cache_entries": 4000,
+          "maximum_frontier_entries": 80,
+          "maximum_heap_entries": 0,
+          "mode": "shared_frontier_sparse_regret",
+          "physical_delta_computations": 16029,
+          "repeated_equivalent_candidate_evaluations_across_lanes": 5226,
+          "shared_candidate_feature_hits": 5249,
+          "stale_candidates_rejected": 263,
+          "total_seconds": 3.150385799992364
+        },
+        "wall_seconds": 3.153795199992601
+      },
+      "thread": {
+        "architecture_hashes": [
+          "456a19a366b6af08b9118815178a0fd1e9046cf78a5d90b96bf1f1802f38aec1",
+          "76e63ab3cfcf6431524ce652258f3c439b077b9f0315d9c100b3f7e5d1d3631d",
+          "3374eea9b7bde8d7b0dfd8159631b825dbe255d3be1e8bf5bc27a6fd2c7a843a",
+          "2c612e9e123cfbdc0f973a26a1025c6a12c3428105c799e2fae972a05bd3491c",
+          "485a1a7a1acd78c1acfc541e819bc7d840842264cb94528a3b73b040c0814718"
+        ],
+        "peak_main_process_traced_bytes": 1102922,
+        "stats": {
+          "accepted_insertions": 4990,
+          "activity_heuristic_computations": 35167,
+          "activity_heuristic_lookups": 36435,
+          "candidate_feature_cache_resets": 1,
+          "candidate_feature_computations": 4435,
+          "candidates_discarded": 15235,
+          "candidates_invalidated": 263,
+          "candidates_refreshed": 9684,
+          "exhausted_frontier_fallbacks": 0,
+          "frontier_rebuilds": 998,
+          "frontier_refreshes": 1032,
+          "full_chain_traversals": 12,
+          "head_candidates_scored": 3998,
+          "heap_rebuilds": 0,
+          "insertion_candidates_generated": 21278,
+          "insertion_candidates_scored": 21278,
+          "lane_seconds": {
+            "activity_aware_greedy": 0.17524270055582747,
+            "mixed_lambda_0.25": 0.20089720038231462,
+            "mixed_lambda_0.50": 0.19720039988169447,
+            "mixed_lambda_0.75": 0.19285480020334944,
+            "physical_greedy": 1.357931899401592
+          },
+          "maximum_activity_cache_entries": 3167,
+          "maximum_candidate_feature_cache_entries": 4000,
+          "maximum_frontier_entries": 80,
+          "maximum_heap_entries": 0,
+          "mode": "shared_frontier_sparse_regret",
+          "physical_delta_computations": 16029,
+          "repeated_equivalent_candidate_evaluations_across_lanes": 5226,
+          "shared_candidate_feature_hits": 5249,
+          "stale_candidates_rejected": 263,
+          "total_seconds": 4.078999399993336
+        },
+        "wall_seconds": 4.08417630000622
+      }
+    },
+    "process_serialized_input_bytes_estimate": 266553,
+    "process_speedup": 0.842965372689366,
+    "thread_speedup": 0.7721985948519895,
+    "vectorized_record_experiment": {
+      "False": {
+        "architecture_hashes": [
+          "456a19a366b6af08b9118815178a0fd1e9046cf78a5d90b96bf1f1802f38aec1",
+          "76e63ab3cfcf6431524ce652258f3c439b077b9f0315d9c100b3f7e5d1d3631d",
+          "3374eea9b7bde8d7b0dfd8159631b825dbe255d3be1e8bf5bc27a6fd2c7a843a",
+          "2c612e9e123cfbdc0f973a26a1025c6a12c3428105c799e2fae972a05bd3491c",
+          "485a1a7a1acd78c1acfc541e819bc7d840842264cb94528a3b73b040c0814718"
+        ],
+        "wall_seconds": 0.5228593999927398
+      },
+      "True": {
+        "architecture_hashes": [
+          "456a19a366b6af08b9118815178a0fd1e9046cf78a5d90b96bf1f1802f38aec1",
+          "76e63ab3cfcf6431524ce652258f3c439b077b9f0315d9c100b3f7e5d1d3631d",
+          "3374eea9b7bde8d7b0dfd8159631b825dbe255d3be1e8bf5bc27a6fd2c7a843a",
+          "2c612e9e123cfbdc0f973a26a1025c6a12c3428105c799e2fae972a05bd3491c",
+          "485a1a7a1acd78c1acfc541e819bc7d840842264cb94528a3b73b040c0814718"
+        ],
+        "wall_seconds": 0.6784709999919869
+      }
+    }
+  },
+  {
+    "K": 10,
+    "N": 5000,
+    "modes": {
+      "process": {
+        "architecture_hashes": [
+          "761f0019f5a7da87105add008b343fe59169b215ad7911982e61de26873cb2ef",
+          "527bc6c05510f09b0683ab5f79be677ada11eebdcf53c726a69ea98074c4c265",
+          "c0d9b09193f10718447eaa76948317e0a0d935943ab02951dc27ceecd562b382",
+          "fdb524484adbd98d256d36065d49c0c1f6bf457421747abf3ea643bdece559c5",
+          "65f9261a23a9c7c7652b4343f5d5da6621d2f489a85313cc1710dd0b6bbe05f6"
+        ],
+        "peak_main_process_traced_bytes": 10917511,
+        "stats": {
+          "accepted_insertions": 24950,
+          "activity_heuristic_computations": 186757,
+          "activity_heuristic_lookups": 192974,
+          "candidate_feature_cache_resets": 1,
+          "candidate_feature_computations": 32974,
+          "candidates_discarded": 80080,
+          "candidates_invalidated": 664,
+          "candidates_refreshed": 50684,
+          "exhausted_frontier_fallbacks": 0,
+          "frontier_rebuilds": 4989,
+          "frontier_refreshes": 5069,
+          "full_chain_traversals": 60,
+          "head_candidates_scored": 99910,
+          "heap_rebuilds": 0,
+          "insertion_candidates_generated": 110146,
+          "insertion_candidates_scored": 110146,
+          "lane_seconds": {
+            "activity_aware_greedy": 1.039974700572202,
+            "mixed_lambda_0.25": 1.0718557996151503,
+            "mixed_lambda_0.50": 1.05290540176793,
+            "mixed_lambda_0.75": 1.0666788998642005,
+            "physical_greedy": 1.3453225017001387
+          },
+          "maximum_activity_cache_entries": 26757,
+          "maximum_candidate_feature_cache_entries": 20000,
+          "maximum_frontier_entries": 80,
+          "maximum_heap_entries": 0,
+          "mode": "shared_frontier_sparse_regret",
+          "physical_delta_computations": 92436,
+          "repeated_equivalent_candidate_evaluations_across_lanes": 17625,
+          "shared_candidate_feature_hits": 17710,
+          "stale_candidates_rejected": 664,
+          "total_seconds": 21.54321199998958
+        },
+        "wall_seconds": 21.61219159999746
+      },
+      "sequential": {
+        "architecture_hashes": [
+          "761f0019f5a7da87105add008b343fe59169b215ad7911982e61de26873cb2ef",
+          "527bc6c05510f09b0683ab5f79be677ada11eebdcf53c726a69ea98074c4c265",
+          "c0d9b09193f10718447eaa76948317e0a0d935943ab02951dc27ceecd562b382",
+          "fdb524484adbd98d256d36065d49c0c1f6bf457421747abf3ea643bdece559c5",
+          "65f9261a23a9c7c7652b4343f5d5da6621d2f489a85313cc1710dd0b6bbe05f6"
+        ],
+        "peak_main_process_traced_bytes": 10003554,
+        "stats": {
+          "accepted_insertions": 24950,
+          "activity_heuristic_computations": 186757,
+          "activity_heuristic_lookups": 192974,
+          "candidate_feature_cache_resets": 1,
+          "candidate_feature_computations": 32974,
+          "candidates_discarded": 80080,
+          "candidates_invalidated": 664,
+          "candidates_refreshed": 50684,
+          "exhausted_frontier_fallbacks": 0,
+          "frontier_rebuilds": 4989,
+          "frontier_refreshes": 5069,
+          "full_chain_traversals": 60,
+          "head_candidates_scored": 99910,
+          "heap_rebuilds": 0,
+          "insertion_candidates_generated": 110146,
+          "insertion_candidates_scored": 110146,
+          "lane_seconds": {
+            "activity_aware_greedy": 1.0437772993755061,
+            "mixed_lambda_0.25": 1.0713129005162045,
+            "mixed_lambda_0.50": 1.026221697567962,
+            "mixed_lambda_0.75": 1.046007101133,
+            "physical_greedy": 4.66980479870108
+          },
+          "maximum_activity_cache_entries": 26757,
+          "maximum_candidate_feature_cache_entries": 20000,
+          "maximum_frontier_entries": 80,
+          "maximum_heap_entries": 0,
+          "mode": "shared_frontier_sparse_regret",
+          "physical_delta_computations": 92436,
+          "repeated_equivalent_candidate_evaluations_across_lanes": 17625,
+          "shared_candidate_feature_hits": 17710,
+          "stale_candidates_rejected": 664,
+          "total_seconds": 24.91186649998417
+        },
+        "wall_seconds": 24.977561699983198
+      },
+      "thread": {
+        "architecture_hashes": [
+          "761f0019f5a7da87105add008b343fe59169b215ad7911982e61de26873cb2ef",
+          "527bc6c05510f09b0683ab5f79be677ada11eebdcf53c726a69ea98074c4c265",
+          "c0d9b09193f10718447eaa76948317e0a0d935943ab02951dc27ceecd562b382",
+          "fdb524484adbd98d256d36065d49c0c1f6bf457421747abf3ea643bdece559c5",
+          "65f9261a23a9c7c7652b4343f5d5da6621d2f489a85313cc1710dd0b6bbe05f6"
+        ],
+        "peak_main_process_traced_bytes": 9735454,
+        "stats": {
+          "accepted_insertions": 24950,
+          "activity_heuristic_computations": 186757,
+          "activity_heuristic_lookups": 192974,
+          "candidate_feature_cache_resets": 1,
+          "candidate_feature_computations": 32974,
+          "candidates_discarded": 80080,
+          "candidates_invalidated": 664,
+          "candidates_refreshed": 50684,
+          "exhausted_frontier_fallbacks": 0,
+          "frontier_rebuilds": 4989,
+          "frontier_refreshes": 5069,
+          "full_chain_traversals": 60,
+          "head_candidates_scored": 99910,
+          "heap_rebuilds": 0,
+          "insertion_candidates_generated": 110146,
+          "insertion_candidates_scored": 110146,
+          "lane_seconds": {
+            "activity_aware_greedy": 1.0632427991076838,
+            "mixed_lambda_0.25": 1.0414499010657892,
+            "mixed_lambda_0.50": 1.0473202989378478,
+            "mixed_lambda_0.75": 1.0117941987409722,
+            "physical_greedy": 7.9909907009569
+          },
+          "maximum_activity_cache_entries": 26757,
+          "maximum_candidate_feature_cache_entries": 20000,
+          "maximum_frontier_entries": 80,
+          "maximum_heap_entries": 0,
+          "mode": "shared_frontier_sparse_regret",
+          "physical_delta_computations": 92436,
+          "repeated_equivalent_candidate_evaluations_across_lanes": 17625,
+          "shared_candidate_feature_hits": 17710,
+          "stale_candidates_rejected": 664,
+          "total_seconds": 24.526491099997656
+        },
+        "wall_seconds": 24.593664400017587
+      }
+    },
+    "process_serialized_input_bytes_estimate": 1331458,
+    "process_speedup": 1.1557162809895751,
+    "thread_speedup": 1.0156096014697726
+  },
+  {
+    "K": 20,
+    "N": 10000,
+    "modes": {
+      "process": {
+        "architecture_hashes": [
+          "4d8a665bc4619f9f9eec7c2cb4494fa0e3fb0997808f28b72c9169bcbb0b71b9",
+          "b2462b8955d4314c1c31043709aae9267fb548e14b112750637e7894ba466650",
+          "36c934b89c486e6130e37d2a71fed7680e6e79f5758d4dcdd56e12ac671e657e",
+          "5fa99561c9ac0819e5cced0734ce66ddde0548b928fae96f173dc6125595b592",
+          "6ab1bdfac188e8cd23994aa852cb713e54a6a0bd15ae825dbf65515a0592dbf8"
+        ],
+        "peak_main_process_traced_bytes": 22276518,
+        "stats": {
+          "accepted_insertions": 49900,
+          "activity_heuristic_computations": 373512,
+          "activity_heuristic_lookups": 385386,
+          "candidate_feature_cache_resets": 1,
+          "candidate_feature_computations": 65386,
+          "candidates_discarded": 159704,
+          "candidates_invalidated": 895,
+          "candidates_refreshed": 100935,
+          "exhausted_frontier_fallbacks": 0,
+          "frontier_rebuilds": 9980,
+          "frontier_refreshes": 10094,
+          "full_chain_traversals": 120,
+          "head_candidates_scored": 399620,
+          "heap_rebuilds": 0,
+          "insertion_candidates_generated": 219829,
+          "insertion_candidates_scored": 219829,
+          "lane_seconds": {
+            "activity_aware_greedy": 1.7360459022747818,
+            "mixed_lambda_0.25": 1.7460657031915616,
+            "mixed_lambda_0.50": 1.8909686981060077,
+            "mixed_lambda_0.75": 1.954482500674203,
+            "physical_greedy": 2.6317441009450704
+          },
+          "maximum_activity_cache_entries": 53512,
+          "maximum_candidate_feature_cache_entries": 40000,
+          "maximum_frontier_entries": 80,
+          "maximum_heap_entries": 0,
+          "mode": "shared_frontier_sparse_regret",
+          "physical_delta_computations": 184280,
+          "repeated_equivalent_candidate_evaluations_across_lanes": 35411,
+          "shared_candidate_feature_hits": 35549,
+          "stale_candidates_rejected": 895,
+          "total_seconds": 42.0860295999737
+        },
+        "wall_seconds": 42.2206298999954
+      },
+      "sequential": {
+        "architecture_hashes": [
+          "4d8a665bc4619f9f9eec7c2cb4494fa0e3fb0997808f28b72c9169bcbb0b71b9",
+          "b2462b8955d4314c1c31043709aae9267fb548e14b112750637e7894ba466650",
+          "36c934b89c486e6130e37d2a71fed7680e6e79f5758d4dcdd56e12ac671e657e",
+          "5fa99561c9ac0819e5cced0734ce66ddde0548b928fae96f173dc6125595b592",
+          "6ab1bdfac188e8cd23994aa852cb713e54a6a0bd15ae825dbf65515a0592dbf8"
+        ],
+        "peak_main_process_traced_bytes": 19936946,
+        "stats": {
+          "accepted_insertions": 49900,
+          "activity_heuristic_computations": 373512,
+          "activity_heuristic_lookups": 385386,
+          "candidate_feature_cache_resets": 1,
+          "candidate_feature_computations": 65386,
+          "candidates_discarded": 159704,
+          "candidates_invalidated": 895,
+          "candidates_refreshed": 100935,
+          "exhausted_frontier_fallbacks": 0,
+          "frontier_rebuilds": 9980,
+          "frontier_refreshes": 10094,
+          "full_chain_traversals": 120,
+          "head_candidates_scored": 399620,
+          "heap_rebuilds": 0,
+          "insertion_candidates_generated": 219829,
+          "insertion_candidates_scored": 219829,
+          "lane_seconds": {
+            "activity_aware_greedy": 1.9853670990560204,
+            "mixed_lambda_0.25": 2.1316425015975256,
+            "mixed_lambda_0.50": 2.0900842015398666,
+            "mixed_lambda_0.75": 2.0871160009410232,
+            "physical_greedy": 11.166182401619153
+          },
+          "maximum_activity_cache_entries": 53512,
+          "maximum_candidate_feature_cache_entries": 40000,
+          "maximum_frontier_entries": 80,
+          "maximum_heap_entries": 0,
+          "mode": "shared_frontier_sparse_regret",
+          "physical_delta_computations": 184280,
+          "repeated_equivalent_candidate_evaluations_across_lanes": 35411,
+          "shared_candidate_feature_hits": 35549,
+          "stale_candidates_rejected": 895,
+          "total_seconds": 53.90159830002813
+        },
+        "wall_seconds": 54.035609300015494
+      },
+      "thread": {
+        "architecture_hashes": [
+          "4d8a665bc4619f9f9eec7c2cb4494fa0e3fb0997808f28b72c9169bcbb0b71b9",
+          "b2462b8955d4314c1c31043709aae9267fb548e14b112750637e7894ba466650",
+          "36c934b89c486e6130e37d2a71fed7680e6e79f5758d4dcdd56e12ac671e657e",
+          "5fa99561c9ac0819e5cced0734ce66ddde0548b928fae96f173dc6125595b592",
+          "6ab1bdfac188e8cd23994aa852cb713e54a6a0bd15ae825dbf65515a0592dbf8"
+        ],
+        "peak_main_process_traced_bytes": 19944126,
+        "stats": {
+          "accepted_insertions": 49900,
+          "activity_heuristic_computations": 373512,
+          "activity_heuristic_lookups": 385386,
+          "candidate_feature_cache_resets": 1,
+          "candidate_feature_computations": 65386,
+          "candidates_discarded": 159704,
+          "candidates_invalidated": 895,
+          "candidates_refreshed": 100935,
+          "exhausted_frontier_fallbacks": 0,
+          "frontier_rebuilds": 9980,
+          "frontier_refreshes": 10094,
+          "full_chain_traversals": 120,
+          "head_candidates_scored": 399620,
+          "heap_rebuilds": 0,
+          "insertion_candidates_generated": 219829,
+          "insertion_candidates_scored": 219829,
+          "lane_seconds": {
+            "activity_aware_greedy": 1.972025196737377,
+            "mixed_lambda_0.25": 2.152687399968272,
+            "mixed_lambda_0.50": 1.8649689987651072,
+            "mixed_lambda_0.75": 2.05586240143748,
+            "physical_greedy": 17.500468402111437
+          },
+          "maximum_activity_cache_entries": 53512,
+          "maximum_candidate_feature_cache_entries": 40000,
+          "maximum_frontier_entries": 80,
+          "maximum_heap_entries": 0,
+          "mode": "shared_frontier_sparse_regret",
+          "physical_delta_computations": 184280,
+          "repeated_equivalent_candidate_evaluations_across_lanes": 35411,
+          "shared_candidate_feature_hits": 35549,
+          "stale_candidates_rejected": 895,
+          "total_seconds": 49.154982100008056
+        },
+        "wall_seconds": 49.2959158999729
+      }
+    },
+    "process_serialized_input_bytes_estimate": 2662603,
+    "process_speedup": 1.2798390130134316,
+    "thread_speedup": 1.0961477906133235
+  }
+]

@@ -19,13 +19,16 @@ import time
 import tracemalloc
 from typing import Any, Mapping, Sequence
 
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from pact.experiment_storage import (  # noqa: E402
+    DEFAULT_MIN_FREE_GIB,
+    ExperimentPaths,
+    add_experiment_root_argument,
+    configure_experiment_storage,
+    guard_disk_space,
+)
 from pact.analysis.phase0c_activity import parallel_activity_metrics  # noqa: E402
 from pact.phase0d.funnel import FrozenProxyContext  # noqa: E402
 from pact.phase0d.optimizer_v1 import (  # noqa: E402
@@ -45,6 +48,7 @@ from pact.scan.model import ScanArchitecture, ScanCell, ScanChain  # noqa: E402
 
 REPORT_ROOT = ROOT / "reports/optimizer_v2"
 ARTIFACT_ROOT = ROOT / "artifacts/derived/optimizer_v2"
+EXPERIMENT_PATHS: ExperimentPaths | None = None
 
 
 def write_json(path: Path, value: Any) -> None:
@@ -357,6 +361,8 @@ def run_profile(seed: int) -> str:
     profiler.enable()
     optimize_v2(base, patterns, weights, physical, config, trace_limit=0)
     profiler.disable()
+    paths = EXPERIMENT_PATHS or configure_experiment_storage()
+    profiler.dump_stats(paths.profiles / "optimizer_v2.prof")
     output = io.StringIO()
     stats = pstats.Stats(profiler, stream=output).strip_dirs()
     output.write("CUMULATIVE TIME\n")
@@ -370,6 +376,10 @@ def run_profile(seed: int) -> str:
 
 
 def make_plots(scaling: Sequence[Mapping[str, Any]], real: Mapping[str, Any]) -> list[str]:
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
     figure_root = REPORT_ROOT / "figures"
     figure_root.mkdir(parents=True, exist_ok=True)
     paths = []
@@ -451,6 +461,7 @@ def make_plots(scaling: Sequence[Mapping[str, Any]], real: Mapping[str, Any]) ->
 
 
 def main() -> None:
+    global EXPERIMENT_PATHS
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", choices=("all", "real", "scaling", "profile", "plots"), default="all")
     parser.add_argument("--real-wall-seconds", type=float, default=20.0)
@@ -461,7 +472,16 @@ def main() -> None:
     parser.add_argument("--scaling-local-moves", type=int, default=2)
     parser.add_argument("--sizes", default="200,500,1000,2000,5000,10000")
     parser.add_argument("--seed", type=int, default=20260921)
+    parser.add_argument("--minimum-free-gib", type=float, default=DEFAULT_MIN_FREE_GIB)
+    parser.add_argument("--estimated-bytes", type=int, default=1024**3)
+    add_experiment_root_argument(parser)
     args = parser.parse_args()
+    EXPERIMENT_PATHS = configure_experiment_storage(args.experiment_root)
+    guard_disk_space(
+        EXPERIMENT_PATHS,
+        estimated_bytes=args.estimated_bytes,
+        minimum_free_gib=args.minimum_free_gib,
+    )
     REPORT_ROOT.mkdir(parents=True, exist_ok=True)
     sizes = [int(value) for value in args.sizes.split(",") if value]
     real_path, scaling_path = REPORT_ROOT / "real_benchmark.json", REPORT_ROOT / "scaling_results.json"

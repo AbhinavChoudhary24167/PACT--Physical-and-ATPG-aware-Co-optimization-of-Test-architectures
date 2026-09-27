@@ -1,0 +1,77 @@
+CUMULATIVE TIME
+         470012 function calls (443260 primitive calls) in 4.002 seconds
+
+   Ordered by: cumulative time
+   List reduced from 337 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       18    0.002    0.000    6.774    0.376 v2_activity.py:263(_ordered_tile_results)
+   118/86    0.002    0.000    5.504    0.064 {method 'acquire' of '_thread.lock' objects}
+        8    0.000    0.000    5.504    0.688 threading.py:1117(join)
+        8    0.000    0.000    5.503    0.688 threading.py:1155(_wait_for_tstate_lock)
+        1    0.001    0.001    4.003    4.003 pact_optimizer_v2_2.py:114(measure_evaluator)
+       16    0.002    0.000    3.952    0.247 _base.py:428(result)
+    96/28    0.134    0.001    3.238    0.116 _filters.py:949(convolve)
+       23    0.001    0.000    3.116    0.135 threading.py:323(wait)
+    96/28    0.044    0.000    2.784    0.099 _filters.py:820(_correlate_or_convolve)
+        2    0.000    0.000    2.754    1.377 _base.py:646(__exit__)
+        2    0.000    0.000    2.754    1.377 thread.py:219(shutdown)
+      8/2    0.001    0.000    2.752    1.376 threading.py:1018(_bootstrap)
+      8/2    0.000    0.000    2.752    1.376 threading.py:1058(_bootstrap_inner)
+     16/4    0.095    0.006    2.734    0.684 thread.py:53(run)
+     96/4    0.465    0.005    2.716    0.679 v2_activity.py:295(_chain_tile)
+    96/29    0.267    0.003    2.337    0.081 {built-in method scipy.ndimage._nd_image.correlate}
+        1    0.001    0.001    2.231    2.231 v2_activity.py:374(full_state)
+      8/2    0.000    0.000    2.206    1.103 threading.py:1001(run)
+     16/4    0.001    0.000    2.205    0.551 {method 'get' of '_queue.SimpleQueue' objects}
+      8/2    0.007    0.001    2.205    1.103 thread.py:69(_worker)
+      8/2    0.000    0.000    2.192    1.096 v2_activity.py:381(work)
+1536/1002    0.521    0.000    1.826    0.002 _special_matrices.py:19(toeplitz)
+1632/1087    0.461    0.000    0.970    0.001 {method 'copy' of 'numpy.ndarray' objects}
+        2    0.084    0.042    0.611    0.305 v2_architecture.py:93(from_scan_architecture)
+        1    0.001    0.001    0.607    0.607 pact_optimizer_v2_2.py:105(make_swap)
+  384/328    0.004    0.000    0.596    0.002 {built-in method builtins.max}
+        1    0.000    0.000    0.592    0.592 v2_activity.py:394(evaluate)
+      8/2    0.017    0.002    0.541    0.270 v2_activity.py:422(<lambda>)
+      8/2    0.129    0.016    0.538    0.269 v2_activity.py:346(_delta_tile)
+        2    0.009    0.004    0.363    0.181 v2_architecture.py:71(__init__)
+
+
+
+SELF CPU TIME
+         470012 function calls (443260 primitive calls) in 4.002 seconds
+
+   Ordered by: internal time
+   List reduced from 337 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+1536/1002    0.521    0.000    1.826    0.002 _special_matrices.py:19(toeplitz)
+     96/4    0.465    0.005    2.716    0.679 v2_activity.py:295(_chain_tile)
+1632/1087    0.461    0.000    0.970    0.001 {method 'copy' of 'numpy.ndarray' objects}
+    96/29    0.267    0.003    2.337    0.081 {built-in method scipy.ndimage._nd_image.correlate}
+        1    0.180    0.180    0.228    0.228 v2_activity.py:77(__init__)
+    20056    0.179    0.000    0.179    0.000 v2_architecture.py:27(_mix64)
+    96/28    0.134    0.001    3.238    0.116 _filters.py:949(convolve)
+      8/2    0.129    0.016    0.538    0.269 v2_activity.py:346(_delta_tile)
+        9    0.123    0.014    0.270    0.030 _methods.py:43(_amax)
+1855/1722    0.113    0.000    0.285    0.000 {built-in method numpy.zeros}
+    10028    0.096    0.000    0.275    0.000 v2_architecture.py:35(_arc_token)
+     8082    0.095    0.000    0.095    0.000 {built-in method numpy.asarray}
+     16/4    0.095    0.006    2.734    0.684 thread.py:53(run)
+     1536    0.089    0.000    0.134    0.000 _stride_tricks_impl.py:43(as_strided)
+        3    0.087    0.029    0.153    0.051 validate.py:24(validate_scan)
+        2    0.084    0.042    0.611    0.305 v2_architecture.py:93(from_scan_architecture)
+39646/39645    0.073    0.000    0.073    0.000 {built-in method builtins.len}
+        4    0.060    0.015    0.164    0.041 threadpoolctl.py:1042(_find_libraries_with_enum_process_module_ex)
+    10040    0.053    0.000    0.053    0.000 v2_architecture.py:185(_arcs_for_chain)
+30050/5010    0.045    0.000    0.094    0.000 dataclasses.py:1332(_asdict_inner)
+    96/28    0.044    0.000    2.784    0.099 _filters.py:820(_correlate_or_convolve)
+     1547    0.035    0.000    0.066    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+     1536    0.035    0.000    0.075    0.000 numeric.py:2489(array_equal)
+    15000    0.031    0.000    0.054    0.000 {built-in method builtins.all}
+    13222    0.030    0.000    0.032    0.000 {built-in method builtins.min}
+      244    0.028    0.000    0.028    0.000 {built-in method nt._getfinalpathname}
+       23    0.024    0.001    0.042    0.002 v2_architecture.py:146(order)
+        1    0.022    0.022    0.022    0.022 encoder.py:205(iterencode)
+     5010    0.021    0.000    0.034    0.000 dataclasses.py:1278(fields)
+        2    0.019    0.009    0.354    0.177 v2_architecture.py:197(_full_key)

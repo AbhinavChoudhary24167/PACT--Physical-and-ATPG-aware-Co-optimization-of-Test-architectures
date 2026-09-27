@@ -1,0 +1,50 @@
+CUMULATIVE TIME
+         1283156 function calls (1265520 primitive calls) in 6.232 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall function
+        1    0.015    0.015    6.408    6.408 optimizer_v2.py:427(optimize_v2)
+        1    0.626    0.626    4.386    4.386 v2_shared_frontier.py:301(construct_architectures_v2_1)
+      999    0.058    0.000    1.335    0.001 v2_shared_frontier.py:416(admit)
+     1032    0.349    0.000    1.221    0.001 v2_shared_frontier.py:372(build_record)
+        1    0.538    0.538    1.100    1.100 v2_shared_frontier.py:187(_build_activity_neighbors)
+        1    0.573    0.573    0.784    0.784 v2_sparse.py:41(build)
+        1    0.283    0.283    0.540    0.540 v2_shared_frontier.py:214(_physical_anchor_orders)
+     9684    0.126    0.000    0.474    0.000 v2_shared_frontier.py:123(feature)
+        9    0.110    0.012    0.470    0.052 v2_architecture.py:114(from_orders)
+       13    0.023    0.002    0.444    0.034 v2_architecture.py:197(_full_key)
+       10    0.006    0.001    0.353    0.035 v2_architecture.py:71(__init__)
+    13180    0.120    0.000    0.349    0.000 v2_architecture.py:35(_arc_token)
+    19130    0.143    0.000    0.285    0.000 builtins.min
+     9086    0.055    0.000    0.264    0.000 builtins.sum
+    88013    0.246    0.000    0.246    0.000 list.append
+    26360    0.230    0.000    0.230    0.000 v2_architecture.py:27(_mix64)
+       16    0.146    0.009    0.205    0.013 v2_activity.py:80(_chain_field)
+       65    0.111    0.002    0.193    0.003 v2_architecture.py:146(order)
+
+SELF CPU TIME
+         1283156 function calls (1265520 primitive calls) in 6.232 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall function
+        1    0.626    0.626    4.386    4.386 v2_shared_frontier.py:301(construct_architectures_v2_1)
+        1    0.573    0.573    0.784    0.784 v2_sparse.py:41(build)
+        1    0.538    0.538    1.100    1.100 v2_shared_frontier.py:187(_build_activity_neighbors)
+     1032    0.349    0.000    1.221    0.001 v2_shared_frontier.py:372(build_record)
+        1    0.283    0.283    0.540    0.540 v2_shared_frontier.py:214(_physical_anchor_orders)
+    88013    0.246    0.000    0.246    0.000 list.append
+    26360    0.230    0.000    0.230    0.000 v2_architecture.py:27(_mix64)
+       16    0.146    0.009    0.205    0.013 v2_activity.py:80(_chain_field)
+    19130    0.143    0.000    0.285    0.000 builtins.min
+     9684    0.126    0.000    0.474    0.000 v2_shared_frontier.py:123(feature)
+    13180    0.120    0.000    0.349    0.000 v2_architecture.py:35(_arc_token)
+       65    0.111    0.002    0.193    0.003 v2_architecture.py:146(order)
+        9    0.110    0.012    0.470    0.052 v2_architecture.py:114(from_orders)
+    22088    0.109    0.000    0.109    0.000 v2_architecture.py:185(_arcs_for_chain)
+    13305    0.107    0.000    0.132    0.000 v2_shared_frontier.py:82(_distance)
+
+Profile configuration: synthetic N=1000, K=2, four target patterns,
+graph k=12, five constructor lambdas, eight exact evaluations, two local
+moves, tracemalloc enabled, seed 20260921. No routing/OpenROAD calls.

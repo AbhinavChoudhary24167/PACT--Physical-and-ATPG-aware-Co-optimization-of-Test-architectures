@@ -16,6 +16,7 @@ except ImportError:  # pragma: no cover - exercised only in the documented fallb
 
 from pact.phase0d.optimizer_v1 import PhysicalCostModel, TargetCompatibility
 from pact.phase0d.v2_architecture import MutableScanArchitecture
+from pact.phase0d.v2_constructor_metrics import ConstructorStats
 from pact.scan.model import ScanArchitecture
 
 
@@ -144,6 +145,9 @@ def construct_orders(
     activity_candidates: int = 8,
     nonlocal_candidates: int = 2,
     activity_neighbors: np.ndarray | None = None,
+    instrumentation: ConstructorStats | None = None,
+    lane_index: int = 0,
+    feature_lanes: dict[tuple[int, int], int] | None = None,
 ) -> tuple[tuple[int, ...], ...]:
     """Construct K capacity-preserving chains in O(N(k+a+r)) expected time.
 
@@ -166,11 +170,16 @@ def construct_orders(
     scale = max(float(physical.scale_um), 1e-12)
 
     def relation(left: int, right: int) -> float:
+        if instrumentation is not None:
+            instrumentation.activity_heuristic_lookups += 1
+            instrumentation.activity_heuristic_computations += 1
         return activity.relation(names[left], names[right])
 
     def choose_head(chain: int) -> int:
         # K is normally small; this one O(KN) pass avoids a dense port graph.
         candidates = available.items
+        if instrumentation is not None:
+            instrumentation.head_candidates_scored += len(candidates)
         port = physical.input_ports[chain]
         return min(candidates, key=lambda node: (
             physical_weight * (abs(coordinates[node, 0] - port[0])
@@ -202,6 +211,19 @@ def construct_orders(
             candidates = sorted(set(local + activity_ranked + nonlocal_set))
             if not candidates:
                 candidates = [available.first()]
+            if instrumentation is not None:
+                instrumentation.insertion_candidates_generated += len(candidates)
+                instrumentation.insertion_candidates_scored += len(candidates)
+                instrumentation.physical_delta_computations += len(candidates)
+                instrumentation.candidates_discarded += max(0, len(candidates) - 1)
+                if feature_lanes is not None:
+                    for right in candidates:
+                        key = (left, right)
+                        creator = feature_lanes.get(key)
+                        if creator is None:
+                            feature_lanes[key] = lane_index
+                        elif creator != lane_index:
+                            instrumentation.repeated_equivalent_candidate_evaluations_across_lanes += 1
             node = min(candidates, key=lambda right: (
                 physical_weight * physical.distance(
                     physical.coordinates[names[left]], physical.coordinates[names[right]]) / scale
@@ -222,8 +244,13 @@ def construct_architectures_v2(
     activity: TargetCompatibility,
     lambdas: Sequence[float] = (1.0, 0.75, 0.5, 0.25, 0.0),
     seed: int = 20260921,
+    *,
+    instrumentation: ConstructorStats | None = None,
 ) -> list[tuple[str, MutableScanArchitecture]]:
     """Return physical, mixed-scalarized and activity-aware diverse starts."""
+    started = time.perf_counter()
+    if instrumentation is not None:
+        instrumentation.mode = "sequential_greedy"
     names = tuple(cell.name for cell in base.cells)
     activity_count = 8
     activity_neighbors = np.empty((len(names), activity_count), dtype=np.int32)
@@ -239,11 +266,16 @@ def construct_architectures_v2(
             sample,
             key=lambda other: (activity.relation(names[node], names[other]), other),
         )[:activity_count]
+        if instrumentation is not None:
+            instrumentation.activity_heuristic_lookups += len(sample)
+            instrumentation.activity_heuristic_computations += len(sample)
         if len(ranked) < activity_count:
             ranked.extend([ranked[-1]] * (activity_count - len(ranked)))
         activity_neighbors[node] = ranked
     results = []
-    for value in lambdas:
+    feature_lanes: dict[tuple[int, int], int] = {}
+    for lane_index, value in enumerate(lambdas):
+        lane_started = time.perf_counter()
         if value == 1.0:
             label = "physical_greedy"
         elif value == 0.0:
@@ -254,6 +286,15 @@ def construct_architectures_v2(
             base, graph, physical, activity, value, seed=seed,
             activity_candidates=activity_count,
             activity_neighbors=activity_neighbors,
+            instrumentation=instrumentation,
+            lane_index=lane_index,
+            feature_lanes=feature_lanes,
         )
         results.append((label, MutableScanArchitecture.from_orders(base, orders)))
+        if instrumentation is not None:
+            instrumentation.full_chain_traversals += len(orders)
+            instrumentation.accepted_insertions += len(names) - len(orders)
+            instrumentation.lane_seconds[label] = time.perf_counter() - lane_started
+    if instrumentation is not None:
+        instrumentation.total_seconds = time.perf_counter() - started
     return results

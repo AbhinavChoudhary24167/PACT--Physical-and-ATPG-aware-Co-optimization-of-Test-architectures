@@ -1,0 +1,309 @@
+{
+  "cause": "placed_graph omits test_so BTerms but retains the original output BUF input sink and transparent branch. construct_weights adds a direct tail-to-SO geometry endpoint without moving that BUF input load/branch to chain0 tail. Actual frozen rewire moves the buffer A connection.",
+  "changes_to_frozen_definitions": false,
+  "checked_architectures": 21,
+  "corrected_metrics_computed": false,
+  "mismatching_architectures": 21,
+  "observed_utc": "2026-09-23T11:26:22.948642+00:00",
+  "rows": [
+    {
+      "buffer_input_pin_cap_ff": 0.974659,
+      "buffer_master": "BUF_X1",
+      "buffer_xy_um": [
+        1.33,
+        57.4
+      ],
+      "design": "s5378",
+      "frozen_graph_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2b_activity_model/s5378.placed_graph.json",
+      "frozen_graph_sha256": "c4b008511d2025b737ff5dd1ce1b7660d82a26c6639681d871bb58d6e277ad93",
+      "original_source_FF": "U_n1588gat",
+      "original_source_net": "n1588gat",
+      "output_buffer": "output38",
+      "retained_graph_sink": {
+        "master": "BUF_X1",
+        "pin": "A",
+        "xy": [
+          1.33,
+          57.4
+        ]
+      },
+      "retained_transparent_child": "test_so",
+      "selected_architectures": [
+        {
+          "architecture_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+          "frozen_predictor_buffer_owner": "U_n1588gat",
+          "label": "P",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_n2121gat",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486.physical.json",
+          "routed_physical_sha256": "e2ec0882b9aa5a51213211d719b355455bc591bde3e7021f8da9c5d7488d9124",
+          "selected_chain0_tail": "U_n2121gat"
+        },
+        {
+          "architecture_sha256": "16904eaa0db2f733be62aebed6ba183f37c1d672a02d210e964bf96d1bc71f54",
+          "frozen_predictor_buffer_owner": "U_n1588gat",
+          "label": "A",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_n2407gat",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/16904eaa0db2f733be62aebed6ba183f37c1d672a02d210e964bf96d1bc71f54.physical.json",
+          "routed_physical_sha256": "e7ea2c19e6021d38016483733b5b3515cbbc3d05d28f9bb8b485579ead564130",
+          "selected_chain0_tail": "U_n2407gat"
+        },
+        {
+          "architecture_sha256": "9c54b48f2ab8c0d7ebd94dd6c5de6ad6f04883f972277372ae90fecb4ce7f9ee",
+          "frozen_predictor_buffer_owner": "U_n1588gat",
+          "label": "J50",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_n2490gat",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/9c54b48f2ab8c0d7ebd94dd6c5de6ad6f04883f972277372ae90fecb4ce7f9ee.physical.json",
+          "routed_physical_sha256": "dab905c8283a864b6ba1759980eba13e5321ecc07deb84f789a1c9a7dcd459b8",
+          "selected_chain0_tail": "U_n2490gat"
+        },
+        {
+          "architecture_sha256": "37deaa7b3eee9623d40fe7ceb4163773bfda2f0953a72fb7b9babd69f088b04f",
+          "frozen_predictor_buffer_owner": "U_n1588gat",
+          "label": "T",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_n463gat",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/37deaa7b3eee9623d40fe7ceb4163773bfda2f0953a72fb7b9babd69f088b04f.physical.json",
+          "routed_physical_sha256": "1994493926e93eaebb93888d5582dcc996e0728883a9c482c4fa9f72eb469f33",
+          "selected_chain0_tail": "U_n463gat"
+        },
+        {
+          "architecture_sha256": "44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b",
+          "frozen_predictor_buffer_owner": "U_n1588gat",
+          "label": "44b1a2ab5a1e",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_n1740gat",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/44b1a2ab5a1e9c7caec247107108fb3055f3c6ffceb2de291ff1d93111bd3d1b.physical.json",
+          "routed_physical_sha256": "c5a62273e6ca71899d898e6d706e12e0a3613368d09ef237cb35942c17a4bf7f",
+          "selected_chain0_tail": "U_n1740gat"
+        },
+        {
+          "architecture_sha256": "0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1",
+          "frozen_predictor_buffer_owner": "U_n1588gat",
+          "label": "0348f2cc6b9d",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_n2091gat",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/0348f2cc6b9dde7d6525795e96eb629b8da746f46f6936d6555a373279e1dbd1.physical.json",
+          "routed_physical_sha256": "3bd20513211dde8aa2b42ddf903f49486af5e2f46dce57e162419c30c8d26939",
+          "selected_chain0_tail": "U_n2091gat"
+        },
+        {
+          "architecture_sha256": "a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7",
+          "frozen_predictor_buffer_owner": "U_n1588gat",
+          "label": "a78c6ce1a5a1",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_n2091gat",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7.physical.json",
+          "routed_physical_sha256": "d4be692d3895d1fa10ea9c9b2399d379839a7839aa64313efa1bc05754308190",
+          "selected_chain0_tail": "U_n2091gat"
+        },
+        {
+          "architecture_sha256": "75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c",
+          "frozen_predictor_buffer_owner": "U_n1588gat",
+          "label": "75ea663523d9",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_n2091gat",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/75ea663523d98d753f28f01c7c64348c52391e96e1edb60f4449696445be620c.physical.json",
+          "routed_physical_sha256": "86cd1a31e5a7aef10c95f39e924326ab083f85f61b95320eb64b01d1b33b5a79",
+          "selected_chain0_tail": "U_n2091gat"
+        },
+        {
+          "architecture_sha256": "1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685",
+          "frozen_predictor_buffer_owner": "U_n1588gat",
+          "label": "1f1a3a458946",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_n1336gat",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/1f1a3a458946abcf31aa53a2375266a8629ed0ac0079ec7c20ecf47cc1e2e685.physical.json",
+          "routed_physical_sha256": "c0c073ca1b0ac26758f2f952d8aa8294f13ecf94ce22a7c2c827ec0b6214ff88",
+          "selected_chain0_tail": "U_n1336gat"
+        }
+      ],
+      "source_odb": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+      "source_sha256": "2792c3863d10e34823ebb7aa404770dc1aeff55456f0fbb15f704bcd9fc57cd0"
+    },
+    {
+      "buffer_input_pin_cap_ff": 0.974659,
+      "buffer_master": "BUF_X1",
+      "buffer_xy_um": [
+        1.33,
+        84.0
+      ],
+      "design": "s9234",
+      "frozen_graph_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2b_activity_model/s9234.placed_graph.json",
+      "frozen_graph_sha256": "90cc71005c6aea7e9bd1fff80d88f6bea524f9ddac450489790369f16c10a005",
+      "original_source_FF": "U_g59",
+      "original_source_net": "g59",
+      "output_buffer": "output67",
+      "retained_graph_sink": {
+        "master": "BUF_X1",
+        "pin": "A",
+        "xy": [
+          1.33,
+          84.0
+        ]
+      },
+      "retained_transparent_child": "test_so",
+      "selected_architectures": [
+        {
+          "architecture_sha256": "169ed6bfc885161ffb6e65df93983a818a4ee75fa347c639b11077f4a5c9be13",
+          "frozen_predictor_buffer_owner": "U_g59",
+          "label": "P",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_g139",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/169ed6bfc885161ffb6e65df93983a818a4ee75fa347c639b11077f4a5c9be13.physical.json",
+          "routed_physical_sha256": "b3d3aedc06b9f63b8b607a32ef2a1013874bd7e57f1d9ead1d6e2354e50f456f",
+          "selected_chain0_tail": "U_g139"
+        },
+        {
+          "architecture_sha256": "71afe0e235bbdcef058e540b59180401b82f37f48d0b3c1313fe6750cc2e8c35",
+          "frozen_predictor_buffer_owner": "U_g59",
+          "label": "A",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_g170",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/71afe0e235bbdcef058e540b59180401b82f37f48d0b3c1313fe6750cc2e8c35.physical.json",
+          "routed_physical_sha256": "65bd532df9998b795437ced18aa4bc632f42386075028b2239f658af2b14fae7",
+          "selected_chain0_tail": "U_g170"
+        },
+        {
+          "architecture_sha256": "2f6e012e12ba16621b425a458c0d0d7cf410abc6a724a1f139e84e84f12e55a1",
+          "frozen_predictor_buffer_owner": "U_g59",
+          "label": "J50",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_g148",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/2f6e012e12ba16621b425a458c0d0d7cf410abc6a724a1f139e84e84f12e55a1.physical.json",
+          "routed_physical_sha256": "f90adfaee30b6b7b20d1d1d68b41ac53f9340c3fbb187f08c4d30532c29b339d",
+          "selected_chain0_tail": "U_g148"
+        },
+        {
+          "architecture_sha256": "237fb9ad7f2ffd5c2bc0a8c4bc0306e97cc0e3004cb5fb11dd35244619138aef",
+          "frozen_predictor_buffer_owner": "U_g59",
+          "label": "T",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_g699",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/237fb9ad7f2ffd5c2bc0a8c4bc0306e97cc0e3004cb5fb11dd35244619138aef.physical.json",
+          "routed_physical_sha256": "aa771e36fd77f05254a718af628c69b0b51c15a3da7357fdec6f8f097431da93",
+          "selected_chain0_tail": "U_g699"
+        },
+        {
+          "architecture_sha256": "42ab942ed206f2312b9ded3de31e50a1202687a5e9adeb74276377bf998117be",
+          "frozen_predictor_buffer_owner": "U_g59",
+          "label": "balanced",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_g699",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/42ab942ed206f2312b9ded3de31e50a1202687a5e9adeb74276377bf998117be.physical.json",
+          "routed_physical_sha256": "df83212b7e3bad539e1c8da08e63f9a213922f1324a299f56b273299fa29a581",
+          "selected_chain0_tail": "U_g699"
+        },
+        {
+          "architecture_sha256": "7df0fb60c2a837f9d068d616fafe76bd33956b8b924f301ed3328e8881bc12ac",
+          "frozen_predictor_buffer_owner": "U_g59",
+          "label": "activity_extreme",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_g148",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/7df0fb60c2a837f9d068d616fafe76bd33956b8b924f301ed3328e8881bc12ac.physical.json",
+          "routed_physical_sha256": "7264ad4a6d000ca29515987680eacaccc7ab3d8427fc6c20ab155647d724d8e9",
+          "selected_chain0_tail": "U_g148"
+        }
+      ],
+      "source_odb": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.odb",
+      "source_sha256": "b8fefeb986f7f9dce87c30247697d89c6b60cd0fdff388c5b7948ca0b3d8f06e"
+    },
+    {
+      "buffer_input_pin_cap_ff": 0.974659,
+      "buffer_master": "BUF_X1",
+      "buffer_xy_um": [
+        26.03,
+        142.8
+      ],
+      "design": "s15850",
+      "frozen_graph_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2b_activity_model/s15850.placed_graph.json",
+      "frozen_graph_sha256": "4161904f385ba12d4bce1efd09f04a3337323aa02c7f1a90fc474eba28f7d962",
+      "original_source_FF": "U_g73",
+      "original_source_net": "g73",
+      "output_buffer": "output196",
+      "retained_graph_sink": {
+        "master": "BUF_X1",
+        "pin": "A",
+        "xy": [
+          26.03,
+          142.8
+        ]
+      },
+      "retained_transparent_child": "test_so",
+      "selected_architectures": [
+        {
+          "architecture_sha256": "f58717aa863acd666346580fa4a3fca3fdea25f88ec768be3b8839f2ea7307a9",
+          "frozen_predictor_buffer_owner": "U_g73",
+          "label": "P",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_g1289",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/f58717aa863acd666346580fa4a3fca3fdea25f88ec768be3b8839f2ea7307a9.physical.json",
+          "routed_physical_sha256": "dfb1dcfc0de8d0f52e4226c2717d2776bb3c97d9e54c382ac42504ea414c505f",
+          "selected_chain0_tail": "U_g1289"
+        },
+        {
+          "architecture_sha256": "e1867cc98b3d1afa4f231daa6c38652ed38be26bf58ed32499449fb51fd1f7ea",
+          "frozen_predictor_buffer_owner": "U_g73",
+          "label": "A",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_g1166",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/e1867cc98b3d1afa4f231daa6c38652ed38be26bf58ed32499449fb51fd1f7ea.physical.json",
+          "routed_physical_sha256": "bdf824a05198979783151705098851e8643d57e9da0b3aa19cf312980055176f",
+          "selected_chain0_tail": "U_g1166"
+        },
+        {
+          "architecture_sha256": "fdf44a74a70de6097e4087b4760fce7fd18c6f454f82cbbbb07121eed956b965",
+          "frozen_predictor_buffer_owner": "U_g73",
+          "label": "J50",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_g312",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/fdf44a74a70de6097e4087b4760fce7fd18c6f454f82cbbbb07121eed956b965.physical.json",
+          "routed_physical_sha256": "3e8a35728ec07d1549a3618e01da9d800dc68ce74bcf527a35e17307fd7acd8b",
+          "selected_chain0_tail": "U_g312"
+        },
+        {
+          "architecture_sha256": "f0ec44569fab2217d7aa9f8dd4bb03a265c3d352c935343052f3505432cea877",
+          "frozen_predictor_buffer_owner": "U_g73",
+          "label": "T",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_g1453",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/f0ec44569fab2217d7aa9f8dd4bb03a265c3d352c935343052f3505432cea877.physical.json",
+          "routed_physical_sha256": "e5ab8e8b1051005880ebc3d83cd8e5f23f958c9450746b18df7c06188dac4d55",
+          "selected_chain0_tail": "U_g1453"
+        },
+        {
+          "architecture_sha256": "c59deca1ac58ed7903f5baa6e82c81263b768d429134eeef408225691a69e3b9",
+          "frozen_predictor_buffer_owner": "U_g73",
+          "label": "balanced",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_g312",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/c59deca1ac58ed7903f5baa6e82c81263b768d429134eeef408225691a69e3b9.physical.json",
+          "routed_physical_sha256": "31d121c16616b17e40d2ba1de86c0865b484365a8b422ed93a604aceecac875f",
+          "selected_chain0_tail": "U_g312"
+        },
+        {
+          "architecture_sha256": "b114446060130f88bb0f258b5915937146e12ca040037900c1bf44c4e5e657a1",
+          "frozen_predictor_buffer_owner": "U_g73",
+          "label": "activity_extreme",
+          "ownership_mismatch": true,
+          "routed_buffer_owner": "U_g1166",
+          "routed_physical_path": "/mnt/d/PACT_EXPERIMENTS/results/phase2a_shift_activity/b114446060130f88bb0f258b5915937146e12ca040037900c1bf44c4e5e657a1.physical.json",
+          "routed_physical_sha256": "530af9cb5ee6004f646c059930f75c2b6750664c60df796eb5e032056f65328c",
+          "selected_chain0_tail": "U_g1166"
+        }
+      ],
+      "source_odb": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s15850/phase0b_s11_B0/3_place.odb",
+      "source_sha256": "de8eb6915b056ae069622878850cb40040290012dd5df149e974f8b45607c9d9"
+    }
+  ],
+  "scientific_consequence": "M3 pin load and M5 owned-tree geometry are not the declared selected-architecture SI/SO graph. Numerical reproduction and event/packed equivalence can still pass because both evaluators use the same frozen erroneous weights.",
+  "source_hashes": {
+    "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0c_rewire_odb.py": "7f655d611891fe7ec74370fd2598cfb12ee5f1babd6d976c109ac158014763dc",
+    "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase2b_extract.py": "83c229e6499f315c85eff82da0171b33fcea843c501138a67777ff4acc2fbefd",
+    "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/analysis/phase2b_loads.py": "c03ddc610c648fb81441f1e8164a8cd6675c75c573af02a75f608fd607a00a67"
+  },
+  "status": "CONFIRMED_LEGACY_DEFINITION_BUG",
+  "stop_rule": "User section 1 and Phase-2C contract K: stop and document an inherited definition bug before changing the experiment."
+}

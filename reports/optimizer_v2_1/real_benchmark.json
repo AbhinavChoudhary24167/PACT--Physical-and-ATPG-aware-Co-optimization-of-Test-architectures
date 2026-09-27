@@ -1,0 +1,1081 @@
+{
+  "designs": {
+    "s5378": {
+      "constructor_speedup": 0.4688709447650088,
+      "constructors": {
+        "sequential": {
+          "peak_traced_memory_bytes": 406881,
+          "starts": [
+            {
+              "architecture_key": "fc3264a1da2c635d5da87c058f46b88d",
+              "architecture_sha256": "e3d34f68a27eb7813931462eb15d2b5cd3a85d9f96b45139e3e61946cebe2e8f",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "label": "physical_greedy",
+              "objectives": [
+                1541.1100000000001,
+                67.83333333333333
+              ]
+            },
+            {
+              "architecture_key": "069176d96ec78c1f5493220f64b2f729",
+              "architecture_sha256": "cc3047aed0b2770ce5e2e33ac5976328a153d49cf191fd885ab0bab18eb8eef0",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "label": "mixed_lambda_0.75",
+              "objectives": [
+                2176.13,
+                65.83333333333334
+              ]
+            },
+            {
+              "architecture_key": "d58af09632a9cef85a1529c42e63ef4b",
+              "architecture_sha256": "bae5ba1c7a245edc9764ca0f8732e907db9e34a70a4cd483f1fd0725899b9988",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "label": "mixed_lambda_0.50",
+              "objectives": [
+                2553.8900000000003,
+                62.83333333333333
+              ]
+            },
+            {
+              "architecture_key": "fc08dfeda79eb67a9dc89666423cbdfd",
+              "architecture_sha256": "fcd0b19f8e83f269149217a97ff25d40fd6d8a8a40b18ff950267eaa71d1deda",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "label": "mixed_lambda_0.25",
+              "objectives": [
+                3302.9900000000002,
+                63.666666666666664
+              ]
+            },
+            {
+              "architecture_key": "874a68ea14936a7fd9bdf547b191d3f8",
+              "architecture_sha256": "cb1b6160aecb3f9054a6e6ca22dc8421965a2d3c9eb1e7215f5906dbfcbc9b31",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "label": "activity_aware_greedy",
+              "objectives": [
+                4766.99,
+                61.33333333333333
+              ]
+            }
+          ],
+          "stats": {
+            "accepted_insertions": 885,
+            "activity_heuristic_computations": 14463,
+            "activity_heuristic_lookups": 14463,
+            "candidate_feature_cache_resets": 0,
+            "candidate_feature_computations": 0,
+            "candidates_discarded": 7850,
+            "candidates_invalidated": 0,
+            "candidates_refreshed": 0,
+            "exhausted_frontier_fallbacks": 0,
+            "frontier_rebuilds": 0,
+            "frontier_refreshes": 0,
+            "full_chain_traversals": 10,
+            "head_candidates_scored": 1785,
+            "heap_rebuilds": 0,
+            "insertion_candidates_generated": 8735,
+            "insertion_candidates_scored": 8735,
+            "lane_seconds": {
+              "activity_aware_greedy": 0.046517100010532886,
+              "mixed_lambda_0.25": 0.047121600015088916,
+              "mixed_lambda_0.50": 0.05602570000337437,
+              "mixed_lambda_0.75": 0.05037179999635555,
+              "physical_greedy": 0.045188399992184713
+            },
+            "maximum_activity_cache_entries": 0,
+            "maximum_candidate_feature_cache_entries": 0,
+            "maximum_frontier_entries": 0,
+            "maximum_heap_entries": 0,
+            "mode": "sequential_greedy",
+            "physical_delta_computations": 8735,
+            "repeated_equivalent_candidate_evaluations_across_lanes": 4338,
+            "shared_candidate_feature_hits": 0,
+            "stale_candidates_rejected": 0,
+            "total_seconds": 0.2650452999805566
+          },
+          "wall_seconds": 0.26544729998568073
+        },
+        "shared_frontier": {
+          "peak_traced_memory_bytes": 265885,
+          "starts": [
+            {
+              "architecture_key": "fc3264a1da2c635d5da87c058f46b88d",
+              "architecture_sha256": "e3d34f68a27eb7813931462eb15d2b5cd3a85d9f96b45139e3e61946cebe2e8f",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "label": "physical_greedy",
+              "objectives": [
+                1541.1100000000001,
+                67.83333333333333
+              ]
+            },
+            {
+              "architecture_key": "c6e8ab6032ff92a102987da4ebf2fd33",
+              "architecture_sha256": "6dc93e36a9db2c88f617e52169902c1c3bc6a0976f2a187430465889e1dcac47",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "label": "mixed_lambda_0.75",
+              "objectives": [
+                3030.85,
+                66.83333333333333
+              ]
+            },
+            {
+              "architecture_key": "d9350c0df3b44a1c4c134827cadb5b8b",
+              "architecture_sha256": "3caa5b4c018d02953582e511310a220ae3759e94c15e64904de9ac77a2dcd44a",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "label": "mixed_lambda_0.50",
+              "objectives": [
+                3088.79,
+                65.16666666666666
+              ]
+            },
+            {
+              "architecture_key": "6efc9773a71b70548fcd455a60470d42",
+              "architecture_sha256": "508a450075649c482c123008e1b513426e176a1c5a9fda23defc4596ce876d08",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "label": "mixed_lambda_0.25",
+              "objectives": [
+                3583.4300000000003,
+                65.0
+              ]
+            },
+            {
+              "architecture_key": "8819bf2e65f08f8d10e31e793a5a1b44",
+              "architecture_sha256": "7b5f304834ab1cfd6d1a219221a7527922d1da11a6a8a600d30cb3b64c7428e7",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "label": "activity_aware_greedy",
+              "objectives": [
+                4250.349999999999,
+                66.33333333333333
+              ]
+            }
+          ],
+          "stats": {
+            "accepted_insertions": 885,
+            "activity_heuristic_computations": 6353,
+            "activity_heuristic_lookups": 6533,
+            "candidate_feature_cache_resets": 0,
+            "candidate_feature_computations": 805,
+            "candidates_discarded": 2884,
+            "candidates_invalidated": 156,
+            "candidates_refreshed": 1861,
+            "exhausted_frontier_fallbacks": 0,
+            "frontier_rebuilds": 177,
+            "frontier_refreshes": 200,
+            "full_chain_traversals": 12,
+            "head_candidates_scored": 714,
+            "heap_rebuilds": 0,
+            "insertion_candidates_generated": 3995,
+            "insertion_candidates_scored": 3995,
+            "lane_seconds": {
+              "activity_aware_greedy": 0.058678600238636136,
+              "mixed_lambda_0.25": 0.05987329987692647,
+              "mixed_lambda_0.50": 0.04882029991131276,
+              "mixed_lambda_0.75": 0.054409499833127484,
+              "physical_greedy": 0.1755358000518754
+            },
+            "maximum_activity_cache_entries": 625,
+            "maximum_candidate_feature_cache_entries": 805,
+            "maximum_frontier_entries": 40,
+            "maximum_heap_entries": 0,
+            "mode": "shared_frontier_sparse_regret",
+            "physical_delta_computations": 2939,
+            "repeated_equivalent_candidate_evaluations_across_lanes": 1036,
+            "shared_candidate_feature_hits": 1056,
+            "stale_candidates_rejected": 156,
+            "total_seconds": 0.5651636999973562
+          },
+          "wall_seconds": 0.566141500021331
+        }
+      },
+      "optimizers": {
+        "sequential": {
+          "archive": [
+            {
+              "architecture_key": "1d25d2d136ab960ab29709d3a2dc742e",
+              "architecture_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "move_index": 0,
+              "objectives": [
+                1380.8300000000002,
+                63.33333333333333
+              ],
+              "source": "input_architecture"
+            },
+            {
+              "architecture_key": "38f594dbdf76157799c29fc7cb0c108e",
+              "architecture_sha256": "37deaa7b3eee9623d40fe7ceb4163773bfda2f0953a72fb7b9babd69f088b04f",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "move_index": 0,
+              "objectives": [
+                1421.17,
+                62.333333333333336
+              ],
+              "source": "qualified_T"
+            },
+            {
+              "architecture_key": "c8fb9b513a373ef983484f02dc60ce6c",
+              "architecture_sha256": "3e63a5802320886b131ede64542f5e525ef4181bc5b1f0b8858eb2d051810b9a",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "move_index": 5,
+              "objectives": [
+                1480.8700000000001,
+                62.0
+              ],
+              "source": "cross_chain_swap"
+            },
+            {
+              "architecture_key": "217a5fe8cba60591080fdb6c6d9db1d0",
+              "architecture_sha256": "73645741fcc431e31e69b3c70ec89b5def9f6479edadb090dd14c6b9a8961dcc",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "move_index": 10,
+              "objectives": [
+                1678.8700000000001,
+                61.49999999999999
+              ],
+              "source": "migration"
+            },
+            {
+              "architecture_key": "874a68ea14936a7fd9bdf547b191d3f8",
+              "architecture_sha256": "cb1b6160aecb3f9054a6e6ca22dc8421965a2d3c9eb1e7215f5906dbfcbc9b31",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "move_index": 0,
+              "objectives": [
+                4766.99,
+                61.33333333333333
+              ],
+              "source": "activity_aware_greedy"
+            },
+            {
+              "architecture_key": "142b8bca63c9a7f2c1c6305636271010",
+              "architecture_sha256": "3017c86bb99fe6728c00d50ce32abf014cb2bf2eb561152586d220ee5924ccc1",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "move_index": 13,
+              "objectives": [
+                6822.47,
+                60.166666666666664
+              ],
+              "source": "swap"
+            }
+          ],
+          "counters": {
+            "average_candidate_neighborhood_size": 20.055555555555557,
+            "cache_evictions": 0,
+            "candidates_accepted": 8,
+            "candidates_considered": 24,
+            "candidates_dominated": 16,
+            "candidates_pruned_archive_size": 0,
+            "complete_architecture_copies": 33,
+            "constructor": {
+              "accepted_insertions": 885,
+              "activity_heuristic_computations": 14463,
+              "activity_heuristic_lookups": 14463,
+              "candidate_feature_cache_resets": 0,
+              "candidate_feature_computations": 0,
+              "candidates_discarded": 7850,
+              "candidates_invalidated": 0,
+              "candidates_refreshed": 0,
+              "exhausted_frontier_fallbacks": 0,
+              "frontier_rebuilds": 0,
+              "frontier_refreshes": 0,
+              "full_chain_traversals": 10,
+              "head_candidates_scored": 1785,
+              "heap_rebuilds": 0,
+              "insertion_candidates_generated": 8735,
+              "insertion_candidates_scored": 8735,
+              "lane_seconds": {
+                "activity_aware_greedy": 0.08522900001844391,
+                "mixed_lambda_0.25": 0.10375429998384789,
+                "mixed_lambda_0.50": 0.10110790000180714,
+                "mixed_lambda_0.75": 0.07801200001267716,
+                "physical_greedy": 0.0828472999855876
+              },
+              "maximum_activity_cache_entries": 0,
+              "maximum_candidate_feature_cache_entries": 0,
+              "maximum_frontier_entries": 0,
+              "maximum_heap_entries": 0,
+              "mode": "sequential_greedy",
+              "physical_delta_computations": 8735,
+              "repeated_equivalent_candidate_evaluations_across_lanes": 4338,
+              "shared_candidate_feature_hits": 0,
+              "stale_candidates_rejected": 0,
+              "total_seconds": 0.4908362999849487
+            },
+            "duplicate_candidates": 0,
+            "evaluations_per_second": 4.925012579311402,
+            "exact_evaluations": 24,
+            "final_archive_size": 6,
+            "full_h_eff8_recomputations": 13,
+            "full_physical_recomputations": 17,
+            "incremental_h_eff8_evaluations": 13,
+            "incremental_physical_evaluations": 13,
+            "invalid_moves": 0,
+            "local_moves_accepted": 3,
+            "local_moves_attempted": 13,
+            "local_moves_per_second": 2.6677151471270095,
+            "neighborhood_samples": 18,
+            "neighborhood_total": 361,
+            "parent_restarts": 1,
+            "screened_move_options": 119
+          },
+          "memory": {
+            "current_h_eff8_state_bytes": 16174080,
+            "seen_cache_entries": 24,
+            "sparse_graph_bytes": 25776,
+            "tracemalloc_peak_bytes": 54272785
+          },
+          "runtime": {
+            "constructor_wall_seconds": 0.4908362999849487,
+            "graph_construction_seconds": 0.03505579999182373,
+            "openroad_calls": 0,
+            "optimizer_wall_seconds": 4.87308399999165
+          },
+          "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+        },
+        "shared_frontier": {
+          "archive": [
+            {
+              "architecture_key": "1d25d2d136ab960ab29709d3a2dc742e",
+              "architecture_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "move_index": 0,
+              "objectives": [
+                1380.8300000000002,
+                63.33333333333333
+              ],
+              "source": "input_architecture"
+            },
+            {
+              "architecture_key": "38f594dbdf76157799c29fc7cb0c108e",
+              "architecture_sha256": "37deaa7b3eee9623d40fe7ceb4163773bfda2f0953a72fb7b9babd69f088b04f",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "move_index": 0,
+              "objectives": [
+                1421.17,
+                62.333333333333336
+              ],
+              "source": "qualified_T"
+            },
+            {
+              "architecture_key": "c8fb9b513a373ef983484f02dc60ce6c",
+              "architecture_sha256": "3e63a5802320886b131ede64542f5e525ef4181bc5b1f0b8858eb2d051810b9a",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "move_index": 5,
+              "objectives": [
+                1480.8700000000001,
+                62.0
+              ],
+              "source": "cross_chain_swap"
+            },
+            {
+              "architecture_key": "217a5fe8cba60591080fdb6c6d9db1d0",
+              "architecture_sha256": "73645741fcc431e31e69b3c70ec89b5def9f6479edadb090dd14c6b9a8961dcc",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "move_index": 10,
+              "objectives": [
+                1678.8700000000001,
+                61.49999999999999
+              ],
+              "source": "migration"
+            },
+            {
+              "architecture_key": "142b8bca63c9a7f2c1c6305636271010",
+              "architecture_sha256": "3017c86bb99fe6728c00d50ce32abf014cb2bf2eb561152586d220ee5924ccc1",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "move_index": 13,
+              "objectives": [
+                6822.47,
+                60.166666666666664
+              ],
+              "source": "swap"
+            }
+          ],
+          "counters": {
+            "average_candidate_neighborhood_size": 20.055555555555557,
+            "cache_evictions": 0,
+            "candidates_accepted": 7,
+            "candidates_considered": 24,
+            "candidates_dominated": 17,
+            "candidates_pruned_archive_size": 0,
+            "complete_architecture_copies": 32,
+            "constructor": {
+              "accepted_insertions": 885,
+              "activity_heuristic_computations": 6353,
+              "activity_heuristic_lookups": 6533,
+              "candidate_feature_cache_resets": 0,
+              "candidate_feature_computations": 805,
+              "candidates_discarded": 2884,
+              "candidates_invalidated": 156,
+              "candidates_refreshed": 1861,
+              "exhausted_frontier_fallbacks": 0,
+              "frontier_rebuilds": 177,
+              "frontier_refreshes": 200,
+              "full_chain_traversals": 12,
+              "head_candidates_scored": 714,
+              "heap_rebuilds": 0,
+              "insertion_candidates_generated": 3995,
+              "insertion_candidates_scored": 3995,
+              "lane_seconds": {
+                "activity_aware_greedy": 0.05028469979879446,
+                "mixed_lambda_0.25": 0.05303519970038906,
+                "mixed_lambda_0.50": 0.04341590008698404,
+                "mixed_lambda_0.75": 0.03996019990881905,
+                "physical_greedy": 0.13212480014772154
+              },
+              "maximum_activity_cache_entries": 625,
+              "maximum_candidate_feature_cache_entries": 805,
+              "maximum_frontier_entries": 40,
+              "maximum_heap_entries": 0,
+              "mode": "shared_frontier_sparse_regret",
+              "physical_delta_computations": 2939,
+              "repeated_equivalent_candidate_evaluations_across_lanes": 1036,
+              "shared_candidate_feature_hits": 1056,
+              "stale_candidates_rejected": 156,
+              "total_seconds": 0.45426209998549893
+            },
+            "duplicate_candidates": 0,
+            "evaluations_per_second": 4.9933798186608245,
+            "exact_evaluations": 24,
+            "final_archive_size": 5,
+            "full_h_eff8_recomputations": 13,
+            "full_physical_recomputations": 16,
+            "incremental_h_eff8_evaluations": 13,
+            "incremental_physical_evaluations": 13,
+            "invalid_moves": 0,
+            "local_moves_accepted": 3,
+            "local_moves_attempted": 13,
+            "local_moves_per_second": 2.704747401774613,
+            "neighborhood_samples": 18,
+            "neighborhood_total": 361,
+            "parent_restarts": 1,
+            "screened_move_options": 119
+          },
+          "memory": {
+            "current_h_eff8_state_bytes": 16174080,
+            "seen_cache_entries": 24,
+            "sparse_graph_bytes": 25776,
+            "tracemalloc_peak_bytes": 54270195
+          },
+          "runtime": {
+            "constructor_wall_seconds": 0.45426209998549893,
+            "graph_construction_seconds": 0.03966509999008849,
+            "openroad_calls": 0,
+            "optimizer_wall_seconds": 4.806363799987594
+          },
+          "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+        }
+      },
+      "start_front_comparison": {
+        "new_nondominated_in_combined_front": 1,
+        "new_starts_dominated_by_any_old": 4,
+        "old_nondominated_in_combined_front": 4,
+        "old_starts_dominated_by_any_new": 0,
+        "reproduced_old_hashes": [
+          "e3d34f68a27eb7813931462eb15d2b5cd3a85d9f96b45139e3e61946cebe2e8f"
+        ]
+      },
+      "total_optimizer_speedup": 1.0138816375082196
+    },
+    "s9234": {
+      "constructor_speedup": 0.9630815746586732,
+      "constructors": {
+        "sequential": {
+          "peak_traced_memory_bytes": 397385,
+          "starts": [
+            {
+              "architecture_key": "94290e804fe0a3f48a35203afd9f22e1",
+              "architecture_sha256": "f7c43cb062463892b08c83af3b7c16756ef0775a3af480524b17143f372f8c4d",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "label": "physical_greedy",
+              "objectives": [
+                1882.105,
+                173.5
+              ]
+            },
+            {
+              "architecture_key": "a51d9ed6d52e99a9de68dfaaca82aeb7",
+              "architecture_sha256": "80baf643b2e47172f6f2a891aeb79e6c0a91b27c1129bcd0e9972d84ade830e9",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "label": "mixed_lambda_0.75",
+              "objectives": [
+                2501.445,
+                169.33333333333331
+              ]
+            },
+            {
+              "architecture_key": "74096d60c990ea379dba59f811c8d75e",
+              "architecture_sha256": "8464ed82ad264ca9f926761fac31ecbc6a227f556459141fccfa0d1c6dcb5398",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "label": "mixed_lambda_0.50",
+              "objectives": [
+                3695.8450000000003,
+                175.33333333333334
+              ]
+            },
+            {
+              "architecture_key": "c49775121dedc2d17dbf22f0fc7bda43",
+              "architecture_sha256": "ce43d177d33a364d2f4b0aa299dbb4b2b48dc4645ccea3cc0321b8ce498866a3",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "label": "mixed_lambda_0.25",
+              "objectives": [
+                4291.855,
+                171.5
+              ]
+            },
+            {
+              "architecture_key": "04f3d2115345bf52e890d4661ade9b85",
+              "architecture_sha256": "cc2e20a4d046104a03e728d7412cb6fb5553257e9fd34bdd880b6e4704dcc857",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "label": "activity_aware_greedy",
+              "objectives": [
+                6448.475,
+                169.66666666666666
+              ]
+            }
+          ],
+          "stats": {
+            "accepted_insertions": 1045,
+            "activity_heuristic_computations": 16843,
+            "activity_heuristic_lookups": 16843,
+            "candidate_feature_cache_resets": 0,
+            "candidate_feature_computations": 0,
+            "candidates_discarded": 9046,
+            "candidates_invalidated": 0,
+            "candidates_refreshed": 0,
+            "exhausted_frontier_fallbacks": 0,
+            "frontier_rebuilds": 0,
+            "frontier_refreshes": 0,
+            "full_chain_traversals": 10,
+            "head_candidates_scored": 2105,
+            "heap_rebuilds": 0,
+            "insertion_candidates_generated": 10091,
+            "insertion_candidates_scored": 10091,
+            "lane_seconds": {
+              "activity_aware_greedy": 0.1346441999776289,
+              "mixed_lambda_0.25": 0.08462919999146834,
+              "mixed_lambda_0.50": 0.0983954000112135,
+              "mixed_lambda_0.75": 0.0705420000012964,
+              "physical_greedy": 0.08137119997991249
+            },
+            "maximum_activity_cache_entries": 0,
+            "maximum_candidate_feature_cache_entries": 0,
+            "maximum_frontier_entries": 0,
+            "maximum_heap_entries": 0,
+            "mode": "sequential_greedy",
+            "physical_delta_computations": 10091,
+            "repeated_equivalent_candidate_evaluations_across_lanes": 5210,
+            "shared_candidate_feature_hits": 0,
+            "stale_candidates_rejected": 0,
+            "total_seconds": 0.4980336000153329
+          },
+          "wall_seconds": 0.4992064000107348
+        },
+        "shared_frontier": {
+          "peak_traced_memory_bytes": 268805,
+          "starts": [
+            {
+              "architecture_key": "94290e804fe0a3f48a35203afd9f22e1",
+              "architecture_sha256": "f7c43cb062463892b08c83af3b7c16756ef0775a3af480524b17143f372f8c4d",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "label": "physical_greedy",
+              "objectives": [
+                1882.105,
+                173.5
+              ]
+            },
+            {
+              "architecture_key": "94afa9a55129575e83fe74aeb5438820",
+              "architecture_sha256": "4d1aa6a873f6973af91a92732d5cf6399a9a47c48091f0e6a184777b497d655d",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "label": "mixed_lambda_0.75",
+              "objectives": [
+                4247.225,
+                176.0
+              ]
+            },
+            {
+              "architecture_key": "2cce05ae57a85ca235a41fa296447fc6",
+              "architecture_sha256": "811cd7e293f4282685a5a402e48d2858362a54c1295a63df78060208638743e2",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "label": "mixed_lambda_0.50",
+              "objectives": [
+                4564.645,
+                171.0
+              ]
+            },
+            {
+              "architecture_key": "fda7a0aa6fde23d5a227477f4683aeb2",
+              "architecture_sha256": "41e0fdd1bc884fc24eba0cce630df71e4246e2b122baaf35a82959d03fe51b96",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "label": "mixed_lambda_0.25",
+              "objectives": [
+                4970.7249999999985,
+                165.66666666666666
+              ]
+            },
+            {
+              "architecture_key": "ae3f3ab761ef79f5edc6a1a786b449fc",
+              "architecture_sha256": "705f091fcdd1c33cab7cdaaef3591885614926b5756c0348fd7dc1031bc85771",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "label": "activity_aware_greedy",
+              "objectives": [
+                6335.045,
+                166.99999999999997
+              ]
+            }
+          ],
+          "stats": {
+            "accepted_insertions": 1045,
+            "activity_heuristic_computations": 7497,
+            "activity_heuristic_lookups": 7705,
+            "candidate_feature_cache_resets": 0,
+            "candidate_feature_computations": 953,
+            "candidates_discarded": 3262,
+            "candidates_invalidated": 145,
+            "candidates_refreshed": 2197,
+            "exhausted_frontier_fallbacks": 0,
+            "frontier_rebuilds": 209,
+            "frontier_refreshes": 229,
+            "full_chain_traversals": 12,
+            "head_candidates_scored": 842,
+            "heap_rebuilds": 0,
+            "insertion_candidates_generated": 4556,
+            "insertion_candidates_scored": 4556,
+            "lane_seconds": {
+              "activity_aware_greedy": 0.059666400076821446,
+              "mixed_lambda_0.25": 0.0530764008872211,
+              "mixed_lambda_0.50": 0.050398499792208895,
+              "mixed_lambda_0.75": 0.04589500022120774,
+              "physical_greedy": 0.14453109991154633
+            },
+            "maximum_activity_cache_entries": 745,
+            "maximum_candidate_feature_cache_entries": 953,
+            "maximum_frontier_entries": 40,
+            "maximum_heap_entries": 0,
+            "mode": "shared_frontier_sparse_regret",
+            "physical_delta_computations": 3312,
+            "repeated_equivalent_candidate_evaluations_across_lanes": 1230,
+            "shared_candidate_feature_hits": 1244,
+            "stale_candidates_rejected": 145,
+            "total_seconds": 0.517041099985363
+          },
+          "wall_seconds": 0.5183427999727428
+        }
+      },
+      "optimizers": {
+        "sequential": {
+          "archive": [
+            {
+              "architecture_key": "969678a5d9242b70d238cb5f56cd83be",
+              "architecture_sha256": "237fb9ad7f2ffd5c2bc0a8c4bc0306e97cc0e3004cb5fb11dd35244619138aef",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "move_index": 0,
+              "objectives": [
+                1723.9450000000002,
+                172.33333333333331
+              ],
+              "source": "qualified_T"
+            },
+            {
+              "architecture_key": "a51d9ed6d52e99a9de68dfaaca82aeb7",
+              "architecture_sha256": "80baf643b2e47172f6f2a891aeb79e6c0a91b27c1129bcd0e9972d84ade830e9",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "move_index": 0,
+              "objectives": [
+                2501.445,
+                169.33333333333334
+              ],
+              "source": "mixed_lambda_0.75"
+            },
+            {
+              "architecture_key": "de1fb0adec94685504923ebf7457f3a2",
+              "architecture_sha256": "47a434b488ef268aa173a884f1e2e6f8b216bae10613176efb0240a06072bed6",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "move_index": 7,
+              "objectives": [
+                3035.6050000000005,
+                161.66666666666666
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "949c47a49e461187553f4db530b20038",
+              "architecture_sha256": "862bbe9eda589ef00242eeb1f1b9b9fe8e046127a1864bfa61233e41181cdb47",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "move_index": 9,
+              "objectives": [
+                3042.1050000000005,
+                158.66666666666666
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "dbd702c77f75d63dce735f5504038f45",
+              "architecture_sha256": "12db8dfc95a0e30b1050d56a715ee0a8e1e6a4da8cd68a716909be188aeb72b6",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "move_index": 3,
+              "objectives": [
+                3065.2850000000003,
+                155.66666666666666
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "fcf02caa80e73fdc5b4e383454f52034",
+              "architecture_sha256": "b6149551be388f5691b2ab0e6064c390941b0ec5ea92b0675514eef91864750e",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "move_index": 1,
+              "objectives": [
+                3076.7250000000004,
+                150.83333333333331
+              ],
+              "source": "swap"
+            }
+          ],
+          "counters": {
+            "average_candidate_neighborhood_size": 20.466666666666665,
+            "cache_evictions": 0,
+            "candidates_accepted": 12,
+            "candidates_considered": 24,
+            "candidates_dominated": 12,
+            "candidates_pruned_archive_size": 0,
+            "complete_architecture_copies": 37,
+            "constructor": {
+              "accepted_insertions": 1045,
+              "activity_heuristic_computations": 16843,
+              "activity_heuristic_lookups": 16843,
+              "candidate_feature_cache_resets": 0,
+              "candidate_feature_computations": 0,
+              "candidates_discarded": 9046,
+              "candidates_invalidated": 0,
+              "candidates_refreshed": 0,
+              "exhausted_frontier_fallbacks": 0,
+              "frontier_rebuilds": 0,
+              "frontier_refreshes": 0,
+              "full_chain_traversals": 10,
+              "head_candidates_scored": 2105,
+              "heap_rebuilds": 0,
+              "insertion_candidates_generated": 10091,
+              "insertion_candidates_scored": 10091,
+              "lane_seconds": {
+                "activity_aware_greedy": 0.11731390000204556,
+                "mixed_lambda_0.25": 0.11348759999964386,
+                "mixed_lambda_0.50": 0.12040270000579767,
+                "mixed_lambda_0.75": 0.11391179999918677,
+                "physical_greedy": 0.09603159999824129
+              },
+              "maximum_activity_cache_entries": 0,
+              "maximum_candidate_feature_cache_entries": 0,
+              "maximum_frontier_entries": 0,
+              "maximum_heap_entries": 0,
+              "mode": "sequential_greedy",
+              "physical_delta_computations": 10091,
+              "repeated_equivalent_candidate_evaluations_across_lanes": 5210,
+              "shared_candidate_feature_hits": 0,
+              "stale_candidates_rejected": 0,
+              "total_seconds": 0.6085585000109859
+            },
+            "duplicate_candidates": 0,
+            "evaluations_per_second": 3.3244136084192926,
+            "exact_evaluations": 24,
+            "final_archive_size": 6,
+            "full_h_eff8_recomputations": 13,
+            "full_physical_recomputations": 17,
+            "incremental_h_eff8_evaluations": 13,
+            "incremental_physical_evaluations": 13,
+            "invalid_moves": 0,
+            "local_moves_accepted": 5,
+            "local_moves_attempted": 13,
+            "local_moves_per_second": 1.8007240378937834,
+            "neighborhood_samples": 15,
+            "neighborhood_total": 307,
+            "parent_restarts": 1,
+            "screened_move_options": 125
+          },
+          "memory": {
+            "current_h_eff8_state_bytes": 25399296,
+            "seen_cache_entries": 24,
+            "sparse_graph_bytes": 30384,
+            "tracemalloc_peak_bytes": 85075502
+          },
+          "runtime": {
+            "constructor_wall_seconds": 0.6085585000109859,
+            "graph_construction_seconds": 0.0388012999901548,
+            "openroad_calls": 0,
+            "optimizer_wall_seconds": 7.219318299990846
+          },
+          "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+        },
+        "shared_frontier": {
+          "archive": [
+            {
+              "architecture_key": "969678a5d9242b70d238cb5f56cd83be",
+              "architecture_sha256": "237fb9ad7f2ffd5c2bc0a8c4bc0306e97cc0e3004cb5fb11dd35244619138aef",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "move_index": 0,
+              "objectives": [
+                1723.9450000000002,
+                172.33333333333331
+              ],
+              "source": "qualified_T"
+            },
+            {
+              "architecture_key": "de1fb0adec94685504923ebf7457f3a2",
+              "architecture_sha256": "47a434b488ef268aa173a884f1e2e6f8b216bae10613176efb0240a06072bed6",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "move_index": 7,
+              "objectives": [
+                3035.6050000000005,
+                161.66666666666666
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "949c47a49e461187553f4db530b20038",
+              "architecture_sha256": "862bbe9eda589ef00242eeb1f1b9b9fe8e046127a1864bfa61233e41181cdb47",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "move_index": 9,
+              "objectives": [
+                3042.1050000000005,
+                158.66666666666666
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "dbd702c77f75d63dce735f5504038f45",
+              "architecture_sha256": "12db8dfc95a0e30b1050d56a715ee0a8e1e6a4da8cd68a716909be188aeb72b6",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "move_index": 3,
+              "objectives": [
+                3065.2850000000003,
+                155.66666666666666
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "fcf02caa80e73fdc5b4e383454f52034",
+              "architecture_sha256": "b6149551be388f5691b2ab0e6064c390941b0ec5ea92b0675514eef91864750e",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "move_index": 1,
+              "objectives": [
+                3076.7250000000004,
+                150.83333333333331
+              ],
+              "source": "swap"
+            }
+          ],
+          "counters": {
+            "average_candidate_neighborhood_size": 20.466666666666665,
+            "cache_evictions": 0,
+            "candidates_accepted": 11,
+            "candidates_considered": 24,
+            "candidates_dominated": 13,
+            "candidates_pruned_archive_size": 0,
+            "complete_architecture_copies": 36,
+            "constructor": {
+              "accepted_insertions": 1045,
+              "activity_heuristic_computations": 7497,
+              "activity_heuristic_lookups": 7705,
+              "candidate_feature_cache_resets": 0,
+              "candidate_feature_computations": 953,
+              "candidates_discarded": 3262,
+              "candidates_invalidated": 145,
+              "candidates_refreshed": 2197,
+              "exhausted_frontier_fallbacks": 0,
+              "frontier_rebuilds": 209,
+              "frontier_refreshes": 229,
+              "full_chain_traversals": 12,
+              "head_candidates_scored": 842,
+              "heap_rebuilds": 0,
+              "insertion_candidates_generated": 4556,
+              "insertion_candidates_scored": 4556,
+              "lane_seconds": {
+                "activity_aware_greedy": 0.04906000031041913,
+                "mixed_lambda_0.25": 0.043738999927882105,
+                "mixed_lambda_0.50": 0.042563599767163396,
+                "mixed_lambda_0.75": 0.04807950000395067,
+                "physical_greedy": 0.17250429940759204
+              },
+              "maximum_activity_cache_entries": 745,
+              "maximum_candidate_feature_cache_entries": 953,
+              "maximum_frontier_entries": 40,
+              "maximum_heap_entries": 0,
+              "mode": "shared_frontier_sparse_regret",
+              "physical_delta_computations": 3312,
+              "repeated_equivalent_candidate_evaluations_across_lanes": 1230,
+              "shared_candidate_feature_hits": 1244,
+              "stale_candidates_rejected": 145,
+              "total_seconds": 0.4843704999948386
+            },
+            "duplicate_candidates": 0,
+            "evaluations_per_second": 3.1846334218983325,
+            "exact_evaluations": 24,
+            "final_archive_size": 5,
+            "full_h_eff8_recomputations": 13,
+            "full_physical_recomputations": 16,
+            "incremental_h_eff8_evaluations": 13,
+            "incremental_physical_evaluations": 13,
+            "invalid_moves": 0,
+            "local_moves_accepted": 5,
+            "local_moves_attempted": 13,
+            "local_moves_per_second": 1.72500977019493,
+            "neighborhood_samples": 15,
+            "neighborhood_total": 307,
+            "parent_restarts": 1,
+            "screened_move_options": 125
+          },
+          "memory": {
+            "current_h_eff8_state_bytes": 25399296,
+            "seen_cache_entries": 24,
+            "sparse_graph_bytes": 30384,
+            "tracemalloc_peak_bytes": 85076388
+          },
+          "runtime": {
+            "constructor_wall_seconds": 0.4843704999948386,
+            "graph_construction_seconds": 0.02970600000116974,
+            "openroad_calls": 0,
+            "optimizer_wall_seconds": 7.536189199978253
+          },
+          "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+        }
+      },
+      "start_front_comparison": {
+        "new_nondominated_in_combined_front": 2,
+        "new_starts_dominated_by_any_old": 2,
+        "old_nondominated_in_combined_front": 2,
+        "old_starts_dominated_by_any_new": 2,
+        "reproduced_old_hashes": [
+          "f7c43cb062463892b08c83af3b7c16756ef0775a3af480524b17143f372f8c4d"
+        ]
+      },
+      "total_optimizer_speedup": 0.9579534308947125
+    }
+  },
+  "routing_calls": 0,
+  "schema_version": "pact-optimizer-v2-1-real-start-comparison-1",
+  "seed": 20260921
+}

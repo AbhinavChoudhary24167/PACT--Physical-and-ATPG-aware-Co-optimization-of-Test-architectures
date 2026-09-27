@@ -1,0 +1,32 @@
+{
+  "commands": [
+    "/root/pact-deps/pact-venv/bin/python scripts/phase2c_freeze.py",
+    "/root/pact-deps/pact-venv/bin/python scripts/phase2c_run.py prepare",
+    "/root/pact-deps/pact-venv/bin/python scripts/phase2c_run.py smoke",
+    "/root/pact-deps/pact-venv/bin/python scripts/phase2c_run.py run --workers 4",
+    "/root/pact-deps/pact-venv/bin/python scripts/phase2c_run.py baseline",
+    "/root/pact-deps/pact-venv/bin/python scripts/phase2c_measure.py",
+    "/root/pact-deps/pact-venv/bin/python scripts/phase2c_run.py snapshot",
+    "/root/pact-deps/pact-venv/bin/python scripts/phase2c_measure.py (incremental; policy-interrupted)",
+    "openroad -python -no_init -exit scripts/phase2c_bug_audit.py",
+    "/root/pact-deps/pact-venv/bin/python scripts/phase2c_close_stop.py",
+    "/root/pact-deps/pact-venv/bin/python scripts/phase2c_benchmark.py --engineering-only",
+    "/root/pact-deps/pact-venv/bin/python -m pytest -q --capture=sys --basetemp=/mnt/d/PACT_EXPERIMENTS/pytest_tmp/phase2c_focused tests/unit/test_phase2c_events.py tests/unit/test_phase2c_decision.py tests/unit/test_phase2b_activity.py tests/unit/test_phase2a_shift.py tests/unit/test_phase2a_physical_stats.py",
+    "/root/pact-deps/pact-venv/bin/python -m pytest -q --capture=sys --basetemp=/mnt/d/PACT_EXPERIMENTS/pytest_tmp/phase2c_regression_isolated",
+    "/root/pact-deps/pact-venv/bin/python scripts/phase2c_engineering_report.py",
+    "/root/pact-deps/pact-venv/bin/python scripts/phase2c_finalize.py"
+  ],
+  "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+  "environment": {
+    "MPLCONFIGDIR": "/mnt/d/PACT_EXPERIMENTS/cache/matplotlib",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONPATH": "src:/mnt/d/PACT_EXPERIMENTS/cache/phase2a_python",
+    "TMPDIR": "/mnt/d/PACT_EXPERIMENTS/tmp"
+  },
+  "exact_subprocess_commands": "All rewire/route/verify/RC/extraction commands, timeouts, input/output/log hashes and timestamps are in raw **/execution.json and per-cell result.json; benchmark commands in benchmark_raw.json.",
+  "normal_physical_report_command_not_executed": "/root/pact-deps/pact-venv/bin/python scripts/phase2c_report.py (guarded after bug stop)",
+  "setup_probe": "A prepare invocation before freeze completion exited before accessing physical inputs (missing provenance.json). Retried only after freeze completion; no physical attempt consumed.",
+  "shell": "Ubuntu-24.04 WSL bash",
+  "stop_action": "Terminated only the descendants of the Phase-2C campaign and incremental measurement process trees after confirming the inherited bug. Preserved every attempt and partial log."
+}

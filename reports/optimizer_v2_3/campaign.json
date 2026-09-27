@@ -1,0 +1,4804 @@
+{
+  "additional_qualified_benchmark_evidence": true,
+  "classification": "PACT_V2_3_PARALLEL_PARETO_ADVANCE",
+  "configuration": {
+    "epochs": 2,
+    "estimated_bytes": 2147483648,
+    "exact_budget": 64,
+    "minimum_free_gib": 20.0,
+    "parallel_backend": "process",
+    "wall_max_evaluations": 4096,
+    "wall_seconds": 30.0
+  },
+  "correctness_status": "FULL_REPOSITORY_TESTS_PASS_157",
+  "designs": {
+    "s15850": {
+      "K": 2,
+      "N": 534,
+      "P": 133,
+      "context_id": "s15850/s11/k2",
+      "equal_evaluations": {
+        "1": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 0,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 64
+          },
+          "archive": [
+            {
+              "architecture_key": "fe245ab4fa8ca3467087ef61dea28d34",
+              "architecture_sha256": "927a8e7be64b3b8899ff3ede273d61abef6b6f39506308baaa5dd6b00b3390c7",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 38,
+              "objectives": [
+                3524.47,
+                165.5
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "16d69d812340ce5e8deb8746c1ab59ed",
+              "architecture_sha256": "df8d812d27ffea74cd13871b0cd06432590ec4184903f2d40c30f7d48ad4307b",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 49,
+              "objectives": [
+                3533.5899999999997,
+                164.0
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "c27cd8f7dd030e27a8e4472b6a77d1d0",
+              "architecture_sha256": "9ef74c692392a14e9044056313fda0268798433c9206babe5f060ebbb6590ac8",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 57,
+              "objectives": [
+                3699.1299999999997,
+                163.0
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "e308c9562588ac08b658ce00d633749a",
+              "architecture_sha256": "ea7c5e5f247a1458c3a8d147f9231e48631ca84016e1871e9fafe2214b02902e",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 54,
+              "objectives": [
+                3700.41,
+                162.5
+              ],
+              "source": "segment_exchange"
+            },
+            {
+              "architecture_key": "b403f470fc649b9f36415f56837c1ae6",
+              "architecture_sha256": "61429e543d2968f6318a41f7b12f777dc62caf1832429be5f83310203574721f",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 42,
+              "objectives": [
+                3799.49,
+                160.0
+              ],
+              "source": "segment_exchange"
+            },
+            {
+              "architecture_key": "0d3c8470f090b548575f690dd405918f",
+              "architecture_sha256": "169d9e474cbaf7855906db131253cfd7183a1b6380e9f6d7feb6f912ead9569b",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 45,
+              "objectives": [
+                3911.99,
+                159.83333333333331
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "a216e827a717b1cdb6eb00e10130a0ee",
+              "architecture_sha256": "432f3ea8208c785cbc741c1c440a30d860d1b619e019a894fdc34efdc867d238",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 61,
+              "objectives": [
+                4040.5499999999997,
+                158.16666666666666
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "57a3b564f9e521d10263fad9563d7e0f",
+              "architecture_sha256": "55dc2265fc29bb4fb83ff6b267ebc01ef5860ed0960f73ecc25141ca51122e87",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 32,
+              "objectives": [
+                8963.210000000003,
+                144.66666666666666
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "0462b7e04cdeb25c8d8bd45e3674abc7",
+              "architecture_sha256": "b99933dd7f4554c2a34debe6770b648e6723aa4a607e8314d3aee2b6fdebc791",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 31,
+              "objectives": [
+                8971.850000000002,
+                141.83333333333331
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "a2c5c58775d25a01a85c33a979c20fb2",
+              "architecture_sha256": "129a59a4f251de55b877650af15e89869eeb1f28eb54eb308ae878f016784b28",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 13,
+              "objectives": [
+                8983.330000000004,
+                140.66666666666669
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "97256fe5d26055e995677139be934189",
+              "architecture_sha256": "c59deca1ac58ed7903f5baa6e82c81263b768d429134eeef408225691a69e3b9",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 67,
+              "objectives": [
+                8984.410000000003,
+                140.33333333333334
+              ],
+              "source": "swap"
+            }
+          ],
+          "config": {
+            "budget_mode": "exact_evaluations",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s15850-equal_evaluations-w1",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 1
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "lanes": [
+                {
+                  "exact_evaluations": 64,
+                  "lane_id": "L0",
+                  "lane_label": "serial_v2_2",
+                  "seed": 20260921,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            3525.47,
+            142.83333333333331
+          ],
+          "frozen_reference": [
+            48096.22,
+            179.91666666666663
+          ],
+          "metrics": {
+            "best_H_eff8": 140.33333333333334,
+            "best_physical": 3524.47,
+            "duplicate_evaluation_fraction": 0.0,
+            "duplicate_exact_evaluations": 0,
+            "frozen_reference_hypervolume": 1665363.9741666645,
+            "nondominated_archive_size": 11,
+            "objective_space_spread": 0.6896190884848651,
+            "unique_architectures": 11,
+            "unique_exact_evaluations": 64
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 64,
+            "maximum_local_moves": 4096,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 600.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 98.57126769597035,
+            "process_cpu_seconds": 74.875,
+            "wall_seconds": 75.96026890000212
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+        },
+        "2": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 0,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 64
+          },
+          "archive": [
+            {
+              "architecture_key": "be6f736bf468505e5bd65a8dce191156",
+              "architecture_sha256": "1b389009b4640bcd87aac67bfb7555418ee7909d6b0cc66d994e4b4670ca4201",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 9,
+              "objectives": [
+                3513.5699999999997,
+                166.33333333333331
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "841ff5fb527532725f31065763ab9465",
+              "architecture_sha256": "beac266bd47616453dbf2d4d6c76edd481055daf19f3350aebc3081637fb0282",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 2,
+              "objectives": [
+                3518.8900000000003,
+                163.83333333333331
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "a3c34d278b47adeda68d66c92120d34d",
+              "architecture_sha256": "792272d88f7529c58b5ca4d9e625b4db6363d208126d625b3f5f583a4046329e",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 3,
+              "objectives": [
+                3521.6900000000005,
+                163.16666666666669
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "749f8faa25c67bc9dfdeee0f57117289",
+              "architecture_sha256": "38df3f8652b6ac2398accd60e09b6fa0349e991e7a71a9b8da751bfe7c7a1397",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 6,
+              "objectives": [
+                3797.6900000000005,
+                161.16666666666669
+              ],
+              "source": "segment_exchange"
+            },
+            {
+              "architecture_key": "a9744ec2d365d8d090d9446174a3556e",
+              "architecture_sha256": "06531bc40cf0b92afe528b3ba6d7a7f41006512c488a3e181c5821ca54f13a4d",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 15,
+              "objectives": [
+                3801.0700000000006,
+                160.83333333333331
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "0d5266d1b4df0d4372cc2514614482e3",
+              "architecture_sha256": "0337a4ba1af5e23866422aba18eef5e6cd298a949eda23b33233c68b88528e79",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 18,
+              "objectives": [
+                3936.4900000000007,
+                159.66666666666666
+              ],
+              "source": "segment_exchange"
+            },
+            {
+              "architecture_key": "6f98f7751b5762f5f7bcdffbadefc898",
+              "architecture_sha256": "5fd42a1859cc212cbb5c3f61cb1e46c79e25e944a4f9cbb098f6881a6d70ef3a",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L2",
+              "move_index": 8,
+              "objectives": [
+                9046.990000000002,
+                143.33333333333334
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "d186ba542a755b6df4d0328eb3159f37",
+              "architecture_sha256": "0b229c9155bd80701a64363bd99a1c38878d9c3b2026a70cb109496e1b25a38b",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 0,
+              "objectives": [
+                9125.49,
+                142.16666666666666
+              ],
+              "source": "input_architecture"
+            }
+          ],
+          "config": {
+            "budget_mode": "exact_evaluations",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s15850-equal_evaluations-w2",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 2
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "global_archive_size": 6,
+              "lanes": [
+                {
+                  "archive_size": 4,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 16,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 17.546875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_evaluations-w2\\L0",
+                  "seed": 1377194433,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 16,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 18.046875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_evaluations-w2\\L2",
+                  "seed": 111359012,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                }
+              ]
+            },
+            {
+              "epoch": 1,
+              "global_archive_size": 8,
+              "lanes": [
+                {
+                  "archive_size": 6,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 16,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 18.609375,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_evaluations-w2\\L0",
+                  "seed": 669603686,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 16,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 17.46875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_evaluations-w2\\L2",
+                  "seed": 1687910932,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            3525.47,
+            142.83333333333331
+          ],
+          "frozen_reference": [
+            48096.22,
+            179.91666666666663
+          ],
+          "metrics": {
+            "best_H_eff8": 142.16666666666666,
+            "best_physical": 3513.5699999999997,
+            "duplicate_evaluation_fraction": 0.03125,
+            "duplicate_exact_evaluations": 2,
+            "frozen_reference_hypervolume": 1584892.4108333322,
+            "nondominated_archive_size": 8,
+            "objective_space_spread": 0.6637373540686978,
+            "unique_architectures": 8,
+            "unique_exact_evaluations": 62
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 64,
+            "maximum_local_moves": 4096,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 600.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 93.09740097977406,
+            "process_cpu_seconds": 71.671875,
+            "wall_seconds": 38.49295159999747
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+        },
+        "4": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 0,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 64
+          },
+          "archive": [
+            {
+              "architecture_key": "7adcc8cc1ef5448c9917b5ffc69f11aa",
+              "architecture_sha256": "f58717aa863acd666346580fa4a3fca3fdea25f88ec768be3b8839f2ea7307a9",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 0,
+              "objectives": [
+                3525.47,
+                166.33333333333331
+              ],
+              "source": "input_architecture"
+            },
+            {
+              "architecture_key": "40ac4e5cb8e826a09df0e9256b2d9499",
+              "architecture_sha256": "19687172dc734db583541871e2846012262de29182c9ee7a2c25a3bdef2df743",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 2,
+              "objectives": [
+                3530.79,
+                163.83333333333331
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "6770f68061dab93f644c89bb29a6d3b1",
+              "architecture_sha256": "312fbcbe7006bdc5975febd2195cedba7dc14b76881dc507be98758369cdbcd8",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 3,
+              "objectives": [
+                3533.59,
+                163.16666666666669
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "a70ca98b6ddd51e21408375b291d8610",
+              "architecture_sha256": "23c8a86aacef1d292aa93359ce77f11192943b07e5d72fc4e4df9d34421a0528",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 7,
+              "objectives": [
+                3804.27,
+                161.16666666666669
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "881b5a1a36c05f1d27845a5bd1eb920d",
+              "architecture_sha256": "a2636a5b1c0c88f8ac3ee90f3b7cf9a78aa600c54af8eae18a3e71b22a38ebfa",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L3",
+              "move_index": 1,
+              "objectives": [
+                8991.449999999999,
+                148.66666666666663
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "70d60bcfa1286324840ea04108295cb4",
+              "architecture_sha256": "a15140c6b52ad3d15283c61faaaacf2533cb03fc3d1f10c16c3c51926fd46e7d",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L3",
+              "move_index": 7,
+              "objectives": [
+                8997.43,
+                147.83333333333334
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "42abcc1bec6c21b0923da5142ccca52a",
+              "architecture_sha256": "590204a8362f00704b65294190bd30cd46e48abed867433b2ca63e10188b5e75",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L3",
+              "move_index": 3,
+              "objectives": [
+                9003.89,
+                145.83333333333334
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "1d0b04580f67177c88a7d0c9837c8e99",
+              "architecture_sha256": "d39b14cf6b36077e571a82bc4cacb75af7150ea250775cbb4175bb2fe06248a6",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L3",
+              "move_index": 2,
+              "objectives": [
+                9007.65,
+                144.83333333333334
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "dada2bce0d53e80023d91aa42d9b1ee2",
+              "architecture_sha256": "cc7c49c41ac623ee54929588169d799ebc1d71acd8fa438d5eb69f95e892de7d",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L3",
+              "move_index": 0,
+              "objectives": [
+                9019.81,
+                144.33333333333331
+              ],
+              "source": "input_architecture"
+            },
+            {
+              "architecture_key": "3c4f8dfa002027317f5dc3fbd5042bed",
+              "architecture_sha256": "96be18fad95fe3e17d9cf905cbf9961092eedac17bb1a0f789fde4c78277bcdc",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L1",
+              "move_index": 1,
+              "objectives": [
+                36512.77,
+                143.0
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "f762d6291c29a4758615eeaa0b21626a",
+              "architecture_sha256": "f2a5a18acd78daac9fb7eef7d5f35cfd2cd387b8588a1b121c47a50d186b3321",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 6,
+              "objectives": [
+                36516.090000000004,
+                142.33333333333331
+              ],
+              "source": "segment_exchange"
+            },
+            {
+              "architecture_key": "3d5d8b211adbc2e44a53b74c763a6e88",
+              "architecture_sha256": "ae5382d9c71e6fd62dea36189bd211fdfeea771803dd0dc17874b4d7545cda4d",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L1",
+              "move_index": 5,
+              "objectives": [
+                36660.729999999996,
+                141.5
+              ],
+              "source": "cross_chain_swap"
+            },
+            {
+              "architecture_key": "fe725543d5332e1afaae1c8d2311be2f",
+              "architecture_sha256": "9da28c778ba0771ff11adfba73c5c4eefa292a6e130256f9de912686cdbf4b83",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 2,
+              "objectives": [
+                36725.049999999996,
+                139.83333333333331
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "df6e5b03b0d0cfe9947bdb0609626ef0",
+              "architecture_sha256": "b114446060130f88bb0f258b5915937146e12ca040037900c1bf44c4e5e657a1",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 7,
+              "objectives": [
+                36740.61,
+                139.16666666666669
+              ],
+              "source": "swap"
+            }
+          ],
+          "config": {
+            "budget_mode": "exact_evaluations",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s15850-equal_evaluations-w4",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 4
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "global_archive_size": 5,
+              "lanes": [
+                {
+                  "archive_size": 1,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 7.421875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_evaluations-w4\\L0",
+                  "seed": 1377194433,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L1",
+                  "lane_label": "balanced_physical_activity",
+                  "process_cpu_seconds": 12.875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_evaluations-w4\\L1",
+                  "seed": 1600422663,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 3,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 9.796875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_evaluations-w4\\L2",
+                  "seed": 111359012,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L3",
+                  "lane_label": "diversity_perturbation",
+                  "process_cpu_seconds": 12.71875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_evaluations-w4\\L3",
+                  "seed": 1500926719,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                }
+              ]
+            },
+            {
+              "epoch": 1,
+              "global_archive_size": 14,
+              "lanes": [
+                {
+                  "archive_size": 4,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 11.46875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_evaluations-w4\\L0",
+                  "seed": 669603686,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 4,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L1",
+                  "lane_label": "balanced_physical_activity",
+                  "process_cpu_seconds": 11.375,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_evaluations-w4\\L1",
+                  "seed": 1674970890,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 3,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 11.359375,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_evaluations-w4\\L2",
+                  "seed": 1687910932,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 6,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L3",
+                  "lane_label": "diversity_perturbation",
+                  "process_cpu_seconds": 11.171875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_evaluations-w4\\L3",
+                  "seed": 1175060632,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            3525.47,
+            142.83333333333331
+          ],
+          "frozen_reference": [
+            48096.22,
+            179.91666666666663
+          ],
+          "metrics": {
+            "best_H_eff8": 139.16666666666669,
+            "best_physical": 3525.47,
+            "duplicate_evaluation_fraction": 0.0625,
+            "duplicate_exact_evaluations": 4,
+            "frozen_reference_hypervolume": 1552545.2524999983,
+            "nondominated_archive_size": 14,
+            "objective_space_spread": 1.0450056284323668,
+            "unique_architectures": 14,
+            "unique_exact_evaluations": 60
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 64,
+            "maximum_local_moves": 4096,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 600.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 84.93013152129406,
+            "process_cpu_seconds": 88.1875,
+            "wall_seconds": 25.95883769998909
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+        }
+      },
+      "equal_wall": {
+        "1": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 0,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 27
+          },
+          "archive": [
+            {
+              "architecture_key": "7adcc8cc1ef5448c9917b5ffc69f11aa",
+              "architecture_sha256": "f58717aa863acd666346580fa4a3fca3fdea25f88ec768be3b8839f2ea7307a9",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 0,
+              "objectives": [
+                3525.47,
+                166.33333333333331
+              ],
+              "source": "input_architecture"
+            },
+            {
+              "architecture_key": "6508450c6e8b3dd9f27935ad8cbd765f",
+              "architecture_sha256": "6d354ef71ba545dae4207d6ae071b96f62717e318b08771712065177b57a2201",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 23,
+              "objectives": [
+                8980.530000000002,
+                142.0
+              ],
+              "source": "cross_chain_swap"
+            },
+            {
+              "architecture_key": "a2c5c58775d25a01a85c33a979c20fb2",
+              "architecture_sha256": "129a59a4f251de55b877650af15e89869eeb1f28eb54eb308ae878f016784b28",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 13,
+              "objectives": [
+                8983.330000000004,
+                140.66666666666669
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "9b1f0dbb0b24c245ee3be0d11a79746a",
+              "architecture_sha256": "227c980a7d56455ba274d37813bce6afd0fed6c8a50bfae4a1625df192460ec0",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 11,
+              "objectives": [
+                9000.130000000003,
+                140.33333333333334
+              ],
+              "source": "cross_chain_swap"
+            }
+          ],
+          "config": {
+            "budget_mode": "wall_clock",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s15850-equal_wall-w1",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 1
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "lanes": [
+                {
+                  "exact_evaluations": 27,
+                  "lane_id": "L0",
+                  "lane_label": "serial_v2_2",
+                  "seed": 20260921,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            3525.47,
+            142.83333333333331
+          ],
+          "frozen_reference": [
+            48096.22,
+            179.91666666666663
+          ],
+          "metrics": {
+            "best_H_eff8": 140.33333333333334,
+            "best_physical": 3525.47,
+            "duplicate_evaluation_fraction": 0.0,
+            "duplicate_exact_evaluations": 0,
+            "frozen_reference_hypervolume": 1622417.027499998,
+            "nondominated_archive_size": 4,
+            "objective_space_spread": 0.711801725734077,
+            "unique_architectures": 4,
+            "unique_exact_evaluations": 27
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 4096,
+            "maximum_local_moves": 262144,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 30.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 98.93917401460462,
+            "process_cpu_seconds": 30.625,
+            "wall_seconds": 30.95336130002397
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+        },
+        "2": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 0,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 51
+          },
+          "archive": [
+            {
+              "architecture_key": "be6f736bf468505e5bd65a8dce191156",
+              "architecture_sha256": "1b389009b4640bcd87aac67bfb7555418ee7909d6b0cc66d994e4b4670ca4201",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 9,
+              "objectives": [
+                3513.5699999999997,
+                166.33333333333331
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "841ff5fb527532725f31065763ab9465",
+              "architecture_sha256": "beac266bd47616453dbf2d4d6c76edd481055daf19f3350aebc3081637fb0282",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 2,
+              "objectives": [
+                3518.8900000000003,
+                163.83333333333331
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "a3c34d278b47adeda68d66c92120d34d",
+              "architecture_sha256": "792272d88f7529c58b5ca4d9e625b4db6363d208126d625b3f5f583a4046329e",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 3,
+              "objectives": [
+                3521.6900000000005,
+                163.16666666666669
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "749f8faa25c67bc9dfdeee0f57117289",
+              "architecture_sha256": "38df3f8652b6ac2398accd60e09b6fa0349e991e7a71a9b8da751bfe7c7a1397",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 6,
+              "objectives": [
+                3797.6900000000005,
+                161.16666666666669
+              ],
+              "source": "segment_exchange"
+            },
+            {
+              "architecture_key": "6f98f7751b5762f5f7bcdffbadefc898",
+              "architecture_sha256": "5fd42a1859cc212cbb5c3f61cb1e46c79e25e944a4f9cbb098f6881a6d70ef3a",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L2",
+              "move_index": 8,
+              "objectives": [
+                9046.990000000002,
+                143.33333333333334
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "d186ba542a755b6df4d0328eb3159f37",
+              "architecture_sha256": "0b229c9155bd80701a64363bd99a1c38878d9c3b2026a70cb109496e1b25a38b",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 0,
+              "objectives": [
+                9125.49,
+                142.16666666666666
+              ],
+              "source": "input_architecture"
+            }
+          ],
+          "config": {
+            "budget_mode": "wall_clock",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s15850-equal_wall-w2",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 2
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "global_archive_size": 6,
+              "lanes": [
+                {
+                  "archive_size": 4,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 15,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 15.921875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_wall-w2\\L0",
+                  "seed": 1377194433,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 15,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 16.28125,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_wall-w2\\L2",
+                  "seed": 111359012,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                }
+              ]
+            },
+            {
+              "epoch": 1,
+              "global_archive_size": 6,
+              "lanes": [
+                {
+                  "archive_size": 4,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 10,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 13.640625,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_wall-w2\\L0",
+                  "seed": 669603686,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 11,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 13.265625,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_wall-w2\\L2",
+                  "seed": 1687910932,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            3525.47,
+            142.83333333333331
+          ],
+          "frozen_reference": [
+            48096.22,
+            179.91666666666663
+          ],
+          "metrics": {
+            "best_H_eff8": 142.16666666666666,
+            "best_physical": 3513.5699999999997,
+            "duplicate_evaluation_fraction": 0.0392156862745098,
+            "duplicate_exact_evaluations": 2,
+            "frozen_reference_hypervolume": 1577181.520833332,
+            "nondominated_archive_size": 6,
+            "objective_space_spread": 0.6637373540686978,
+            "unique_architectures": 6,
+            "unique_exact_evaluations": 49
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 4096,
+            "maximum_local_moves": 262144,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 600.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 93.55049870223485,
+            "process_cpu_seconds": 59.109375,
+            "wall_seconds": 31.592228699999396
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+        },
+        "4": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 0,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 104
+          },
+          "archive": [
+            {
+              "architecture_key": "be6f736bf468505e5bd65a8dce191156",
+              "architecture_sha256": "1b389009b4640bcd87aac67bfb7555418ee7909d6b0cc66d994e4b4670ca4201",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 9,
+              "objectives": [
+                3513.5699999999997,
+                166.33333333333331
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "ba8f2a62572d168215992c485c7f075c",
+              "architecture_sha256": "91e6e9126e1478e71ca1a63189fafa95dabc99c95171c5f78a24dfcd5ad3ff1a",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 19,
+              "objectives": [
+                3514.3299999999995,
+                162.16666666666666
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "749f8faa25c67bc9dfdeee0f57117289",
+              "architecture_sha256": "38df3f8652b6ac2398accd60e09b6fa0349e991e7a71a9b8da751bfe7c7a1397",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 6,
+              "objectives": [
+                3797.6900000000005,
+                161.16666666666669
+              ],
+              "source": "segment_exchange"
+            },
+            {
+              "architecture_key": "63e784816a4fee487536c724cd2a2cfc",
+              "architecture_sha256": "a6f94155a03485d79fa3fe6e94c6770eaa599a934b6727f8c94120456dfa05d7",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L1",
+              "move_index": 9,
+              "objectives": [
+                8933.850000000002,
+                143.49999999999997
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "fe8bf4e244715a4bdff70bdc59de8a54",
+              "architecture_sha256": "ae1272f834ed7e07cca7533a1d0677c533c05045a396e1237fd1fe586f66e0ec",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L1",
+              "move_index": 8,
+              "objectives": [
+                8947.810000000001,
+                141.83333333333331
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "813df952e8da7810dedf741598957b4c",
+              "architecture_sha256": "e02ce61f94818e099901717414d72be5580d927af087706931b3a1ceb3a0eb29",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L1",
+              "move_index": 2,
+              "objectives": [
+                9014.93,
+                140.66666666666666
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "6740ee33ce7023354849dd1ff47c33a2",
+              "architecture_sha256": "fca6c1d8525aedba2ea064b3e7c2ee39c6bc6eeed9be1e653d6ea468bfb837b0",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 12,
+              "objectives": [
+                36590.97,
+                140.5
+              ],
+              "source": "segment_exchange"
+            },
+            {
+              "architecture_key": "fe725543d5332e1afaae1c8d2311be2f",
+              "architecture_sha256": "9da28c778ba0771ff11adfba73c5c4eefa292a6e130256f9de912686cdbf4b83",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 2,
+              "objectives": [
+                36725.049999999996,
+                139.83333333333331
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "df6e5b03b0d0cfe9947bdb0609626ef0",
+              "architecture_sha256": "b114446060130f88bb0f258b5915937146e12ca040037900c1bf44c4e5e657a1",
+              "chain_lengths": [
+                267,
+                267
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 7,
+              "objectives": [
+                36740.61,
+                139.16666666666669
+              ],
+              "source": "swap"
+            }
+          ],
+          "config": {
+            "budget_mode": "wall_clock",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s15850-equal_wall-w4",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 4
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "global_archive_size": 8,
+              "lanes": [
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 19,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 15.171875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_wall-w4\\L0",
+                  "seed": 1377194433,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 11,
+                  "lane_id": "L1",
+                  "lane_label": "balanced_physical_activity",
+                  "process_cpu_seconds": 15.421875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_wall-w4\\L1",
+                  "seed": 1600422663,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 3,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 14,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 15.21875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_wall-w4\\L2",
+                  "seed": 111359012,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 4,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 14,
+                  "lane_id": "L3",
+                  "lane_label": "diversity_perturbation",
+                  "process_cpu_seconds": 15.671875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_wall-w4\\L3",
+                  "seed": 1500926719,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                }
+              ]
+            },
+            {
+              "epoch": 1,
+              "global_archive_size": 9,
+              "lanes": [
+                {
+                  "archive_size": 4,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 13,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 13.921875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_wall-w4\\L0",
+                  "seed": 669603686,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 3,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 9,
+                  "lane_id": "L1",
+                  "lane_label": "balanced_physical_activity",
+                  "process_cpu_seconds": 13.578125,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_wall-w4\\L1",
+                  "seed": 1674970890,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 4,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 11,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 13.359375,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_wall-w4\\L2",
+                  "seed": 1687910932,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 4,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 13,
+                  "lane_id": "L3",
+                  "lane_label": "diversity_perturbation",
+                  "process_cpu_seconds": 13.671875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s15850-equal_wall-w4\\L3",
+                  "seed": 1175060632,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            3525.47,
+            142.83333333333331
+          ],
+          "frozen_reference": [
+            48096.22,
+            179.91666666666663
+          ],
+          "metrics": {
+            "best_H_eff8": 139.16666666666669,
+            "best_physical": 3513.5699999999997,
+            "duplicate_evaluation_fraction": 0.038461538461538464,
+            "duplicate_exact_evaluations": 4,
+            "frozen_reference_hypervolume": 1655416.8541666649,
+            "nondominated_archive_size": 9,
+            "objective_space_spread": 1.0451960441350312,
+            "unique_architectures": 9,
+            "unique_exact_evaluations": 100
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 4096,
+            "maximum_local_moves": 262144,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 600.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 92.409481698414,
+            "process_cpu_seconds": 116.015625,
+            "wall_seconds": 31.386288200010313
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+        }
+      },
+      "frozen_ideal": [
+        3525.47,
+        142.83333333333331
+      ],
+      "frozen_reference": [
+        48096.22,
+        179.91666666666663
+      ],
+      "start_portfolio": [
+        {
+          "architecture_path": "artifacts/derived/phase0c/s15850/s11/k2/P.architecture.json",
+          "architecture_sha256": "f58717aa863acd666346580fa4a3fca3fdea25f88ec768be3b8839f2ea7307a9",
+          "index": 0,
+          "label": "P",
+          "objectives": [
+            3525.47,
+            166.33333333333334
+          ]
+        },
+        {
+          "architecture_path": "artifacts/derived/phase0c/s15850/s11/k2/A.architecture.json",
+          "architecture_sha256": "e1867cc98b3d1afa4f231daa6c38652ed38be26bf58ed32499449fb51fd1f7ea",
+          "index": 1,
+          "label": "A",
+          "objectives": [
+            37150.39,
+            142.83333333333331
+          ]
+        },
+        {
+          "architecture_path": "artifacts/derived/phase0c/s15850/s11/k2/R.architecture.json",
+          "architecture_sha256": "152eb1cc435f184f27b42f337100f575f84f5b8a0cfc5ca0db2bc66c540b87d0",
+          "index": 2,
+          "label": "R",
+          "objectives": [
+            39182.07,
+            172.49999999999997
+          ]
+        },
+        {
+          "architecture_path": "artifacts/derived/phase0c/s15850/s11/k2/J50.architecture.json",
+          "architecture_sha256": "fdf44a74a70de6097e4087b4760fce7fd18c6f454f82cbbbb07121eed956b965",
+          "index": 3,
+          "label": "J50",
+          "objectives": [
+            9052.29,
+            144.66666666666666
+          ]
+        }
+      ]
+    },
+    "s5378": {
+      "K": 2,
+      "N": 179,
+      "P": 117,
+      "context_id": "s5378/s11/k2",
+      "equal_evaluations": {
+        "1": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 3,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 64
+          },
+          "archive": [
+            {
+              "architecture_key": "dc302da66a182ea9d4b76da43320533b",
+              "architecture_sha256": "3f04917e4fe174953dce83f5165b027e00fd2aff4a6fd825ae9f4052ed581dff",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 37,
+              "objectives": [
+                1370.2900000000002,
+                63.33333333333333
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "bb055fa4884558b105e456762a6d249e",
+              "architecture_sha256": "63195840c574f65f5a525496e0aef1ee2b82e14a90364a281144440af7bebe48",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 52,
+              "objectives": [
+                1455.8100000000002,
+                63.166666666666664
+              ],
+              "source": "migration"
+            },
+            {
+              "architecture_key": "cd4542cdfa8f920b2b24768278986628",
+              "architecture_sha256": "36956d6c99bede4d55c6bfa4d77cad4ef2520d38210d328678b3ee86c1e00003",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 46,
+              "objectives": [
+                1460.2300000000002,
+                62.83333333333333
+              ],
+              "source": "migration"
+            },
+            {
+              "architecture_key": "c5f4cc31fd10ad7b7cb3e045e85fc2bd",
+              "architecture_sha256": "c50849a13eabec4b3b45fa4cc22a2fba2f062e7bd20771613b934cfa059d7ffa",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 54,
+              "objectives": [
+                1505.2700000000002,
+                61.833333333333336
+              ],
+              "source": "segment_exchange"
+            },
+            {
+              "architecture_key": "de7e0a47525ba7882c18cb147a80e194",
+              "architecture_sha256": "91964b911d41fb190a0f71f41ef7dde99cf898d1e2d8d7753ce8f0e8647cbcb9",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 29,
+              "objectives": [
+                6569.81,
+                60.5
+              ],
+              "source": "cross_chain_swap"
+            },
+            {
+              "architecture_key": "ae938c617b605d6a0e733b0a4d3ae40c",
+              "architecture_sha256": "675cd0594717f2e8b40d98ece0a20bf70e43de34d5069ecb2b8d2035a7010188",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 20,
+              "objectives": [
+                6768.610000000001,
+                60.166666666666664
+              ],
+              "source": "relocate"
+            }
+          ],
+          "config": {
+            "budget_mode": "exact_evaluations",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s5378-equal_evaluations-w1",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 1
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "lanes": [
+                {
+                  "exact_evaluations": 64,
+                  "lane_id": "L0",
+                  "lane_label": "serial_v2_2",
+                  "seed": 20260921,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            1380.8300000000002,
+            60.5
+          ],
+          "frozen_reference": [
+            10426.805,
+            70.08333333333331
+          ],
+          "metrics": {
+            "best_H_eff8": 60.166666666666664,
+            "best_physical": 1370.2900000000002,
+            "duplicate_evaluation_fraction": 0.0,
+            "duplicate_exact_evaluations": 0,
+            "frozen_reference_hypervolume": 80899.09374999981,
+            "nondominated_archive_size": 6,
+            "objective_space_spread": 0.6821403397416534,
+            "unique_architectures": 6,
+            "unique_exact_evaluations": 64
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 64,
+            "maximum_local_moves": 4096,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 600.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 98.42673756260974,
+            "process_cpu_seconds": 26.0,
+            "wall_seconds": 26.415586500021163
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+        },
+        "2": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 0,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 64
+          },
+          "archive": [
+            {
+              "architecture_key": "c7e42edb1ff8af15a569b531df18f96e",
+              "architecture_sha256": "05d0ebd2374f89ac2fe39966e3afd6843e5f1bb6413748ab83b2519df0f8df9b",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 9,
+              "objectives": [
+                1366.3500000000001,
+                64.83333333333333
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "7d9e73681e1c8005e775fb7c942dc8a0",
+              "architecture_sha256": "32cdcff7ad2fa19960ae2e86e86c24e50f19ab228424533e421771c57c0e9845",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 10,
+              "objectives": [
+                1369.15,
+                61.83333333333333
+              ],
+              "source": "migration"
+            },
+            {
+              "architecture_key": "79daae5c211f57eecb0955a7d8bb5b32",
+              "architecture_sha256": "c5c8fac034ab651db764621c0e4ce374e81dceb2589b88338218ffe149b40ff7",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 12,
+              "objectives": [
+                6718.47,
+                59.83333333333333
+              ],
+              "source": "segment_exchange"
+            },
+            {
+              "architecture_key": "9a90f37c4e19489d74482aaab036f905",
+              "architecture_sha256": "31e35380f830cc1eb99c1aaa6b6ee48734cca9b7f13a012a38d296fd9a8ce640",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 14,
+              "objectives": [
+                6749.75,
+                59.166666666666664
+              ],
+              "source": "relocate"
+            }
+          ],
+          "config": {
+            "budget_mode": "exact_evaluations",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s5378-equal_evaluations-w2",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 2
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "global_archive_size": 3,
+              "lanes": [
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 16,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 5.359375,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_evaluations-w2\\L0",
+                  "seed": 1377194433,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 4,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 16,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 4.84375,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_evaluations-w2\\L2",
+                  "seed": 111359012,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                }
+              ]
+            },
+            {
+              "epoch": 1,
+              "global_archive_size": 4,
+              "lanes": [
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 16,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 6.21875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_evaluations-w2\\L0",
+                  "seed": 669603686,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 3,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 16,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 6.875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_evaluations-w2\\L2",
+                  "seed": 1687910932,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            1380.8300000000002,
+            60.5
+          ],
+          "frozen_reference": [
+            10426.805,
+            70.08333333333331
+          ],
+          "metrics": {
+            "best_H_eff8": 59.166666666666664,
+            "best_physical": 1366.3500000000001,
+            "duplicate_evaluation_fraction": 0.03125,
+            "duplicate_exact_evaluations": 2,
+            "frozen_reference_hypervolume": 84608.39374999986,
+            "nondominated_archive_size": 4,
+            "objective_space_spread": 0.838929853227257,
+            "unique_architectures": 4,
+            "unique_exact_evaluations": 62
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 64,
+            "maximum_local_moves": 4096,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 600.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 86.06947585169065,
+            "process_cpu_seconds": 23.296875,
+            "wall_seconds": 13.533761400001822
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+        },
+        "4": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 0,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 64
+          },
+          "archive": [
+            {
+              "architecture_key": "339921e69c71afbc11f8217a10533a1c",
+              "architecture_sha256": "ef1e8d51ba571be05a7136395a1e24fce4faf8d1a463a3a2c274842e0fc34fff",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 1,
+              "objectives": [
+                1369.15,
+                63.33333333333333
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "af70bcf6bb8371b25d1f072a42b38048",
+              "architecture_sha256": "be82ae30dd4a4b2f23aa634d2606c066014964320c114c6e107cffb5c2da9d9c",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 4,
+              "objectives": [
+                1444.63,
+                63.0
+              ],
+              "source": "migration"
+            },
+            {
+              "architecture_key": "236d59a4e578bcce18c072559994e768",
+              "architecture_sha256": "a5f0029671b04853f24853f12e233993c21623cbba8f8df5d40376ef4d4e2e74",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "epoch": 1,
+              "lane_id": "L3",
+              "move_index": 6,
+              "objectives": [
+                6476.030000000001,
+                61.166666666666664
+              ],
+              "source": "segment_exchange"
+            },
+            {
+              "architecture_key": "ea80b3e8d4ceb761a91338d7ea18fdc9",
+              "architecture_sha256": "7aaa53b3957aca5c88024feb201d8b4ca1c0bba308789404c016be909d0c2cdb",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "epoch": 1,
+              "lane_id": "L3",
+              "move_index": 7,
+              "objectives": [
+                6506.650000000001,
+                59.166666666666664
+              ],
+              "source": "swap"
+            }
+          ],
+          "config": {
+            "budget_mode": "exact_evaluations",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s5378-equal_evaluations-w4",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 4
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "global_archive_size": 3,
+              "lanes": [
+                {
+                  "archive_size": 1,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 2.71875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_evaluations-w4\\L0",
+                  "seed": 1377194433,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L1",
+                  "lane_label": "balanced_physical_activity",
+                  "process_cpu_seconds": 3.578125,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_evaluations-w4\\L1",
+                  "seed": 1600422663,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 3.5625,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_evaluations-w4\\L2",
+                  "seed": 111359012,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L3",
+                  "lane_label": "diversity_perturbation",
+                  "process_cpu_seconds": 3.078125,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_evaluations-w4\\L3",
+                  "seed": 1500926719,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                }
+              ]
+            },
+            {
+              "epoch": 1,
+              "global_archive_size": 4,
+              "lanes": [
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 3.296875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_evaluations-w4\\L0",
+                  "seed": 669603686,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L1",
+                  "lane_label": "balanced_physical_activity",
+                  "process_cpu_seconds": 4.453125,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_evaluations-w4\\L1",
+                  "seed": 1674970890,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 4.609375,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_evaluations-w4\\L2",
+                  "seed": 1687910932,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L3",
+                  "lane_label": "diversity_perturbation",
+                  "process_cpu_seconds": 4.390625,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_evaluations-w4\\L3",
+                  "seed": 1175060632,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            1380.8300000000002,
+            60.5
+          ],
+          "frozen_reference": [
+            10426.805,
+            70.08333333333331
+          ],
+          "metrics": {
+            "best_H_eff8": 59.166666666666664,
+            "best_physical": 1369.15,
+            "duplicate_evaluation_fraction": 0.0625,
+            "duplicate_exact_evaluations": 4,
+            "frozen_reference_hypervolume": 79216.62708333318,
+            "nondominated_archive_size": 4,
+            "objective_space_spread": 0.7152501939782887,
+            "unique_architectures": 4,
+            "unique_exact_evaluations": 60
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 64,
+            "maximum_local_moves": 4096,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 600.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 77.2311470281476,
+            "process_cpu_seconds": 29.6875,
+            "wall_seconds": 9.609950500016566
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+        }
+      },
+      "equal_wall": {
+        "1": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 3,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 71
+          },
+          "archive": [
+            {
+              "architecture_key": "dc302da66a182ea9d4b76da43320533b",
+              "architecture_sha256": "3f04917e4fe174953dce83f5165b027e00fd2aff4a6fd825ae9f4052ed581dff",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 37,
+              "objectives": [
+                1370.2900000000002,
+                63.33333333333333
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "bb055fa4884558b105e456762a6d249e",
+              "architecture_sha256": "63195840c574f65f5a525496e0aef1ee2b82e14a90364a281144440af7bebe48",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 52,
+              "objectives": [
+                1455.8100000000002,
+                63.166666666666664
+              ],
+              "source": "migration"
+            },
+            {
+              "architecture_key": "cd4542cdfa8f920b2b24768278986628",
+              "architecture_sha256": "36956d6c99bede4d55c6bfa4d77cad4ef2520d38210d328678b3ee86c1e00003",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 46,
+              "objectives": [
+                1460.2300000000002,
+                62.83333333333333
+              ],
+              "source": "migration"
+            },
+            {
+              "architecture_key": "c5f4cc31fd10ad7b7cb3e045e85fc2bd",
+              "architecture_sha256": "c50849a13eabec4b3b45fa4cc22a2fba2f062e7bd20771613b934cfa059d7ffa",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 54,
+              "objectives": [
+                1505.2700000000002,
+                61.833333333333336
+              ],
+              "source": "segment_exchange"
+            },
+            {
+              "architecture_key": "de7e0a47525ba7882c18cb147a80e194",
+              "architecture_sha256": "91964b911d41fb190a0f71f41ef7dde99cf898d1e2d8d7753ce8f0e8647cbcb9",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 29,
+              "objectives": [
+                6569.81,
+                60.5
+              ],
+              "source": "cross_chain_swap"
+            },
+            {
+              "architecture_key": "ec2e80b2c33fdee2b855e6be819790b7",
+              "architecture_sha256": "9b6941d35b42d27bcf3dca8dd6129d96de66224fa5e8e113e3dc32acd9c35580",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 68,
+              "objectives": [
+                6691.130000000001,
+                60.166666666666664
+              ],
+              "source": "relocate"
+            }
+          ],
+          "config": {
+            "budget_mode": "wall_clock",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s5378-equal_wall-w1",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 1
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "lanes": [
+                {
+                  "exact_evaluations": 71,
+                  "lane_id": "L0",
+                  "lane_label": "serial_v2_2",
+                  "seed": 20260921,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            1380.8300000000002,
+            60.5
+          ],
+          "frozen_reference": [
+            10426.805,
+            70.08333333333331
+          ],
+          "metrics": {
+            "best_H_eff8": 60.166666666666664,
+            "best_physical": 1370.2900000000002,
+            "duplicate_evaluation_fraction": 0.0,
+            "duplicate_exact_evaluations": 0,
+            "frozen_reference_hypervolume": 80924.92041666647,
+            "nondominated_archive_size": 6,
+            "objective_space_spread": 0.6746599596026094,
+            "unique_architectures": 6,
+            "unique_exact_evaluations": 71
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 4096,
+            "maximum_local_moves": 262144,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 30.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 99.43039828754043,
+            "process_cpu_seconds": 30.265625,
+            "wall_seconds": 30.43900610000128
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+        },
+        "2": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 0,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 156
+          },
+          "archive": [
+            {
+              "architecture_key": "c7e42edb1ff8af15a569b531df18f96e",
+              "architecture_sha256": "05d0ebd2374f89ac2fe39966e3afd6843e5f1bb6413748ab83b2519df0f8df9b",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 9,
+              "objectives": [
+                1366.3500000000001,
+                64.83333333333333
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "165304c8f5629e19a8971aab9ec40f09",
+              "architecture_sha256": "3562c8751485efa023261e5fb0d517e4f5c4f2c3f148dad011fe5e7ae5e76a1b",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 32,
+              "objectives": [
+                1368.3899999999999,
+                63.666666666666664
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "6cce4ac3f69100c7a3c273a383515d27",
+              "architecture_sha256": "83b0ef90e739a07ebca0fc24e3ab71e6dda62d7c91608845398d9113d2182df4",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 19,
+              "objectives": [
+                1368.77,
+                62.166666666666664
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "7d9e73681e1c8005e775fb7c942dc8a0",
+              "architecture_sha256": "32cdcff7ad2fa19960ae2e86e86c24e50f19ab228424533e421771c57c0e9845",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 10,
+              "objectives": [
+                1369.15,
+                61.83333333333333
+              ],
+              "source": "migration"
+            },
+            {
+              "architecture_key": "488c53d3d10cb5993ef46e7cf1240ffb",
+              "architecture_sha256": "748ab6b4caeb1f5de5a531f7a1329e267546e9627304c72501c7dbe8f9788d29",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 26,
+              "objectives": [
+                6444.89,
+                60.0
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "63a17452bc00db44c7da009471002f9a",
+              "architecture_sha256": "edb66bcb15c31fdf5b111d310765b0d00daf00c8ee3e12096e7bf6433b033a89",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 27,
+              "objectives": [
+                6479.73,
+                59.166666666666664
+              ],
+              "source": "two_opt"
+            }
+          ],
+          "config": {
+            "budget_mode": "wall_clock",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s5378-equal_wall-w2",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 2
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "global_archive_size": 4,
+              "lanes": [
+                {
+                  "archive_size": 3,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 46,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 15.21875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_wall-w2\\L0",
+                  "seed": 1377194433,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 4,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 45,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 15.40625,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_wall-w2\\L2",
+                  "seed": 111359012,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                }
+              ]
+            },
+            {
+              "epoch": 1,
+              "global_archive_size": 6,
+              "lanes": [
+                {
+                  "archive_size": 4,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 36,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 13.53125,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_wall-w2\\L0",
+                  "seed": 669603686,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 29,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 13.609375,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_wall-w2\\L2",
+                  "seed": 1687910932,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            1380.8300000000002,
+            60.5
+          ],
+          "frozen_reference": [
+            10426.805,
+            70.08333333333331
+          ],
+          "metrics": {
+            "best_H_eff8": 59.166666666666664,
+            "best_physical": 1366.3500000000001,
+            "duplicate_evaluation_fraction": 0.01282051282051282,
+            "duplicate_exact_evaluations": 2,
+            "frozen_reference_hypervolume": 85331.21708333318,
+            "nondominated_archive_size": 6,
+            "objective_space_spread": 0.8180258061457016,
+            "unique_architectures": 6,
+            "unique_exact_evaluations": 154
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 4096,
+            "maximum_local_moves": 262144,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 600.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 94.49214586315993,
+            "process_cpu_seconds": 57.765625,
+            "wall_seconds": 30.566363199992338
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+        },
+        "4": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 0,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 278
+          },
+          "archive": [
+            {
+              "architecture_key": "64cc83d9ab90fdd56f197bae8c8973e8",
+              "architecture_sha256": "33df1c4dd43bf3558c69eebd7ff8db82c2fa68c4c8238f3ebe63a827b64bc25a",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 39,
+              "objectives": [
+                1351.59,
+                63.666666666666664
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "6cce4ac3f69100c7a3c273a383515d27",
+              "architecture_sha256": "83b0ef90e739a07ebca0fc24e3ab71e6dda62d7c91608845398d9113d2182df4",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 19,
+              "objectives": [
+                1368.77,
+                62.166666666666664
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "7d9e73681e1c8005e775fb7c942dc8a0",
+              "architecture_sha256": "32cdcff7ad2fa19960ae2e86e86c24e50f19ab228424533e421771c57c0e9845",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 10,
+              "objectives": [
+                1369.15,
+                61.83333333333333
+              ],
+              "source": "migration"
+            },
+            {
+              "architecture_key": "8537d17209dd4b69180d6563e93048af",
+              "architecture_sha256": "b066c6b724ce99c5fd7528d37489bb84591d454d6307d48bc40ca1bd21e647c4",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 1,
+              "lane_id": "L3",
+              "move_index": 30,
+              "objectives": [
+                5950.469999999999,
+                60.5
+              ],
+              "source": "segment_exchange"
+            },
+            {
+              "architecture_key": "d6bb31a52573bc36add2f8da361d2690",
+              "architecture_sha256": "410669c19d0d0e94203fc94b78ec268c06534e76922ec05da2feedcd0a8a96bb",
+              "chain_lengths": [
+                89,
+                90
+              ],
+              "epoch": 1,
+              "lane_id": "L3",
+              "move_index": 22,
+              "objectives": [
+                6027.7699999999995,
+                60.0
+              ],
+              "source": "migration"
+            },
+            {
+              "architecture_key": "356c671e9caefe1c79bc75e1e0097846",
+              "architecture_sha256": "5e00f02e5cd8de3077cfb43e933bfc187162753fe9bd1378a665ab571fa505be",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 35,
+              "objectives": [
+                6210.37,
+                59.166666666666664
+              ],
+              "source": "cross_chain_swap"
+            },
+            {
+              "architecture_key": "fd2db09aadb9fece21633ce4ef0cf9cd",
+              "architecture_sha256": "d472b3359dab7d6ae147f9c2f9bea1e0eb280517393055415fd89ea08264082b",
+              "chain_lengths": [
+                90,
+                89
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 27,
+              "objectives": [
+                6273.49,
+                58.33333333333333
+              ],
+              "source": "two_opt"
+            }
+          ],
+          "config": {
+            "budget_mode": "wall_clock",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s5378-equal_wall-w4",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 4
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "global_archive_size": 7,
+              "lanes": [
+                {
+                  "archive_size": 3,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 41,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 14.921875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_wall-w4\\L0",
+                  "seed": 1377194433,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 5,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 32,
+                  "lane_id": "L1",
+                  "lane_label": "balanced_physical_activity",
+                  "process_cpu_seconds": 15.296875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_wall-w4\\L1",
+                  "seed": 1600422663,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 5,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 30,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 15.1875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_wall-w4\\L2",
+                  "seed": 111359012,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 7,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 33,
+                  "lane_id": "L3",
+                  "lane_label": "diversity_perturbation",
+                  "process_cpu_seconds": 15.3125,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_wall-w4\\L3",
+                  "seed": 1500926719,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                }
+              ]
+            },
+            {
+              "epoch": 1,
+              "global_archive_size": 7,
+              "lanes": [
+                {
+                  "archive_size": 3,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 43,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 13.140625,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_wall-w4\\L0",
+                  "seed": 669603686,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 4,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 32,
+                  "lane_id": "L1",
+                  "lane_label": "balanced_physical_activity",
+                  "process_cpu_seconds": 13.078125,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_wall-w4\\L1",
+                  "seed": 1674970890,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 3,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 36,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 13.140625,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_wall-w4\\L2",
+                  "seed": 1687910932,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 3,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 31,
+                  "lane_id": "L3",
+                  "lane_label": "diversity_perturbation",
+                  "process_cpu_seconds": 13.4375,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s5378-equal_wall-w4\\L3",
+                  "seed": 1175060632,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            1380.8300000000002,
+            60.5
+          ],
+          "frozen_reference": [
+            10426.805,
+            70.08333333333331
+          ],
+          "metrics": {
+            "best_H_eff8": 58.33333333333333,
+            "best_physical": 1351.59,
+            "duplicate_evaluation_fraction": 0.014388489208633094,
+            "duplicate_exact_evaluations": 4,
+            "frozen_reference_hypervolume": 89981.65624999987,
+            "nondominated_archive_size": 7,
+            "objective_space_spread": 0.7783055004169733,
+            "unique_architectures": 7,
+            "unique_exact_evaluations": 274
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 4096,
+            "maximum_local_moves": 262144,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 600.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 92.52599195383351,
+            "process_cpu_seconds": 113.515625,
+            "wall_seconds": 30.671280200011097
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+        }
+      },
+      "frozen_ideal": [
+        1380.8300000000002,
+        60.5
+      ],
+      "frozen_reference": [
+        10426.805,
+        70.08333333333331
+      ],
+      "start_portfolio": [
+        {
+          "architecture_path": "artifacts/derived/phase0c/s5378/s11/k2/P.architecture.json",
+          "architecture_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+          "index": 0,
+          "label": "P",
+          "objectives": [
+            1380.8300000000002,
+            63.33333333333333
+          ]
+        },
+        {
+          "architecture_path": "artifacts/derived/phase0c/s5378/s11/k2/A.architecture.json",
+          "architecture_sha256": "16904eaa0db2f733be62aebed6ba183f37c1d672a02d210e964bf96d1bc71f54",
+          "index": 1,
+          "label": "A",
+          "objectives": [
+            6850.21,
+            60.5
+          ]
+        },
+        {
+          "architecture_path": "artifacts/derived/phase0c/s5378/s11/k2/R.architecture.json",
+          "architecture_sha256": "b46d8e0d4772b9d6dd9d9ff223c6ab34a3afd470b1a7b3bbdca3b8f25c24803d",
+          "index": 2,
+          "label": "R",
+          "objectives": [
+            8617.61,
+            68.16666666666666
+          ]
+        },
+        {
+          "architecture_path": "artifacts/derived/phase0c/s5378/s11/k2/B0.architecture.json",
+          "architecture_sha256": "ae86d9068718134a0016c7dc484716e3e4439c0978f5cfcdef79c037ac566f86",
+          "index": 3,
+          "label": "B0",
+          "objectives": [
+            2259.53,
+            67.83333333333333
+          ]
+        }
+      ]
+    },
+    "s9234": {
+      "K": 2,
+      "N": 211,
+      "P": 156,
+      "context_id": "s9234/s11/k2",
+      "equal_evaluations": {
+        "1": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 0,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 64
+          },
+          "archive": [
+            {
+              "architecture_key": "969678a5d9242b70d238cb5f56cd83be",
+              "architecture_sha256": "237fb9ad7f2ffd5c2bc0a8c4bc0306e97cc0e3004cb5fb11dd35244619138aef",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 0,
+              "objectives": [
+                1723.9450000000002,
+                172.33333333333331
+              ],
+              "source": "frozen_1_T"
+            },
+            {
+              "architecture_key": "e7f716ea70a03a4e8910a4634a6ac237",
+              "architecture_sha256": "13d6106c4418d311ad96d84a224773d6278fc72768bc69c3332fab5877b52d0e",
+              "chain_lengths": [
+                105,
+                106
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 43,
+              "objectives": [
+                1726.7450000000001,
+                171.16666666666669
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "d5fa817a70382138bc20f379ab60429e",
+              "architecture_sha256": "e862f30958ec8c007d3327bb8c7c761a31a22fd20116cdb9edbfbea81525dea0",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 46,
+              "objectives": [
+                1737.045,
+                170.0
+              ],
+              "source": "migration"
+            },
+            {
+              "architecture_key": "e3d57c0741b478693f4e52e02999f6f9",
+              "architecture_sha256": "3783ff95a13f0a57a8b5511856aa7805c6980bef70954418ea89add355ae784d",
+              "chain_lengths": [
+                105,
+                106
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 59,
+              "objectives": [
+                1770.6850000000002,
+                169.5
+              ],
+              "source": "cross_chain_swap"
+            },
+            {
+              "architecture_key": "07e935ba4a62087045210cfb2956b61d",
+              "architecture_sha256": "3c391d85ca1ee250c7dcb1b56e2c3606d98410883ca47346113954b110649682",
+              "chain_lengths": [
+                105,
+                106
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 60,
+              "objectives": [
+                1846.8450000000003,
+                169.16666666666666
+              ],
+              "source": "segment_exchange"
+            },
+            {
+              "architecture_key": "de1fb0adec94685504923ebf7457f3a2",
+              "architecture_sha256": "47a434b488ef268aa173a884f1e2e6f8b216bae10613176efb0240a06072bed6",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 7,
+              "objectives": [
+                3035.6050000000005,
+                161.66666666666666
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "949c47a49e461187553f4db530b20038",
+              "architecture_sha256": "862bbe9eda589ef00242eeb1f1b9b9fe8e046127a1864bfa61233e41181cdb47",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 9,
+              "objectives": [
+                3042.1050000000005,
+                158.66666666666666
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "ce5b4cf5ed2a273f156958abe75add19",
+              "architecture_sha256": "3a5529c90fd4a87722e362f5cb726969753062ba4846fdc03279eecf45480fd0",
+              "chain_lengths": [
+                105,
+                106
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 22,
+              "objectives": [
+                3050.7850000000003,
+                157.33333333333331
+              ],
+              "source": "migration"
+            },
+            {
+              "architecture_key": "2451fd55954d889d7f751bbc357fce34",
+              "architecture_sha256": "7df0fb60c2a837f9d068d616fafe76bd33956b8b924f301ed3328e8881bc12ac",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 19,
+              "objectives": [
+                3063.8050000000003,
+                150.83333333333331
+              ],
+              "source": "swap"
+            }
+          ],
+          "config": {
+            "budget_mode": "exact_evaluations",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s9234-equal_evaluations-w1",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 1
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "lanes": [
+                {
+                  "exact_evaluations": 64,
+                  "lane_id": "L0",
+                  "lane_label": "serial_v2_2",
+                  "seed": 20260921,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            1723.9450000000002,
+            155.66666666666669
+          ],
+          "frozen_reference": [
+            13174.8075,
+            183.37499999999997
+          ],
+          "metrics": {
+            "best_H_eff8": 150.83333333333331,
+            "best_physical": 1723.9450000000002,
+            "duplicate_evaluation_fraction": 0.0,
+            "duplicate_exact_evaluations": 0,
+            "frozen_reference_hypervolume": 348277.12385416654,
+            "nondominated_archive_size": 9,
+            "objective_space_spread": 0.784712609522689,
+            "unique_architectures": 9,
+            "unique_exact_evaluations": 64
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 64,
+            "maximum_local_moves": 4096,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 600.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 98.5870224538801,
+            "process_cpu_seconds": 22.4375,
+            "wall_seconds": 22.75908069999423
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+        },
+        "2": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 1,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 64
+          },
+          "archive": [
+            {
+              "architecture_key": "959d9d7f458e3da33ecd3a443e28be91",
+              "architecture_sha256": "364093541627aa2b70f8beb1710287b2a8adb3ce5c841a4b1b74637121aa505d",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 9,
+              "objectives": [
+                1723.565,
+                172.33333333333331
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "e22eaa9c0db84bae35ec85a7a4172879",
+              "architecture_sha256": "2473a876c2b959455c8800b89df044e285a455c11d18edc4f2d69ce9c01fb3f1",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 0,
+              "lane_id": "L2",
+              "move_index": 3,
+              "objectives": [
+                1731.3050000000003,
+                170.5
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "249f54d04ccd13708ce791a68ab2643b",
+              "architecture_sha256": "b854e28e56c24029949e3da36b6923f95f431354f980df41c13ca447715497bb",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 9,
+              "objectives": [
+                3055.3050000000003,
+                155.66666666666666
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "f4ad5cd22b8ef9c4314a81e483e13f41",
+              "architecture_sha256": "2cba239aa180626b75c644f5f5d3e4459458853abba1e990bfb5227f5d8942ed",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 12,
+              "objectives": [
+                3065.465,
+                154.33333333333331
+              ],
+              "source": "segment_exchange"
+            },
+            {
+              "architecture_key": "c415247ad64a487b189f1c87475ab676",
+              "architecture_sha256": "b1899d782b553546988dec5ab81efdd7cc3e83705e818d65fba61e299130f3c5",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 15,
+              "objectives": [
+                3073.625,
+                152.5
+              ],
+              "source": "two_opt"
+            }
+          ],
+          "config": {
+            "budget_mode": "exact_evaluations",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s9234-equal_evaluations-w2",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 2
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "global_archive_size": 3,
+              "lanes": [
+                {
+                  "archive_size": 4,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 16,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 5.59375,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_evaluations-w2\\L0",
+                  "seed": 1377194433,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 16,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 5.421875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_evaluations-w2\\L2",
+                  "seed": 111359012,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                }
+              ]
+            },
+            {
+              "epoch": 1,
+              "global_archive_size": 5,
+              "lanes": [
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 16,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 8.078125,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_evaluations-w2\\L0",
+                  "seed": 669603686,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 3,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 16,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 9.0,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_evaluations-w2\\L2",
+                  "seed": 1687910932,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            1723.9450000000002,
+            155.66666666666669
+          ],
+          "frozen_reference": [
+            13174.8075,
+            183.37499999999997
+          ],
+          "metrics": {
+            "best_H_eff8": 152.5,
+            "best_physical": 1723.565,
+            "duplicate_evaluation_fraction": 0.03125,
+            "duplicate_exact_evaluations": 2,
+            "frozen_reference_hypervolume": 329524.4688541664,
+            "nondominated_archive_size": 5,
+            "objective_space_spread": 0.7254343862980124,
+            "unique_architectures": 5,
+            "unique_exact_evaluations": 62
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 64,
+            "maximum_local_moves": 4096,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 600.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 86.74581716036916,
+            "process_cpu_seconds": 28.09375,
+            "wall_seconds": 16.19314389998908
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+        },
+        "4": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 0,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 64
+          },
+          "archive": [
+            {
+              "architecture_key": "969678a5d9242b70d238cb5f56cd83be",
+              "architecture_sha256": "237fb9ad7f2ffd5c2bc0a8c4bc0306e97cc0e3004cb5fb11dd35244619138aef",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 0,
+              "objectives": [
+                1723.9450000000002,
+                172.33333333333331
+              ],
+              "source": "input_architecture"
+            },
+            {
+              "architecture_key": "9326e943cc0d84db336ca7294d2d16cb",
+              "architecture_sha256": "c3b7567cc0fb295adabc60ca61aa52c5f74ec65939e26890c733463574364de6",
+              "chain_lengths": [
+                105,
+                106
+              ],
+              "epoch": 1,
+              "lane_id": "L3",
+              "move_index": 1,
+              "objectives": [
+                1729.885,
+                171.83333333333331
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "63ea60cb098935c3a885b6982903ed3f",
+              "architecture_sha256": "da5705b76580797ad010579d6be3e705475ede3137f2f921555ee1a89003df3a",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L1",
+              "move_index": 4,
+              "objectives": [
+                1750.6850000000002,
+                171.5
+              ],
+              "source": "migration"
+            },
+            {
+              "architecture_key": "23708310c9dcd4e19b0d6372016ca3b3",
+              "architecture_sha256": "77323c4c055ba242465f7d6b61b72b539baf79368ddf742418dc67d7e7c3be5f",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 0,
+              "lane_id": "L1",
+              "move_index": 6,
+              "objectives": [
+                1762.265,
+                169.33333333333331
+              ],
+              "source": "segment_exchange"
+            },
+            {
+              "architecture_key": "a3b1202fc209242323e1fbb169cab0bf",
+              "architecture_sha256": "52caa36e3f09dd892e9feeba469f668a04df5b5e37b1589c2843b6b5e9ff072b",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 3,
+              "objectives": [
+                3055.3050000000003,
+                155.66666666666666
+              ],
+              "source": "two_opt"
+            }
+          ],
+          "config": {
+            "budget_mode": "exact_evaluations",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s9234-equal_evaluations-w4",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 4
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "global_archive_size": 4,
+              "lanes": [
+                {
+                  "archive_size": 3,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 4.296875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_evaluations-w4\\L0",
+                  "seed": 1377194433,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 3,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L1",
+                  "lane_label": "balanced_physical_activity",
+                  "process_cpu_seconds": 4.3125,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_evaluations-w4\\L1",
+                  "seed": 1600422663,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 1,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 3.6875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_evaluations-w4\\L2",
+                  "seed": 111359012,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 3,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L3",
+                  "lane_label": "diversity_perturbation",
+                  "process_cpu_seconds": 5.6875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_evaluations-w4\\L3",
+                  "seed": 1500926719,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                }
+              ]
+            },
+            {
+              "epoch": 1,
+              "global_archive_size": 5,
+              "lanes": [
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 3.09375,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_evaluations-w4\\L0",
+                  "seed": 669603686,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L1",
+                  "lane_label": "balanced_physical_activity",
+                  "process_cpu_seconds": 3.125,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_evaluations-w4\\L1",
+                  "seed": 1674970890,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 1,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 3.3125,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_evaluations-w4\\L2",
+                  "seed": 1687910932,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 1,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 8,
+                  "lane_id": "L3",
+                  "lane_label": "diversity_perturbation",
+                  "process_cpu_seconds": 3.4375,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_evaluations-w4\\L3",
+                  "seed": 1175060632,
+                  "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            1723.9450000000002,
+            155.66666666666669
+          ],
+          "frozen_reference": [
+            13174.8075,
+            183.37499999999997
+          ],
+          "metrics": {
+            "best_H_eff8": 155.66666666666666,
+            "best_physical": 1723.9450000000002,
+            "duplicate_evaluation_fraction": 0.0625,
+            "duplicate_exact_evaluations": 4,
+            "frozen_reference_hypervolume": 298994.1517708332,
+            "nondominated_archive_size": 5,
+            "objective_space_spread": 0.6126376090667521,
+            "unique_architectures": 5,
+            "unique_exact_evaluations": 60
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 64,
+            "maximum_local_moves": 4096,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 600.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 71.76211582274618,
+            "process_cpu_seconds": 30.953125,
+            "wall_seconds": 10.783240099990508
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "EXACT_EVALUATION_BUDGET_EXHAUSTED"
+        }
+      },
+      "equal_wall": {
+        "1": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 0,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 50
+          },
+          "archive": [
+            {
+              "architecture_key": "969678a5d9242b70d238cb5f56cd83be",
+              "architecture_sha256": "237fb9ad7f2ffd5c2bc0a8c4bc0306e97cc0e3004cb5fb11dd35244619138aef",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 0,
+              "objectives": [
+                1723.9450000000002,
+                172.33333333333331
+              ],
+              "source": "frozen_1_T"
+            },
+            {
+              "architecture_key": "e7f716ea70a03a4e8910a4634a6ac237",
+              "architecture_sha256": "13d6106c4418d311ad96d84a224773d6278fc72768bc69c3332fab5877b52d0e",
+              "chain_lengths": [
+                105,
+                106
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 43,
+              "objectives": [
+                1726.7450000000001,
+                171.16666666666669
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "d5fa817a70382138bc20f379ab60429e",
+              "architecture_sha256": "e862f30958ec8c007d3327bb8c7c761a31a22fd20116cdb9edbfbea81525dea0",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 46,
+              "objectives": [
+                1737.045,
+                170.0
+              ],
+              "source": "migration"
+            },
+            {
+              "architecture_key": "de1fb0adec94685504923ebf7457f3a2",
+              "architecture_sha256": "47a434b488ef268aa173a884f1e2e6f8b216bae10613176efb0240a06072bed6",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 7,
+              "objectives": [
+                3035.6050000000005,
+                161.66666666666666
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "949c47a49e461187553f4db530b20038",
+              "architecture_sha256": "862bbe9eda589ef00242eeb1f1b9b9fe8e046127a1864bfa61233e41181cdb47",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 9,
+              "objectives": [
+                3042.1050000000005,
+                158.66666666666666
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "ce5b4cf5ed2a273f156958abe75add19",
+              "architecture_sha256": "3a5529c90fd4a87722e362f5cb726969753062ba4846fdc03279eecf45480fd0",
+              "chain_lengths": [
+                105,
+                106
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 22,
+              "objectives": [
+                3050.7850000000003,
+                157.33333333333331
+              ],
+              "source": "migration"
+            },
+            {
+              "architecture_key": "2451fd55954d889d7f751bbc357fce34",
+              "architecture_sha256": "7df0fb60c2a837f9d068d616fafe76bd33956b8b924f301ed3328e8881bc12ac",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 0,
+              "lane_id": "L0",
+              "move_index": 19,
+              "objectives": [
+                3063.8050000000003,
+                150.83333333333331
+              ],
+              "source": "swap"
+            }
+          ],
+          "config": {
+            "budget_mode": "wall_clock",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s9234-equal_wall-w1",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 1
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "lanes": [
+                {
+                  "exact_evaluations": 50,
+                  "lane_id": "L0",
+                  "lane_label": "serial_v2_2",
+                  "seed": 20260921,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            1723.9450000000002,
+            155.66666666666669
+          ],
+          "frozen_reference": [
+            13174.8075,
+            183.37499999999997
+          ],
+          "metrics": {
+            "best_H_eff8": 150.83333333333331,
+            "best_physical": 1723.9450000000002,
+            "duplicate_evaluation_fraction": 0.0,
+            "duplicate_exact_evaluations": 0,
+            "frozen_reference_hypervolume": 347248.4105208332,
+            "nondominated_archive_size": 7,
+            "objective_space_spread": 0.784712609522689,
+            "unique_architectures": 7,
+            "unique_exact_evaluations": 50
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 4096,
+            "maximum_local_moves": 262144,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 30.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 97.74483314148094,
+            "process_cpu_seconds": 30.359375,
+            "wall_seconds": 31.059825900010765
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+        },
+        "2": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 4,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 105
+          },
+          "archive": [
+            {
+              "architecture_key": "959d9d7f458e3da33ecd3a443e28be91",
+              "architecture_sha256": "364093541627aa2b70f8beb1710287b2a8adb3ce5c841a4b1b74637121aa505d",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 9,
+              "objectives": [
+                1723.565,
+                172.33333333333331
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "827407fcd3aaaccf0ab76c3fee833124",
+              "architecture_sha256": "9292decb123473ceae023185e63180e6b48b6554e5f12a05fcba3cd8c4e57879",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 20,
+              "objectives": [
+                1725.325,
+                169.66666666666666
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "95635ac2e8685e54cbc37a92f6ffaf61",
+              "architecture_sha256": "33500c0f8cc5233f4d644467b7425a329ee3232f1359644cd358e13a9024600a",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 20,
+              "objectives": [
+                3045.625,
+                153.66666666666666
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "8bef247b0d1e6bcb3ba3def13dc57024",
+              "architecture_sha256": "a84c3fa707512aa02b93b539866fcae7daaac8c911ba4b71ec1612cae15cd675",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 17,
+              "objectives": [
+                3069.725,
+                153.16666666666666
+              ],
+              "source": "cross_chain_swap"
+            },
+            {
+              "architecture_key": "c415247ad64a487b189f1c87475ab676",
+              "architecture_sha256": "b1899d782b553546988dec5ab81efdd7cc3e83705e818d65fba61e299130f3c5",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 15,
+              "objectives": [
+                3073.625,
+                152.5
+              ],
+              "source": "two_opt"
+            }
+          ],
+          "config": {
+            "budget_mode": "wall_clock",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s9234-equal_wall-w2",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 2
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "global_archive_size": 5,
+              "lanes": [
+                {
+                  "archive_size": 4,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 29,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 15.015625,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_wall-w2\\L0",
+                  "seed": 1377194433,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 3,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 28,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 15.15625,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_wall-w2\\L2",
+                  "seed": 111359012,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                }
+              ]
+            },
+            {
+              "epoch": 1,
+              "global_archive_size": 5,
+              "lanes": [
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 24,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 13.5,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_wall-w2\\L0",
+                  "seed": 669603686,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 3,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 24,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 13.921875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_wall-w2\\L2",
+                  "seed": 1687910932,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            1723.9450000000002,
+            155.66666666666669
+          ],
+          "frozen_reference": [
+            13174.8075,
+            183.37499999999997
+          ],
+          "metrics": {
+            "best_H_eff8": 152.5,
+            "best_physical": 1723.565,
+            "duplicate_evaluation_fraction": 0.01904761904761905,
+            "duplicate_exact_evaluations": 2,
+            "frozen_reference_hypervolume": 330826.3388541664,
+            "nondominated_archive_size": 5,
+            "objective_space_spread": 0.7254343862980124,
+            "unique_architectures": 5,
+            "unique_exact_evaluations": 103
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 4096,
+            "maximum_local_moves": 262144,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 600.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 93.39307164586467,
+            "process_cpu_seconds": 57.59375,
+            "wall_seconds": 30.83405920001678
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+        },
+        "4": {
+          "accounting": {
+            "evaluation_budget_exact": true,
+            "local_duplicate_proposals": 2,
+            "requested_exact_evaluations": 64,
+            "total_exact_evaluations": 186
+          },
+          "archive": [
+            {
+              "architecture_key": "959d9d7f458e3da33ecd3a443e28be91",
+              "architecture_sha256": "364093541627aa2b70f8beb1710287b2a8adb3ce5c841a4b1b74637121aa505d",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 9,
+              "objectives": [
+                1723.565,
+                172.33333333333331
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "827407fcd3aaaccf0ab76c3fee833124",
+              "architecture_sha256": "9292decb123473ceae023185e63180e6b48b6554e5f12a05fcba3cd8c4e57879",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L0",
+              "move_index": 20,
+              "objectives": [
+                1725.325,
+                169.66666666666666
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "23708310c9dcd4e19b0d6372016ca3b3",
+              "architecture_sha256": "77323c4c055ba242465f7d6b61b72b539baf79368ddf742418dc67d7e7c3be5f",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 0,
+              "lane_id": "L1",
+              "move_index": 6,
+              "objectives": [
+                1762.265,
+                169.33333333333331
+              ],
+              "source": "segment_exchange"
+            },
+            {
+              "architecture_key": "cd176e5b4825565efeb93e3fd0a4d3ed",
+              "architecture_sha256": "4c1e7882a5d071861b291b9183a6f81896df9343052481cfadf7437c2da7dfb9",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L1",
+              "move_index": 14,
+              "objectives": [
+                1764.685,
+                168.83333333333331
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "14494a8074e33b8b775398dab01538b2",
+              "architecture_sha256": "374793c52315201b81c6b87fba99619e8fcba412d5cb6ca4abbb896f9f6d886a",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L1",
+              "move_index": 3,
+              "objectives": [
+                1765.065,
+                168.16666666666666
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "17d5a56036173e0099f471bf9e3fd0db",
+              "architecture_sha256": "42ab942ed206f2312b9ded3de31e50a1202687a5e9adeb74276377bf998117be",
+              "chain_lengths": [
+                105,
+                106
+              ],
+              "epoch": 0,
+              "lane_id": "L1",
+              "move_index": 22,
+              "objectives": [
+                1773.1850000000002,
+                167.33333333333334
+              ],
+              "source": "migration"
+            },
+            {
+              "architecture_key": "c1c4cd559cde353f9924ca0fdfd0ee93",
+              "architecture_sha256": "6ba12331de1095deb10f2505f43c97c270351bd204c2787c485a02d61379820a",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L3",
+              "move_index": 2,
+              "objectives": [
+                3024.8450000000003,
+                165.0
+              ],
+              "source": "relocate"
+            },
+            {
+              "architecture_key": "430a1a5cc0ac26620e0d8df4b8d5b7ac",
+              "architecture_sha256": "7038157508010c3a22c40c8add1c0a24f4e861ac0f4aba8e013000409cb85433",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 3,
+              "objectives": [
+                3042.585,
+                159.83333333333334
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "93ace6fb93544966901e0a6c0436c1fc",
+              "architecture_sha256": "cab146ded462bd9d258e1f0cec749cc903ae92a2a75caec8cb9805ed6567411e",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 15,
+              "objectives": [
+                3051.145,
+                156.16666666666663
+              ],
+              "source": "two_opt"
+            },
+            {
+              "architecture_key": "3428ecbd5bb277b86879a91d9445efcc",
+              "architecture_sha256": "14ec9bc42f0020b7559b6486a4d3f06242f3232ab36adcf18bf515b0766ca094",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 0,
+              "lane_id": "L2",
+              "move_index": 11,
+              "objectives": [
+                3054.505,
+                155.33333333333331
+              ],
+              "source": "cross_chain_swap"
+            },
+            {
+              "architecture_key": "7c52f6d917632d0547d3d0607a936462",
+              "architecture_sha256": "fac51974bf354ddd7c8d56d885b8a130ded9fbdcc86b26e1f8a6063c40f7c8ee",
+              "chain_lengths": [
+                106,
+                105
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 1,
+              "objectives": [
+                3057.165,
+                153.83333333333331
+              ],
+              "source": "swap"
+            },
+            {
+              "architecture_key": "947c4ab1e29f6e47d79df3801300f041",
+              "architecture_sha256": "315d7a8d677e8499c9e3b34da74612f474bde5ee08a68ca6da69fddb682616f4",
+              "chain_lengths": [
+                105,
+                106
+              ],
+              "epoch": 1,
+              "lane_id": "L3",
+              "move_index": 17,
+              "objectives": [
+                3129.785,
+                153.33333333333334
+              ],
+              "source": "cross_chain_swap"
+            },
+            {
+              "architecture_key": "4d8882020632c5577daf77e30b264cdf",
+              "architecture_sha256": "784400f3b21724b85b4b80e7285a11e6f192b45c06e4d682d5dc79fb77e38517",
+              "chain_lengths": [
+                105,
+                106
+              ],
+              "epoch": 1,
+              "lane_id": "L2",
+              "move_index": 19,
+              "objectives": [
+                3247.785,
+                153.16666666666669
+              ],
+              "source": "swap"
+            }
+          ],
+          "config": {
+            "budget_mode": "wall_clock",
+            "epochs": 2,
+            "keep_scratch": false,
+            "master_seed": 20260921,
+            "parallel_backend": "process",
+            "run_id": "v2-3-s9234-equal_wall-w4",
+            "total_exact_evaluations": 64,
+            "wall_clock_seconds": 30.0,
+            "worker_count": 4
+          },
+          "epochs": [
+            {
+              "epoch": 0,
+              "global_archive_size": 9,
+              "lanes": [
+                {
+                  "archive_size": 5,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 29,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 15.78125,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_wall-w4\\L0",
+                  "seed": 1377194433,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 6,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 29,
+                  "lane_id": "L1",
+                  "lane_label": "balanced_physical_activity",
+                  "process_cpu_seconds": 15.40625,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_wall-w4\\L1",
+                  "seed": 1600422663,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 5,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 23,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 16.046875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_wall-w4\\L2",
+                  "seed": 111359012,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 19,
+                  "lane_id": "L3",
+                  "lane_label": "diversity_perturbation",
+                  "process_cpu_seconds": 15.703125,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_wall-w4\\L3",
+                  "seed": 1500926719,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                }
+              ]
+            },
+            {
+              "epoch": 1,
+              "global_archive_size": 13,
+              "lanes": [
+                {
+                  "archive_size": 2,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 23,
+                  "lane_id": "L0",
+                  "lane_label": "physical_biased",
+                  "process_cpu_seconds": 12.703125,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_wall-w4\\L0",
+                  "seed": 669603686,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 4,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 24,
+                  "lane_id": "L1",
+                  "lane_label": "balanced_physical_activity",
+                  "process_cpu_seconds": 13.046875,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_wall-w4\\L1",
+                  "seed": 1674970890,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 5,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 21,
+                  "lane_id": "L2",
+                  "lane_label": "activity_biased",
+                  "process_cpu_seconds": 12.734375,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_wall-w4\\L2",
+                  "seed": 1687910932,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                },
+                {
+                  "archive_size": 6,
+                  "cleanup_status": "cleaned",
+                  "exact_evaluations": 18,
+                  "lane_id": "L3",
+                  "lane_label": "diversity_perturbation",
+                  "process_cpu_seconds": 13.328125,
+                  "scratch_path": "D:\\PACT_EXPERIMENTS\\workers\\v2-3-s9234-equal_wall-w4\\L3",
+                  "seed": 1175060632,
+                  "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+                }
+              ]
+            }
+          ],
+          "frozen_ideal": [
+            1723.9450000000002,
+            155.66666666666669
+          ],
+          "frozen_reference": [
+            13174.8075,
+            183.37499999999997
+          ],
+          "metrics": {
+            "best_H_eff8": 153.16666666666669,
+            "best_physical": 1723.565,
+            "duplicate_evaluation_fraction": 0.026881720430107527,
+            "duplicate_exact_evaluations": 5,
+            "frozen_reference_hypervolume": 327030.06718749943,
+            "nondominated_archive_size": 13,
+            "objective_space_spread": 0.7044200655027599,
+            "unique_architectures": 13,
+            "unique_exact_evaluations": 181
+          },
+          "optimizer_config": {
+            "activity_candidates": 6,
+            "archive_epsilon_fraction": 0.01,
+            "constructor_frontier_bound": 4,
+            "constructor_lambdas": [
+              1.0,
+              0.75,
+              0.5,
+              0.25,
+              0.0
+            ],
+            "constructor_mode": "shared_frontier",
+            "constructor_parallel_backend": "sequential",
+            "generate_constructor_starts": false,
+            "graph_k": 16,
+            "h_eff8_backend": "tiled",
+            "h_eff8_parallel_backend": "sequential",
+            "h_eff8_tile_patterns": 16,
+            "h_eff8_workers": 1,
+            "maximum_archive_size": 24,
+            "maximum_chain_length_difference": 1,
+            "maximum_exact_evaluations": 4096,
+            "maximum_local_moves": 262144,
+            "maximum_neighborhood_size": 32,
+            "maximum_segment_length": 8,
+            "minimum_chain_length": 1,
+            "parent_refresh_interval": 16,
+            "random_nonlocal_candidates": 3,
+            "seed": 20260921,
+            "seen_cache_size": 8192,
+            "wall_clock_seconds": 600.0
+          },
+          "runtime": {
+            "cpu_utilization_percent": 92.15064159535956,
+            "process_cpu_seconds": 114.75,
+            "wall_seconds": 31.131090900016716
+          },
+          "schema_version": "pact-optimizer-v2-3-result-1",
+          "stop_reason": "WALL_CLOCK_BUDGET_EXHAUSTED"
+        }
+      },
+      "frozen_ideal": [
+        1723.9450000000002,
+        155.66666666666669
+      ],
+      "frozen_reference": [
+        13174.8075,
+        183.37499999999997
+      ],
+      "start_portfolio": [
+        {
+          "architecture_path": "artifacts/derived/phase0c/s9234/s11/k2/P.architecture.json",
+          "architecture_sha256": "169ed6bfc885161ffb6e65df93983a818a4ee75fa347c639b11077f4a5c9be13",
+          "index": 0,
+          "label": "P",
+          "objectives": [
+            1807.825,
+            175.00000000000003
+          ]
+        },
+        {
+          "architecture_path": "artifacts/derived/phase0c/s9234/s11/k2/T.architecture.json",
+          "architecture_sha256": "237fb9ad7f2ffd5c2bc0a8c4bc0306e97cc0e3004cb5fb11dd35244619138aef",
+          "index": 1,
+          "label": "T",
+          "objectives": [
+            1723.9450000000002,
+            172.33333333333331
+          ]
+        },
+        {
+          "architecture_path": "artifacts/derived/phase0c/s9234/s11/k2/J50.architecture.json",
+          "architecture_sha256": "2f6e012e12ba16621b425a458c0d0d7cf410abc6a724a1f139e84e84f12e55a1",
+          "index": 2,
+          "label": "J50",
+          "objectives": [
+            3069.885,
+            155.66666666666669
+          ]
+        },
+        {
+          "architecture_path": "artifacts/derived/phase0c/s9234/s11/k2/R.architecture.json",
+          "architecture_sha256": "6e988fb89f55f3425c429b4caec69ce1b97dcaa046e3c756253e51e5e5a8e078",
+          "index": 3,
+          "label": "R",
+          "objectives": [
+            10884.635,
+            170.99999999999997
+          ]
+        }
+      ]
+    }
+  },
+  "environment": {
+    "captured_at_unix": 1790093971.9557884,
+    "cpu_model": "AMD Ryzen 7 7735HS with Radeon Graphics",
+    "experiment_paths": {
+      "cache_dir": "D:\\PACT_EXPERIMENTS\\cache",
+      "checkpoints_dir": "D:\\PACT_EXPERIMENTS\\checkpoints",
+      "experiment_root": "D:\\PACT_EXPERIMENTS",
+      "logs_dir": "D:\\PACT_EXPERIMENTS\\logs",
+      "memmap_dir": "D:\\PACT_EXPERIMENTS\\memmap",
+      "profiles_dir": "D:\\PACT_EXPERIMENTS\\profiles",
+      "pytest_tmp_dir": "D:\\PACT_EXPERIMENTS\\pytest_tmp",
+      "results_dir": "D:\\PACT_EXPERIMENTS\\results",
+      "synthetic_dir": "D:\\PACT_EXPERIMENTS\\synthetic",
+      "tmp_dir": "D:\\PACT_EXPERIMENTS\\tmp",
+      "workers_dir": "D:\\PACT_EXPERIMENTS\\workers"
+    },
+    "free_C": 3212169216,
+    "free_D": 70220681216,
+    "frozen_v2_2_test_baseline": {
+      "status": "PASS",
+      "temporary_root": "D:\\PACT_EXPERIMENTS\\pytest_tmp\\v22-freeze",
+      "tests_passed": 146
+    },
+    "frozen_v2_2_real_search_configuration": {
+      "constructor_mode": "shared_frontier",
+      "constructor_parallel_backend": "sequential",
+      "graph_k": 12,
+      "h_eff8_backend": "tiled",
+      "h_eff8_tile_patterns": 16,
+      "h_eff8_workers": 4,
+      "maximum_archive_size": 12,
+      "maximum_exact_evaluations": 12,
+      "maximum_local_moves": 16,
+      "maximum_neighborhood_size": 24,
+      "parent_refresh_interval": 8,
+      "seed": 20260921,
+      "seen_cache_size": 4096,
+      "wall_clock_seconds": 180.0
+    },
+    "git_commit": "088dcbb1099788287ccec7dcd664da516bac8ad1",
+    "git_status": "# branch.oid 088dcbb1099788287ccec7dcd664da516bac8ad1\n# branch.head codex/pact-phase0d-budgeted-search\n# branch.upstream origin/codex/pact-phase0d-budgeted-search\n# branch.ab +0 -0\n1 .M N... 100644 100644 100644 7961652e9bd432c9986a30ddfa0786978fcd012c 7961652e9bd432c9986a30ddfa0786978fcd012c scripts/pact_optimizer_v2.py\n1 .M N... 100644 100644 100644 fbbe56f9a1cbc52425d5ac473fc613522cc8c014 fbbe56f9a1cbc52425d5ac473fc613522cc8c014 src/pact/phase0d/optimizer_v2.py\n1 .M N... 100644 100644 100644 19ea1143a1c9ddb555e168c9312a5a43a5da1e94 19ea1143a1c9ddb555e168c9312a5a43a5da1e94 src/pact/phase0d/v2_activity.py\n1 .M N... 100644 100644 100644 0b59e36fd9cd989e9fcad3836f2dc1d01c077fd1 0b59e36fd9cd989e9fcad3836f2dc1d01c077fd1 src/pact/phase0d/v2_sparse.py\n? PACT_OPTIMIZER_V2_1_SHARED_FRONTIER_REPORT.md\n? PACT_OPTIMIZER_V2_2_PARALLEL_TILED_REPORT.md\n? reports/optimizer_v2_1/\n? reports/optimizer_v2_2/\n? reports/optimizer_v2_3/\n? scripts/pact_optimizer_v2_1.py\n? scripts/pact_optimizer_v2_2.py\n? scripts/pact_optimizer_v2_3.py\n? src/pact/experiment_storage.py\n? src/pact/phase0d/optimizer_v2_3.py\n? src/pact/phase0d/v2_constructor_metrics.py\n? src/pact/phase0d/v2_shared_frontier.py\n? tests/unit/test_experiment_storage.py\n? tests/unit/test_optimizer_v2_1.py\n? tests/unit/test_optimizer_v2_2.py\n? tests/unit/test_optimizer_v2_3.py",
+    "logical_cores": 16,
+    "physical_cores": 8,
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.5 (tags/v3.12.5:ff3bc82, Aug  6 2024, 20:45:27) [MSC v.1940 64 bit (AMD64)]"
+  },
+  "equal_evaluation_advances": {
+    "s15850": {
+      "2": false,
+      "4": false
+    },
+    "s5378": {
+      "2": true,
+      "4": false
+    },
+    "s9234": {
+      "2": false,
+      "4": false
+    }
+  },
+  "large_file_observed_on_C": false,
+  "s5378_diversity_improved": true,
+  "schema_version": "pact-optimizer-v2-3-campaign-1",
+  "storage_manifest": {
+    "cleanup_status": "worker_scratch_cleaned_and_obsolete_smoke_outputs_pruned",
+    "experiment_root": "D:\\PACT_EXPERIMENTS",
+    "free_C_after": 8221327360,
+    "free_C_before": 3212169216,
+    "free_D_after": 70214266880,
+    "free_D_before": 70220681216,
+    "host_filesystem": "native_windows",
+    "peak_experiment_directory_size": 34566502,
+    "residual_scratch_bytes": 0,
+    "retained_bytes": 33539911,
+    "scratch_root": "D:\\PACT_EXPERIMENTS\\workers",
+    "temporary_bytes_created": 5511344,
+    "total_bytes_written": 5511344
+  }
+}
