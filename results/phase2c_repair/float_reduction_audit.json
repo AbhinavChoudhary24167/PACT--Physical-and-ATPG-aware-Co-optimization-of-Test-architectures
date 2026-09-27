@@ -1,0 +1,187 @@
+{
+  "absolute_difference": 1.4210854715202004e-14,
+  "accumulation_method_audit": "CPython 3.12 built-in sum(generator): compensated float summation",
+  "accumulation_method_predictor": "0.0 followed by ordered sequential wire += hpwl(points)",
+  "assertion": "sum(r['hpwl_um'] for r in audit['FFs'][n]) == new['M5_hpwl'][i]",
+  "corrected_audit_witness_status": "PACT_PHASE2CR_REPRESENTATIVE_WITNESS_PASS",
+  "data_types": {
+    "accumulator": "Python float (binary64)",
+    "operands": [
+      "float",
+      "float",
+      "float"
+    ],
+    "predictor_array": "float64",
+    "predictor_scalar": "float64"
+  },
+  "distinction": "Traversal/operand order is identical; reduction algorithm/association differs.",
+  "environment": {
+    "executable": "/root/pact-deps/pact-venv/bin/python",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]"
+  },
+  "failure_reason": "FLOAT_REDUCTION_ORDER",
+  "historical_diagnostic": {
+    "rows": {
+      "U_n1588gat": {
+        "audit_nets": [
+          {
+            "hpwl_um": 5.910000000000003,
+            "net": "n1588gat"
+          }
+        ],
+        "audit_sum": 5.910000000000003,
+        "index": 32,
+        "weight": 5.910000000000003
+      },
+      "U_n2121gat": {
+        "audit_nets": [
+          {
+            "hpwl_um": 34.699999999999996,
+            "net": "n2121gat"
+          },
+          {
+            "hpwl_um": 15.750000000000002,
+            "net": "test_so"
+          },
+          {
+            "hpwl_um": 16.5,
+            "net": "n2119gat"
+          }
+        ],
+        "audit_sum": 66.95,
+        "index": 69,
+        "weight": 66.94999999999999
+      }
+    },
+    "status": "DIAGNOSTIC_ONLY_NOT_A_VALID_WITNESS"
+  },
+  "initial_witness_status": "FAIL",
+  "lhs": 66.95,
+  "lhs_hex": "0x1.0bccccccccccdp+6",
+  "net_sequence": [
+    "n2121gat",
+    "test_so",
+    "n2119gat"
+  ],
+  "operand_hex": [
+    "0x1.1599999999999p+5",
+    "0x1.f800000000001p+3",
+    "0x1.0800000000000p+4"
+  ],
+  "operand_sequence_audit": [
+    34.699999999999996,
+    15.750000000000002,
+    16.5
+  ],
+  "operand_sequence_predictor": [
+    34.699999999999996,
+    15.750000000000002,
+    16.5
+  ],
+  "original_failure_log_sha256": "3489586c039cdcdadd236454d213c5a7fb7967de935fc9b383d70cd1091ad833",
+  "point_sets": [
+    {
+      "additions": [],
+      "hpwl_um": 34.699999999999996,
+      "net": "n2121gat",
+      "pin_ff": 2.674889,
+      "points": [
+        [
+          7.79,
+          82.6
+        ],
+        [
+          10.83,
+          74.2
+        ],
+        [
+          1.33,
+          57.4
+        ]
+      ],
+      "ports": [],
+      "sinks": [
+        {
+          "master": "INV_X1",
+          "pin": "A",
+          "xy": [
+            10.83,
+            74.2
+          ]
+        },
+        {
+          "master": "BUF_X1",
+          "pin": "A",
+          "xy": [
+            1.33,
+            57.4
+          ]
+        }
+      ]
+    },
+    {
+      "additions": [],
+      "hpwl_um": 15.750000000000002,
+      "net": "test_so",
+      "pin_ff": 0,
+      "points": [
+        [
+          1.33,
+          57.4
+        ],
+        [
+          0.07,
+          42.91
+        ]
+      ],
+      "ports": [
+        [
+          0.07,
+          42.91
+        ]
+      ],
+      "sinks": []
+    },
+    {
+      "additions": [],
+      "hpwl_um": 16.5,
+      "net": "n2119gat",
+      "pin_ff": 1.119679,
+      "points": [
+        [
+          10.83,
+          74.2
+        ],
+        [
+          1.33,
+          67.2
+        ]
+      ],
+      "ports": [],
+      "sinks": [
+        {
+          "master": "SDFF_X1",
+          "pin": "D",
+          "xy": [
+            1.33,
+            67.2
+          ]
+        }
+      ]
+    }
+  ],
+  "predictor_source_sha256": "9500d4701f91b997eecf3c09d0fa0058b9d8b18e55438309b20dd09f44470eb1",
+  "relative_difference": 2.1226071269905908e-16,
+  "rhs": 66.94999999999999,
+  "rhs_hex": "0x1.0bcccccccccccp+6",
+  "sequential_audit_value": 66.94999999999999,
+  "sequential_partial_sums": [
+    34.699999999999996,
+    50.449999999999996,
+    66.94999999999999
+  ],
+  "solely_float_reduction": true,
+  "source": "scripts/phase2cr_run.py:148 (attempt1 snapshot)",
+  "tests_source_sha256": "b34b2299826698603513499f301a53a7922186a481b989bb625109a04b239b48"
+}

@@ -1,0 +1,27 @@
+{
+  "completed": [
+    "git status --short; git rev-parse HEAD (nested PACT repository; initial snapshot preserved)",
+    "Read pasted request, required source files and Phase-2C reports; locate frozen evidence in D:/PACT_EXPERIMENTS",
+    "wsl --list --quiet (initial access denial, successful elevated retry)",
+    "Dependency probes: system Python, repository .venv, original /root/pact-deps/pact-venv",
+    "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/mnt/d/PACT_EXPERIMENTS/cache/phase2a_python openroad -python -no_init -exit scripts/phase2cr_extract.py",
+    "PYTHONDONTWRITEBYTECODE=1 /root/pact-deps/pact-venv/bin/python scripts/phase2cr_freeze.py",
+    "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src OPENBLAS_NUM_THREADS=1 /root/pact-deps/pact-venv/bin/python -m pytest -q --capture=sys -p no:cacheprovider tests/unit/test_phase2cr_loads.py --junitxml=results/phase2c_repair/focused_tests.xml",
+    "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 /root/pact-deps/pact-venv/bin/python scripts/phase2cr_run.py witness (assertion failure; witness.log)",
+    "Read-only representative diagnostic using phase2cr_run.load_case and topology; write witness_failure_diagnostic.json",
+    "PYTHONDONTWRITEBYTECODE=1 /root/pact-deps/pact-venv/bin/python scripts/phase2cr_stop_report.py"
+  ],
+  "environment": "Windows PowerShell host; Ubuntu-24.04 WSL scientific runtime",
+  "not_run": [
+    "phase2cr_run.py topology",
+    "phase2cr_run.py measure",
+    "corrected correlations",
+    "full regression",
+    "routing",
+    "RC extraction",
+    "ATPG",
+    "optimizer",
+    "multi-seed execution",
+    "git push"
+  ]
+}

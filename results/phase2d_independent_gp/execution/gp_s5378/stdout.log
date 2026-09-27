@@ -1,0 +1,617 @@
+OpenROAD 26Q2-1164-g08f67ee5ec 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 2 thread(s).
+mkdir -p /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/objects/nangate45/s5378/phase2d_gp29
+/root/pact-deps/OpenROAD-flow-scripts/flow/scripts/flow.sh 3_1_place_gp_skip_io global_place_skip_io
+Running global_place_skip_io.tcl, stage 3_1_place_gp_skip_io
+read_liberty /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/2_floorplan.odb
+read_sdc /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/2_floorplan.sdc
+source /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+source /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase2d_gp_hook.tcl
+[INFO GPL-0022] Initialize gpl and calculate uniform density.
+Placement density is 0.5300000047683716, computed from PLACE_DENSITY_LB_ADDON  0.20 and lower bound 0.4000000059604645
+global_placement -skip_io -density 0.5300000047683716 -pad_left 0 -pad_right 0 -skip_initial_place
+PHASE2D_GP_FROM_FRESH_ANCESTRY: -skip_io -density 0.5300000047683716 -pad_left 0 -pad_right 0 -skip_initial_place
+[INFO GPL-0001] ---- Initialize GPL Main Data Structures
+[INFO GPL-0002] DBU: 2000
+[INFO GPL-0003] SiteSize: (  0.190  1.400 ) um
+[INFO GPL-0004] CoreBBox: (  1.140  1.400 ) ( 84.930 84.000 ) um
+[INFO GPL-0036] Movable instances area:       2468.746 um^2
+[INFO GPL-0037] Total instances area:         2500.134 um^2
+[INFO GPL-0035] Pin density area adjust:       267.800 um^2
+[INFO GPL-0032] ---- Initialize Region: Top-level
+[INFO GPL-0006] Number of instances:              1955
+[INFO GPL-0007] Movable instances:                1837
+[INFO GPL-0008] Fixed instances:                   118
+[INFO GPL-0009] Dummy instances:                     0
+[INFO GPL-0010] Number of nets:                   1875
+[INFO GPL-0011] Number of pins:                   5644
+[INFO GPL-0012] Die BBox:  (  0.000  0.000 ) ( 85.985 85.985 ) um
+[INFO GPL-0013] Core BBox: (  1.140  1.400 ) ( 84.930 84.000 ) um
+[INFO GPL-0016] Core area:                    6921.054 um^2
+[INFO GPL-0014] Region name: top-level.
+[INFO GPL-0015] Region area:                  6921.054 um^2
+[INFO GPL-0017] Fixed instances area:           31.388 um^2
+[INFO GPL-0018] Movable instances area:       2736.546 um^2
+[INFO GPL-0019] Utilization:                    39.720 %
+[INFO GPL-0020] Standard cells area:          2736.546 um^2
+[INFO GPL-0021] Large instances area:            0.000 um^2
+[INFO GPL-0005] ---- Execute Conjugate Gradient Initial Placement.
+[INFO GPL-0051] Source of initial instance position counters:
+	Odb location = 1837	Core center = 0	Region center = 0
+[INFO GPL-0033] ---- Initialize Nesterov Region: Top-level
+[INFO GPL-0023] Placement target density:       0.5300
+[INFO GPL-0024] Movable insts average area:      1.490 um^2
+[INFO GPL-0025] Ideal bin area:                  2.811 um^2
+[INFO GPL-0026] Ideal bin count:                  2462
+[INFO GPL-0027] Total bin area:               6921.054 um^2
+[INFO GPL-0028] Bin count (X, Y):          32 ,     32
+[INFO GPL-0029] Bin size (W * H):       2.618 *  2.581 um
+[INFO GPL-0030] Number of bins:                   1024
+[INFO GPL-0084] ---- Execute Nesterov Global Placement.
+[INFO GPL-0031] HPWL: Half-Perimeter Wirelength
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+        0 |   0.3069 |  7.809828e+04 |   +0.00% |  5.14e-11 |      
+       10 |   0.9309 |  4.664408e+03 |  -94.03% |  7.57e-11 |      
+       20 |   0.8625 |  5.076664e+03 |   +8.84% |  1.11e-10 |      
+       30 |   0.8311 |  5.241534e+03 |   +3.25% |  1.64e-10 |      
+       40 |   0.8063 |  5.643194e+03 |   +7.66% |  2.42e-10 |      
+       50 |   0.7683 |  6.297003e+03 |  +11.59% |  3.56e-10 |      
+       60 |   0.7330 |  6.711623e+03 |   +6.58% |  5.25e-10 |      
+       70 |   0.6969 |  7.204586e+03 |   +7.34% |  7.73e-10 |      
+       80 |   0.6605 |  7.710626e+03 |   +7.02% |  1.14e-09 |      
+       90 |   0.6215 |  8.243466e+03 |   +6.91% |  1.68e-09 |      
+      100 |   0.5830 |  8.747992e+03 |   +6.12% |  2.47e-09 |      
+      110 |   0.5432 |  9.159439e+03 |   +4.70% |  3.64e-09 |      
+      120 |   0.5057 |  9.610655e+03 |   +4.93% |  5.36e-09 |      
+      130 |   0.4669 |  1.000597e+04 |   +4.11% |  7.90e-09 |      
+      140 |   0.4274 |  1.030892e+04 |   +3.03% |  1.16e-08 |      
+      150 |   0.3886 |  1.055164e+04 |   +2.35% |  1.71e-08 |      
+      160 |   0.3515 |  1.069811e+04 |   +1.39% |  2.52e-08 |      
+      170 |   0.3203 |  1.082094e+04 |   +1.15% |  3.72e-08 |      
+      180 |   0.2823 |  1.094213e+04 |   +1.12% |  5.48e-08 |      
+      190 |   0.2535 |  1.100798e+04 |   +0.60% |  8.07e-08 |      
+      200 |   0.2254 |  1.100915e+04 |   +0.01% |  1.19e-07 |      
+      210 |   0.1964 |  1.108127e+04 |   +0.66% |  1.75e-07 |      
+      220 |   0.1670 |  1.109854e+04 |   +0.16% |  2.58e-07 |      
+      230 |   0.1425 |  1.111609e+04 |   +0.16% |  3.80e-07 |      
+      240 |   0.1207 |  1.116078e+04 |   +0.40% |  5.60e-07 |      
+      250 |   0.1030 |  1.118872e+04 |   +0.25% |  8.25e-07 |      
+      252 |   0.0996 |  1.119655e+04 |          |  9.26e-07 |      
+---------------------------------------------------------------
+[INFO GPL-1001] Global placement finished at iteration 252
+[INFO GPL-1002] Placed Cell Area             2736.5457
+[INFO GPL-1003] Available Free Area          6889.6660
+[INFO GPL-1004] Minimum Feasible Density        0.4000 (cell_area / free_area)
+[INFO GPL-1006]   Suggested Target Densities:
+[INFO GPL-1007]     - For 90% usage of free space: 0.4413
+[INFO GPL-1008]     - For 80% usage of free space: 0.4965
+[INFO GPL-1009]     - For 50% usage of free space: 0.7944
+[INFO GPL-1014] Final placement area: 2736.55 (+0.00%)
+Design area 2500 um^2 36% utilization.
+write_db /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/3_1_place_gp_skip_io.odb
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+3_1_place_gp_skip_io      .odb            1            114 80a050367149ed0643d2
+/root/pact-deps/OpenROAD-flow-scripts/flow/scripts/flow.sh 3_2_place_iop io_placement
+Running io_placement.tcl, stage 3_2_place_iop
+read_liberty /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/3_1_place_gp_skip_io.odb
+read_sdc /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/2_floorplan.sdc
+source /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+place_pins -hor_layers metal5 -ver_layers metal6
+Found 0 macro blocks.
+Using 2 tracks default min distance between IO pins.
+[INFO PPL-0001] Number of available slots 600
+[INFO PPL-0002] Number of I/O             88
+[INFO PPL-0003] Number of I/O w/sink      88
+[INFO PPL-0004] Number of I/O w/o sink    0
+[INFO PPL-0005] Slots per section         200
+[INFO PPL-0008] Successfully assigned pins to sections.
+[INFO PPL-0012] I/O nets HPWL: 2245.65 um.
+Design area 2500 um^2 36% utilization.
+write_db /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/3_2_place_iop.odb
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+3_2_place_iop             .odb            0            111 b271c26c3a314fbfaa6f
+/root/pact-deps/OpenROAD-flow-scripts/flow/scripts/flow.sh 3_3_place_gp global_place
+Running global_place.tcl, stage 3_3_place_gp
+read_liberty /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/3_2_place_iop.odb
+read_sdc /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/2_floorplan.sdc
+source /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+source /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase2d_gp_hook.tcl
+[INFO RSZ-0026] Removed 34 buffers.
+Perform port buffering...
+[INFO RSZ-0027] Inserted 37 BUF_X1 input buffers.
+[INFO RSZ-0028] Inserted 50 BUF_X1 output buffers.
+[INFO GPL-0022] Initialize gpl and calculate uniform density.
+Placement density is 0.5300000047683716, computed from PLACE_DENSITY_LB_ADDON  0.20 and lower bound 0.4000000059604645
+global_placement -density 0.5300000047683716 -pad_left 0 -pad_right 0 -routability_driven -timing_driven -force_center_initial_place -min_phi_coef 0.95 -max_phi_coef 1.05 -skip_initial_place
+PHASE2D_GP_FROM_FRESH_ANCESTRY: -density 0.5300000047683716 -pad_left 0 -pad_right 0 -routability_driven -timing_driven -min_phi_coef 0.95 -max_phi_coef 1.05 -skip_initial_place
+[INFO GPL-0001] ---- Initialize GPL Main Data Structures
+[INFO GPL-0002] DBU: 2000
+[INFO GPL-0003] SiteSize: (  0.190  1.400 ) um
+[INFO GPL-0004] CoreBBox: (  1.140  1.400 ) ( 84.930 84.000 ) um
+[INFO GPL-0036] Movable instances area:       2474.864 um^2
+[INFO GPL-0037] Total instances area:         2506.252 um^2
+[INFO GPL-0035] Pin density area adjust:       262.143 um^2
+[INFO GPL-0032] ---- Initialize Region: Top-level
+[INFO GPL-0006] Number of instances:              2008
+[INFO GPL-0007] Movable instances:                1890
+[INFO GPL-0008] Fixed instances:                   118
+[INFO GPL-0009] Dummy instances:                     0
+[INFO GPL-0010] Number of nets:                   1928
+[INFO GPL-0011] Number of pins:                   5838
+[INFO GPL-0012] Die BBox:  (  0.000  0.000 ) ( 85.985 85.985 ) um
+[INFO GPL-0013] Core BBox: (  1.140  1.400 ) ( 84.930 84.000 ) um
+[INFO GPL-0016] Core area:                    6921.054 um^2
+[INFO GPL-0014] Region name: top-level.
+[INFO GPL-0015] Region area:                  6921.054 um^2
+[INFO GPL-0017] Fixed instances area:           31.388 um^2
+[INFO GPL-0018] Movable instances area:       2737.007 um^2
+[INFO GPL-0019] Utilization:                    39.726 %
+[INFO GPL-0020] Standard cells area:          2737.007 um^2
+[INFO GPL-0021] Large instances area:            0.000 um^2
+[INFO GPL-0005] ---- Execute Conjugate Gradient Initial Placement.
+[INFO GPL-0051] Source of initial instance position counters:
+	Odb location = 1890	Core center = 0	Region center = 0
+[INFO GPL-0033] ---- Initialize Nesterov Region: Top-level
+[INFO GPL-0023] Placement target density:       0.5300
+[INFO GPL-0024] Movable insts average area:      1.448 um^2
+[INFO GPL-0025] Ideal bin area:                  2.732 um^2
+[INFO GPL-0026] Ideal bin count:                  2532
+[INFO GPL-0027] Total bin area:               6921.054 um^2
+[INFO GPL-0028] Bin count (X, Y):          32 ,     32
+[INFO GPL-0029] Bin size (W * H):       2.618 *  2.581 um
+[INFO GPL-0030] Number of bins:                   1024
+[INFO GPL-0084] ---- Execute Nesterov Global Placement.
+[INFO GPL-0031] HPWL: Half-Perimeter Wirelength
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+        0 |   0.1245 |  1.288716e+04 |   +0.00% |  9.32e-12 |      
+[INFO GPL-0100] Timing-driven iteration 1/2, virtual: false.
+[INFO GPL-0101]    Iter: 1, overflow: 0.124, keep resizer changes at: 1, HPWL: 25774320
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      2107
+    final |     +0.2% |       1 |       2 |             1 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0034] Found 1 slew violations.
+[INFO RSZ-0036] Found 1 capacitance violations.
+[INFO RSZ-0039] Resized 1 instances.
+[INFO RSZ-0038] Inserted 2 buffers in 1 nets.
+   Iter   |    Area   | Removed | Inserted |   Pins
+          |           | Buffers | Buffers  | Remaining
+-------------------------------------------------------
+        0 |     +0.0% |       0 |        0 |      1890
+      180 |     +0.0% |       0 |        0 |      1710
+      360 |     +0.0% |       0 |        0 |      1530
+      540 |     +0.0% |       0 |        0 |      1350
+      720 |     +0.1% |       0 |        3 |      1170
+      900 |     +0.1% |       0 |        3 |       990
+     1080 |     +0.1% |       0 |        3 |       810
+     1260 |     +0.1% |       0 |        3 |       630
+     1440 |     +0.1% |       0 |        3 |       450
+     1620 |     +0.1% |       0 |        3 |       270
+     1800 |     +0.1% |       0 |        3 |        90
+    final |     +0.2% |       2 |        9 |         0
+-------------------------------------------------------
+[INFO GPL-0106] Timing-driven: worst slack 9.235797e-09
+[INFO GPL-0107] Timing-driven: repair_design delta area: 8.512 um^2 (+0.31%)
+[INFO GPL-0108] Timing-driven: repair_design, gpl delta gcells: 9 (+0.48%)
+[INFO GPL-0109] Timing-driven: repair_design, gcells created: 11, deleted: 2
+[INFO GPL-0110] Timing-driven: new target density: 0.5312355
+[INFO GPL-0038] Routability snapshot saved at iter = 1
+        0 |   0.1245 |  1.321189e+04 |          |           |      
+[INFO GPL-0040] Routability iteration: 1
+[INFO GPL-0041] Total routing overflow: 0.0000
+[INFO GPL-0042] Number of overflowed tiles: 0 (0.00%)
+[INFO GPL-0043] Average top 0.5% routing congestion: 0.7039
+[INFO GPL-0044] Average top 1.0% routing congestion: 0.6897
+[INFO GPL-0045] Average top 2.0% routing congestion: 0.6709
+[INFO GPL-0046] Average top 5.0% routing congestion: 0.6435
+[INFO GPL-0047] Routability iteration weighted routing congestion: 0.6968
+[INFO GPL-0050] Weighted routing congestion is lower than target routing congestion(1.0100), end routability optimization.
+[INFO GPL-0090] Routability finished. Target routing congestion achieved succesfully.
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+       10 |   0.2166 |  1.261460e+04 |   -2.11% |  1.37e-11 |      
+       20 |   0.3450 |  1.240060e+04 |   -1.70% |  2.02e-11 |      
+       30 |   0.4460 |  1.211835e+04 |   -2.28% |  2.98e-11 |      
+       40 |   0.5519 |  1.156476e+04 |   -4.57% |  4.39e-11 |      
+       50 |   0.6678 |  1.038501e+04 |  -10.20% |  6.46e-11 |      
+       60 |   0.7432 |  9.285483e+03 |  -10.59% |  9.52e-11 |      
+       70 |   0.7762 |  8.785611e+03 |   -5.38% |  1.40e-10 |      
+       80 |   0.7727 |  8.812148e+03 |   +0.30% |  2.07e-10 |      
+       90 |   0.7515 |  9.153811e+03 |   +3.88% |  3.04e-10 |      
+      100 |   0.7111 |  9.634636e+03 |   +5.25% |  4.48e-10 |      
+      110 |   0.6751 |  1.008712e+04 |   +4.70% |  6.60e-10 |      
+      120 |   0.6391 |  1.043787e+04 |   +3.48% |  9.73e-10 |      
+      130 |   0.6142 |  1.072047e+04 |   +2.71% |  1.43e-09 |      
+      140 |   0.5840 |  1.103010e+04 |   +2.89% |  2.11e-09 |      
+      150 |   0.5520 |  1.138324e+04 |   +3.20% |  3.11e-09 |      
+      160 |   0.5144 |  1.170873e+04 |   +2.86% |  4.58e-09 |      
+      170 |   0.4763 |  1.198520e+04 |   +2.36% |  6.75e-09 |      
+      180 |   0.4381 |  1.224006e+04 |   +2.13% |  9.94e-09 |      
+      190 |   0.4016 |  1.245556e+04 |   +1.76% |  1.46e-08 |      
+      200 |   0.3624 |  1.269975e+04 |   +1.96% |  2.16e-08 |      
+      210 |   0.3218 |  1.288737e+04 |   +1.48% |  3.18e-08 |      
+      220 |   0.2870 |  1.301957e+04 |   +1.03% |  4.68e-08 |      
+      230 |   0.2596 |  1.308297e+04 |   +0.49% |  6.89e-08 |      
+      240 |   0.2317 |  1.315776e+04 |   +0.57% |  1.02e-07 |      
+      250 |   0.2116 |  1.327120e+04 |   +0.86% |  1.50e-07 |      
+      260 |   0.1837 |  1.334305e+04 |   +0.54% |  2.20e-07 |      
+      270 |   0.1591 |  1.339167e+04 |   +0.36% |  3.25e-07 |      
+      280 |   0.1430 |  1.343649e+04 |   +0.33% |  4.78e-07 |      
+      290 |   0.1247 |  1.347250e+04 |   +0.27% |  7.05e-07 |      
+      300 |   0.1064 |  1.348864e+04 |   +0.12% |  1.04e-06 |      
+      304 |   0.0999 |  1.350339e+04 |          |  1.26e-06 |      
+---------------------------------------------------------------
+[INFO GPL-1001] Global placement finished at iteration 304
+[INFO GPL-1017] Routability mode iteration count: 200
+[INFO GPL-1005] Routability final weighted congestion: 0.7271
+[INFO GPL-1002] Placed Cell Area             2745.5190
+[INFO GPL-1003] Available Free Area          6889.6660
+[INFO GPL-1004] Minimum Feasible Density        0.4000 (cell_area / free_area)
+[INFO GPL-1006]   Suggested Target Densities:
+[INFO GPL-1007]     - For 90% usage of free space: 0.4428
+[INFO GPL-1008]     - For 80% usage of free space: 0.4981
+[INFO GPL-1009]     - For 50% usage of free space: 0.7970
+[INFO GPL-1011] Original area (um^2): 2737.01
+[INFO GPL-1012] Total routability artificial inflation: 0.00 (+0.00%)
+[INFO GPL-1013] Total timing-driven delta area: 8.51 (+0.31%)
+[INFO GPL-1014] Final placement area: 2745.52 (+0.31%)
+estimate_parasitics -placement
+Report metrics stage 3, global place...
+
+==========================================================================
+global place report_design_area
+--------------------------------------------------------------------------
+Design area 2515 um^2 36% utilization.
+write_db /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/3_3_place_gp.odb
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+3_3_place_gp              .odb            3            264 10ae7c6693c6e0eea1d3
+/root/pact-deps/OpenROAD-flow-scripts/flow/scripts/flow.sh 3_4_place_resized resize
+Running resize.tcl, stage 3_4_place_resized
+read_liberty /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/3_3_place_gp.odb
+read_sdc /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/2_floorplan.sdc
+source /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+estimate_parasitics -placement
+Perform buffer insertion and gate resizing...
+repair_design -verbose
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      2116
+       10 |     +0.0% |       0 |       0 |             0 |      2106
+       20 |     +0.0% |       0 |       0 |             0 |      2096
+       30 |     +0.0% |       0 |       0 |             0 |      2086
+       40 |     +0.0% |       0 |       0 |             0 |      2076
+       50 |     +0.0% |       0 |       0 |             0 |      2066
+       60 |     +0.0% |       0 |       0 |             0 |      2056
+       70 |     +0.0% |       0 |       0 |             0 |      2046
+       80 |     +0.0% |       0 |       0 |             0 |      2036
+       90 |     +0.0% |       0 |       0 |             0 |      2026
+      100 |     +0.0% |       0 |       0 |             0 |      2016
+      110 |     +0.0% |       0 |       0 |             0 |      2006
+      120 |     +0.0% |       0 |       0 |             0 |      1996
+      130 |     +0.0% |       0 |       0 |             0 |      1986
+      140 |     +0.0% |       0 |       0 |             0 |      1976
+      150 |     +0.0% |       0 |       0 |             0 |      1966
+      160 |     +0.0% |       0 |       0 |             0 |      1956
+      170 |     +0.0% |       0 |       0 |             0 |      1946
+      180 |     +0.0% |       0 |       0 |             0 |      1936
+      190 |     +0.0% |       0 |       0 |             0 |      1926
+      200 |     +0.0% |       0 |       0 |             0 |      1916
+      210 |     +0.0% |       0 |       0 |             0 |      1906
+      220 |     +0.0% |       0 |       0 |             0 |      1896
+      230 |     +0.0% |       0 |       0 |             0 |      1886
+      240 |     +0.0% |       0 |       0 |             0 |      1876
+      250 |     +0.0% |       0 |       0 |             0 |      1866
+      260 |     +0.0% |       0 |       0 |             0 |      1856
+      270 |     +0.0% |       0 |       0 |             0 |      1846
+      280 |     +0.0% |       0 |       0 |             0 |      1836
+      290 |     +0.0% |       0 |       0 |             0 |      1826
+      300 |     +0.0% |       0 |       0 |             0 |      1816
+      310 |     +0.0% |       0 |       0 |             0 |      1806
+      320 |     +0.0% |       0 |       0 |             0 |      1796
+      330 |     +0.0% |       0 |       0 |             0 |      1786
+      340 |     +0.0% |       0 |       0 |             0 |      1776
+      350 |     +0.0% |       0 |       0 |             0 |      1766
+      360 |     +0.0% |       0 |       0 |             0 |      1756
+      370 |     +0.0% |       0 |       0 |             0 |      1746
+      380 |     +0.0% |       0 |       0 |             0 |      1736
+      390 |     +0.0% |       0 |       0 |             0 |      1726
+      400 |     +0.0% |       0 |       0 |             0 |      1716
+      410 |     +0.0% |       0 |       0 |             0 |      1706
+      420 |     +0.0% |       0 |       0 |             0 |      1696
+      430 |     +0.0% |       0 |       0 |             0 |      1686
+      440 |     +0.0% |       0 |       0 |             0 |      1676
+      450 |     +0.0% |       0 |       0 |             0 |      1666
+      460 |     +0.0% |       0 |       0 |             0 |      1656
+      470 |     +0.0% |       0 |       0 |             0 |      1646
+      480 |     +0.0% |       0 |       0 |             0 |      1636
+      490 |     +0.0% |       0 |       0 |             0 |      1626
+      500 |     +0.0% |       0 |       0 |             0 |      1616
+      510 |     +0.0% |       0 |       0 |             0 |      1606
+      520 |     +0.0% |       0 |       0 |             0 |      1596
+      530 |     +0.0% |       0 |       0 |             0 |      1586
+      540 |     +0.0% |       0 |       0 |             0 |      1576
+      550 |     +0.0% |       0 |       0 |             0 |      1566
+      560 |     +0.0% |       0 |       0 |             0 |      1556
+      570 |     +0.0% |       0 |       0 |             0 |      1546
+      580 |     +0.0% |       0 |       0 |             0 |      1536
+      590 |     +0.0% |       0 |       0 |             0 |      1526
+      600 |     +0.0% |       0 |       0 |             0 |      1516
+      610 |     +0.0% |       0 |       0 |             0 |      1506
+      620 |     +0.0% |       0 |       0 |             0 |      1496
+      630 |     +0.0% |       0 |       0 |             0 |      1486
+      640 |     +0.0% |       0 |       0 |             0 |      1476
+      650 |     +0.0% |       0 |       0 |             0 |      1466
+      660 |     +0.0% |       0 |       0 |             0 |      1456
+      670 |     +0.0% |       0 |       0 |             0 |      1446
+      680 |     +0.0% |       0 |       0 |             0 |      1436
+      690 |     +0.0% |       0 |       0 |             0 |      1426
+      700 |     +0.0% |       0 |       0 |             0 |      1416
+      710 |     +0.0% |       0 |       0 |             0 |      1406
+      720 |     +0.0% |       0 |       0 |             0 |      1396
+      730 |     +0.0% |       0 |       0 |             0 |      1386
+      740 |     +0.0% |       0 |       0 |             0 |      1376
+      750 |     +0.0% |       0 |       0 |             0 |      1366
+      760 |     +0.0% |       0 |       0 |             0 |      1356
+      770 |     +0.0% |       0 |       0 |             0 |      1346
+      780 |     +0.0% |       0 |       0 |             0 |      1336
+      790 |     +0.0% |       0 |       0 |             0 |      1326
+      800 |     +0.0% |       0 |       0 |             0 |      1316
+      810 |     +0.0% |       0 |       0 |             0 |      1306
+      820 |     +0.0% |       0 |       0 |             0 |      1296
+      830 |     +0.0% |       0 |       0 |             0 |      1286
+      840 |     +0.0% |       0 |       0 |             0 |      1276
+      850 |     +0.0% |       0 |       0 |             0 |      1266
+      860 |     +0.0% |       0 |       0 |             0 |      1256
+      870 |     +0.0% |       0 |       0 |             0 |      1246
+      880 |     +0.0% |       0 |       0 |             0 |      1236
+      890 |     +0.0% |       0 |       0 |             0 |      1226
+      900 |     +0.0% |       0 |       0 |             0 |      1216
+      910 |     +0.0% |       0 |       0 |             0 |      1206
+      920 |     +0.0% |       0 |       0 |             0 |      1196
+      930 |     +0.0% |       0 |       0 |             0 |      1186
+      940 |     +0.0% |       0 |       0 |             0 |      1176
+      950 |     +0.0% |       0 |       0 |             0 |      1166
+      960 |     +0.0% |       0 |       0 |             0 |      1156
+      970 |     +0.0% |       0 |       0 |             0 |      1146
+      980 |     +0.0% |       0 |       0 |             0 |      1136
+      990 |     +0.0% |       0 |       0 |             0 |      1126
+     1000 |     +0.0% |       0 |       0 |             0 |      1116
+     1010 |     +0.0% |       0 |       0 |             0 |      1106
+     1020 |     +0.0% |       0 |       0 |             0 |      1096
+     1030 |     +0.0% |       0 |       0 |             0 |      1086
+     1040 |     +0.0% |       0 |       0 |             0 |      1076
+     1050 |     +0.0% |       0 |       0 |             0 |      1066
+     1060 |     +0.0% |       0 |       0 |             0 |      1056
+     1070 |     +0.0% |       0 |       0 |             0 |      1046
+     1080 |     +0.0% |       0 |       0 |             0 |      1036
+     1090 |     +0.0% |       0 |       0 |             0 |      1026
+     1100 |     +0.0% |       0 |       0 |             0 |      1016
+     1110 |     +0.0% |       0 |       0 |             0 |      1006
+     1120 |     +0.0% |       0 |       0 |             0 |       996
+     1130 |     +0.0% |       0 |       0 |             0 |       986
+     1140 |     +0.0% |       0 |       0 |             0 |       976
+     1150 |     +0.0% |       0 |       0 |             0 |       966
+     1160 |     +0.0% |       0 |       0 |             0 |       956
+     1170 |     +0.0% |       0 |       0 |             0 |       946
+     1180 |     +0.0% |       0 |       0 |             0 |       936
+     1190 |     +0.0% |       0 |       0 |             0 |       926
+     1200 |     +0.0% |       0 |       0 |             0 |       916
+     1210 |     +0.0% |       0 |       0 |             0 |       906
+     1220 |     +0.0% |       0 |       0 |             0 |       896
+     1230 |     +0.0% |       0 |       0 |             0 |       886
+     1240 |     +0.0% |       0 |       0 |             0 |       876
+     1250 |     +0.0% |       0 |       0 |             0 |       866
+     1260 |     +0.0% |       0 |       0 |             0 |       856
+     1270 |     +0.0% |       0 |       0 |             0 |       846
+     1280 |     +0.0% |       0 |       0 |             0 |       836
+     1290 |     +0.0% |       0 |       0 |             0 |       826
+     1300 |     +0.0% |       0 |       0 |             0 |       816
+     1310 |     +0.0% |       0 |       0 |             0 |       806
+     1320 |     +0.0% |       0 |       0 |             0 |       796
+     1330 |     +0.0% |       0 |       0 |             0 |       786
+     1340 |     +0.0% |       0 |       0 |             0 |       776
+     1350 |     +0.0% |       0 |       0 |             0 |       766
+     1360 |     +0.0% |       0 |       0 |             0 |       756
+     1370 |     +0.0% |       0 |       0 |             0 |       746
+     1380 |     +0.0% |       0 |       0 |             0 |       736
+     1390 |     +0.0% |       0 |       0 |             0 |       726
+     1400 |     +0.0% |       0 |       0 |             0 |       716
+     1410 |     +0.0% |       0 |       0 |             0 |       706
+     1420 |     +0.0% |       0 |       0 |             0 |       696
+     1430 |     +0.0% |       0 |       0 |             0 |       686
+     1440 |     +0.0% |       0 |       0 |             0 |       676
+     1450 |     +0.0% |       0 |       0 |             0 |       666
+     1460 |     +0.0% |       0 |       0 |             0 |       656
+     1470 |     +0.0% |       0 |       0 |             0 |       646
+     1480 |     +0.0% |       0 |       0 |             0 |       636
+     1490 |     +0.0% |       0 |       0 |             0 |       626
+     1500 |     +0.0% |       0 |       0 |             0 |       616
+     1510 |     +0.0% |       0 |       0 |             0 |       606
+     1520 |     +0.0% |       0 |       0 |             0 |       596
+     1530 |     +0.0% |       0 |       0 |             0 |       586
+     1540 |     +0.0% |       0 |       0 |             0 |       576
+     1550 |     +0.0% |       0 |       0 |             0 |       566
+     1560 |     +0.0% |       0 |       0 |             0 |       556
+     1570 |     +0.0% |       0 |       0 |             0 |       546
+     1580 |     +0.0% |       0 |       0 |             0 |       536
+     1590 |     +0.0% |       0 |       0 |             0 |       526
+     1600 |     +0.0% |       0 |       0 |             0 |       516
+     1610 |     +0.0% |       0 |       0 |             0 |       506
+     1620 |     +0.0% |       0 |       0 |             0 |       496
+     1630 |     +0.0% |       0 |       0 |             0 |       486
+     1640 |     +0.0% |       0 |       0 |             0 |       476
+     1650 |     +0.0% |       0 |       0 |             0 |       466
+     1660 |     +0.0% |       0 |       0 |             0 |       456
+     1670 |     +0.0% |       0 |       0 |             0 |       446
+     1680 |     +0.0% |       0 |       0 |             0 |       436
+     1690 |     +0.0% |       0 |       0 |             0 |       426
+     1700 |     +0.0% |       0 |       0 |             0 |       416
+     1710 |     +0.0% |       0 |       0 |             0 |       406
+     1720 |     +0.0% |       0 |       0 |             0 |       396
+     1730 |     +0.0% |       0 |       0 |             0 |       386
+     1740 |     +0.0% |       0 |       0 |             0 |       376
+     1750 |     +0.0% |       0 |       0 |             0 |       366
+     1760 |     +0.0% |       0 |       0 |             0 |       356
+     1770 |     +0.0% |       0 |       0 |             0 |       346
+     1780 |     +0.0% |       0 |       0 |             0 |       336
+     1790 |     +0.0% |       0 |       0 |             0 |       326
+     1800 |     +0.0% |       0 |       0 |             0 |       316
+     1810 |     +0.0% |       0 |       0 |             0 |       306
+     1820 |     +0.0% |       0 |       0 |             0 |       296
+     1830 |     +0.0% |       0 |       0 |             0 |       286
+     1840 |     +0.0% |       0 |       0 |             0 |       276
+     1850 |     +0.0% |       0 |       0 |             0 |       266
+     1860 |     +0.0% |       0 |       0 |             0 |       256
+     1870 |     +0.0% |       0 |       0 |             0 |       246
+     1880 |     +0.0% |       0 |       0 |             0 |       236
+     1890 |     +0.0% |       0 |       0 |             0 |       226
+     1900 |     +0.0% |       0 |       0 |             0 |       216
+     1910 |     +0.0% |       0 |       0 |             0 |       206
+     1920 |     +0.0% |       0 |       0 |             0 |       196
+     1930 |     +0.0% |       0 |       0 |             0 |       186
+     1940 |     +0.0% |       0 |       0 |             0 |       176
+     1950 |     +0.0% |       0 |       0 |             0 |       166
+     1960 |     +0.0% |       0 |       0 |             0 |       156
+     1970 |     +0.0% |       0 |       0 |             0 |       146
+     1980 |     +0.0% |       0 |       0 |             0 |       136
+     1990 |     +0.0% |       0 |       0 |             0 |       126
+     2000 |     +0.0% |       0 |       0 |             0 |       116
+     2010 |     +0.0% |       0 |       0 |             0 |       106
+     2020 |     +0.0% |       0 |       0 |             0 |        96
+     2030 |     +0.0% |       0 |       0 |             0 |        86
+     2040 |     +0.0% |       0 |       0 |             0 |        76
+     2050 |     +0.0% |       0 |       0 |             0 |        66
+     2060 |     +0.0% |       0 |       0 |             0 |        56
+     2070 |     +0.0% |       0 |       0 |             0 |        46
+     2080 |     +0.0% |       0 |       0 |             0 |        36
+     2090 |     +0.0% |       0 |       0 |             0 |        26
+     2100 |     +0.0% |       0 |       0 |             0 |        16
+     2110 |     +0.0% |       0 |       0 |             0 |         6
+    final |     +0.0% |       0 |       0 |             0 |         0
+---------------------------------------------------------------------
+Floating nets: 
+Report metrics stage 3, resizer...
+
+==========================================================================
+resizer report_design_area
+--------------------------------------------------------------------------
+Design area 2515 um^2 36% utilization.
+Instance count before 2017, after 2017
+Pin count before 5947, after 5947
+write_db /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/3_4_place_resized.odb
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+3_4_place_resized         .odb            4            131 10ae7c6693c6e0eea1d3
+/root/pact-deps/OpenROAD-flow-scripts/flow/scripts/flow.sh 3_5_place_dp detail_place
+Running detail_place.tcl, stage 3_5_place_dp
+read_liberty /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/3_4_place_resized.odb
+read_sdc /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/2_floorplan.sdc
+source /root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+detailed_placement
+[INFO DPL-0006] Core area: 6921.05 um^2, Instances area: 2514.76 um^2, Utilization: 36.3%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1101] Legalizing using diamond search.
+Movements Summary
+---------------------------------------
+Total cells:                    1899
+Diamond Move Success:           1899 (100.00%)
+Diamond Move Failure:              0
+Rip-up and replace Success:        0 (  0.00% of diamond failures)
+Rip-up and replace Failure:        0
+Total Placement Failures:          0
+---------------------------------------
+Placement Analysis
+---------------------------------
+total displacement       1545.7 u
+average displacement        0.8 u
+max displacement            2.9 u
+original HPWL           13518.1 u
+legalized HPWL          14676.8 u
+delta HPWL                    9 %
+
+improve_placement -max_displacement "5 1"
+Detailed placement improvement.
+[INFO DPL-0401] Setting random seed to 1.
+[INFO DPL-0402] Setting maximum displacement 5 1 to 14000 2800 units.
+[INFO DPL-0320] Collected 206 fixed cells.
+[INFO DPL-0318] Collected 1899 single height cells.
+[INFO DPL-0321] Collected 0 wide cells.
+[INFO DPL-0322] Image (2280, 2800) - (169860, 168000)
+[INFO DPL-0310] Assigned 1899 cells into segments.  Movement in X-direction is 0.000000, movement in Y-direction is 0.000000.
+[INFO DPL-0313] Found 0 cells in wrong regions.
+[INFO DPL-0315] Found 0 row alignment problems.
+[INFO DPL-0314] Found 0 site alignment problems.
+[INFO DPL-0311] Found 0 overlaps between adjacent cells.
+[INFO DPL-0312] Found 0 edge spacing violations and 0 padding violations.
+[INFO DPL-0303] Running algorithm for independent set matching.
+[INFO DPL-0300] Set matching objective is wirelength.
+[INFO DPL-0301] Pass   1 of matching; objective is 2.923736e+07.
+[INFO DPL-0302] End of matching; objective is 2.917088e+07, improvement is 0.23 percent.
+[INFO DPL-0303] Running algorithm for global swaps.
+[INFO DPL-0306] Pass   1 of global swaps; hpwl is 2.863886e+07.
+[INFO DPL-0306] Pass   2 of global swaps; hpwl is 2.853770e+07.
+[INFO DPL-0307] End of global swaps; objective is 2.853770e+07, improvement is 2.17 percent.
+[INFO DPL-0303] Running algorithm for vertical swaps.
+[INFO DPL-0308] Pass   1 of vertical swaps; hpwl is 2.842692e+07.
+[INFO DPL-0309] End of vertical swaps; objective is 2.842692e+07, improvement is 0.39 percent.
+[INFO DPL-0303] Running algorithm for reordering.
+[INFO DPL-0304] Pass   1 of reordering; objective is 2.835021e+07.
+[INFO DPL-0305] End of reordering; objective is 2.835021e+07, improvement is 0.27 percent.
+[INFO DPL-0303] Running algorithm for random improvement.
+[INFO DPL-0324] Random improver is using random generator.
+[INFO DPL-0325] Random improver is using hpwl objective.
+[INFO DPL-0326] Random improver cost string is (a).
+[INFO DPL-0332] End of pass, Generator random called 37980 times.
+[INFO DPL-0335] Generator random, Cumulative attempts 37980, swaps 4170, moves 14031 since last reset.
+[INFO DPL-0333] End of pass, Objective hpwl, Initial cost 2.804882e+07, Scratch cost 2.762784e+07, Incremental cost 2.762784e+07, Mismatch? N
+[INFO DPL-0338] End of pass, Total cost is 2.762784e+07.
+[INFO DPL-0327] Pass   1 of random improver; improvement in cost is 1.50 percent.
+[INFO DPL-0332] End of pass, Generator random called 37980 times.
+[INFO DPL-0335] Generator random, Cumulative attempts 75960, swaps 8279, moves 27830 since last reset.
+[INFO DPL-0333] End of pass, Objective hpwl, Initial cost 2.762784e+07, Scratch cost 2.744584e+07, Incremental cost 2.744584e+07, Mismatch? N
+[INFO DPL-0338] End of pass, Total cost is 2.744584e+07.
+[INFO DPL-0327] Pass   2 of random improver; improvement in cost is 0.66 percent.
+[INFO DPL-0328] End of random improver; improvement is 2.149751 percent.
+[INFO DPL-0380] Cell flipping.
+[INFO DPL-0382] Changed 0 cell orientations for row compatibility.
+[INFO DPL-0383] Performed 603 cell flips.
+[INFO DPL-0384] End of flipping; objective is 2.712760e+07, improvement is 2.23 percent.
+[INFO DPL-0313] Found 0 cells in wrong regions.
+[INFO DPL-0315] Found 0 row alignment problems.
+[INFO DPL-0314] Found 0 site alignment problems.
+[INFO DPL-0311] Found 0 overlaps between adjacent cells.
+[INFO DPL-0312] Found 0 edge spacing violations and 0 padding violations.
+Detailed Improvement Results
+------------------------------------------
+Original HPWL            14676.8 u (    7449.4,     7227.4)
+Final HPWL               13621.5 u (    6789.0,     6832.5)
+Delta HPWL                  -7.2 % (      -8.9,       -5.5)
+
+optimize_mirroring
+[INFO DPL-0020] Mirrored 91 instances
+[INFO DPL-0021] HPWL before           13621.5 u
+[INFO DPL-0022] HPWL after            13616.9 u
+[INFO DPL-0023] HPWL delta               -0.0 %
+[INFO FLW-0012] Placement violations .
+estimate_parasitics -placement
+Report metrics stage 3, detailed place...
+
+==========================================================================
+detailed place report_design_area
+--------------------------------------------------------------------------
+Design area 2515 um^2 36% utilization.
+write_db /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/3_5_place_dp.odb
+write_sdc -no_timestamp /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/3_place.sdc
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+3_5_place_dp              .odb            4            121 642deb4d1678205d9201
+cp /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/3_5_place_dp.odb /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/3_place.odb

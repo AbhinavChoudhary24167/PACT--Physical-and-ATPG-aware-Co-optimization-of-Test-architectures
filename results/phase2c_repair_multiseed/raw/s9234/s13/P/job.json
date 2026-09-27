@@ -1,0 +1,147 @@
+{
+  "FF_bijection": true,
+  "K": 2,
+  "architecture_path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/s9234/s13/P/architecture.json",
+  "architecture_sha256": "7294cc1ffe746a0a98f6b9a838a2adaff69662ce6ecd6512c3b49ccd27fb46b1",
+  "contract_sha256": "961e65e3638fdd574183a0a258bbce35aa36ba884c27b485970bc91556c9bc20",
+  "design": "s9234",
+  "extraction_execution": {
+    "command": [
+      "openroad",
+      "-no_init",
+      "-exit",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/s9234/s13/P/extract.tcl"
+    ],
+    "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+    "elapsed_s": 1.7823224969999956,
+    "end_utc": "2026-09-24T02:21:14.040820+00:00",
+    "exit_code": 0,
+    "outputs": {
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/s9234/s13/P/extracted.spef": "11b91d7c738f88656aa8c6ac5f992e56a4027ac2a6d9c32925c4a0b846790b53"
+    },
+    "required_outputs_present": true,
+    "start_utc": "2026-09-24T02:21:12.258499+00:00",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "7c22a3a357fb8732942617b166794db348b6db1e40943d21d8522793d0e717a7",
+    "timed_out": false,
+    "timeout_s": 180
+  },
+  "label": "P",
+  "original_architecture_sha256": "169ed6bfc885161ffb6e65df93983a818a4ee75fa347c639b11077f4a5c9be13",
+  "reused_route": false,
+  "rewire_execution": {
+    "command": [
+      "openroad",
+      "-python",
+      "-no_init",
+      "-exit",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0c_rewire_odb.py",
+      "--source",
+      "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s13_B0/3_place.odb",
+      "--architecture",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/s9234/s13/P/architecture.json",
+      "--output",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/orfs/results/nangate45/s9234f/phase2c_s13_7294cc1ffe74/3_place.odb"
+    ],
+    "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+    "elapsed_s": 2.2331696249999986,
+    "end_utc": "2026-09-24T02:18:05.578627+00:00",
+    "exit_code": 0,
+    "outputs": {
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/orfs/results/nangate45/s9234f/phase2c_s13_7294cc1ffe74/3_place.odb": "0708d97cbc2ee852ad9a59dfbfafe7d075f7a5b4a3a2d1f5d650470fe203f0a9"
+    },
+    "required_outputs_present": true,
+    "start_utc": "2026-09-24T02:18:03.345460+00:00",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "cd1bfb894554ef53ba78112b3b61166481ff0616831108f08f977363fa0dd181",
+    "timed_out": false,
+    "timeout_s": 120
+  },
+  "route_execution": {
+    "command": [
+      "make",
+      "-o",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/orfs/results/nangate45/s9234f/phase2c_s13_7294cc1ffe74/3_place.odb",
+      "-o",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/orfs/results/nangate45/s9234f/phase2c_s13_7294cc1ffe74/3_place.sdc",
+      "DESIGN_CONFIG=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s9234_orfs/config.mk",
+      "FLOW_VARIANT=phase2c_s13_7294cc1ffe74",
+      "WORK_HOME=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/orfs",
+      "GRT_SEED=13",
+      "OPENROAD_EXE=/usr/bin/openroad",
+      "YOSYS_EXE=/usr/bin/yosys",
+      "route"
+    ],
+    "cwd": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+    "elapsed_s": 184.962547734,
+    "end_utc": "2026-09-24T02:21:10.197171+00:00",
+    "exit_code": 0,
+    "outputs": {
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/orfs/logs/nangate45/s9234f/phase2c_s13_7294cc1ffe74/5_1_grt.json": "e94c6a9a26d5eabeeb5b98773c7d7196ff45619807982fad29361218d3edf10c",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/orfs/logs/nangate45/s9234f/phase2c_s13_7294cc1ffe74/5_2_route.json": "a0d12940d23cc63c686015a5f97264e5bf55a66e76f7ba45d79525152fcb3688",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/orfs/results/nangate45/s9234f/phase2c_s13_7294cc1ffe74/5_2_route.odb": "94833536baa3fee0b83ee1587b89f4cfaef0360fc9202f7ab630826ee74067f6"
+    },
+    "required_outputs_present": true,
+    "start_utc": "2026-09-24T02:18:05.701889+00:00",
+    "stderr_sha256": "f57593f78cfbb5801191695c1df10245534ccd2bd0be44d98a0e789124624a96",
+    "stdout_sha256": "bc65875cbb07147f5f723b9dc7abae3f82a6165b3c4859af59caa27100b7874e",
+    "timed_out": false,
+    "timeout_s": 600
+  },
+  "route_sha256": "94833536baa3fee0b83ee1587b89f4cfaef0360fc9202f7ab630826ee74067f6",
+  "routed_path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/orfs/results/nangate45/s9234f/phase2c_s13_7294cc1ffe74/5_2_route.odb",
+  "scan_order_sha256": "a4aa4b28a79344dc356ffd3b16ce4a31ad6e33af674f1139510679fbeaaa1205",
+  "seed": 13,
+  "status": "PENDING",
+  "structured_metrics": {
+    "congestion": null,
+    "detailed_route_drc_errors": 0,
+    "detailed_route_vias": 18250,
+    "global_route_overflow": null,
+    "global_route_wirelength_um": 56546,
+    "hold_tns_ns": 0,
+    "hold_violated_endpoints": 0,
+    "hold_wns_ns": 0.00178178,
+    "layer_utilization": {},
+    "max_cap_violations": 0,
+    "max_fanout_violations": 0,
+    "max_slew_violations": 0,
+    "pdnsim_classification": "NOT_RUN_NO_QUALIFIED_TEST_CURRENT_MODEL",
+    "setup_tns_ns": 0,
+    "setup_violated_endpoints": 0,
+    "setup_wns_ns": 8.74842,
+    "timing_stage": "global_route",
+    "total_detailed_route_wirelength_um": 37686
+  },
+  "verification_execution": {
+    "command": [
+      "openroad",
+      "-python",
+      "-no_init",
+      "-exit",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0d_verify_routed.py",
+      "--routed",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/orfs/results/nangate45/s9234f/phase2c_s13_7294cc1ffe74/5_2_route.odb",
+      "--architecture",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/s9234/s13/P/architecture.json",
+      "--frozen-def",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s9234/s13/placed.def",
+      "--output",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/s9234/s13/P/routed_verification.json"
+    ],
+    "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+    "elapsed_s": 1.8315215690000173,
+    "end_utc": "2026-09-24T02:21:12.198647+00:00",
+    "exit_code": 0,
+    "outputs": {
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/s9234/s13/P/routed_verification.json": "83d0195026f0e989102691506bd9cdf908d273166c01f46f0c0df4889d77d3e5"
+    },
+    "required_outputs_present": true,
+    "start_utc": "2026-09-24T02:21:10.367127+00:00",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "a983cafe28bd19db5d246a63e0721033e01c07b8e3ac2fd0c565c03764c38ae5",
+    "timed_out": false,
+    "timeout_s": 90
+  },
+  "wire_cap_per_um": 0.103981
+}

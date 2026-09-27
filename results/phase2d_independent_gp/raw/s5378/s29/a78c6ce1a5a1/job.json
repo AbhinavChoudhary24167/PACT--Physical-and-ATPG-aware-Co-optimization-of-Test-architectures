@@ -1,0 +1,148 @@
+{
+  "FF_bijection": true,
+  "K": 2,
+  "architecture_path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/raw/s5378/s29/a78c6ce1a5a1/architecture.json",
+  "architecture_sha256": "94f26edba02e2ce27a9400bbb9f6cbcf20077f6cfe2c4e961ab8965772d0e9dc",
+  "contract_sha256": "4b3ea9e691a540071198a551d4781756deeda07159b6c045fa25bf3d40c0104c",
+  "design": "s5378",
+  "extraction_execution": {
+    "command": [
+      "openroad",
+      "-no_init",
+      "-exit",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/raw/s5378/s29/a78c6ce1a5a1/extract.tcl"
+    ],
+    "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+    "elapsed_s": 1.2632964199999606,
+    "end_utc": "2026-09-24T12:05:23.685417+00:00",
+    "exit_code": 0,
+    "outputs": {
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/raw/s5378/s29/a78c6ce1a5a1/extracted.spef": "7647b2bfd01bd5b73ff59a57f14761ee0884072adb90e227d7511ea5624db469"
+    },
+    "required_outputs_present": true,
+    "start_utc": "2026-09-24T12:05:22.422120+00:00",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "ca0ae36bb2b3bc3032365ee60bc5291a91b1ff3f91028c27b1cd2ce703bb3c44",
+    "timed_out": false,
+    "timeout_s": 180
+  },
+  "frozen_architecture_id": "a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7",
+  "label": "a78c6ce1a5a1",
+  "original_architecture_sha256": "a78c6ce1a5a13b64713b1b86f3a984a1e11ed754a6e7c4373fb88b603eec28e7",
+  "reused_route": false,
+  "rewire_execution": {
+    "command": [
+      "openroad",
+      "-python",
+      "-no_init",
+      "-exit",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0c_rewire_odb.py",
+      "--source",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/3_place.odb",
+      "--architecture",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/raw/s5378/s29/a78c6ce1a5a1/architecture.json",
+      "--output",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/raw/orfs/results/nangate45/s5378/phase2c_s29_94f26edba02e/3_place.odb"
+    ],
+    "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+    "elapsed_s": 1.6446959769999694,
+    "end_utc": "2026-09-24T12:03:42.615753+00:00",
+    "exit_code": 0,
+    "outputs": {
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/raw/orfs/results/nangate45/s5378/phase2c_s29_94f26edba02e/3_place.odb": "63dd15efe2cc2c4c39883092fa5bccbced0c59a0800aa9269b754407e89757e0"
+    },
+    "required_outputs_present": true,
+    "start_utc": "2026-09-24T12:03:40.971059+00:00",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "3713a23516667df850b910bcc0f4cd173340d05456259fc158ec5b7941130b4d",
+    "timed_out": false,
+    "timeout_s": 120
+  },
+  "route_execution": {
+    "command": [
+      "make",
+      "-o",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/raw/orfs/results/nangate45/s5378/phase2c_s29_94f26edba02e/3_place.odb",
+      "-o",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/raw/orfs/results/nangate45/s5378/phase2c_s29_94f26edba02e/3_place.sdc",
+      "DESIGN_CONFIG=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s5378_orfs/config.mk",
+      "FLOW_VARIANT=phase2c_s29_94f26edba02e",
+      "WORK_HOME=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/raw/orfs",
+      "GRT_SEED=29",
+      "OPENROAD_EXE=/usr/bin/openroad",
+      "YOSYS_EXE=/usr/bin/yosys",
+      "route"
+    ],
+    "cwd": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+    "elapsed_s": 100.31572026100002,
+    "end_utc": "2026-09-24T12:05:20.267958+00:00",
+    "exit_code": 0,
+    "outputs": {
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/raw/orfs/logs/nangate45/s5378/phase2c_s29_94f26edba02e/5_1_grt.json": "899d6adf67f7f2dbb8a835557e25d05b569922ae57c5b27c8871b605eeeb179d",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/raw/orfs/logs/nangate45/s5378/phase2c_s29_94f26edba02e/5_2_route.json": "4b610398c69b6efa61540124ec473b888f655716cb2d9ee4e0041265a53cd697",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/raw/orfs/results/nangate45/s5378/phase2c_s29_94f26edba02e/5_2_route.odb": "0f04c813b106c9988130827f37b90c00ae5f7820255b3650ab5f25169fc51f4f"
+    },
+    "required_outputs_present": true,
+    "start_utc": "2026-09-24T12:03:42.870671+00:00",
+    "stderr_sha256": "f950b81b37e6926107e630d64c4cf97d1cebd110d84e7e88cd415b71a4244ac8",
+    "stdout_sha256": "a79a39c0cf37fe4fe2209dde67f09a75b7d352571b5566fd73c155025be089c3",
+    "timed_out": false,
+    "timeout_s": 600
+  },
+  "route_sha256": "0f04c813b106c9988130827f37b90c00ae5f7820255b3650ab5f25169fc51f4f",
+  "routed_path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/raw/orfs/results/nangate45/s5378/phase2c_s29_94f26edba02e/5_2_route.odb",
+  "scan_order_sha256": "45381044012814c6d04b089a1b9ad5023b360b0314b9a94e5297dd0b077e7c48",
+  "seed": 29,
+  "status": "PENDING",
+  "structured_metrics": {
+    "congestion": null,
+    "detailed_route_drc_errors": 0,
+    "detailed_route_vias": 11553,
+    "global_route_overflow": null,
+    "global_route_wirelength_um": 28867,
+    "hold_tns_ns": 0,
+    "hold_violated_endpoints": 0,
+    "hold_wns_ns": 0.000843631,
+    "layer_utilization": {},
+    "max_cap_violations": 0,
+    "max_fanout_violations": 0,
+    "max_slew_violations": 0,
+    "pdnsim_classification": "NOT_RUN_NO_QUALIFIED_TEST_CURRENT_MODEL",
+    "setup_tns_ns": 0,
+    "setup_violated_endpoints": 0,
+    "setup_wns_ns": 9.13445,
+    "timing_stage": "global_route",
+    "total_detailed_route_wirelength_um": 19052
+  },
+  "verification_execution": {
+    "command": [
+      "openroad",
+      "-python",
+      "-no_init",
+      "-exit",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0d_verify_routed.py",
+      "--routed",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/raw/orfs/results/nangate45/s5378/phase2c_s29_94f26edba02e/5_2_route.odb",
+      "--architecture",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/raw/s5378/s29/a78c6ce1a5a1/architecture.json",
+      "--frozen-def",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/orfs/results/nangate45/s5378/phase2d_gp29/placed.def",
+      "--output",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/raw/s5378/s29/a78c6ce1a5a1/routed_verification.json"
+    ],
+    "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+    "elapsed_s": 1.8139491700000008,
+    "end_utc": "2026-09-24T12:05:22.296487+00:00",
+    "exit_code": 0,
+    "outputs": {
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2d_independent_gp/raw/s5378/s29/a78c6ce1a5a1/routed_verification.json": "e2770fc1e7e90a92d98c44125fca279ffaa9afbaf6ea60ac621d3d7be4d85dce"
+    },
+    "required_outputs_present": true,
+    "start_utc": "2026-09-24T12:05:20.482542+00:00",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "f7a84d4ee1d22e41d3279a3a6bfb8f8de1c171f0b76228bb10ac756c4b712558",
+    "timed_out": false,
+    "timeout_s": 90
+  },
+  "wire_cap_per_um": 0.103981
+}

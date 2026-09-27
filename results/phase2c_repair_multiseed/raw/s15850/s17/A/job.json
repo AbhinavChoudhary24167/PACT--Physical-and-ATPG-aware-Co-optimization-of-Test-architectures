@@ -1,0 +1,195 @@
+{
+  "FF_bijection": true,
+  "K": 2,
+  "architecture_path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/s15850/s17/A/architecture.json",
+  "architecture_sha256": "ca5d4a28909851f159a815499f3587643b73dbcec29cae8f94a24451fb29a7e1",
+  "contract_sha256": "961e65e3638fdd574183a0a258bbce35aa36ba884c27b485970bc91556c9bc20",
+  "design": "s15850",
+  "extraction_execution": {
+    "command": [
+      "openroad",
+      "-no_init",
+      "-exit",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/s15850/s17/A/extract.tcl"
+    ],
+    "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+    "elapsed_s": 3.3927728009998646,
+    "end_utc": "2026-09-24T02:47:06.228209+00:00",
+    "exit_code": 0,
+    "outputs": {
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/s15850/s17/A/extracted.spef": "e82bdcfd2e97cd55d29f50e12e9b3ec6815c8c7a801d9e25ece8f0701c2149e1"
+    },
+    "required_outputs_present": true,
+    "start_utc": "2026-09-24T02:47:02.835440+00:00",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "306467c9d8cac225833292bbb49c56c9f820dcdb78b05a50e2296cfac26f3814",
+    "timed_out": false,
+    "timeout_s": 180
+  },
+  "label": "A",
+  "original_architecture_sha256": "e1867cc98b3d1afa4f231daa6c38652ed38be26bf58ed32499449fb51fd1f7ea",
+  "reuse_source": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s15850/s17/k2/A",
+  "reused_route": true,
+  "route_sha256": "955c0870bf6b34cbcbf5d6c662279062a777565b5f5e3d9e5309814a9fa80375",
+  "routed_path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/orfs/results/nangate45/s15850/phase2c_s17_ca5d4a289098/5_2_route.odb",
+  "scan_order_sha256": "c6037b8502619a491e12d1372f90d758b2ed20d3e0d03bdd448f1453c1a7b902",
+  "seed": 17,
+  "status": "PENDING",
+  "structured_metrics": {
+    "congestion": {
+      "layers": {
+        "metal1": {
+          "demand": 0,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 0,
+          "total_overflow": 0,
+          "usage_percent": 0.0
+        },
+        "metal10": {
+          "demand": 0,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 2550,
+          "total_overflow": 0,
+          "usage_percent": 0.0
+        },
+        "metal2": {
+          "demand": 10419,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 17800,
+          "total_overflow": 0,
+          "usage_percent": 58.53
+        },
+        "metal3": {
+          "demand": 13313,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 25727,
+          "total_overflow": 0,
+          "usage_percent": 51.75
+        },
+        "metal4": {
+          "demand": 6951,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 18200,
+          "total_overflow": 0,
+          "usage_percent": 38.19
+        },
+        "metal5": {
+          "demand": 4640,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 18494,
+          "total_overflow": 0,
+          "usage_percent": 25.09
+        },
+        "metal6": {
+          "demand": 1905,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 18557,
+          "total_overflow": 0,
+          "usage_percent": 10.27
+        },
+        "metal7": {
+          "demand": 92,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 5750,
+          "total_overflow": 0,
+          "usage_percent": 1.6
+        },
+        "metal8": {
+          "demand": 14,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 6600,
+          "total_overflow": 0,
+          "usage_percent": 0.21
+        },
+        "metal9": {
+          "demand": 24,
+          "max_horizontal_overflow": 0,
+          "max_vertical_overflow": 0,
+          "resource": 2550,
+          "total_overflow": 0,
+          "usage_percent": 0.94
+        }
+      },
+      "quantity_type": "reported routing resource/demand and overflow, not detailed-route congestion",
+      "source_stdout_sha256": "4fa184e3659cda43e4b18ce1fde67293cb168dc7d9f478e75d9dc92b4ee02aaf",
+      "stage": "initial_global_route_before_incremental_repairs",
+      "total": {
+        "demand": 37358,
+        "max_horizontal_overflow": 0,
+        "max_vertical_overflow": 0,
+        "resource": 116228,
+        "total_overflow": 0,
+        "usage_percent": 32.14
+      }
+    },
+    "congestion_classification": "QUALIFIED_INITIAL_GLOBAL_ROUTE_REPORT",
+    "detailed_route_drc_errors": 0,
+    "detailed_route_vias": 36795,
+    "global_route_overflow": 0,
+    "global_route_wirelength_um": 148066,
+    "hold_tns_ns": 0,
+    "hold_violated_endpoints": 0,
+    "hold_wns_ns": 0.000532852,
+    "layer_utilization": {
+      "metal1": 0.0,
+      "metal10": 0.0,
+      "metal2": 58.53,
+      "metal3": 51.75,
+      "metal4": 38.19,
+      "metal5": 25.09,
+      "metal6": 10.27,
+      "metal7": 1.6,
+      "metal8": 0.21,
+      "metal9": 0.94
+    },
+    "max_cap_violations": 0,
+    "max_fanout_violations": 0,
+    "max_slew_violations": 0,
+    "pdnsim_classification": "NOT_RUN_NO_QUALIFIED_TEST_CURRENT_MODEL",
+    "setup_tns_ns": 0,
+    "setup_violated_endpoints": 0,
+    "setup_wns_ns": 8.09242,
+    "timing_stage": "global_route",
+    "total_detailed_route_wirelength_um": 108204
+  },
+  "verification_execution": {
+    "command": [
+      "openroad",
+      "-python",
+      "-no_init",
+      "-exit",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0d_verify_routed.py",
+      "--routed",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/orfs/results/nangate45/s15850/phase2c_s17_ca5d4a289098/5_2_route.odb",
+      "--architecture",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/s15850/s17/A/architecture.json",
+      "--frozen-def",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s15850/s17/placed.def",
+      "--output",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/s15850/s17/A/routed_verification.json"
+    ],
+    "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+    "elapsed_s": 2.1887872289998995,
+    "end_utc": "2026-09-24T02:47:02.781095+00:00",
+    "exit_code": 0,
+    "outputs": {
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair_multiseed/raw/s15850/s17/A/routed_verification.json": "e3c2cd2d1226e268d716c6e19c396a0394776bb81fe941b32d655f1fc1fb4cde"
+    },
+    "required_outputs_present": true,
+    "start_utc": "2026-09-24T02:47:00.592310+00:00",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "fa4b822608494d17f87aef141c2eb503791c33008537129020427d7e1fabba3c",
+    "timed_out": false,
+    "timeout_s": 90
+  },
+  "wire_cap_per_um": 0.103981
+}

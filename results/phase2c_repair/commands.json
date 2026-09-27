@@ -1,0 +1,251 @@
+{
+  "attempt1": {
+    "completed": [
+      "git status --short; git rev-parse HEAD (nested PACT repository; initial snapshot preserved)",
+      "Read pasted request, required source files and Phase-2C reports; locate frozen evidence in D:/PACT_EXPERIMENTS",
+      "wsl --list --quiet (initial access denial, successful elevated retry)",
+      "Dependency probes: system Python, repository .venv, original /root/pact-deps/pact-venv",
+      "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/mnt/d/PACT_EXPERIMENTS/cache/phase2a_python openroad -python -no_init -exit scripts/phase2cr_extract.py",
+      "PYTHONDONTWRITEBYTECODE=1 /root/pact-deps/pact-venv/bin/python scripts/phase2cr_freeze.py",
+      "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src OPENBLAS_NUM_THREADS=1 /root/pact-deps/pact-venv/bin/python -m pytest -q --capture=sys -p no:cacheprovider tests/unit/test_phase2cr_loads.py --junitxml=results/phase2c_repair/focused_tests.xml",
+      "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 /root/pact-deps/pact-venv/bin/python scripts/phase2cr_run.py witness (assertion failure; witness.log)",
+      "Read-only representative diagnostic using phase2cr_run.load_case and topology; write witness_failure_diagnostic.json",
+      "PYTHONDONTWRITEBYTECODE=1 /root/pact-deps/pact-venv/bin/python scripts/phase2cr_stop_report.py"
+    ],
+    "environment": "Windows PowerShell host; Ubuntu-24.04 WSL scientific runtime",
+    "not_run": [
+      "phase2cr_run.py topology",
+      "phase2cr_run.py measure",
+      "corrected correlations",
+      "full regression",
+      "routing",
+      "RC extraction",
+      "ATPG",
+      "optimizer",
+      "multi-seed execution",
+      "git push"
+    ]
+  },
+  "continuation": [
+    {
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--capture=sys",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp=/tmp/pact-phase2cr-focused-u5el2tcx/pytest",
+        "--junitxml=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair/focused_continuation.xml",
+        "tests/unit/test_phase2cr_loads.py"
+      ],
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONPATH": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src"
+      },
+      "errors": 0,
+      "exit_code": 0,
+      "failed": 0,
+      "isolated_temp": "/tmp/pact-phase2cr-focused-u5el2tcx",
+      "log": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair/focused_continuation.log",
+      "log_sha256": "f2c8247fa3dc1a9aa8f59060c4518a3834326154149df12337a3fad0ebd1ef8c",
+      "observed_utc": "2026-09-23T18:18:35.855339+00:00",
+      "passed": 14,
+      "runtime_seconds": 6.164536182999996,
+      "skipped": 0,
+      "source_sha256": "b34b2299826698603513499f301a53a7922186a481b989bb625109a04b239b48",
+      "stage": "focused",
+      "status": "PHASE2CR_FOCUSED_TESTS_PASS"
+    },
+    {
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase2cr_run.py",
+        "witness"
+      ],
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONPATH": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src"
+      },
+      "exit_code": 0,
+      "log": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair/witness_continuation.log",
+      "log_sha256": "2c82aaee42cd055d3f3529f8f6a7c44d1d7f427beb5c4b22e1f51062785c827e",
+      "observed_utc": "2026-09-23T18:19:25.349648+00:00",
+      "runtime_seconds": 17.251415781000006,
+      "stage": "witness"
+    },
+    {
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase2cr_continue.py",
+        "sanity"
+      ],
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONPATH": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src"
+      },
+      "exit_code": 0,
+      "log": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair/sanity_continuation.log",
+      "log_sha256": "76e178f634da5f0df204dd224d0e4d4b4ac6774a30b255ee542ec4756547b771",
+      "observed_utc": "2026-09-23T18:20:57.739297+00:00",
+      "runtime_seconds": 2.0786875040000004,
+      "stage": "sanity"
+    },
+    {
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase2cr_run.py",
+        "topology"
+      ],
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONPATH": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src"
+      },
+      "exit_code": 0,
+      "log": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair/topology_continuation.log",
+      "log_sha256": "843a923e7deabd16504043449eed399356e43b41165a2cf5c9e147c98782acff",
+      "observed_utc": "2026-09-23T18:24:18.429517+00:00",
+      "runtime_seconds": 22.314034499999998,
+      "stage": "topology"
+    },
+    {
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase2cr_continue.py",
+        "weights"
+      ],
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONPATH": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src"
+      },
+      "exit_code": 0,
+      "log": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair/weights_continuation.log",
+      "log_sha256": "511c58dab3d47048a77324acbf68c2b504f1f2a6261ad405d357d0d2ca8d18ab",
+      "observed_utc": "2026-09-24T01:52:33.554402+00:00",
+      "runtime_seconds": 16.461931281,
+      "stage": "weights"
+    },
+    {
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase2cr_run.py",
+        "measure"
+      ],
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONPATH": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src"
+      },
+      "exit_code": 0,
+      "log": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair/measure_continuation.log",
+      "log_sha256": "6ff9577dbb54e912500fd915995eb7b865f0854d184978f35cd2e3a0245967ab",
+      "observed_utc": "2026-09-24T01:53:37.750680+00:00",
+      "runtime_seconds": 29.367206028,
+      "stage": "measure"
+    },
+    {
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase2cr_continue.py",
+        "statistics"
+      ],
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONPATH": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src"
+      },
+      "exit_code": 0,
+      "log": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair/statistics_continuation.log",
+      "log_sha256": "6ba1454320664c7b8559354d9c5113bfdb277ac91abc1db36f3a7a320a19512d",
+      "observed_utc": "2026-09-24T01:54:27.433855+00:00",
+      "runtime_seconds": 10.841446681999997,
+      "stage": "statistics"
+    },
+    {
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--capture=sys",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp=/tmp/pact-phase2cr-regression-8c3m28yw/pytest",
+        "--junitxml=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair/regression_continuation.xml"
+      ],
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONPATH": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src"
+      },
+      "errors": 3,
+      "exit_code": 2,
+      "failed": 0,
+      "isolated_temp": "/tmp/pact-phase2cr-regression-8c3m28yw",
+      "log": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair/regression_continuation.log",
+      "log_sha256": "1629ece62cd40507484c64f0f349919043a92a60ab5b0ac26ee43f637e0e708c",
+      "observed_utc": "2026-09-24T01:55:16.772398+00:00",
+      "passed": 0,
+      "runtime_seconds": 10.868801904999998,
+      "skipped": 0,
+      "source_sha256": "b34b2299826698603513499f301a53a7922186a481b989bb625109a04b239b48",
+      "stage": "regression",
+      "status": "FAIL"
+    },
+    {
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--capture=sys",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp=/tmp/pact-phase2cr-regression_isolated-ov67yc8k/pytest",
+        "--junitxml=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair/regression_isolated_continuation.xml"
+      ],
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONPATH": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src:/mnt/d/PACT_EXPERIMENTS/cache/phase2a_python"
+      },
+      "errors": 0,
+      "exit_code": 0,
+      "failed": 0,
+      "isolated_temp": "/tmp/pact-phase2cr-regression_isolated-ov67yc8k",
+      "log": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair/regression_isolated_continuation.log",
+      "log_sha256": "0a3eae635919b3f80ec3f34e702e5c9b254122f67ca79903823203a6d187691c",
+      "observed_utc": "2026-09-24T01:59:21.728715+00:00",
+      "passed": 217,
+      "runtime_seconds": 143.103093481,
+      "skipped": 0,
+      "source_sha256": "b34b2299826698603513499f301a53a7922186a481b989bb625109a04b239b48",
+      "stage": "regression_isolated",
+      "status": "COMPLETE_REGRESSION_PASS"
+    },
+    {
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase2cr_continue.py",
+        "finalize"
+      ],
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONPATH": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src"
+      },
+      "exit_code": 0,
+      "log": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair/finalize_continuation.log",
+      "log_sha256": "1530fe4c075f978d7182a24fa4fb5aec7302f5beb03d3b0160932fa04ebba8f9",
+      "observed_utc": "2026-09-24T02:00:00.729158+00:00",
+      "runtime_seconds": 10.374877203000011,
+      "stage": "finalize"
+    }
+  ]
+}

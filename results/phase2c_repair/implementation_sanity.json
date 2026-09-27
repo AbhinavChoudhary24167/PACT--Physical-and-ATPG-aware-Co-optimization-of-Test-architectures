@@ -1,0 +1,56 @@
+{
+  "focused_tests": {
+    "command": [
+      "/root/pact-deps/pact-venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "--capture=sys",
+      "-p",
+      "no:cacheprovider",
+      "--basetemp=/tmp/pact-phase2cr-focused-u5el2tcx/pytest",
+      "--junitxml=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair/focused_continuation.xml",
+      "tests/unit/test_phase2cr_loads.py"
+    ],
+    "environment_overrides": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONPATH": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src"
+    },
+    "errors": 0,
+    "exit_code": 0,
+    "failed": 0,
+    "isolated_temp": "/tmp/pact-phase2cr-focused-u5el2tcx",
+    "log": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/phase2c_repair/focused_continuation.log",
+    "log_sha256": "f2c8247fa3dc1a9aa8f59060c4518a3834326154149df12337a3fad0ebd1ef8c",
+    "observed_utc": "2026-09-23T18:18:35.855339+00:00",
+    "passed": 14,
+    "runtime_seconds": 6.164536182999996,
+    "skipped": 0,
+    "source_sha256": "b34b2299826698603513499f301a53a7922186a481b989bb625109a04b239b48",
+    "status": "PHASE2CR_FOCUSED_TESTS_PASS"
+  },
+  "review": {
+    "actual_SO_port_on_buffer_output": true,
+    "attach_child_to_tail_Q": true,
+    "attach_sink_to_tail_Q": true,
+    "chain_above_zero_direct_SO_preserved": true,
+    "deep_copy": true,
+    "no_chain0_synthetic_SO": true,
+    "remove_old_child_if_tail_differs": true,
+    "remove_old_sink_if_tail_differs": true
+  },
+  "reviewed_function": "phase2cr_loads.selected_graph",
+  "same_owner_special_case": {
+    "counts": {
+      "buffer_input": 1,
+      "output_branch": 1,
+      "test_so": 1
+    },
+    "fixture": "existing focused case, selected_tail == original_owner == a",
+    "input_graph_unchanged": true,
+    "transparent_edges_unchanged": true
+  },
+  "source_unchanged": true,
+  "status": "PASS"
+}

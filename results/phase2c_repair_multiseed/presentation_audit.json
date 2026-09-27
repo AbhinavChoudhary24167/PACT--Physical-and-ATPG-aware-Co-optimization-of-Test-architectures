@@ -1,0 +1,73 @@
+{
+  "classification_changed": false,
+  "family_stability": {
+    "M3": {
+      "mean_heldout_rho": 0.9622828113023094,
+      "minimum_heldout_rho": 0.8116794499134278
+    },
+    "M5": {
+      "mean_heldout_rho": 0.9458145573340556,
+      "minimum_heldout_rho": 0.8116794499134278
+    }
+  },
+  "leave_one_architecture_failed_endpoints": [
+    {
+      "accuracy": 0.7777777777777778,
+      "design": "s9234",
+      "passed": false,
+      "predictor": "M3_load_local",
+      "removed_architecture": "P",
+      "seed": 17,
+      "spearman": 0.6668859288553503
+    },
+    {
+      "accuracy": 0.7777777777777778,
+      "design": "s9234",
+      "passed": false,
+      "predictor": "M3_load_local",
+      "removed_architecture": "T",
+      "seed": 17,
+      "spearman": 0.6668859288553503
+    },
+    {
+      "accuracy": 0.7777777777777778,
+      "design": "s9234",
+      "passed": false,
+      "predictor": "M3_load_local",
+      "removed_architecture": "balanced",
+      "seed": 17,
+      "spearman": 0.6668859288553503
+    },
+    {
+      "accuracy": 0.7777777777777778,
+      "design": "s9234",
+      "passed": false,
+      "predictor": "M5_hpwl_local",
+      "removed_architecture": "A",
+      "seed": 17,
+      "spearman": 0.6668859288553503
+    },
+    {
+      "accuracy": 0.7777777777777778,
+      "design": "s9234",
+      "passed": false,
+      "predictor": "M5_hpwl_local",
+      "removed_architecture": "T",
+      "seed": 17,
+      "spearman": 0.6668859288553503
+    },
+    {
+      "accuracy": 0.7777777777777778,
+      "design": "s9234",
+      "passed": false,
+      "predictor": "M5_hpwl_local",
+      "removed_architecture": "balanced",
+      "seed": 17,
+      "spearman": 0.6668859288553503
+    }
+  ],
+  "leave_one_pair_fragile_accuracy": [],
+  "minimum_rho_tie": true,
+  "reason": "Original prose forced an arbitrary family ordering despite an exact tie; corrected narrative. Replaced overlapping point annotations with a row-based seed comparison.",
+  "scientific_values_changed": false
+}
