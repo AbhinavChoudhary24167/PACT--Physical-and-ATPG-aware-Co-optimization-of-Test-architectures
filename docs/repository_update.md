@@ -50,6 +50,15 @@ compressed s9234 metric-campaign traces is recorded. Earlier Git revisions retai
 those tracked files. Their absence must not be interpreted as a fresh successful
 reproduction. The working solver accepts an external Liberty through `--liberty`.
 
+A follow-up snapshot records 30 further local evidence-file deletions observed
+after the first publication: fourteen s5378 compressed traces and sixteen
+generated figures, metric/reconstruction tables, source-data files and manifests
+under `artifacts/` and `reports/`. Commit `de5db7e` retains their last published
+contents. These removals do not alter optimizer source or the working-solver
+measurements, and historical reports may reference files available only in that
+earlier revision. Missing local Git objects discovered during this follow-up
+were recovered from GitHub before recording the snapshot.
+
 Existing ignore rules remain in effect: dependency caches, temporary files,
 selected large generated solver architectures, checkpoints and ignored physical
 archives remain local. No ignored files were force-added. The complete current
