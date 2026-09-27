@@ -71,9 +71,10 @@ the returned archive. This is a heuristic, not a global optimality claim.
 ## Time and outputs
 
 `--time-budget` covers optimizer preprocessing, construction, initial scoring,
-search and checkpoints. Input loading, Numba compilation/warmup, and final JSON
-serialization are reported separately. Checks occur between constructors'
-bounded leaves, chain evaluations, FFT tiles and complete transactional moves.
+search and checkpoints. Input loading and Numba compilation/warmup are reported
+separately. Command wall time after imports also includes final JSON serialization.
+Checks occur between constructors' bounded leaves, chain evaluations, FFT tiles
+and complete transactional moves.
 One operation/checkpoint can overrun the deadline; the actual overrun is emitted.
 A tiny budget returns the supplied legal architecture with unscored status.
 
@@ -97,8 +98,10 @@ their measured duration also imposes a duty-cycle limit to prevent I/O starvatio
 ## Bounded routing
 
 `python scripts/pact_solver_routes.py --design s5378 --run run/s5378 --output run/routes/s5378`
-reuses hash-verified B0/P/A route archives and routes at most two new orders:
+reuses hash-verified B0/P/A/J50 route archives and routes at most two new orders:
 the recommendation and physical extreme. Each gets one bounded rewire, route,
-and postroute structural check. Thus at most five distinct architectures/design
+and postroute structural check. Thus at most six distinct architectures/design
 are compared. Route and optimizer output directories are separate. No route
 is launched inside optimization. Historical experiments are not modified.
+On s9234, T replaces A in the final routed comparison because T is the stronger
+physical start and J50 is already the stronger total-activity alternative to A.

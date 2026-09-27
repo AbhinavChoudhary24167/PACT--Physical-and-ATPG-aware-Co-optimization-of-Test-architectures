@@ -195,6 +195,9 @@ def optimize(costs,patterns,starts,config=Config(),checkpoint=None):
         return dict(status='BUDGET_EXHAUSTED_BEFORE_EXACT_SCORE',archive=[],baselines=baseline,
                     runtime_seconds=time.perf_counter()-started,evaluations=evaluations,convergence=log,
                     fallback_orders=supplied)
+    # A rejected last constructor must not retain a second full activity field
+    # throughout search (especially for small K / long chains).
+    candidate=None
     locate(state);current=np.r_[state.physical,state.metrics]
     physical_reference=min(r['metrics']['scan_hpwl_um'] for r in baseline)
     reference=min(baseline,key=lambda r:r['metrics']['scan_hpwl_um'])['metrics']

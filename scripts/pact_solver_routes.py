@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Route at most two new solver outputs/design; reuse B0/P/A exact-order routes.
+"""Route at most two new outputs/design; reuse four strong existing baselines.
 
 One invocation consumes an output-local route plan before external execution.
 No optimizer or historical experiment contract is modified by this adapter.
@@ -21,7 +21,10 @@ from pact.phase0d.campaign import file_sha256
 def run(design,run_dir,output):
     result=read(run_dir/'result.json');output.mkdir(parents=True,exist_ok=True)
     summary=[]
-    for label in ('B0','P','A'):
+    labels=['B0','P','A','J50']
+    physical=min((r for r in result['baselines'] if r['label'] in ('P','T')),key=lambda r:r['metrics']['scan_hpwl_um'])
+    if physical['label']=='T':labels[2]='T'  # J50 already improves total activity over A
+    for label in labels:
         folder=ROOT/f'artifacts/raw/phase0c/physical/{design}/s11/k2/{label}'
         path=folder/'route_metrics.json';route=read(path)
         arch=ScanArchitecture.from_json(ROOT/f'artifacts/derived/phase0c/{design}/s11/k2/{label}.architecture.json')
@@ -35,10 +38,13 @@ def run(design,run_dir,output):
     for role,row in chosen:
         if row and row['architecture_sha256'] not in seen:
             seen.add(row['architecture_sha256']);unique.append((role,row))
-    assert len(unique)<=2 and len(summary)+len(unique)<=5
+    assert len(unique)<=2 and len(summary)+len(unique)<=6
     plan=output/'route_plan.json'
-    desired=dict(design=design,candidates=[list(item) for item in unique],new_route_limit=2,total_architecture_limit=5)
-    if plan.exists() and read(plan)!=desired:raise ValueError('Route output already belongs to a different selection; use a fresh directory')
+    desired=dict(design=design,candidates=[list(item) for item in unique],new_route_limit=2,total_architecture_limit=6)
+    if plan.exists():
+        previous=read(plan)
+        if any(previous.get(key)!=desired[key] for key in ('design','candidates','new_route_limit')):
+            raise ValueError('Route output already belongs to a different selection; use a fresh directory')
     write_json(plan,desired)
     flow=Path('/root/pact-deps/OpenROAD-flow-scripts/flow')
     block='s9234f' if design=='s9234' else design
@@ -100,4 +106,14 @@ def run(design,run_dir,output):
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--design',required=True,choices=('s5378','s9234','s15850'))
     parser.add_argument('--run',type=Path,required=True);parser.add_argument('--output',type=Path,required=True)
-    args=parser.parse_args();run(args.design,args.run.resolve(),args.output.resolve())
+    args=parser.parse_args()
+    # Linux OpenROAD execution: prevent two callers routing the same design
+    # while independent design jobs run concurrently.
+    import fcntl
+    args.output.mkdir(parents=True,exist_ok=True)
+    with (args.output/'.route.lock').open('a') as lock:
+        try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        except BlockingIOError:
+            print('Route job already active:',args.design,flush=True)
+            raise SystemExit(0)
+        run(args.design,args.run.resolve(),args.output.resolve())
