@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="3" failures="0" skipped="1" tests="4" time="9.189" timestamp="2026-09-27T15:31:54.849339+00:00" hostname="BillionDollars"><testcase classname="" name="tests.unit.test_optimizer_v2" time="0.000"><error message="collection failure">ImportError while importing test module '/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/unit/test_optimizer_v2.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_optimizer_v2.py:11: in &lt;module&gt;
+    from pact.phase0d.optimizer_v2 import (
+src/pact/phase0d/optimizer_v2.py:15: in &lt;module&gt;
+    from pact.phase0d.v2_activity import (
+src/pact/phase0d/v2_activity.py:23: in &lt;module&gt;
+    from threadpoolctl import threadpool_limits
+E   ModuleNotFoundError: No module named 'threadpoolctl'</error></testcase><testcase classname="" name="tests.unit.test_optimizer_v2_2" time="0.000"><error message="collection failure">ImportError while importing test module '/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/unit/test_optimizer_v2_2.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_optimizer_v2_2.py:10: in &lt;module&gt;
+    from pact.phase0d.optimizer_v2 import OptimizerV2Config, PhysicalArcCost, optimize_v2
+src/pact/phase0d/optimizer_v2.py:15: in &lt;module&gt;
+    from pact.phase0d.v2_activity import (
+src/pact/phase0d/v2_activity.py:23: in &lt;module&gt;
+    from threadpoolctl import threadpool_limits
+E   ModuleNotFoundError: No module named 'threadpoolctl'</error></testcase><testcase classname="" name="tests.unit.test_optimizer_v2_3" time="0.000"><error message="collection failure">ImportError while importing test module '/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/unit/test_optimizer_v2_3.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_optimizer_v2_3.py:11: in &lt;module&gt;
+    from pact.phase0d.optimizer_v2 import OptimizerV2Config, optimize_v2
+src/pact/phase0d/optimizer_v2.py:15: in &lt;module&gt;
+    from pact.phase0d.v2_activity import (
+src/pact/phase0d/v2_activity.py:23: in &lt;module&gt;
+    from threadpoolctl import threadpool_limits
+E   ModuleNotFoundError: No module named 'threadpoolctl'</error></testcase><testcase classname="" name="tests.unit.test_working_optimizer" time="0.000"><skipped message="collection skipped">('/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/unit/test_working_optimizer.py', 5, "Skipped: could not import 'numba': No module named 'numba'")</skipped></testcase></testsuite></testsuites>

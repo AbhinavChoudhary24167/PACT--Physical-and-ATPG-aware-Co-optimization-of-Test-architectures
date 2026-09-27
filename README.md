@@ -1,5 +1,13 @@
 # PACT — Physical- and ATPG-aware Co-optimization of Test Architectures
 
+The integration entry point is now `pact-integrate` (or
+`python scripts/pact_integrate.py`). It consumes a saved constrained solver
+recommendation, emits a concrete scan-only OpenROAD patch and serial ATPG
+workload, and independently checks load/unload semantics. See the
+[integration guide](docs/end_to_end.md) and
+[three-design end-to-end report](reports/end_to_end/final_report.md).
+The solver itself remains frozen at `WORKING_SOLVER`.
+
 The working optimizer is now available as `pact-optimize` (or
 `python scripts/pact_optimize.py` from this checkout). Install with
 `pip install -e '.[optimizer]'`, then run

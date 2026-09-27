@@ -15,6 +15,7 @@ optimizer = ["numba>=0.59"]
 
 [project.scripts]
 pact-optimize = "pact.optimizer.cli:main"
+pact-integrate = "pact.integration.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

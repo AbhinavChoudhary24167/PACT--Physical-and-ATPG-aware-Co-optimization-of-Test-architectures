@@ -30,3 +30,10 @@ artifacts/raw/**/*.vcd
 /reports/working_solver/final/scaling_*/ff_names.json
 /reports/working_solver/routes/**/orfs/
 /reports/working_solver/routes/**/*.odb.gz
+# End-to-end databases are delivered as hash-indexed gzip archives.
+/reports/end_to_end/**/*.odb
+# Initial integration diagnostics stay on disk; final evidence uses integration_v1.
+/reports/end_to_end/s5378/reuse_check/
+/reports/end_to_end/s5378/seed11_k2/
+/reports/end_to_end/s5378/seed11_k2_final/
+/reports/end_to_end/s9234/seed11_k2_final/

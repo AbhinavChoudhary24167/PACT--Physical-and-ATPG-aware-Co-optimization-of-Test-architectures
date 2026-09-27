@@ -1,0 +1,69 @@
+#  ==========================================================================
+#
+#                                   FAN ATPG
+#
+#                Copyright(c) Laboratory of Dependable Systems,
+#                Graduate Institute of Electronics Engineering,
+#                          National Taiwan University
+#                             All Rights Reserved.
+#
+#  ==========================================================================
+#
+#  Kernel:   Linux
+#  Platform: x86_64
+#  Memory:   3916.61 MB
+#
+/original.script 1> read_lib /root/pact-deps/FAN_ATPG/techlib/mod_nangate45.mdt
+#  Reading technology library ...
+#  Finished reading library `/root/pact-deps/FAN_ATPG/techlib/mod_nangate45.mdt'    0.005753 s    9.37109 MB
+/original.script 2> read_netlist /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/benchmarks/s5378.v
+#  Reading netlist ...
+#  Finished reading netlist `/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/benchmarks/s5378.v'    0.038673 s    16.0742 MB
+/original.script 3> build_circuit --frame 1
+#  Building circuit ...
+#  Finished building circuit    0.00596 s    16.5273 MB
+/original.script 4> read_pattern /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s5378.pat
+#  Reading pattern ...
+#  Finished reading pattern `/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s5378.pat'    0.010396 s    16.6602 MB
+/original.script 5> set_fault_type saf
+#  fault type set to stuck-at fault
+/original.script 6> add_fault -a
+#  Building fault list ...
+#  Finished building fault list    0.000579 s    17.7578 MB
+/original.script 7> run_fault_sim
+#  Performing fault simulation ...
+#  Finished fault simulation    0.041592 s    18.1836 MB
+/original.script 8> report_statistics
+#                 Statistics Report
+#  Circuit name                                s5378
+#  Fault model                                   SAF
+#  Pattern type                                BASIC
+#  -------------------------------------------------
+#  Fault classes                             #faults
+#  ----------------------------  -------------------
+#    FU (full)                                 11822
+#    FU (collapsed)                             8077
+#    --------------------------  -------------------
+#    UD (undetected)                             468
+#    PT (possibly testable)                        0
+#    AU (atpg untestable)                          0
+#    RE (redundant)                                0
+#    AB (atpg abort)                               0
+#    TI (tied)                                     0
+#    --------------------------  -------------------
+#    DT (detected)                             11354
+#  -------------------------------------------------
+#  Coverage                               percentage
+#    --------------------------  -------------------
+#    test coverage                            96.04%
+#    fault coverage                           96.04%
+#    atpg effectiveness                       96.04%
+#  -------------------------------------------------
+#  #Patterns                                     117
+#  -------------------------------------------------
+#  ATPG runtime                            0.04159 s
+#  -------------------------------------------------
+/original.script 9> exit
+#  Goodbye
+#  Runtime        real 0.1173 s        user 0.06244 s        sys 0.03156 s
+#  Memory         peak 18.18 MB
