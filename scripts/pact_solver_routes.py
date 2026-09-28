@@ -46,6 +46,20 @@ def run(design,run_dir,output):
         if any(previous.get(key)!=desired[key] for key in ('design','candidates','new_route_limit')):
             raise ValueError('Route output already belongs to a different selection; use a fresh directory')
     write_json(plan,desired)
+    summary.extend(route_selected(design,unique,output))
+    write_json(output/'summary.json',summary)
+
+
+def route_selected(design,unique,output,variant_prefix='solver_s11',route_seconds=600):
+    """Explicit small new-candidate adapter; no historical route is rerun."""
+    output=Path(output).resolve();output.mkdir(parents=True,exist_ok=True)
+    desired=dict(design=design,candidates=[list(item) for item in unique],variant_prefix=variant_prefix,
+                 route_seconds=route_seconds)
+    plan=output/'selected_plan.json'
+    if plan.exists() and read(plan)!=desired:
+        raise ValueError('Route plan changed; use a fresh namespace')
+    write_json(plan,desired)
+    summary=[]
     flow=Path('/root/pact-deps/OpenROAD-flow-scripts/flow')
     block='s9234f' if design=='s9234' else design
     base=flow/f'results/nangate45/{block}/phase0b_s11_B0'
@@ -60,7 +74,7 @@ def run(design,run_dir,output):
             summary.append(dict(role=role,architecture_sha256=sha,status='INTERRUPTED_ATTEMPT',reused=False));continue
         evidence.mkdir(parents=True,exist_ok=True)
         write_json(evidence/'attempt.json',dict(role=role,architecture_sha256=sha))
-        variant_name='solver_s11_'+sha[:12]
+        variant_name=variant_prefix+'_'+sha[:12]
         variant=work/f'results/nangate45/{block}/{variant_name}'
         logs=work/f'logs/nangate45/{block}/{variant_name}'
         variant.mkdir(parents=True,exist_ok=True)
@@ -79,7 +93,7 @@ def run(design,run_dir,output):
         route=run_bounded(['make','-o',str(variant/'3_place.odb'),'-o',str(variant/'3_place.sdc'),
             f'DESIGN_CONFIG={config}',f'FLOW_VARIANT={variant_name}',f'WORK_HOME={work}',
             'GRT_SEED=11','NUM_CORES=2','OPENROAD_EXE=/usr/bin/openroad','YOSYS_EXE=/usr/bin/yosys','route'],
-            evidence/'route',flow,600,required,resume=False)
+            evidence/'route',flow,route_seconds,required,resume=False)
         out['route']=route
         if route['exit_code']!=0 or not route['required_outputs_present']:
             out['stage']='route';write_json(report,out);summary.append(out);continue
@@ -101,6 +115,7 @@ def run(design,run_dir,output):
         write_json(output/'summary.json',summary)
         print(design,role,out['status'],flush=True)
     write_json(output/'summary.json',summary)
+    return summary
 
 
 if __name__=='__main__':

@@ -19,7 +19,7 @@ from pact.scan.model import ScanArchitecture
 from pact.integration.patterns import fan_workload, serialize
 from pact.analysis.phase2b_reference import parse_spef
 
-OUT = ROOT / 'reports/physical_effect'
+OUT = Path(os.environ.get('PACT_PHYSICAL_EFFECT_OUT', ROOT / 'reports/physical_effect'))
 FLOW = Path('/root/pact-deps/OpenROAD-flow-scripts/flow')
 PLATFORM = FLOW / 'platforms/nangate45'
 LIB = PLATFORM / 'lib/NangateOpenCellLibrary_typical.lib'

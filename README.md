@@ -1,5 +1,14 @@
 # PACT — Physical- and ATPG-aware Co-optimization of Test Architectures
 
+The new **PACT Implementation-Aware Backend v2** synthesizes scan architectures
+from existing ATPG load/capture-response states, extracted FF loads, physical
+port geometry and an explicit spatial switching objective. Run
+`python scripts/pact_v2.py search --design s5378 --seconds 180 --output <new-directory>`
+in the qualified environment. See the [backend formulation](docs/pact_v2_backend.md)
+and [new implementation results](results/pact_v2/README.md) for commands, measured
+Pareto relationships, candidate identities and limitations. Prior baselines remain
+unchanged; the historical milestones below describe their original evidence.
+
 The physical-effect milestone is **PACT_PHYSICAL_EFFECT_MIXED**. Simulation of
 nine exact routed implementations under the qualified ATPG load/capture/unload
 workloads shows lower PACT total non-clock transition activity and extracted

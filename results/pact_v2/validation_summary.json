@@ -1,0 +1,102 @@
+{
+  "physical_checks": [
+    {
+      "design": "s5378",
+      "architecture": "c4eabc41cb50",
+      "status": "PASS",
+      "FF_cycle_values_checked": 3769740
+    },
+    {
+      "design": "s5378",
+      "architecture": "b5c4710dcf54",
+      "status": "PASS",
+      "FF_cycle_values_checked": 3769740
+    },
+    {
+      "design": "s5378",
+      "architecture": "3b627d8af4f2",
+      "status": "PASS",
+      "FF_cycle_values_checked": 3769740
+    },
+    {
+      "design": "s9234",
+      "architecture": "53bb5b018758",
+      "status": "PASS",
+      "FF_cycle_values_checked": 6978192
+    },
+    {
+      "design": "s9234",
+      "architecture": "797aff0b91f6",
+      "status": "PASS",
+      "FF_cycle_values_checked": 6978192
+    },
+    {
+      "design": "s9234",
+      "architecture": "f4bca5652bda",
+      "status": "PASS",
+      "FF_cycle_values_checked": 6978192
+    },
+    {
+      "design": "s15850",
+      "architecture": "e14689c97ca5",
+      "status": "PASS",
+      "FF_cycle_values_checked": 37925748
+    },
+    {
+      "design": "s15850",
+      "architecture": "f3e118a35e7b",
+      "status": "PASS",
+      "FF_cycle_values_checked": 37925748
+    },
+    {
+      "design": "s15850",
+      "architecture": "1c4fe83a6b04",
+      "status": "PASS",
+      "FF_cycle_values_checked": 37925748
+    }
+  ],
+  "tests": {
+    "environment": "WSL Ubuntu-24.04, /root/pact-deps/pact-venv/bin/python, PYTHONPATH=.optimizer-deps:src",
+    "focused": {
+      "command": "python -m pytest tests/unit/test_implementation_v2.py -q",
+      "passed": 5,
+      "seconds": 13.95
+    },
+    "repository_suite": {
+      "command": "OPENBLAS_NUM_THREADS=1 python -m pytest -q",
+      "passed": 280,
+      "seconds": 144.38,
+      "exit_code": 0
+    },
+    "adapter_regression_and_focused_recheck": {
+      "command": "OPENBLAS_NUM_THREADS=1 python -m pytest tests/unit/test_implementation_v2.py -q",
+      "passed": 6,
+      "seconds": 6.93,
+      "exit_code": 0
+    }
+  },
+  "selected_reproducibility": [
+    {
+      "design": "s5378",
+      "status": "PASS",
+      "stored_Q_totals_checked": 179,
+      "selected_reproduced": 3,
+      "seconds": 2.8521589990000393
+    },
+    {
+      "design": "s9234",
+      "status": "PASS",
+      "stored_Q_totals_checked": 211,
+      "selected_reproduced": 3,
+      "seconds": 4.550126743999954
+    },
+    {
+      "design": "s15850",
+      "status": "PASS",
+      "stored_Q_totals_checked": 534,
+      "selected_reproduced": 3,
+      "seconds": 12.68348236700001
+    }
+  ],
+  "final_classification": "PACT_V2_NEW_PARETO_ARCHITECTURE_FOUND"
+}

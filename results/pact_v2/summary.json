@@ -1,0 +1,3087 @@
+{
+  "schema": "pact_implementation_aware_v2",
+  "classification": "PACT_V2_NEW_PARETO_ARCHITECTURE_FOUND",
+  "measured_frontier_objectives": [
+    "routed_path_upper_bound_um",
+    "cap_weighted_ff_transitions",
+    "peak_local_cap_ff"
+  ],
+  "designs": {
+    "s5378": {
+      "evaluations": 20000,
+      "new_unique": 19777,
+      "accepted": 519,
+      "runtime_seconds": 100.20110972199998,
+      "initialization_seconds": 2.1515297870000154,
+      "search_seconds": 98.03340899399998,
+      "wire_ceiling_um": 1518.9130000000005,
+      "timing_ceiling_um": 101.22750000000002,
+      "config": {
+        "seconds": 180.0,
+        "max_evaluations": 20000,
+        "wire_allowance": 0.1,
+        "timing_allowance": 0.1,
+        "seed": 11,
+        "archive_size": 32,
+        "neighbors": 16,
+        "segment": 8,
+        "restart_interval": 250
+      },
+      "parent_commit": "646355f191c840e1c6809cb8dbee9815d2b3345a",
+      "inputs": {
+        "architecture": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s5378/s11/k2/P.architecture.json",
+          "sha256": "e4fc28df36dc56d05f9968bb8b07e222de22f33f6ea87fed1e16c260bd0d0f35"
+        },
+        "caps": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s5378/P/net_activity_capacitance.csv",
+          "sha256": "3263c1b739ba316eeb12c587cf997743352156c1549b3f5170a65ef8eb2d664f"
+        },
+        "mapping": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s5378/P/net_mapping.json",
+          "sha256": "e6c2855a2cd6675ffe30d05d326e28eb7179b1c80e0c3645fe26bffd076e2950"
+        },
+        "manifest": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/manifest.json",
+          "sha256": "eaf7ad0cc21a8a30bac73fc3aa7d3e4acb41f4f275d9b6ef94775822d2897b03"
+        },
+        "baseline_measurements": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/comparison.csv",
+          "sha256": "f66a7985ee0b337305e411c36f158241e238aabb8e6b1ae029157ad9a547ca61"
+        },
+        "identity_map": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s5378/ff_identity_map.json",
+          "sha256": "8f4f4bcd6850e2d8108660b70141e2784ed9854819df6c6533718d7caed7c9d3"
+        },
+        "patterns": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s5378.pat",
+          "sha256": "2b812b60516c784dfe2a61815e6c89043515332d6563059d2d40184e4909e888"
+        },
+        "placement": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s5378/s11/placed.def",
+          "sha256": "e906065d75f3f3ecab2c723a33259f33d0c14089a73adb3c34d4daf82001c2fb"
+        },
+        "seed_P": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s5378/s11/k2/P.architecture.json",
+          "sha256": "e4fc28df36dc56d05f9968bb8b07e222de22f33f6ea87fed1e16c260bd0d0f35"
+        },
+        "seed_J50": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s5378/s11/k2/J50.architecture.json",
+          "sha256": "e5cbf81a58268b3a97dbb0e0d4aed90928e1605d1c70097b1b1ca2f512ecd1cc"
+        },
+        "seed_PACT": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s5378/integration_v1/scan_topology_after.json",
+          "sha256": "4048f2a34a54b2164b2b3ab52b209f99e723dd8b61f1532dbea110342e77eac9"
+        },
+        "seed_T": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s5378/s11/k2/T.architecture.json",
+          "sha256": "cdf1294ca6750b38d2b977ba39a62eb71cd5d7ea1563f25afddca169a7af8ad9"
+        }
+      },
+      "versions": {
+        "python": "3.12.3",
+        "numpy": "2.5.3",
+        "numba": "0.67.0",
+        "scipy": "1.18.1"
+      },
+      "chain_lengths": [
+        90,
+        89
+      ],
+      "selected": [
+        "c4eabc41cb50cae503f52eb2deae1101321804849abf1dab0dc8b97e58f90bb5",
+        "b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16",
+        "3b627d8af4f2c34c3bcf71a0822d2b8a612e01fe06e766beda14a95854bd11d9"
+      ],
+      "evaluation_log": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s5378/evaluations.csv.gz",
+        "sha256": "da9934293f56aa7cd8ac13fbe059a669292183b8347aa810ab173969caad8533"
+      }
+    },
+    "s9234": {
+      "evaluations": 20000,
+      "new_unique": 19840,
+      "accepted": 521,
+      "runtime_seconds": 177.03534157599995,
+      "initialization_seconds": 2.5660902820000047,
+      "search_seconds": 174.442825782,
+      "wire_ceiling_um": 1896.3395000000003,
+      "timing_ceiling_um": 114.59800000000001,
+      "config": {
+        "seconds": 180.0,
+        "max_evaluations": 20000,
+        "wire_allowance": 0.1,
+        "timing_allowance": 0.1,
+        "seed": 11,
+        "archive_size": 32,
+        "neighbors": 16,
+        "segment": 8,
+        "restart_interval": 250
+      },
+      "parent_commit": "646355f191c840e1c6809cb8dbee9815d2b3345a",
+      "inputs": {
+        "architecture": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s9234/s11/k2/T.architecture.json",
+          "sha256": "8fc41a252394424baa983c202a549a15de2b231dfdd3410268e15d10186f6d7c"
+        },
+        "caps": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/T/net_activity_capacitance.csv",
+          "sha256": "bfea4e5f1ed04ec6a8713aceca52137d7751229cb2e721293dd3539fdbc8acae"
+        },
+        "mapping": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/T/net_mapping.json",
+          "sha256": "421bd59254eb7a9a492182489919e61e71b6eed03e3bfe0e0c9918b50dbb635d"
+        },
+        "manifest": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/manifest.json",
+          "sha256": "eaf7ad0cc21a8a30bac73fc3aa7d3e4acb41f4f275d9b6ef94775822d2897b03"
+        },
+        "baseline_measurements": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/comparison.csv",
+          "sha256": "f66a7985ee0b337305e411c36f158241e238aabb8e6b1ae029157ad9a547ca61"
+        },
+        "identity_map": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s9234/ff_identity_map.json",
+          "sha256": "7c18353782aa24fd5649f1c7e6ba993c651dcedb4f26fdf81ce996816ef536b5"
+        },
+        "patterns": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s9234.pat",
+          "sha256": "977c17142285679fc79aefaf5d4733f1df0a157ace48caf7fe924607edee20e4"
+        },
+        "placement": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s9234/s11/placed.def",
+          "sha256": "5fcb9e0c5ab8d5f3b3038b915e173e52cac369d7fef05ce4c6d4bffa9ebe3c5a"
+        },
+        "seed_T": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s9234/s11/k2/T.architecture.json",
+          "sha256": "8fc41a252394424baa983c202a549a15de2b231dfdd3410268e15d10186f6d7c"
+        },
+        "seed_J50": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s9234/s11/k2/J50.architecture.json",
+          "sha256": "8d790a650d3f93470cd2fa29fe17ea5b4c356e7a618ad9109234dab74a8f74aa"
+        },
+        "seed_PACT": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s9234/integration_v1/scan_topology_after.json",
+          "sha256": "d35a605a34612e068f8b4fddbb9d621e6503586dc545843a3666c1752ad61a8b"
+        },
+        "seed_P": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s9234/s11/k2/P.architecture.json",
+          "sha256": "507ffb10575efdc2f71d707e15fa369d0545aa33741b1af0ddf3e4714319b88f"
+        }
+      },
+      "versions": {
+        "python": "3.12.3",
+        "numpy": "2.5.3",
+        "numba": "0.67.0",
+        "scipy": "1.18.1"
+      },
+      "chain_lengths": [
+        106,
+        105
+      ],
+      "selected": [
+        "53bb5b0187583971d057dc111c46dc7030affedc25dbfe294a9455251ddc6fe5",
+        "797aff0b91f6ad122de840678b76b5969b4c0db00dbedfa78d2884fc75a5ddc2",
+        "f4bca5652bda0b57f3cb7fd7b31c0228c96465ab7e142b4fb284814b8dd3a223"
+      ],
+      "evaluation_log": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s9234/evaluations.csv.gz",
+        "sha256": "c94a7e7dcbc7a09f0e33f6a8ed415f98917eda1ca7f7b9ee7e0058bd9492d194"
+      }
+    },
+    "s15850": {
+      "evaluations": 11135,
+      "new_unique": 11106,
+      "accepted": 300,
+      "runtime_seconds": 278.18430824899997,
+      "initialization_seconds": 1.9735506429999532,
+      "search_seconds": 276.09006039799993,
+      "wire_ceiling_um": 3878.0169999999994,
+      "timing_ceiling_um": 186.12,
+      "config": {
+        "seconds": 180.0,
+        "max_evaluations": 20000,
+        "wire_allowance": 0.1,
+        "timing_allowance": 0.1,
+        "seed": 11,
+        "archive_size": 32,
+        "neighbors": 16,
+        "segment": 8,
+        "restart_interval": 250
+      },
+      "parent_commit": "646355f191c840e1c6809cb8dbee9815d2b3345a",
+      "inputs": {
+        "architecture": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s15850/s11/k2/P.architecture.json",
+          "sha256": "86fb63dbda99d833cc3176e94ce947b91f005cd867886887fc0789165c4932db"
+        },
+        "caps": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s15850/P/net_activity_capacitance.csv",
+          "sha256": "c91506d9643e68877de97f9d3894aefa580aded10c89d72fcedcbb7e477d6fc0"
+        },
+        "mapping": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s15850/P/net_mapping.json",
+          "sha256": "b16afad3c756db1710fcff2c7131ac7dfee2b4915a1fcacd82c256a4f8b8f100"
+        },
+        "manifest": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/manifest.json",
+          "sha256": "eaf7ad0cc21a8a30bac73fc3aa7d3e4acb41f4f275d9b6ef94775822d2897b03"
+        },
+        "baseline_measurements": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/comparison.csv",
+          "sha256": "f66a7985ee0b337305e411c36f158241e238aabb8e6b1ae029157ad9a547ca61"
+        },
+        "identity_map": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s15850/ff_identity_map.json",
+          "sha256": "c8ba4df64448de4036bd5c3f485e1ed8d80b23c5ab176448fef45474939e8fc1"
+        },
+        "patterns": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s15850.pat",
+          "sha256": "477c4d973264739c049869a47782021e58042795b539e664d49a5811e730f9ec"
+        },
+        "placement": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s15850/s11/placed.def",
+          "sha256": "a2a41986c43d596cbdf46a9b278ac1c2b259229748108055d50eb525bca31aad"
+        },
+        "seed_P": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s15850/s11/k2/P.architecture.json",
+          "sha256": "86fb63dbda99d833cc3176e94ce947b91f005cd867886887fc0789165c4932db"
+        },
+        "seed_J50": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s15850/s11/k2/J50.architecture.json",
+          "sha256": "412cce408529d7214826e4f76068561e65cc9c5f121c44ee3b1e460092ef95ed"
+        },
+        "seed_PACT": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s15850/integration_v1/scan_topology_after.json",
+          "sha256": "eede91c14cdc2c8f484b52c1f17020d0ad418ffe063ea49612fade25674f3193"
+        },
+        "seed_T": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s15850/s11/k2/T.architecture.json",
+          "sha256": "1f802393dcddd460afc06c8ddc1d86e04b1eff64d0f7233de36fb87a57e27d8a"
+        }
+      },
+      "versions": {
+        "python": "3.12.3",
+        "numpy": "2.5.3",
+        "numba": "0.67.0",
+        "scipy": "1.18.1"
+      },
+      "chain_lengths": [
+        267,
+        267
+      ],
+      "selected": [
+        "e14689c97ca5454cd0c46f98a4328713eca058aece7c6a6229b25f6c0fb2075b",
+        "f3e118a35e7ba33881c8d2855e6348525823f33056594a27f11b07b55738b70d",
+        "1c4fe83a6b043e5140b67ab63462da9469202e928720431b0ac0e92210a3eadf"
+      ],
+      "evaluation_log": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s15850/evaluations.csv.gz",
+        "sha256": "400d9aa366188e705e93486aa2a982c570080ee9d83c982fc947b04fd244e456"
+      }
+    }
+  },
+  "candidates": [
+    {
+      "design": "s5378",
+      "architecture": "P",
+      "architecture_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+      "new": false,
+      "status": "QUALIFIED",
+      "selected_roles": [],
+      "predicted": {
+        "wire_um": 1380.8300000000004,
+        "activity_ff_transitions": 6551607.772017836,
+        "spatial_peak_8_ff": 74.08927797999999,
+        "timing_max_edge_um": 92.025,
+        "spatial_peak_4_ff": 133.24458798
+      },
+      "measured": {
+        "total_transitions": 5147171.0,
+        "peak_transitions": 603.0,
+        "cap_weighted_ff_transitions": 19375482.1615614,
+        "peak_cap_ff": 2318.2808091900006,
+        "peak_local": 31.0,
+        "peak_local_cap_ff": 186.56425272,
+        "peak_local_4": 88.0,
+        "peak_local_cap_4_ff": 427.04279507999996,
+        "routed_path_upper_bound_um": 5172.87,
+        "setup_wns_ns": 9.08788,
+        "hold_wns_ns": 0.0027291,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "dominated_by": [
+        "b5c4710dcf54"
+      ],
+      "nondominated": false,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "P": {
+          "routed_path_upper_bound_um": 0.0,
+          "cap_weighted_ff_transitions": 0.0,
+          "peak_local_cap_ff": 0.0,
+          "total_transitions": 0.0,
+          "peak_transitions": 0.0,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 0.0
+        },
+        "J50": {
+          "routed_path_upper_bound_um": -12.495834439920362,
+          "cap_weighted_ff_transitions": 3.9806507175936368,
+          "peak_local_cap_ff": 5.901070029106248,
+          "total_transitions": 5.26534185762717,
+          "peak_transitions": 6.349206349206349,
+          "peak_local": -6.060606060606055,
+          "peak_local_cap_4_ff": 2.0922049495251116
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": -0.3225675917843507,
+          "cap_weighted_ff_transitions": 4.3746901505100855,
+          "peak_local_cap_ff": 11.180738883852758,
+          "total_transitions": 3.8732098762442435,
+          "peak_transitions": 1.3445378151260456,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": -0.7327214692651518
+        }
+      }
+    },
+    {
+      "design": "s5378",
+      "architecture": "J50",
+      "architecture_sha256": "9c54b48f2ab8c0d7ebd94dd6c5de6ad6f04883f972277372ae90fecb4ce7f9ee",
+      "new": false,
+      "status": "QUALIFIED",
+      "selected_roles": [],
+      "predicted": {
+        "wire_um": 2634.75,
+        "activity_ff_transitions": 6119391.698298245,
+        "spatial_peak_8_ff": 74.08927797999999,
+        "timing_max_edge_um": 99.35500000000002,
+        "spatial_peak_4_ff": 133.49990216999998
+      },
+      "measured": {
+        "total_transitions": 4889711.0,
+        "peak_transitions": 567.0,
+        "cap_weighted_ff_transitions": 18633738.13093771,
+        "peak_cap_ff": 2209.3566515899997,
+        "peak_local": 33.0,
+        "peak_local_cap_ff": 176.16843028,
+        "peak_local_4": 87.0,
+        "peak_local_cap_4_ff": 418.29128412999995,
+        "routed_path_upper_bound_um": 5911.57,
+        "setup_wns_ns": 9.08673,
+        "hold_wns_ns": 0.00273859,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "dominated_by": [
+        "PACT"
+      ],
+      "nondominated": false,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "P": {
+          "routed_path_upper_bound_um": 14.280273813182998,
+          "cap_weighted_ff_transitions": -3.8282610179127263,
+          "peak_local_cap_ff": -5.572247785111495,
+          "total_transitions": -5.0019709856152,
+          "peak_transitions": -5.970149253731338,
+          "peak_local": 6.451612903225801,
+          "peak_local_cap_4_ff": -2.049328791125149
+        },
+        "J50": {
+          "routed_path_upper_bound_um": 0.0,
+          "cap_weighted_ff_transitions": 0.0,
+          "peak_local_cap_ff": 0.0,
+          "total_transitions": 0.0,
+          "peak_transitions": 0.0,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 0.0
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": 13.911642686059267,
+          "cap_weighted_ff_transitions": 0.378954574910928,
+          "peak_local_cap_ff": 4.985472623926657,
+          "total_transitions": -1.322497943592682,
+          "peak_transitions": -4.705882352941182,
+          "peak_local": 6.451612903225801,
+          "peak_local_cap_4_ff": -2.7670343883618886
+        }
+      }
+    },
+    {
+      "design": "s5378",
+      "architecture": "PACT",
+      "architecture_sha256": "7c9e378ead24878ac991a74f16f6365e2ea867a6309ece4f7362ca7abf935ff9",
+      "new": false,
+      "status": "QUALIFIED",
+      "selected_roles": [],
+      "predicted": {
+        "wire_um": 1517.75,
+        "activity_ff_transitions": 6288853.647826037,
+        "spatial_peak_8_ff": 74.08927797999999,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 133.72088636
+      },
+      "measured": {
+        "total_transitions": 4955244.0,
+        "peak_transitions": 595.0,
+        "cap_weighted_ff_transitions": 18563391.31030868,
+        "peak_cap_ff": 2287.9868573199997,
+        "peak_local": 31.0,
+        "peak_local_cap_ff": 167.80267391,
+        "peak_local_4": 87.0,
+        "peak_local_cap_4_ff": 430.19492566,
+        "routed_path_upper_bound_um": 5189.61,
+        "setup_wns_ns": 9.08655,
+        "hold_wns_ns": 0.00271005,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "dominated_by": [],
+      "nondominated": true,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "P": {
+          "routed_path_upper_bound_um": 0.32361145746944153,
+          "cap_weighted_ff_transitions": -4.191332347144416,
+          "peak_local_cap_ff": -10.056363175939076,
+          "total_transitions": -3.728786162340436,
+          "peak_transitions": -1.3266998341625258,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 0.738129905554219
+        },
+        "J50": {
+          "routed_path_upper_bound_um": -12.212660934404907,
+          "cap_weighted_ff_transitions": -0.3775239307041267,
+          "peak_local_cap_ff": -4.748726180226248,
+          "total_transitions": 1.3402223566996163,
+          "peak_transitions": 4.938271604938271,
+          "peak_local": -6.060606060606055,
+          "peak_local_cap_4_ff": 2.8457780454972603
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": 0.0,
+          "cap_weighted_ff_transitions": 0.0,
+          "peak_local_cap_ff": 0.0,
+          "total_transitions": 0.0,
+          "peak_transitions": 0.0,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 0.0
+        }
+      }
+    },
+    {
+      "design": "s5378",
+      "architecture": "c4eabc41cb50",
+      "architecture_sha256": "c4eabc41cb50cae503f52eb2deae1101321804849abf1dab0dc8b97e58f90bb5",
+      "new": true,
+      "status": "QUALIFIED",
+      "selected_roles": [
+        "spatial"
+      ],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 1435.3500000000004,
+        "activity_ff_transitions": 5954055.478501719,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 92.025,
+        "spatial_peak_4_ff": 122.61966926000001
+      },
+      "measured": {
+        "total_transitions": 4868181.0,
+        "peak_transitions": 629.0,
+        "cap_weighted_ff_transitions": 18117570.82704064,
+        "peak_cap_ff": 2280.4232918300013,
+        "peak_local": 31.0,
+        "peak_local_cap_ff": 195.02158707,
+        "peak_local_4": 90.0,
+        "peak_local_cap_4_ff": 420.45981973999994,
+        "routed_path_upper_bound_um": 5163.83,
+        "setup_wns_ns": 9.08666,
+        "hold_wns_ns": 0.002729,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "route": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/c4eabc41cb50cae503f52eb2deae1101321804849abf1dab0dc8b97e58f90bb5/route_result.json",
+        "sha256": "bd280f964b9e74479712d0c2b091bed62e30d0ed3261dbd5f1ec91449cf6a840"
+      },
+      "measurement": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/measurement/s5378/c4eabc41cb50/activity_summary.json",
+        "sha256": "cbff4a77fe7ae340194f9944cbd62c19dc470085a101b76985b675b44407bc80"
+      },
+      "checks": {
+        "FF_transition_crosscheck": "PASS",
+        "topology_verification": "PASS",
+        "functional_verification": "PASS"
+      },
+      "dominated_by": [],
+      "nondominated": true,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "P": {
+          "routed_path_upper_bound_um": -0.17475791968482035,
+          "cap_weighted_ff_transitions": -6.492284032117168,
+          "peak_local_cap_ff": 4.533201954124055,
+          "total_transitions": -5.420259012183582,
+          "peak_transitions": 4.311774461028195,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": -1.541525911651731
+        },
+        "J50": {
+          "routed_path_upper_bound_um": -12.648754899290715,
+          "cap_weighted_ff_transitions": -2.770068465436226,
+          "peak_local_cap_ff": 10.701779405103995,
+          "total_transitions": -0.44031232111673146,
+          "peak_transitions": 10.934744268077612,
+          "peak_local": -6.060606060606055,
+          "peak_local_cap_4_ff": 0.5184271564515841
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": -0.496761799056189,
+          "cap_weighted_ff_transitions": -2.4016111917032457,
+          "peak_local_cap_ff": 16.220786311545133,
+          "total_transitions": -1.7569871433172568,
+          "peak_transitions": 5.714285714285716,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": -2.2629522896079224
+        }
+      }
+    },
+    {
+      "design": "s5378",
+      "architecture": "fecad3106814",
+      "architecture_sha256": "fecad3106814bccff41a0522578e4582c8fd8a2f65b68a5a58f89145ebb79577",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:swap",
+      "predicted": {
+        "wire_um": 1434.21,
+        "activity_ff_transitions": 5984220.22912224,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 92.025,
+        "spatial_peak_4_ff": 122.61966926000001
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "6b96921c6a7f",
+      "architecture_sha256": "6b96921c6a7ff624028e7ca488d19dfaea49e5693edf63ab07ef5c4fd44a1676",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:swap",
+      "predicted": {
+        "wire_um": 1409.5300000000002,
+        "activity_ff_transitions": 5988248.61505056,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 122.61966926000001
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "fecc8847681a",
+      "architecture_sha256": "fecc8847681ab9cf4ec23f529493a10244a8d8f0e23f08c7dc3b0a4341d1afce",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:2opt",
+      "predicted": {
+        "wire_um": 1404.21,
+        "activity_ff_transitions": 5996055.62366916,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 122.61966926000001
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "70301f6403db",
+      "architecture_sha256": "70301f6403db736654d1c0b495115b070743759c4ff3a87e95772d42692e7e94",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 1423.71,
+        "activity_ff_transitions": 5986987.770968679,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 122.61966926000001
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "b5c4710dcf54",
+      "architecture_sha256": "b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16",
+      "new": true,
+      "status": "QUALIFIED",
+      "selected_roles": [
+        "balanced"
+      ],
+      "provenance": "P:swap",
+      "predicted": {
+        "wire_um": 1378.3899999999999,
+        "activity_ff_transitions": 6108746.85327548,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 130.71944542
+      },
+      "measured": {
+        "total_transitions": 4939146.0,
+        "peak_transitions": 633.0,
+        "cap_weighted_ff_transitions": 18425596.54384748,
+        "peak_cap_ff": 2365.2545766999992,
+        "peak_local": 32.0,
+        "peak_local_cap_ff": 177.51051808,
+        "peak_local_4": 85.0,
+        "peak_local_cap_4_ff": 425.2751113,
+        "routed_path_upper_bound_um": 5141.0,
+        "setup_wns_ns": 9.08665,
+        "hold_wns_ns": 0.0027494,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "route": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16/route_result.json",
+        "sha256": "61d32a8ace8b2c617169fde3f8dbc641d0929c96f451fb0e4792da0d54e8e9c8"
+      },
+      "measurement": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/measurement/s5378/b5c4710dcf54/activity_summary.json",
+        "sha256": "feb3edfcf0c7a73e312bc073d90bef42702c6d0eaf9d41b0c1689364f573c69b"
+      },
+      "checks": {
+        "FF_transition_crosscheck": "PASS",
+        "topology_verification": "PASS",
+        "functional_verification": "PASS"
+      },
+      "dominated_by": [],
+      "nondominated": true,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "P": {
+          "routed_path_upper_bound_um": -0.6160989934021144,
+          "cap_weighted_ff_transitions": -4.90251344350221,
+          "peak_local_cap_ff": -4.852877498235464,
+          "total_transitions": -4.041540488940432,
+          "peak_transitions": 4.975124378109452,
+          "peak_local": 3.2258064516129004,
+          "peak_local_cap_4_ff": -0.41393598027308354
+        },
+        "J50": {
+          "routed_path_upper_bound_um": -13.034946723120921,
+          "cap_weighted_ff_transitions": -1.117014662477478,
+          "peak_local_cap_ff": 0.7618208312731856,
+          "total_transitions": 1.0110004456296062,
+          "peak_transitions": 11.64021164021165,
+          "peak_local": -3.0303030303030276,
+          "peak_local_cap_4_ff": 1.6696085801849003
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": -0.9366792495004383,
+          "cap_weighted_ff_transitions": -0.7422930657324467,
+          "peak_local_cap_ff": 5.785273824186343,
+          "total_transitions": -0.3248679580662439,
+          "peak_transitions": 6.386554621848739,
+          "peak_local": 3.2258064516129004,
+          "peak_local_cap_4_ff": -1.1436244517417538
+        }
+      }
+    },
+    {
+      "design": "s5378",
+      "architecture": "e545742e9da3",
+      "architecture_sha256": "e545742e9da307cb27e9f0d023a83f4cf1a89c8f90075bcdc97ae7e7d02dea39",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:2opt",
+      "predicted": {
+        "wire_um": 1370.13,
+        "activity_ff_transitions": 6134253.11042854,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 130.71944542
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "b0a1feb5534b",
+      "architecture_sha256": "b0a1feb5534b43047b35063593b77b852d30f9b4bcbc9df730d38c5951abddd9",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:swap",
+      "predicted": {
+        "wire_um": 1381.0500000000002,
+        "activity_ff_transitions": 6084855.2290040795,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 130.71944542
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "3b627d8af4f2",
+      "architecture_sha256": "3b627d8af4f2c34c3bcf71a0822d2b8a612e01fe06e766beda14a95854bd11d9",
+      "new": true,
+      "status": "QUALIFIED",
+      "selected_roles": [
+        "activity"
+      ],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 1500.49,
+        "activity_ff_transitions": 5713541.3400509,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 120.37253618
+      },
+      "measured": {
+        "total_transitions": 4711279.0,
+        "peak_transitions": 600.0,
+        "cap_weighted_ff_transitions": 17484807.96296691,
+        "peak_cap_ff": 2327.8912806699996,
+        "peak_local": 31.0,
+        "peak_local_cap_ff": 181.82719387,
+        "peak_local_4": 80.0,
+        "peak_local_cap_4_ff": 431.84621473,
+        "routed_path_upper_bound_um": 5180.895,
+        "setup_wns_ns": 9.08665,
+        "hold_wns_ns": 0.00270933,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "route": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/3b627d8af4f2c34c3bcf71a0822d2b8a612e01fe06e766beda14a95854bd11d9/route_result.json",
+        "sha256": "0f2075663ecb59433101f2a218da5a826dd2fb44a154536cf69d29120b7b8c8a"
+      },
+      "measurement": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/measurement/s5378/3b627d8af4f2/activity_summary.json",
+        "sha256": "a4ee30df50e38a08d027fe0acba8c6f237207b7e04b4942ebf4e4796af95b120"
+      },
+      "checks": {
+        "FF_transition_crosscheck": "PASS",
+        "topology_verification": "PASS",
+        "functional_verification": "PASS"
+      },
+      "dominated_by": [],
+      "nondominated": true,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "P": {
+          "routed_path_upper_bound_um": 0.15513631697685604,
+          "cap_weighted_ff_transitions": -9.758075607250461,
+          "peak_local_cap_ff": -2.539103167373391,
+          "total_transitions": -8.468574290615171,
+          "peak_transitions": -0.497512437810943,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 1.124809903208912
+        },
+        "J50": {
+          "routed_path_upper_bound_um": -12.36008370026912,
+          "cap_weighted_ff_transitions": -6.165859796340179,
+          "peak_local_cap_ff": 3.2121326057149124,
+          "total_transitions": -3.649131819856022,
+          "peak_transitions": 5.820105820105814,
+          "peak_local": -6.060606060606055,
+          "peak_local_cap_4_ff": 3.240548181201719
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": -0.16793169428914734,
+          "cap_weighted_ff_transitions": -5.8102710292100905,
+          "peak_local_cap_ff": 8.357745221343716,
+          "total_transitions": -4.923370070172128,
+          "peak_transitions": 0.8403361344537785,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 0.3838467102945442
+        }
+      }
+    },
+    {
+      "design": "s5378",
+      "architecture": "95cb7f641fd7",
+      "architecture_sha256": "95cb7f641fd74d4aad83592ee4caede3b1ce51bd265c6e5c52729c639a49bac0",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 1328.21,
+        "activity_ff_transitions": 6245444.70283032,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 121.58997992
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "4486e2790398",
+      "architecture_sha256": "4486e27903986d9be84fce6eeecab4d8ed7310db560bceaa0e0d29774446cfec",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 1332.25,
+        "activity_ff_transitions": 6227461.2856662795,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 121.55675678
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "111777f5fbb4",
+      "architecture_sha256": "111777f5fbb418b539ce47493309bd7993e12322d702cf336fbafdf8e23abd39",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 1327.69,
+        "activity_ff_transitions": 6254729.945528159,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 121.58997992
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "c0208f561892",
+      "architecture_sha256": "c0208f561892807bf5271f105ba7c8bf7ac835da7b6bea6eb6f14847914cd442",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 1340.51,
+        "activity_ff_transitions": 6225335.2502358,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 121.58997992
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "1766c29a018e",
+      "architecture_sha256": "1766c29a018e601d50de9631ffbfd2b0b43af9ecf9c4e36ab456cf537ecb1494",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:2opt",
+      "predicted": {
+        "wire_um": 1455.9899999999998,
+        "activity_ff_transitions": 5875403.0684296,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 92.025,
+        "spatial_peak_4_ff": 121.46767706
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "d3254ce7472b",
+      "architecture_sha256": "d3254ce7472b9d98a3b5f4da17cbc16c161c4d619f7dda6691dcc854b0437492",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 1466.77,
+        "activity_ff_transitions": 5811266.5956793595,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 92.025,
+        "spatial_peak_4_ff": 120.37253618
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "87ad32c7a998",
+      "architecture_sha256": "87ad32c7a9985b41f5e45b1610115ee5ccbf3a1821da5bff19a46c5de632fe34",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:2opt",
+      "predicted": {
+        "wire_um": 1457.3700000000001,
+        "activity_ff_transitions": 5842493.82129222,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 92.025,
+        "spatial_peak_4_ff": 120.37253618
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "c8984ed39ea0",
+      "architecture_sha256": "c8984ed39ea0a40ccdfa0ec2cb6583177bb0ad90210cf9c71240996d9b7e9ca0",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:swap",
+      "predicted": {
+        "wire_um": 1466.3899999999999,
+        "activity_ff_transitions": 5834245.01996664,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 92.025,
+        "spatial_peak_4_ff": 122.39868507000001
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "6a4d486120be",
+      "architecture_sha256": "6a4d486120be1db99ac842bcde4b19e848438fc7b61fef5827624f8a0e1b7567",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 1441.23,
+        "activity_ff_transitions": 5884222.91409366,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 92.025,
+        "spatial_peak_4_ff": 119.87354251000001
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "c9c9a7cfb3ad",
+      "architecture_sha256": "c9c9a7cfb3adb507d3619aa871b319b92e645cd381c70bb5c3eba66d620b5474",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:2opt",
+      "predicted": {
+        "wire_um": 1473.9499999999998,
+        "activity_ff_transitions": 5803075.47131966,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 120.37253618
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "585edc1f5e56",
+      "architecture_sha256": "585edc1f5e56c95c5f21c96c49e659507d837aa901ed3e86393d4a030070796d",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:2opt",
+      "predicted": {
+        "wire_um": 1342.79,
+        "activity_ff_transitions": 6192239.53583818,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 122.21295706
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "81677cfb61c7",
+      "architecture_sha256": "81677cfb61c7ff662518197fb7b0e7ff13430e9ac678ce150a9f8f0044abb6cd",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:2opt",
+      "predicted": {
+        "wire_um": 1357.35,
+        "activity_ff_transitions": 6183598.66331294,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 122.21295706
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "2ffda1d4d1a0",
+      "architecture_sha256": "2ffda1d4d1a0af592f3b6e60692603b1938599cb4f7d3f60f17fca695b87974e",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 1360.49,
+        "activity_ff_transitions": 6159108.21186748,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 129.04737086
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "f94e3f97ddaa",
+      "architecture_sha256": "f94e3f97ddaa750c092993a8f462aea3d0621dafc162be1e8fedf535b531c5e6",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:2opt",
+      "predicted": {
+        "wire_um": 1361.87,
+        "activity_ff_transitions": 6144011.69921338,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 122.21295706
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "74903b4f9786",
+      "architecture_sha256": "74903b4f97864016ee0aa82a8fe9ec26fff8222ea75748f7c2a0bcde3b363afc",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 1374.17,
+        "activity_ff_transitions": 6114785.34297666,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 130.71944542
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "7c490a3b3593",
+      "architecture_sha256": "7c490a3b35937093293adab813c0e3954a79d96c2dc10db8d27651e316cdab15",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:2opt",
+      "predicted": {
+        "wire_um": 1440.0500000000002,
+        "activity_ff_transitions": 5953424.19733792,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 92.025,
+        "spatial_peak_4_ff": 122.61966926000001
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "f871261fb915",
+      "architecture_sha256": "f871261fb9157e46d5d6dc3f634212426c6317e4cbe2878dea3db396c27af44b",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:swap",
+      "predicted": {
+        "wire_um": 1478.8300000000004,
+        "activity_ff_transitions": 5791719.43837362,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 91.14500000000001,
+        "spatial_peak_4_ff": 129.54815808
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "d14c1669e8f0",
+      "architecture_sha256": "d14c1669e8f030707e796ed92451e8534f6ed96cc0952b51e5cfc4777e70d8fb",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 1485.5700000000002,
+        "activity_ff_transitions": 5736381.64234752,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 91.14500000000001,
+        "spatial_peak_4_ff": 129.54815808
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "fedb83b312ae",
+      "architecture_sha256": "fedb83b312ae342226dd3310d8753445d857b258ce58e2cab23db9755dac1b82",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:2opt",
+      "predicted": {
+        "wire_um": 1483.15,
+        "activity_ff_transitions": 5782584.19470994,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 91.14500000000001,
+        "spatial_peak_4_ff": 129.54815808
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "168c25cc6c2e",
+      "architecture_sha256": "168c25cc6c2ef4edfcd00a819d0891214080f91561182ec1c97a18915c63a2d8",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:2opt",
+      "predicted": {
+        "wire_um": 1382.19,
+        "activity_ff_transitions": 6040807.76681778,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 130.71944542
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s5378",
+      "architecture": "df6356676b22",
+      "architecture_sha256": "df6356676b224b9e1483a23c43a3b2b16dac9087ce43027f61e01ebdd5640d1e",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 1384.85,
+        "activity_ff_transitions": 6027763.44576136,
+        "spatial_peak_8_ff": 74.08927798,
+        "timing_max_edge_um": 88.745,
+        "spatial_peak_4_ff": 130.71944542
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "T",
+      "architecture_sha256": "237fb9ad7f2ffd5c2bc0a8c4bc0306e97cc0e3004cb5fb11dd35244619138aef",
+      "new": false,
+      "status": "QUALIFIED",
+      "selected_roles": [],
+      "predicted": {
+        "wire_um": 1723.9450000000002,
+        "activity_ff_transitions": 15939361.483110214,
+        "spatial_peak_8_ff": 142.71312449,
+        "timing_max_edge_um": 104.18,
+        "spatial_peak_4_ff": 325.59844175
+      },
+      "measured": {
+        "total_transitions": 11805835.0,
+        "peak_transitions": 933.0,
+        "cap_weighted_ff_transitions": 39343115.75662466,
+        "peak_cap_ff": 3158.8525268100007,
+        "peak_local": 54.0,
+        "peak_local_cap_ff": 192.03926518999998,
+        "peak_local_4": 127.0,
+        "peak_local_cap_4_ff": 521.5199781900001,
+        "routed_path_upper_bound_um": 10520.985,
+        "setup_wns_ns": 8.74351,
+        "hold_wns_ns": 0.000690018,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "dominated_by": [],
+      "nondominated": true,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "T": {
+          "routed_path_upper_bound_um": 0.0,
+          "cap_weighted_ff_transitions": 0.0,
+          "peak_local_cap_ff": 0.0,
+          "total_transitions": 0.0,
+          "peak_transitions": 0.0,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 0.0
+        },
+        "J50": {
+          "routed_path_upper_bound_um": -8.435104887253864,
+          "cap_weighted_ff_transitions": 7.927829573442935,
+          "peak_local_cap_ff": -2.7122808695262957,
+          "total_transitions": 8.291605870650166,
+          "peak_transitions": 6.506849315068486,
+          "peak_local": 8.000000000000007,
+          "peak_local_cap_4_ff": 9.193502941429955
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": -0.9587369844005766,
+          "cap_weighted_ff_transitions": 1.1871478345193642,
+          "peak_local_cap_ff": 1.962377415496297,
+          "total_transitions": 1.1473002349313033,
+          "peak_transitions": 0.21482277121374072,
+          "peak_local": 8.000000000000007,
+          "peak_local_cap_4_ff": 8.867563080593088
+        }
+      }
+    },
+    {
+      "design": "s9234",
+      "architecture": "J50",
+      "architecture_sha256": "2f6e012e12ba16621b425a458c0d0d7cf410abc6a724a1f139e84e84f12e55a1",
+      "new": false,
+      "status": "QUALIFIED",
+      "selected_roles": [],
+      "predicted": {
+        "wire_um": 3069.885,
+        "activity_ff_transitions": 14336929.243024364,
+        "spatial_peak_8_ff": 151.72918439,
+        "timing_max_edge_um": 110.14,
+        "spatial_peak_4_ff": 289.7907222
+      },
+      "measured": {
+        "total_transitions": 10901893.0,
+        "peak_transitions": 876.0,
+        "cap_weighted_ff_transitions": 36453170.52341202,
+        "peak_cap_ff": 3011.93740464,
+        "peak_local": 50.0,
+        "peak_local_cap_ff": 197.39312105000002,
+        "peak_local_4": 119.0,
+        "peak_local_cap_4_ff": 477.61081396,
+        "routed_path_upper_bound_um": 11490.195,
+        "setup_wns_ns": 8.7492,
+        "hold_wns_ns": 0.000693653,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "dominated_by": [],
+      "nondominated": true,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "T": {
+          "routed_path_upper_bound_um": 9.212160268263837,
+          "cap_weighted_ff_transitions": -7.345491524082015,
+          "peak_local_cap_ff": 2.787896451646499,
+          "total_transitions": -7.656739231066667,
+          "peak_transitions": -6.109324758842439,
+          "peak_local": -7.4074074074074066,
+          "peak_local_cap_4_ff": -8.419459669098838
+        },
+        "J50": {
+          "routed_path_upper_bound_um": 0.0,
+          "cap_weighted_ff_transitions": 0.0,
+          "peak_local_cap_ff": 0.0,
+          "total_transitions": 0.0,
+          "peak_transitions": 0.0,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 0.0
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": 8.165102896309184,
+          "cap_weighted_ff_transitions": -6.245545533125608,
+          "peak_local_cap_ff": 4.804982917477352,
+          "total_transitions": -6.597284783321477,
+          "peak_transitions": -5.907626208378092,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": -0.29849748570817125
+        }
+      }
+    },
+    {
+      "design": "s9234",
+      "architecture": "PACT",
+      "architecture_sha256": "f099374de4cb080ebfdfbf5e577bbf77acc7f3e802c4cb5dc5888c0327764f54",
+      "new": false,
+      "status": "QUALIFIED",
+      "selected_roles": [],
+      "predicted": {
+        "wire_um": 1893.4650000000004,
+        "activity_ff_transitions": 15660554.883010184,
+        "spatial_peak_8_ff": 139.33013278999996,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 312.08472481
+      },
+      "measured": {
+        "total_transitions": 11671923.0,
+        "peak_transitions": 931.0,
+        "cap_weighted_ff_transitions": 38881534.46222842,
+        "peak_cap_ff": 3096.835672540001,
+        "peak_local": 50.0,
+        "peak_local_cap_ff": 188.3432596,
+        "peak_local_4": 126.0,
+        "peak_local_cap_4_ff": 479.04073852000005,
+        "routed_path_upper_bound_um": 10622.83,
+        "setup_wns_ns": 8.74283,
+        "hold_wns_ns": 0.00195519,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "dominated_by": [],
+      "nondominated": true,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "T": {
+          "routed_path_upper_bound_um": 0.96801772837809,
+          "cap_weighted_ff_transitions": -1.1732199789451614,
+          "peak_local_cap_ff": -1.9246093169244416,
+          "total_transitions": -1.1342865625345477,
+          "peak_transitions": -0.2143622722400873,
+          "peak_local": -7.4074074074074066,
+          "peak_local_cap_4_ff": -8.145275626339288
+        },
+        "J50": {
+          "routed_path_upper_bound_um": -7.548740469591686,
+          "cap_weighted_ff_transitions": 6.661598714045414,
+          "peak_local_cap_ff": -4.584689376134676,
+          "total_transitions": 7.063268736906525,
+          "peak_transitions": 6.278538812785395,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 0.29939116079558126
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": 0.0,
+          "cap_weighted_ff_transitions": 0.0,
+          "peak_local_cap_ff": 0.0,
+          "total_transitions": 0.0,
+          "peak_transitions": 0.0,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 0.0
+        }
+      }
+    },
+    {
+      "design": "s9234",
+      "architecture": "1b35c02f4c63",
+      "architecture_sha256": "1b35c02f4c6397a2b1ff54664f691d3ddee390a8e5b892c92f10b7650c69f17a",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:relocate",
+      "predicted": {
+        "wire_um": 1788.905,
+        "activity_ff_transitions": 15491936.25856715,
+        "spatial_peak_8_ff": 138.40836829,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 314.11914021
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "46b4c82707c9",
+      "architecture_sha256": "46b4c82707c978d610f216c8949a654465e32946e733de538e8594778d487c46",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:2opt",
+      "predicted": {
+        "wire_um": 1784.865,
+        "activity_ff_transitions": 15612507.749980409,
+        "spatial_peak_8_ff": 136.76614049,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 314.11914021
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "6a206f3cdfaa",
+      "architecture_sha256": "6a206f3cdfaa25ce6f5e015cb5e439a9cfd382b6abc86f4c4784c5ba5ebb5e1e",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:2opt",
+      "predicted": {
+        "wire_um": 1707.565,
+        "activity_ff_transitions": 15899523.245825611,
+        "spatial_peak_8_ff": 142.71312448999998,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 325.59844175
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "652b3396382d",
+      "architecture_sha256": "652b3396382d78c96eabc698cc690a79f327587d0b6338cc31734e667b6628d4",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:swap",
+      "predicted": {
+        "wire_um": 1799.685,
+        "activity_ff_transitions": 15446872.984102871,
+        "spatial_peak_8_ff": 136.01186306,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 305.98397736000004
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "4cb753c8ca58",
+      "architecture_sha256": "4cb753c8ca5830ef3f082a21da1e3e97e758e376bd3dbe38b28f640604682610",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:cross_chain_swap",
+      "predicted": {
+        "wire_um": 1869.745,
+        "activity_ff_transitions": 15181852.43450993,
+        "spatial_peak_8_ff": 148.33930838999999,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 306.36114538
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "e1b987848826",
+      "architecture_sha256": "e1b9878488261a2658c5abc962ca95d086204a113e9abe7ffd75721f9ada251d",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:cross_chain_swap",
+      "predicted": {
+        "wire_um": 1845.065,
+        "activity_ff_transitions": 15204828.304047972,
+        "spatial_peak_8_ff": 143.53547319,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 301.83567633
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "2ad2dbe3fc43",
+      "architecture_sha256": "2ad2dbe3fc4323a99ffff8d18af49508d74d2fc039dc971bd1cdb7e72a40ad8f",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:relocate",
+      "predicted": {
+        "wire_um": 1823.3249999999998,
+        "activity_ff_transitions": 15288075.18806113,
+        "spatial_peak_8_ff": 141.63804696,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 308.27097393
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "e0d66ecb0c67",
+      "architecture_sha256": "e0d66ecb0c6766214041f922e6df3990ecd3a98a09e41059950f6ff17c0c0f29",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:2opt",
+      "predicted": {
+        "wire_um": 1794.665,
+        "activity_ff_transitions": 15662102.93123871,
+        "spatial_peak_8_ff": 136.12542142,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 306.22998214
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "db0f34619fa4",
+      "architecture_sha256": "db0f34619fa488ceda1db2681b95a439654f2d9e74e23a6f250d1bff9b17b076",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:2opt",
+      "predicted": {
+        "wire_um": 1806.245,
+        "activity_ff_transitions": 15607961.60088005,
+        "spatial_peak_8_ff": 135.50407179,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 306.85036023000004
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "944b156baf32",
+      "architecture_sha256": "944b156baf32f3996518d337a215725ae5a842ef24d32b21e98dbf8d6926708d",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:2opt",
+      "predicted": {
+        "wire_um": 1760.745,
+        "activity_ff_transitions": 15542484.66401979,
+        "spatial_peak_8_ff": 138.40836829,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 327.86774328
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "d6b64c60e012",
+      "architecture_sha256": "d6b64c60e01221fd7e5d3ceedf7197bb87c02808b2262ed87a0fd881636490de",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:relocate",
+      "predicted": {
+        "wire_um": 1770.0449999999998,
+        "activity_ff_transitions": 15535082.72896183,
+        "spatial_peak_8_ff": 139.33013279,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 327.86774328
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "7007f59d40e5",
+      "architecture_sha256": "7007f59d40e5a7914837d50d4e35006a8b03c1e07fc51ba4b953f3bfe1db990f",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:2opt",
+      "predicted": {
+        "wire_um": 1750.7649999999999,
+        "activity_ff_transitions": 15567839.775041891,
+        "spatial_peak_8_ff": 138.40836829,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 327.86774328
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "50a3a0e19a46",
+      "architecture_sha256": "50a3a0e19a4641bee0096f420d33039d93e3813040b3567de7aae8bba3ae8899",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:relocate",
+      "predicted": {
+        "wire_um": 1894.5049999999999,
+        "activity_ff_transitions": 15121460.93743591,
+        "spatial_peak_8_ff": 139.18407802000002,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 327.17040614
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "ad181250cc44",
+      "architecture_sha256": "ad181250cc44898d210f68a6d7222fe7a01a0d8837c9bc9bc634ef9911e4fc84",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:2opt",
+      "predicted": {
+        "wire_um": 1726.125,
+        "activity_ff_transitions": 15767947.13664541,
+        "spatial_peak_8_ff": 137.74037969,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 315.33855693
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "fe1506ee876b",
+      "architecture_sha256": "fe1506ee876bd2745f5253d8a26224381026d43608d02b559741b9c876a89493",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:relocate",
+      "predicted": {
+        "wire_um": 1720.185,
+        "activity_ff_transitions": 15690910.07434225,
+        "spatial_peak_8_ff": 138.56272839000002,
+        "timing_max_edge_um": 87.18,
+        "spatial_peak_4_ff": 328.02314031000003
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "53bb5b018758",
+      "architecture_sha256": "53bb5b0187583971d057dc111c46dc7030affedc25dbfe294a9455251ddc6fe5",
+      "new": true,
+      "status": "QUALIFIED",
+      "selected_roles": [
+        "balanced"
+      ],
+      "provenance": "T:2opt",
+      "predicted": {
+        "wire_um": 1718.525,
+        "activity_ff_transitions": 15757167.42345905,
+        "spatial_peak_8_ff": 139.33013279,
+        "timing_max_edge_um": 87.18,
+        "spatial_peak_4_ff": 328.02314031000003
+      },
+      "measured": {
+        "total_transitions": 11730061.0,
+        "peak_transitions": 916.0,
+        "cap_weighted_ff_transitions": 39092514.56733458,
+        "peak_cap_ff": 3123.9268641549993,
+        "peak_local": 51.0,
+        "peak_local_cap_ff": 190.57280540000002,
+        "peak_local_4": 128.0,
+        "peak_local_cap_4_ff": 501.99701173700004,
+        "routed_path_upper_bound_um": 10564.785,
+        "setup_wns_ns": 8.74453,
+        "hold_wns_ns": 0.000690004,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "route": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s9234/53bb5b0187583971d057dc111c46dc7030affedc25dbfe294a9455251ddc6fe5/route_result.json",
+        "sha256": "b596097ea4f1c706fd5bfe1a4bac0665fdbc47c60034e7dd0ae51504efad815f"
+      },
+      "measurement": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/measurement/s9234/53bb5b018758/activity_summary.json",
+        "sha256": "916e298758c284b27b6be47a2bc2b7c738a32cea28e90a6376b6978c00ce3a43"
+      },
+      "checks": {
+        "FF_transition_crosscheck": "PASS",
+        "topology_verification": "PASS",
+        "functional_verification": "PASS"
+      },
+      "dominated_by": [],
+      "nondominated": true,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "T": {
+          "routed_path_upper_bound_um": 0.4163108302121854,
+          "cap_weighted_ff_transitions": -0.6369632513100743,
+          "peak_local_cap_ff": -0.7636249745847867,
+          "total_transitions": -0.6418351603253769,
+          "peak_transitions": -1.8220793140407254,
+          "peak_local": -5.555555555555558,
+          "peak_local_cap_4_ff": -3.743474319192319
+        },
+        "J50": {
+          "routed_path_upper_bound_um": -8.053910312227075,
+          "cap_weighted_ff_transitions": 7.2403689611235444,
+          "peak_local_cap_ff": -3.455194190010502,
+          "total_transitions": 7.596552268491363,
+          "peak_transitions": 4.566210045662111,
+          "peak_local": 2.0000000000000018,
+          "peak_local_cap_4_ff": 5.1058722005909996
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": -0.546417480087702,
+          "cap_weighted_ff_transitions": 0.5426228877646766,
+          "peak_local_cap_ff": 1.1837672368711694,
+          "total_transitions": 0.4981012983036326,
+          "peak_transitions": -1.6111707841031109,
+          "peak_local": 2.0000000000000018,
+          "peak_local_cap_4_ff": 4.792133814740596
+        }
+      }
+    },
+    {
+      "design": "s9234",
+      "architecture": "a74bade27725",
+      "architecture_sha256": "a74bade27725056c52a3146dce481da77c767b43f2bf116d6252d126abfd97b1",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:relocate",
+      "predicted": {
+        "wire_um": 1896.0849999999998,
+        "activity_ff_transitions": 15102296.90773277,
+        "spatial_peak_8_ff": 139.18407802000002,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 312.27815633000006
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "7fae6c05fbba",
+      "architecture_sha256": "7fae6c05fbba479cc4b41112d0773651a7e89951d24b05e40c8d08383106f6b0",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:2opt",
+      "predicted": {
+        "wire_um": 1736.005,
+        "activity_ff_transitions": 15585772.23464771,
+        "spatial_peak_8_ff": 142.71312448999998,
+        "timing_max_edge_um": 84.13,
+        "spatial_peak_4_ff": 309.86407383
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "797aff0b91f6",
+      "architecture_sha256": "797aff0b91f6ad122de840678b76b5969b4c0db00dbedfa78d2884fc75a5ddc2",
+      "new": true,
+      "status": "QUALIFIED",
+      "selected_roles": [
+        "spatial"
+      ],
+      "provenance": "T:relocate",
+      "predicted": {
+        "wire_um": 1855.8250000000003,
+        "activity_ff_transitions": 15409719.59973849,
+        "spatial_peak_8_ff": 132.75388114,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 305.51239692
+      },
+      "measured": {
+        "total_transitions": 11506315.0,
+        "peak_transitions": 907.0,
+        "cap_weighted_ff_transitions": 38263232.01724315,
+        "peak_cap_ff": 3043.9399035899996,
+        "peak_local": 54.0,
+        "peak_local_cap_ff": 191.18141026,
+        "peak_local_4": 123.0,
+        "peak_local_cap_4_ff": 497.97814373,
+        "routed_path_upper_bound_um": 10629.67,
+        "setup_wns_ns": 8.74802,
+        "hold_wns_ns": 0.000690004,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "route": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s9234/797aff0b91f6ad122de840678b76b5969b4c0db00dbedfa78d2884fc75a5ddc2/route_result.json",
+        "sha256": "49e63c389ecd9868c6bebdde200b3f9865ff3ca8904a62a3603e74f80a96b9c4"
+      },
+      "measurement": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/measurement/s9234/797aff0b91f6/activity_summary.json",
+        "sha256": "5a68c6a4147f913ecccda8f82b23fd715219e2d4ed0e648d15f90c1e40b35f23"
+      },
+      "checks": {
+        "FF_transition_crosscheck": "PASS",
+        "topology_verification": "PASS",
+        "functional_verification": "PASS"
+      },
+      "dominated_by": [],
+      "nondominated": true,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "T": {
+          "routed_path_upper_bound_um": 1.0330306525482058,
+          "cap_weighted_ff_transitions": -2.744784490536145,
+          "peak_local_cap_ff": -0.4467080881356389,
+          "total_transitions": -2.5370505347567573,
+          "peak_transitions": -2.7867095391211127,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": -4.5140810409037275
+        },
+        "J50": {
+          "routed_path_upper_bound_um": -7.489211453765576,
+          "cap_weighted_ff_transitions": 4.965443246338808,
+          "peak_local_cap_ff": -3.1468729796448103,
+          "total_transitions": 5.544193104812156,
+          "peak_transitions": 3.5388127853881235,
+          "peak_local": 8.000000000000007,
+          "peak_local_cap_4_ff": 4.2644197272522
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": 0.06438962122146119,
+          "cap_weighted_ff_transitions": -1.5902213056584014,
+          "peak_local_cap_ff": 1.5069032287258866,
+          "total_transitions": -1.4188578865710455,
+          "peak_transitions": -2.5778732545649885,
+          "peak_local": 8.000000000000007,
+          "peak_local_cap_4_ff": 3.9531930558781347
+        }
+      }
+    },
+    {
+      "design": "s9234",
+      "architecture": "f7fa229022c8",
+      "architecture_sha256": "f7fa229022c813830c597b32c1a8e698bc64ceab1f86c73e6533256c774d8360",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:2opt",
+      "predicted": {
+        "wire_um": 1839.9450000000002,
+        "activity_ff_transitions": 15472795.19632877,
+        "spatial_peak_8_ff": 135.84084099,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 310.22061546000003
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "3517280b4fc4",
+      "architecture_sha256": "3517280b4fc4eff110f20f92e6dd53d066c5a41410108c2af4cbe9967f46e476",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:2opt",
+      "predicted": {
+        "wire_um": 1880.1450000000002,
+        "activity_ff_transitions": 15335849.92512149,
+        "spatial_peak_8_ff": 132.78218439,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 302.85480725
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "328c94d50e44",
+      "architecture_sha256": "328c94d50e443690ad1777c9b9bdb8d742d350d00dc6614348398b83ad782391",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:relocate",
+      "predicted": {
+        "wire_um": 1862.3450000000003,
+        "activity_ff_transitions": 15372944.86952369,
+        "spatial_peak_8_ff": 136.76614049,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 292.45386621000006
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "f33f0448c534",
+      "architecture_sha256": "f33f0448c534dbde2fac029cb5db70bb6322105fc87e3a36886ffb83cb1dcbeb",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:swap",
+      "predicted": {
+        "wire_um": 1874.565,
+        "activity_ff_transitions": 15065296.06705987,
+        "spatial_peak_8_ff": 139.33013279,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 315.8089235300001
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "f4bca5652bda",
+      "architecture_sha256": "f4bca5652bda0b57f3cb7fd7b31c0228c96465ab7e142b4fb284814b8dd3a223",
+      "new": true,
+      "status": "QUALIFIED",
+      "selected_roles": [
+        "activity"
+      ],
+      "provenance": "T:relocate",
+      "predicted": {
+        "wire_um": 1892.4249999999997,
+        "activity_ff_transitions": 14985562.200570632,
+        "spatial_peak_8_ff": 139.33013279,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 331.19175694000006
+      },
+      "measured": {
+        "total_transitions": 11303917.0,
+        "peak_transitions": 891.0,
+        "cap_weighted_ff_transitions": 37512213.183488175,
+        "peak_cap_ff": 2939.5729326,
+        "peak_local": 54.0,
+        "peak_local_cap_ff": 190.50310657,
+        "peak_local_4": 131.0,
+        "peak_local_cap_4_ff": 528.3257391,
+        "routed_path_upper_bound_um": 10631.99,
+        "setup_wns_ns": 8.74266,
+        "hold_wns_ns": 0.000693653,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "route": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s9234/f4bca5652bda0b57f3cb7fd7b31c0228c96465ab7e142b4fb284814b8dd3a223/route_result.json",
+        "sha256": "6aad136b3f48d3d15d627ccc33d996e947635ada5473824a2dfab3d43595b865"
+      },
+      "measurement": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/measurement/s9234/f4bca5652bda/activity_summary.json",
+        "sha256": "8ca1cc3bdcd37eedea60a2e17379e34ebae8c29cc51a87ca1cbc7617e67e52e2"
+      },
+      "checks": {
+        "FF_transition_crosscheck": "PASS",
+        "topology_verification": "PASS",
+        "functional_verification": "PASS"
+      },
+      "dominated_by": [],
+      "nondominated": true,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "T": {
+          "routed_path_upper_bound_um": 1.0550818198105993,
+          "cap_weighted_ff_transitions": -4.653679653798637,
+          "peak_local_cap_ff": -0.7999190261846367,
+          "total_transitions": -4.25144007179501,
+          "peak_transitions": -4.5016077170418,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 1.30498565627728
+        },
+        "J50": {
+          "routed_path_upper_bound_um": -7.469020325590647,
+          "cap_weighted_ff_transitions": 2.905214127797162,
+          "peak_local_cap_ff": -3.4905038449920323,
+          "total_transitions": 3.687653144275038,
+          "peak_transitions": 1.7123287671232834,
+          "peak_local": 8.000000000000007,
+          "peak_local_cap_4_ff": 10.618462492402303
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": 0.08622937578781631,
+          "cap_weighted_ff_transitions": -3.521777876514809,
+          "peak_local_cap_ff": 1.1467609589995487,
+          "total_transitions": -3.152916618795376,
+          "peak_transitions": -4.29645542427497,
+          "peak_local": 8.000000000000007,
+          "peak_local_cap_4_ff": 10.288269163133457
+        }
+      }
+    },
+    {
+      "design": "s9234",
+      "architecture": "94328ea18fd9",
+      "architecture_sha256": "94328ea18fd9de824d579794fa9ef91789fbaba9badc53dd76c8cad8bc5f16d0",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:relocate",
+      "predicted": {
+        "wire_um": 1895.885,
+        "activity_ff_transitions": 15024745.87835623,
+        "spatial_peak_8_ff": 139.23071699000002,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 331.19175694000006
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "8801e11b1229",
+      "architecture_sha256": "8801e11b12298ade5fcc9d8c4e25163dc8297856100d31be687de00d5f6bced7",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:swap",
+      "predicted": {
+        "wire_um": 1884.7450000000003,
+        "activity_ff_transitions": 15300538.633925289,
+        "spatial_peak_8_ff": 132.78218439,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 302.85480725
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "823ab27c607d",
+      "architecture_sha256": "823ab27c607d748a37761ebc7b7cb04c8500eefec3cb04108fe8e682b81a1158",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:swap",
+      "predicted": {
+        "wire_um": 1818.7849999999999,
+        "activity_ff_transitions": 15393037.170321131,
+        "spatial_peak_8_ff": 141.79824429,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 309.29844694
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "1f034430b5b6",
+      "architecture_sha256": "1f034430b5b6082902f1356dd436645db5cf95e4fc71b8cd25c2ec88936e7e25",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:2opt",
+      "predicted": {
+        "wire_um": 1827.9049999999997,
+        "activity_ff_transitions": 15514848.97426711,
+        "spatial_peak_8_ff": 135.50407179,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 305.18924017000006
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "b0f72da8c6b4",
+      "architecture_sha256": "b0f72da8c6b46d126e68f86142ad4a28c72f4194b40bfc1d75a106529b4c32a3",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:relocate",
+      "predicted": {
+        "wire_um": 1851.045,
+        "activity_ff_transitions": 15248636.70276559,
+        "spatial_peak_8_ff": 141.13025569,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 308.99419805
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "1f6f39677607",
+      "architecture_sha256": "1f6f39677607d87cb38b3afe14cb6b188f7b6ba0b1479e4d1ed2c3484c0a86e0",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:2opt",
+      "predicted": {
+        "wire_um": 1858.4450000000002,
+        "activity_ff_transitions": 15191636.31201429,
+        "spatial_peak_8_ff": 142.71312448999998,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 309.91770303000004
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "625679fd8ecb",
+      "architecture_sha256": "625679fd8ecb8eb4b3d9d6100c7eb921f639910d131bb65dec5c3817716a7bcc",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:cross_chain_swap",
+      "predicted": {
+        "wire_um": 1830.7649999999999,
+        "activity_ff_transitions": 15224398.40258043,
+        "spatial_peak_8_ff": 143.53547319,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 307.66927985
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s9234",
+      "architecture": "b48e6696e3e8",
+      "architecture_sha256": "b48e6696e3e8807af876edf30f01e01e42f6e30e31ed440c058fd6f44acf4df0",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:relocate",
+      "predicted": {
+        "wire_um": 1863.3249999999998,
+        "activity_ff_transitions": 15155723.20917201,
+        "spatial_peak_8_ff": 149.16165709,
+        "timing_max_edge_um": 87.755,
+        "spatial_peak_4_ff": 325.34461967
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "P",
+      "architecture_sha256": "f58717aa863acd666346580fa4a3fca3fdea25f88ec768be3b8839f2ea7307a9",
+      "new": false,
+      "status": "QUALIFIED",
+      "selected_roles": [],
+      "predicted": {
+        "wire_um": 3525.4699999999993,
+        "activity_ff_transitions": 64737696.446961634,
+        "spatial_peak_8_ff": 142.34482261999997,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 401.6803897
+      },
+      "measured": {
+        "total_transitions": 51656644.0,
+        "peak_transitions": 1731.0,
+        "cap_weighted_ff_transitions": 161934844.52985352,
+        "peak_cap_ff": 5728.42754599,
+        "peak_local": 90.0,
+        "peak_local_cap_ff": 277.17683905999996,
+        "peak_local_4": 199.0,
+        "peak_local_cap_4_ff": 684.84663008,
+        "routed_path_upper_bound_um": 24095.05,
+        "setup_wns_ns": 8.13298,
+        "hold_wns_ns": 0.000547187,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "dominated_by": [],
+      "nondominated": true,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "P": {
+          "routed_path_upper_bound_um": 0.0,
+          "cap_weighted_ff_transitions": 0.0,
+          "peak_local_cap_ff": 0.0,
+          "total_transitions": 0.0,
+          "peak_transitions": 0.0,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 0.0
+        },
+        "J50": {
+          "routed_path_upper_bound_um": -13.247364572378261,
+          "cap_weighted_ff_transitions": 11.466303517349496,
+          "peak_local_cap_ff": 3.4271230748413872,
+          "total_transitions": 12.586956243612768,
+          "peak_transitions": 11.246786632390737,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 8.891152223060871
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": -0.8057789828074702,
+          "cap_weighted_ff_transitions": 0.9098591823565316,
+          "peak_local_cap_ff": 0.04571370999353341,
+          "total_transitions": 0.9212840209464224,
+          "peak_transitions": 1.1098130841121545,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": -2.8603007679437797
+        }
+      }
+    },
+    {
+      "design": "s15850",
+      "architecture": "J50",
+      "architecture_sha256": "fdf44a74a70de6097e4087b4760fce7fd18c6f454f82cbbbb07121eed956b965",
+      "new": false,
+      "status": "QUALIFIED",
+      "selected_roles": [],
+      "predicted": {
+        "wire_um": 9052.29,
+        "activity_ff_transitions": 54822427.54810204,
+        "spatial_peak_8_ff": 129.02526303,
+        "timing_max_edge_um": 151.78,
+        "spatial_peak_4_ff": 370.85955903999997
+      },
+      "measured": {
+        "total_transitions": 45881553.0,
+        "peak_transitions": 1556.0,
+        "cap_weighted_ff_transitions": 145276948.6561907,
+        "peak_cap_ff": 5295.14153878,
+        "peak_local": 90.0,
+        "peak_local_cap_ff": 267.99240936,
+        "peak_local_4": 198.0,
+        "peak_local_cap_4_ff": 628.92771001,
+        "routed_path_upper_bound_um": 27774.43,
+        "setup_wns_ns": 8.13268,
+        "hold_wns_ns": 0.00136233,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "dominated_by": [],
+      "nondominated": true,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "P": {
+          "routed_path_upper_bound_um": 15.270273354900699,
+          "cap_weighted_ff_transitions": -10.28678906138194,
+          "peak_local_cap_ff": -3.3135631862847736,
+          "total_transitions": -11.179764213873433,
+          "peak_transitions": -10.109763142692085,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": -8.165174159281142
+        },
+        "J50": {
+          "routed_path_upper_bound_um": 0.0,
+          "cap_weighted_ff_transitions": 0.0,
+          "peak_local_cap_ff": 0.0,
+          "total_transitions": 0.0,
+          "peak_transitions": 0.0,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 0.0
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": 14.341449718782195,
+          "cap_weighted_ff_transitions": -9.470525173870037,
+          "peak_local_cap_ff": -3.2693642289566727,
+          "total_transitions": -10.361477574208921,
+          "peak_transitions": -9.112149532710278,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": -10.791926388043061
+        }
+      }
+    },
+    {
+      "design": "s15850",
+      "architecture": "PACT",
+      "architecture_sha256": "4a82d24ea6465f7b68ceec9c84d883e17fd53ed29d3135093927ac7d227848ce",
+      "new": false,
+      "status": "QUALIFIED",
+      "selected_roles": [],
+      "predicted": {
+        "wire_um": 3857.91,
+        "activity_ff_transitions": 63964348.15620409,
+        "spatial_peak_8_ff": 141.65611438999997,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 398.16956483
+      },
+      "measured": {
+        "total_transitions": 51185084.0,
+        "peak_transitions": 1712.0,
+        "cap_weighted_ff_transitions": 160474750.27907562,
+        "peak_cap_ff": 5653.35295314,
+        "peak_local": 90.0,
+        "peak_local_cap_ff": 277.05018914,
+        "peak_local_4": 199.0,
+        "peak_local_cap_4_ff": 705.01209649,
+        "routed_path_upper_bound_um": 24290.78,
+        "setup_wns_ns": 8.13237,
+        "hold_wns_ns": 0.000862782,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "dominated_by": [
+        "f3e118a35e7b"
+      ],
+      "nondominated": false,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "P": {
+          "routed_path_upper_bound_um": 0.8123245230866827,
+          "cap_weighted_ff_transitions": -0.9016553880154654,
+          "peak_local_cap_ff": -0.045692822109344444,
+          "total_transitions": -0.9128738599433639,
+          "peak_transitions": -1.0976314269208531,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 2.9445229813928497
+        },
+        "J50": {
+          "routed_path_upper_bound_um": -12.542651640375702,
+          "cap_weighted_ff_transitions": 10.461261585863646,
+          "peak_local_cap_ff": 3.379864303481983,
+          "total_transitions": 11.55917935035895,
+          "peak_transitions": 10.025706940874034,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 12.097477224972364
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": 0.0,
+          "cap_weighted_ff_transitions": 0.0,
+          "peak_local_cap_ff": 0.0,
+          "total_transitions": 0.0,
+          "peak_transitions": 0.0,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 0.0
+        }
+      }
+    },
+    {
+      "design": "s15850",
+      "architecture": "e14689c97ca5",
+      "architecture_sha256": "e14689c97ca5454cd0c46f98a4328713eca058aece7c6a6229b25f6c0fb2075b",
+      "new": true,
+      "status": "QUALIFIED",
+      "selected_roles": [
+        "balanced"
+      ],
+      "provenance": "P:2opt",
+      "predicted": {
+        "wire_um": 3517.7299999999996,
+        "activity_ff_transitions": 64652545.83775466,
+        "spatial_peak_8_ff": 142.34482262,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 411.56757913999996
+      },
+      "measured": {
+        "total_transitions": 51599492.0,
+        "peak_transitions": 1739.0,
+        "cap_weighted_ff_transitions": 161801741.1514908,
+        "peak_cap_ff": 5737.534158090001,
+        "peak_local": 90.0,
+        "peak_local_cap_ff": 277.68177090999995,
+        "peak_local_4": 197.0,
+        "peak_local_cap_4_ff": 697.0192608899999,
+        "routed_path_upper_bound_um": 24123.785,
+        "setup_wns_ns": 8.13298,
+        "hold_wns_ns": 0.000720257,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "route": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s15850/e14689c97ca5454cd0c46f98a4328713eca058aece7c6a6229b25f6c0fb2075b/route_result.json",
+        "sha256": "dc7506c4004609f9950f37f0a501f90127ebef447d4088bffe73ea12a1921c18"
+      },
+      "measurement": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/measurement/s15850/e14689c97ca5/activity_summary.json",
+        "sha256": "a79d95daf3b58179771c921a0e547ce98cac05f875beb61512a3355f115f173e"
+      },
+      "checks": {
+        "FF_transition_crosscheck": "PASS",
+        "topology_verification": "PASS",
+        "functional_verification": "PASS"
+      },
+      "dominated_by": [],
+      "nondominated": true,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "P": {
+          "routed_path_upper_bound_um": 0.11925685981146739,
+          "cap_weighted_ff_transitions": -0.08219563785000217,
+          "peak_local_cap_ff": 0.1821695678875468,
+          "total_transitions": -0.11063823658385985,
+          "peak_transitions": 0.46216060080879195,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 1.7774243568341896
+        },
+        "J50": {
+          "routed_path_upper_bound_um": -13.143906103563607,
+          "cap_weighted_ff_transitions": 11.37468307818561,
+          "peak_local_cap_ff": 3.6155358180253616,
+          "total_transitions": 12.4623920206014,
+          "peak_transitions": 11.760925449871461,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 10.826610085110921
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": -0.6874830697079282,
+          "cap_weighted_ff_transitions": 0.8269156799480593,
+          "peak_local_cap_ff": 0.2279665543490461,
+          "total_transitions": 0.809626491967852,
+          "peak_transitions": 1.5771028037383283,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": -1.1337160936377488
+        }
+      }
+    },
+    {
+      "design": "s15850",
+      "architecture": "41fcb441f6e7",
+      "architecture_sha256": "41fcb441f6e7edb631b02cb932cd4f8fd0055b970f45bac5ad868c08ae122c6f",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 3531.7299999999996,
+        "activity_ff_transitions": 64623357.25133614,
+        "spatial_peak_8_ff": 137.95239862,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 408.53933884
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "998e080fc474",
+      "architecture_sha256": "998e080fc47400ec0fc958f181985b287a74822744ee05d3c87ad35600737266",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:2opt",
+      "predicted": {
+        "wire_um": 3803.5699999999997,
+        "activity_ff_transitions": 64145764.42970664,
+        "spatial_peak_8_ff": 136.86850742,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 384.48492265000004
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "c46a6e4937f7",
+      "architecture_sha256": "c46a6e4937f76c6e504287d15e118022410799409a09e959330aa766c5cf0ec9",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "PACT:swap",
+      "predicted": {
+        "wire_um": 3875.91,
+        "activity_ff_transitions": 63712213.5614222,
+        "spatial_peak_8_ff": 137.49709482,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 392.15165906000004
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "652e2012f6c9",
+      "architecture_sha256": "652e2012f6c93e7d1996d126d526494430f5d3168f97ca012208ee46ea1b57bf",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:2opt",
+      "predicted": {
+        "wire_um": 3571.0499999999997,
+        "activity_ff_transitions": 64548659.25256398,
+        "spatial_peak_8_ff": 134.28278999,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 393.67941427
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "7c5e5baec787",
+      "architecture_sha256": "7c5e5baec787749b17b7384d2b4cd885c2e82c8c0bd5a1860c31e792cf8b6a42",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:2opt",
+      "predicted": {
+        "wire_um": 3857.1099999999997,
+        "activity_ff_transitions": 64665082.02500966,
+        "spatial_peak_8_ff": 129.35763656,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 397.04817987
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "7220dd72133f",
+      "architecture_sha256": "7220dd72133f00f10a38febad64637369e13bb8a2e5f6090d5ae23e59720a6e3",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:swap",
+      "predicted": {
+        "wire_um": 3735.69,
+        "activity_ff_transitions": 64200453.15224902,
+        "spatial_peak_8_ff": 138.65007685999998,
+        "timing_max_edge_um": 160.51000000000002,
+        "spatial_peak_4_ff": 387.20358658
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "f3e118a35e7b",
+      "architecture_sha256": "f3e118a35e7ba33881c8d2855e6348525823f33056594a27f11b07b55738b70d",
+      "new": true,
+      "status": "QUALIFIED",
+      "selected_roles": [
+        "spatial"
+      ],
+      "provenance": "PACT:relocate",
+      "predicted": {
+        "wire_um": 3876.95,
+        "activity_ff_transitions": 63836165.55294794,
+        "spatial_peak_8_ff": 128.46361339,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 377.07549707
+      },
+      "measured": {
+        "total_transitions": 51115947.0,
+        "peak_transitions": 1723.0,
+        "cap_weighted_ff_transitions": 160381858.4545337,
+        "peak_cap_ff": 5684.020721729999,
+        "peak_local": 90.0,
+        "peak_local_cap_ff": 271.85137775,
+        "peak_local_4": 199.0,
+        "peak_local_cap_4_ff": 687.6799895799998,
+        "routed_path_upper_bound_um": 24265.025,
+        "setup_wns_ns": 8.13244,
+        "hold_wns_ns": 0.000938152,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "route": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s15850/f3e118a35e7ba33881c8d2855e6348525823f33056594a27f11b07b55738b70d/route_result.json",
+        "sha256": "ec34d0ad6865ba9e963f5a90bf2a48e7305dd38678cd7b9e20f3c150e8a763ef"
+      },
+      "measurement": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/measurement/s15850/f3e118a35e7b/activity_summary.json",
+        "sha256": "bfe97ea58fb5f5bb2e8495ee82be1afe8f699b642f5a82c86dd7b67bf5cf79b4"
+      },
+      "checks": {
+        "FF_transition_crosscheck": "PASS",
+        "topology_verification": "PASS",
+        "functional_verification": "PASS"
+      },
+      "dominated_by": [],
+      "nondominated": true,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "P": {
+          "routed_path_upper_bound_um": 0.7054353487542242,
+          "cap_weighted_ff_transitions": -0.959019091801161,
+          "peak_local_cap_ff": -1.9213226213490309,
+          "total_transitions": -1.0467133714687327,
+          "peak_transitions": -0.46216060080878085,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 0.41372175543432643
+        },
+        "J50": {
+          "routed_path_upper_bound_um": -12.635380816095953,
+          "cap_weighted_ff_transitions": 10.3973203856931,
+          "peak_local_cap_ff": 1.4399543625939648,
+          "total_transitions": 11.408493518081219,
+          "peak_transitions": 10.732647814910035,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 9.341658609550784
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": -0.10602788383080597,
+          "cap_weighted_ff_transitions": -0.05788563271192926,
+          "peak_local_cap_ff": -1.8764872192066684,
+          "total_transitions": -0.13507255355876824,
+          "peak_transitions": 0.6425233644859807,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": -2.4584126990572885
+        }
+      }
+    },
+    {
+      "design": "s15850",
+      "architecture": "7236cb2a1877",
+      "architecture_sha256": "7236cb2a1877cb750aeef686dd2d0caa041b5d5b122fc1bd1e8ddc5c6067831c",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "PACT:relocate",
+      "predicted": {
+        "wire_um": 3869.59,
+        "activity_ff_transitions": 63861090.370442554,
+        "spatial_peak_8_ff": 128.46362625999998,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 389.40960334000005
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "79bacabf80b5",
+      "architecture_sha256": "79bacabf80b592c0b2dacad908a858675e6257e38c1aaeb91fc92b8e10b6c412",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "PACT:2opt",
+      "predicted": {
+        "wire_um": 3862.13,
+        "activity_ff_transitions": 63789055.2652847,
+        "spatial_peak_8_ff": 129.66443772,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 389.40960334000005
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "ac2c94b89fff",
+      "architecture_sha256": "ac2c94b89fff22cb80cb08d3cecf819331381a533b6a2ad1db654cf1f2f59ab7",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 3568.49,
+        "activity_ff_transitions": 64586006.09928432,
+        "spatial_peak_8_ff": 132.02484576,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 393.67941427
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "5cf2bbd1bd0c",
+      "architecture_sha256": "5cf2bbd1bd0cc465f833719151576a30a2919f560a68a086d70f8f5e4f02055b",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 3643.83,
+        "activity_ff_transitions": 64485812.91518092,
+        "spatial_peak_8_ff": 133.79861906,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 375.87406916000003
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "2bdafe555cb3",
+      "architecture_sha256": "2bdafe555cb344b7583a9c653363de7f707dbeae9aff8a9135103dc15f21828d",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:2opt",
+      "predicted": {
+        "wire_um": 3819.39,
+        "activity_ff_transitions": 64380298.90821492,
+        "spatial_peak_8_ff": 133.79861906,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 380.90743338
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "8756988cd762",
+      "architecture_sha256": "8756988cd762b99c8d03e7681b608459af52739d1bf8a064fd677f51b36e25bd",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 3548.6499999999996,
+        "activity_ff_transitions": 64751914.48987238,
+        "spatial_peak_8_ff": 132.84652119,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 386.58830099
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "2c5420692ca2",
+      "architecture_sha256": "2c5420692ca2ae5d48484eb1ff3d3bcdd95c917256d7d7342c2a44897cdab824",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:swap",
+      "predicted": {
+        "wire_um": 3534.87,
+        "activity_ff_transitions": 64715931.235126525,
+        "spatial_peak_8_ff": 136.63242062999998,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 392.13340509
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "65ee9724bed0",
+      "architecture_sha256": "65ee9724bed0f64db3a5742d602616dad5a510306ae370fb0a5298f90478b361",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:relocate",
+      "predicted": {
+        "wire_um": 3531.3099999999995,
+        "activity_ff_transitions": 64783206.68687216,
+        "spatial_peak_8_ff": 136.63242062999998,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 392.13340509
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "23dc582fc22a",
+      "architecture_sha256": "23dc582fc22a9beee9f7edc858a36cac6c891e4dab823012f4c47b7abcb573a0",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "PACT:relocate",
+      "predicted": {
+        "wire_um": 3841.4700000000003,
+        "activity_ff_transitions": 64008239.477669284,
+        "spatial_peak_8_ff": 135.77249577999999,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 392.15165906000004
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "1fa047f121ae",
+      "architecture_sha256": "1fa047f121ae3cd0cf7da299c09250901eac1b1552458a1efe2a51b932ef262e",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "PACT:swap",
+      "predicted": {
+        "wire_um": 3850.87,
+        "activity_ff_transitions": 63901410.39165058,
+        "spatial_peak_8_ff": 135.77249577999999,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 392.15165906000004
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "087e82488250",
+      "architecture_sha256": "087e82488250c061f42f79b37dad5a5f45ad7c900c6bbfee52bcc45fbe1919c7",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "PACT:2opt",
+      "predicted": {
+        "wire_um": 3842.17,
+        "activity_ff_transitions": 63943486.81657076,
+        "spatial_peak_8_ff": 133.83321209,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 392.15165906000004
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "e758d147e9e7",
+      "architecture_sha256": "e758d147e9e79a0931b43dc53fea4dc279fb9e67ec85fd2ff19a924df0407db7",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:swap",
+      "predicted": {
+        "wire_um": 3854.5699999999997,
+        "activity_ff_transitions": 64238010.67728376,
+        "spatial_peak_8_ff": 131.55332752,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 385.8709910900001
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "04147de23211",
+      "architecture_sha256": "04147de23211126309f14c295cc20d74ab131d4dc3002ca882352c00e76fc896",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:2opt",
+      "predicted": {
+        "wire_um": 3708.2099999999996,
+        "activity_ff_transitions": 64227380.696884036,
+        "spatial_peak_8_ff": 140.36246556,
+        "timing_max_edge_um": 156.74,
+        "spatial_peak_4_ff": 397.95824968
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "1c278db81f71",
+      "architecture_sha256": "1c278db81f7173803ff689935953c912be1e806b5d3be66d689e9d6b8c8be150",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:relocate",
+      "predicted": {
+        "wire_um": 3703.4699999999993,
+        "activity_ff_transitions": 64243403.2364209,
+        "spatial_peak_8_ff": 134.91534514999998,
+        "timing_max_edge_um": 156.74,
+        "spatial_peak_4_ff": 390.74902621
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "6bda42667dfb",
+      "architecture_sha256": "6bda42667dfb2815ef16bb18e22f3c39dc7487d6f09b4fcbf3e25c23b1821fc5",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:swap",
+      "predicted": {
+        "wire_um": 3684.0499999999997,
+        "activity_ff_transitions": 64284426.77415706,
+        "spatial_peak_8_ff": 143.42246555999998,
+        "timing_max_edge_um": 156.74,
+        "spatial_peak_4_ff": 390.77075698
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "19dc17fb16e3",
+      "architecture_sha256": "19dc17fb16e36d7ac2a5805d5516da4da940578b340a3b79ccc2fff98278949b",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:swap",
+      "predicted": {
+        "wire_um": 3748.4500000000003,
+        "activity_ff_transitions": 64132457.68005214,
+        "spatial_peak_8_ff": 143.42246555999998,
+        "timing_max_edge_um": 156.74,
+        "spatial_peak_4_ff": 394.89824968
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "8c284451e2e8",
+      "architecture_sha256": "8c284451e2e8497acd5f9c3503be2f61ff5d37278368f74c036c807637ca3fc1",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:2opt",
+      "predicted": {
+        "wire_um": 3685.33,
+        "activity_ff_transitions": 64188976.22210014,
+        "spatial_peak_8_ff": 143.42246555999998,
+        "timing_max_edge_um": 156.74,
+        "spatial_peak_4_ff": 394.89824968
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "6465b28212fd",
+      "architecture_sha256": "6465b28212fd4e8a31322e3050357e992e8edbe33656e0f209f0744e098bba4f",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "P:swap",
+      "predicted": {
+        "wire_um": 3826.41,
+        "activity_ff_transitions": 64071689.23484426,
+        "spatial_peak_8_ff": 136.86850742,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 384.48492265000004
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "b44f8ccca41c",
+      "architecture_sha256": "b44f8ccca41c8cbbd2597bd1a7cdcec084bbe4a02a0da2767414ed0a159863f1",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "PACT:relocate",
+      "predicted": {
+        "wire_um": 3868.41,
+        "activity_ff_transitions": 63736019.99891332,
+        "spatial_peak_8_ff": 139.52967722,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 398.16956483
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "1c4fe83a6b04",
+      "architecture_sha256": "1c4fe83a6b043e5140b67ab63462da9469202e928720431b0ac0e92210a3eadf",
+      "new": true,
+      "status": "QUALIFIED",
+      "selected_roles": [
+        "activity"
+      ],
+      "provenance": "PACT:2opt",
+      "predicted": {
+        "wire_um": 3854.3099999999995,
+        "activity_ff_transitions": 63678279.113637,
+        "spatial_peak_8_ff": 141.65611439,
+        "timing_max_edge_um": 169.2,
+        "spatial_peak_4_ff": 398.16956483
+      },
+      "measured": {
+        "total_transitions": 51008643.0,
+        "peak_transitions": 1736.0,
+        "cap_weighted_ff_transitions": 159939844.75678658,
+        "peak_cap_ff": 5727.338612709998,
+        "peak_local": 90.0,
+        "peak_local_cap_ff": 279.74036758,
+        "peak_local_4": 200.0,
+        "peak_local_cap_4_ff": 682.0477441200001,
+        "routed_path_upper_bound_um": 24248.245,
+        "setup_wns_ns": 8.13302,
+        "hold_wns_ns": 0.000862199,
+        "timing_stage": "global_route",
+        "DRC": 0
+      },
+      "route": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s15850/1c4fe83a6b043e5140b67ab63462da9469202e928720431b0ac0e92210a3eadf/route_result.json",
+        "sha256": "8e455ac5850f3f1e15d07ea3bd5c4c99d3cea49cf302657274287d3fcd926387"
+      },
+      "measurement": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/measurement/s15850/1c4fe83a6b04/activity_summary.json",
+        "sha256": "2043be944efb63838d8ff4f33071d2a6e41bb4a08bca34a948bb74f1d30a87a9"
+      },
+      "checks": {
+        "FF_transition_crosscheck": "PASS",
+        "topology_verification": "PASS",
+        "functional_verification": "PASS"
+      },
+      "dominated_by": [],
+      "nondominated": true,
+      "equivalent_to_baseline": false,
+      "delta_percent": {
+        "P": {
+          "routed_path_upper_bound_um": 0.6357944889095357,
+          "cap_weighted_ff_transitions": -1.231976835411197,
+          "peak_local_cap_ff": 0.9248711143015509,
+          "total_transitions": -1.2544388288174502,
+          "peak_transitions": 0.2888503755054783,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": -0.4086879948103084
+        },
+        "J50": {
+          "routed_path_upper_bound_um": -12.695796097345657,
+          "cap_weighted_ff_transitions": 10.093064478726621,
+          "peak_local_cap_ff": 4.383690660513717,
+          "total_transitions": 11.174621748309166,
+          "peak_transitions": 11.568123393316188,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": 8.446127156514605
+        },
+        "PACT": {
+          "routed_path_upper_bound_um": -0.17510759226340156,
+          "cap_weighted_ff_transitions": -0.3333269074161538,
+          "peak_local_cap_ff": 0.9710076171940862,
+          "total_transitions": -0.34471175235347706,
+          "peak_transitions": 1.4018691588784993,
+          "peak_local": 0.0,
+          "peak_local_cap_4_ff": -3.2572990569000315
+        }
+      }
+    },
+    {
+      "design": "s15850",
+      "architecture": "7589145eca30",
+      "architecture_sha256": "7589145eca307462f859194fc03a6693d6ef37d0373a44f2af3ce60faffa1fd1",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:swap",
+      "predicted": {
+        "wire_um": 3642.9699999999993,
+        "activity_ff_transitions": 64291216.1482414,
+        "spatial_peak_8_ff": 143.42246555999998,
+        "timing_max_edge_um": 160.51000000000002,
+        "spatial_peak_4_ff": 394.89824968
+      },
+      "measured": null,
+      "nondominated": null
+    },
+    {
+      "design": "s15850",
+      "architecture": "ec1a72576e73",
+      "architecture_sha256": "ec1a72576e73d6d7158ecf93aa85157f8375f1cb025d933a3798afcfefa41254",
+      "new": true,
+      "status": "PREDICTED_ONLY",
+      "selected_roles": [],
+      "provenance": "T:swap",
+      "predicted": {
+        "wire_um": 3636.0899999999997,
+        "activity_ff_transitions": 64411402.7651131,
+        "spatial_peak_8_ff": 135.84108981999998,
+        "timing_max_edge_um": 160.51000000000002,
+        "spatial_peak_4_ff": 393.97250501
+      },
+      "measured": null,
+      "nondominated": null
+    }
+  ],
+  "new_architectures_evaluated": 50723,
+  "physically_selected": 9,
+  "physically_measured": 9,
+  "new_nondominated": [
+    {
+      "design": "s5378",
+      "architecture": "c4eabc41cb50"
+    },
+    {
+      "design": "s5378",
+      "architecture": "b5c4710dcf54"
+    },
+    {
+      "design": "s5378",
+      "architecture": "3b627d8af4f2"
+    },
+    {
+      "design": "s9234",
+      "architecture": "53bb5b018758"
+    },
+    {
+      "design": "s9234",
+      "architecture": "797aff0b91f6"
+    },
+    {
+      "design": "s9234",
+      "architecture": "f4bca5652bda"
+    },
+    {
+      "design": "s15850",
+      "architecture": "e14689c97ca5"
+    },
+    {
+      "design": "s15850",
+      "architecture": "f3e118a35e7b"
+    },
+    {
+      "design": "s15850",
+      "architecture": "1c4fe83a6b04"
+    }
+  ]
+}

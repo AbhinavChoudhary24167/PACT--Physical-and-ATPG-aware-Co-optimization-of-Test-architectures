@@ -1,0 +1,20 @@
+{
+  "environment": "WSL Ubuntu-24.04, /root/pact-deps/pact-venv/bin/python, PYTHONPATH=.optimizer-deps:src",
+  "focused": {
+    "command": "python -m pytest tests/unit/test_implementation_v2.py -q",
+    "passed": 5,
+    "seconds": 13.95
+  },
+  "repository_suite": {
+    "command": "OPENBLAS_NUM_THREADS=1 python -m pytest -q",
+    "passed": 280,
+    "seconds": 144.38,
+    "exit_code": 0
+  },
+  "adapter_regression_and_focused_recheck": {
+    "command": "OPENBLAS_NUM_THREADS=1 python -m pytest tests/unit/test_implementation_v2.py -q",
+    "passed": 6,
+    "seconds": 6.93,
+    "exit_code": 0
+  }
+}
