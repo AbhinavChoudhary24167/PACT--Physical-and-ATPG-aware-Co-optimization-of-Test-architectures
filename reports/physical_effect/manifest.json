@@ -1,0 +1,643 @@
+{
+  "base_commit": "567d4b9e745a61d8859dd59ea1b38db62c4b7221",
+  "extraction_rules": {
+    "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/rcx_patterns.rules",
+    "sha256": "2f65fafbe2c704b378563c53a680b93cef080c2799997019d43df7d1e5a563e9"
+  },
+  "library": {
+    "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+    "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1"
+  },
+  "rows": [
+    {
+      "K": 2,
+      "PACT_remapped_source": null,
+      "SDC": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.sdc",
+        "sha256": "0108ee0e1b38190c138878c3d49e255a701e197219b8a7106d08badc0f24fb9a"
+      },
+      "architecture": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s5378/s11/k2/P.architecture.json",
+        "sha256": "e4fc28df36dc56d05f9968bb8b07e222de22f33f6ea87fed1e16c260bd0d0f35"
+      },
+      "architecture_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+      "capture": "one functional capture per pattern; excluded from measured shift windows",
+      "chain_lengths": [
+        90,
+        89
+      ],
+      "clock_period_ns": 10,
+      "design": "s5378",
+      "inputs": {
+        "identity_map": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s5378/ff_identity_map.json",
+          "sha256": "8f4f4bcd6850e2d8108660b70141e2784ed9854819df6c6533718d7caed7c9d3"
+        },
+        "patterns": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s5378.pat",
+          "sha256": "2b812b60516c784dfe2a61815e6c89043515332d6563059d2d40184e4909e888"
+        },
+        "placement": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s5378/s11/placed.def",
+          "sha256": "e906065d75f3f3ecab2c723a33259f33d0c14089a73adb3c34d4daf82001c2fb"
+        }
+      },
+      "load_unload": "both; separate zero-filled unload after each capture",
+      "patterns": 117,
+      "physical_seed": 11,
+      "prior_integration": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s5378/integration_v1/manifest.json",
+        "sha256": "8217f5984b9c1f310e4714d0a3e79d32b1addcdf69bad669e8dde996931b1784"
+      },
+      "qualification": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s5378/s11/k2/P/route_metrics.json",
+        "sha256": "b305259e9d8b514587bf2197067ff735c6657dadaedb359e632f19597faa6495"
+      },
+      "role": "P",
+      "routed_archive": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s5378/s11/k2/P/5_2_route.odb.gz",
+        "sha256": "e853ce3ed85a2030dba0966cc9f2e51805db8631af7910b4827725bdb78e713a"
+      },
+      "routed_simulation_netlist": "exported from exact ODB and hash-bound before simulation",
+      "scan_order_sha256": "aef574e40f8ef61785a098fc96d16037892e2ad94bff218ca4e6d1d9396838b7",
+      "selected_PACT_architecture_sha256": "7c9e378ead24878ac991a74f16f6365e2ea867a6309ece4f7362ca7abf935ff9",
+      "shift_cycles": 21060,
+      "source_netlist": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s5378/s11/placed.v",
+        "sha256": "82dae749053a92ab91126f668becf043f79409102644f35e27e2275c293eb017"
+      },
+      "source_placed_database": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+        "sha256": "2792c3863d10e34823ebb7aa404770dc1aeff55456f0fbb15f704bcd9fc57cd0"
+      },
+      "voltage_V": null,
+      "voltage_policy": "No energy or power claimed; report C*N in fF transitions",
+      "workload": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s5378/P/workload.json",
+        "sha256": "52f1b54c4c6ba237113771c340e4f776eb6efcececb86b5116c24107c9d4e3c0"
+      }
+    },
+    {
+      "K": 2,
+      "PACT_remapped_source": null,
+      "SDC": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.sdc",
+        "sha256": "0108ee0e1b38190c138878c3d49e255a701e197219b8a7106d08badc0f24fb9a"
+      },
+      "architecture": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s5378/s11/k2/J50.architecture.json",
+        "sha256": "e5cbf81a58268b3a97dbb0e0d4aed90928e1605d1c70097b1b1ca2f512ecd1cc"
+      },
+      "architecture_sha256": "9c54b48f2ab8c0d7ebd94dd6c5de6ad6f04883f972277372ae90fecb4ce7f9ee",
+      "capture": "one functional capture per pattern; excluded from measured shift windows",
+      "chain_lengths": [
+        90,
+        89
+      ],
+      "clock_period_ns": 10,
+      "design": "s5378",
+      "inputs": {
+        "identity_map": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s5378/ff_identity_map.json",
+          "sha256": "8f4f4bcd6850e2d8108660b70141e2784ed9854819df6c6533718d7caed7c9d3"
+        },
+        "patterns": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s5378.pat",
+          "sha256": "2b812b60516c784dfe2a61815e6c89043515332d6563059d2d40184e4909e888"
+        },
+        "placement": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s5378/s11/placed.def",
+          "sha256": "e906065d75f3f3ecab2c723a33259f33d0c14089a73adb3c34d4daf82001c2fb"
+        }
+      },
+      "load_unload": "both; separate zero-filled unload after each capture",
+      "patterns": 117,
+      "physical_seed": 11,
+      "prior_integration": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s5378/integration_v1/manifest.json",
+        "sha256": "8217f5984b9c1f310e4714d0a3e79d32b1addcdf69bad669e8dde996931b1784"
+      },
+      "qualification": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s5378/s11/k2/J50/route_metrics.json",
+        "sha256": "ab643ae4f8a8ccaf4d9e0ac69e4086dcd3bd351752d3f352236451591761cb8f"
+      },
+      "role": "J50",
+      "routed_archive": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s5378/s11/k2/J50/5_2_route.odb.gz",
+        "sha256": "e336620081b77a6f7387f1346042851eaee58b3e947a7546dbed3d1f941644d4"
+      },
+      "routed_simulation_netlist": "exported from exact ODB and hash-bound before simulation",
+      "scan_order_sha256": "6c21972a3d31ee5ffdd96994ff2ac0824b9910da87b2a0f2172c51a35acc07ff",
+      "selected_PACT_architecture_sha256": "7c9e378ead24878ac991a74f16f6365e2ea867a6309ece4f7362ca7abf935ff9",
+      "shift_cycles": 21060,
+      "source_netlist": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s5378/s11/placed.v",
+        "sha256": "82dae749053a92ab91126f668becf043f79409102644f35e27e2275c293eb017"
+      },
+      "source_placed_database": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+        "sha256": "2792c3863d10e34823ebb7aa404770dc1aeff55456f0fbb15f704bcd9fc57cd0"
+      },
+      "voltage_V": null,
+      "voltage_policy": "No energy or power claimed; report C*N in fF transitions",
+      "workload": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s5378/J50/workload.json",
+        "sha256": "e99537e7ddb289a4a1df12bb78f0abe8a5a2622c865ea2f365e855e68af4f513"
+      }
+    },
+    {
+      "K": 2,
+      "PACT_remapped_source": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s5378/integration_v1/patterns_remapped.json",
+        "sha256": "b2d3727a4d4eda1222fe97303a6e447e9154f915b8f778f3d999b57dbe931736"
+      },
+      "SDC": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.sdc",
+        "sha256": "0108ee0e1b38190c138878c3d49e255a701e197219b8a7106d08badc0f24fb9a"
+      },
+      "architecture": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s5378/integration_v1/scan_topology_after.json",
+        "sha256": "4048f2a34a54b2164b2b3ab52b209f99e723dd8b61f1532dbea110342e77eac9"
+      },
+      "architecture_sha256": "7c9e378ead24878ac991a74f16f6365e2ea867a6309ece4f7362ca7abf935ff9",
+      "capture": "one functional capture per pattern; excluded from measured shift windows",
+      "chain_lengths": [
+        90,
+        89
+      ],
+      "clock_period_ns": 10,
+      "design": "s5378",
+      "inputs": {
+        "identity_map": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s5378/ff_identity_map.json",
+          "sha256": "8f4f4bcd6850e2d8108660b70141e2784ed9854819df6c6533718d7caed7c9d3"
+        },
+        "patterns": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s5378.pat",
+          "sha256": "2b812b60516c784dfe2a61815e6c89043515332d6563059d2d40184e4909e888"
+        },
+        "placement": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s5378/s11/placed.def",
+          "sha256": "e906065d75f3f3ecab2c723a33259f33d0c14089a73adb3c34d4daf82001c2fb"
+        }
+      },
+      "load_unload": "both; separate zero-filled unload after each capture",
+      "patterns": 117,
+      "physical_seed": 11,
+      "prior_integration": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s5378/integration_v1/manifest.json",
+        "sha256": "8217f5984b9c1f310e4714d0a3e79d32b1addcdf69bad669e8dde996931b1784"
+      },
+      "qualification": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/working_solver/routes/s5378/7c9e378ead24878ac991a74f16f6365e2ea867a6309ece4f7362ca7abf935ff9/route_result.json",
+        "sha256": "cc8d443aafe8f7be052f9e4384387ccf611fb24b5f2e9abdf0a85a462876540b"
+      },
+      "role": "PACT",
+      "routed_archive": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/working_solver/routes/s5378/7c9e378ead24878ac991a74f16f6365e2ea867a6309ece4f7362ca7abf935ff9/5_2_route.odb.gz",
+        "sha256": "a5c157981de5b2b58a52e52217341a7549d53ba668356e739f7ea140a724ad5b"
+      },
+      "routed_simulation_netlist": "exported from exact ODB and hash-bound before simulation",
+      "scan_order_sha256": "a25205004704e813f8e3b8dfa51b8b16c02bf61b658ad81fa5d28db420d7c613",
+      "selected_PACT_architecture_sha256": "7c9e378ead24878ac991a74f16f6365e2ea867a6309ece4f7362ca7abf935ff9",
+      "shift_cycles": 21060,
+      "source_netlist": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s5378/s11/placed.v",
+        "sha256": "82dae749053a92ab91126f668becf043f79409102644f35e27e2275c293eb017"
+      },
+      "source_placed_database": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+        "sha256": "2792c3863d10e34823ebb7aa404770dc1aeff55456f0fbb15f704bcd9fc57cd0"
+      },
+      "voltage_V": null,
+      "voltage_policy": "No energy or power claimed; report C*N in fF transitions",
+      "workload": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s5378/PACT/workload.json",
+        "sha256": "b2d3727a4d4eda1222fe97303a6e447e9154f915b8f778f3d999b57dbe931736"
+      }
+    },
+    {
+      "K": 2,
+      "PACT_remapped_source": null,
+      "SDC": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.sdc",
+        "sha256": "0e065d6d5b10c4315e7530e0f1595963ad3e790bb148ea7bb7812efe8bd0a09d"
+      },
+      "architecture": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s9234/s11/k2/T.architecture.json",
+        "sha256": "8fc41a252394424baa983c202a549a15de2b231dfdd3410268e15d10186f6d7c"
+      },
+      "architecture_sha256": "237fb9ad7f2ffd5c2bc0a8c4bc0306e97cc0e3004cb5fb11dd35244619138aef",
+      "capture": "one functional capture per pattern; excluded from measured shift windows",
+      "chain_lengths": [
+        106,
+        105
+      ],
+      "clock_period_ns": 10,
+      "design": "s9234",
+      "inputs": {
+        "identity_map": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s9234/ff_identity_map.json",
+          "sha256": "7c18353782aa24fd5649f1c7e6ba993c651dcedb4f26fdf81ce996816ef536b5"
+        },
+        "patterns": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s9234.pat",
+          "sha256": "977c17142285679fc79aefaf5d4733f1df0a157ace48caf7fe924607edee20e4"
+        },
+        "placement": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s9234/s11/placed.def",
+          "sha256": "5fcb9e0c5ab8d5f3b3038b915e173e52cac369d7fef05ce4c6d4bffa9ebe3c5a"
+        }
+      },
+      "load_unload": "both; separate zero-filled unload after each capture",
+      "patterns": 156,
+      "physical_seed": 11,
+      "prior_integration": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s9234/integration_v1/manifest.json",
+        "sha256": "23025972120dc8db6fddbc776aba46c69117b55d4fb34186817713a01d33d9f1"
+      },
+      "qualification": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s9234/s11/k2/T/route_metrics.json",
+        "sha256": "6efaea0011e9d7a8f64adda85a2caddc4fe8380bfa91f33ac2933efea2978123"
+      },
+      "role": "T",
+      "routed_archive": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s9234/s11/k2/T/5_2_route.odb.gz",
+        "sha256": "88b2e8b3c3c756df769e961bc132e847f05488b3aa4e0af44069ceed754076b8"
+      },
+      "routed_simulation_netlist": "exported from exact ODB and hash-bound before simulation",
+      "scan_order_sha256": "a561ab4f9beb3233e732982c34180545849ac7ff8567fa80d20d04656430dfde",
+      "selected_PACT_architecture_sha256": "f099374de4cb080ebfdfbf5e577bbf77acc7f3e802c4cb5dc5888c0327764f54",
+      "shift_cycles": 33072,
+      "source_netlist": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s9234/s11/placed.v",
+        "sha256": "4a8ec61d08968bde0206530d8869a857ed34c6611bcb7a4db4a08df23a2530e5"
+      },
+      "source_placed_database": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.odb",
+        "sha256": "b8fefeb986f7f9dce87c30247697d89c6b60cd0fdff388c5b7948ca0b3d8f06e"
+      },
+      "voltage_V": null,
+      "voltage_policy": "No energy or power claimed; report C*N in fF transitions",
+      "workload": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/T/workload.json",
+        "sha256": "6c3b53a2f173713e2807089ff0e1a66611b634a007cfbf20828b2869330a0c56"
+      }
+    },
+    {
+      "K": 2,
+      "PACT_remapped_source": null,
+      "SDC": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.sdc",
+        "sha256": "0e065d6d5b10c4315e7530e0f1595963ad3e790bb148ea7bb7812efe8bd0a09d"
+      },
+      "architecture": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s9234/s11/k2/J50.architecture.json",
+        "sha256": "8d790a650d3f93470cd2fa29fe17ea5b4c356e7a618ad9109234dab74a8f74aa"
+      },
+      "architecture_sha256": "2f6e012e12ba16621b425a458c0d0d7cf410abc6a724a1f139e84e84f12e55a1",
+      "capture": "one functional capture per pattern; excluded from measured shift windows",
+      "chain_lengths": [
+        106,
+        105
+      ],
+      "clock_period_ns": 10,
+      "design": "s9234",
+      "inputs": {
+        "identity_map": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s9234/ff_identity_map.json",
+          "sha256": "7c18353782aa24fd5649f1c7e6ba993c651dcedb4f26fdf81ce996816ef536b5"
+        },
+        "patterns": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s9234.pat",
+          "sha256": "977c17142285679fc79aefaf5d4733f1df0a157ace48caf7fe924607edee20e4"
+        },
+        "placement": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s9234/s11/placed.def",
+          "sha256": "5fcb9e0c5ab8d5f3b3038b915e173e52cac369d7fef05ce4c6d4bffa9ebe3c5a"
+        }
+      },
+      "load_unload": "both; separate zero-filled unload after each capture",
+      "patterns": 156,
+      "physical_seed": 11,
+      "prior_integration": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s9234/integration_v1/manifest.json",
+        "sha256": "23025972120dc8db6fddbc776aba46c69117b55d4fb34186817713a01d33d9f1"
+      },
+      "qualification": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s9234/s11/k2/J50/route_metrics.json",
+        "sha256": "f90807f0feece354dc7515161fc7f0ac569e291c5f3480c415440d68f953a1a9"
+      },
+      "role": "J50",
+      "routed_archive": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s9234/s11/k2/J50/5_2_route.odb.gz",
+        "sha256": "37b3aced07bf06a76e34924f04db0e284a77ae2c41b7495cfe0c0063d34b7170"
+      },
+      "routed_simulation_netlist": "exported from exact ODB and hash-bound before simulation",
+      "scan_order_sha256": "6f872e4489df09b2709ede204f642b7839d3455286e19655f4937ab6468796d0",
+      "selected_PACT_architecture_sha256": "f099374de4cb080ebfdfbf5e577bbf77acc7f3e802c4cb5dc5888c0327764f54",
+      "shift_cycles": 33072,
+      "source_netlist": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s9234/s11/placed.v",
+        "sha256": "4a8ec61d08968bde0206530d8869a857ed34c6611bcb7a4db4a08df23a2530e5"
+      },
+      "source_placed_database": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.odb",
+        "sha256": "b8fefeb986f7f9dce87c30247697d89c6b60cd0fdff388c5b7948ca0b3d8f06e"
+      },
+      "voltage_V": null,
+      "voltage_policy": "No energy or power claimed; report C*N in fF transitions",
+      "workload": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/J50/workload.json",
+        "sha256": "c1d19935bf100eb5f851617534d39017338b15dfd9035aa6c75b335fd8e05c35"
+      }
+    },
+    {
+      "K": 2,
+      "PACT_remapped_source": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s9234/integration_v1/patterns_remapped.json",
+        "sha256": "6e803a80b673174302a7aba8524f507ce5d15e88d0586b5dceff27605d06cc40"
+      },
+      "SDC": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.sdc",
+        "sha256": "0e065d6d5b10c4315e7530e0f1595963ad3e790bb148ea7bb7812efe8bd0a09d"
+      },
+      "architecture": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s9234/integration_v1/scan_topology_after.json",
+        "sha256": "d35a605a34612e068f8b4fddbb9d621e6503586dc545843a3666c1752ad61a8b"
+      },
+      "architecture_sha256": "f099374de4cb080ebfdfbf5e577bbf77acc7f3e802c4cb5dc5888c0327764f54",
+      "capture": "one functional capture per pattern; excluded from measured shift windows",
+      "chain_lengths": [
+        106,
+        105
+      ],
+      "clock_period_ns": 10,
+      "design": "s9234",
+      "inputs": {
+        "identity_map": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s9234/ff_identity_map.json",
+          "sha256": "7c18353782aa24fd5649f1c7e6ba993c651dcedb4f26fdf81ce996816ef536b5"
+        },
+        "patterns": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s9234.pat",
+          "sha256": "977c17142285679fc79aefaf5d4733f1df0a157ace48caf7fe924607edee20e4"
+        },
+        "placement": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s9234/s11/placed.def",
+          "sha256": "5fcb9e0c5ab8d5f3b3038b915e173e52cac369d7fef05ce4c6d4bffa9ebe3c5a"
+        }
+      },
+      "load_unload": "both; separate zero-filled unload after each capture",
+      "patterns": 156,
+      "physical_seed": 11,
+      "prior_integration": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s9234/integration_v1/manifest.json",
+        "sha256": "23025972120dc8db6fddbc776aba46c69117b55d4fb34186817713a01d33d9f1"
+      },
+      "qualification": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/working_solver/routes/s9234/f099374de4cb080ebfdfbf5e577bbf77acc7f3e802c4cb5dc5888c0327764f54/route_result.json",
+        "sha256": "122b195b2c7dac55fbac2ee92e94451fe29078c8db8376cfab14e9135550c2ce"
+      },
+      "role": "PACT",
+      "routed_archive": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/working_solver/routes/s9234/f099374de4cb080ebfdfbf5e577bbf77acc7f3e802c4cb5dc5888c0327764f54/5_2_route.odb.gz",
+        "sha256": "c18e4c0e0fdb6416e5caa0ecdd2891138fcd6cfc523048e8e68d876a3469e1c1"
+      },
+      "routed_simulation_netlist": "exported from exact ODB and hash-bound before simulation",
+      "scan_order_sha256": "01f1e4f73435100c51984166c094de598e7cfc623d601df8abdf3d008e7fd2c3",
+      "selected_PACT_architecture_sha256": "f099374de4cb080ebfdfbf5e577bbf77acc7f3e802c4cb5dc5888c0327764f54",
+      "shift_cycles": 33072,
+      "source_netlist": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s9234/s11/placed.v",
+        "sha256": "4a8ec61d08968bde0206530d8869a857ed34c6611bcb7a4db4a08df23a2530e5"
+      },
+      "source_placed_database": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.odb",
+        "sha256": "b8fefeb986f7f9dce87c30247697d89c6b60cd0fdff388c5b7948ca0b3d8f06e"
+      },
+      "voltage_V": null,
+      "voltage_policy": "No energy or power claimed; report C*N in fF transitions",
+      "workload": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/PACT/workload.json",
+        "sha256": "6e803a80b673174302a7aba8524f507ce5d15e88d0586b5dceff27605d06cc40"
+      }
+    },
+    {
+      "K": 2,
+      "PACT_remapped_source": null,
+      "SDC": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s15850/phase0b_s11_B0/3_place.sdc",
+        "sha256": "2c875616f263d20f9c9c0ddc2ed928ca58cb59a44eb18a6076b214afb48dd4c0"
+      },
+      "architecture": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s15850/s11/k2/P.architecture.json",
+        "sha256": "86fb63dbda99d833cc3176e94ce947b91f005cd867886887fc0789165c4932db"
+      },
+      "architecture_sha256": "f58717aa863acd666346580fa4a3fca3fdea25f88ec768be3b8839f2ea7307a9",
+      "capture": "one functional capture per pattern; excluded from measured shift windows",
+      "chain_lengths": [
+        267,
+        267
+      ],
+      "clock_period_ns": 10,
+      "design": "s15850",
+      "inputs": {
+        "identity_map": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s15850/ff_identity_map.json",
+          "sha256": "c8ba4df64448de4036bd5c3f485e1ed8d80b23c5ab176448fef45474939e8fc1"
+        },
+        "patterns": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s15850.pat",
+          "sha256": "477c4d973264739c049869a47782021e58042795b539e664d49a5811e730f9ec"
+        },
+        "placement": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s15850/s11/placed.def",
+          "sha256": "a2a41986c43d596cbdf46a9b278ac1c2b259229748108055d50eb525bca31aad"
+        }
+      },
+      "load_unload": "both; separate zero-filled unload after each capture",
+      "patterns": 133,
+      "physical_seed": 11,
+      "prior_integration": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s15850/integration_v1/manifest.json",
+        "sha256": "b163283e4b7f090efe107a4c4e4948a211a75dc1d8244b24c7d640351b6f1786"
+      },
+      "qualification": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s15850/s11/k2/P/route_metrics.json",
+        "sha256": "1818aebd26841cf75979f82603cf645d4aee9462714d544bc090a179cf94dd16"
+      },
+      "role": "P",
+      "routed_archive": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s15850/s11/k2/P/5_2_route.odb.gz",
+        "sha256": "396606579db51e67ec18b887eb0e315646d0e2867f2a6e52ebb577088458dad0"
+      },
+      "routed_simulation_netlist": "exported from exact ODB and hash-bound before simulation",
+      "scan_order_sha256": "c9be7bcd7794c151efc6151df8ad7037db0ac55cadef7b55ace72683b821eb43",
+      "selected_PACT_architecture_sha256": "4a82d24ea6465f7b68ceec9c84d883e17fd53ed29d3135093927ac7d227848ce",
+      "shift_cycles": 71022,
+      "source_netlist": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s15850/s11/placed.v",
+        "sha256": "3495c6ea96cab83b8572763ff9dc0df64d102aecd091aca9980bfd1dea8046d0"
+      },
+      "source_placed_database": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s15850/phase0b_s11_B0/3_place.odb",
+        "sha256": "de8eb6915b056ae069622878850cb40040290012dd5df149e974f8b45607c9d9"
+      },
+      "voltage_V": null,
+      "voltage_policy": "No energy or power claimed; report C*N in fF transitions",
+      "workload": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s15850/P/workload.json",
+        "sha256": "7092e81b2b799492a44e0b684266595a4f38186a78ec250b12477372ded6c63d"
+      }
+    },
+    {
+      "K": 2,
+      "PACT_remapped_source": null,
+      "SDC": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s15850/phase0b_s11_B0/3_place.sdc",
+        "sha256": "2c875616f263d20f9c9c0ddc2ed928ca58cb59a44eb18a6076b214afb48dd4c0"
+      },
+      "architecture": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s15850/s11/k2/J50.architecture.json",
+        "sha256": "412cce408529d7214826e4f76068561e65cc9c5f121c44ee3b1e460092ef95ed"
+      },
+      "architecture_sha256": "fdf44a74a70de6097e4087b4760fce7fd18c6f454f82cbbbb07121eed956b965",
+      "capture": "one functional capture per pattern; excluded from measured shift windows",
+      "chain_lengths": [
+        267,
+        267
+      ],
+      "clock_period_ns": 10,
+      "design": "s15850",
+      "inputs": {
+        "identity_map": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s15850/ff_identity_map.json",
+          "sha256": "c8ba4df64448de4036bd5c3f485e1ed8d80b23c5ab176448fef45474939e8fc1"
+        },
+        "patterns": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s15850.pat",
+          "sha256": "477c4d973264739c049869a47782021e58042795b539e664d49a5811e730f9ec"
+        },
+        "placement": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s15850/s11/placed.def",
+          "sha256": "a2a41986c43d596cbdf46a9b278ac1c2b259229748108055d50eb525bca31aad"
+        }
+      },
+      "load_unload": "both; separate zero-filled unload after each capture",
+      "patterns": 133,
+      "physical_seed": 11,
+      "prior_integration": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s15850/integration_v1/manifest.json",
+        "sha256": "b163283e4b7f090efe107a4c4e4948a211a75dc1d8244b24c7d640351b6f1786"
+      },
+      "qualification": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s15850/s11/k2/J50/route_metrics.json",
+        "sha256": "218c7c5667397fcf923078225db7d55551adaccd0860e1444605ca4e77084a49"
+      },
+      "role": "J50",
+      "routed_archive": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s15850/s11/k2/J50/5_2_route.odb.gz",
+        "sha256": "cf23cd37a16366cd06f31454ab6a4313d64176398c198eefb95282fad27e924f"
+      },
+      "routed_simulation_netlist": "exported from exact ODB and hash-bound before simulation",
+      "scan_order_sha256": "74c0a33bb7245e9627fae638e2a563830cd4bafc795d84ff653ab8befce49413",
+      "selected_PACT_architecture_sha256": "4a82d24ea6465f7b68ceec9c84d883e17fd53ed29d3135093927ac7d227848ce",
+      "shift_cycles": 71022,
+      "source_netlist": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s15850/s11/placed.v",
+        "sha256": "3495c6ea96cab83b8572763ff9dc0df64d102aecd091aca9980bfd1dea8046d0"
+      },
+      "source_placed_database": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s15850/phase0b_s11_B0/3_place.odb",
+        "sha256": "de8eb6915b056ae069622878850cb40040290012dd5df149e974f8b45607c9d9"
+      },
+      "voltage_V": null,
+      "voltage_policy": "No energy or power claimed; report C*N in fF transitions",
+      "workload": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s15850/J50/workload.json",
+        "sha256": "38888b5cc9eee1d7c3b6ee6765a1092943fb9e9cd3105c0e2d58ecf62b3475b1"
+      }
+    },
+    {
+      "K": 2,
+      "PACT_remapped_source": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s15850/integration_v1/patterns_remapped.json",
+        "sha256": "a62c09e0d2d69c1548b07a5b5fbdea07039fe968d28907217950a3aa20786233"
+      },
+      "SDC": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s15850/phase0b_s11_B0/3_place.sdc",
+        "sha256": "2c875616f263d20f9c9c0ddc2ed928ca58cb59a44eb18a6076b214afb48dd4c0"
+      },
+      "architecture": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s15850/integration_v1/scan_topology_after.json",
+        "sha256": "eede91c14cdc2c8f484b52c1f17020d0ad418ffe063ea49612fade25674f3193"
+      },
+      "architecture_sha256": "4a82d24ea6465f7b68ceec9c84d883e17fd53ed29d3135093927ac7d227848ce",
+      "capture": "one functional capture per pattern; excluded from measured shift windows",
+      "chain_lengths": [
+        267,
+        267
+      ],
+      "clock_period_ns": 10,
+      "design": "s15850",
+      "inputs": {
+        "identity_map": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s15850/ff_identity_map.json",
+          "sha256": "c8ba4df64448de4036bd5c3f485e1ed8d80b23c5ab176448fef45474939e8fc1"
+        },
+        "patterns": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s15850.pat",
+          "sha256": "477c4d973264739c049869a47782021e58042795b539e664d49a5811e730f9ec"
+        },
+        "placement": {
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s15850/s11/placed.def",
+          "sha256": "a2a41986c43d596cbdf46a9b278ac1c2b259229748108055d50eb525bca31aad"
+        }
+      },
+      "load_unload": "both; separate zero-filled unload after each capture",
+      "patterns": 133,
+      "physical_seed": 11,
+      "prior_integration": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s15850/integration_v1/manifest.json",
+        "sha256": "b163283e4b7f090efe107a4c4e4948a211a75dc1d8244b24c7d640351b6f1786"
+      },
+      "qualification": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/working_solver/routes/s15850/4a82d24ea6465f7b68ceec9c84d883e17fd53ed29d3135093927ac7d227848ce/route_result.json",
+        "sha256": "fa8adc46c8ee979992c478cf1a72f233847a311bf5cfa38c113ed739531d5e3a"
+      },
+      "role": "PACT",
+      "routed_archive": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/working_solver/routes/s15850/4a82d24ea6465f7b68ceec9c84d883e17fd53ed29d3135093927ac7d227848ce/5_2_route.odb.gz",
+        "sha256": "6ea4eb84c8afbfe8b03bed01263990ec3f599bb102dc561d3cbd0afd051978fc"
+      },
+      "routed_simulation_netlist": "exported from exact ODB and hash-bound before simulation",
+      "scan_order_sha256": "82eebbcbf121c40c4cc1f1bd0fbc119d53b1e9ef3b04e33b896df051d1558ddf",
+      "selected_PACT_architecture_sha256": "4a82d24ea6465f7b68ceec9c84d883e17fd53ed29d3135093927ac7d227848ce",
+      "shift_cycles": 71022,
+      "source_netlist": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s15850/s11/placed.v",
+        "sha256": "3495c6ea96cab83b8572763ff9dc0df64d102aecd091aca9980bfd1dea8046d0"
+      },
+      "source_placed_database": {
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s15850/phase0b_s11_B0/3_place.odb",
+        "sha256": "de8eb6915b056ae069622878850cb40040290012dd5df149e974f8b45607c9d9"
+      },
+      "voltage_V": null,
+      "voltage_policy": "No energy or power claimed; report C*N in fF transitions",
+      "workload": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s15850/PACT/workload.json",
+        "sha256": "a62c09e0d2d69c1548b07a5b5fbdea07039fe968d28907217950a3aa20786233"
+      }
+    }
+  ],
+  "schema": "pact_physical_effect_v1",
+  "simulation_cells": {
+    "path": "/root/pact-deps/FAN_ATPG/techlib/NangateOpenCellLibrary.v",
+    "sha256": "8cf1d1a5c0ccfebdb67c39f172e3b2bafc199f77815a3c8d972d95531765d5a2"
+  },
+  "tools": {
+    "iverilog": "Icarus Verilog version 12.0 (stable) ()",
+    "openroad": "26Q2-1164-g08f67ee5ec "
+  }
+}

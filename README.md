@@ -1,5 +1,16 @@
 # PACT — Physical- and ATPG-aware Co-optimization of Test Architectures
 
+The physical-effect milestone is **PACT_PHYSICAL_EFFECT_MIXED**. Simulation of
+nine exact routed implementations under the qualified ATPG load/capture/unload
+workloads shows lower PACT total non-clock transition activity and extracted
+capacitance-weighted switching versus each strongest physical start. Unweighted
+spatial peaks improve only on s9234; J50 retains important activity advantages.
+See the [physical-effect report](reports/physical_effect/final_report.md),
+[frozen methodology](reports/physical_effect/methodology.md), and
+[comparison data](reports/physical_effect/comparison.csv). These are zero-delay
+net-switching measurements, not signoff power or IR-drop. The solver and
+historical recommendations remain frozen.
+
 The integration entry point is now `pact-integrate` (or
 `python scripts/pact_integrate.py`). It consumes a saved constrained solver
 recommendation, emits a concrete scan-only OpenROAD patch and serial ATPG

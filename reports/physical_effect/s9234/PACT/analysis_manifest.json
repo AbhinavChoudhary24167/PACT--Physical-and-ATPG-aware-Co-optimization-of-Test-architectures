@@ -1,0 +1,72 @@
+{
+  "SDC": {
+    "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.sdc",
+    "sha256": "0e065d6d5b10c4315e7530e0f1595963ad3e790bb148ea7bb7812efe8bd0a09d"
+  },
+  "analysis_elapsed_upper_bound_seconds": 48.61857604980469,
+  "analysis_timing_method": "Artifact timestamp interval from simulation completion record to final count archive; includes any reanalysis and idle gap, not CPU time",
+  "architecture_role": "PACT",
+  "architecture_sha256": "f099374de4cb080ebfdfbf5e577bbf77acc7f3e802c4cb5dc5888c0327764f54",
+  "design": "s9234",
+  "generation": "python scripts/physical_effect.py run --design s9234",
+  "local_intermediates": {
+    "activity.vcd": {
+      "bytes": 63604661,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/PACT/activity.vcd",
+      "sha256": "c468f0c34423e9ad6de9563a9ec4c78939552c91af10068573218c2efae49140"
+    },
+    "extracted.spef": {
+      "bytes": 2660335,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/PACT/extracted.spef",
+      "sha256": "47d9268a7f120fd101113160900fc0f22c2d7c02e54f447aad2c63d92e9a7487"
+    },
+    "routed.odb": {
+      "bytes": 3664384,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/PACT/routed.odb",
+      "sha256": "c08eca7a07b2407e978dcc7d4f181f135930c26bac72c474b9e53345b507a4d9"
+    },
+    "simulation.vvp": {
+      "bytes": 24274591,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/PACT/simulation.vvp",
+      "sha256": "07204ac01fefaf4c92c806255349e1287ca3acd54ceed772575a5a6d0c88b9b7"
+    },
+    "transitions.npz": {
+      "bytes": 8718904,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/PACT/transitions.npz",
+      "sha256": "4f2112e31d7f3630d5351aeac0cface319ef9763593cf2906e813b540da29666"
+    }
+  },
+  "physical_qualification": {
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/working_solver/routes/s9234/f099374de4cb080ebfdfbf5e577bbf77acc7f3e802c4cb5dc5888c0327764f54/route_result.json",
+    "sha256": "122b195b2c7dac55fbac2ee92e94451fe29078c8db8376cfab14e9135550c2ce"
+  },
+  "provenance": {
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/PACT/simulation_manifest.json",
+    "sha256": "137f4f0c77447af7459435130d0abaa3430800da442fc587665ba8b4218438cd"
+  },
+  "retained_compressed": {
+    "cycles.json": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/PACT/cycles.json.gz",
+      "sha256": "9eb85c67bda9ad7989a0d3afe4db91b92db29dd76e36748a47386af2f3bb0a37"
+    },
+    "per_cycle.csv": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/PACT/per_cycle.csv.gz",
+      "sha256": "9b00f69afcdbb056868104928fd1ce89da634ef68d41867d4afbc2524fe0e950"
+    },
+    "stimulus.v": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/PACT/stimulus.v.gz",
+      "sha256": "0259f1002516eded17965ec7768a417d0954c8f247c368a037ac2d56e7d684e1"
+    }
+  },
+  "routed_archive": {
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/working_solver/routes/s9234/f099374de4cb080ebfdfbf5e577bbf77acc7f3e802c4cb5dc5888c0327764f54/5_2_route.odb.gz",
+    "sha256": "c18e4c0e0fdb6416e5caa0ecdd2891138fcd6cfc523048e8e68d876a3469e1c1"
+  },
+  "schema": "pact_physical_analysis_v1",
+  "stage_seconds": {
+    "compile": 8.127339210000002,
+    "export": 5.869063092999994,
+    "extract": 2.059941039000023,
+    "simulate": 37.569694279000004
+  }
+}
