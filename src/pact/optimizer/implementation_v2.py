@@ -229,12 +229,13 @@ class State:
         return np.array([wire, total, peak, timing, peak4])
 
 
-def optimize(model, starts, config, record=None):
+def optimize(model, starts, config, record=None, *, state_type=State, reference_evaluator=reference,
+             verify_interval=0, profile=None):
     began = time.perf_counter()
     baseline = []
     archive = Archive(config.archive_size)
     for label, orders in starts:
-        s = State(model, orders).score()
+        s = state_type(model, orders).score()
         baseline.append(dict(label=label, score=s, orders=orders))
     ref = baseline[0]['score']
     cap, timing_cap = ref[0]*(1+config.wire_allowance), ref[3]*(1+config.timing_allowance)
@@ -244,7 +245,7 @@ def optimize(model, starts, config, record=None):
         if feasible(row['score']):
             archive.insert(row['score'][:3], row['orders'], row['label'])
     initial_seconds = time.perf_counter()-began
-    state = State(model, starts[0][1])
+    state = state_type(model, starts[0][1])
     current = state.score()
     parent_seed = starts[0][0]
     neighbors = np.asarray(cKDTree(model.xy).query(model.xy, k=min(len(model.names), config.neighbors+1))[1], np.int32)
@@ -263,11 +264,14 @@ def optimize(model, starts, config, record=None):
             else:
                 row = archive.rows[int(rng.integers(len(archive.rows)))]
                 label, orders = row['label'], row['orders']
-            state = State(model, orders)
+            state = state_type(model, orders)
             current = state.score()
             parent_seed = label.split(':')[0]
         parent = order_id(state.orders)
+        tick = time.perf_counter()
         patch, kind = proposal(state, neighbors, rng, attempts, config.segment)
+        if profile is not None:
+            profile['mutation_seconds'] = profile.get('mutation_seconds', 0.)+time.perf_counter()-tick
         attempts += 1
         if patch is None:
             continue
@@ -286,7 +290,10 @@ def optimize(model, starts, config, record=None):
             new_ids.add(oid)
         eligible = feasible(score)
         if eligible:
+            tick = time.perf_counter()
             archive.insert(score[:3], state.orders, parent_seed+':'+kind)
+            if profile is not None:
+                profile['archive_seconds'] = profile.get('archive_seconds', 0.)+time.perf_counter()-tick
         priority = (1, 2, 0)[(evaluations//config.restart_interval) % 3]
         improving = score[priority] < current[priority]-1e-9*max(1., current[priority])
         old_violation = max(current[0]/cap, current[3]/timing_cap)
@@ -304,9 +311,11 @@ def optimize(model, starts, config, record=None):
             update_locations(state, patch)
         else:
             state.change(undo)
+        if verify_interval and evaluations % verify_interval == 0:
+            np.testing.assert_allclose(state.score(), reference_evaluator(model, state.orders), rtol=1e-9, atol=1e-6)
     rows = []
     for row in archive.rows:
-        score = reference(model, row['orders'])
+        score = reference_evaluator(model, row['orders'])
         np.testing.assert_allclose(score[:3], row['score'], rtol=1e-9, atol=1e-6)
         rows.append(dict(row, score=score, new=order_id(row['orders']) not in baseline_ids))
     return dict(archive=rows, baselines=baseline, evaluations=evaluations, new_unique=len(new_ids),

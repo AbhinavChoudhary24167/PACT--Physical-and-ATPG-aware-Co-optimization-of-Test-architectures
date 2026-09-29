@@ -1,0 +1,140 @@
+{
+  "parent_commit": "04d87d6082c11b3448a589320f911c46b1f80430",
+  "command": [
+    "scripts/pact_candidate_sensitive.py",
+    "search",
+    "--design",
+    "s5378",
+    "--seconds",
+    "180",
+    "--max-evaluations",
+    "20000",
+    "--route-limit",
+    "2"
+  ],
+  "config": {
+    "seconds": 180.0,
+    "max_evaluations": 20000,
+    "wire_allowance": 0.1,
+    "timing_allowance": 0.1,
+    "seed": 11,
+    "archive_size": 32,
+    "neighbors": 16,
+    "segment": 8,
+    "restart_interval": 250
+  },
+  "inputs": {
+    "architecture": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s5378/s11/k2/P.architecture.json",
+      "sha256": "e4fc28df36dc56d05f9968bb8b07e222de22f33f6ea87fed1e16c260bd0d0f35"
+    },
+    "caps": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s5378/P/net_activity_capacitance.csv",
+      "sha256": "3263c1b739ba316eeb12c587cf997743352156c1549b3f5170a65ef8eb2d664f"
+    },
+    "mapping": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s5378/P/net_mapping.json",
+      "sha256": "e6c2855a2cd6675ffe30d05d326e28eb7179b1c80e0c3645fe26bffd076e2950"
+    },
+    "manifest": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/manifest.json",
+      "sha256": "eaf7ad0cc21a8a30bac73fc3aa7d3e4acb41f4f275d9b6ef94775822d2897b03"
+    },
+    "baseline_measurements": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/comparison.csv",
+      "sha256": "f66a7985ee0b337305e411c36f158241e238aabb8e6b1ae029157ad9a547ca61"
+    },
+    "identity_map": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s5378/ff_identity_map.json",
+      "sha256": "8f4f4bcd6850e2d8108660b70141e2784ed9854819df6c6533718d7caed7c9d3"
+    },
+    "patterns": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s5378.pat",
+      "sha256": "2b812b60516c784dfe2a61815e6c89043515332d6563059d2d40184e4909e888"
+    },
+    "placement": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s5378/s11/placed.def",
+      "sha256": "e906065d75f3f3ecab2c723a33259f33d0c14089a73adb3c34d4daf82001c2fb"
+    },
+    "seed_P": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s5378/s11/k2/P.architecture.json",
+      "sha256": "e4fc28df36dc56d05f9968bb8b07e222de22f33f6ea87fed1e16c260bd0d0f35"
+    },
+    "seed_J50": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s5378/s11/k2/J50.architecture.json",
+      "sha256": "e5cbf81a58268b3a97dbb0e0d4aed90928e1605d1c70097b1b1ca2f512ecd1cc"
+    },
+    "seed_PACT": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s5378/integration_v1/scan_topology_after.json",
+      "sha256": "4048f2a34a54b2164b2b3ab52b209f99e723dd8b61f1532dbea110342e77eac9"
+    },
+    "seed_T": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s5378/s11/k2/T.architecture.json",
+      "sha256": "cdf1294ca6750b38d2b977ba39a62eb71cd5d7ea1563f25afddca169a7af8ad9"
+    },
+    "previous_search": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s5378/search.json",
+      "sha256": "65da8c3b7b92c1425dedba6ea5bea8a0a694c0f48adae686ae6e03cf2779d4c8"
+    },
+    "previous_summary": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/summary.json",
+      "sha256": "fc7aa5cf8c10723e68a47734584ddae029a020d7c52fb140915f53d81e1710bc"
+    },
+    "seed_v2_c4eabc41cb50": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s5378/architectures/c4eabc41cb50cae503f52eb2deae1101321804849abf1dab0dc8b97e58f90bb5.json",
+      "sha256": "86ea6e6db5ae01a5b9135562736b2863b034f6788d0dbecf3a34a0bcf96ff8c0"
+    },
+    "seed_v2_b5c4710dcf54": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s5378/architectures/b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16.json",
+      "sha256": "25c3f369f6732908f209a9ce88531ddb9cc45df576f80c4c2cbfe8579934e88d"
+    },
+    "seed_v2_3b627d8af4f2": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s5378/architectures/3b627d8af4f2c34c3bcf71a0822d2b8a612e01fe06e766beda14a95854bd11d9.json",
+      "sha256": "7acb55b46e61fdd03867d9efa405c1868404a80af84c2127228a1e059fa5252f"
+    },
+    "topology": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/s5378/topology.json",
+      "sha256": "b0a82e1a32ab94eb3fc03c2ef506b61d05b2b3e9b4458cf3429886bc849d37db"
+    },
+    "physical_caps": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s5378/P/net_activity_capacitance.csv",
+      "sha256": "3263c1b739ba316eeb12c587cf997743352156c1549b3f5170a65ef8eb2d664f"
+    },
+    "physical_liberty": {
+      "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+      "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1"
+    },
+    "physical_mapping": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s5378/P/net_mapping.json",
+      "sha256": "e6c2855a2cd6675ffe30d05d326e28eb7179b1c80e0c3645fe26bffd076e2950"
+    },
+    "physical_odb": {
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s5378/P/routed.odb",
+      "sha256": "e55ee5d310ce3fc03733a3b1a3f02e735f7c3ddcb15e1347be79e6601e5549a4"
+    }
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.5.3",
+    "numba": "0.67.0",
+    "scipy": "1.18.1"
+  },
+  "source_code": {
+    "scripts/pact_candidate_sensitive.py": "c80c9fc6bf1eaca2bfca4e1fd9e117ac0e9d16388a9ea75a83672d7d5723a98d",
+    "scripts/pact_candidate_export.py": "381faa8f5eeca1d0e696f257558abd7d2c7ac4cd93fce9faf4acbd32a7b272df",
+    "src/pact/optimizer/candidate_sensitive.py": "9cf1a8e67f650bc71848813b39d35b9701f8844f0ac503b0b86edc46289cb834",
+    "src/pact/optimizer/candidate_physical.py": "85c6705d290b3d374c5f68fde6fb469725d590151d8ec508dd6037058d2fb4a8",
+    "src/pact/optimizer/implementation_v2.py": "c4aa23d475c460b8cdfff6bf496a77ee2a8c03b0ae82c885acd623e03005b32e",
+    "src/pact/optimizer/search.py": "5031897a140358c2fbff794377c6756202536a02767718c7f454ed9d85029d5f",
+    "scripts/pact_v2.py": "6190c1703d1f9ee856f7f476d263bcf99d67b8978ad35cb07d88e7aef43e5c36",
+    "src/pact/integration/patterns.py": "6c029a6cc7bdcd979709890feec9b155d655972702dc06c7ebdd21d20fb5d5b9"
+  },
+  "FF_count": 179,
+  "chain_lengths": [
+    90,
+    89
+  ],
+  "patterns": 117,
+  "shift_cycles": 21060,
+  "model_setup_seconds": 1.566696945999979
+}

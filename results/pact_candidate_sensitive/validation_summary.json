@@ -1,0 +1,71 @@
+{
+  "tests": {
+    "repository_suite": {
+      "tests": 288,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "seconds": 129.163
+    },
+    "command": "python -m pytest -q --junitxml=results/pact_candidate_sensitive/repository_tests.xml",
+    "focused_preflight": {
+      "passed": 13,
+      "command": "python -m pytest tests/unit/test_candidate_sensitive.py tests/unit/test_implementation_v2.py -q"
+    }
+  },
+  "reproducibility": [
+    {
+      "design": "s5378",
+      "selected_reproduced": 2,
+      "status": "PASS"
+    },
+    {
+      "design": "s9234",
+      "selected_reproduced": 2,
+      "status": "PASS"
+    },
+    {
+      "design": "s15850",
+      "selected_reproduced": 2,
+      "status": "PASS"
+    }
+  ],
+  "physical_checks": [
+    {
+      "design": "s5378",
+      "architecture": "c11dfeee8d44",
+      "status": "PASS"
+    },
+    {
+      "design": "s5378",
+      "architecture": "b72833ffdd2b",
+      "status": "PASS"
+    },
+    {
+      "design": "s9234",
+      "architecture": "4d6ff90b2adc",
+      "status": "PASS"
+    },
+    {
+      "design": "s9234",
+      "architecture": "1359e456272b",
+      "status": "PASS"
+    },
+    {
+      "design": "s15850",
+      "architecture": "630da6943398",
+      "status": "PASS"
+    },
+    {
+      "design": "s15850",
+      "architecture": "a3dd757a7e17",
+      "status": "PASS"
+    }
+  ],
+  "prior_v2_evidence": "UNCHANGED",
+  "seconds": 56.39468487800001,
+  "command": [
+    "scripts/pact_candidate_check.py",
+    "--reuse-replay"
+  ]
+}
