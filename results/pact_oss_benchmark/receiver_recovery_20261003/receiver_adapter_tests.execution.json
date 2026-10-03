@@ -1,0 +1,86 @@
+{
+  "current_distinct_adapter_cases": 25,
+  "final_executed_source_snapshots": {
+    "tests/unit/test_oss_receiver_adapters.py": {
+      "sha256": "85b15c81c03cf3320fe053f666ab3744c2a3dfd4c222f77b9ff1c5bd0c9a943c",
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/test_source_snapshots/tests/unit/test_oss_receiver_adapters.py"
+    },
+    "scripts/pact_oss_receiver_stage_a.py": {
+      "sha256": "7fee2ad6b6ff1aa502e9be12aab385f0a766d0f9414bdcea9f0db5085e2dc662",
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/test_source_snapshots/scripts/pact_oss_receiver_stage_a.py"
+    },
+    "scripts/pact_oss_receiver_scientific.py": {
+      "sha256": "c7643a76347e48b6d17bc455a3d8e13777c8e545a4e579aa6633f596cbd42609",
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/test_source_snapshots/scripts/pact_oss_receiver_scientific.py"
+    },
+    "scripts/pact_oss_receiver_results.py": {
+      "sha256": "b2f4a057dd7c55ef940f1c7ec498760f7cb2d8809ab46304de154ea7c85bb0e3",
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/test_source_snapshots/scripts/pact_oss_receiver_results.py"
+    },
+    "scripts/pact_oss_receiver_measure.py": {
+      "sha256": "afee3273d0663d1f38513add07c272ba083d0dba9f31ef8b00cc70d705e0a8a0",
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/test_source_snapshots/scripts/pact_oss_receiver_measure.py"
+    },
+    "scripts/pact_oss_receiver_audit.py": {
+      "sha256": "b9a810a30a6684930761c76731729cf3f7d1106e24a4d258e5d11057d5cb6d48",
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/test_source_snapshots/scripts/pact_oss_receiver_audit.py"
+    },
+    "scripts/pact_oss_receiver_complete.py": {
+      "sha256": "d87a6890eb41a40baa74074a7f974c23bcc767f3fe30deca9af4ac929be6d5e6",
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/test_source_snapshots/scripts/pact_oss_receiver_complete.py"
+    }
+  },
+  "physical_runs_started_by_adapter_workstream": 0,
+  "current_adapter_executions": 47,
+  "interim_run_source_note": "The initial 22-case receipt is preserved as an interim execution. The final complete 25-case suite ran against the bound final source snapshots.",
+  "status": "PASS",
+  "runs": [
+    {
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "failures": 0,
+      "errors": 0,
+      "tests": 22,
+      "returncode": 0,
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/unit/test_oss_receiver_adapters.py",
+        "--junitxml=",
+        "results/pact_oss_benchmark/receiver_recovery_20261003/receiver_adapter_tests.xml"
+      ],
+      "environment": {
+        "PYTHONPATH": ".optimizer-deps:src"
+      },
+      "xml": {
+        "sha256": "7b1fc527466e99812214a89d947212d980e66362fa41cea019d2d7a220655d69",
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/receiver_adapter_tests.xml"
+      }
+    },
+    {
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "failures": 0,
+      "errors": 0,
+      "tests": 25,
+      "returncode": 0,
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/unit/test_oss_receiver_adapters.py",
+        "--junitxml=",
+        "results/pact_oss_benchmark/receiver_recovery_20261003/receiver_adapter_tests_final.xml"
+      ],
+      "environment": {
+        "PYTHONPATH": ".optimizer-deps:src"
+      },
+      "xml": {
+        "sha256": "089bd019e4488f0e13ed0a9c14191780b6cb9231d89e9f0fbdfa71af747c366d",
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/receiver_adapter_tests_final.xml"
+      }
+    }
+  ],
+  "timestamp": "2026-10-03T14:17:22.0754953Z"
+}

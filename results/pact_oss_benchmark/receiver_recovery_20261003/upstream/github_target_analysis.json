@@ -1,0 +1,108 @@
+{
+  "capture_time_utc": "2026-10-03T13:41:37.355Z",
+  "authenticated_login": "AbhinavChoudhary24167",
+  "github_cli": {
+    "windows": false,
+    "wsl": false
+  },
+  "git_credential_api": {
+    "authenticated_login": "AbhinavChoudhary24167",
+    "api_status": 200,
+    "secrets_stored": false,
+    "secrets_printed": false
+  },
+  "original_prs": [
+    {
+      "number": 10176,
+      "title": "dft: implement scan_opt using the 2-Opt algorithm",
+      "url": "https://github.com/The-OpenROAD-Project/OpenROAD/pull/10176",
+      "state": "open",
+      "merged": false,
+      "draft": false,
+      "base_repository": "The-OpenROAD-Project/OpenROAD",
+      "base_ref": "master",
+      "base_sha": "63fe72c577ef12d2ac2a0a944bbd842f9af8a0a7",
+      "head_repository": "donn/difetto-ord",
+      "head_ref": "scan_opt",
+      "head_sha": "6fff875551fe13a2aae3a22f871a6ca7f8d5c1cf",
+      "head_owner": "donn",
+      "maintainer_can_modify": true,
+      "mergeable": true,
+      "mergeable_state": "blocked",
+      "metadata_source": "https://api.github.com/repos/The-OpenROAD-Project/OpenROAD/pulls/10176"
+    },
+    {
+      "number": 10666,
+      "title": "dft: add scan chain wirelength optimizer (scan_opt)",
+      "url": "https://github.com/The-OpenROAD-Project/OpenROAD/pull/10666",
+      "state": "open",
+      "merged": false,
+      "draft": false,
+      "base_repository": "The-OpenROAD-Project/OpenROAD",
+      "base_ref": "master",
+      "base_sha": "b084e4561bf51f905345ff0f767434095d79d3bc",
+      "head_repository": "mwsoli/OpenROAD",
+      "head_ref": "dft/scan-chain-optimizer",
+      "head_sha": "746c748b19cd2b9d7fb6aa3afe53fe4c31ce3656",
+      "head_owner": "mwsoli",
+      "maintainer_can_modify": true,
+      "mergeable": false,
+      "mergeable_state": "dirty",
+      "metadata_source": "https://api.github.com/repos/The-OpenROAD-Project/OpenROAD/pulls/10666"
+    }
+  ],
+  "current_upstream": {
+    "repository": "The-OpenROAD-Project/OpenROAD",
+    "branch": "master",
+    "sha": "444194f8753d34c1e5716d7593a28a00320b2fbf",
+    "source": "https://api.github.com/repos/The-OpenROAD-Project/OpenROAD/branches/master",
+    "one_bit_scan_cell_blob": "d36dcfb2ba5a34a92310c10a96ef849cfb294b21",
+    "defect_present": false
+  },
+  "b2": {
+    "sha": "6fff875551fe13a2aae3a22f871a6ca7f8d5c1cf",
+    "one_bit_scan_cell_blob": "d36dcfb2ba5a34a92310c10a96ef849cfb294b21",
+    "defect_present": false
+  },
+  "b3": {
+    "sha": "746c748b19cd2b9d7fb6aa3afe53fe4c31ce3656",
+    "one_bit_scan_cell_blob": "63fa519bf5419fbb2815168b82c38ee2921f378c",
+    "defect_present": true,
+    "file": "src/dft/src/cells/OneBitScanCell.cpp",
+    "functions": [
+      "getScanInLocation",
+      "getScanOutLocation"
+    ],
+    "lines": [
+      106,
+      111
+    ]
+  },
+  "proposed_target": {
+    "repository": "mwsoli/OpenROAD",
+    "base_ref": "dft/scan-chain-optimizer",
+    "base_sha": "746c748b19cd2b9d7fb6aa3afe53fe4c31ce3656",
+    "head_owner": "AbhinavChoudhary24167",
+    "head_ref": "fix/dft-dbnetwork-member-receiver",
+    "reason": "The receiver defect exists only in the unmerged PR10666 implementation; it is absent from exact PR10176 and current upstream master.",
+    "parent_network": "The-OpenROAD-Project/OpenROAD",
+    "allow_forking": true,
+    "has_pull_requests": true,
+    "pull_request_creation_policy": "all",
+    "authenticated_user_permissions": {
+      "pull": true,
+      "push": false
+    }
+  },
+  "contribution_rules": {
+    "source": "https://github.com/mwsoli/OpenROAD/blob/746c748b19cd2b9d7fb6aa3afe53fe4c31ce3656/docs/contrib/GettingInvolved.md",
+    "git_blob": "89f10469b72de34a7da763a3e3ec617ec616c71d",
+    "requirements": [
+      "DCO sign-off via git commit -s",
+      "Follow existing file style and clang-format",
+      "Run relevant tool tests; focused existing tests may cover the repair"
+    ],
+    "user_scope": "Two receiver qualifications only; no algorithm or unrelated formatting changes."
+  },
+  "submission_status": "FORK_PENDING_BUILD_AND_DCO_COMMIT"
+}

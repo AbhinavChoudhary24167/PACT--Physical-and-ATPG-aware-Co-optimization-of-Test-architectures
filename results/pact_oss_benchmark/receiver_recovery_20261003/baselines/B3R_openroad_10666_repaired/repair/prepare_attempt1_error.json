@@ -1,0 +1,6 @@
+{
+  "cause": "shutil.copytree dirs_exist_ok does not skip already identical symlinks in a Git checkout",
+  "remedy": "Verify existing link targets and keep identical links while copying regular files with preserved timestamps",
+  "source_patch_or_build_attempted": false,
+  "status": "CHECKOUT_COPY_SYMLINK_COLLISION"
+}

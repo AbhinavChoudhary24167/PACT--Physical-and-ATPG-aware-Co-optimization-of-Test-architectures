@@ -1,0 +1,12 @@
+{
+  "patches": [
+    {
+      "filename": "src/dft/src/cells/OneBitScanCell.cpp",
+      "patch": "@@ -103,12 +103,14 @@ static odb::Point iTermLocation(odb::dbITerm* iterm, odb::dbInst* inst)\n \n odb::Point OneBitScanCell::getScanInLocation() const\n {\n-  return iTermLocation(findITerm(getLibertyScanIn(test_cell_)), inst_);\n+  return iTermLocation(findITerm(db_network_->getLibertyScanIn(test_cell_)),\n+                       inst_);\n }\n \n odb::Point OneBitScanCell::getScanOutLocation() const\n {\n-  return iTermLocation(findITerm(getLibertyScanOut(test_cell_)), inst_);\n+  return iTermLocation(findITerm(db_network_->getLibertyScanOut(test_cell_)),\n+                       inst_);\n }\n \n }  // namespace dft"
+    }
+  ],
+  "url": "https://github.com/mwsoli/OpenROAD/pull/1",
+  "title": "mwsoli/OpenROAD#1 (patch)",
+  "display_url": "https://github.com/mwsoli/OpenROAD/pull/1",
+  "display_title": "mwsoli/OpenROAD#1 (patch)"
+}

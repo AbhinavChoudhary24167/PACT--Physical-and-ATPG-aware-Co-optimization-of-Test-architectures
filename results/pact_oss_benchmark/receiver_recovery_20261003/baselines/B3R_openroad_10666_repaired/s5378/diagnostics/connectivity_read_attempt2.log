@@ -1,0 +1,72 @@
+OpenROAD 0f8a15ca7fe14bc2445ec4db8a4df0832a136cb8 
+Features included (+) or not (-): +GPU -GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+{
+  "FF_count": 179,
+  "traces": [
+    {
+      "chain": 0,
+      "ff_count": 90,
+      "error": "CANNOT_TRACE_FIXED_SI_SO",
+      "terminal_net": {
+        "name": "n2510gat",
+        "ports": [],
+        "iterms": [
+          {
+            "instance": "U_n2510gat",
+            "master": "SDFF_X1",
+            "pin": "Q"
+          },
+          {
+            "instance": "U_n2508gat",
+            "master": "INV_X1",
+            "pin": "A"
+          }
+        ]
+      }
+    },
+    {
+      "chain": 1,
+      "ff_count": 89,
+      "error": "CANNOT_TRACE_FIXED_SI_SO",
+      "terminal_net": {
+        "name": "n707gat",
+        "ports": [],
+        "iterms": [
+          {
+            "instance": "U_n712gat",
+            "master": "NOR3_X1",
+            "pin": "A2"
+          },
+          {
+            "instance": "U_n710gat",
+            "master": "NOR3_X1",
+            "pin": "A2"
+          },
+          {
+            "instance": "U_n707gat",
+            "master": "SDFF_X1",
+            "pin": "Q"
+          },
+          {
+            "instance": "U_n705gat",
+            "master": "INV_X1",
+            "pin": "A"
+          },
+          {
+            "instance": "U_n1443gat",
+            "master": "NOR2_X1",
+            "pin": "A2"
+          },
+          {
+            "instance": "U_n1375gat",
+            "master": "NOR2_X1",
+            "pin": "A2"
+          }
+        ]
+      }
+    }
+  ],
+  "FF_invariants_unchanged": true
+}

@@ -1,0 +1,936 @@
+{
+  "B1_regenerated": false,
+  "B2": "EXACT_PINNED_BUILD_AND_ALL_THREE_QUALIFICATIONS_REUSED_UNCHANGED",
+  "B3": "EXACT_PINNED_COMPILATION_FAILURE_PRESERVED",
+  "B3R": "BUILD_PASS_COMMAND_PASS_ARCHITECTURE_QUALIFICATION_FAILED",
+  "B3R_binary_sha256": "65cd5dec3d12c46035ef67d0b538aa8d932754247bf3a6626094a8f1dc515da0",
+  "B3R_canonical_architectures": 0,
+  "B3R_design_qualification": {
+    "s15850": "NOT_ATTEMPTED_AFTER_STOP",
+    "s5378": "FAILED_SCAN_OUTPUT_TOPOLOGY",
+    "s9234": "NOT_ATTEMPTED_AFTER_STOP"
+  },
+  "B3R_method_display": "B3R \u2014 PR #10666 + minimal compile repair",
+  "B3R_patch_sha256": "e6a97bf45c7b97409efbcd91d3ed2b9445cf478163e68828fd0e10d76f716960",
+  "B3R_repair_commit_sha": "0f8a15ca7fe14bc2445ec4db8a4df0832a136cb8",
+  "B3R_upstream_base_sha": "746c748b19cd2b9d7fb6aa3afe53fe4c31ce3656",
+  "Git_HEAD_before_commit": "3f1d11d2c992095d412c98af7e366956788071a7",
+  "Git_status_before_commit": "M README.md\n?? docs/implementation_status_and_plan.md\n?? results/pact_fault_identity/\n?? results/pact_h8_rootcause/\n?? results/pact_oss_benchmark/protocol/amendment_B3_source_repair.md\n?? results/pact_oss_benchmark/receiver_recovery_20261003/\n?? scripts/pact_h8_export.py\n?? scripts/pact_h8_report.py\n?? scripts/pact_h8_rootcause.py\n?? scripts/pact_oss_receiver_audit.py\n?? scripts/pact_oss_receiver_build.py\n?? scripts/pact_oss_receiver_command_probe.py\n?? scripts/pact_oss_receiver_complete.py\n?? scripts/pact_oss_receiver_connectivity.py\n?? scripts/pact_oss_receiver_generate.py\n?? scripts/pact_oss_receiver_generator.py\n?? scripts/pact_oss_receiver_measure.py\n?? scripts/pact_oss_receiver_results.py\n?? scripts/pact_oss_receiver_reuse_preflight.py\n?? scripts/pact_oss_receiver_scientific.py\n?? scripts/pact_oss_receiver_seal_blocked.py\n?? scripts/pact_oss_receiver_stage_a.py\n?? scripts/pact_oss_receiver_upstream.py\n?? scripts/pact_oss_receiver_upstream_commit_scope_description.py\n?? scripts/pact_oss_receiver_upstream_description.py\n?? scripts/pact_oss_receiver_upstream_submit.py\n?? scripts/pact_oss_receiver_validate.py\n?? src/pact/analysis/h8_rootcause.py\n?? tests/unit/test_h8_rootcause.py\n?? tests/unit/test_oss_receiver_adapters.py\n?? tests/unit/test_oss_receiver_blocked.py\n?? tests/unit/test_oss_receiver_generation.py\n?? tests/unit/test_oss_receiver_reporting.py\n?? tests/unit/test_oss_receiver_reuse_adapter.py\n?? tests/unit/test_oss_receiver_reuse_preflight.py",
+  "OSS_benchmark_complete": false,
+  "P0_commit": "9d9103027918b1d4af2b209e6d36133ad82d4a4e",
+  "P0_model_changed": false,
+  "P0_search_rerun": false,
+  "P0_selection_changed": false,
+  "P1_model_complete": false,
+  "Stage_B": "NOT_STARTED_STAGE_A_STOP_CONDITION",
+  "Stage_B_execution_authorized_by_this_task": false,
+  "Stage_B_scientific_prerequisite_satisfied": false,
+  "Stage_C": "NOT_STARTED_STAGE_A_STOP_CONDITION",
+  "additional_source_patch_applied": false,
+  "blocker": {
+    "bytes": 10908,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/baselines/B3R_openroad_10666_repaired/s5378/diagnostics/independent_diagnosis.json",
+    "sha256": "57fecd984a01795ee56756a9ccb975737739794ab3ce2978fd869837499dd534"
+  },
+  "cache_reuse_preflight": {
+    "cache_exclusions_preserved": true,
+    "eligible_route_candidates": 19,
+    "environment": {
+      "ORFS_commit": "5e8b1450d19263f797a27c4f371b9dd19f32a3aa",
+      "ORFS_path": "/root/pact-deps/OpenROAD-flow-scripts",
+      "ORFS_tracked_diff": "CLEAN",
+      "backend": {
+        "bytes": 89508784,
+        "path": "/usr/bin/openroad",
+        "reported_version": "26Q2-1164-g08f67ee5ec",
+        "sha256": "fcd7dcfc37d329bd43a7ede75805319a2e70e6879da11d42b4fd1c2e50e645c3"
+      },
+      "source": "Actual executable hash/version and actual ORFS Git state"
+    },
+    "excluded_route_candidates": 18,
+    "excluded_routes": [
+      {
+        "architecture_sha256": "e1867cc98b3d1afa4f231daa6c38652ed38be26bf58ed32499449fb51fd1f7ea",
+        "design": "s15850",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s15850/s11/k2/A/route_metrics.json"
+      },
+      {
+        "architecture_sha256": "541edd9b8a402c089751f83af6753d6efd438d9bd803e1309e64bc5fa614d4db",
+        "design": "s15850",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s15850/s11/k2/B0/route_metrics.json"
+      },
+      {
+        "architecture_sha256": "fdf44a74a70de6097e4087b4760fce7fd18c6f454f82cbbbb07121eed956b965",
+        "design": "s15850",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s15850/s11/k2/J50/route_metrics.json"
+      },
+      {
+        "architecture_sha256": "f58717aa863acd666346580fa4a3fca3fdea25f88ec768be3b8839f2ea7307a9",
+        "design": "s15850",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s15850/s11/k2/P/route_metrics.json"
+      },
+      {
+        "architecture_sha256": "152eb1cc435f184f27b42f337100f575f84f5b8a0cfc5ca0db2bc66c540b87d0",
+        "design": "s15850",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s15850/s11/k2/R/route_metrics.json"
+      },
+      {
+        "architecture_sha256": "f0ec44569fab2217d7aa9f8dd4bb03a265c3d352c935343052f3505432cea877",
+        "design": "s15850",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s15850/s11/k2/T/route_metrics.json"
+      },
+      {
+        "architecture_sha256": "16904eaa0db2f733be62aebed6ba183f37c1d672a02d210e964bf96d1bc71f54",
+        "design": "s5378",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s5378/s11/k2/A/route_metrics.json"
+      },
+      {
+        "architecture_sha256": "ae86d9068718134a0016c7dc484716e3e4439c0978f5cfcdef79c037ac566f86",
+        "design": "s5378",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s5378/s11/k2/B0/route_metrics.json"
+      },
+      {
+        "architecture_sha256": "9c54b48f2ab8c0d7ebd94dd6c5de6ad6f04883f972277372ae90fecb4ce7f9ee",
+        "design": "s5378",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s5378/s11/k2/J50/route_metrics.json"
+      },
+      {
+        "architecture_sha256": "bf4923662baa3ce72543bd3ad5092fb514808ffe46ce23173d3c9695ff0c9486",
+        "design": "s5378",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s5378/s11/k2/P/route_metrics.json"
+      },
+      {
+        "architecture_sha256": "b46d8e0d4772b9d6dd9d9ff223c6ab34a3afd470b1a7b3bbdca3b8f25c24803d",
+        "design": "s5378",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s5378/s11/k2/R/route_metrics.json"
+      },
+      {
+        "architecture_sha256": "37deaa7b3eee9623d40fe7ceb4163773bfda2f0953a72fb7b9babd69f088b04f",
+        "design": "s5378",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s5378/s11/k2/T/route_metrics.json"
+      },
+      {
+        "architecture_sha256": "71afe0e235bbdcef058e540b59180401b82f37f48d0b3c1313fe6750cc2e8c35",
+        "design": "s9234",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s9234/s11/k2/A/route_metrics.json"
+      },
+      {
+        "architecture_sha256": "3cbfe6e3d55be494743cb263dedb95c916791638592d28c70d6440c31b05f316",
+        "design": "s9234",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s9234/s11/k2/B0/route_metrics.json"
+      },
+      {
+        "architecture_sha256": "2f6e012e12ba16621b425a458c0d0d7cf410abc6a724a1f139e84e84f12e55a1",
+        "design": "s9234",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s9234/s11/k2/J50/route_metrics.json"
+      },
+      {
+        "architecture_sha256": "169ed6bfc885161ffb6e65df93983a818a4ee75fa347c639b11077f4a5c9be13",
+        "design": "s9234",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s9234/s11/k2/P/route_metrics.json"
+      },
+      {
+        "architecture_sha256": "6e988fb89f55f3425c429b4caec69ce1b97dcaa046e3c756253e51e5e5a8e078",
+        "design": "s9234",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s9234/s11/k2/R/route_metrics.json"
+      },
+      {
+        "architecture_sha256": "237fb9ad7f2ffd5c2bc0a8c4bc0306e97cc0e3004cb5fb11dd35244619138aef",
+        "design": "s9234",
+        "explicit_NUM_CORES_2": false,
+        "observed_threads": [
+          4
+        ],
+        "reasons": [
+          "THREAD_COUNT_NOT_FROZEN_2"
+        ],
+        "report": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0c/physical/s9234/s11/k2/T/route_metrics.json"
+      }
+    ],
+    "historical_binding_checks": 460,
+    "meaning": "Eligibility policy and exact historical bindings verified; exclusions are not qualified reuse",
+    "measurement_reuse": "Only exact routed-archive bytes plus all frozen workload/input/functional/FF checks permit reuse",
+    "missing_or_ineligible_selected_cache": "Fresh routing of the unchanged canonical architecture with GRT_SEED=11, NUM_CORES=2 and the fixed backend",
+    "receipt": {
+      "bytes": 322335,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/reuse_preflight/eligibility.json",
+      "sha256": "1365a3115a647857601ef319f1652f371b54dff33a4e92fac5e80e71fa226f69"
+    },
+    "status": "PASS"
+  },
+  "downstream_physical_outcomes_imported": false,
+  "engineering": "PACT_STAGE_A_INCOMPLETE",
+  "fixed_backend": {
+    "bytes": 89508784,
+    "path": "/usr/bin/openroad",
+    "sha256": "fcd7dcfc37d329bd43a7ede75805319a2e70e6879da11d42b4fd1c2e50e645c3"
+  },
+  "historical_integrity": {
+    "original_canonical_architectures": 24,
+    "original_frozen_bindings": 454,
+    "original_incomplete_seal": {
+      "bytes": 43149,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/stage_a/evidence_manifest.json",
+      "sha256": "360d15681dcc03ffb5333195e4d5ceb18350dbfde0e528b338ef37c45f1f8eb0"
+    },
+    "original_sealed_bindings": 122,
+    "previous_recovery_bindings": 530,
+    "previous_recovery_seal": {
+      "bytes": 159185,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/stage_a/evidence_manifest.json",
+      "sha256": "a1425e40cc7eb1c84120efa31c84bdd4be07b3868ce2802ff86c396bc13f7a59"
+    },
+    "status": "PASS"
+  },
+  "native_DFT_regression_tests": {
+    "binary_at_test_execution": {
+      "bytes": 131438976,
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/receiver_recovery_20261003/validation_binary/openroad",
+      "sha256": "bcf4a6be99366e5e5a6062b625cbadd65c945025b561a05912caee74d8f03ff3"
+    },
+    "executions": {
+      "one_cell_sky130": {
+        "bytes": 2436,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/baselines/B3R_openroad_10666_repaired/test_one_cell_sky130.execution.json",
+        "sha256": "b67c5444a061b85dc26b1681ef93a5729497b71e8ec02391d8f799996920c619"
+      },
+      "place_sort_sky130": {
+        "bytes": 2445,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/baselines/B3R_openroad_10666_repaired/test_place_sort_sky130.execution.json",
+        "sha256": "6a40b5ca3aeec82ea4d1816a96e0331a08df4ef2d74c567f51b61011890b3cc9"
+      },
+      "scan_opt_sky130": {
+        "bytes": 2434,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/baselines/B3R_openroad_10666_repaired/test_scan_opt_sky130.execution.json",
+        "sha256": "0835b6b9c4130509486cf07b6a5552f85397380033868185163b72bd9bc33744"
+      }
+    },
+    "existing_native_tests_passed": 3,
+    "new_upstream_tests": 0,
+    "receipt": {
+      "bytes": 5323,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/baselines/B3R_openroad_10666_repaired/repair/tests.json",
+      "sha256": "6c424bc986f1dab9fc224bcfa019a38c0c2ab6059b24bd20c480601e15d6ccb4"
+    },
+    "scope": "Three native DFT tests passed on the preserved precommit validation binary. The final immutable binary passes its compiled-command probe but fails s5378 architecture qualification; s9234/s15850 are not attempted.",
+    "status": "PASS"
+  },
+  "native_DFT_regression_tests_passed": 3,
+  "new_ATPG_runs": 0,
+  "new_adapter_unit_tests_passed": 82,
+  "new_architecture_generation_attempts": 1,
+  "new_architecture_generations": 0,
+  "new_extractions": 0,
+  "new_placement_runs": 0,
+  "new_rootcause_runs": 0,
+  "new_routes": 0,
+  "new_simulations": 0,
+  "ordered_FF_records": 8252,
+  "original_P0_selection": {
+    "bytes": 2216,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/stage_a/P0_SELECTION.json",
+    "sha256": "71f00473ded389f056454619d774cc249c3fe26c21321e12315ed19c89d6c4cf"
+  },
+  "original_incomplete_seal": {
+    "bytes": 43149,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/stage_a/evidence_manifest.json",
+    "sha256": "360d15681dcc03ffb5333195e4d5ceb18350dbfde0e528b338ef37c45f1f8eb0"
+  },
+  "pre_route_scope": "Original 24-architecture diagnostics preserved; no new scoring or B3R canonical output",
+  "previous_recovery_seal": {
+    "bytes": 159185,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/stage_a/evidence_manifest.json",
+    "sha256": "a1425e40cc7eb1c84120efa31c84bdd4be07b3868ce2802ff86c396bc13f7a59"
+  },
+  "proposed_methods": [
+    "B0",
+    "B1",
+    "exact B2",
+    "B3R \u2014 PR #10666 + minimal compile repair",
+    "frozen P0"
+  ],
+  "qualified_canonical_architectures": 27,
+  "qualified_selected_method_records": 0,
+  "scientific": "PACT_BENCHMARK_INCONCLUSIVE",
+  "selected_method_records": 19,
+  "stage_a": "PACT_STAGE_A_INCOMPLETE",
+  "stop_condition": "B3R_GENERATED_SCAN_OUTPUT_TOPOLOGY_FAILED",
+  "tests": {
+    "current": {
+      "cases": [
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_B3R_is_the_primary_external_comparison_with_honest_label"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_additional_changed_file_is_rejected"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_any_optimizer_source_change_is_rejected"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_authorized_repair_and_unchanged_optimizer_pass"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_balanced_representative_cannot_change_after_implementation"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_changed_Icarus_version_is_not_hidden_by_copied_manifest"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_changed_patch_bytes_are_rejected"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_extended_method_set_reuses_all_frozen_P0_roles"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_extra_source_cleanup_is_rejected"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_failed_P0_remains_unassessed_against_B3R"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_failed_new_test_prevents_sealing"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_frozen_selected_role_cannot_be_reassigned"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_manifest_cannot_claim_a_different_repaired_source_hash"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_missing_diagnosed_call_cannot_be_repaired_blindly[getLibertyScanIn]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_missing_diagnosed_call_cannot_be_repaired_blindly[getLibertyScanOut]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_new_measurements_record_actual_tool_paths_hashes_and_versions"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_only_the_two_repaired_statements_may_use_clang_format_wrapping"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_other_formatting_is_not_authorized_by_targeted_statement_wrapping"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_receiver_correction_only_qualifies_the_two_calls"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_receiver_result_join_preserves_route_failure_and_method_label"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_repair_identity_must_differ_from_exact_base"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_repeat_suite_counts_executions_without_inflating_distinct_cases"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_repeated_cases_cannot_inflate_new_distinct_count"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_skipped_cases_are_not_reported_as_passed"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_unit_accounting_separates_distinct_cases_from_executions"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_unrepaired_B3_label_does_not_satisfy_amended_method_gate"
+        ],
+        [
+          "tests.unit.test_oss_receiver_adapters",
+          "test_wrong_upstream_parent_is_rejected"
+        ],
+        [
+          "tests.unit.test_oss_receiver_blocked",
+          "test_changed_qualification_cannot_use_stopped_seal[binary_sha256]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_blocked",
+          "test_changed_qualification_cannot_use_stopped_seal[completed_designs]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_blocked",
+          "test_changed_qualification_cannot_use_stopped_seal[failed_design]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_blocked",
+          "test_changed_qualification_cannot_use_stopped_seal[status]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_blocked",
+          "test_distinct_diagnosis_cannot_use_this_seal[FF_functional_placement_unchanged-False]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_blocked",
+          "test_distinct_diagnosis_cannot_use_this_seal[additional_source_patch_applied-True]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_blocked",
+          "test_distinct_diagnosis_cannot_use_this_seal[fixed_SO_terminates_generated_chains-True]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_blocked",
+          "test_distinct_diagnosis_cannot_use_this_seal[topology_qualification-PASS]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_blocked",
+          "test_extra_generation_is_not_silently_ignored"
+        ],
+        [
+          "tests.unit.test_oss_receiver_blocked",
+          "test_invalid_saved_observation_is_rejected[database]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_blocked",
+          "test_invalid_saved_observation_is_rejected[duplicate]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_blocked",
+          "test_invalid_saved_observation_is_rejected[endpoint]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_blocked",
+          "test_invalid_saved_observation_is_rejected[mutation]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_blocked",
+          "test_observed_failure_remains_incomplete"
+        ],
+        [
+          "tests.unit.test_oss_receiver_blocked",
+          "test_physical_execution_cannot_be_hidden"
+        ],
+        [
+          "tests.unit.test_oss_receiver_blocked",
+          "test_saved_database_identity_and_complete_inventory"
+        ],
+        [
+          "tests.unit.test_oss_receiver_generation",
+          "test_actual_runtime_identity_cannot_disagree_with_build[binary_sha256-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_generation",
+          "test_actual_runtime_identity_cannot_disagree_with_build[method-B3]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_generation",
+          "test_actual_runtime_identity_cannot_disagree_with_build[repair_patch_sha256-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_generation",
+          "test_actual_runtime_identity_cannot_disagree_with_build[source_commit-dddddddddddddddddddddddddddddddddddddddd]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_generation",
+          "test_actual_runtime_identity_cannot_disagree_with_build[status-FAILED]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_generation",
+          "test_actual_runtime_identity_cannot_disagree_with_build[upstream_base_sha-0000000000000000000000000000000000000000]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_generation",
+          "test_exact_original_B3_is_not_presented_as_repaired"
+        ],
+        [
+          "tests.unit.test_oss_receiver_generation",
+          "test_final_build_and_runtime_proofs_agree"
+        ],
+        [
+          "tests.unit.test_oss_receiver_generation",
+          "test_source_patch_must_match_repair_patch"
+        ],
+        [
+          "tests.unit.test_oss_receiver_generation",
+          "test_uncommitted_validation_version_cannot_generate"
+        ],
+        [
+          "tests.unit.test_oss_receiver_generation",
+          "test_unfinished_build_cannot_start_architecture_generation[COMPILATION_FAILED]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_generation",
+          "test_unfinished_build_cannot_start_architecture_generation[CONFIGURED]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_generation",
+          "test_unfinished_build_cannot_start_architecture_generation[PROVISIONAL]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reporting",
+          "test_all_table_method_fields_show_the_full_repaired_label"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reporting",
+          "test_exact_B2_build_runtime_remains_historical_reuse"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reporting",
+          "test_full_validation_compile_and_incremental_final_build_are_separate"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reporting",
+          "test_missing_upstream_receipt_cannot_claim_an_opened_PR"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reporting",
+          "test_native_count_requires_all_three_expected_tests"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reporting",
+          "test_native_failure_cannot_be_reported_as_three_passes"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reporting",
+          "test_native_regressions_have_separate_count_and_precommit_binary_scope"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reporting",
+          "test_native_test_execution_receipt_is_hash_verified"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reporting",
+          "test_reuse_report_derives_actual_counts_and_preserves_exclusion_policy"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reporting",
+          "test_reuse_report_rejects_receipt_counts_inconsistent_with_candidates"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reporting",
+          "test_upstream_submission_fields_and_receipt_are_reported_without_waiting"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reuse_adapter",
+          "test_changed_sealed_route_evidence_hard_fails_instead_of_being_skipped"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reuse_adapter",
+          "test_eligible_route_cache_is_reused_after_the_seal_guard"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reuse_adapter",
+          "test_ineligible_threading_cache_is_skipped_for_fresh_common_routing"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reuse_preflight",
+          "test_absent_num_cores_cannot_be_inferred_from_log_only"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reuse_preflight",
+          "test_changed_ineligible_cache_still_hard_fails_integrity"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reuse_preflight",
+          "test_changed_measurement_summary_cannot_be_rebound_as_historical"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reuse_preflight",
+          "test_different_historical_backend_version_prevents_reuse"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reuse_preflight",
+          "test_historical_four_thread_route_is_excluded_without_grandfathering"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reuse_preflight",
+          "test_inconsistent_logged_thread_count_prevents_reuse"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reuse_preflight",
+          "test_missing_seed_or_fixed_backend_prevents_reuse[GRT_SEED=11]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reuse_preflight",
+          "test_missing_seed_or_fixed_backend_prevents_reuse[OPENROAD_EXE=/usr/bin/openroad]"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reuse_preflight",
+          "test_recorded_frozen_route_can_be_reused"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reuse_preflight",
+          "test_recorded_ineligible_cache_is_skipped_without_changing_it"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reuse_preflight",
+          "test_sealed_parent_hash_disagreement_is_a_hard_failure"
+        ],
+        [
+          "tests.unit.test_oss_receiver_reuse_preflight",
+          "test_uncatalogued_cache_cannot_be_reused"
+        ]
+      ],
+      "errors": 0,
+      "executions": 156,
+      "failures": 0,
+      "receipts": {
+        "receiver_adapter_tests.xml": {
+          "XML": {
+            "bytes": 3218,
+            "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/receiver_adapter_tests.xml",
+            "sha256": "7b1fc527466e99812214a89d947212d980e66362fa41cea019d2d7a220655d69"
+          },
+          "errors": 0,
+          "failures": 0,
+          "skipped": 0,
+          "tests": 22
+        },
+        "receiver_adapter_tests_blocked_attempt2.xml": {
+          "XML": {
+            "bytes": 4126,
+            "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/receiver_adapter_tests_blocked_attempt2.xml",
+            "sha256": "e428627103503c0d456306074475102c0eecb4a1396cd98b9c8ef0537a2b17fa"
+          },
+          "errors": 0,
+          "failures": 0,
+          "skipped": 0,
+          "tests": 27
+        },
+        "receiver_adapter_tests_final.xml": {
+          "XML": {
+            "bytes": 3661,
+            "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/receiver_adapter_tests_final.xml",
+            "sha256": "089bd019e4488f0e13ed0a9c14191780b6cb9231d89e9f0fbdfa71af747c366d"
+          },
+          "errors": 0,
+          "failures": 0,
+          "skipped": 0,
+          "tests": 25
+        },
+        "receiver_adapter_tests_format_reporting.xml": {
+          "XML": {
+            "bytes": 4956,
+            "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/receiver_adapter_tests_format_reporting.xml",
+            "sha256": "2379fc72de91f9933cf0b7bbb8d89dcaae7bf517450a824092929d5172d81cc2"
+          },
+          "errors": 0,
+          "failures": 0,
+          "skipped": 0,
+          "tests": 34
+        },
+        "receiver_adapter_tests_generation.xml": {
+          "XML": {
+            "bytes": 2397,
+            "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/receiver_adapter_tests_generation.xml",
+            "sha256": "3c907099f5eadfb9b4808b4eb68e75053b0eb56c956fb986f41e17401cee9fc7"
+          },
+          "errors": 0,
+          "failures": 0,
+          "skipped": 0,
+          "tests": 13
+        },
+        "receiver_adapter_tests_labels_reuse.xml": {
+          "XML": {
+            "bytes": 1993,
+            "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/receiver_adapter_tests_labels_reuse.xml",
+            "sha256": "823a70b6416d01adc088a12fafa3e032ef3ccfbf3c977638a5d4d8e9d551b6b1"
+          },
+          "errors": 0,
+          "failures": 0,
+          "skipped": 0,
+          "tests": 12
+        },
+        "receiver_adapter_tests_reuse_preflight.xml": {
+          "XML": {
+            "bytes": 2019,
+            "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/receiver_adapter_tests_reuse_preflight.xml",
+            "sha256": "277c925a1a9378285deecc7b0317c00624767eb57ba35e1f5b3451f9652aafe7"
+          },
+          "errors": 0,
+          "failures": 0,
+          "skipped": 0,
+          "tests": 12
+        },
+        "receiver_adapter_tests_submission_reporting.xml": {
+          "XML": {
+            "bytes": 1845,
+            "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/receiver_adapter_tests_submission_reporting.xml",
+            "sha256": "d969a248da1f40fc6a0496e5d7fb0613f97f9f121e462c17e7b34b923d1efba0"
+          },
+          "errors": 0,
+          "failures": 0,
+          "skipped": 0,
+          "tests": 11
+        }
+      },
+      "reused": false,
+      "skipped": 0,
+      "tests": 82
+    },
+    "distinct_failed": 0,
+    "distinct_passed": 129,
+    "executions": 211,
+    "executions_including_superseded_fixture_attempt": 238,
+    "historical": {
+      "distinct_failed": 0,
+      "distinct_passed": 47,
+      "executions": 55,
+      "reused": true,
+      "status": {
+        "bytes": 4590,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/stage_a/status.json",
+        "sha256": "6d97b4a476d117c8008d633cd459240477da483175649e9dcc730f7f249f4f7f"
+      }
+    },
+    "superseded_fixture_attempt": {
+      "failed": 5,
+      "passed": 22,
+      "reason": "Synthetic build fixture omitted the required commit field. Corrected fixture includes the same immutable identity required by the real build; product code and benchmark output unchanged.",
+      "receipt": {
+        "bytes": 1925,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/blocked_harness_attempt1_superseded.json",
+        "sha256": "7116faf13ce265956354da053326eed7aecf1df495eaf7f8a26526cef0e59e51"
+      },
+      "tests": 27
+    }
+  },
+  "timestamp": "2026-10-03T19:10:46.711934+00:00",
+  "unit_tests_passed": 129,
+  "upstream_contribution": {
+    "CI_status_at_capture": "action_required",
+    "PR_URL": "https://github.com/mwsoli/OpenROAD/pull/1",
+    "PR_number": 1,
+    "PR_opened": true,
+    "capture_time": "2026-10-03T15:47:26Z",
+    "description_scope": "Compilation issue and two receiver qualifications only",
+    "details": {
+      "additions": 4,
+      "artifact_attached": true,
+      "authentication_secrets_printed": false,
+      "authentication_secrets_stored": false,
+      "base_sha": "746c748b19cd2b9d7fb6aa3afe53fe4c31ce3656",
+      "branch": "fix/dft-dbnetwork-member-receiver",
+      "capture_time_utc": "2026-10-03T15:47:26Z",
+      "changed_files": 1,
+      "ci_detail": "Four workflow runs report conclusion action_required; no commit statuses are reported. CI is not verified as passing.",
+      "ci_passed": false,
+      "ci_status_at_capture": "action_required",
+      "ci_workflow_runs": [
+        {
+          "conclusion": "action_required",
+          "id": 37134439604,
+          "jobs_url": "https://api.github.com/repos/mwsoli/OpenROAD/actions/runs/37134439604/jobs",
+          "logs_url": "https://api.github.com/repos/mwsoli/OpenROAD/actions/runs/37134439604/logs",
+          "name": "Build on macOS",
+          "run_number": 1,
+          "status": "completed",
+          "workflow_id": 251435314
+        },
+        {
+          "conclusion": "action_required",
+          "id": 37134439596,
+          "jobs_url": "https://api.github.com/repos/mwsoli/OpenROAD/actions/runs/37134439596/jobs",
+          "logs_url": "https://api.github.com/repos/mwsoli/OpenROAD/actions/runs/37134439596/logs",
+          "name": "Check MODULE.bazel.lock",
+          "run_number": 1,
+          "status": "completed",
+          "workflow_id": 251435304
+        },
+        {
+          "conclusion": "action_required",
+          "id": 37134439599,
+          "jobs_url": "https://api.github.com/repos/mwsoli/OpenROAD/actions/runs/37134439599/jobs",
+          "logs_url": "https://api.github.com/repos/mwsoli/OpenROAD/actions/runs/37134439599/logs",
+          "name": "Check that OK files are up to date",
+          "run_number": 1,
+          "status": "completed",
+          "workflow_id": 251435302
+        },
+        {
+          "conclusion": "action_required",
+          "id": 37134439598,
+          "jobs_url": "https://api.github.com/repos/mwsoli/OpenROAD/actions/runs/37134439598/jobs",
+          "logs_url": "https://api.github.com/repos/mwsoli/OpenROAD/actions/runs/37134439598/logs",
+          "name": "Build on macOS",
+          "run_number": 1,
+          "status": "completed",
+          "workflow_id": 251435313
+        }
+      ],
+      "commit_recreated": false,
+      "commit_sha": "0f8a15ca7fe14bc2445ec4db8a4df0832a136cb8",
+      "commits": 1,
+      "deletions": 2,
+      "draft": false,
+      "force_push": false,
+      "local_build_and_three_focused_native_tests": "passed",
+      "mergeable_at_capture": true,
+      "merged": false,
+      "method_display": "B3R \u2014 PR #10666 + minimal compile repair",
+      "patch_sha256": "e6a97bf45c7b97409efbcd91d3ed2b9445cf478163e68828fd0e10d76f716960",
+      "pr_number": 1,
+      "pr_url": "https://github.com/mwsoli/OpenROAD/pull/1",
+      "related_original_pr": "https://github.com/The-OpenROAD-Project/OpenROAD/pull/10666",
+      "remote": "https://github.com/AbhinavChoudhary24167/OpenROAD.git",
+      "review_merge_or_ci_wait_performed": false,
+      "same_immutable_commit_as_benchmark": true,
+      "state": "open",
+      "status": "submitted",
+      "submission_limitation": "GitHub connector could not create the PR in the author fork; authenticated REST submission succeeded.",
+      "submission_mechanism": "Existing authenticated GitHub account via REST after connector integration returned403",
+      "target_branch": "dft/scan-chain-optimizer",
+      "target_repository": "mwsoli/OpenROAD"
+    },
+    "latest_description_edit": {
+      "bytes": 2100,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/upstream/pull_request_commit_scope_edit.json",
+      "sha256": "5b70085b3bd11240de03f6100dff2b8dfb358131f9256c0b4fa56d87f6ce0969"
+    },
+    "receipt": {
+      "bytes": 3236,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/receiver_recovery_20261003/upstream/github_contribution.json",
+      "sha256": "e76bcc4513afdd450f5343a87f197c7bea6996fbf01cd79b1f8a8046eb43c5d4"
+    },
+    "related_original_PR": "https://github.com/The-OpenROAD-Project/OpenROAD/pull/10666",
+    "scope": "Submission state at capture time; benchmark does not wait for CI, review or merge",
+    "status": "submitted",
+    "target_branch": "dft/scan-chain-optimizer",
+    "target_repository": "mwsoli/OpenROAD"
+  }
+}

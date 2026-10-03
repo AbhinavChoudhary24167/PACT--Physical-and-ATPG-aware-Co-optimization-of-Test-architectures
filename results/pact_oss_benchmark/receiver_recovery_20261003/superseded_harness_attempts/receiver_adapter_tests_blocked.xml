@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="27" time="3.338" timestamp="2026-10-03T19:04:17.927695+00:00" hostname="BillionDollars"><testcase classname="tests.unit.test_oss_receiver_blocked" name="test_observed_failure_remains_incomplete" time="0.001"><failure message="KeyError: 'commit'">evidence = ({'status': 'FAILED', 'method': 'B3R', 'method_display': 'B3R — PR #10666 + minimal compile repair', 'failed_design': ...isplay': 'B3R — PR #10666 + minimal compile repair', 'source_commit': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', ...})
+
+    def test_observed_failure_remains_incomplete(evidence):
+&gt;       result = validate_stop_state(*evidence, {'s5378'}, [])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/test_oss_receiver_blocked.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/pact_oss_receiver_seal_blocked.py:38: in validate_stop_state
+    validate_runtime_identity(compiled, build, repair)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {'status': 'PASS', 'method': 'B3R', 'method_display': 'B3R — PR #10666 + minimal compile repair', 'source_commit': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', ...}
+build = {'binary_sha256': 'dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd'}
+repair = {'repair_commit_sha': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'upstream_base_sha': 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', 'patch_sha256': 'cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc'}
+
+    def validate_runtime_identity(record, build, repair):
+        """Bind the executing binary, commit and patch to both kinds of proof."""
+&gt;       expected = dict(status='PASS', method=METHOD, source_commit=build['commit'],
+                                                                    ^^^^^^^^^^^^^^^
+            binary_sha256=build['binary_sha256'], upstream_base_sha=repair['upstream_base_sha'],
+            repair_patch_sha256=repair['patch_sha256'], method_display=DISPLAY)
+E       KeyError: 'commit'
+
+scripts/pact_oss_receiver_generate.py:54: KeyError</failure></testcase><testcase classname="tests.unit.test_oss_receiver_blocked" name="test_changed_qualification_cannot_use_stopped_seal[status]" time="0.001" /><testcase classname="tests.unit.test_oss_receiver_blocked" name="test_changed_qualification_cannot_use_stopped_seal[completed_designs]" time="0.001" /><testcase classname="tests.unit.test_oss_receiver_blocked" name="test_changed_qualification_cannot_use_stopped_seal[binary_sha256]" time="0.001" /><testcase classname="tests.unit.test_oss_receiver_blocked" name="test_changed_qualification_cannot_use_stopped_seal[failed_design]" time="0.001" /><testcase classname="tests.unit.test_oss_receiver_blocked" name="test_distinct_diagnosis_cannot_use_this_seal[fixed_SO_terminates_generated_chains-True]" time="0.001"><failure message="KeyError: 'commit'">evidence = ({'status': 'FAILED', 'method': 'B3R', 'method_display': 'B3R — PR #10666 + minimal compile repair', 'failed_design': ...isplay': 'B3R — PR #10666 + minimal compile repair', 'source_commit': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', ...})
+field = 'fixed_SO_terminates_generated_chains', value = True
+
+    @pytest.mark.parametrize('field,value', (
+        ('fixed_SO_terminates_generated_chains',True), ('additional_source_patch_applied',True),
+        ('FF_functional_placement_unchanged',False), ('topology_qualification','PASS')))
+    def test_distinct_diagnosis_cannot_use_this_seal(evidence, field, value):
+        evidence[1][field] = value
+        with pytest.raises(ValueError):
+&gt;           validate_stop_state(*evidence, {'s5378'}, [])
+
+tests/unit/test_oss_receiver_blocked.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/pact_oss_receiver_seal_blocked.py:38: in validate_stop_state
+    validate_runtime_identity(compiled, build, repair)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {'status': 'PASS', 'method': 'B3R', 'method_display': 'B3R — PR #10666 + minimal compile repair', 'source_commit': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', ...}
+build = {'binary_sha256': 'dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd'}
+repair = {'repair_commit_sha': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'upstream_base_sha': 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', 'patch_sha256': 'cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc'}
+
+    def validate_runtime_identity(record, build, repair):
+        """Bind the executing binary, commit and patch to both kinds of proof."""
+&gt;       expected = dict(status='PASS', method=METHOD, source_commit=build['commit'],
+                                                                    ^^^^^^^^^^^^^^^
+            binary_sha256=build['binary_sha256'], upstream_base_sha=repair['upstream_base_sha'],
+            repair_patch_sha256=repair['patch_sha256'], method_display=DISPLAY)
+E       KeyError: 'commit'
+
+scripts/pact_oss_receiver_generate.py:54: KeyError</failure></testcase><testcase classname="tests.unit.test_oss_receiver_blocked" name="test_distinct_diagnosis_cannot_use_this_seal[additional_source_patch_applied-True]" time="0.001"><failure message="KeyError: 'commit'">evidence = ({'status': 'FAILED', 'method': 'B3R', 'method_display': 'B3R — PR #10666 + minimal compile repair', 'failed_design': ...isplay': 'B3R — PR #10666 + minimal compile repair', 'source_commit': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', ...})
+field = 'additional_source_patch_applied', value = True
+
+    @pytest.mark.parametrize('field,value', (
+        ('fixed_SO_terminates_generated_chains',True), ('additional_source_patch_applied',True),
+        ('FF_functional_placement_unchanged',False), ('topology_qualification','PASS')))
+    def test_distinct_diagnosis_cannot_use_this_seal(evidence, field, value):
+        evidence[1][field] = value
+        with pytest.raises(ValueError):
+&gt;           validate_stop_state(*evidence, {'s5378'}, [])
+
+tests/unit/test_oss_receiver_blocked.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/pact_oss_receiver_seal_blocked.py:38: in validate_stop_state
+    validate_runtime_identity(compiled, build, repair)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {'status': 'PASS', 'method': 'B3R', 'method_display': 'B3R — PR #10666 + minimal compile repair', 'source_commit': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', ...}
+build = {'binary_sha256': 'dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd'}
+repair = {'repair_commit_sha': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'upstream_base_sha': 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', 'patch_sha256': 'cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc'}
+
+    def validate_runtime_identity(record, build, repair):
+        """Bind the executing binary, commit and patch to both kinds of proof."""
+&gt;       expected = dict(status='PASS', method=METHOD, source_commit=build['commit'],
+                                                                    ^^^^^^^^^^^^^^^
+            binary_sha256=build['binary_sha256'], upstream_base_sha=repair['upstream_base_sha'],
+            repair_patch_sha256=repair['patch_sha256'], method_display=DISPLAY)
+E       KeyError: 'commit'
+
+scripts/pact_oss_receiver_generate.py:54: KeyError</failure></testcase><testcase classname="tests.unit.test_oss_receiver_blocked" name="test_distinct_diagnosis_cannot_use_this_seal[FF_functional_placement_unchanged-False]" time="0.001"><failure message="KeyError: 'commit'">evidence = ({'status': 'FAILED', 'method': 'B3R', 'method_display': 'B3R — PR #10666 + minimal compile repair', 'failed_design': ...isplay': 'B3R — PR #10666 + minimal compile repair', 'source_commit': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', ...})
+field = 'FF_functional_placement_unchanged', value = False
+
+    @pytest.mark.parametrize('field,value', (
+        ('fixed_SO_terminates_generated_chains',True), ('additional_source_patch_applied',True),
+        ('FF_functional_placement_unchanged',False), ('topology_qualification','PASS')))
+    def test_distinct_diagnosis_cannot_use_this_seal(evidence, field, value):
+        evidence[1][field] = value
+        with pytest.raises(ValueError):
+&gt;           validate_stop_state(*evidence, {'s5378'}, [])
+
+tests/unit/test_oss_receiver_blocked.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/pact_oss_receiver_seal_blocked.py:38: in validate_stop_state
+    validate_runtime_identity(compiled, build, repair)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {'status': 'PASS', 'method': 'B3R', 'method_display': 'B3R — PR #10666 + minimal compile repair', 'source_commit': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', ...}
+build = {'binary_sha256': 'dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd'}
+repair = {'repair_commit_sha': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'upstream_base_sha': 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', 'patch_sha256': 'cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc'}
+
+    def validate_runtime_identity(record, build, repair):
+        """Bind the executing binary, commit and patch to both kinds of proof."""
+&gt;       expected = dict(status='PASS', method=METHOD, source_commit=build['commit'],
+                                                                    ^^^^^^^^^^^^^^^
+            binary_sha256=build['binary_sha256'], upstream_base_sha=repair['upstream_base_sha'],
+            repair_patch_sha256=repair['patch_sha256'], method_display=DISPLAY)
+E       KeyError: 'commit'
+
+scripts/pact_oss_receiver_generate.py:54: KeyError</failure></testcase><testcase classname="tests.unit.test_oss_receiver_blocked" name="test_distinct_diagnosis_cannot_use_this_seal[topology_qualification-PASS]" time="0.001"><failure message="KeyError: 'commit'">evidence = ({'status': 'FAILED', 'method': 'B3R', 'method_display': 'B3R — PR #10666 + minimal compile repair', 'failed_design': ...isplay': 'B3R — PR #10666 + minimal compile repair', 'source_commit': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', ...})
+field = 'topology_qualification', value = 'PASS'
+
+    @pytest.mark.parametrize('field,value', (
+        ('fixed_SO_terminates_generated_chains',True), ('additional_source_patch_applied',True),
+        ('FF_functional_placement_unchanged',False), ('topology_qualification','PASS')))
+    def test_distinct_diagnosis_cannot_use_this_seal(evidence, field, value):
+        evidence[1][field] = value
+        with pytest.raises(ValueError):
+&gt;           validate_stop_state(*evidence, {'s5378'}, [])
+
+tests/unit/test_oss_receiver_blocked.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/pact_oss_receiver_seal_blocked.py:38: in validate_stop_state
+    validate_runtime_identity(compiled, build, repair)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {'status': 'PASS', 'method': 'B3R', 'method_display': 'B3R — PR #10666 + minimal compile repair', 'source_commit': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', ...}
+build = {'binary_sha256': 'dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd'}
+repair = {'repair_commit_sha': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'upstream_base_sha': 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', 'patch_sha256': 'cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc'}
+
+    def validate_runtime_identity(record, build, repair):
+        """Bind the executing binary, commit and patch to both kinds of proof."""
+&gt;       expected = dict(status='PASS', method=METHOD, source_commit=build['commit'],
+                                                                    ^^^^^^^^^^^^^^^
+            binary_sha256=build['binary_sha256'], upstream_base_sha=repair['upstream_base_sha'],
+            repair_patch_sha256=repair['patch_sha256'], method_display=DISPLAY)
+E       KeyError: 'commit'
+
+scripts/pact_oss_receiver_generate.py:54: KeyError</failure></testcase><testcase classname="tests.unit.test_oss_receiver_blocked" name="test_physical_execution_cannot_be_hidden" time="0.001" /><testcase classname="tests.unit.test_oss_receiver_blocked" name="test_extra_generation_is_not_silently_ignored" time="0.001" /><testcase classname="tests.unit.test_oss_receiver_blocked" name="test_saved_database_identity_and_complete_inventory" time="0.001" /><testcase classname="tests.unit.test_oss_receiver_blocked" name="test_invalid_saved_observation_is_rejected[database]" time="0.001" /><testcase classname="tests.unit.test_oss_receiver_blocked" name="test_invalid_saved_observation_is_rejected[endpoint]" time="0.001" /><testcase classname="tests.unit.test_oss_receiver_blocked" name="test_invalid_saved_observation_is_rejected[duplicate]" time="0.001" /><testcase classname="tests.unit.test_oss_receiver_blocked" name="test_invalid_saved_observation_is_rejected[mutation]" time="0.001" /><testcase classname="tests.unit.test_oss_receiver_reporting" name="test_all_table_method_fields_show_the_full_repaired_label" time="0.001" /><testcase classname="tests.unit.test_oss_receiver_reporting" name="test_full_validation_compile_and_incremental_final_build_are_separate" time="0.041" /><testcase classname="tests.unit.test_oss_receiver_reporting" name="test_exact_B2_build_runtime_remains_historical_reuse" time="0.003" /><testcase classname="tests.unit.test_oss_receiver_reporting" name="test_native_regressions_have_separate_count_and_precommit_binary_scope" time="0.005" /><testcase classname="tests.unit.test_oss_receiver_reporting" name="test_native_failure_cannot_be_reported_as_three_passes" time="0.004" /><testcase classname="tests.unit.test_oss_receiver_reporting" name="test_native_count_requires_all_three_expected_tests" time="0.005" /><testcase classname="tests.unit.test_oss_receiver_reporting" name="test_native_test_execution_receipt_is_hash_verified" time="0.004" /><testcase classname="tests.unit.test_oss_receiver_reporting" name="test_missing_upstream_receipt_cannot_claim_an_opened_PR" time="0.003" /><testcase classname="tests.unit.test_oss_receiver_reporting" name="test_upstream_submission_fields_and_receipt_are_reported_without_waiting" time="0.003" /><testcase classname="tests.unit.test_oss_receiver_reporting" name="test_reuse_report_derives_actual_counts_and_preserves_exclusion_policy" time="0.019" /><testcase classname="tests.unit.test_oss_receiver_reporting" name="test_reuse_report_rejects_receipt_counts_inconsistent_with_candidates" time="0.004" /></testsuite></testsuites>
