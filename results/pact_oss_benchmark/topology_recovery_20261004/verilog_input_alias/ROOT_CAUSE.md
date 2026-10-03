@@ -1,0 +1,9 @@
+# BENCHMARK_BLOCKER_VERILOG_INPUT_ALIAS_REPRODUCED
+
+At immutable B3S `3acca55d014b45e62eea19b8bf754e17d361d08b`, s5378's saved ODB passes the complete fixed SI-to-SO topology gate and normalized scan-list order agrees. The same generated Verilog declares `input test_si_0` and `input test_si_1`, while head SI pins use internal nets `test_si` and `phase0c_scan_in_1`. These nets are connected to the renamed input BTerms in ODB, but no input aliases are emitted in Verilog. Output aliases correctly map `test_so_0 = n2510gat` and `test_so_1 = n707gat`. The independent Verilog graph correctly rejects the disconnected input representation.
+
+OpenSTA parent: `244797f162b465751912b651d55d9854296aa745`. Root cause: `src/sta/verilog/VerilogWriter.cc`, `VerilogWriter::writeAssigns`, only emits aliases for output ports (and selected power/ground ports). A legal input port whose name differs from its connected net loses its driver during serialization. `writeWireDcls` already declares the internal net, and `writeInstPin` correctly names that net. This is a generic serialization defect, separate from optimized-chain reconstruction.
+
+Proposed minimal R1 repair: include input ports in the existing alias-emission condition and emit `assign internal_net = input_port` for input aliases; retain the existing direction for outputs. No ODB connection, endpoint identity, algorithm, objective, parameter or architecture changes. Preserve the native endpoint patch and use a separate `repair/verilog-input-alias` branch and B3T method receipt. The experiment will use the actual serializer output, without adding aliases externally or guessing missing architecture information.
+
+OpenROAD's `AGENTS.md` explicitly says: **“Ask before modifying `src/sta/` files -- OpenSTA is managed upstream.”** The concrete [proposed source patch](proposed.patch) is ready for review. No OpenSTA source has been modified pending that required approval.

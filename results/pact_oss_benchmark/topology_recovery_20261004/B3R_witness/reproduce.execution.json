@@ -1,0 +1,61 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network=none",
+    "--mount",
+    "type=bind,source=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT,target=/workspace,readonly",
+    "--mount",
+    "type=bind,source=/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003,target=/scratch",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery,target=/build_storage",
+    "--mount",
+    "type=bind,source=/root/pact-deps/OpenROAD-flow-scripts/flow/results,target=/root/pact-deps/OpenROAD-flow-scripts/flow/results,readonly",
+    "--entrypoint",
+    "/bin/bash",
+    "sha256:f05cee3219a02f26289f02f00e11a3fc986ab51a482a0000a2da810cda219a6e",
+    "-c",
+    "exec \"$@\"",
+    "pact-command",
+    "/build_storage/B3R_openroad_10666_repaired/build/bin/openroad",
+    "-python",
+    "-no_init",
+    "-exit",
+    "/workspace/scripts/pact_oss_receiver_generator.py",
+    "--method",
+    "B3R",
+    "--commit",
+    "0f8a15ca7fe14bc2445ec4db8a4df0832a136cb8",
+    "--upstream-base",
+    "746c748b19cd2b9d7fb6aa3afe53fe4c31ce3656",
+    "--patch-sha256",
+    "e6a97bf45c7b97409efbcd91d3ed2b9445cf478163e68828fd0e10d76f716960",
+    "--design",
+    "s5378",
+    "--source",
+    "/scratch/placed_common/s5378/3_place.odb",
+    "--output",
+    "/scratch/topology_recovery_20261004/B3R_witness/s5378",
+    "--liberty",
+    "/scratch/NangateOpenCellLibrary_typical_dft.lib"
+  ],
+  "elapsed_seconds": 4.128805655000001,
+  "executed_driver": {
+    "bytes": 12491,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/topology_recovery_20261004/B3R_witness/reproduce.pact_oss_recovery.py",
+    "sha256": "098c7ede1a6c3bcd2a1c8036882e2f18e39a12621076283b6fc24782f6b7a184"
+  },
+  "log": {
+    "bytes": 4264,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/topology_recovery_20261004/B3R_witness/reproduce.log",
+    "sha256": "cf12767992b1ecc99b3ea237ff17061ed2362c996df4320a008f99f7e566f194"
+  },
+  "resources": {
+    "bytes": 1832,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/topology_recovery_20261004/B3R_witness/reproduce.resource.txt",
+    "sha256": "d122a5aff3be63f9849c516e984eb000e54a8b6e989cf879836c5521476828bf"
+  },
+  "returncode": 1,
+  "timestamp": "2026-10-03T19:29:08.694032+00:00"
+}

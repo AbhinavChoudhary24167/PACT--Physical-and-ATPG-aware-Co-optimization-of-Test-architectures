@@ -1,0 +1,31 @@
+{
+  "algorithm_changed": false,
+  "changed_files": [
+    "src/dft/src/Dft.cpp",
+    "src/dft/test/scan_opt_sky130.tcl",
+    "src/dft/test/scan_opt_sky130.vok"
+  ],
+  "changed_source_sha256": {
+    "src/dft/src/Dft.cpp": "427a8723018df5beecb0a5cc80730ca743d25b6c16cd9c8a2119c67f217209da"
+  },
+  "endpoint_semantics": "Restore fixed endpoint load connection; retain endpoint identity and functional nets",
+  "functional_output_reuse": "Reject implicit functional SO reuse before optimization; configured scan loads retain fixed identity",
+  "metadata": "Same final cell order drives SI/internal/SO rewiring and reverse-stored dbScanList",
+  "method": "B3S",
+  "objective_changed": false,
+  "parameters_changed": false,
+  "parent_revision": "0f8a15ca7fe14bc2445ec4db8a4df0832a136cb8",
+  "patch": {
+    "bytes": 6906,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/topology_recovery_20261004/baselines/B3S_openroad_10666_endpoint_repaired/repair/patch.diff",
+    "sha256": "3bfa8e805bec949533ae6096ae3aab04dcf3e412814481b30d454e4116746fdf"
+  },
+  "patch_sha256": "3bfa8e805bec949533ae6096ae3aab04dcf3e412814481b30d454e4116746fdf",
+  "prior_attempt_commit": "867f9afec874d035d2baafd1d8530aeebcd5cd8a",
+  "regression": "Existing scan_opt_sky130 test: fixed dedicated SO, unchanged functional outputs, complete membership and metadata order",
+  "repair_class": "R1",
+  "repair_commit_sha": "5fd98068c41dce164873a854601e92d16e18fe84",
+  "search_space_changed": false,
+  "signed_commit": "commit 5fd98068c41dce164873a854601e92d16e18fe84\nAuthor: abhinav <abhinav24167@iiitd.ac.in>\nCommit: abhinav <abhinav24167@iiitd.ac.in>\n\n    dft: guard functional output reuse and exercise fixed scan endpoints\n    \n    Signed-off-by: abhinav <abhinav24167@iiitd.ac.in>\n",
+  "upstream_base_sha": "746c748b19cd2b9d7fb6aa3afe53fe4c31ce3656"
+}

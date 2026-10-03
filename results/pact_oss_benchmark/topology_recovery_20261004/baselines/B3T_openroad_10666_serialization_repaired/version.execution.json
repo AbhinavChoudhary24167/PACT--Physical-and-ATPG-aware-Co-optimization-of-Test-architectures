@@ -1,0 +1,54 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network=none",
+    "--mount",
+    "type=bind,source=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT,target=/workspace,readonly",
+    "--mount",
+    "type=bind,source=/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003,target=/scratch",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery,target=/build_storage",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery/B3S_openroad_10666_endpoint_repaired/source,target=/build_storage/B3_openroad_10666/source",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery/B3S_openroad_10666_endpoint_repaired/build,target=/build_storage/B3_openroad_10666/build",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery/B3S_openroad_10666_endpoint_repaired/source,target=/build_storage/B3R_openroad_10666_repaired/source",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery/B3S_openroad_10666_endpoint_repaired/build,target=/build_storage/B3R_openroad_10666_repaired/build",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery/B3S_openroad_10666_endpoint_repaired/source,target=/build_storage/B3T_openroad_10666_serialization_repaired/source",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery/B3S_openroad_10666_endpoint_repaired/build,target=/build_storage/B3T_openroad_10666_serialization_repaired/build",
+    "--env",
+    "TMPDIR=/build_storage/B3T_openroad_10666_serialization_repaired/compiler_tmp",
+    "--entrypoint",
+    "/bin/bash",
+    "sha256:f05cee3219a02f26289f02f00e11a3fc986ab51a482a0000a2da810cda219a6e",
+    "-c",
+    "exec \"$@\"",
+    "pact-command",
+    "/build_storage/B3T_openroad_10666_serialization_repaired/build/bin/openroad",
+    "-version"
+  ],
+  "elapsed_seconds": 0.9829209760000595,
+  "executed_driver": {
+    "bytes": 12491,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/topology_recovery_20261004/baselines/B3T_openroad_10666_serialization_repaired/version.pact_oss_recovery.py",
+    "sha256": "098c7ede1a6c3bcd2a1c8036882e2f18e39a12621076283b6fc24782f6b7a184"
+  },
+  "log": {
+    "bytes": 42,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/topology_recovery_20261004/baselines/B3T_openroad_10666_serialization_repaired/version.log",
+    "sha256": "8ec32f9367535a34b16eb86f1c37b99e085a4c7ef6a1733351bb9f2a16f7561d"
+  },
+  "resources": {
+    "bytes": 2195,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/topology_recovery_20261004/baselines/B3T_openroad_10666_serialization_repaired/version.resource.txt",
+    "sha256": "4482387d40e9305f8262ee606b285fd665c6d34e095ce7dfa6b3e9456c076f1e"
+  },
+  "returncode": 0,
+  "timestamp": "2026-10-03T20:27:10.447499+00:00"
+}

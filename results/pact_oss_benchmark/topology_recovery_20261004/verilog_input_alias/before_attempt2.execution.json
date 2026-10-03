@@ -1,0 +1,61 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network=none",
+    "--mount",
+    "type=bind,source=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT,target=/workspace,readonly",
+    "--mount",
+    "type=bind,source=/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003,target=/scratch",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery,target=/build_storage",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery/B3S_openroad_10666_endpoint_repaired/source,target=/build_storage/B3_openroad_10666/source",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery/B3S_openroad_10666_endpoint_repaired/build,target=/build_storage/B3_openroad_10666/build",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery/B3S_openroad_10666_endpoint_repaired/source,target=/build_storage/B3R_openroad_10666_repaired/source",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery/B3S_openroad_10666_endpoint_repaired/build,target=/build_storage/B3R_openroad_10666_repaired/build",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery/B3S_openroad_10666_endpoint_repaired/source,target=/build_storage/B3T_openroad_10666_serialization_repaired/source",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery/B3S_openroad_10666_endpoint_repaired/build,target=/build_storage/B3T_openroad_10666_serialization_repaired/build",
+    "--env",
+    "TMPDIR=/build_storage/B3T_openroad_10666_serialization_repaired/compiler_tmp",
+    "--entrypoint",
+    "/bin/bash",
+    "sha256:f05cee3219a02f26289f02f00e11a3fc986ab51a482a0000a2da810cda219a6e",
+    "-c",
+    "exec \"$@\"",
+    "pact-command",
+    "/scratch/topology_recovery_20261004/immutable_binaries/03f7b75bae946796aa854c6a596bed6412e8bd63/openroad",
+    "-python",
+    "-no_init",
+    "-exit",
+    "/workspace/scripts/pact_verilog_alias_witness.py",
+    "--library",
+    "/build_storage/B3T_openroad_10666_serialization_repaired/source/test/Nangate45",
+    "--output",
+    "/scratch/topology_recovery_20261004/verilog_input_alias/before_attempt2"
+  ],
+  "elapsed_seconds": 4.193659265999997,
+  "executed_driver": {
+    "bytes": 12491,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/topology_recovery_20261004/verilog_input_alias/before_attempt2.pact_oss_recovery.py",
+    "sha256": "098c7ede1a6c3bcd2a1c8036882e2f18e39a12621076283b6fc24782f6b7a184"
+  },
+  "log": {
+    "bytes": 498,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/topology_recovery_20261004/verilog_input_alias/before_attempt2.log",
+    "sha256": "d054f17dca2c4f6bcb7ef594e89d12feb486d962f8e71a167f941414c792be86"
+  },
+  "resources": {
+    "bytes": 2491,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/topology_recovery_20261004/verilog_input_alias/before_attempt2.resource.txt",
+    "sha256": "ac313f9b11ddaaa70066cb9303ac7a417f833326781f3fe5f1a96aa44a43adf7"
+  },
+  "returncode": 2,
+  "timestamp": "2026-10-03T20:04:27.199379+00:00"
+}

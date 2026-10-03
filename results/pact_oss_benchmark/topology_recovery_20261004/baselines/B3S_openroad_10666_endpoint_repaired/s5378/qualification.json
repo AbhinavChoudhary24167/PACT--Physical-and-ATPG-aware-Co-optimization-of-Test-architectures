@@ -1,0 +1,125 @@
+{
+  "FF_count": 179,
+  "FF_placement_and_functional_inputs_unchanged": true,
+  "K": 2,
+  "architecture_sha256": "b37934ae36b0c8a42f34be0a072c1a6c0bc442525b89e5277b7375061b16089d",
+  "binary_path": "/build_storage/B3S_openroad_10666_endpoint_repaired/build/bin/openroad",
+  "binary_sha256": "5160087f1ab30ff50d7c176a6c75a621504fa89a24aaf97026671f82460284af",
+  "canonical_architecture_hash": "c3c411e9b14ee9237bc0fe7710a314a3363d697c02b047510d35d40f149aa94a",
+  "canonical_endpoints": {
+    "C00": {
+      "scan_in": "test_si_0",
+      "scan_out": "test_so_0"
+    },
+    "C01": {
+      "scan_in": "test_si_1",
+      "scan_out": "test_so_1"
+    }
+  },
+  "canonical_translation_preserves_inventory_assignment_order": true,
+  "chain_lengths": [
+    90,
+    89
+  ],
+  "commands": [
+    "read_sdc /root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.sdc",
+    "set_dft_config -max_chains 2 -max_length 90 -clock_mixing no_mix -scan_enable_name_pattern test_se -scan_in_name_pattern test_si_{} -scan_out_name_pattern test_so_{}",
+    "report_dft_config",
+    "report_dft_plan -verbose",
+    "execute_dft_plan",
+    "scan_opt"
+  ],
+  "compiled_optimizer_command": "scan_opt",
+  "design": "s5378",
+  "endpoint_geometry_unchanged": true,
+  "endpoint_translation": {
+    "test_si_0": "test_si",
+    "test_si_1": "test_si_1",
+    "test_so_0": "test_so",
+    "test_so_1": "test_so_1"
+  },
+  "frozen_native_adapter_sha256": "38ade8031423a91c3641d505bc16b9cf32d7bf6cf5f5906e59aed6a8bb58550b",
+  "generated_architecture_hash": "b37934ae36b0c8a42f34be0a072c1a6c0bc442525b89e5277b7375061b16089d",
+  "generated_endpoint_geometry": {
+    "test_si_0": [
+      [
+        "metal5",
+        171690,
+        51520,
+        171970,
+        51800
+      ]
+    ],
+    "test_si_1": [
+      [
+        "metal5",
+        171690,
+        114240,
+        171970,
+        114520
+      ]
+    ],
+    "test_so_0": [
+      [
+        "metal5",
+        0,
+        85680,
+        280,
+        85960
+      ]
+    ],
+    "test_so_1": [
+      [
+        "metal5",
+        0,
+        114240,
+        280,
+        114520
+      ]
+    ]
+  },
+  "generator_wrapper_sha256": "573fe9862ad5d30ca32e9d56be047dac52e33dda73a416a849b69e1189e6207b",
+  "liberty": "existing verified test_cell-only annotation; downstream unchanged",
+  "method": "B3S",
+  "original_physical_endpoint_geometry": {
+    "test_si": [
+      [
+        "metal5",
+        171690,
+        51520,
+        171970,
+        51800
+      ]
+    ],
+    "test_si_1": [
+      [
+        "metal5",
+        171690,
+        114240,
+        171970,
+        114520
+      ]
+    ],
+    "test_so": [
+      [
+        "metal5",
+        0,
+        85680,
+        280,
+        85960
+      ]
+    ],
+    "test_so_1": [
+      [
+        "metal5",
+        0,
+        114240,
+        280,
+        114520
+      ]
+    ]
+  },
+  "source": "/scratch/placed_common/s5378/3_place.odb",
+  "source_commit": "3acca55d014b45e62eea19b8bf754e17d361d08b",
+  "status": "PASS"
+}

@@ -1,0 +1,37 @@
+{
+  "binary_path": "/build_storage/B3T_openroad_10666_serialization_repaired/build/bin/openroad",
+  "binary_sha256": "93124fbe0514e05268ec8ad8ac30f09d38cb80ab79e11258bb5d70a5d9db020f",
+  "exposed_commands": {
+    "dft::scan_opt": "::dft::scan_opt",
+    "execute_dft_plan": "execute_dft_plan",
+    "scan_opt": "scan_opt",
+    "set_dft_config": "set_dft_config"
+  },
+  "interpretation": "Linked symbols and immutable source verify exposed behavior; functional execution is qualified separately on all frozen designs",
+  "linked_implementation_symbols": [
+    "00000000044e25f0 T dft::OptimizeScanWirelength(std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, utl::Logger*)",
+    "000000000112a8c8 t dft::OptimizeScanWirelength(std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, utl::Logger*) [clone .cold]",
+    "0000000001c9f8d0 T dft::Dft::scanOpt()",
+    "0000000000ebf3b2 t dft::Dft::scanOpt() [clone .cold]"
+  ],
+  "method": "B3T",
+  "parameter_source_sha256": {
+    "src/dft/src/Dft.cpp": "dab93def8311d813ea8fdef9153d219ce2d764c8cb5fa54c6b283b9842bca1d5",
+    "src/dft/src/dft.tcl": "f7c31a75ffd60eacbc3ec32cc9813c4c27ea2a0f76c16b5b0fb08e36504fd54e",
+    "src/dft/src/optimizer/KMeans.hh": "c32150631a12a23ae71a86405edad0eb6183bb0bb8e5141321ac1b74ad5e8214",
+    "src/dft/src/optimizer/Opt.cpp": "a79499ca33e74d35e22aef329058d6a5228b27fcba91459c8b3f1f7ca6423d9d"
+  },
+  "parameters": {
+    "candidate_neighbors": 50,
+    "candidate_overquery": 100,
+    "capacity": "Original maximum chain bit count",
+    "command_arguments": [],
+    "external_endpoints_included": false,
+    "initialization": "Deterministic farthest point KMeans, then NN",
+    "kmeans_max_iterations": 100,
+    "local_search": "Directed scan-pin 2Opt with reversal correction and direction-preserving 3Opt; strict improvement until convergence",
+    "same_clock_and_edge_domains": true
+  },
+  "source_commit": "5c3751171685d507939ee7064a67feec786e5219",
+  "status": "PASS"
+}
