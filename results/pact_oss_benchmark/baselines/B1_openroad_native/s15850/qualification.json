@@ -1,0 +1,27 @@
+{
+  "FF_count": 534,
+  "FF_placement_and_functional_inputs_unchanged": true,
+  "K": 2,
+  "architecture_sha256": "c66fd61be2cc75e8fbbe8c0ec80d4ee4e316374349fe4472ac58f4f2af7f7dbc",
+  "chain_lengths": [
+    267,
+    267
+  ],
+  "commands": [
+    "read_sdc /root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s15850/phase0b_s11_B0/3_place.sdc",
+    "set_dft_config -max_chains 2 -max_length 267 -clock_mixing no_mix -scan_enable_name_pattern test_se -scan_in_name_pattern test_si_{} -scan_out_name_pattern test_so_{}",
+    "report_dft_config",
+    "report_dft_plan -verbose",
+    "execute_dft_plan"
+  ],
+  "design": "s15850",
+  "endpoint_translation": {
+    "test_si_0": "test_si",
+    "test_si_1": "test_si_1",
+    "test_so_0": "test_so",
+    "test_so_1": "test_so_1"
+  },
+  "liberty": "existing verified test_cell-only annotation; downstream unchanged",
+  "source": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/placed_common/s15850/3_place.odb",
+  "status": "PASS"
+}

@@ -1,0 +1,11 @@
+OpenROAD 26Q2-1164-g08f67ee5ec 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Traceback (most recent call last):
+  File "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_oss_native.py", line 123, in <module>
+    run(args.design, args.source, args.output, args.liberty, args.optimize)
+  File "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_oss_native.py", line 47, in run
+    term.setName(new)
+    ^^^^^^^^^^^^
+AttributeError: 'dbBTerm' object has no attribute 'setName'. Did you mean: 'getName'?

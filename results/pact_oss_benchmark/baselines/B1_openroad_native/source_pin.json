@@ -1,0 +1,745 @@
+{
+  "OpenROAD_base_revision": "08f67ee5ecd14db5a42be8c610bbfd1ccf079299",
+  "algorithm_status": "source inspected separately; no prompt-summary substitution",
+  "binary": "installed /usr/bin/openroad",
+  "build_status": "installed native binary",
+  "commit": "08f67ee5ecd14db5a42be8c610bbfd1ccf079299",
+  "repository": "https://github.com/The-OpenROAD-Project/OpenROAD",
+  "source_acquisition": "Immutable commit-addressed raw GitHub files; full pinned build checkout pending",
+  "source_files": {
+    ".gitmodules": {
+      "bytes": 179,
+      "git_blob": "f277be90f53d7a671ffbd3d8f5dd05ce990f6fef",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/.gitmodules",
+      "sha256": "74a3514ca22f31020545e668f4d6d07c49861f8383cd24a659b53d8c9dd6f69f"
+    },
+    "AGENTS.md": {
+      "bytes": 1763,
+      "git_blob": "b8d131057249924a19f82f9913e8ab51fead9a73",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/AGENTS.md",
+      "sha256": "f1d18edf1d8c93b74361630824a40fb5618972ecb313cf0e1597652a05a00e07"
+    },
+    "CMakeLists.txt": {
+      "bytes": 9097,
+      "git_blob": "abb3c34a11da5864d8b9ba1ade66273a8e0dc5d7",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/CMakeLists.txt",
+      "sha256": "56501b7b5d2e5374e7e2ad4326d60c55e5fcc22a3e992053f6b362c417b2381c"
+    },
+    "docs/agents/build.md": {
+      "bytes": 778,
+      "git_blob": "35327a0524ed2806cc36f82288966b62c28def46",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/docs/agents/build.md",
+      "sha256": "e620b8bedb0c4d948f6ad2063a174e5a65f363f7448908c479c1bb34d43a48f6"
+    },
+    "etc/Build.sh": {
+      "bytes": 12108,
+      "git_blob": "d6729d45d8c4d5abbd923dded6e1a1fd98800243",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/etc/Build.sh",
+      "sha256": "06dacafe0fe58e899c97845eb2c77fd6cb0846c6610ae9112d017ac231b1661a"
+    },
+    "src/dft/.gitignore": {
+      "bytes": 13,
+      "git_blob": "f820cf945b4ba5338938ab33341ed0b0d8c5e964",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/.gitignore",
+      "sha256": "84a4c8c05b5501e9c4ef1def350de63ba81d12f9667084e17404c21c390c06c9"
+    },
+    "src/dft/BUILD": {
+      "bytes": 2037,
+      "git_blob": "f501c976da7348a81a3176ba653a48352a452258",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/BUILD",
+      "sha256": "3f616a0af67933df25f2c4e1d971b1492959fbb6c0819003ee8e3d969a5e2d63"
+    },
+    "src/dft/CMakeLists.txt": {
+      "bytes": 1648,
+      "git_blob": "d0534ad9460150e2d4ee6182b2c560df773ce5c6",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/CMakeLists.txt",
+      "sha256": "4edb38fbb4ab471c4867c46f638d1e151cc7cf8cf1030f078198189f58dcb4a7"
+    },
+    "src/dft/README.md": {
+      "bytes": 5567,
+      "git_blob": "726b5a37549ffd2931782948cc700765607fd8a7",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/README.md",
+      "sha256": "5c1f5200e43dc72923e1a0fc4378bb1497f578e43835281f9b38f2c722310622"
+    },
+    "src/dft/include/dft/Dft.hh": {
+      "bytes": 3213,
+      "git_blob": "f6cb7fd9f6f3f5a6e9244a888492fd30bce4d90c",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/include/dft/Dft.hh",
+      "sha256": "6ad239c4ebea786936814478e9e0ae6d939903eedfed5e3177654200f86c9890"
+    },
+    "src/dft/include/dft/MakeDft.hh": {
+      "bytes": 210,
+      "git_blob": "9de53a8e0d0998563fb06f5d3631c87ba699637b",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/include/dft/MakeDft.hh",
+      "sha256": "3f261af77ddcca1cf75db3852fb67149e6a3d1b522769373049f155e195143ca"
+    },
+    "src/dft/src/Dft.cpp": {
+      "bytes": 5577,
+      "git_blob": "648114d7c4da19168dd0b232f5b18f37fd49e595",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/Dft.cpp",
+      "sha256": "7cfa126d645e9a1dc424e9b075e0de37f039e1a5282218086e55e729f7c7ca90"
+    },
+    "src/dft/src/DftGen-py.i": {
+      "bytes": 0,
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/DftGen-py.i",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/dft/src/MakeDft.cpp": {
+      "bytes": 408,
+      "git_blob": "e5d1a75b97694e9e8bea5afd6720437c876cc17f",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/MakeDft.cpp",
+      "sha256": "9e45bcdf9aaf968991490c8fe75108cc9a66acda95c94b05bb808c71dcf5a9ad"
+    },
+    "src/dft/src/architect/BUILD": {
+      "bytes": 765,
+      "git_blob": "c245fa5757ed8a0a7adec47f08f8a384ca07479a",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/architect/BUILD",
+      "sha256": "8e0a421ccd4e25379cda4a8c648472b2756b788ee5e97cb3c28b24406a379e8c"
+    },
+    "src/dft/src/architect/CMakeLists.txt": {
+      "bytes": 541,
+      "git_blob": "60b020819c1daa0f86f27943822b46505dc8feb7",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/architect/CMakeLists.txt",
+      "sha256": "f60346d70123bcb95a09764ed72e12ee66a3e1a08828bd6f18fc92272bd8f0d9"
+    },
+    "src/dft/src/architect/Opt.cpp": {
+      "bytes": 2864,
+      "git_blob": "5f6f1e16dad59030ba238efb7da38a21c43f50df",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/architect/Opt.cpp",
+      "sha256": "f454185504f375ead610124b170dd87cd3d2656bb5c6f98dba0db58bcc9d0105"
+    },
+    "src/dft/src/architect/Opt.hh": {
+      "bytes": 422,
+      "git_blob": "be1504d6d9c3da9041e06d26adc60223eebc55ea",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/architect/Opt.hh",
+      "sha256": "ea3676ac8713c525ba564af70d2e0480862ab8326407b2abd563d0a3147b2904"
+    },
+    "src/dft/src/architect/ScanArchitect.cpp": {
+      "bytes": 6468,
+      "git_blob": "e968830ea01c2d2ee5f13577ae60d59e15631c2c",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/architect/ScanArchitect.cpp",
+      "sha256": "f473e617bba5fe501633c93d3d7851c2df64200d6f96e23eba93e94800723f6c"
+    },
+    "src/dft/src/architect/ScanArchitect.hh": {
+      "bytes": 3742,
+      "git_blob": "445b9f70482f51ab72b84a26c3b986a3e7cb8b2c",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/architect/ScanArchitect.hh",
+      "sha256": "6db5359516c4c5f2e217aa2f049df35f95066079062eeced1da70752ea6ce9c1"
+    },
+    "src/dft/src/architect/ScanArchitectHeuristic.cpp": {
+      "bytes": 1938,
+      "git_blob": "70e0bc830e0e2bbc6781dde1f6eb7d53de494bce",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/architect/ScanArchitectHeuristic.cpp",
+      "sha256": "5128bae1dd1da29b0648007a12e5e68ae57b34bb376192242c9bdec68cbd49ce"
+    },
+    "src/dft/src/architect/ScanArchitectHeuristic.hh": {
+      "bytes": 1013,
+      "git_blob": "21ea8054f7cc49c8c70b8dfca445057867928881",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/architect/ScanArchitectHeuristic.hh",
+      "sha256": "ba63c552af81e80a30e09242a09a6ea082152bfd7398cba76a4fc7f7aaffbeee"
+    },
+    "src/dft/src/architect/ScanChain.cpp": {
+      "bytes": 3299,
+      "git_blob": "620216113a52d940956ae3eb1a59d63e11acdb89",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/architect/ScanChain.cpp",
+      "sha256": "58ec060eb36b5bd6ba0466c2c10c7223d90fbf9699f4ffe09a6797c5e6cbbb8e"
+    },
+    "src/dft/src/architect/ScanChain.hh": {
+      "bytes": 3168,
+      "git_blob": "e4c95d86de9dbb071ba3b9b4e9ff629ab7dd9fd4",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/architect/ScanChain.hh",
+      "sha256": "840cdf5f28e9bf3cf2e5097d6527f55a743c6d489776e87f79e56e8581c0f190"
+    },
+    "src/dft/src/cells/BUILD": {
+      "bytes": 730,
+      "git_blob": "ebe09da328db8b8a43ae5d0200fa5541787da6c1",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/cells/BUILD",
+      "sha256": "4a9da747f8f7286b957ce01d7805fcd7cad138b32bc8fa6f9dbd82131100a82d"
+    },
+    "src/dft/src/cells/CMakeLists.txt": {
+      "bytes": 694,
+      "git_blob": "328b16f71c4cf2ae957a5132a1bb7466ffac737b",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/cells/CMakeLists.txt",
+      "sha256": "771c97cd1b069ba23140aceaf73208415019aab53bb75b8df76b96b87f0ed800"
+    },
+    "src/dft/src/cells/OneBitScanCell.cpp": {
+      "bytes": 2278,
+      "git_blob": "a3ff4c8853a011dc3579ca7f482e3e97889ee5bf",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/cells/OneBitScanCell.cpp",
+      "sha256": "a48a124be9b836513f3ca669331466d4dce94dfb013560b33ab39c37f84dcc90"
+    },
+    "src/dft/src/cells/OneBitScanCell.hh": {
+      "bytes": 1452,
+      "git_blob": "dfa90f92c63aa03d94ae5c9acf865288b8e4bab8",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/cells/OneBitScanCell.hh",
+      "sha256": "93f41a856521152174484daaeb656b1a70042220851441b1bb3f0e755c0f86f9"
+    },
+    "src/dft/src/cells/ScanCell.cpp": {
+      "bytes": 1342,
+      "git_blob": "1e10b6990c9252373a5fcdb0b9ce3fd667f25ba7",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/cells/ScanCell.cpp",
+      "sha256": "4ebf30475fd3068203ae8e798a24f21e23c2a4609709428c0f6a68c10b6fd0a4"
+    },
+    "src/dft/src/cells/ScanCell.hh": {
+      "bytes": 4349,
+      "git_blob": "f48bae8c1fdb77c087a3e82637e8b14336f0f1f5",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/cells/ScanCell.hh",
+      "sha256": "e9878d92d12ebb48e6363728fa215f143ea0f11751612352497e44e3d4f1c58c"
+    },
+    "src/dft/src/cells/ScanCellFactory.cpp": {
+      "bytes": 6755,
+      "git_blob": "7e4c60d168da1c824a5e81d85fd3a530e3a5c2d6",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/cells/ScanCellFactory.cpp",
+      "sha256": "23b775fdeaf6099b666d42d418ba21ae2a2ffaed8bc79d33a8ae47298164bfda"
+    },
+    "src/dft/src/cells/ScanCellFactory.hh": {
+      "bytes": 785,
+      "git_blob": "6b79d0163b481d2a7dc1c25f2c9d44a41bafd77f",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/cells/ScanCellFactory.hh",
+      "sha256": "e727422486c4645a20a1e3f8496b50df7fadba10db6f3e3c72d37bb13c1d98f0"
+    },
+    "src/dft/src/clock_domain/BUILD": {
+      "bytes": 537,
+      "git_blob": "863c773e6d922177ee56f5c22efd909b61bcefed",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/clock_domain/BUILD",
+      "sha256": "91c01977f3761fd4c4612f55fa363af23afb3c95b342c17da17247fb113aa31d"
+    },
+    "src/dft/src/clock_domain/CMakeLists.txt": {
+      "bytes": 622,
+      "git_blob": "187fe9580aaf2692c818752ca98a21ddcd01b5ab",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/clock_domain/CMakeLists.txt",
+      "sha256": "56585c70750b2c6953196e3000c97e59a8c62939d5536a5a3be01261b0096444"
+    },
+    "src/dft/src/clock_domain/ClockDomain.cpp": {
+      "bytes": 1248,
+      "git_blob": "3aa6ac72a93534d282239368896a7e1be0287e70",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/clock_domain/ClockDomain.cpp",
+      "sha256": "799374a68ac9438871dc9823c779bff8c98c9402407ed96875ad0d2b250ee408"
+    },
+    "src/dft/src/clock_domain/ClockDomain.hh": {
+      "bytes": 929,
+      "git_blob": "8e1669649f46d7926a9ce00e1cc2a72ffa3d5bed",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/clock_domain/ClockDomain.hh",
+      "sha256": "9958753886852ea3cdc324c0e954f4e886a20ee2291715d0e4852de7a9ee3c4f"
+    },
+    "src/dft/src/clock_domain/ClockDomainHash.cpp": {
+      "bytes": 904,
+      "git_blob": "db24c41c5f4612d6dcf67e89e5ba2df9b3d6202a",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/clock_domain/ClockDomainHash.cpp",
+      "sha256": "0052601086c6868ed109ed53c3a7622ba64421df130fc729a355e1f60918aef7"
+    },
+    "src/dft/src/clock_domain/ClockDomainHash.hh": {
+      "bytes": 804,
+      "git_blob": "ece03925bad9863cbd8b707ad9e1e61ecff81839",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/clock_domain/ClockDomainHash.hh",
+      "sha256": "2f1f6d1dbce85edb48b2df0f16f7c1df67312cc60bf61e68c59340cae0215119"
+    },
+    "src/dft/src/config/BUILD": {
+      "bytes": 597,
+      "git_blob": "fe3f7a4232362b2659d9bfb090c499b1ac58b409",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/config/BUILD",
+      "sha256": "20809695cec22baa9700d8f8f2ebd4849648d40e5b337144003b07ed54adabe2"
+    },
+    "src/dft/src/config/CMakeLists.txt": {
+      "bytes": 382,
+      "git_blob": "af900ed7c8fbf095c50b4814cf22e4b104055d6c",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/config/CMakeLists.txt",
+      "sha256": "039c798c919c995528ba1940f2ebcdb3359e4f8f532584fd9ca7f3e9a5087ed8"
+    },
+    "src/dft/src/config/DftConfig.cpp": {
+      "bytes": 919,
+      "git_blob": "b3add7dabeb11718ab8c4ceb7e0803a17396524b",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/config/DftConfig.cpp",
+      "sha256": "917b736c1f942a72525c2b5c8fe320b9fd34d0b6249d727498ffc5c2f2e8621d"
+    },
+    "src/dft/src/config/DftConfig.hh": {
+      "bytes": 947,
+      "git_blob": "3c4276f2e38152530f5f40193aca7355f6311ad9",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/config/DftConfig.hh",
+      "sha256": "60be7be385ce27db526ba27cab183384a6523789363ba3de1d58b9185b55545d"
+    },
+    "src/dft/src/config/ScanArchitectConfig.cpp": {
+      "bytes": 1547,
+      "git_blob": "b7940008fb5d6930b9c687627d1a50e6ba48741d",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/config/ScanArchitectConfig.cpp",
+      "sha256": "b61a4c42dce7fa6deea74591fe8d8901df7b9cc5b2360cef12b9264605faf224"
+    },
+    "src/dft/src/config/ScanArchitectConfig.hh": {
+      "bytes": 1373,
+      "git_blob": "fb1ef17b76f1afa16d2d922b2fc12e016b70690e",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/config/ScanArchitectConfig.hh",
+      "sha256": "360d1bee2d6f87bcd8f1dc37804ae48c706d731a1b3345e66bac0320d0243511"
+    },
+    "src/dft/src/config/ScanStitchConfig.cpp": {
+      "bytes": 1215,
+      "git_blob": "0e6e56b5bf9429abc48a0bc868f5a7d9d48ae02e",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/config/ScanStitchConfig.cpp",
+      "sha256": "2af6925e4057ae3570c1b8b7e46b92ffc5a6fca9a05fba63a1b66aec203325be"
+    },
+    "src/dft/src/config/ScanStitchConfig.hh": {
+      "bytes": 845,
+      "git_blob": "5c23ca015ca12d88f3f7440f8bdc605468470b56",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/config/ScanStitchConfig.hh",
+      "sha256": "0b11c3d79286fdebbae315c741479eb895f651376e075b2ffb184a79ebe40b63"
+    },
+    "src/dft/src/dft.i": {
+      "bytes": 2946,
+      "git_blob": "1a14bd01ad4e13730caa0457846aa7d1319fe3b5",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/dft.i",
+      "sha256": "a8eaf7ec26f130609afffa30ea984bc0fa886f9b5ee6fc55674c13e56b9a1242"
+    },
+    "src/dft/src/dft.tcl": {
+      "bytes": 3006,
+      "git_blob": "f59b46230d22362e7d393e6ad90e93de869fb6e2",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/dft.tcl",
+      "sha256": "df725fccc6a05c2526d30c4582a9bb4da8956f5f75440d26c64fc828fdd246c8"
+    },
+    "src/dft/src/replace/BUILD": {
+      "bytes": 580,
+      "git_blob": "e4422caadd0e94ac535eb05e68c6afaa877753c6",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/replace/BUILD",
+      "sha256": "be3aec99ff431e93b8b5e2093d7ac48a8e58a3bc4bc87ae6e53f4c14a89cb127"
+    },
+    "src/dft/src/replace/CMakeLists.txt": {
+      "bytes": 349,
+      "git_blob": "caec4b00d45187b355d37fbdd04d12ef4b0c4548",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/replace/CMakeLists.txt",
+      "sha256": "74feb9129076e2955b8ab16d4eba69067a591afbfe694fdc55fb89247382af42"
+    },
+    "src/dft/src/replace/ScanReplace.cpp": {
+      "bytes": 15410,
+      "git_blob": "ab56003dda27f35ceb77c3eacb46c8634917b084",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/replace/ScanReplace.cpp",
+      "sha256": "7e99d8551c9430919f8ebc1f2e86c80bf7d410351a576a354cd21afb336300b5"
+    },
+    "src/dft/src/replace/ScanReplace.hh": {
+      "bytes": 3393,
+      "git_blob": "8fcd64eb0f6603fcb20155dedb07b03cde997645",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/replace/ScanReplace.hh",
+      "sha256": "50028b63c03d95a5d63344cf4f6f1aeed211be88775baac64e981204e593c804"
+    },
+    "src/dft/src/stitch/BUILD": {
+      "bytes": 614,
+      "git_blob": "4cf0a1701858e66f19bf0051807d39b47acf4c6e",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/stitch/BUILD",
+      "sha256": "cb80614ebcd0aa1bde505fb186285ae85647880804db9745769003cd48e4e388"
+    },
+    "src/dft/src/stitch/CMakeLists.txt": {
+      "bytes": 404,
+      "git_blob": "d0afd594ca093071dfe8b1f03a75717ef0743a4f",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/stitch/CMakeLists.txt",
+      "sha256": "32143429ea7531fef97be6811db99d3f4ecf23c63070ed612693aeff86f28ae1"
+    },
+    "src/dft/src/stitch/ScanStitch.cpp": {
+      "bytes": 8633,
+      "git_blob": "6cea10e1ff82a9ae093df8195ba235b4638452e2",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/stitch/ScanStitch.cpp",
+      "sha256": "4b7202fd917fd1f64007fad675295995f74acbb5c05032dcdf7b14c7393fccbf"
+    },
+    "src/dft/src/stitch/ScanStitch.hh": {
+      "bytes": 2630,
+      "git_blob": "326c66c918b483f31a549563e5043232553b29c6",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/stitch/ScanStitch.hh",
+      "sha256": "70935148669c40c281a7fa060c35fc9bbc95b4ef693766c241e84995382d1e70"
+    },
+    "src/dft/src/utils/BUILD": {
+      "bytes": 624,
+      "git_blob": "c936c22250e691d96a584b08a8187441fc00a3d0",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/utils/BUILD",
+      "sha256": "1f3d9ea72375119fe26337defcae04dee066ad9e165943e5f89bf5788cad3280"
+    },
+    "src/dft/src/utils/CMakeLists.txt": {
+      "bytes": 663,
+      "git_blob": "d915f0af6b098d11cb5e592e3c017bf731badf17",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/utils/CMakeLists.txt",
+      "sha256": "c5db25eedd985889e33d0368e84612594c0904ebbaff63f526e346a9beb46900"
+    },
+    "src/dft/src/utils/Formatting.hh": {
+      "bytes": 447,
+      "git_blob": "3c6f86421fa27b82ca1c9cc33a3b0da3ce379c64",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/utils/Formatting.hh",
+      "sha256": "a647c156a8c58f31a639ce97ddc523bb0ba53e2e218cb94dfd6373742d45642a"
+    },
+    "src/dft/src/utils/ScanPin.cpp": {
+      "bytes": 1059,
+      "git_blob": "59e24a002a1b40c38ef5ed38341ff11d3dac5f7f",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/utils/ScanPin.cpp",
+      "sha256": "61a6ac96a852c846813b83a920458ad24e3444aaa9235e4fe0cc10039e684e6b"
+    },
+    "src/dft/src/utils/ScanPin.hh": {
+      "bytes": 1143,
+      "git_blob": "5024f982ac7d1d717dc5fb025a603a43b80eb712",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/utils/ScanPin.hh",
+      "sha256": "e6af9e9b4ec90aaf9efb0e9d260fb203f2233eaef0e425bcd9dd5dfdef68f6f0"
+    },
+    "src/dft/src/utils/Utils.cpp": {
+      "bytes": 5005,
+      "git_blob": "1ae69c0f0ad4f7478a6558b40c6d02d7e7e57b59",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/utils/Utils.cpp",
+      "sha256": "2200534bf26a4bb40b9a7f9d9cc39dae64b835967599d2861bc4e01c5e32b53d"
+    },
+    "src/dft/src/utils/Utils.hh": {
+      "bytes": 1751,
+      "git_blob": "53c81fb753f571a99972d50c915a63da2f8349eb",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/src/utils/Utils.hh",
+      "sha256": "e659f1db8de6c83af85c70ed9e0917dd06fd4321d81ae5dd7eea7592dc3e1810"
+    },
+    "src/dft/test/BUILD": {
+      "bytes": 4337,
+      "git_blob": "91b3e5b0346c6449f551e908be239ec647761d86",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/BUILD",
+      "sha256": "3b5b2fd9f8b098ef7ca6e363c77ded01ae96fb6fcf08768f065634e578fef244"
+    },
+    "src/dft/test/CMakeLists.txt": {
+      "bytes": 348,
+      "git_blob": "272af19b6852a92fcf75269d2d4c8e92df2f1bf0",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/CMakeLists.txt",
+      "sha256": "3fd01187dd6fac2e4f98483577027ed17dfaa6956bff1312b62b338b79aaff7b"
+    },
+    "src/dft/test/Nangate45": {
+      "bytes": 23,
+      "git_blob": "7f1df955c5708a263919a53c133186f79f74be21",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/Nangate45",
+      "sha256": "6000ff0da4764bc26deb8a810c296412beeb8bed6ad85feb78f5dbc531405dec"
+    },
+    "src/dft/test/cpp/CMakeLists.txt": {
+      "bytes": 735,
+      "git_blob": "3c963ae76b46b23c4e00c0fd64cb72b25352b96b",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/cpp/CMakeLists.txt",
+      "sha256": "a19c7a77aeac507692422a2a613e1fcefdba2682015eb30bc745c376f192037c"
+    },
+    "src/dft/test/cpp/ScanCellMock.cpp": {
+      "bytes": 1248,
+      "git_blob": "951eabde55e49197c75ec02171dc981721301c64",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/cpp/ScanCellMock.cpp",
+      "sha256": "ac210ed00c7640159629ef9563736affe3c7d3d1472cf88ae2fe57603453b29d"
+    },
+    "src/dft/test/cpp/ScanCellMock.hh": {
+      "bytes": 882,
+      "git_blob": "124fa6e5ce79141ce6374d059ebf75bd7fa3ccae",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/cpp/ScanCellMock.hh",
+      "sha256": "422c778dc38a1be3a71316359ebb2686208dbe477dec580d8bf0ae78b7ed3174"
+    },
+    "src/dft/test/cpp/TestScanArchitect.cpp": {
+      "bytes": 2674,
+      "git_blob": "19c2b4b1b03fecc6bc0c7797518576e2bd50ee09",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/cpp/TestScanArchitect.cpp",
+      "sha256": "437cce97751b433875b400730a44cbd1e63beda256fb2f2e6d5c1f82cb2e0a31"
+    },
+    "src/dft/test/cpp/TestScanArchitectHeuristic.cpp": {
+      "bytes": 6077,
+      "git_blob": "f77d058bcc23322f275174367b3659d5ac6aeb70",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/cpp/TestScanArchitectHeuristic.cpp",
+      "sha256": "9a3e9b72c532422774547085926e1605c340ff0ceaa4428a9ed00bb8b39f1cc3"
+    },
+    "src/dft/test/dft_man_tcl_check.py": {
+      "bytes": 42,
+      "git_blob": "012ec002194a72fe3fe83e139663ca7f18ef44d9",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/dft_man_tcl_check.py",
+      "sha256": "3bff2c83d7778cfbe6cb066633a3376067df5dbff13ccc7bcece408b548460be"
+    },
+    "src/dft/test/dft_readme_msgs_check.ok": {
+      "bytes": 185,
+      "git_blob": "1afa1f577ad02e19f81497f434728068ceee55f3",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/dft_readme_msgs_check.ok",
+      "sha256": "f3293d5046b319cd4fb69f7978f7f7f24a13e4467ceac434f3e1c63765bfe7c7"
+    },
+    "src/dft/test/dft_readme_msgs_check.py": {
+      "bytes": 523,
+      "git_blob": "8a60bb0ff751c71723db77e9431c1f982713d44b",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/dft_readme_msgs_check.py",
+      "sha256": "e28e16cb6b647d3af97078c286735b24ea01a84ad39651460c7bab575c8431ee"
+    },
+    "src/dft/test/extract_utils.py": {
+      "bytes": 42,
+      "git_blob": "3a16235d508c26a3ed0c27a0e6d8ccfb99d0b1df",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/extract_utils.py",
+      "sha256": "2e4db1bad622b088e8a56d22e845501f8cf3bdc5c9579247e9540825b8db0e02"
+    },
+    "src/dft/test/helpers.tcl": {
+      "bytes": 25,
+      "git_blob": "509ca07b27ea9471aee54a9d953ea559dfd214d8",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/helpers.tcl",
+      "sha256": "6d008aa2cd2d96d93c17d282ef5533ace2283625d8214dd34155b29eb8397874"
+    },
+    "src/dft/test/manpage.py": {
+      "bytes": 36,
+      "git_blob": "c39859549f25d4ea5f816a3968ae290435b3b35b",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/manpage.py",
+      "sha256": "2cfc19c4a6ad09e3a0423e51e428ce140d1377c809babe5bc0f9b454a7ad29a5"
+    },
+    "src/dft/test/max_chain_count_sky130.ok": {
+      "bytes": 633,
+      "git_blob": "e36ac80e70b92aa55d01752be199c1bf3d541563",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/max_chain_count_sky130.ok",
+      "sha256": "949c29b525ec57e0bc459f386518dc1f59b3de4e3e9f036544c3453bd61792c8"
+    },
+    "src/dft/test/max_chain_count_sky130.tcl": {
+      "bytes": 557,
+      "git_blob": "2924efe041f67cee48959fee7d458f2aeb9854f6",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/max_chain_count_sky130.tcl",
+      "sha256": "71459f8d6a508e334f88f6c5fe79dc8f4863c6cd47da31aa408d16ba1a535ba9"
+    },
+    "src/dft/test/max_chain_count_sky130.v": {
+      "bytes": 1700,
+      "git_blob": "216ebbf5822401b90d1a07bb0fc05416b1d0ad31",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/max_chain_count_sky130.v",
+      "sha256": "ce5a8b9e08786984fb92895dbb624f6add2e23b769970eebdf1e4da6199af483"
+    },
+    "src/dft/test/max_chain_count_sky130.vok": {
+      "bytes": 2058,
+      "git_blob": "1337063e44a29446b6201c53fa52ea5ae2565f18",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/max_chain_count_sky130.vok",
+      "sha256": "b581f36c3e6f53606ad837c20839c99a22b1d11125bab24746dd27642bf1a5c4"
+    },
+    "src/dft/test/md_roff_compat.py": {
+      "bytes": 43,
+      "git_blob": "43530e421ebc13677d9c772730556e7b402bced0",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/md_roff_compat.py",
+      "sha256": "ec31aa6f06c0475c58c5a8978e7f170728dcc1f686e2a721d49718e4b712666f"
+    },
+    "src/dft/test/one_cell_nandgate45.vok": {
+      "bytes": 173,
+      "git_blob": "c56e984a087cf99c04d4b7c622ada5b5763ca5d9",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/one_cell_nandgate45.vok",
+      "sha256": "4b2a5cc30663d01235d323886b3c6a282e699fb920ba50080232a2539570b6b2"
+    },
+    "src/dft/test/one_cell_sky130.def": {
+      "bytes": 826,
+      "git_blob": "ed7aa06fc5345fafa4e0de62bbd76c4842323517",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/one_cell_sky130.def",
+      "sha256": "3aaf17138a0499135926f6ff3c2b95a0d241d2e2f5e15ac61784a322702c7064"
+    },
+    "src/dft/test/one_cell_sky130.defok": {
+      "bytes": 1224,
+      "git_blob": "083d1ae8b805b0358c693c2e40dd491acd725bd8",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/one_cell_sky130.defok",
+      "sha256": "bb366ef4088485e1f0251f701b79e488992ab870d40ed1e99f5e05c6b189d226"
+    },
+    "src/dft/test/one_cell_sky130.ok": {
+      "bytes": 1690,
+      "git_blob": "81895ec1660523008bdef201abb6f53fd98186e1",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/one_cell_sky130.ok",
+      "sha256": "a3412c5ce2e703a9719bf4c3a8694ee4d66f1fa5bd515d183144c0db44093a93"
+    },
+    "src/dft/test/one_cell_sky130.tcl": {
+      "bytes": 688,
+      "git_blob": "f7cb42cb6e6aa4c9ed719e438c5d964de0fad5a3",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/one_cell_sky130.tcl",
+      "sha256": "7591c3b7a6f6f1c9de3c42634eb4ac9b223f15747f17db55f4554bbb18044795"
+    },
+    "src/dft/test/one_cell_sky130.vok": {
+      "bytes": 348,
+      "git_blob": "8f31233ec664d3a3a202f8fd342de8a40bb5e005",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/one_cell_sky130.vok",
+      "sha256": "98016073c770c8009c0cd91de5951a4860a360b748be5fc00254526a5c08a41e"
+    },
+    "src/dft/test/place_sort_sky130.ok": {
+      "bytes": 551,
+      "git_blob": "f96726a1edcd86135b1038cd9210edcd9c0fd349",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/place_sort_sky130.ok",
+      "sha256": "90043053b46856b1bedc08fbdcbb121478241389751daf5f218bce32c9634f8c"
+    },
+    "src/dft/test/place_sort_sky130.tcl": {
+      "bytes": 1071,
+      "git_blob": "db5893d8c31afbd831cfc65045fe6ead86e63ed9",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/place_sort_sky130.tcl",
+      "sha256": "d73afcdef4f41503cb4def7477047844ac286c286e216bc8f13f4af520c17018"
+    },
+    "src/dft/test/place_sort_sky130.v": {
+      "bytes": 1588,
+      "git_blob": "df5270fde91a9ea3c909a524be94568f26780a4e",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/place_sort_sky130.v",
+      "sha256": "e761e77c979d3a3c2672ddaf4da67ff5a9d4fc536d5778d603895903152c8bff"
+    },
+    "src/dft/test/place_sort_sky130.vok": {
+      "bytes": 2014,
+      "git_blob": "05d7d168ac8e41ea29970816445253341a0af320",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/place_sort_sky130.vok",
+      "sha256": "e64336d6bab7cc0501ce551f171d49bfb9b67b4090c040bae21c3489573adbdf"
+    },
+    "src/dft/test/register_bank_cores.lef": {
+      "bytes": 14561,
+      "git_blob": "244f7ceab9f3e5f36c3573b6c88ceb0e8e28975e",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/register_bank_cores.lef",
+      "sha256": "3e656dd98a81c506dea27133b88ba915bf3f3f18d490d9de756a0d0b0ffcce6d"
+    },
+    "src/dft/test/register_bank_top.v": {
+      "bytes": 30485,
+      "git_blob": "d4cf8613afd52e9048a32f4a010c8402ff4aa5aa",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/register_bank_top.v",
+      "sha256": "25def956dea9a0c4763e882c45b9e0b9e960c1be6a3eaf5808075b747dda3d35"
+    },
+    "src/dft/test/regression": {
+      "bytes": 34,
+      "git_blob": "683895a42de01f0907a8a7b314f190605eae378b",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/regression",
+      "sha256": "3c031d2782ac0c2c0b870619b878904bc7024dbdfeec53ad72bff41d2057d26d"
+    },
+    "src/dft/test/save_defok.sh": {
+      "bytes": 34,
+      "git_blob": "7ee49ae334f6ad1533bca1b722779fb892a7d2a9",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/save_defok.sh",
+      "sha256": "9a88b63bded2c2b3cf6e2f0eee31bddc2f3b44f91ccd395236a5e869956a7652"
+    },
+    "src/dft/test/save_ok": {
+      "bytes": 31,
+      "git_blob": "c3cdfd3c1244e71b4e14bd980db6a106ac95e23d",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/save_ok",
+      "sha256": "c2992b03afc5d17e27bb74c909584392576d36296c3a67f05e28dd8e76c2f92f"
+    },
+    "src/dft/test/scan_architect_clock_mix_sky130.ok": {
+      "bytes": 1165,
+      "git_blob": "4c0e745ea955428e6742753f2c0bcfd51ed0cf41",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scan_architect_clock_mix_sky130.ok",
+      "sha256": "da92c7d71cac7edd36e1caee1b89e7abcf197472da2c48e0254eb0ddecdd6d93"
+    },
+    "src/dft/test/scan_architect_clock_mix_sky130.tcl": {
+      "bytes": 1118,
+      "git_blob": "822a7a38bb43f186a45eeada972e5f32df02bc78",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scan_architect_clock_mix_sky130.tcl",
+      "sha256": "cc038b9f6d0b8c005128c7fa77ac98f0f98fdf1d57ce42ecc18b1432fdbe76f7"
+    },
+    "src/dft/test/scan_architect_clock_mix_sky130.vok": {
+      "bytes": 4175,
+      "git_blob": "51c251fefa4f5fa6af2f87d12429ba52495f162e",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scan_architect_clock_mix_sky130.vok",
+      "sha256": "66c7c19b1b3742be337b859a9c08249665a9c0051df17d369a0f690413ffafe3"
+    },
+    "src/dft/test/scan_architect_no_mix_sky130.ok": {
+      "bytes": 943,
+      "git_blob": "a1c261188e01a61c43b783a25b0b07ee3b069145",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scan_architect_no_mix_sky130.ok",
+      "sha256": "fed98c42782c0cd7b782911e2c0110e47d8c9b2829b4d79e4e80c6d44a16f81a"
+    },
+    "src/dft/test/scan_architect_no_mix_sky130.tcl": {
+      "bytes": 1082,
+      "git_blob": "e6851182afe3fc7cc014eb27fbc835040ac727f7",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scan_architect_no_mix_sky130.tcl",
+      "sha256": "e38fe55514a965505103d10e732232d6fda76e2b389b8453ab904b369a9719af"
+    },
+    "src/dft/test/scan_architect_no_mix_sky130.vok": {
+      "bytes": 4070,
+      "git_blob": "a29f8c537f9d49f155fe8285daea134a94e6e3d4",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scan_architect_no_mix_sky130.vok",
+      "sha256": "86688a019958a681ae2ee5a3b6e09401e7d629d417be18880248415d8cb5bc3b"
+    },
+    "src/dft/test/scan_architect_register_bank_no_clock_mix_sky130.ok": {
+      "bytes": 1769,
+      "git_blob": "6b86b1d10dc6e3a3d5d826897aef6397cc2b52aa",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scan_architect_register_bank_no_clock_mix_sky130.ok",
+      "sha256": "65c65976b7e8e135c5d63224fe7378796a1cf37dc76b3b685ca389bb7eb1ca19"
+    },
+    "src/dft/test/scan_architect_register_bank_no_clock_mix_sky130.tcl": {
+      "bytes": 679,
+      "git_blob": "fb44536edcd911b492e1ec619cfcfaeaee28df25",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scan_architect_register_bank_no_clock_mix_sky130.tcl",
+      "sha256": "ae687ca5827cb349b70d66d81a89af17f1c429e755f70d91dce0f9607ed47882"
+    },
+    "src/dft/test/scan_architect_register_bank_no_clock_mix_sky130.vok": {
+      "bytes": 41199,
+      "git_blob": "85fc27674ed1f296f03b1c506498659ef87411f0",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scan_architect_register_bank_no_clock_mix_sky130.vok",
+      "sha256": "d9a844cab3c64be01576f3b93fbab6ea319d816b9c3682e49465b4915ae39ee5"
+    },
+    "src/dft/test/scan_architect_sky130.v": {
+      "bytes": 3185,
+      "git_blob": "573f57034ac618bbb4ff18bd888c046094a45145",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scan_architect_sky130.v",
+      "sha256": "8f974a55a662a87bf8035e37d62543a9abe824616b8bc25263a7e8ac1200ec88"
+    },
+    "src/dft/test/scan_inserted_design_sky130.scandef": {
+      "bytes": 1933,
+      "git_blob": "c7cf9e4c4fbe140a88c10b55171c14b96039fa37",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scan_inserted_design_sky130.scandef",
+      "sha256": "38aa809b2c2d1ac47f6a6143ffaa25884021f27cba3a01ff46d9c4b8af76a7af"
+    },
+    "src/dft/test/scan_inserted_design_sky130.v": {
+      "bytes": 4376,
+      "git_blob": "31d860b796e2b4f63702f71f6162bb0030913ec6",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scan_inserted_design_sky130.v",
+      "sha256": "931c780beae42dbbe9973a846bbbe2625376b5394c56c20aba152d12a74de65d"
+    },
+    "src/dft/test/scan_inserted_register_bank.v": {
+      "bytes": 864,
+      "git_blob": "88de80c899a1814f9602c2cc1eb6f13e24ce447b",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scan_inserted_register_bank.v",
+      "sha256": "b505e3ec9a79c49c99be89c525820104d0a67ad87810f0f48e6dceaf12ec2283"
+    },
+    "src/dft/test/scandef_core_sky130.defok": {
+      "bytes": 35214,
+      "git_blob": "c339487664f7e46a8da054a80e7cd3dd0f7695d9",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scandef_core_sky130.defok",
+      "sha256": "4a41d67412e0aab4d7ba6443d5638698e21e4af5efe33b3a60a9ea459aebd947"
+    },
+    "src/dft/test/scandef_core_sky130.ok": {
+      "bytes": 565,
+      "git_blob": "ce0531b5fc1ad6fa1fbf2fd0784c063a49add0ae",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scandef_core_sky130.ok",
+      "sha256": "3559e2bae235f9d0885f5fca8970b6e9e02df9f9ca553aeaa857e70db0fb216e"
+    },
+    "src/dft/test/scandef_core_sky130.scandef": {
+      "bytes": 421,
+      "git_blob": "9c4e911f36050ac66a5db034818968dd34dcd3e3",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scandef_core_sky130.scandef",
+      "sha256": "b1ababb9f1bf23acfc6c5724ff6e19b41d4de0fa80bd52ce1d2d579239dee179"
+    },
+    "src/dft/test/scandef_core_sky130.tcl": {
+      "bytes": 433,
+      "git_blob": "99f72acc64a04607ceb81645a7c61bff702c814d",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scandef_core_sky130.tcl",
+      "sha256": "65b3c2ce75f0924f27e4c1c24418b434b59c36efe3a49dc5c4c3dca5a2ba1a90"
+    },
+    "src/dft/test/scandef_sky130.defok": {
+      "bytes": 9703,
+      "git_blob": "37992ed4c208cb28963e02343616a47772f333fa",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scandef_sky130.defok",
+      "sha256": "11814ab5705df2c0166dad96d498550f9b7ab59a5562df4feb1f81edc802527e"
+    },
+    "src/dft/test/scandef_sky130.ok": {
+      "bytes": 233,
+      "git_blob": "40c5cf2ae9d2a4203e537268506117dc6a5da93d",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scandef_sky130.ok",
+      "sha256": "5cc411bd80931a773d7725c9275c6eca3103fb31196289795d855831a0514327"
+    },
+    "src/dft/test/scandef_sky130.tcl": {
+      "bytes": 412,
+      "git_blob": "59a11eb5730bcbe6a2de4935ca31ec2c893d38ce",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/scandef_sky130.tcl",
+      "sha256": "5288417614971437527e4ba5cc5d1eb05b55bf86e8c969d59da86c44cbcd1f7f"
+    },
+    "src/dft/test/sky130hd": {
+      "bytes": 22,
+      "git_blob": "2363d2b2e2a52a3ed14176c8a6b2f51484261efa",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/sky130hd",
+      "sha256": "477dc1ea51d48302dba0da55946d393c8e86fde8a20a02c286f506265f16054f"
+    },
+    "src/dft/test/sub_modules_sky130.ok": {
+      "bytes": 416,
+      "git_blob": "eaaddd39bcbbde06b0decab028ff63df8a7eba5b",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/sub_modules_sky130.ok",
+      "sha256": "cc7ad47d280c7dc34274975656d5a152be4bcdc96dca8f73b082e2b26f6d66bc"
+    },
+    "src/dft/test/sub_modules_sky130.tcl": {
+      "bytes": 496,
+      "git_blob": "23a7fc638354ffe8521a96a733f6ec0b6c8f2f1e",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/sub_modules_sky130.tcl",
+      "sha256": "de414285d028efd33d068a8a0b6d8e61a5d49d840b365bb3d2841590a9853de7"
+    },
+    "src/dft/test/sub_modules_sky130.v": {
+      "bytes": 495,
+      "git_blob": "181176b65d76a78f7ce7d594fdcc1f27384fd843",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/sub_modules_sky130.v",
+      "sha256": "cfaead62590d787675927806bde24a95ce71b0b92e56a33a16d2458bbf56be68"
+    },
+    "src/dft/test/sub_modules_sky130.vok": {
+      "bytes": 756,
+      "git_blob": "728fe5d7925ed6c308a28c15bf9d6be1cbb3e229",
+      "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/B1_openroad_native/source_audit/src/dft/test/sub_modules_sky130.vok",
+      "sha256": "05d73cd1df33ae74f8ba3c48db3cee3579a4f15de6b6b1e98f5e751a036a112c"
+    }
+  },
+  "source_tree_git_sha": "08f67ee5ecd14db5a42be8c610bbfd1ccf079299",
+  "upstream_base_tip": "08f67ee5ecd14db5a42be8c610bbfd1ccf079299"
+}

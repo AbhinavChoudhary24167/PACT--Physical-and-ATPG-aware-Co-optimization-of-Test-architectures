@@ -1,0 +1,45 @@
+{
+  "B0": {
+    "behavior": "Existing seed-11 K=2 contiguous supplied-order reference; not the original K=1 physical chain"
+  },
+  "B1": {
+    "behavior": "Native clock-domain buckets and per-chain nearest-neighbor FF-origin ordering; scan_opt is not invoked",
+    "commands": "set_dft_config -max_chains 2 -max_length ceil(FF/2) -clock_mixing no_mix; report_dft_plan -verbose; execute_dft_plan",
+    "commit": "08f67ee5ecd14db5a42be8c610bbfd1ccf079299",
+    "source": "src/dft/src/architect/ScanArchitectHeuristic.cpp and Opt.cpp in source_pin.json"
+  },
+  "B2": {
+    "behavior": "Nearest-neighbor native seed followed by endpoint-inclusive symmetric FF-origin Manhattan 2-Opt; restitch and write DFT information",
+    "commands": "execute_dft_plan; scan_opt (planned, not executed)",
+    "commit": "6fff875551fe13a2aae3a22f871a6ca7f8d5c1cf",
+    "parameters": {
+      "max_2opt_iterations": 30
+    },
+    "reproduction": "CONFIGURATION_FAILED; no generated B2 architecture"
+  },
+  "B3": {
+    "behavior": "Same-clock/edge capacity-aware farthest-point seeded K-means repartitioning, nearest-neighbor seed, asymmetric scan-pin 2-Opt and direction-preserving 3-Opt; restitch ODB",
+    "commands": "execute_dft_plan; scan_opt (planned, not executed)",
+    "commit": "746c748b19cd2b9d7fb6aa3afe53fe4c31ce3656",
+    "objective_note": "Per-chain local search uses internal directed scan-pin Manhattan distances; it does not include external SI/SO endpoint costs",
+    "parameters": {
+      "candidate_neighbors": 50,
+      "candidate_overquery": 100,
+      "capacity": "original maximum chain bit count",
+      "kmeans_iterations": 100,
+      "local_search": "strict improvement until no improvement"
+    },
+    "reproduction": "Source pinned and inspected; full build not attempted after B2 stop condition"
+  },
+  "P0": {
+    "commit": "9d9103027918b1d4af2b209e6d36133ad82d4a4e",
+    "model": "candidate_stateful_depth3_frozen",
+    "production_changed": false,
+    "search": "Reuse existing frozen retained archive and exact recorded budgets",
+    "selection": "Predeclared predicted-only physical/H8 extrema and balanced minimax normalized regret"
+  },
+  "P1": {
+    "implementation": "NOT_STARTED",
+    "model": "candidate_stateful_adaptive"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "OSS_benchmark_complete": false,
+  "P0_commit": "9d9103027918b1d4af2b209e6d36133ad82d4a4e",
+  "P1_model_complete": false,
+  "Stage_B": "NOT_STARTED_STAGE_A_STOP_CONDITION",
+  "Stage_C": "NOT_STARTED_STAGE_A_STOP_CONDITION",
+  "build_evidence": {
+    "bytes": 1029,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/baselines/B2_openroad_10176/build_status.json",
+    "sha256": "2218bdbe1f56b669cedafe5b9014a442e1f2ad04e01ff946cbb30db79e85d919"
+  },
+  "implemented_comparison": "UNAVAILABLE; no measured OSS/P0 comparison or external Pareto conclusion",
+  "new_ATPG_runs": 0,
+  "new_extractions": 0,
+  "new_routes": 0,
+  "new_simulations": 0,
+  "next_milestone": "Provision an isolated reproducible build toolchain for the pinned PRs, then complete and seal the unchanged Stage-A benchmark before P1",
+  "observed_blockers": [
+    "SWIG_EXECUTABLE and SWIG_DIR missing; source requires SWIG >=4.3",
+    "TCL_HEADER-NOTFOUND"
+  ],
+  "post_improvement_benchmark_complete": false,
+  "qualification": {
+    "FF_manifest_rows": 7328,
+    "P0_frozen_bindings": 454,
+    "canonical_architectures": 24,
+    "native_K2_designs": [
+      "s5378",
+      "s9234",
+      "s15850"
+    ],
+    "selected_P0_architectures": 7,
+    "unit_tests_passed": 16
+  },
+  "scientific": "PACT_BENCHMARK_INCONCLUSIVE",
+  "stage_a": "PACT_STAGE_A_INCOMPLETE",
+  "stop_condition": "Requested OpenROAD baseline not reproduced: exact PR #10176 failed CMake configuration in the current qualified environment",
+  "timestamp": "2026-10-03T09:32:13.038499+00:00"
+}

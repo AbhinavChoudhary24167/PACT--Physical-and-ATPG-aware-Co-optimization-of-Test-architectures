@@ -1,0 +1,588 @@
+{
+  "P0_commit": "9d9103027918b1d4af2b209e6d36133ad82d4a4e",
+  "P1_budget": "Same mutation/exact evaluation count per design and starts as frozen P0; record initialization/reference overhead separately",
+  "comparable_cost": "Report pairwise cost deltas and nondominance; do not invent a post-outcome matching tolerance",
+  "designs": [
+    "s5378",
+    "s9234",
+    "s15850"
+  ],
+  "endpoint_translation": "Preserve generated FF identity, membership and order; explicitly map generator endpoints to common fixed physical ports without repartitioning",
+  "freeze": {
+    "bytes": 159036,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/stage_a/P0_FREEZE.json",
+    "sha256": "c3207167b26cc2feaf86037f6cf837d2f082e0c1518e315879785335b780e1f9"
+  },
+  "frozen": {
+    "ATPG": "existing FAN patterns; no regeneration",
+    "H4": "existing 4x4",
+    "H8": "existing 8x8",
+    "K": 2,
+    "attribution": "whole net capacitance at source; existing spatial coordinate system",
+    "cycles": "existing load/capture/unload serialization",
+    "extraction": "existing OpenRCX and measurement scripts",
+    "placement_seed": 11,
+    "routing": "existing route_selected adapter; GRT_SEED=11, NUM_CORES=2, /usr/bin/openroad",
+    "technology": "existing Nangate45"
+  },
+  "independent_variables": [
+    "scan architecture generator",
+    "P0 versus P1 after Stage A"
+  ],
+  "inputs": {
+    "s15850": {
+      "3_place.odb": {
+        "bytes": 2739947,
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s15850/phase0b_s11_B0/3_place.odb",
+        "sha256": "de8eb6915b056ae069622878850cb40040290012dd5df149e974f8b45607c9d9"
+      },
+      "3_place.sdc": {
+        "bytes": 19270,
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s15850/phase0b_s11_B0/3_place.sdc",
+        "sha256": "2c875616f263d20f9c9c0ddc2ed928ca58cb59a44eb18a6076b214afb48dd4c0"
+      },
+      "B0_reference": {
+        "bytes": 66760,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s15850/s11/k2/B0.architecture.json",
+        "sha256": "e476b46834dccf50fb025fccc8a986308a31bb512ca20e88179fd6094453f85c"
+      },
+      "P0_search": {
+        "bytes": 16891,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/s15850/search.json",
+        "sha256": "892b6ae9f234bdfbe6e8a7713b51fb7930323cfd5d7b9843564c7a34ab525164"
+      },
+      "architecture": {
+        "bytes": 66760,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s15850/s11/k2/P.architecture.json",
+        "sha256": "86fb63dbda99d833cc3176e94ce947b91f005cd867886887fc0789165c4932db"
+      },
+      "baseline_measurements": {
+        "bytes": 7057,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/comparison.csv",
+        "sha256": "f66a7985ee0b337305e411c36f158241e238aabb8e6b1ae029157ad9a547ca61"
+      },
+      "candidate_sensitive_search": {
+        "bytes": 43314,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/s15850/search.json",
+        "sha256": "fc4bbe19e93a88a36536661dc034ed26a3e69ada6a775cb1c6d1348adeeb2d7a"
+      },
+      "candidate_sensitive_summary": {
+        "bytes": 179937,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/summary.json",
+        "sha256": "13730fae818cea382c0e5f99fd519259b3602eca04507ad3279a557dc1bc96ea"
+      },
+      "caps": {
+        "bytes": 498158,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s15850/P/net_activity_capacitance.csv",
+        "sha256": "c91506d9643e68877de97f9d3894aefa580aded10c89d72fcedcbb7e477d6fc0"
+      },
+      "diagnostics": {
+        "bytes": 41905,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/s15850/diagnostics.json",
+        "sha256": "02918622a29647ec7d66477c27c7d76938c9e21b1374e835ca7a13677f49042d"
+      },
+      "identity_map": {
+        "bytes": 74125,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s15850/ff_identity_map.json",
+        "sha256": "c8ba4df64448de4036bd5c3f485e1ed8d80b23c5ab176448fef45474939e8fc1"
+      },
+      "manifest": {
+        "bytes": 34605,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/manifest.json",
+        "sha256": "eaf7ad0cc21a8a30bac73fc3aa7d3e4acb41f4f275d9b6ef94775822d2897b03"
+      },
+      "mapping": {
+        "bytes": 839714,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s15850/P/net_mapping.json",
+        "sha256": "b16afad3c756db1710fcff2c7131ac7dfee2b4915a1fcacd82c256a4f8b8f100"
+      },
+      "patterns": {
+        "bytes": 181676,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s15850.pat",
+        "sha256": "477c4d973264739c049869a47782021e58042795b539e664d49a5811e730f9ec"
+      },
+      "physical_caps": {
+        "bytes": 498158,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s15850/P/net_activity_capacitance.csv",
+        "sha256": "c91506d9643e68877de97f9d3894aefa580aded10c89d72fcedcbb7e477d6fc0"
+      },
+      "physical_liberty": {
+        "bytes": 6692032,
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+        "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1"
+      },
+      "physical_mapping": {
+        "bytes": 839714,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s15850/P/net_mapping.json",
+        "sha256": "b16afad3c756db1710fcff2c7131ac7dfee2b4915a1fcacd82c256a4f8b8f100"
+      },
+      "physical_odb": {
+        "bytes": 6680029,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s15850/P/routed.odb",
+        "sha256": "2c6a4c534dda2865a265fe39776bba440dd601cb4e8b1716408713d4626eba60"
+      },
+      "placement": {
+        "bytes": 962818,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s15850/s11/placed.def",
+        "sha256": "a2a41986c43d596cbdf46a9b278ac1c2b259229748108055d50eb525bca31aad"
+      },
+      "previous_search": {
+        "bytes": 30098,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s15850/search.json",
+        "sha256": "80a82c2b5fc1ce0052b318a18e90fcf763bf38ac00bcaf6f4fbfdd861aeca682"
+      },
+      "previous_summary": {
+        "bytes": 109871,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/summary.json",
+        "sha256": "fc7aa5cf8c10723e68a47734584ddae029a020d7c52fb140915f53d81e1710bc"
+      },
+      "prior_corpus": {
+        "bytes": 1053449,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/s15850/prior_corpus.json.gz",
+        "sha256": "e80c263b65aaf993e6b4f1e3711d21f5e7d3eab9fe48de38806918bf575f481f"
+      },
+      "seed_J50": {
+        "bytes": 66760,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s15850/s11/k2/J50.architecture.json",
+        "sha256": "412cce408529d7214826e4f76068561e65cc9c5f121c44ee3b1e460092ef95ed"
+      },
+      "seed_P": {
+        "bytes": 66760,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s15850/s11/k2/P.architecture.json",
+        "sha256": "86fb63dbda99d833cc3176e94ce947b91f005cd867886887fc0789165c4932db"
+      },
+      "seed_PACT": {
+        "bytes": 66760,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s15850/integration_v1/scan_topology_after.json",
+        "sha256": "eede91c14cdc2c8f484b52c1f17020d0ad418ffe063ea49612fade25674f3193"
+      },
+      "seed_T": {
+        "bytes": 66760,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s15850/s11/k2/T.architecture.json",
+        "sha256": "1f802393dcddd460afc06c8ddc1d86e04b1eff64d0f7233de36fb87a57e27d8a"
+      },
+      "seed_cs_630da6943398": {
+        "bytes": 66760,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/s15850/architectures/630da694339881c078b0fb601a1b9a157c71f493fa59c66751fa6750e5eeb36d.json",
+        "sha256": "136bbd63cc6b5c676f625307e60b3b12e15b515d602221df181155bc1dff63bc"
+      },
+      "seed_cs_a3dd757a7e17": {
+        "bytes": 66760,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/s15850/architectures/a3dd757a7e1721db5c67faa44596bb78d690e380a2fa794b2484b8f014fe0db1.json",
+        "sha256": "cd1dc2437e071d4adce4b612032b083c2a580996a123e47e4cadbcc44a89020b"
+      },
+      "seed_v2_1c4fe83a6b04": {
+        "bytes": 66760,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s15850/architectures/1c4fe83a6b043e5140b67ab63462da9469202e928720431b0ac0e92210a3eadf.json",
+        "sha256": "4cccd6fc4efb3af211ef51cd085987e1dc0cb32f04e946d10b54880eed74b00e"
+      },
+      "seed_v2_e14689c97ca5": {
+        "bytes": 66760,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s15850/architectures/e14689c97ca5454cd0c46f98a4328713eca058aece7c6a6229b25f6c0fb2075b.json",
+        "sha256": "b28e01c88b262a131f4ca07b53138dd37cd80b4b96c6f040e8fbd7a005a2d23b"
+      },
+      "seed_v2_f3e118a35e7b": {
+        "bytes": 66760,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s15850/architectures/f3e118a35e7ba33881c8d2855e6348525823f33056594a27f11b07b55738b70d.json",
+        "sha256": "47ce6dd2394ae2da93418b1efc5fd8523560b8cc99948a5f92c3a62c878a809a"
+      },
+      "topology": {
+        "bytes": 3750334,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/s15850/topology.json",
+        "sha256": "256c37c5de0a11f6eaf4903140a6f6ddc408c05f4266d12a3c756f2dec33f5ef"
+      }
+    },
+    "s5378": {
+      "3_place.odb": {
+        "bytes": 1317910,
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+        "sha256": "2792c3863d10e34823ebb7aa404770dc1aeff55456f0fbb15f704bcd9fc57cd0"
+      },
+      "3_place.sdc": {
+        "bytes": 8058,
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.sdc",
+        "sha256": "0108ee0e1b38190c138878c3d49e255a701e197219b8a7106d08badc0f24fb9a"
+      },
+      "B0_reference": {
+        "bytes": 23699,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s5378/s11/k2/B0.architecture.json",
+        "sha256": "bbf85b99b32d30172e1b1078c9d4a6d0a6fc2c6be308dc660df2e4e7650fa452"
+      },
+      "P0_search": {
+        "bytes": 18293,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/s5378/search.json",
+        "sha256": "c68121a883318e869a6ea1a39ab55300364ae4744263ad2b40e0c6beb38c0e47"
+      },
+      "architecture": {
+        "bytes": 23699,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s5378/s11/k2/P.architecture.json",
+        "sha256": "e4fc28df36dc56d05f9968bb8b07e222de22f33f6ea87fed1e16c260bd0d0f35"
+      },
+      "baseline_measurements": {
+        "bytes": 7057,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/comparison.csv",
+        "sha256": "f66a7985ee0b337305e411c36f158241e238aabb8e6b1ae029157ad9a547ca61"
+      },
+      "candidate_sensitive_search": {
+        "bytes": 45488,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/s5378/search.json",
+        "sha256": "ab353f6b8efe5ba5e457c61be4b7ac0c4e17b4f15521083f6d3dfe4c534411c6"
+      },
+      "candidate_sensitive_summary": {
+        "bytes": 179937,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/summary.json",
+        "sha256": "13730fae818cea382c0e5f99fd519259b3602eca04507ad3279a557dc1bc96ea"
+      },
+      "caps": {
+        "bytes": 201358,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s5378/P/net_activity_capacitance.csv",
+        "sha256": "3263c1b739ba316eeb12c587cf997743352156c1549b3f5170a65ef8eb2d664f"
+      },
+      "diagnostics": {
+        "bytes": 40182,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/s5378/diagnostics.json",
+        "sha256": "142116ad98fa8e3b1fc93d411e79e2836c45707c79bccf8474a8d0b378db3a38"
+      },
+      "identity_map": {
+        "bytes": 27249,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s5378/ff_identity_map.json",
+        "sha256": "8f4f4bcd6850e2d8108660b70141e2784ed9854819df6c6533718d7caed7c9d3"
+      },
+      "manifest": {
+        "bytes": 34605,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/manifest.json",
+        "sha256": "eaf7ad0cc21a8a30bac73fc3aa7d3e4acb41f4f275d9b6ef94775822d2897b03"
+      },
+      "mapping": {
+        "bytes": 335544,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s5378/P/net_mapping.json",
+        "sha256": "e6c2855a2cd6675ffe30d05d326e28eb7179b1c80e0c3645fe26bffd076e2950"
+      },
+      "patterns": {
+        "bytes": 58055,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s5378.pat",
+        "sha256": "2b812b60516c784dfe2a61815e6c89043515332d6563059d2d40184e4909e888"
+      },
+      "physical_caps": {
+        "bytes": 201358,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s5378/P/net_activity_capacitance.csv",
+        "sha256": "3263c1b739ba316eeb12c587cf997743352156c1549b3f5170a65ef8eb2d664f"
+      },
+      "physical_liberty": {
+        "bytes": 6692032,
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+        "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1"
+      },
+      "physical_mapping": {
+        "bytes": 335544,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s5378/P/net_mapping.json",
+        "sha256": "e6c2855a2cd6675ffe30d05d326e28eb7179b1c80e0c3645fe26bffd076e2950"
+      },
+      "physical_odb": {
+        "bytes": 2838374,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s5378/P/routed.odb",
+        "sha256": "e55ee5d310ce3fc03733a3b1a3f02e735f7c3ddcb15e1347be79e6601e5549a4"
+      },
+      "placement": {
+        "bytes": 399542,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s5378/s11/placed.def",
+        "sha256": "e906065d75f3f3ecab2c723a33259f33d0c14089a73adb3c34d4daf82001c2fb"
+      },
+      "previous_search": {
+        "bytes": 28998,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s5378/search.json",
+        "sha256": "65da8c3b7b92c1425dedba6ea5bea8a0a694c0f48adae686ae6e03cf2779d4c8"
+      },
+      "previous_summary": {
+        "bytes": 109871,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/summary.json",
+        "sha256": "fc7aa5cf8c10723e68a47734584ddae029a020d7c52fb140915f53d81e1710bc"
+      },
+      "prior_corpus": {
+        "bytes": 2758109,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/s5378/prior_corpus.json.gz",
+        "sha256": "ad0878798f8bf12fa93585d6b2dfc351d7330f5a8c7726a3651510a13f857cd4"
+      },
+      "seed_J50": {
+        "bytes": 23699,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s5378/s11/k2/J50.architecture.json",
+        "sha256": "e5cbf81a58268b3a97dbb0e0d4aed90928e1605d1c70097b1b1ca2f512ecd1cc"
+      },
+      "seed_P": {
+        "bytes": 23699,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s5378/s11/k2/P.architecture.json",
+        "sha256": "e4fc28df36dc56d05f9968bb8b07e222de22f33f6ea87fed1e16c260bd0d0f35"
+      },
+      "seed_PACT": {
+        "bytes": 23699,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s5378/integration_v1/scan_topology_after.json",
+        "sha256": "4048f2a34a54b2164b2b3ab52b209f99e723dd8b61f1532dbea110342e77eac9"
+      },
+      "seed_T": {
+        "bytes": 23699,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s5378/s11/k2/T.architecture.json",
+        "sha256": "cdf1294ca6750b38d2b977ba39a62eb71cd5d7ea1563f25afddca169a7af8ad9"
+      },
+      "seed_cs_b72833ffdd2b": {
+        "bytes": 23699,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/s5378/architectures/b72833ffdd2bea7e2cfdb313767af85f5ab47835b13d56822b42ca6736040808.json",
+        "sha256": "3ac6751c5c17e4cddf1c8b1b23606ac25473452c5123ee46f35f3f45c0de84c4"
+      },
+      "seed_cs_c11dfeee8d44": {
+        "bytes": 23699,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/s5378/architectures/c11dfeee8d449781c780160151a7d1fb97bfdf4d6675e42ee864ffb7f5e7d31c.json",
+        "sha256": "143749012d5617d199813a56b54f8c0aa59cfaa44d7294ecae08a8261c173e7f"
+      },
+      "seed_v2_3b627d8af4f2": {
+        "bytes": 23699,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s5378/architectures/3b627d8af4f2c34c3bcf71a0822d2b8a612e01fe06e766beda14a95854bd11d9.json",
+        "sha256": "7acb55b46e61fdd03867d9efa405c1868404a80af84c2127228a1e059fa5252f"
+      },
+      "seed_v2_b5c4710dcf54": {
+        "bytes": 23699,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s5378/architectures/b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16.json",
+        "sha256": "25c3f369f6732908f209a9ce88531ddb9cc45df576f80c4c2cbfe8579934e88d"
+      },
+      "seed_v2_c4eabc41cb50": {
+        "bytes": 23699,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s5378/architectures/c4eabc41cb50cae503f52eb2deae1101321804849abf1dab0dc8b97e58f90bb5.json",
+        "sha256": "86ea6e6db5ae01a5b9135562736b2863b034f6788d0dbecf3a34a0bcf96ff8c0"
+      },
+      "topology": {
+        "bytes": 1466854,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/s5378/topology.json",
+        "sha256": "b0a82e1a32ab94eb3fc03c2ef506b61d05b2b3e9b4458cf3429886bc849d37db"
+      }
+    },
+    "s9234": {
+      "3_place.odb": {
+        "bytes": 1618632,
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.odb",
+        "sha256": "b8fefeb986f7f9dce87c30247697d89c6b60cd0fdff388c5b7948ca0b3d8f06e"
+      },
+      "3_place.sdc": {
+        "bytes": 7024,
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.sdc",
+        "sha256": "0e065d6d5b10c4315e7530e0f1595963ad3e790bb148ea7bb7812efe8bd0a09d"
+      },
+      "B0_reference": {
+        "bytes": 26270,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s9234/s11/k2/B0.architecture.json",
+        "sha256": "1d6e208dfe210268e6956680fead550414cf403e25928c52867004d6ca03914e"
+      },
+      "P0_search": {
+        "bytes": 10910,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/s9234/search.json",
+        "sha256": "75dc3e62683c5a5c6c33f0a91c7a0eef503c287c5c02119fb913220931414816"
+      },
+      "architecture": {
+        "bytes": 26270,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s9234/s11/k2/T.architecture.json",
+        "sha256": "8fc41a252394424baa983c202a549a15de2b231dfdd3410268e15d10186f6d7c"
+      },
+      "baseline_measurements": {
+        "bytes": 7057,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/comparison.csv",
+        "sha256": "f66a7985ee0b337305e411c36f158241e238aabb8e6b1ae029157ad9a547ca61"
+      },
+      "candidate_sensitive_search": {
+        "bytes": 45692,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/s9234/search.json",
+        "sha256": "4786b684408dde1fb5fab7a18cbbac67ef4b09684b9077ae73cc5b79a7da2f77"
+      },
+      "candidate_sensitive_summary": {
+        "bytes": 179937,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/summary.json",
+        "sha256": "13730fae818cea382c0e5f99fd519259b3602eca04507ad3279a557dc1bc96ea"
+      },
+      "caps": {
+        "bytes": 254705,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/T/net_activity_capacitance.csv",
+        "sha256": "bfea4e5f1ed04ec6a8713aceca52137d7751229cb2e721293dd3539fdbc8acae"
+      },
+      "diagnostics": {
+        "bytes": 43200,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/s9234/diagnostics.json",
+        "sha256": "656f6e40f80e2de6d839345d44a97b9ca735072a7e8606c1511a09d00b91d32a"
+      },
+      "identity_map": {
+        "bytes": 29537,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s9234/ff_identity_map.json",
+        "sha256": "7c18353782aa24fd5649f1c7e6ba993c651dcedb4f26fdf81ce996816ef536b5"
+      },
+      "manifest": {
+        "bytes": 34605,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/manifest.json",
+        "sha256": "eaf7ad0cc21a8a30bac73fc3aa7d3e4acb41f4f275d9b6ef94775822d2897b03"
+      },
+      "mapping": {
+        "bytes": 431125,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/T/net_mapping.json",
+        "sha256": "421bd59254eb7a9a492182489919e61e71b6eed03e3bfe0e0c9918b50dbb635d"
+      },
+      "patterns": {
+        "bytes": 84298,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s9234.pat",
+        "sha256": "977c17142285679fc79aefaf5d4733f1df0a157ace48caf7fe924607edee20e4"
+      },
+      "physical_caps": {
+        "bytes": 254705,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/T/net_activity_capacitance.csv",
+        "sha256": "bfea4e5f1ed04ec6a8713aceca52137d7751229cb2e721293dd3539fdbc8acae"
+      },
+      "physical_liberty": {
+        "bytes": 6692032,
+        "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+        "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1"
+      },
+      "physical_mapping": {
+        "bytes": 431125,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/T/net_mapping.json",
+        "sha256": "421bd59254eb7a9a492182489919e61e71b6eed03e3bfe0e0c9918b50dbb635d"
+      },
+      "physical_odb": {
+        "bytes": 3659934,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/physical_effect/s9234/T/routed.odb",
+        "sha256": "78abfc7cc95eff625b50e60be10000583dc4a389f843fa4b4e753ea8bc12f580"
+      },
+      "placement": {
+        "bytes": 491817,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s9234/s11/placed.def",
+        "sha256": "5fcb9e0c5ab8d5f3b3038b915e173e52cac369d7fef05ce4c6d4bffa9ebe3c5a"
+      },
+      "previous_search": {
+        "bytes": 30801,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s9234/search.json",
+        "sha256": "04c040ab982a3bb5f1fceb39f324431aa22af6a85bd12887a6bb1349820a1e60"
+      },
+      "previous_summary": {
+        "bytes": 109871,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/summary.json",
+        "sha256": "fc7aa5cf8c10723e68a47734584ddae029a020d7c52fb140915f53d81e1710bc"
+      },
+      "prior_corpus": {
+        "bytes": 2009717,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/s9234/prior_corpus.json.gz",
+        "sha256": "ba0ddde15d8de8c85cd99cecc07d848eb9f88c7b9273e7f905a4e84294f50126"
+      },
+      "seed_J50": {
+        "bytes": 26270,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s9234/s11/k2/J50.architecture.json",
+        "sha256": "8d790a650d3f93470cd2fa29fe17ea5b4c356e7a618ad9109234dab74a8f74aa"
+      },
+      "seed_P": {
+        "bytes": 26270,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s9234/s11/k2/P.architecture.json",
+        "sha256": "507ffb10575efdc2f71d707e15fa369d0545aa33741b1af0ddf3e4714319b88f"
+      },
+      "seed_PACT": {
+        "bytes": 26270,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/end_to_end/s9234/integration_v1/scan_topology_after.json",
+        "sha256": "d35a605a34612e068f8b4fddbb9d621e6503586dc545843a3666c1752ad61a8b"
+      },
+      "seed_T": {
+        "bytes": 26270,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/phase0c/s9234/s11/k2/T.architecture.json",
+        "sha256": "8fc41a252394424baa983c202a549a15de2b231dfdd3410268e15d10186f6d7c"
+      },
+      "seed_cs_1359e456272b": {
+        "bytes": 26270,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/s9234/architectures/1359e456272bfce5d9280041447d8712ee1c32e0e1f9abdf1c7865314d9b4948.json",
+        "sha256": "b999fc6024315275118fb2892a098d92fbd33b46784b84647317818db8fdf57d"
+      },
+      "seed_cs_4d6ff90b2adc": {
+        "bytes": 26270,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/s9234/architectures/4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40.json",
+        "sha256": "7f8f469bc1c4457f8863be3ebe437f3e1e64a8de419f5430fd6245359004ed46"
+      },
+      "seed_v2_53bb5b018758": {
+        "bytes": 26270,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s9234/architectures/53bb5b0187583971d057dc111c46dc7030affedc25dbfe294a9455251ddc6fe5.json",
+        "sha256": "48fb0df400ca66739324e0ed140104a3bbdbc206ae36155082d63b17742a6a50"
+      },
+      "seed_v2_797aff0b91f6": {
+        "bytes": 26270,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s9234/architectures/797aff0b91f6ad122de840678b76b5969b4c0db00dbedfa78d2884fc75a5ddc2.json",
+        "sha256": "d24a87601f942398a513bf9e05f0d4233d61a3fdffb447ef47c06572b91eb0a9"
+      },
+      "seed_v2_f4bca5652bda": {
+        "bytes": 26270,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s9234/architectures/f4bca5652bda0b57f3cb7fd7b31c0228c96465ab7e142b4fb284814b8dd3a223.json",
+        "sha256": "daa1616c1bafe7c0f1020b56191f7bfa35f41bb380118640871d56f287bbbadf"
+      },
+      "topology": {
+        "bytes": 1957424,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/s9234/topology.json",
+        "sha256": "8a2c4518fe9c5f91d23c7f448812021f0b3a6628949ec7613a377e11d1917c1b"
+      }
+    }
+  },
+  "metadata_exception": "Existing Liberty test_cell-only annotation may be used by generators if necessary; original functional functions/timing/C and downstream Liberty must remain unchanged",
+  "methods": [
+    "B0",
+    "B1",
+    "B2",
+    "B3",
+    "P0"
+  ],
+  "pareto": "Minimize implemented routed full scan-path wire upper bound, E, H8 with exact dominance; no weighted score",
+  "primary_external_baseline": "B3",
+  "resources": {
+    "s15850": {
+      "config": {
+        "archive_size": 32,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "restart_interval": 250,
+        "seconds": 180.0,
+        "seed": 11,
+        "segment": 8,
+        "timing_allowance": 0.1,
+        "wire_allowance": 0.1
+      },
+      "evaluations": 53,
+      "source": "Existing frozen search; no post-route candidate selection"
+    },
+    "s5378": {
+      "config": {
+        "archive_size": 32,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "restart_interval": 250,
+        "seconds": 180.0,
+        "seed": 11,
+        "segment": 8,
+        "timing_allowance": 0.1,
+        "wire_allowance": 0.1
+      },
+      "evaluations": 397,
+      "source": "Existing frozen search; no post-route candidate selection"
+    },
+    "s9234": {
+      "config": {
+        "archive_size": 32,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "restart_interval": 250,
+        "seconds": 180.0,
+        "seed": 11,
+        "segment": 8,
+        "timing_allowance": 0.1,
+        "wire_allowance": 0.1
+      },
+      "evaluations": 203,
+      "source": "Existing frozen search; no post-route candidate selection"
+    }
+  },
+  "selection": "Deterministic predicted archive physical extreme, H8 extreme, and minimax normalized-regret balanced point; canonical SHA tie break; deduplicate; balanced is method representative",
+  "stage_gate": "Any unreproducible baseline, FF/K/translation/workload/backend mismatch stops campaign; incomplete Stage A does not authorize P1",
+  "test_quality": "Report stored coverage and detected count; exact fault identity is unknown unless independent set comparison passes",
+  "timestamp": "2026-10-03T08:46:28.206606+00:00",
+  "units": {
+    "E": "fF.transitions",
+    "H4": "fF.transitions per bin/cycle",
+    "H8": "fF.transitions per bin/cycle",
+    "wire": "um"
+  },
+  "version": 1
+}
