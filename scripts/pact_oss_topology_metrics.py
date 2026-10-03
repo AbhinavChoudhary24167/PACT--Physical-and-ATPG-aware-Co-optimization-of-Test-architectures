@@ -2,6 +2,7 @@
 """Expose existing route, capacitance and waveform measurements without reruns."""
 import csv
 import json
+import math
 from pathlib import Path
 
 from pact_oss_benchmark import binding, read, write
@@ -43,6 +44,12 @@ def augment(original):
                 caps = list(csv.DictReader(table.open()))
                 for scope in ('all_data', 'scan_data'):
                     selected = [r for r in caps if scope == 'all_data' or r['scope_scan_data'] == 'True']
+                    expected = summary['scopes'][scope]
+                    transitions = sum(int(r['transitions']) for r in selected)
+                    energy = sum(int(r['transitions'])*float(r['ground_pin_ff']) for r in selected if r['ground_pin_ff'])
+                    if len(selected) != expected['nets'] or transitions != expected['transitions']['total'] or not math.isclose(
+                            energy, expected['cap_weighted_ff_transitions']['total'], rel_tol=1e-10, abs_tol=1e-6):
+                        raise ValueError('Capacitance table does not reproduce the qualified waveform summary')
                     extra[scope+'_ground_pin_capacitance_fF'] = sum(float(r['ground_pin_ff']) for r in selected if r['ground_pin_ff'])
                 extra['all_data_incident_coupling_fF'] = sum(float(r['incident_coupling_ff']) for r in caps if r['incident_coupling_ff'])
                 extra['capacitance_table'] = str(table)

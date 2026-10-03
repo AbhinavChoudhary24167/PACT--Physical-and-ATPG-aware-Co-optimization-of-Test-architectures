@@ -6,6 +6,7 @@ import json
 import urllib.request
 
 from pact_oss_benchmark import OUT, binding, read, write
+from pact_oss_compare import implemented_point
 import pact_oss_topology as r
 import pact_oss_serialization as s
 import pact_oss_topology_stage_a as stage
@@ -61,14 +62,25 @@ def main():
     s.activate()
     rows = list(csv.DictReader((stage.STAGE / 'implemented_metrics.csv').open()))
     selected = [row for row in rows if row['selected'] == 'True']
-    if len(selected) != 19 or any(row['status'] != 'QUALIFIED' for row in selected):
+    if len(selected) != 19 or any(implemented_point(row) is None for row in selected):
         raise ValueError('Stage A selected physical measurements remain incomplete')
     native = read(s.FOLDER / 'qualification.json')
     source = read(s.FOLDER / 'source_manifest.json')
     endpoint = read(s.ENDPOINT_REPAIR / 'repair_manifest.json')
     serializer = read(s.REPAIR / 'repair_manifest.json')
     build = read(s.FOLDER / 'build_result.json')
-    upstream = upstream_status()
+    prior_binary = read(s.REPAIR / 'parent.json')['parent_binary']
+    try:
+        upstream = upstream_status()
+    except Exception as error:
+        upstream = []
+        for path in (r.CAMPAIGN / 'upstream/github_contribution.json', s.SERIAL / 'upstream/github_contribution.json'):
+            known = read(path)
+            upstream.append(dict(PR_URL=known['PR_URL'], state='current status unavailable', merged='unknown',
+                reviews=[], checks=[], statuses=[], last_known_state=known['state'],
+                last_known_merged=known.get('merged', False), status_error=str(error)))
+        write(r.CAMPAIGN / 'upstream/final_status_unavailable.json', dict(records=upstream,
+            benchmark_waited_for_review=False, status_error=str(error)))
     methods = [dict(method=m, source=description, repair_class=repair_class, algorithm_changed=False, status=status)
         for m, description, repair_class, status in (
             ('B0','Frozen seed-11 K=2 contiguous supplied-order reference','none','BENCHMARK_QUALIFIED'),
@@ -81,7 +93,8 @@ def main():
             ('P0','9d9103027918b1d4af2b209e6d36133ad82d4a4e','none','BENCHMARK_QUALIFIED'))]
     write(r.CAMPAIGN / 'method_manifest.json', dict(methods=methods, full_B3T_source=binding(s.FOLDER / 'source_manifest.json'),
         qualification=binding(s.FOLDER / 'qualification.json'), selection=binding(stage.STAGE / 'selection_receipt.json'),
-        physical_runtime_R0=binding(r.CAMPAIGN / 'stage_a_runtime/runtime.json')))
+        physical_runtime_R0=binding(r.CAMPAIGN / 'stage_a_runtime/runtime.json'),
+        B3S_immutable_binary=prior_binary, B3T_immutable_binary=source['immutable_binary']))
     lines = ['# PACT frozen Stage A: physical comparison complete', '',
         'Status: `PACT_STAGE_A_PHYSICAL_RESULTS_COMPLETE` / `PACT_EXTERNAL_BENCHMARK_COMPLETE` for the requested B0/B1/exact-B2/B3T/P0 Stage-A comparison.', '',
         f'All 19 preselected method records qualify on Nangate45 with the unchanged common backend, ORFS revision, two-core policy, seed 11 and original FAN workload. {sum(row["status"] == "QUALIFIED" for row in rows)} of 30 indexed architecture records have qualified physical measurements. Seven P0 selected candidates and their original balanced representatives remain frozen. No new search, parameter tuning, ATPG or P1 campaign was run.', '',
@@ -95,7 +108,7 @@ def main():
         f'| DFT endpoint/metadata (`src/dft/src/Dft.cpp`, scan_opt regression) | R1 | `{endpoint["repair_commit_sha"]}` | `{endpoint["patch_sha256"]}` |',
         f'| OpenSTA input alias (`verilog/VerilogWriter.cc`) | R1 | `{serializer["OpenSTA_repair_commit"]}` | `{serializer["OpenSTA_patch_sha256"]}` |',
         f'| OpenROAD B3T submodule binding | R1 | `{build["commit"]}` | `{serializer["patch_sha256"]}` |', '',
-        f'B3T binary SHA-256: `{build["binary_sha256"]}`. OpenSTA parent: `{serializer["OpenSTA_parent"]}`. Direct OpenROAD parent: `{serializer["parent_revision"]}`. Source and command receipts bind the unchanged KMeans 100-iteration limit, 50 candidate neighbors, original capacity constraints and endpoint-excluding objective. The three adjacent native DFT regressions pass. Failed build/fixture attempts and earlier immutable binaries remain preserved.', '',
+        f'B3T binary SHA-256: `{build["binary_sha256"]}`. B3S immutable binary SHA-256: `{prior_binary["sha256"]}`. OpenSTA parent: `{serializer["OpenSTA_parent"]}`. Direct OpenROAD parent: `{serializer["parent_revision"]}`. Source and command receipts bind the unchanged KMeans 100-iteration limit, 50 candidate neighbors, original capacity constraints and endpoint-excluding objective. The three adjacent native DFT regressions pass. Failed build/fixture attempts and earlier immutable binaries remain preserved. B3T reused the owned B3S build prefix; earlier original-path build receipts are retained alongside the immutable executable snapshots, rather than claiming that prefix still holds B3S.', '',
         'The physical launch also required an R0 runtime repair: use the existing PACT virtual environment (recorded NumPy 2.5.3 and SciPy 1.18.1) and provide the optional import-time Numba 0.67.0 / llvmlite 0.49.0 dependency in an isolated D-backed directory. The old virtual environment and every frozen flow source remain unchanged; no optimizer kernel is invoked. Failure traces, wheel hashes and the successful full route-adapter import are recorded under `stage_a_runtime`.', '',
         '## Native qualification', '',
         '| Design | FFs | Chains | Chain lengths | SI | Internal | Fixed SO | Metadata / ODB / Verilog |',
@@ -115,11 +128,12 @@ def main():
     lines += ['', 'Detailed-route total wire, global-route setup/hold timing, extracted ground-plus-pin capacitance, load/unload shift activity, hotspot bin/cycle, and secondary scan-data activity are in `stage_a/implemented_metrics.csv`; all exact pairwise deltas and nondominance are retained. Timing is the frozen global-route analysis, not detailed-route signoff. Exact scan-only routed attribution is unknown where Q nets share functional fanout. Congestion/overflow remain unknown when absent from the frozen metrics. Coupling is recorded separately and excluded from the primary activity proxies.', '',
         '## Upstream', '']
     for item in upstream:
-        ci = '; '.join(x['name']+': '+str(x['conclusion'] or x['status']) for x in item['checks']) or 'No check runs reported'
+        ci = ('Current CI/review status unavailable' if item.get('status_error') else
+              '; '.join(x['name']+': '+str(x['conclusion'] or x['status']) for x in item['checks']) or 'No check runs reported')
         status = '; '.join(x['context']+': '+x['state'] for x in item['statuses'])
         if status:
             ci += '; '+status
-        reviews = ', '.join(x['state'] for x in item['reviews']) or 'No reviews reported'
+        reviews = 'Unknown' if item.get('status_error') else (', '.join(x['state'] for x in item['reviews']) or 'No reviews reported')
         lines.append(f'- [{item["PR_URL"]}]({item["PR_URL"]}): {item["state"]}; merged={item["merged"]}; {reviews}; {ci}.')
     lines += ['', 'No separate issue was opened. Benchmark execution did not wait for reviews, CI or merge. The OpenSTA contribution cherry-picks the experimental one-file repair onto the recorded current upstream base; that separate upstream checkout was not rebuilt locally, as disclosed in the PR.', '',
         'No remaining implementation blocker prevents the requested Stage-A comparison. Scientific interpretation is limited to these three designs, the frozen workload and measured activity proxies.', '',

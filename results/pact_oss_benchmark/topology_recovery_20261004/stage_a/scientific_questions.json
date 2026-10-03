@@ -1,0 +1,769 @@
+{
+  "s15850": {
+    "A1": {
+      "coordinate_unique_nondominated_architectures": [
+        "f0ec44569fab2217d7aa9f8dd4bb03a265c3d352c935343052f3505432cea877"
+      ],
+      "implemented_scope_only": true,
+      "mandatory_external_methods_complete": true,
+      "unique_nondominated_architectures": [
+        "f0ec44569fab2217d7aa9f8dd4bb03a265c3d352c935343052f3505432cea877"
+      ]
+    },
+    "A2": {
+      "comparable_cost_policy": "All exact wire deltas shown; no invented matching tolerance",
+      "pairwise_deltas": [
+        {
+          "activity_improvement": "both",
+          "left": "e14689c97ca5454cd0c46f98a4328713eca058aece7c6a6229b25f6c0fb2075b",
+          "left_dominates": true,
+          "left_method": "P0",
+          "left_method_display": "P0",
+          "measured_E": -16938534.156825483,
+          "measured_H8": -7.256309960000067,
+          "right": "541edd9b8a402c089751f83af6753d6efd438d9bd803e1309e64bc5fa614d4db",
+          "right_dominates": false,
+          "right_method": "B0",
+          "right_method_display": "B0",
+          "routed_scan_path_cost_um": -11333.905000000002
+        },
+        {
+          "activity_improvement": "neither",
+          "left": "e14689c97ca5454cd0c46f98a4328713eca058aece7c6a6229b25f6c0fb2075b",
+          "left_dominates": false,
+          "left_method": "P0",
+          "left_method_display": "P0",
+          "measured_E": 2026470.807238996,
+          "measured_H8": 2.0900934199999597,
+          "right": "24124a8d821b7a19ffb08cc72b90c6bbf44713b1eb4bb5812809ec988bec6f2b",
+          "right_dominates": false,
+          "right_method": "B1",
+          "right_method_display": "B1",
+          "routed_scan_path_cost_um": -492.45500000000175
+        },
+        {
+          "activity_improvement": "H8",
+          "left": "e14689c97ca5454cd0c46f98a4328713eca058aece7c6a6229b25f6c0fb2075b",
+          "left_dominates": false,
+          "left_method": "P0",
+          "left_method_display": "P0",
+          "measured_E": 3550043.3052188754,
+          "measured_H8": -1.8919084999999995,
+          "right": "c081f811b1806ae67132a1b56f1eddc0e4defdbba44fd87c7cbb0ce1d15bb4b8",
+          "right_dominates": false,
+          "right_method": "B2",
+          "right_method_display": "B2",
+          "routed_scan_path_cost_um": 165.34999999999854
+        },
+        {
+          "activity_improvement": "H8",
+          "left": "e14689c97ca5454cd0c46f98a4328713eca058aece7c6a6229b25f6c0fb2075b",
+          "left_dominates": false,
+          "left_method": "P0",
+          "left_method_display": "P0",
+          "measured_E": 61690.566232562065,
+          "measured_H8": -1.1425631900000894,
+          "right": "1cff03ead6aa224ba65fdb67bb53fb1d50427cea9daad270237b4feca57b0ae7",
+          "right_dominates": false,
+          "right_method": "B3T",
+          "right_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+          "routed_scan_path_cost_um": 104.11999999999898
+        }
+      ]
+    },
+    "A3": {
+      "B3T_vs_B0": {
+        "left": "1cff03ead6aa224ba65fdb67bb53fb1d50427cea9daad270237b4feca57b0ae7",
+        "left_dominates": true,
+        "left_method": "B3T",
+        "left_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+        "measured_E": -17000224.723058045,
+        "measured_H8": -6.1137467699999775,
+        "right": "541edd9b8a402c089751f83af6753d6efd438d9bd803e1309e64bc5fa614d4db",
+        "right_dominates": false,
+        "right_method": "B0",
+        "right_method_display": "B0",
+        "routed_scan_path_cost_um": -11438.025000000001
+      },
+      "B3T_vs_predeclared_P0": [
+        {
+          "left": "1cff03ead6aa224ba65fdb67bb53fb1d50427cea9daad270237b4feca57b0ae7",
+          "left_dominates": false,
+          "left_method": "B3T",
+          "left_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+          "measured_E": 1780640.7132182121,
+          "measured_H8": 10.691058260000034,
+          "right": "f0ec44569fab2217d7aa9f8dd4bb03a265c3d352c935343052f3505432cea877",
+          "right_dominates": true,
+          "right_method": "P0",
+          "right_method_display": "P0",
+          "routed_scan_path_cost_um": 23.18500000000131
+        },
+        {
+          "left": "1cff03ead6aa224ba65fdb67bb53fb1d50427cea9daad270237b4feca57b0ae7",
+          "left_dominates": false,
+          "left_method": "B3T",
+          "left_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+          "measured_E": -61690.566232562065,
+          "measured_H8": 1.1425631900000894,
+          "right": "e14689c97ca5454cd0c46f98a4328713eca058aece7c6a6229b25f6c0fb2075b",
+          "right_dominates": false,
+          "right_method": "P0",
+          "right_method_display": "P0",
+          "routed_scan_path_cost_um": -104.11999999999898
+        }
+      ]
+    },
+    "A4": [
+      {
+        "left": "24124a8d821b7a19ffb08cc72b90c6bbf44713b1eb4bb5812809ec988bec6f2b",
+        "left_dominates": true,
+        "left_method": "B1",
+        "left_method_display": "B1",
+        "measured_E": -18965004.96406448,
+        "measured_H8": -9.346403380000027,
+        "physical_order": "left_has_lower_wire",
+        "right": "541edd9b8a402c089751f83af6753d6efd438d9bd803e1309e64bc5fa614d4db",
+        "right_dominates": false,
+        "right_method": "B0",
+        "right_method_display": "B0",
+        "routed_scan_path_cost_um": -10841.45
+      },
+      {
+        "left": "c081f811b1806ae67132a1b56f1eddc0e4defdbba44fd87c7cbb0ce1d15bb4b8",
+        "left_dominates": true,
+        "left_method": "B2",
+        "left_method_display": "B2",
+        "measured_E": -20488577.46204436,
+        "measured_H8": -5.364401460000067,
+        "physical_order": "left_has_lower_wire",
+        "right": "541edd9b8a402c089751f83af6753d6efd438d9bd803e1309e64bc5fa614d4db",
+        "right_dominates": false,
+        "right_method": "B0",
+        "right_method_display": "B0",
+        "routed_scan_path_cost_um": -11499.255000000001
+      },
+      {
+        "left": "1cff03ead6aa224ba65fdb67bb53fb1d50427cea9daad270237b4feca57b0ae7",
+        "left_dominates": true,
+        "left_method": "B3T",
+        "left_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+        "measured_E": -17000224.723058045,
+        "measured_H8": -6.1137467699999775,
+        "physical_order": "left_has_lower_wire",
+        "right": "541edd9b8a402c089751f83af6753d6efd438d9bd803e1309e64bc5fa614d4db",
+        "right_dominates": false,
+        "right_method": "B0",
+        "right_method_display": "B0",
+        "routed_scan_path_cost_um": -11438.025000000001
+      },
+      {
+        "left": "c081f811b1806ae67132a1b56f1eddc0e4defdbba44fd87c7cbb0ce1d15bb4b8",
+        "left_dominates": false,
+        "left_method": "B2",
+        "left_method_display": "B2",
+        "measured_E": -1523572.4979798794,
+        "measured_H8": 3.9820019199999592,
+        "physical_order": "left_has_lower_wire",
+        "right": "24124a8d821b7a19ffb08cc72b90c6bbf44713b1eb4bb5812809ec988bec6f2b",
+        "right_dominates": false,
+        "right_method": "B1",
+        "right_method_display": "B1",
+        "routed_scan_path_cost_um": -657.8050000000003
+      },
+      {
+        "left": "1cff03ead6aa224ba65fdb67bb53fb1d50427cea9daad270237b4feca57b0ae7",
+        "left_dominates": false,
+        "left_method": "B3T",
+        "left_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+        "measured_E": 1964780.241006434,
+        "measured_H8": 3.232656610000049,
+        "physical_order": "left_has_lower_wire",
+        "right": "24124a8d821b7a19ffb08cc72b90c6bbf44713b1eb4bb5812809ec988bec6f2b",
+        "right_dominates": false,
+        "right_method": "B1",
+        "right_method_display": "B1",
+        "routed_scan_path_cost_um": -596.5750000000007
+      },
+      {
+        "left": "c081f811b1806ae67132a1b56f1eddc0e4defdbba44fd87c7cbb0ce1d15bb4b8",
+        "left_dominates": false,
+        "left_method": "B2",
+        "left_method_display": "B2",
+        "measured_E": -3488352.7389863133,
+        "measured_H8": 0.7493453099999101,
+        "physical_order": "left_has_lower_wire",
+        "right": "1cff03ead6aa224ba65fdb67bb53fb1d50427cea9daad270237b4feca57b0ae7",
+        "right_dominates": false,
+        "right_method": "B3T",
+        "right_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+        "routed_scan_path_cost_um": -61.22999999999956
+      }
+    ],
+    "A5": {
+      "causal_limit": "A stronger known archive point can show a selection miss; this comparison alone cannot attribute that miss uniquely to H8 predictor incompleteness.",
+      "implemented_archive_points": 4,
+      "scope": "Only pre-existing implemented archive evidence is reused. Unmeasured archive points remain unknown; no search or outcome-based reselection.",
+      "unmeasured_archive_points": 2,
+      "unselected_archive_points_dominating_balanced": [
+        {
+          "left": "5d90e5faf9dcfb7f820a641638cc06c83c19ac634534c5aa75c4cedda6f5a38e",
+          "left_dominates": true,
+          "left_method": "P0",
+          "left_method_display": "P0",
+          "measured_E": -128975.36918875575,
+          "measured_H8": -0.22334647999997514,
+          "right": "e14689c97ca5454cd0c46f98a4328713eca058aece7c6a6229b25f6c0fb2075b",
+          "right_dominates": false,
+          "right_method": "P0",
+          "right_method_display": "P0",
+          "routed_scan_path_cost_um": -1.735000000000582
+        }
+      ],
+      "unselected_archive_points_with_lower_H8_than_all_measured_selected": []
+    },
+    "qualified_P0_points": 4,
+    "qualified_external_methods": [
+      "B0",
+      "B1",
+      "B2",
+      "B3T"
+    ]
+  },
+  "s5378": {
+    "A1": {
+      "coordinate_unique_nondominated_architectures": [
+        "c4eabc41cb50cae503f52eb2deae1101321804849abf1dab0dc8b97e58f90bb5",
+        "b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16",
+        "3b627d8af4f2c34c3bcf71a0822d2b8a612e01fe06e766beda14a95854bd11d9",
+        "b72833ffdd2bea7e2cfdb313767af85f5ab47835b13d56822b42ca6736040808",
+        "b2614a3a06b35038b1a94d9315b9dbd91df65b837a4421f12ec12e6c3c3286ac"
+      ],
+      "implemented_scope_only": true,
+      "mandatory_external_methods_complete": true,
+      "unique_nondominated_architectures": [
+        "c4eabc41cb50cae503f52eb2deae1101321804849abf1dab0dc8b97e58f90bb5",
+        "b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16",
+        "3b627d8af4f2c34c3bcf71a0822d2b8a612e01fe06e766beda14a95854bd11d9",
+        "b72833ffdd2bea7e2cfdb313767af85f5ab47835b13d56822b42ca6736040808",
+        "b2614a3a06b35038b1a94d9315b9dbd91df65b837a4421f12ec12e6c3c3286ac"
+      ]
+    },
+    "A2": {
+      "comparable_cost_policy": "All exact wire deltas shown; no invented matching tolerance",
+      "pairwise_deltas": [
+        {
+          "activity_improvement": "both",
+          "left": "b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16",
+          "left_dominates": false,
+          "left_method": "P0",
+          "left_method_display": "P0",
+          "measured_E": -1267193.6730200797,
+          "measured_H8": -4.935768810000013,
+          "right": "ae86d9068718134a0016c7dc484716e3e4439c0978f5cfcdef79c037ac566f86",
+          "right_dominates": false,
+          "right_method": "B0",
+          "right_method_display": "B0",
+          "routed_scan_path_cost_um": 10.0600000000004
+        },
+        {
+          "activity_improvement": "both",
+          "left": "b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16",
+          "left_dominates": true,
+          "left_method": "P0",
+          "left_method_display": "P0",
+          "measured_E": -686180.0382603817,
+          "measured_H8": -12.919524749999994,
+          "right": "c8c27dc62915a502b882d8e0a6d8dc3632b6de93fdddf658607c3e84f475928b",
+          "right_dominates": false,
+          "right_method": "B1",
+          "right_method_display": "B1",
+          "routed_scan_path_cost_um": -48.23999999999978
+        },
+        {
+          "activity_improvement": "both",
+          "left": "b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16",
+          "left_dominates": false,
+          "left_method": "P0",
+          "left_method_display": "P0",
+          "measured_E": -1097746.6679140106,
+          "measured_H8": -9.747254710000021,
+          "right": "524e797e930947d722d25f683b74606ed558ee8aee242fe36392eb6c5a583ea5",
+          "right_dominates": false,
+          "right_method": "B2",
+          "right_method_display": "B2",
+          "routed_scan_path_cost_um": 258.1700000000001
+        },
+        {
+          "activity_improvement": "both",
+          "left": "b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16",
+          "left_dominates": false,
+          "left_method": "P0",
+          "left_method_display": "P0",
+          "measured_E": -834046.0780383386,
+          "measured_H8": -6.4197637500000155,
+          "right": "c3c411e9b14ee9237bc0fe7710a314a3363d697c02b047510d35d40f149aa94a",
+          "right_dominates": false,
+          "right_method": "B3T",
+          "right_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+          "routed_scan_path_cost_um": 95.65999999999985
+        }
+      ]
+    },
+    "A3": {
+      "B3T_vs_B0": {
+        "left": "c3c411e9b14ee9237bc0fe7710a314a3363d697c02b047510d35d40f149aa94a",
+        "left_dominates": false,
+        "left_method": "B3T",
+        "left_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+        "measured_E": -433147.59498174116,
+        "measured_H8": 1.4839949400000023,
+        "right": "ae86d9068718134a0016c7dc484716e3e4439c0978f5cfcdef79c037ac566f86",
+        "right_dominates": false,
+        "right_method": "B0",
+        "right_method_display": "B0",
+        "routed_scan_path_cost_um": -85.59999999999945
+      },
+      "B3T_vs_predeclared_P0": [
+        {
+          "left": "c3c411e9b14ee9237bc0fe7710a314a3363d697c02b047510d35d40f149aa94a",
+          "left_dominates": false,
+          "left_method": "B3T",
+          "left_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+          "measured_E": 834046.0780383386,
+          "measured_H8": 6.4197637500000155,
+          "right": "b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16",
+          "right_dominates": false,
+          "right_method": "P0",
+          "right_method_display": "P0",
+          "routed_scan_path_cost_um": -95.65999999999985
+        },
+        {
+          "left": "c3c411e9b14ee9237bc0fe7710a314a3363d697c02b047510d35d40f149aa94a",
+          "left_dominates": false,
+          "left_method": "B3T",
+          "left_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+          "measured_E": 790848.4028123282,
+          "measured_H8": 15.944677589999998,
+          "right": "42dfdefa69502dd9c3716d9b2d7a0bf79d48be347a1e8786750551db65ff0db9",
+          "right_dominates": false,
+          "right_method": "P0",
+          "right_method_display": "P0",
+          "routed_scan_path_cost_um": -135.27999999999975
+        }
+      ]
+    },
+    "A4": [
+      {
+        "left": "ae86d9068718134a0016c7dc484716e3e4439c0978f5cfcdef79c037ac566f86",
+        "left_dominates": false,
+        "left_method": "B0",
+        "left_method_display": "B0",
+        "measured_E": 581013.6347596981,
+        "measured_H8": -7.9837559399999805,
+        "physical_order": "left_has_lower_wire",
+        "right": "c8c27dc62915a502b882d8e0a6d8dc3632b6de93fdddf658607c3e84f475928b",
+        "right_dominates": false,
+        "right_method": "B1",
+        "right_method_display": "B1",
+        "routed_scan_path_cost_um": -58.30000000000018
+      },
+      {
+        "left": "524e797e930947d722d25f683b74606ed558ee8aee242fe36392eb6c5a583ea5",
+        "left_dominates": false,
+        "left_method": "B2",
+        "left_method_display": "B2",
+        "measured_E": -169447.00510606915,
+        "measured_H8": 4.811485900000008,
+        "physical_order": "left_has_lower_wire",
+        "right": "ae86d9068718134a0016c7dc484716e3e4439c0978f5cfcdef79c037ac566f86",
+        "right_dominates": false,
+        "right_method": "B0",
+        "right_method_display": "B0",
+        "routed_scan_path_cost_um": -248.10999999999967
+      },
+      {
+        "left": "c3c411e9b14ee9237bc0fe7710a314a3363d697c02b047510d35d40f149aa94a",
+        "left_dominates": false,
+        "left_method": "B3T",
+        "left_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+        "measured_E": -433147.59498174116,
+        "measured_H8": 1.4839949400000023,
+        "physical_order": "left_has_lower_wire",
+        "right": "ae86d9068718134a0016c7dc484716e3e4439c0978f5cfcdef79c037ac566f86",
+        "right_dominates": false,
+        "right_method": "B0",
+        "right_method_display": "B0",
+        "routed_scan_path_cost_um": -85.59999999999945
+      },
+      {
+        "left": "524e797e930947d722d25f683b74606ed558ee8aee242fe36392eb6c5a583ea5",
+        "left_dominates": false,
+        "left_method": "B2",
+        "left_method_display": "B2",
+        "measured_E": 411566.6296536289,
+        "measured_H8": -3.1722700399999724,
+        "physical_order": "left_has_lower_wire",
+        "right": "c8c27dc62915a502b882d8e0a6d8dc3632b6de93fdddf658607c3e84f475928b",
+        "right_dominates": false,
+        "right_method": "B1",
+        "right_method_display": "B1",
+        "routed_scan_path_cost_um": -306.40999999999985
+      },
+      {
+        "left": "c3c411e9b14ee9237bc0fe7710a314a3363d697c02b047510d35d40f149aa94a",
+        "left_dominates": false,
+        "left_method": "B3T",
+        "left_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+        "measured_E": 147866.0397779569,
+        "measured_H8": -6.499760999999978,
+        "physical_order": "left_has_lower_wire",
+        "right": "c8c27dc62915a502b882d8e0a6d8dc3632b6de93fdddf658607c3e84f475928b",
+        "right_dominates": false,
+        "right_method": "B1",
+        "right_method_display": "B1",
+        "routed_scan_path_cost_um": -143.89999999999964
+      },
+      {
+        "left": "524e797e930947d722d25f683b74606ed558ee8aee242fe36392eb6c5a583ea5",
+        "left_dominates": false,
+        "left_method": "B2",
+        "left_method_display": "B2",
+        "measured_E": 263700.589875672,
+        "measured_H8": 3.3274909600000058,
+        "physical_order": "left_has_lower_wire",
+        "right": "c3c411e9b14ee9237bc0fe7710a314a3363d697c02b047510d35d40f149aa94a",
+        "right_dominates": false,
+        "right_method": "B3T",
+        "right_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+        "routed_scan_path_cost_um": -162.51000000000022
+      }
+    ],
+    "A5": {
+      "causal_limit": "A stronger known archive point can show a selection miss; this comparison alone cannot attribute that miss uniquely to H8 predictor incompleteness.",
+      "implemented_archive_points": 7,
+      "scope": "Only pre-existing implemented archive evidence is reused. Unmeasured archive points remain unknown; no search or outcome-based reselection.",
+      "unmeasured_archive_points": 1,
+      "unselected_archive_points_dominating_balanced": [],
+      "unselected_archive_points_with_lower_H8_than_all_measured_selected": [
+        {
+          "architecture_hash": "b2614a3a06b35038b1a94d9315b9dbd91df65b837a4421f12ec12e6c3c3286ac",
+          "versus_selected": [
+            {
+              "left": "b2614a3a06b35038b1a94d9315b9dbd91df65b837a4421f12ec12e6c3c3286ac",
+              "left_dominates": false,
+              "left_method": "P0",
+              "left_method_display": "P0",
+              "measured_E": 19725.065228044987,
+              "measured_H8": -10.411030899999986,
+              "right": "b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16",
+              "right_dominates": false,
+              "right_method": "P0",
+              "right_method_display": "P0",
+              "routed_scan_path_cost_um": 27.529999999999745
+            },
+            {
+              "left": "b2614a3a06b35038b1a94d9315b9dbd91df65b837a4421f12ec12e6c3c3286ac",
+              "left_dominates": true,
+              "left_method": "P0",
+              "left_method_display": "P0",
+              "measured_E": -23472.609997965395,
+              "measured_H8": -0.8861170600000037,
+              "right": "42dfdefa69502dd9c3716d9b2d7a0bf79d48be347a1e8786750551db65ff0db9",
+              "right_dominates": false,
+              "right_method": "P0",
+              "right_method_display": "P0",
+              "routed_scan_path_cost_um": -12.090000000000146
+            }
+          ]
+        }
+      ]
+    },
+    "qualified_P0_points": 7,
+    "qualified_external_methods": [
+      "B0",
+      "B1",
+      "B2",
+      "B3T"
+    ]
+  },
+  "s9234": {
+    "A1": {
+      "coordinate_unique_nondominated_architectures": [
+        "53bb5b0187583971d057dc111c46dc7030affedc25dbfe294a9455251ddc6fe5",
+        "797aff0b91f6ad122de840678b76b5969b4c0db00dbedfa78d2884fc75a5ddc2",
+        "f4bca5652bda0b57f3cb7fd7b31c0228c96465ab7e142b4fb284814b8dd3a223"
+      ],
+      "implemented_scope_only": true,
+      "mandatory_external_methods_complete": true,
+      "unique_nondominated_architectures": [
+        "53bb5b0187583971d057dc111c46dc7030affedc25dbfe294a9455251ddc6fe5",
+        "797aff0b91f6ad122de840678b76b5969b4c0db00dbedfa78d2884fc75a5ddc2",
+        "f4bca5652bda0b57f3cb7fd7b31c0228c96465ab7e142b4fb284814b8dd3a223"
+      ]
+    },
+    "A2": {
+      "comparable_cost_policy": "All exact wire deltas shown; no invented matching tolerance",
+      "pairwise_deltas": [
+        {
+          "activity_improvement": "both",
+          "left": "797aff0b91f6ad122de840678b76b5969b4c0db00dbedfa78d2884fc75a5ddc2",
+          "left_dominates": true,
+          "left_method": "P0",
+          "left_method_display": "P0",
+          "measured_E": -5992846.646073639,
+          "measured_H8": -10.116498589999992,
+          "right": "3cbfe6e3d55be494743cb263dedb95c916791638592d28c70d6440c31b05f316",
+          "right_dominates": false,
+          "right_method": "B0",
+          "right_method_display": "B0",
+          "routed_scan_path_cost_um": -2850.334999999999
+        },
+        {
+          "activity_improvement": "both",
+          "left": "797aff0b91f6ad122de840678b76b5969b4c0db00dbedfa78d2884fc75a5ddc2",
+          "left_dominates": true,
+          "left_method": "P0",
+          "left_method_display": "P0",
+          "measured_E": -2037861.5691242442,
+          "measured_H8": -10.82588118000001,
+          "right": "fac8217b9c2c39822d955a49b8addc3304d6caa5b81db595faf640bd5c4a52bd",
+          "right_dominates": false,
+          "right_method": "B1",
+          "right_method_display": "B1",
+          "routed_scan_path_cost_um": -341.28999999999905
+        },
+        {
+          "activity_improvement": "both",
+          "left": "797aff0b91f6ad122de840678b76b5969b4c0db00dbedfa78d2884fc75a5ddc2",
+          "left_dominates": false,
+          "left_method": "P0",
+          "left_method_display": "P0",
+          "measured_E": -833506.1908343583,
+          "measured_H8": -8.666087809999993,
+          "right": "045ffbbf9cba85ebc1464d2ddb2f225f9d3d1d1109cf7ef3ab3afd00be474198",
+          "right_dominates": false,
+          "right_method": "B2",
+          "right_method_display": "B2",
+          "routed_scan_path_cost_um": 107.44000000000051
+        },
+        {
+          "activity_improvement": "both",
+          "left": "797aff0b91f6ad122de840678b76b5969b4c0db00dbedfa78d2884fc75a5ddc2",
+          "left_dominates": false,
+          "left_method": "P0",
+          "left_method_display": "P0",
+          "measured_E": -1553470.0938183367,
+          "measured_H8": -4.396231859999972,
+          "right": "6dc4fc866614764a2fb72fc0825790ee736f9ac7e7124edc7addf6757d0733ad",
+          "right_dominates": false,
+          "right_method": "B3T",
+          "right_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+          "routed_scan_path_cost_um": 124.39500000000044
+        }
+      ]
+    },
+    "A3": {
+      "B3T_vs_B0": {
+        "left": "6dc4fc866614764a2fb72fc0825790ee736f9ac7e7124edc7addf6757d0733ad",
+        "left_dominates": true,
+        "left_method": "B3T",
+        "left_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+        "measured_E": -4439376.552255303,
+        "measured_H8": -5.72026673000002,
+        "right": "3cbfe6e3d55be494743cb263dedb95c916791638592d28c70d6440c31b05f316",
+        "right_dominates": false,
+        "right_method": "B0",
+        "right_method_display": "B0",
+        "routed_scan_path_cost_um": -2974.7299999999996
+      },
+      "B3T_vs_predeclared_P0": [
+        {
+          "left": "6dc4fc866614764a2fb72fc0825790ee736f9ac7e7124edc7addf6757d0733ad",
+          "left_dominates": false,
+          "left_method": "B3T",
+          "left_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+          "measured_E": 724187.5437269062,
+          "measured_H8": 5.0048367199999575,
+          "right": "53bb5b0187583971d057dc111c46dc7030affedc25dbfe294a9455251ddc6fe5",
+          "right_dominates": false,
+          "right_method": "P0",
+          "right_method_display": "P0",
+          "routed_scan_path_cost_um": -59.51000000000022
+        },
+        {
+          "left": "6dc4fc866614764a2fb72fc0825790ee736f9ac7e7124edc7addf6757d0733ad",
+          "left_dominates": false,
+          "left_method": "B3T",
+          "left_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+          "measured_E": 1553470.0938183367,
+          "measured_H8": 4.396231859999972,
+          "right": "797aff0b91f6ad122de840678b76b5969b4c0db00dbedfa78d2884fc75a5ddc2",
+          "right_dominates": false,
+          "right_method": "P0",
+          "right_method_display": "P0",
+          "routed_scan_path_cost_um": -124.39500000000044
+        },
+        {
+          "left": "6dc4fc866614764a2fb72fc0825790ee736f9ac7e7124edc7addf6757d0733ad",
+          "left_dominates": false,
+          "left_method": "B3T",
+          "left_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+          "measured_E": 1656241.7801930308,
+          "measured_H8": 2.9134944899999766,
+          "right": "4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40",
+          "right_dominates": false,
+          "right_method": "P0",
+          "right_method_display": "P0",
+          "routed_scan_path_cost_um": -166.35000000000036
+        }
+      ]
+    },
+    "A4": [
+      {
+        "left": "fac8217b9c2c39822d955a49b8addc3304d6caa5b81db595faf640bd5c4a52bd",
+        "left_dominates": false,
+        "left_method": "B1",
+        "left_method_display": "B1",
+        "measured_E": -3954985.0769493952,
+        "measured_H8": 0.7093825900000184,
+        "physical_order": "left_has_lower_wire",
+        "right": "3cbfe6e3d55be494743cb263dedb95c916791638592d28c70d6440c31b05f316",
+        "right_dominates": false,
+        "right_method": "B0",
+        "right_method_display": "B0",
+        "routed_scan_path_cost_um": -2509.045
+      },
+      {
+        "left": "045ffbbf9cba85ebc1464d2ddb2f225f9d3d1d1109cf7ef3ab3afd00be474198",
+        "left_dominates": true,
+        "left_method": "B2",
+        "left_method_display": "B2",
+        "measured_E": -5159340.455239281,
+        "measured_H8": -1.4504107799999986,
+        "physical_order": "left_has_lower_wire",
+        "right": "3cbfe6e3d55be494743cb263dedb95c916791638592d28c70d6440c31b05f316",
+        "right_dominates": false,
+        "right_method": "B0",
+        "right_method_display": "B0",
+        "routed_scan_path_cost_um": -2957.7749999999996
+      },
+      {
+        "left": "6dc4fc866614764a2fb72fc0825790ee736f9ac7e7124edc7addf6757d0733ad",
+        "left_dominates": true,
+        "left_method": "B3T",
+        "left_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+        "measured_E": -4439376.552255303,
+        "measured_H8": -5.72026673000002,
+        "physical_order": "left_has_lower_wire",
+        "right": "3cbfe6e3d55be494743cb263dedb95c916791638592d28c70d6440c31b05f316",
+        "right_dominates": false,
+        "right_method": "B0",
+        "right_method_display": "B0",
+        "routed_scan_path_cost_um": -2974.7299999999996
+      },
+      {
+        "left": "045ffbbf9cba85ebc1464d2ddb2f225f9d3d1d1109cf7ef3ab3afd00be474198",
+        "left_dominates": true,
+        "left_method": "B2",
+        "left_method_display": "B2",
+        "measured_E": -1204355.3782898858,
+        "measured_H8": -2.159793370000017,
+        "physical_order": "left_has_lower_wire",
+        "right": "fac8217b9c2c39822d955a49b8addc3304d6caa5b81db595faf640bd5c4a52bd",
+        "right_dominates": false,
+        "right_method": "B1",
+        "right_method_display": "B1",
+        "routed_scan_path_cost_um": -448.72999999999956
+      },
+      {
+        "left": "6dc4fc866614764a2fb72fc0825790ee736f9ac7e7124edc7addf6757d0733ad",
+        "left_dominates": true,
+        "left_method": "B3T",
+        "left_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+        "measured_E": -484391.4753059074,
+        "measured_H8": -6.429649320000038,
+        "physical_order": "left_has_lower_wire",
+        "right": "fac8217b9c2c39822d955a49b8addc3304d6caa5b81db595faf640bd5c4a52bd",
+        "right_dominates": false,
+        "right_method": "B1",
+        "right_method_display": "B1",
+        "routed_scan_path_cost_um": -465.6849999999995
+      },
+      {
+        "left": "6dc4fc866614764a2fb72fc0825790ee736f9ac7e7124edc7addf6757d0733ad",
+        "left_dominates": false,
+        "left_method": "B3T",
+        "left_method_display": "B3T \u2014 PR #10666 + R0 compile + R1 endpoint/metadata + R1 Verilog input-alias repairs",
+        "measured_E": 719963.9029839784,
+        "measured_H8": -4.2698559500000215,
+        "physical_order": "left_has_lower_wire",
+        "right": "045ffbbf9cba85ebc1464d2ddb2f225f9d3d1d1109cf7ef3ab3afd00be474198",
+        "right_dominates": false,
+        "right_method": "B2",
+        "right_method_display": "B2",
+        "routed_scan_path_cost_um": -16.954999999999927
+      }
+    ],
+    "A5": {
+      "causal_limit": "A stronger known archive point can show a selection miss; this comparison alone cannot attribute that miss uniquely to H8 predictor incompleteness.",
+      "implemented_archive_points": 4,
+      "scope": "Only pre-existing implemented archive evidence is reused. Unmeasured archive points remain unknown; no search or outcome-based reselection.",
+      "unmeasured_archive_points": 0,
+      "unselected_archive_points_dominating_balanced": [],
+      "unselected_archive_points_with_lower_H8_than_all_measured_selected": [
+        {
+          "architecture_hash": "f4bca5652bda0b57f3cb7fd7b31c0228c96465ab7e142b4fb284814b8dd3a223",
+          "versus_selected": [
+            {
+              "left": "f4bca5652bda0b57f3cb7fd7b31c0228c96465ab7e142b4fb284814b8dd3a223",
+              "left_dominates": false,
+              "left_method": "P0",
+              "left_method_display": "P0",
+              "measured_E": -1580301.3838464022,
+              "measured_H8": -0.06969883000002142,
+              "right": "53bb5b0187583971d057dc111c46dc7030affedc25dbfe294a9455251ddc6fe5",
+              "right_dominates": false,
+              "right_method": "P0",
+              "right_method_display": "P0",
+              "routed_scan_path_cost_um": 67.20499999999993
+            },
+            {
+              "left": "f4bca5652bda0b57f3cb7fd7b31c0228c96465ab7e142b4fb284814b8dd3a223",
+              "left_dominates": false,
+              "left_method": "P0",
+              "left_method_display": "P0",
+              "measured_E": -751018.8337549716,
+              "measured_H8": -0.678303690000007,
+              "right": "797aff0b91f6ad122de840678b76b5969b4c0db00dbedfa78d2884fc75a5ddc2",
+              "right_dominates": false,
+              "right_method": "P0",
+              "right_method_display": "P0",
+              "routed_scan_path_cost_um": 2.319999999999709
+            },
+            {
+              "left": "f4bca5652bda0b57f3cb7fd7b31c0228c96465ab7e142b4fb284814b8dd3a223",
+              "left_dominates": true,
+              "left_method": "P0",
+              "left_method_display": "P0",
+              "measured_E": -648247.1473802775,
+              "measured_H8": -2.1610410600000023,
+              "right": "4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40",
+              "right_dominates": false,
+              "right_method": "P0",
+              "right_method_display": "P0",
+              "routed_scan_path_cost_um": -39.63500000000022
+            }
+          ]
+        }
+      ]
+    },
+    "qualified_P0_points": 4,
+    "qualified_external_methods": [
+      "B0",
+      "B1",
+      "B2",
+      "B3T"
+    ]
+  }
+}

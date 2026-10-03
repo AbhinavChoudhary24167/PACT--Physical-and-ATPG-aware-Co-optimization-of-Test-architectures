@@ -74,4 +74,3 @@ if __name__=='__main__':
     rows=list(csv.DictReader((STAGE/'implemented_metrics.csv').open()))
     write(STAGE/'scientific_questions.json', analyze(rows))
     print('FROZEN_A1_A5_RECORDED', flush=True)
-
