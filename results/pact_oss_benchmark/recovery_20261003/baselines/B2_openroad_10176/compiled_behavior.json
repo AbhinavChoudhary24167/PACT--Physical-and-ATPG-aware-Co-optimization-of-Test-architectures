@@ -1,0 +1,37 @@
+{
+  "binary_path": "/build_storage/B2_openroad_10176/build/bin/openroad",
+  "binary_sha256": "601da32f4493cd9587b53812385af4ec9ed08f1c3f5e9def9c6a7e4897b25087",
+  "exposed_commands": {
+    "dft::scan_opt": "::dft::scan_opt",
+    "execute_dft_plan": "execute_dft_plan",
+    "scan_opt": "scan_opt",
+    "set_dft_config": "set_dft_config"
+  },
+  "interpretation": "Linked symbols and immutable source verify exposed behavior; functional execution is qualified separately on all frozen designs",
+  "linked_implementation_symbols": [
+    "000000000464a5d0 T dft::OptimizeScanWirelength2Opt(odb::Point, odb::Point, std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, utl::Logger*, unsigned long)",
+    "000000000117a6cc t dft::OptimizeScanWirelength2Opt(odb::Point, odb::Point, std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, utl::Logger*, unsigned long) [clone .cold]",
+    "0000000001d22170 T dft::Dft::scanOpt()",
+    "0000000000ef3b60 t dft::Dft::scanOpt() [clone .cold]",
+    "0000000001d21720 t std::_Function_handler<long (std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&), dft::Dft::scanOpt()::{lambda(std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&)#1}>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)",
+    "0000000001d22f40 t std::_Function_handler<long (std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&), dft::Dft::scanOpt()::{lambda(std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&)#1}>::_M_invoke(std::_Any_data const&, std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&)",
+    "0000000006cef060 d typeinfo for dft::Dft::scanOpt()::{lambda(std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&)#1}",
+    "0000000005036420 r typeinfo name for dft::Dft::scanOpt()::{lambda(std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&, std::vector<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> >, std::allocator<std::unique_ptr<dft::ScanCell, std::default_delete<dft::ScanCell> > > >&)#1}"
+  ],
+  "method": "B2",
+  "parameter_source_sha256": {
+    "src/dft/src/Dft.cpp": "ccd6809bd1ca358ff49b23b99ddc396cb0368e19d67594c71e3c6d198003abd0",
+    "src/dft/src/architect/Opt.cpp": "cf3980a2d403310623a8e7a849e3d03c930cf46b10873b036c24b90202dafa29",
+    "src/dft/src/architect/Opt.hh": "c83e550fe1369b43296ca5cbdfb4cefdef409f5137c3f1ed02bd19797ef1a399",
+    "src/dft/src/dft.tcl": "df725fccc6a05c2526d30c4582a9bb4da8956f5f75440d26c64fc828fdd246c8"
+  },
+  "parameters": {
+    "command_arguments": [],
+    "cost": "Symmetric FF-origin Manhattan",
+    "external_endpoints_included": true,
+    "initialization": "Native NN",
+    "max_2opt_iterations": 30
+  },
+  "source_commit": "6fff875551fe13a2aae3a22f871a6ca7f8d5c1cf",
+  "status": "PASS"
+}

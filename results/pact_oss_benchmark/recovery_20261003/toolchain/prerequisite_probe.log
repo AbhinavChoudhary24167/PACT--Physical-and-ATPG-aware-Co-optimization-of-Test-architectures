@@ -1,0 +1,68 @@
+COMMAND ["/usr/local/bin/swig", "-version"] 
+
+SWIG Version 4.3.0
+
+Compiled with g++ [x86_64-pc-linux-gnu]
+
+Configured options: +pcre
+
+Please see https://www.swig.org for reporting bugs and further information
+
+COMMAND ["cmake", "-S", "/scratch/recovery_20261003/toolchain_probe", "-B", "/scratch/recovery_20261003/toolchain_probe/build", "-DCMAKE_C_COMPILER=/usr/bin/gcc", "-DCMAKE_CXX_COMPILER=/usr/bin/g++", "-DSWIG_EXECUTABLE=/usr/local/bin/swig", "-DTCL_HEADER=/usr/include/tcl8.6/tcl.h", "-DTCL_LIBRARY=/usr/lib/x86_64-linux-gnu/libtcl8.6.so"] 
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found SWIG: /usr/local/bin/swig (found suitable version "4.3.0", minimum required is "4.3")
+-- TCL library: /usr/lib/x86_64-linux-gnu/libtcl8.6.so
+-- TCL header: /usr/include/tcl8.6/tcl.h
+-- Configuring done (3.9s)
+-- Generating done (0.4s)
+-- Build files have been written to: /scratch/recovery_20261003/toolchain_probe/build
+
+COMMAND ["cmake", "--build", "/scratch/recovery_20261003/toolchain_probe/build", "--parallel", "1"] 
+[ 50%] Building C object CMakeFiles/tcl_probe.dir/tcl_probe.c.o
+[100%] Linking C executable tcl_probe
+[100%] Built target tcl_probe
+
+COMMAND ["/scratch/recovery_20261003/toolchain_probe/build/tcl_probe"] 
+header=8.6.12
+runtime=8.6.12
+
+COMMAND ["/usr/local/bin/swig", "-tcl", "-o", "/scratch/recovery_20261003/toolchain_probe/pactprobe_wrap.c", "/scratch/recovery_20261003/toolchain_probe/pactprobe.i"] 
+
+COMMAND ["/usr/bin/gcc", "-shared", "-fPIC", "-I/usr/include/tcl8.6", "/scratch/recovery_20261003/toolchain_probe/pactprobe_wrap.c", "/usr/lib/x86_64-linux-gnu/libtcl8.6.so", "-o", "/scratch/recovery_20261003/toolchain_probe/pactprobe.so"] 
+
+COMMAND ["/usr/bin/tclsh"] 
+42
+8.6.12
+
+COMMAND ["/usr/bin/g++", "--version"] 
+g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+COMMAND ["cmake", "--version"] 
+cmake version 3.31.9
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+
+COMMAND ["dpkg-query", "-W", "tcl8.6-dev", "python3-dev", "bison", "flex", "zlib1g-dev", "libyaml-cpp-dev"] 
+bison	2:3.8.2+dfsg-1build1
+flex	2.6.4-8build2
+libyaml-cpp-dev	0.7.0+dfsg-8build1
+python3-dev	3.10.6-1~22.04.1
+tcl8.6-dev:amd64	8.6.12+dfsg-1build1
+zlib1g-dev:amd64	1:1.2.11.dfsg-2ubuntu9.2
+
+INDEPENDENT_SWIG_TCL_QUALIFICATION_PASS

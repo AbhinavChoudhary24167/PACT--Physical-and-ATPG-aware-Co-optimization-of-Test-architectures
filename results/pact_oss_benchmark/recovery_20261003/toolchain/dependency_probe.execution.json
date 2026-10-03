@@ -1,0 +1,40 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network=none",
+    "--mount",
+    "type=bind,source=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT,target=/workspace,readonly",
+    "--mount",
+    "type=bind,source=/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003,target=/scratch",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery,target=/build_storage",
+    "--entrypoint",
+    "/bin/bash",
+    "sha256:f05cee3219a02f26289f02f00e11a3fc986ab51a482a0000a2da810cda219a6e",
+    "-c",
+    "exec \"$@\"",
+    "pact-command",
+    "python3",
+    "/workspace/scripts/pact_oss_dependency_probe.py"
+  ],
+  "driver": {
+    "bytes": 11276,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_oss_recovery.py",
+    "sha256": "997b3a13a6069b22722fc77a8cf76e5a37c6305c5174fef78ac0cf6538adfc8c"
+  },
+  "elapsed_seconds": 4.757814032999999,
+  "log": {
+    "bytes": 2257,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/toolchain/dependency_probe.log",
+    "sha256": "5432d239b4007adb273a3333cfeedc68acfbefd196f1a197bef63747265082b2"
+  },
+  "resources": {
+    "bytes": 1220,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/toolchain/dependency_probe.resource.txt",
+    "sha256": "5a4c0919dec3b53187cc2d1eca3aa8ddebfe6626b7ad1223e82730f2c1e53ad3"
+  },
+  "returncode": 1,
+  "timestamp": "2026-10-03T10:04:22.440407+00:00"
+}

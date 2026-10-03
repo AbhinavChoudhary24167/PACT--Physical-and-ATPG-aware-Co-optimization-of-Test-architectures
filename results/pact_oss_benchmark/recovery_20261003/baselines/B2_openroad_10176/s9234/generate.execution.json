@@ -1,0 +1,61 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network=none",
+    "--mount",
+    "type=bind,source=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT,target=/workspace,readonly",
+    "--mount",
+    "type=bind,source=/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003,target=/scratch",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery,target=/build_storage",
+    "--mount",
+    "type=bind,source=/root/pact-deps/OpenROAD-flow-scripts/flow/results,target=/root/pact-deps/OpenROAD-flow-scripts/flow/results,readonly",
+    "--entrypoint",
+    "/bin/bash",
+    "sha256:f05cee3219a02f26289f02f00e11a3fc986ab51a482a0000a2da810cda219a6e",
+    "-c",
+    "exec \"$@\"",
+    "pact-command",
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/scratch/recovery_20261003/B2_openroad_10176/s9234/generator.resource.txt",
+    "/build_storage/B2_openroad_10176/build/bin/openroad",
+    "-python",
+    "-no_init",
+    "-exit",
+    "/workspace/scripts/pact_oss_generator.py",
+    "--method",
+    "B2",
+    "--commit",
+    "6fff875551fe13a2aae3a22f871a6ca7f8d5c1cf",
+    "--design",
+    "s9234",
+    "--source",
+    "/scratch/placed_common/s9234/3_place.odb",
+    "--output",
+    "/scratch/recovery_20261003/B2_openroad_10176/s9234",
+    "--liberty",
+    "/scratch/NangateOpenCellLibrary_typical_dft.lib"
+  ],
+  "elapsed_seconds": 3.488895982000031,
+  "executed_driver": {
+    "bytes": 12491,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/baselines/B2_openroad_10176/s9234/generate.pact_oss_recovery.py",
+    "sha256": "098c7ede1a6c3bcd2a1c8036882e2f18e39a12621076283b6fc24782f6b7a184"
+  },
+  "log": {
+    "bytes": 3722,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/baselines/B2_openroad_10176/s9234/generate.log",
+    "sha256": "4dc7291b95241e798f5df1ea3bf7f378462188f4855fe964059cd4a446919d4f"
+  },
+  "resources": {
+    "bytes": 1724,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/baselines/B2_openroad_10176/s9234/generate.resource.txt",
+    "sha256": "6079576f74e1c6912998794342478cffdc9899c38e7dbe06031c73180d9906cf"
+  },
+  "returncode": 0,
+  "timestamp": "2026-10-03T12:02:49.755669+00:00"
+}

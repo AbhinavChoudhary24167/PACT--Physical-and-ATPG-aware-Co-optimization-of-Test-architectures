@@ -1,0 +1,102 @@
+{
+  "architecture_generation": "NOT_STARTED",
+  "build_execution": {
+    "bytes": 1802,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/baselines/B3_openroad_10666/build.execution.json",
+    "sha256": "ab3b389768d635735de6e4940678420d833b07e3e6067f094665defc880f47d2"
+  },
+  "build_exit_code": 2,
+  "build_log": {
+    "bytes": 1872738,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/baselines/B3_openroad_10666/build.log",
+    "sha256": "d0eed20d3c8c452467c83d4a3c21acb1ba97990c069ec011faf729c41c0d36e1"
+  },
+  "build_retry_after_source_defect": false,
+  "compiled_command_qualification": "UNAVAILABLE_NO_EXECUTABLE",
+  "compiler_errors": [
+    "/build_storage/B3_openroad_10666/source/src/dft/src/cells/OneBitScanCell.cpp:106:34: error: 'getLibertyScanIn' was not declared in this scope",
+    "/build_storage/B3_openroad_10666/source/src/dft/src/cells/OneBitScanCell.cpp:111:34: error: 'getLibertyScanOut' was not declared in this scope"
+  ],
+  "diagnosis": "The two location accessors call dbNetwork member APIs as unqualified functions; those functions are neither OneBitScanCell nor ScanCell members. The same translation unit uses db_network_-> correctly elsewhere.",
+  "diagnostic_snapshots": {
+    "build.make": {
+      "bytes": 8283,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/baselines/B3_openroad_10666/diagnostics/build.make",
+      "sha256": "ebb1d447429ee1378ee05d1a95695b8c8e553e48297564ace3f6d2976fa07767"
+    },
+    "flags.make": {
+      "bytes": 1449,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/baselines/B3_openroad_10666/diagnostics/flags.make",
+      "sha256": "132afd9aa3f2da8bcf02da85d4bd4ff1b78b833cfd1a38ad178134788f248f17"
+    },
+    "src/dbSta/include/db_sta/dbNetwork.hh": {
+      "bytes": 21310,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/baselines/B3_openroad_10666/diagnostics/src/dbSta/include/db_sta/dbNetwork.hh",
+      "sha256": "ec6e84322d363df25f31b06abee0c85ef3670f5b17fdb0f36277ebf7aad9c8fe"
+    },
+    "src/dft/src/cells/OneBitScanCell.cpp": {
+      "bytes": 2828,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/baselines/B3_openroad_10666/diagnostics/src/dft/src/cells/OneBitScanCell.cpp",
+      "sha256": "0fc7682bab1352270bd59ab951444cd5af68d8317ee4ddbe10519dc9b6232fea"
+    },
+    "src/dft/src/cells/OneBitScanCell.hh": {
+      "bytes": 1551,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/baselines/B3_openroad_10666/diagnostics/src/dft/src/cells/OneBitScanCell.hh",
+      "sha256": "a959f9e024ccdceba6d77aaad130bc5c403f99dc997a246c02ee277e5e7a1db2"
+    },
+    "src/dft/src/cells/ScanCell.hh": {
+      "bytes": 4676,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/baselines/B3_openroad_10666/diagnostics/src/dft/src/cells/ScanCell.hh",
+      "sha256": "f23f5bb1cf5d04d849e32bf7de6ec6c5d288778b0a98a231a696f2becfc802e4"
+    }
+  },
+  "exact_archive_verified_sources": {
+    "src/dbSta/include/db_sta/dbNetwork.hh": {
+      "bytes": 21310,
+      "path": "/mnt/pact-oss-recovery/B3_openroad_10666/source/src/dbSta/include/db_sta/dbNetwork.hh",
+      "sha256": "ec6e84322d363df25f31b06abee0c85ef3670f5b17fdb0f36277ebf7aad9c8fe"
+    },
+    "src/dft/src/cells/OneBitScanCell.cpp": {
+      "bytes": 2828,
+      "path": "/mnt/pact-oss-recovery/B3_openroad_10666/source/src/dft/src/cells/OneBitScanCell.cpp",
+      "sha256": "0fc7682bab1352270bd59ab951444cd5af68d8317ee4ddbe10519dc9b6232fea"
+    },
+    "src/dft/src/cells/OneBitScanCell.hh": {
+      "bytes": 1551,
+      "path": "/mnt/pact-oss-recovery/B3_openroad_10666/source/src/dft/src/cells/OneBitScanCell.hh",
+      "sha256": "a959f9e024ccdceba6d77aaad130bc5c403f99dc997a246c02ee277e5e7a1db2"
+    },
+    "src/dft/src/cells/ScanCell.hh": {
+      "bytes": 4676,
+      "path": "/mnt/pact-oss-recovery/B3_openroad_10666/source/src/dft/src/cells/ScanCell.hh",
+      "sha256": "f23f5bb1cf5d04d849e32bf7de6ec6c5d288778b0a98a231a696f2becfc802e4"
+    }
+  },
+  "member_declarations": {
+    "lines": [
+      436,
+      437
+    ],
+    "path": "src/dbSta/include/db_sta/dbNetwork.hh",
+    "receiver": "sta::dbNetwork / db_network_"
+  },
+  "missing_package": false,
+  "optimizer_static_library_compiled": true,
+  "partial_library_is_not_baseline_reproduction": true,
+  "required_change": "A PR source change supplying the db_network_ receiver at both failing calls, or equivalent source injection. Neither is applied.",
+  "source_commit": "746c748b19cd2b9d7fb6aa3afe53fe4c31ce3656",
+  "source_locations": [
+    {
+      "call": "return iTermLocation(findITerm(getLibertyScanIn(test_cell_)), inst_);",
+      "line": 106,
+      "path": "src/dft/src/cells/OneBitScanCell.cpp"
+    },
+    {
+      "call": "return iTermLocation(findITerm(getLibertyScanOut(test_cell_)), inst_);",
+      "line": 111,
+      "path": "src/dft/src/cells/OneBitScanCell.cpp"
+    }
+  ],
+  "source_patch_applied": false,
+  "status": "SOURCE_PATCH_REQUIRED_STOPPED"
+}

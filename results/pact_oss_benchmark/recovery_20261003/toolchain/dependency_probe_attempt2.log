@@ -1,0 +1,68 @@
+COMMAND ["cmake", "-S", "/scratch/recovery_20261003/dependency_probe2", "-B", "/scratch/recovery_20261003/dependency_probe2/build", "-DCMAKE_C_COMPILER=/usr/bin/gcc", "-DCMAKE_CXX_COMPILER=/usr/bin/g++", "-DCMAKE_PREFIX_PATH=/build_storage/toolchain;/opt/or-tools;/usr/local", "-DBoost_DIR=/usr/local/lib/cmake/Boost-1.89.0"]
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Found ZLIB: /opt/or-tools/lib/libz.so (found version "1.3.1")
+-- Found BZip2: /opt/or-tools/lib/libbz2.so (found version "1.1.0")
+-- Looking for BZ2_bzCompressInit
+-- Looking for BZ2_bzCompressInit - found
+-- Found re2: /opt/or-tools/lib/cmake/re2/re2Config.cmake (found version "11.0.0")
+-- Found Clp: /opt/or-tools/lib/cmake/Clp/ClpConfig.cmake (found version "1.17.10")
+-- Found Cbc: /opt/or-tools/lib/cmake/Cbc/CbcConfig.cmake (found version "2.10.12")
+-- Found SCIP: /opt/or-tools/lib/cmake/scip/scip-config.cmake (found version "9.2.2")
+-- Found BISON: /usr/bin/bison (found suitable version "3.8.2", minimum required is "3.2")
+-- Found FLEX: /usr/bin/flex (found version "2.6.4")
+-- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter Development Development.Module Development.Embed
+-- Found OpenMP_C: -fopenmp (found version "4.5")
+-- Found OpenMP_CXX: -fopenmp (found version "4.5")
+-- Found OpenMP: TRUE (found version "4.5")
+-- Configuring done (12.1s)
+-- Generating done (0.3s)
+-- Build files have been written to: /scratch/recovery_20261003/dependency_probe2/build
+{
+  "BISON_EXECUTABLE": "/usr/bin/bison",
+  "BISON_VERSION": "3.8.2",
+  "Boost_DIR": "/usr/local/lib/cmake/Boost-1.89.0",
+  "Boost_INCLUDE_DIRS": "/usr/local/include",
+  "Boost_VERSION": "1.89.0",
+  "CUDD_INCLUDE": "/usr/local/include",
+  "CUDD_LIB": "/usr/local/lib/libcudd.a",
+  "Eigen3_DIR": "/opt/or-tools/share/eigen3/cmake",
+  "Eigen3_VERSION": "3.4.0",
+  "FLEX_EXECUTABLE": "/usr/bin/flex",
+  "FLEX_VERSION": "2.6.4",
+  "LEMON_DIR": "/usr/local/share/lemon/cmake",
+  "LEMON_INCLUDE_DIRS": "/usr/local/include",
+  "LEMON_LIBRARIES": "/usr/local/lib/libemon.a",
+  "LEMON_LIBRARY": "/usr/local/lib/libemon.a",
+  "OpenMP_CXX_VERSION": "4.5",
+  "Python3_EXECUTABLE": "/usr/bin/python3.10",
+  "Python3_INCLUDE_DIRS": "/usr/include/python3.10",
+  "Python3_LIBRARIES": "/usr/lib/x86_64-linux-gnu/libpython3.10.so",
+  "Python3_VERSION": "3.10.12",
+  "ZLIB_INCLUDE_DIRS": "/opt/or-tools/include",
+  "ZLIB_LIBRARIES": "/opt/or-tools/lib/libz.so",
+  "ZLIB_VERSION": "1.3.1",
+  "absl_DIR": "/opt/or-tools/lib/cmake/absl",
+  "absl_VERSION": "20250512",
+  "fmt_DIR": "/build_storage/toolchain/lib/cmake/fmt",
+  "fmt_VERSION": "12.1.0",
+  "ortools_DIR": "/opt/or-tools/lib/cmake/ortools",
+  "ortools_VERSION": "9.14.6206",
+  "spdlog_DIR": "/usr/local/lib/cmake/spdlog",
+  "spdlog_VERSION": "1.15.0",
+  "yaml-cpp_DIR": "/usr/lib/x86_64-linux-gnu/cmake/yaml-cpp",
+  "yaml-cpp_VERSION": "0.7.0"
+}

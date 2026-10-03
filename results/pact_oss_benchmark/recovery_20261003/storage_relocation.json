@@ -1,0 +1,30 @@
+{
+  "cause": "WSL dropped the short-lived initial loop mount between invocations; build prefix temporarily used WSL root filesystem",
+  "data_bytes_verified": 2092570146,
+  "disk_path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/recovery_20261003/build-storage.ext4",
+  "exact_partial_source_and_build_copy": true,
+  "files_verified": 20778,
+  "inventory": {
+    "bytes": 990099,
+    "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/recovery_20261003/relocated_build_inventory.json.gz",
+    "sha256": "24784338aa9580b35b3f4be33ef6f6c43e3e6f24d81c88cc0223659dd5b9c8fc"
+  },
+  "mount": {
+    "fstype": "ext4",
+    "options": "rw,relatime",
+    "source": "/dev/loop0",
+    "target": "/mnt/pact-oss-recovery"
+  },
+  "original_fallback_removed_only_after_complete_hash_equivalence": true,
+  "prevention": "Every later build/generation invocation independently verifies and restores the same D:-backed mount",
+  "relocation_script": {
+    "bytes": 5417,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_oss_storage.py",
+    "sha256": "0795d053e330ea83abef7ec3279ea15a7a3436f5cfe6eabc5ebc9fc5fa212e19"
+  },
+  "source_root": "/mnt/pact-oss-recovery",
+  "source_semantics_or_build_flags_changed": false,
+  "status": "PASS",
+  "timestamp_end": "2026-10-03T10:32:17.147110+00:00",
+  "timestamp_start": "2026-10-03T10:29:46.538422+00:00"
+}

@@ -1,0 +1,49 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network=none",
+    "--mount",
+    "type=bind,source=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT,target=/workspace,readonly",
+    "--mount",
+    "type=bind,source=/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003,target=/scratch",
+    "--mount",
+    "type=bind,source=/mnt/pact-oss-recovery,target=/build_storage",
+    "--entrypoint",
+    "/bin/bash",
+    "sha256:f05cee3219a02f26289f02f00e11a3fc986ab51a482a0000a2da810cda219a6e",
+    "-c",
+    "exec \"$@\"",
+    "pact-command",
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/scratch/recovery_20261003/build_container.resource.txt",
+    "cmake",
+    "--build",
+    "/build_storage/B2_openroad_10176/build",
+    "--parallel",
+    "2",
+    "--target",
+    "openroad"
+  ],
+  "driver": {
+    "bytes": 12115,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_oss_recovery.py",
+    "sha256": "6a119dd90425aa1ddfbd8579eb2dee484adfce133c667ea0aabcd398179faa9c"
+  },
+  "elapsed_seconds": 1005.7348239749999,
+  "log": {
+    "bytes": 1758452,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/baselines/B2_openroad_10176/build.log",
+    "sha256": "e376e08abff7a163ba6e07ba7a957777c36d5b73d4178b694d12a4fae5353f8b"
+  },
+  "resources": {
+    "bytes": 1336,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/baselines/B2_openroad_10176/build.resource.txt",
+    "sha256": "280f28e58fc89d6f45a1f5ceba6094330e534a8b86183f85bfd5e609c0d760c8"
+  },
+  "returncode": 137,
+  "timestamp": "2026-10-03T10:26:57.999833+00:00"
+}

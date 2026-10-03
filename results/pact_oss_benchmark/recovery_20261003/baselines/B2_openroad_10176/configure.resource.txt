@@ -1,0 +1,23 @@
+	Command being timed: "docker run --rm --network=none --mount type=bind,source=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT,target=/workspace,readonly --mount type=bind,source=/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003,target=/scratch --mount type=bind,source=/mnt/pact-oss-recovery,target=/build_storage --entrypoint /bin/bash sha256:f05cee3219a02f26289f02f00e11a3fc986ab51a482a0000a2da810cda219a6e -c exec "$@" pact-command cmake -S /build_storage/B2_openroad_10176/source -B /build_storage/B2_openroad_10176/build -DCMAKE_BUILD_TYPE=Release -DBUILD_GUI=OFF -DBUILD_PYTHON=ON -DENABLE_TESTS=OFF -DENABLE_GPU=OFF -DLINK_TIME_OPTIMIZATION=OFF -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DOPENROAD_VERSION=6fff875551fe13a2aae3a22f871a6ca7f8d5c1cf -DCMAKE_INSTALL_PREFIX=/build_storage/B2_openroad_10176/install -DSWIG_EXECUTABLE=/usr/local/bin/swig -DTCL_HEADER=/usr/include/tcl8.6/tcl.h -DTCL_LIBRARY=/usr/lib/x86_64-linux-gnu/libtcl8.6.so -DCMAKE_PREFIX_PATH=/build_storage/toolchain;/opt/or-tools;/usr/local -DBoost_DIR=/usr/local/lib/cmake/Boost-1.89.0 -DFETCHCONTENT_FULLY_DISCONNECTED=ON"
+	User time (seconds): 0.02
+	System time (seconds): 0.19
+	Percent of CPU this job got: 1%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:17.12
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 30392
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 7
+	Minor (reclaiming a frame) page faults: 2825
+	Voluntary context switches: 4189
+	Involuntary context switches: 35
+	Swaps: 0
+	File system inputs: 73800
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

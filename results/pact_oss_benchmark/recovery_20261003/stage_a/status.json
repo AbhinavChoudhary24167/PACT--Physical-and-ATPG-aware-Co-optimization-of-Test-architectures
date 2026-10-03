@@ -1,0 +1,102 @@
+{
+  "B1_regenerated": false,
+  "B2": "BUILT_AND_ALL_THREE_CANONICAL_ARCHITECTURES_QUALIFIED",
+  "B3": "COMPILATION_FAILED_SOURCE_PATCH_REQUIRED",
+  "B3_binary_sha256": null,
+  "Git_HEAD_before_commit": "8df6834bdcb3b18570ca9a27e27599bd688d097f",
+  "Git_status_before_commit": "M README.md\n?? docs/implementation_status_and_plan.md\n?? results/pact_fault_identity/\n?? results/pact_h8_rootcause/\n?? results/pact_oss_benchmark/protocol/build_environment_audit.md\n?? results/pact_oss_benchmark/recovery_20261003/\n?? scripts/pact_h8_export.py\n?? scripts/pact_h8_report.py\n?? scripts/pact_h8_rootcause.py\n?? scripts/pact_oss_b3_recovery.py\n?? scripts/pact_oss_build_resolution.py\n?? scripts/pact_oss_command_probe.py\n?? scripts/pact_oss_compare.py\n?? scripts/pact_oss_complete.py\n?? scripts/pact_oss_dependency_probe.py\n?? scripts/pact_oss_endpoint_probe.py\n?? scripts/pact_oss_generate.py\n?? scripts/pact_oss_generator.py\n?? scripts/pact_oss_measure.py\n?? scripts/pact_oss_recovery.py\n?? scripts/pact_oss_recovery_audit.py\n?? scripts/pact_oss_results.py\n?? scripts/pact_oss_scientific.py\n?? scripts/pact_oss_seal_recovery_blocked.py\n?? scripts/pact_oss_stage_a.py\n?? scripts/pact_oss_storage.py\n?? scripts/pact_oss_toolchain_probe.py\n?? src/pact/analysis/h8_rootcause.py\n?? tests/unit/test_h8_rootcause.py\n?? tests/unit/test_oss_build_resolution.py\n?? tests/unit/test_oss_compare.py\n?? tests/unit/test_oss_results.py\n?? tests/unit/test_oss_scientific.py",
+  "OSS_benchmark_complete": false,
+  "P0_commit": "9d9103027918b1d4af2b209e6d36133ad82d4a4e",
+  "P0_model_changed": false,
+  "P0_search_rerun": false,
+  "P0_selection_changed": false,
+  "Stage_B": "NOT_STARTED_STAGE_A_STOP_CONDITION",
+  "Stage_B_execution_authorized_by_this_task": false,
+  "Stage_B_scientific_prerequisite_satisfied": false,
+  "Stage_C": "NOT_STARTED_STAGE_A_STOP_CONDITION",
+  "blocker": {
+    "bytes": 5306,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/baselines/B3_openroad_10666/compilation_blocker.json",
+    "sha256": "d73da1ae7f0660c1bfe6361674dceb1939781a111732e8ecf779368f6addf101"
+  },
+  "fixed_backend": {
+    "bytes": 89508784,
+    "path": "/usr/bin/openroad",
+    "sha256": "fcd7dcfc37d329bd43a7ede75805319a2e70e6879da11d42b4fd1c2e50e645c3"
+  },
+  "new_ATPG_runs": 0,
+  "new_architecture_generations": 3,
+  "new_extractions": 0,
+  "new_placement_runs": 0,
+  "new_rootcause_runs": 0,
+  "new_routes": 0,
+  "new_simulations": 0,
+  "ordered_FF_records": 8252,
+  "original_P0_selection": {
+    "bytes": 2216,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/stage_a/P0_SELECTION.json",
+    "sha256": "71f00473ded389f056454619d774cc249c3fe26c21321e12315ed19c89d6c4cf"
+  },
+  "original_incomplete_seal": {
+    "bytes": 43149,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/stage_a/evidence_manifest.json",
+    "sha256": "360d15681dcc03ffb5333195e4d5ceb18350dbfde0e528b338ef37c45f1f8eb0"
+  },
+  "original_integrity": {
+    "canonical_architectures": 24,
+    "frozen_bindings": 454,
+    "sealed_bindings": 122,
+    "status": "PASS"
+  },
+  "pre_route_scope": "Original 24-architecture diagnostics copied without rescoring; B2 metrics not evaluated after B3 source stop.",
+  "qualified_canonical_architectures": 27,
+  "scientific": "PACT_BENCHMARK_INCONCLUSIVE",
+  "selected_method_records": 19,
+  "stage_a": "PACT_STAGE_A_INCOMPLETE",
+  "stop_condition": "Exact pinned B3 requires a PR source API repair to compile; user forbids source patches and requires stopping.",
+  "tests": {
+    "distinct_failed": 0,
+    "distinct_passed": 47,
+    "executions": 55,
+    "suites": {
+      "pareto_tests.xml": {
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "tests": 13
+      },
+      "protocol_tests.xml": {
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "tests": 25
+      },
+      "result_join_tests.xml": {
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "tests": 4
+      },
+      "result_join_tests_final.xml": {
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "tests": 4
+      },
+      "scientific_question_tests.xml": {
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "tests": 4
+      },
+      "scientific_question_tests_final.xml": {
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "tests": 5
+      }
+    },
+    "unrelated_suites": 0
+  },
+  "timestamp": "2026-10-03T13:31:31.999221+00:00"
+}
