@@ -1,0 +1,116 @@
+{
+  "E": 306019.16041981,
+  "FF_transition_crosscheck": "byte-equivalent decoded JSON",
+  "H4": 141.79185422,
+  "H8": 63.23074092,
+  "additional_routes": 0,
+  "additional_simulations": 0,
+  "analysis_instrumentation": {
+    "frozen_source_sha256": "b68bbf6d9b02158d69c11f3f40e0722defd507c5de6e8813bb94bb9a2b498a8c",
+    "instrumentation": "AST timer context/decorator insertion only; all original numeric/parser operations retained in original order",
+    "scientific_method_change": false,
+    "stages": {
+      "E_computation_all_data": {
+        "calls": 1,
+        "cpu_seconds": 0.020384902999999954,
+        "process_peak_RSS_KiB": 47352,
+        "wall_seconds": 0.03846184600000058
+      },
+      "E_computation_scan_data": {
+        "calls": 1,
+        "cpu_seconds": 0.013574120999999995,
+        "process_peak_RSS_KiB": 39888,
+        "wall_seconds": 0.03466830899999884
+      },
+      "H4_computation_all_data": {
+        "calls": 1,
+        "cpu_seconds": 0.008314793000000043,
+        "process_peak_RSS_KiB": 47352,
+        "wall_seconds": 0.025157298999999966
+      },
+      "H4_computation_scan_data": {
+        "calls": 1,
+        "cpu_seconds": 0.004353152999999943,
+        "process_peak_RSS_KiB": 40272,
+        "wall_seconds": 0.022145979000001148
+      },
+      "H8_computation_all_data": {
+        "calls": 1,
+        "cpu_seconds": 0.012742760999999936,
+        "process_peak_RSS_KiB": 47352,
+        "wall_seconds": 0.02669098800000036
+      },
+      "H8_computation_scan_data": {
+        "calls": 1,
+        "cpu_seconds": 0.009810411000000019,
+        "process_peak_RSS_KiB": 42192,
+        "wall_seconds": 0.03022730699999876
+      },
+      "analysis_total": {
+        "calls": 1,
+        "cpu_seconds": 0.581711528,
+        "process_peak_RSS_KiB": 47352,
+        "wall_seconds": 1.207365179
+      },
+      "capacitance_attribution": {
+        "calls": 1,
+        "cpu_seconds": 0.012588947999999989,
+        "process_peak_RSS_KiB": 38736,
+        "wall_seconds": 0.0447962559999997
+      },
+      "ff_transition_crosscheck": {
+        "calls": 1,
+        "cpu_seconds": 0.05370096199999996,
+        "process_peak_RSS_KiB": 38096,
+        "wall_seconds": 0.07832205499999922
+      },
+      "spef_parse": {
+        "calls": 1,
+        "cpu_seconds": 0.023840556999999984,
+        "process_peak_RSS_KiB": 38736,
+        "wall_seconds": 0.05685987600000075
+      },
+      "transition_extraction": {
+        "calls": 5965,
+        "wall_seconds": 0.17607057399992598
+      },
+      "vcd_parse": {
+        "cpu_seconds": null,
+        "includes": "streaming text IO, header/event parsing, allocations and timestamp dispatch",
+        "peak_RSS_KiB": null,
+        "resource_attribution": "CPU/RSS shared with vcd_parse_and_transition; do not sum inclusive and exclusive spans",
+        "wall_seconds": 0.1496255480000741
+      },
+      "vcd_parse_and_transition": {
+        "calls": 1,
+        "cpu_seconds": 0.27090248399999994,
+        "process_peak_RSS_KiB": 38096,
+        "wall_seconds": 0.3256961220000001
+      }
+    }
+  },
+  "complete_activity_summary": "exact decoded JSON equality",
+  "design": "s953",
+  "engineering_change": "timer context/decorator insertion only; original executable AST preserved after removal",
+  "exact_net_cycle_counts_compared": 1300290,
+  "historical_designs_used": [],
+  "role": "B2",
+  "source": {
+    "bytes": 5892,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s953/s953/B2/activity_summary.json",
+    "sha256": "86466243f7274f9b6dcf32ed0cb0cef8ddc553b9872d2ca663664aea652bd1e0"
+  },
+  "source_VCD": {
+    "bytes": 634515,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s953/s953/B2/activity.vcd",
+    "sha256": "98a675a6fc2a228ce72230e9b4450603c528fd350a8b6d83a24dd6f355c2ad3b"
+  },
+  "source_transitions": {
+    "bytes": 75228,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s953/s953/B2/transitions.npz",
+    "sha256": "2856f20b17a56761658b9a76f183c946d32dff341d6f9c6a577142f4542b1521"
+  },
+  "status": "PASS",
+  "timestamp_utc": "2026-10-04T17:58:12.551433+00:00",
+  "tolerance": 0
+}

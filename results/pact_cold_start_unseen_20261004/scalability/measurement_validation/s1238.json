@@ -1,0 +1,116 @@
+{
+  "E": 124295.66666812,
+  "FF_transition_crosscheck": "byte-equivalent decoded JSON",
+  "H4": 47.43622182,
+  "H8": 25.01900066,
+  "additional_routes": 0,
+  "additional_simulations": 0,
+  "analysis_instrumentation": {
+    "frozen_source_sha256": "b68bbf6d9b02158d69c11f3f40e0722defd507c5de6e8813bb94bb9a2b498a8c",
+    "instrumentation": "AST timer context/decorator insertion only; all original numeric/parser operations retained in original order",
+    "scientific_method_change": false,
+    "stages": {
+      "E_computation_all_data": {
+        "calls": 1,
+        "cpu_seconds": 0.014934755999999938,
+        "process_peak_RSS_KiB": 48672,
+        "wall_seconds": 0.03049180999999379
+      },
+      "E_computation_scan_data": {
+        "calls": 1,
+        "cpu_seconds": 0.013173271999999958,
+        "process_peak_RSS_KiB": 40768,
+        "wall_seconds": 0.029762465999993992
+      },
+      "H4_computation_all_data": {
+        "calls": 1,
+        "cpu_seconds": 0.009985181999999981,
+        "process_peak_RSS_KiB": 48672,
+        "wall_seconds": 0.025514444999998886
+      },
+      "H4_computation_scan_data": {
+        "calls": 1,
+        "cpu_seconds": 0.004038444000000085,
+        "process_peak_RSS_KiB": 41024,
+        "wall_seconds": 0.02138076500000352
+      },
+      "H8_computation_all_data": {
+        "calls": 1,
+        "cpu_seconds": 0.011931515999999975,
+        "process_peak_RSS_KiB": 48672,
+        "wall_seconds": 0.028614311999994868
+      },
+      "H8_computation_scan_data": {
+        "calls": 1,
+        "cpu_seconds": 0.008992760000000044,
+        "process_peak_RSS_KiB": 42688,
+        "wall_seconds": 0.026796570000001907
+      },
+      "analysis_total": {
+        "calls": 1,
+        "cpu_seconds": 0.500953969,
+        "process_peak_RSS_KiB": 48672,
+        "wall_seconds": 1.0858923989999951
+      },
+      "capacitance_attribution": {
+        "calls": 1,
+        "cpu_seconds": 0.014764082999999983,
+        "process_peak_RSS_KiB": 39616,
+        "wall_seconds": 0.046741802999996196
+      },
+      "ff_transition_crosscheck": {
+        "calls": 1,
+        "cpu_seconds": 0.03116772000000001,
+        "process_peak_RSS_KiB": 38080,
+        "wall_seconds": 0.05015174300000069
+      },
+      "spef_parse": {
+        "calls": 1,
+        "cpu_seconds": 0.030954069999999945,
+        "process_peak_RSS_KiB": 39488,
+        "wall_seconds": 0.06395787799999653
+      },
+      "transition_extraction": {
+        "calls": 6235,
+        "wall_seconds": 0.1277630319999119
+      },
+      "vcd_parse": {
+        "cpu_seconds": null,
+        "includes": "streaming text IO, header/event parsing, allocations and timestamp dispatch",
+        "peak_RSS_KiB": null,
+        "resource_attribution": "CPU/RSS shared with vcd_parse_and_transition; do not sum inclusive and exclusive spans",
+        "wall_seconds": 0.1249126800000866
+      },
+      "vcd_parse_and_transition": {
+        "calls": 1,
+        "cpu_seconds": 0.21101736699999996,
+        "process_peak_RSS_KiB": 38080,
+        "wall_seconds": 0.2526757119999985
+      }
+    }
+  },
+  "complete_activity_summary": "exact decoded JSON equality",
+  "design": "s1238",
+  "engineering_change": "timer context/decorator insertion only; original executable AST preserved after removal",
+  "exact_net_cycle_counts_compared": 1487700,
+  "historical_designs_used": [],
+  "role": "B3T",
+  "source": {
+    "bytes": 5911,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s1238/s1238/B3T/activity_summary.json",
+    "sha256": "fbcb52ae150e928718259a4e1017b5ee7b9530b838a0a376a1b0faff06097268"
+  },
+  "source_VCD": {
+    "bytes": 484038,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s1238/s1238/B3T/activity.vcd",
+    "sha256": "a267a597a74c78b8f7f9b2debc89bdce500cbf36c0cdf3aa042fd40635d75d37"
+  },
+  "source_transitions": {
+    "bytes": 61072,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s1238/s1238/B3T/transitions.npz",
+    "sha256": "97085760dc30c566695194cd1b530a880083ea2ae9bb386a88f1a911b8eae840"
+  },
+  "status": "PASS",
+  "timestamp_utc": "2026-10-04T17:58:50.751190+00:00",
+  "tolerance": 0
+}

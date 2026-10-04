@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "Original executable AST retained after removing timers",
+    "Exact timestamp-final-cycle and physical alias transition counts",
+    "Unknown active net rejection unchanged",
+    "Timeout receipt retains wall/CPU/RSS"
+  ],
+  "command": "WSL Python -m unittest discover -s tests -p test_cold_start_measurement.py -v",
+  "seconds": 1.108,
+  "skipped": 0,
+  "status": "PASS",
+  "tests": 4,
+  "timestamp_utc": "2026-10-04T18:02:10.211984+00:00"
+}
