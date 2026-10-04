@@ -22,7 +22,9 @@ def main():
     assert primary.startswith(old_csv)
     assert len(list(csv.DictReader(io.StringIO(primary.decode())))) == 12
     table_path = OUT/'canonical/generalization_results_table.csv'
-    table = list(csv.DictReader(io.StringIO(table_path.read_text())))
+    reader = csv.DictReader(io.StringIO(table_path.read_text()))
+    assert len(reader.fieldnames) == len(set(reader.fieldnames)), 'Duplicate canonical table column'
+    table = list(reader)
     assert len(table) == 18
     for row in table[12:]:
         assert row['PACT_status'] == 'PACT_EXECUTION_BLOCKED'

@@ -216,6 +216,12 @@ def csv_text(fields,rows):
     return out.getvalue()
 
 
+def table_fields(fields):
+    additional=('correctness_status','solver_runtime_seconds','exact_evaluation_count','record_scope',
+        'qualification_status','activity_status','PACT_status','primary_candidate','alternative_candidates')
+    return list(fields)+[name for name in additional if name not in fields]
+
+
 def physical_timings():
     benchmark={r['design']:r for r in read(OUT/'manifests/generalization_benchmark_manifest.json')['designs']}
     rows=[]
@@ -335,7 +341,9 @@ def readable_report(status,counts,outcomes,refs,measured):
         'identical to SDFF_X1. No FF identities were dropped. The optimizer, metrics, objective, operators, and frozen files were preserved. '
         'The traversal repair changes only its guard expression; before/after gate, WL, functional verification, '
         'and net/capacitance mapping outputs are exactly equal on a previously passing unseen design. '
-        'Nineteen focused regression tests passed.', '',
+        'Nineteen focused regression tests passed. A reporting-only schema repair removed a duplicate CSV heading; '
+        'all 18 row dictionaries and protected canonical/core hashes stayed unchanged. '
+        '[Table schema receipt](repair_attempts/table_schema_repaired/qualification.json).', '',
         '## Initialization blocker and scientific conclusion', '',
         'The frozen loader raises `KeyError("s1196")` because its design table and artifact lookups cover only the '
         'historical three circuits. Its Stage-B starts also require a measured representative P0 from an earlier '
@@ -474,9 +482,7 @@ def report(seal=False,check=False):
             delta_routed_scan_wirelength_um_percent=r['deltas_percent']['routed_scan_wirelength_um'],
             delta_E_percent=r['deltas_percent']['E'],delta_H4_percent=r['deltas_percent']['H4'],
             delta_H8_percent=r['deltas_percent']['H8']))
-    (OUT/'canonical/generalization_results_table.csv').write_text(csv_text(
-        fields+['correctness_status','solver_runtime_seconds','exact_evaluation_count','record_scope',
-            'qualification_status','activity_status','PACT_status','primary_candidate','alternative_candidates'],full_rows))
+    (OUT/'canonical/generalization_results_table.csv').write_text(csv_text(table_fields(fields),full_rows))
     readable_report(status,counts,outcomes,refs,measured)
     write(OUT/'completion.json',dict(status=status,created_utc=now(),counts=counts,
         core_freeze_status=read(OUT/'manifests/freeze_verification.json')['status'],
