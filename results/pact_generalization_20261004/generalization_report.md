@@ -79,6 +79,8 @@ Starting SHA: `9cc69bc077171c34d7aa1e45711489ff4bfed969`. Branch: `experiment/ge
 
 [Commit/file inventory](repository_state_at_report.json); [changed files](repository_changes.txt). Heavy new inputs, tools already present, routed databases, SPEFs, VCDs, and detailed execution logs remain at `D:\PACT_EXPERIMENTS\results\pact_generalization_20261004`; repository receipts bind them by exact hash. No duplicate installation or temporary build tree was committed.
 
+[Final checkpoint inventory](repository_final_checkpoint.json) and [final changed files](repository_final_changes.txt) include the sealed report and table-schema repair. The ending commit is tagged `pact-v1-generalization-blocked-20261004`; resolve its exact SHA with `git rev-parse pact-v1-generalization-blocked-20261004`. The final response also supplies that SHA.
+
 ```text
 6144db47 experiment: freeze qualified PACT v1 and preregister unseen benchmark campaign
 659e0bcc repair: accept a verified direct terminal scan-output connection
