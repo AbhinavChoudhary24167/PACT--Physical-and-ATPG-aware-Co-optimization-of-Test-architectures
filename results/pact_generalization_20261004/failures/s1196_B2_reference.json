@@ -1,0 +1,9 @@
+{
+  "design": "s1196",
+  "error": "Command failed: /mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baselines/s1196/B2/generation/execution.json",
+  "failure_class": "PHYSICAL_BACKEND_FAIL",
+  "method": "B2",
+  "source_revision": "6fff875551fe13a2aae3a22f871a6ca7f8d5c1cf",
+  "status": "FAILED",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_physical.py\", line 154, in references\n    execute(command if method=='B1' else docker(command),folder/method/'generation',env=env)\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_infrastructure.py\", line 59, in execute\n    raise RuntimeError('Command failed: ' + str(receipt))\nRuntimeError: Command failed: /mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baselines/s1196/B2/generation/execution.json\n"
+}

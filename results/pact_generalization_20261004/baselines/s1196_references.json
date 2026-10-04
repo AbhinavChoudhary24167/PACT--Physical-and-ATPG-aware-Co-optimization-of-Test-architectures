@@ -1,0 +1,119 @@
+{
+  "design": "s1196",
+  "records": [
+    {
+      "DRC": 0,
+      "architecture": {
+        "bytes": 2574,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baselines/s1196/B0/architecture.json",
+        "sha256": "f03ab59ece4b4bae7325eef44626bdd528c2d78cc55d8c32cf1cb92cdec33de9"
+      },
+      "architecture_hash": "9d8d1694a95ac428839df8ee2cd9f3aed97b00a5f21cbef8eb946054e9e43367",
+      "chain_count": 2,
+      "correctness": {
+        "export": {
+          "bytes": 209856,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baselines/s1196/B0/correctness/fan/export.json",
+          "sha256": "7acdbf1911a1e44b8a0576550a43dd2c2fb8289227cc4993c70d81ef79fae439"
+        },
+        "faults": {
+          "bytes": 715,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baselines/s1196/B0/correctness/test_correctness.json",
+          "sha256": "663902dc7b9b5ed229b5ec53418359adc119def08f722f4b8f4ae543036109bc"
+        },
+        "serial": {
+          "bytes": 459,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baselines/s1196/B0/correctness/serial_replay.json",
+          "sha256": "0d695bd99962605aeeca2eadcecca801aaf94adee576931c168a7624ec07504e"
+        },
+        "statistics": {
+          "coverage": 98.84,
+          "detected": 3068,
+          "patterns": 134,
+          "total": 3104
+        }
+      },
+      "design": "s1196",
+      "exact_scan_order": [
+        [
+          "U_G29",
+          "U_G30",
+          "U_G31",
+          "U_G32",
+          "U_G33",
+          "U_G34",
+          "U_G35",
+          "U_G36",
+          "U_G37"
+        ],
+        [
+          "U_G38",
+          "U_G39",
+          "U_G40",
+          "U_G41",
+          "U_G42",
+          "U_G43",
+          "U_G44",
+          "U_G45",
+          "U_G46"
+        ]
+      ],
+      "method": "B0",
+      "provenance": {
+        "bytes": 6828,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baselines/s1196/B0/physical/route_result.json",
+        "sha256": "11aaa8119d870409946bd808a2ed02dcbca28a3f7cbedd969b37e57784f15389"
+      },
+      "routed_scan_wirelength_um": 423.135,
+      "source_revision": "supplied_source",
+      "status": "QUALIFIED",
+      "timing": {
+        "congestion": null,
+        "detailed_route_drc_errors": 0,
+        "detailed_route_vias": 3672,
+        "global_route_overflow": null,
+        "global_route_wirelength_um": 10029,
+        "hold_tns_ns": 0,
+        "hold_violated_endpoints": 0,
+        "hold_wns_ns": 0.0186369,
+        "layer_utilization": {},
+        "max_cap_violations": 0,
+        "max_fanout_violations": 0,
+        "max_slew_violations": 0,
+        "pdnsim_classification": "NOT_RUN_NO_QUALIFIED_TEST_CURRENT_MODEL",
+        "setup_tns_ns": 0,
+        "setup_violated_endpoints": 0,
+        "setup_wns_ns": 9.13316,
+        "timing_stage": "global_route",
+        "total_detailed_route_wirelength_um": 6295
+      }
+    },
+    {
+      "design": "s1196",
+      "error": "Command failed: /mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baselines/s1196/B1/generation/execution.json",
+      "failure_class": "PHYSICAL_BACKEND_FAIL",
+      "method": "B1",
+      "source_revision": "08f67ee5ecd14db5a42be8c610bbfd1ccf079299",
+      "status": "FAILED",
+      "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_physical.py\", line 154, in references\n    execute(command if method=='B1' else docker(command),folder/method/'generation',env=env)\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_infrastructure.py\", line 59, in execute\n    raise RuntimeError('Command failed: ' + str(receipt))\nRuntimeError: Command failed: /mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baselines/s1196/B1/generation/execution.json\n"
+    },
+    {
+      "design": "s1196",
+      "error": "Command failed: /mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baselines/s1196/B2/generation/execution.json",
+      "failure_class": "PHYSICAL_BACKEND_FAIL",
+      "method": "B2",
+      "source_revision": "6fff875551fe13a2aae3a22f871a6ca7f8d5c1cf",
+      "status": "FAILED",
+      "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_physical.py\", line 154, in references\n    execute(command if method=='B1' else docker(command),folder/method/'generation',env=env)\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_infrastructure.py\", line 59, in execute\n    raise RuntimeError('Command failed: ' + str(receipt))\nRuntimeError: Command failed: /mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baselines/s1196/B2/generation/execution.json\n"
+    },
+    {
+      "design": "s1196",
+      "error": "Command failed: /mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baselines/s1196/B3T/generation/execution.json",
+      "failure_class": "PHYSICAL_BACKEND_FAIL",
+      "method": "B3T",
+      "source_revision": "5c3751171685d507939ee7064a67feec786e5219",
+      "status": "FAILED",
+      "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_physical.py\", line 154, in references\n    execute(command if method=='B1' else docker(command),folder/method/'generation',env=env)\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_infrastructure.py\", line 59, in execute\n    raise RuntimeError('Command failed: ' + str(receipt))\nRuntimeError: Command failed: /mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baselines/s1196/B3T/generation/execution.json\n"
+    }
+  ]
+}
