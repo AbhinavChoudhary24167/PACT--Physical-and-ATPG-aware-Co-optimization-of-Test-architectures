@@ -1,0 +1,84 @@
+{
+  "additional_route_executions": 0,
+  "after": {
+    "bytes": 337738,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/repair_verification/sized_scan_cells/s38584_B0_topology.json",
+    "sha256": "ac8d399369dec3a94267591d3834d9176565108a35da697f00d9caa908f83d4e"
+  },
+  "before": {
+    "bytes": 695,
+    "path": "repo://results/pact_generalization_20261004/failures/s38584_B0_FF_inventory_diagnosis.json",
+    "sha256": "7de341d7c13d5b357feb0d25cf30d8927a97b9a808bb7d49b89037bfe560cf69"
+  },
+  "before_execution": {
+    "bytes": 1494,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_runtime_paths_repaired/s38584/B0/physical/topology/execution.json",
+    "sha256": "0db8a0f0a3137a930c9f17bf0fbd856604697e813b15dc3ba47a14f1494b7147"
+  },
+  "classification": "IMPLEMENTATION_REPAIR",
+  "frozen_verifier_source": {
+    "bytes": 6490,
+    "path": "repo://src/pact/physical/phase0d_routed.py",
+    "sha256": "3f704a53fae703714d483997bf2f9bb86387e2465df2ef00d10a3c95c830041f"
+  },
+  "identical_logic": {
+    "pins_including_test_cell": {
+      "CK": [
+        {
+          "direction": "input",
+          "function": null
+        }
+      ],
+      "D": [
+        {
+          "direction": "input",
+          "function": null
+        }
+      ],
+      "Q": [
+        {
+          "direction": "output",
+          "function": "IQ"
+        }
+      ],
+      "QN": [
+        {
+          "direction": "output",
+          "function": "IQN"
+        }
+      ],
+      "SE": [
+        {
+          "direction": "input",
+          "function": null
+        }
+      ],
+      "SI": [
+        {
+          "direction": "input",
+          "function": null
+        }
+      ]
+    },
+    "state_functions_including_test_cell": [
+      {
+        "sequential": {
+          "clocked_on": "CK",
+          "next_state": "((SE*SI)+(D*!SE))"
+        },
+        "state_variables": "IQ,IQN"
+      }
+    ]
+  },
+  "interpretation": "Retain exact FF identities and functions; include both proven-identical scan drive strengths",
+  "library_sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+  "permitted_masters": [
+    "SDFF_X1",
+    "SDFF_X2"
+  ],
+  "repaired_scan_ff_count": 1426,
+  "routed_scan_wirelength_um": 182136.955,
+  "rule": "Only drive strength may differ; exact pins, state variables, clock expression and next-state/output functions must match",
+  "scientific_method_change": false,
+  "status": "PASS"
+}

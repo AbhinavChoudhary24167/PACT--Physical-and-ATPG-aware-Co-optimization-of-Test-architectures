@@ -4,7 +4,7 @@ import inspect
 from types import SimpleNamespace
 import pytest
 from pact.physical.phase0d_routed import verify_routed
-from pact_generalization_routed import OLD,NEW,repaired_source
+from pact_generalization_routed import OLD,NEW,OLD_FF,NEW_FF,repaired_source
 
 
 def path_function(graph,repaired):
@@ -20,9 +20,9 @@ def line(n):
     return {str(i):[(str(i+1),'b'+str(i))] for i in range(n)}
 
 
-def test_source_change_is_only_the_guard():
+def test_source_changes_are_only_the_documented_inventory_and_guard_repairs():
     original=inspect.getsource(verify_routed)
-    assert repaired_source(original).replace(NEW,OLD)==original
+    assert repaired_source(original,True).replace(NEW,OLD).replace(NEW_FF,OLD_FF)==original
 
 
 def test_existing_short_paths_identical():

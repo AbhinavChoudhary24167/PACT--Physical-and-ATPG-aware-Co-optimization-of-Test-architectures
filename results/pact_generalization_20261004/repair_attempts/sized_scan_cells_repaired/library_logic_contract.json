@@ -1,0 +1,60 @@
+{
+  "classification": "IMPLEMENTATION_REPAIR",
+  "identical_logic": {
+    "pins_including_test_cell": {
+      "CK": [
+        {
+          "direction": "input",
+          "function": null
+        }
+      ],
+      "D": [
+        {
+          "direction": "input",
+          "function": null
+        }
+      ],
+      "Q": [
+        {
+          "direction": "output",
+          "function": "IQ"
+        }
+      ],
+      "QN": [
+        {
+          "direction": "output",
+          "function": "IQN"
+        }
+      ],
+      "SE": [
+        {
+          "direction": "input",
+          "function": null
+        }
+      ],
+      "SI": [
+        {
+          "direction": "input",
+          "function": null
+        }
+      ]
+    },
+    "state_functions_including_test_cell": [
+      {
+        "sequential": {
+          "clocked_on": "CK",
+          "next_state": "((SE*SI)+(D*!SE))"
+        },
+        "state_variables": "IQ,IQN"
+      }
+    ]
+  },
+  "library_sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+  "permitted_masters": [
+    "SDFF_X1",
+    "SDFF_X2"
+  ],
+  "rule": "Only drive strength may differ; exact pins, state variables, clock expression and next-state/output functions must match",
+  "scientific_method_change": false,
+  "status": "PASS"
+}

@@ -54,7 +54,8 @@ def prepare(design):
         chain_lengths=[len(c.cells) for c in arch.chains])
     sources={name:binding(ROOT/name) for name in ('scripts/physical_effect.py','scripts/physical_effect_export.py',
         'src/pact/physical_effect.py','scripts/pact_generalization_measure_driver.py',
-        'scripts/pact_generalization_export.py','scripts/pact_generalization_routed.py')}
+        'scripts/pact_generalization_export.py','scripts/pact_generalization_routed.py',
+        'scripts/pact_generalization_scan_masters.py')}
     write(root/'manifest.json',dict(schema='pact_generalization_reference_measurement_v1',rows=[row],
         library=external_binding(LIB),simulation_cells=external_binding(FAN/'techlib/NangateOpenCellLibrary.v'),
         extraction_rules=external_binding(FLOW/'platforms/nangate45/rcx_patterns.rules'),

@@ -116,6 +116,7 @@ def route(design,method,path,preparation,reuse=None):
     metrics=extract_structured_metrics(read(logs/'5_1_grt.json'),read(logs/'5_2_route.json'))
     proof=folder/'routed_verification.json'
     execute(['/usr/bin/openroad','-python','-no_init','-exit',ROOT/'scripts/pact_generalization_routed.py',
+        '--recognize-sized-scan',
         '--routed',variant/'5_2_route.odb','--architecture',path,'--frozen-def',preparation['placed_def']['path'],
         '--output',proof],folder/'topology',timeout=180)
     topology=read(proof)
