@@ -15,8 +15,12 @@ from pact.integration.patterns import fan_workload,serialize
 
 
 def selected(design):
-    path=OUT/f'repair_attempts/runtime_paths_repaired/baselines/{design}_selected.json'
-    gate=OUT/f'repair_attempts/runtime_paths_repaired/physical/{design}/presearch_qualification.json'
+    attempts=('buffer_traversal_repaired','functional_identity_repaired','runtime_paths_repaired')
+    attempt=next((a for a in attempts if (OUT/f'repair_attempts/{a}/baselines/{design}_selected.json').is_file()),None)
+    if attempt is None:
+        raise ValueError('No frozen reference for this design')
+    path=OUT/f'repair_attempts/{attempt}/baselines/{design}_selected.json'
+    gate=OUT/f'repair_attempts/{attempt}/physical/{design}/presearch_qualification.json'
     if not gate.is_file() or read(gate)['status']!='INFRASTRUCTURE_QUALIFIED':
         raise ValueError('New design has not completed pre-search infrastructure gates')
     return read(path)
@@ -48,7 +52,9 @@ def prepare(design):
         prior_integration=reference['correctness']['serial'],
         inputs=dict(patterns=preparation['patterns'],identity_map=external_binding(identity),placement=preparation['placed_def']),
         chain_lengths=[len(c.cells) for c in arch.chains])
-    sources={name:binding(ROOT/name) for name in ('scripts/physical_effect.py','scripts/physical_effect_export.py','src/pact/physical_effect.py')}
+    sources={name:binding(ROOT/name) for name in ('scripts/physical_effect.py','scripts/physical_effect_export.py',
+        'src/pact/physical_effect.py','scripts/pact_generalization_measure_driver.py',
+        'scripts/pact_generalization_export.py','scripts/pact_generalization_routed.py')}
     write(root/'manifest.json',dict(schema='pact_generalization_reference_measurement_v1',rows=[row],
         library=external_binding(LIB),simulation_cells=external_binding(FAN/'techlib/NangateOpenCellLibrary.v'),
         extraction_rules=external_binding(FLOW/'platforms/nangate45/rcx_patterns.rules'),
@@ -64,7 +70,7 @@ def run(design):
         print('REFERENCE_MEASUREMENT_STARTED',design,flush=True)
         env=dict(os.environ,PACT_PHYSICAL_EFFECT_OUT=str(root))
         result=execute(['/usr/bin/time','-v','-o',folder/'resources.txt',sys.executable,
-            ROOT/'scripts/physical_effect.py','run','--design',design],root/'execution',timeout=1800,env=env)
+            ROOT/'scripts/pact_generalization_measure_driver.py','--design',design],root/'execution',timeout=1800,env=env)
         for name in ('topology_verification.json','functional_verification.json','FF_transition_crosscheck.json'):
             assert read(folder/name)['status']=='PASS'
         summary=read(folder/'activity_summary.json')

@@ -86,7 +86,7 @@ def serial_correctness(design,arch,identity,patterns,original,folder,source):
         export=external_binding(folder/'fan/export.json'),statistics=exported['statistics'])
 
 
-def route(design,method,path,preparation):
+def route(design,method,path,preparation,reuse=None):
     arch=ScanArchitecture.from_json(path)
     folder=baseline_folder(design)/method/'physical'
     config=Path(preparation['config']['path'])
@@ -96,16 +96,26 @@ def route(design,method,path,preparation):
     variant=work/f'results/nangate45/{design}/{variant_name}'
     logs=work/f'logs/nangate45/{design}/{variant_name}'
     variant.mkdir(parents=True,exist_ok=True)
-    rewire=execute(['/usr/bin/openroad','-python','-no_init','-exit',ROOT/'scripts/phase0c_rewire_odb.py',
-        '--source',source,'--architecture',path,'--output',variant/'3_place.odb'],folder/'rewire',timeout=180)
-    shutil.copy2(preparation['SDC']['path'],variant/'3_place.sdc')
-    routed=execute(['make','-o',str(variant/'3_place.odb'),'-o',str(variant/'3_place.sdc'),
-        f'DESIGN_CONFIG={config}',f'FLOW_VARIANT={variant_name}',f'WORK_HOME={work}',
-        'GRT_SEED=11','NUM_CORES=2','OPENROAD_EXE=/usr/bin/openroad','YOSYS_EXE=/usr/bin/yosys','route'],
-        folder/'route',FLOW,1200)
+    if reuse:
+        variant=Path(reuse['variant'])
+        logs=Path(reuse['logs'])
+        routed=read(reuse['route_execution'])
+        assert routed['exit_code']==0 and not routed['timed_out']
+        write(folder/'retained_route.json',dict(classification='IMPLEMENTATION_REPAIR',
+            routed_database=external_binding(variant/'5_2_route.odb'),
+            route_execution=external_binding(reuse['route_execution']),
+            additional_route_executions=0,scientific_method_change=False),immutable=True)
+    else:
+        execute(['/usr/bin/openroad','-python','-no_init','-exit',ROOT/'scripts/phase0c_rewire_odb.py',
+            '--source',source,'--architecture',path,'--output',variant/'3_place.odb'],folder/'rewire',timeout=180)
+        shutil.copy2(preparation['SDC']['path'],variant/'3_place.sdc')
+        routed=execute(['make','-o',str(variant/'3_place.odb'),'-o',str(variant/'3_place.sdc'),
+            f'DESIGN_CONFIG={config}',f'FLOW_VARIANT={variant_name}',f'WORK_HOME={work}',
+            'GRT_SEED=11','NUM_CORES=2','OPENROAD_EXE=/usr/bin/openroad','YOSYS_EXE=/usr/bin/yosys','route'],
+            folder/'route',FLOW,1200)
     metrics=extract_structured_metrics(read(logs/'5_1_grt.json'),read(logs/'5_2_route.json'))
     proof=folder/'routed_verification.json'
-    execute(['/usr/bin/openroad','-python','-no_init','-exit',ROOT/'scripts/phase0d_verify_routed.py',
+    execute(['/usr/bin/openroad','-python','-no_init','-exit',ROOT/'scripts/pact_generalization_routed.py',
         '--routed',variant/'5_2_route.odb','--architecture',path,'--frozen-def',preparation['placed_def']['path'],
         '--output',proof],folder/'topology',timeout=180)
     topology=read(proof)
@@ -218,7 +228,7 @@ def main():
     global ATTEMPT
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--design',choices=DESIGNS)
-    p.add_argument('--attempt',choices=('runtime_paths_repaired','functional_identity_repaired'))
+    p.add_argument('--attempt',choices=('runtime_paths_repaired','functional_identity_repaired','buffer_traversal_repaired'))
     args=p.parse_args()
     ATTEMPT=args.attempt or ''
     os.environ.update(PACT_DEPENDENCY_ROOT='/root/pact-deps',PACT_EXPERIMENT_ROOT='/mnt/d/PACT_EXPERIMENTS',
