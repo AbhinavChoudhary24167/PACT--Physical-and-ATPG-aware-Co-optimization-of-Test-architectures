@@ -1,0 +1,10 @@
+read_lib /root/pact-deps/FAN_ATPG/techlib/mod_nangate45.mdt
+read_netlist /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/benchmarks/s9234.v
+build_circuit --frame 1
+read_pattern /mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/s9234_C1/patterns_recovered.pat
+set_fault_type saf
+add_fault -a
+run_fault_sim
+report_statistics
+report_fault
+exit
