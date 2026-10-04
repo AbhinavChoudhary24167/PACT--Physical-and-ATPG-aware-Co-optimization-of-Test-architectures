@@ -11,7 +11,7 @@ PACT_GITHUB_PUBLICATION_COMPLETE_HISTORY_CLEANUP_PENDING
 - Final origin/main SHA: the same report commit (`git rev-parse origin/main`). The final verification checks equality after pushing this documentation receipt. A commit cannot embed its own SHA; the tested payload is pinned explicitly above.
 - Route: direct normal fast-forward pushes to canonical GitHub `main`; no PR required, no force push.
 - Reconciliation: 19 local-only / two remote-only commits at start; merge `79a2130f` preserves PR #1's method/results and its merge. The current portable-input method description and retained contributor-table reference resolve the two documentation conflicts.
-- Publication commits: `f8ec9997` prepares the public entry point and audited metadata; `87a1767a` includes the one historical README initially omitted from staging. The actual clone was updated before validation. The final receipt adds only this report and validation JSON.
+- Publication commits: `f8ec9997` prepares the public entry point and audited metadata; `87a1767a` includes the one historical README initially omitted from staging. The actual clone was updated before validation. Receipt `6f3f30ed` adds this report and validation JSON; a final ignore/audit supplement excludes a concurrently created local tool diagnostic folder. No source or scientific inputs change after validation.
 - Local checkout is on `main`; no generated outputs are staged.
 
 See [reconciliation](publication_reconciliation.md) and [machine-readable validation](github_publication_validation.json).
@@ -23,6 +23,8 @@ Published all four validated cleanup commits, current source/test/build/configur
 Publication normalizes 209 receipt/audit path or hostname metadata files. Numeric values, architecture identities, source/tool revisions and original embedded hash bindings are unchanged. [Original/public SHA ledger](path_metadata_normalization.json) supplies exact export identities; original bytes remain recoverable at its pinned pre-publication revision. The reader resolves repository/dependency/experiment aliases. Historical receipt sealers still require their frozen source/input revisions. No measurements were regenerated.
 
 KEEP_LOCAL / IGNORE: local Python environments, numerical/tool caches, OpenROAD/ORFS/FAN installations, PDKs, routing/simulation work directories, raw H8 and fault-identity diagnostics, upstream CI/review workspaces and scratch outputs. These support ongoing work and are not a repository defect. No recursive deletion occurred in publication.
+
+The newly observed `opensta420_round3_20261004/` capture contains current upstream tool state and a build log. It was inspected and preserved locally as REVIEW / KEEP_LOCAL, with a scoped ignore rule for that diagnostic class.
 
 ## Canonical documentation
 
@@ -82,7 +84,7 @@ Stage-A tables independently show 30 indexed / 27 qualified and 19 selected / 19
 ## Repository health and final gates
 
 - Tracked files after receipt: 1,050.
-- Tracked Git blob bytes after receipt: 75,252,281 (~75.25 MB); generated scratch, ignored dependencies and Git history excluded.
+- Tracked Git blob bytes after receipt: 75,252,893 (~75.25 MB); generated scratch, ignored dependencies and Git history excluded.
 - Source/test line count: approximately 30,444 across tracked `src/`, `scripts/`, `tests/`.
 - Largest retained files: s15850 baseline geometry 5,979,142 bytes; s15850 candidate topology 3,750,201; s9234 baseline geometry 3,118,804; cleanup classification audit 2,842,299; s5378 compressed prior corpus 2,758,109. They support current inputs/provenance/auditability.
 - No compiled/build/dependency tree or ODB/SPEF/GDS/VCD output is tracked. Minimal DEF/V/FAN fixtures are deliberate inputs.
