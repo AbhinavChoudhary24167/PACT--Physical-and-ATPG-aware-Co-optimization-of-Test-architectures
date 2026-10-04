@@ -110,7 +110,6 @@ Current optimizer, stateful, integration and Stage-B modules remain canonical. P
 - `scripts/phase0d_verify_routed.py`
 - `scripts/phase1_routed_validation.py`
 - `scripts/phase2a_extract_odb.py`
-- `scripts/phase2a_freeze.py`
 - `scripts/phase2a_validate.py`
 - `scripts/phase2b_common.py`
 - `scripts/phase2b_extract.py`
