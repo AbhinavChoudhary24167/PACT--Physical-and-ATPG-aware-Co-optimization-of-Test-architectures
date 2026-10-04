@@ -1,0 +1,136 @@
+{
+  "cli_help": "All three installed entries and pact_stage_b_search.py PASS",
+  "clone_mode": "Actual GitHub clone, --depth 1 --branch main; fast-forwarded after one-page metadata correction. No development files copied into clone.",
+  "clone_source": "https://github.com/AbhinavChoudhary24167/PACT--Physical-and-ATPG-aware-Co-optimization-of-Test-architectures.git",
+  "date": "2026-10-04",
+  "documentation": {
+    "README_docs_example_internal_file_links": 33,
+    "all_tracked_Markdown_internal_file_links": 66,
+    "broken_file_links": 0,
+    "missing_absolute_pact_imports": 0,
+    "private_path_credential_scan": "PASS; tracked text and gzip payloads; public GitHub author URLs are attribution",
+    "python_3_11_syntax_files": 271
+  },
+  "entry_points": {
+    "pact": "pact.cli:main",
+    "pact-integrate": "pact.integration.cli:main",
+    "pact-optimize": "pact.optimizer.cli:main"
+  },
+  "environment": {
+    "packages": {
+      "llvmlite": "0.50.0",
+      "numba": "0.68.0",
+      "numpy": "2.5.3",
+      "pact": "0.1.0",
+      "pandas": "3.0.6",
+      "pytest": "9.1.1",
+      "scipy": "1.18.1"
+    },
+    "python": "3.12.5"
+  },
+  "excluded": "Local environments, OpenROAD/ORFS/FAN/PDKs, caches, generated physical data, raw H8/fault-identity diagnostics and upstream contribution workspaces remain ignored and useful locally.",
+  "fresh_clone": {
+    "integration": {
+      "FF_count": 179,
+      "FF_states_checked": 20943,
+      "K": 2,
+      "design": "s5378",
+      "full_integration_classification": "BLOCKED (external stages not run; independent replay PASS)",
+      "implementation_emitted": "PASS",
+      "load_replay": "PASS",
+      "mismatches": 0,
+      "patterns_checked": 117,
+      "physical_and_fault_set_reexecution": "EXTERNAL_ENVIRONMENT_REQUIRED",
+      "status": "PASS",
+      "unload_replay": "PASS"
+    },
+    "synthetic": {
+      "FF_count": 64,
+      "K": 2,
+      "architecture_sha256": "74f51c53c3ffaa502b6ae4582711ff8cea1060f074069dac5d7e769a667a879a",
+      "evaluations": 1880,
+      "peak_RSS_bytes": 172249088,
+      "runtime_seconds": 1.0034169999998994,
+      "status": "WORKING_SOLVER"
+    },
+    "tests": {
+      "console_seconds": 54.38,
+      "errors": 0,
+      "failures": 0,
+      "junit_seconds": 53.929,
+      "passed": 382,
+      "skipped": 1,
+      "total": 383
+    },
+    "working_tree": "CLEAN (tracked/untracked; expected outputs ignored)"
+  },
+  "import": "PASS; package.__file__ asserted inside fresh clone",
+  "install": "python -m pip install -e .[optimizer,dev] (isolated PEP 517 build; clean clone environment)",
+  "local": {
+    "integration": {
+      "FF_count": 179,
+      "FF_states_checked": 20943,
+      "K": 2,
+      "design": "s5378",
+      "full_integration_classification": "BLOCKED (external stages not run; independent replay PASS)",
+      "implementation_emitted": "PASS",
+      "load_replay": "PASS",
+      "mismatches": 0,
+      "patterns_checked": 117,
+      "physical_and_fault_set_reexecution": "EXTERNAL_ENVIRONMENT_REQUIRED",
+      "status": "PASS",
+      "unload_replay": "PASS"
+    },
+    "synthetic": {
+      "FF_count": 64,
+      "K": 2,
+      "architecture_sha256": "74f51c53c3ffaa502b6ae4582711ff8cea1060f074069dac5d7e769a667a879a",
+      "evaluations": 1818,
+      "peak_RSS_bytes": 120836096,
+      "runtime_seconds": 1.0089000000007218,
+      "status": "WORKING_SOLVER"
+    },
+    "tests": {
+      "console_seconds": 45.88,
+      "errors": 0,
+      "failures": 0,
+      "junit_seconds": 45.453,
+      "passed": 382,
+      "skipped": 1,
+      "total": 383
+    }
+  },
+  "pip_check": "PASS; no broken requirements",
+  "publication": {
+    "About_metadata": "Updated to current implemented research software; verified via rendered GitHub page and public repository API",
+    "force_push": false,
+    "history_rewrite": false,
+    "remote_work_preserved": "Both remote-only commits retained through 79a2130f merge",
+    "route": "Direct normal fast-forward pushes to main; no PR required"
+  },
+  "retained_evidence": {
+    "all_portable_metadata_exports": 209,
+    "architecture_replays": 18,
+    "original_bindings": 674,
+    "portable_designs": [
+      "s5378",
+      "s9234",
+      "s15850"
+    ],
+    "portable_metadata_bindings": 202,
+    "selected_Stage_B_architectures": 9,
+    "status": "PASS locally and in actual GitHub clone",
+    "unchanged_original_hashes": 472
+  },
+  "scientific_claim_checks": {
+    "Stage_A_indexed": 30,
+    "Stage_A_qualified": 27,
+    "Stage_A_selected": 19,
+    "Stage_A_selected_P0": 7,
+    "Stage_A_selected_qualified": 19,
+    "Stage_B_qualified": 9,
+    "Stage_B_routed_budget_passes": 9,
+    "Stage_B_selections": 9
+  },
+  "validated_payload_sha": "87a1767aee729b4647103748c97319a6409d931e"
+}
