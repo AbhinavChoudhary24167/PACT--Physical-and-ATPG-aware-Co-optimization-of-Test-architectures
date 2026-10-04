@@ -1,0 +1,86 @@
+{
+  "audit_time_wsl_status": "M results/pact_candidate_sensitive/README.md\n M results/pact_candidate_stateful/README.md\n M results/pact_h8_rootcause/README.md\n M results/pact_v2/README.md\n M results/stage_a/README.md\n?? results/pact_end_to_end_20261004/\n?? scripts/pact_end_to_end.py",
+  "backend_manifest_sha256": "9eee00846cce28480161b9ba8ac109e9348fd9ed5b5d6e7b79026b444863c844",
+  "branch": "main",
+  "existing_milestones": [
+    "PACT_STAGE_A_PHYSICAL_RESULTS_COMPLETE",
+    "PACT_EXTERNAL_BENCHMARK_COMPLETE",
+    "PACT_STAGE_B_MULTI_DESIGN_CONVERGENCE"
+  ],
+  "gap": "Architecture-bound serial/FAN replay and complete detected collapsed-fault-class export; known FAN reporter crash",
+  "implementation_map": {
+    "evaluator": [
+      "src/pact/optimizer/candidate_stateful.py",
+      "src/pact/optimizer/candidate_sensitive.py",
+      "src/pact/optimizer/candidate_physical.py",
+      "src/pact/optimizer/stateful_geometry.py"
+    ],
+    "fan": [
+      "src/pact/integration/faults.py",
+      "src/pact/integration/patterns.py",
+      "src/pact/integration/replay.py"
+    ],
+    "optimizer": [
+      "src/pact/optimizer/stage_b.py",
+      "src/pact/optimizer/search.py"
+    ],
+    "physical": [
+      "scripts/pact_v2.py",
+      "scripts/pact_oss_receiver_measure.py",
+      "scripts/physical_effect_export.py",
+      "src/pact/physical_effect.py"
+    ],
+    "regressions": [
+      "tests/unit/test_end_to_end.py",
+      "tests/unit/test_stage_b.py",
+      "tests/unit/test_oss_results.py",
+      "tests/unit/test_oss_scientific.py"
+    ],
+    "rewiring": [
+      "scripts/phase0c_rewire_odb.py",
+      "scripts/tcl/rewire_scan.tcl"
+    ],
+    "topology": [
+      "scripts/pact_oss_receiver_connectivity.py",
+      "scripts/pact_oss_topology_tests.py"
+    ]
+  },
+  "initial_commit": "de833ef018703d26dd1e6e1fd1e4a103dc8dc41e",
+  "methodology_change": "None; any objective/predictor/operator change is OUT_OF_SCOPE_METHOD_CHANGE",
+  "reuse": "All nine saved Stage-B searches/selections and qualified routes/extractions/activity; no historical validation matrix rerun",
+  "solver_source_sha256": "e3e14861f0f4dfc9588b469eabe91e50cec864701f1df022070b2f77f6ec6972",
+  "stage_a_completion": {
+    "comparison": {
+      "bytes": 75586,
+      "path": "repo://results/pact_oss_benchmark/topology_recovery_20261004/stage_a/pairwise_comparison.csv",
+      "sha256": "fb24344905a88cbda18a43c2e704207a815609059946fffcc8d522371375f12f"
+    },
+    "metrics": {
+      "bytes": 36566,
+      "path": "repo://results/pact_oss_benchmark/topology_recovery_20261004/stage_a/implemented_metrics.csv",
+      "sha256": "1660e6e9fea791749bbe801f6694c0cd35b39636d08674c58101af3feede495c"
+    },
+    "native_qualification": {
+      "bytes": 3075,
+      "path": "repo://results/pact_oss_benchmark/topology_recovery_20261004/baselines/B3T_openroad_10666_serialization_repaired/qualification.json",
+      "sha256": "476e632a90511ead441e2cb91bc1f9df62914b82c2c8db2de1e05657a606fb67"
+    },
+    "qualified_architecture_records": 27,
+    "remaining_implementation_blocker": null,
+    "report": {
+      "bytes": 7673,
+      "path": "repo://results/pact_oss_benchmark/topology_recovery_20261004/FINAL_REPORT.md",
+      "sha256": "ae29a6b48ff9c7b2796b38ad1cfcd97bfbaa1129d31014a5a03202c07e6929d7"
+    },
+    "scientific_status": "PACT_EXTERNAL_BENCHMARK_COMPLETE",
+    "scope": "Frozen requested Stage A; no P1 claim",
+    "selected_P0": 7,
+    "selected_qualified": 19,
+    "status": "PACT_STAGE_A_PHYSICAL_RESULTS_COMPLETE",
+    "timestamp_utc": "2026-10-03T21:43:46.926002+00:00"
+  },
+  "starting_sha": "de833ef018703d26dd1e6e1fd1e4a103dc8dc41e",
+  "starting_worktree": "",
+  "starting_worktree_source": "Native Windows git status --short before any edits; empty. The later WSL status includes new gate files and platform line-ending status differences.",
+  "timestamp_utc": "2026-10-04T09:05:08.716938+00:00"
+}

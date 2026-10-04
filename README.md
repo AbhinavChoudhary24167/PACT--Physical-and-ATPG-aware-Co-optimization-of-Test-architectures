@@ -27,9 +27,12 @@ The [synthetic example](examples/synthetic/README.md) needs no physical-design t
 | Implemented | Exact incremental M3/M5 solver, candidate-stateful evaluation, Stage-B activity lanes under physical budgets, scan-only export and independent ATPG replay |
 | Stage A measured | 19/19 selected records qualified; 27/30 indexed architectures qualified using the common Nangate45 backend |
 | Stage B measured | Nine qualified routed selections across s5378, s9234 and s15850; all pass their routed wire budgets |
-| In progress | Reliable full-network hotspot prediction, complete detected-fault identity equivalence and broader scaling |
+| End to end qualified | Frozen B2/B3T/B2 references and all nine Stage-B orders pass physical, serial and FAN collapsed-fault-class identity gates |
+| In progress | Reliable full-network hotspot prediction, uncollapsed fault-member identity enumeration and broader scaling |
 
 These claims come from the [Stage-A completion receipt](results/pact_oss_benchmark/topology_recovery_20261004/completion.json) and [Stage-B measured report](results/pact_stage_b/REPORT.md). Several predicted hotspot gains fail to transfer physically, and some selections remain dominated by the original comparison front. [Research status](docs/research_status.md) explains the scope and negative outcomes. The research program remains in progress.
+
+The current milestone is `PACT_END_TO_END_SOLUTION_QUALIFIED`; see the [canonical comparison](results/pact_end_to_end_20261004/REPORT.md) and [correctness-gate scope](docs/end_to_end_qualification.md). It reuses qualified physical runs and preserves every selected outcome.
 
 ## Workflow
 
@@ -78,7 +81,7 @@ Start with [installation](docs/installation.md), [usage](docs/usage.md) and [res
 
 ## Limitations
 
-Current measured evidence covers small Nangate45 designs, fixed workloads/placements and K=2. Bounded logic coverage and candidate capacitance errors limit hotspot prediction. Coverage/count agreement does not establish complete detected-fault identity equivalence. Switching proxies do not establish watts, IR-drop or signoff power/timing. No learned model is implemented.
+Current measured evidence covers small Nangate45 designs, fixed workloads/placements and K=2. Bounded logic coverage and candidate capacitance errors limit hotspot prediction. The new gate establishes complete collapsed target-class identity equality with weights; individual uncollapsed class members are not enumerated. Switching proxies do not establish watts, IR-drop or signoff power/timing. No learned model is implemented.
 
 ## Contributing, citation and license
 
