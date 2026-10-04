@@ -52,7 +52,7 @@ def report(output, public):
     public.mkdir(parents=True, exist_ok=True)
     baseline = list(csv.DictReader((STAGE_A/'implemented_metrics.csv').open()))
     indexed = list(csv.DictReader((output/'architecture_index.csv').open()))
-    measured, before, searches, comparisons, good, partial = [], [], [], [], [], []
+    measured, before, searches, comparisons, good, partial, transfer = [], [], [], [], [], [], []
     private = []
     for design in DESIGNS:
         selected = read(output/'selection'/f'{design}.json')
@@ -61,7 +61,7 @@ def report(output, public):
             run = read(path)
             searches.append(dict(design=design, epsilon=run['config']['epsilon'],
                 reference=run['reference_label'], search_s=round(run['search_seconds'], 3),
-                command_s=round(run['runtime_seconds'], 3), evaluations=run['evaluations'],
+                solver_s=round(run['runtime_seconds'], 3), evaluations=run['evaluations'],
                 screened=run['screened_infeasible'], accepted=run['accepted'], termination=run['termination']))
             for i, r in enumerate(run['selected']):
                 before.append(dict(design=design, epsilon=run['config']['epsilon'],
@@ -98,6 +98,13 @@ def report(output, public):
                         wire_percent=float(pct[0]), E_percent=float(pct[1]), H4_percent=float(pct[2]), H8_percent=float(pct[3]),
                         dominance_Stage_A=relation(point(r, False), point(b, False)), dominance_with_H4=relation(a, point(b))))
                 activity_delta = a[1:]/point(physical)[1:]-1
+                chosen = next(s for s in selected if s['architecture_sha256']==sha)
+                proxy_delta = 100*(np.array(chosen['normalized'])-1)
+                transfer.append(dict(design=design, candidate=label,
+                    proxy_E_percent=float(proxy_delta[0]), measured_E_percent=float(100*activity_delta[0]),
+                    proxy_H4_percent=float(proxy_delta[1]), measured_H4_percent=float(100*activity_delta[1]),
+                    proxy_H8_percent=float(proxy_delta[2]), measured_H8_percent=float(100*activity_delta[2]),
+                    routed_budget_pass=row['routed_budget_pass']))
                 if row['routed_budget_pass'] and np.all(activity_delta < 0):
                     good.append(design)
                 elif row['routed_budget_pass'] and activity_delta[0]<0 and np.any(activity_delta[1:]<0):
@@ -117,6 +124,7 @@ def report(output, public):
     write_csv(public/'candidate_results.csv', before)
     write_csv(public/'routed_results.csv', measured)
     write_csv(public/'comparison.csv', comparisons)
+    write_csv(public/'prediction_transfer.csv', transfer)
     # Export reviewable architectures with neutral names; private receipts retain hashes.
     for design in DESIGNS:
         for i, r in enumerate(read(output/'selection'/f'{design}.json')):
@@ -135,7 +143,7 @@ def report(output, public):
         'Within feasibility, three lanes minimize E, H4 and H8. The balanced lane minimizes `sum(w_i metric_i/reference_i)/sum(w_i)` for E,H4,H8 with common weights (1,1,1). Raw quantities remain separate. Source positions, three logic levels, ground-plus-pin capacitance, fixed buffer skeleton and FAN workload follow the existing model.', '',
         'Search feasibility does not imply routed feasibility. Routed scan wire is the frozen full connected scan-net length upper bound including shared functional branches; detailed-route total wire is a different quantity. Routed budget acceptance is independently recorded.', '',
         '## 4. Search configuration', '',
-        'Starts: exact frozen B2, B3T and balanced P0; infeasible starts cannot seed search. Seed 11, K=2, 16 neighbors, segment limit 8, 16 archive slots, lane restart every 150 attempts. Each budget has a 300-second mutation-loop ceiling, 20,000 exact-evaluation ceiling and 2,000-attempt no-improvement window. Initialization and retained-candidate replay are additional recorded command time. Weights and operators are shared across designs. A pre-route selection deduplicates across budgets and allows at most three new architectures per design.', '',
+        'Starts: exact frozen B2, B3T and balanced P0; infeasible starts cannot seed search. Seed 11, K=2, 16 neighbors, segment limit 8, 16 archive slots, lane restart every 150 attempts. Each budget has a 300-second mutation-loop ceiling, 20,000 exact-evaluation ceiling and 2,000-attempt no-improvement window. Initialization and retained-candidate replay are additional recorded solver time; model loading precedes these timings. Weights and operators are shared across designs. Searches use one numerical thread each, at most two processes concurrently. A pre-route selection deduplicates across budgets and allows at most three new architectures per design.', '',
         table(searches), '## 5. Candidate results before routing', '', table(pre_view),
         '## 6. Routed/extracted Stage-B results', '',
         'Unchanged Nangate45/ORFS flow, placement, backend, routing seed 11 and two route cores. E uses all-data extracted ground plus pin capacitance and the frozen simulation schedule. Timing fields are global-route values; TNS and structural/functional/FF results are in routed_results.csv.', '', table(routed_view),
@@ -147,6 +155,8 @@ def report(output, public):
         'Simultaneous bounded improvements: '+(', '.join(sorted(set(good))) or 'none')+'. Partial E/hotspot improvements: '+(', '.join(sorted(set(partial))) or 'none')+'. All three designs remain included.', '',
         '## 10. Failures and limitations', '',
         'The physical estimate constrains scan edges but measured scan cost contains shared fanout, buffers and routed detours. The stateful activity predictor has bounded logic coverage and a fixed baseline buffer skeleton. Hotspot ties and routing-induced load/location changes can prevent proxy improvements from transferring. Search is local and finite; a negative result does not prove infeasibility. s15850 is retained as the difficult case, with its measured deltas and runtime shown above. No watts, IR-drop or signoff-power claim follows from these switching proxies.', '',
+        'The following focused comparison shows whether the selected predicted improvements transferred to the unchanged routed flow; every delta uses its corresponding physical reference.', '',
+        table([{k: round(v, 6) if isinstance(v, float) else v for k,v in r.items()} for r in transfer]),
         '## 11. External/tool bugs encountered', '',
         'No new external repair was required by this Stage-B implementation. Previously qualified B3T repairs remain frozen Stage-A dependencies. Scientific reproduction receipts and source/configuration hashes stay in private experiment storage; public artifacts contain neutral architecture labels and relative links.', '',
         '## 12. Next action', '',
