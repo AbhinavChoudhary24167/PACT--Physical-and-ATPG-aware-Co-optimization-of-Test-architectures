@@ -26,8 +26,29 @@ from pact.phase0d.external import extract_structured_metrics
 IMAGE='sha256:f05cee3219a02f26289f02f00e11a3fc986ab51a482a0000a2da810cda219a6e'
 TEMP=Path('/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003')
 LIB=FLOW/'platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib'
-ANNOTATED=ROOT/'artifacts/derived/phase0b/lib/NangateOpenCellLibrary_typical_dft.lib'
+ANNOTATED=TEMP/'NangateOpenCellLibrary_typical_dft.lib'
 NAMESPACE=RUN/'namespace'
+ATTEMPT=''
+
+
+def result_path(relative):
+    if ATTEMPT:
+        return OUT/'repair_attempts'/ATTEMPT/relative
+    return OUT/relative
+
+
+def baseline_folder(design):
+    return RUN/('baseline_'+ATTEMPT if ATTEMPT else 'baselines')/design
+
+
+def select_reference(records):
+    """Reject unresolved generator failures; allow disqualified physical runs."""
+    if any(r.get('generator_status')!='PASS' for r in records if r['method']!='B0'):
+        raise ValueError('Unresolved reference-generation infrastructure failure')
+    eligible=[r for r in records if r['status']=='QUALIFIED']
+    if not eligible:
+        raise ValueError('No permitted reference passed qualification')
+    return min(eligible,key=lambda r:(r['routed_scan_wirelength_um'],r['method']))
 METHODS=dict(B1=('08f67ee5ecd14db5a42be8c610bbfd1ccf079299',Path('/usr/bin/openroad')),
     B2=('6fff875551fe13a2aae3a22f871a6ca7f8d5c1cf',Path('/mnt/pact-oss-recovery/B2_openroad_10176/build/bin/openroad')),
     B3T=('5c3751171685d507939ee7064a67feec786e5219',TEMP/'topology_recovery_20261004/immutable_binaries/5c3751171685d507939ee7064a67feec786e5219/openroad'))
@@ -67,11 +88,11 @@ def serial_correctness(design,arch,identity,patterns,original,folder,source):
 
 def route(design,method,path,preparation):
     arch=ScanArchitecture.from_json(path)
-    folder=RUN/'baselines'/design/method/'physical'
+    folder=baseline_folder(design)/method/'physical'
     config=Path(preparation['config']['path'])
     source=Path(preparation['source_placed_database']['path'])
     work=RUN/'orfs'
-    variant_name='generalization_'+method
+    variant_name='generalization_'+(ATTEMPT+'_' if ATTEMPT else '')+method
     variant=work/f'results/nangate45/{design}/{variant_name}'
     logs=work/f'logs/nangate45/{design}/{variant_name}'
     variant.mkdir(parents=True,exist_ok=True)
@@ -117,7 +138,7 @@ def references(design):
     preparation=prep(design)
     if preparation['status']!='PLACEMENT_READY_PENDING_REFERENCES':
         return
-    folder=RUN/'baselines'/design
+    folder=baseline_folder(design)
     folder.mkdir(parents=True,exist_ok=True)
     patterns=Path(preparation['patterns']['path'])
     source=Path(preparation['source']['path'])
@@ -142,6 +163,7 @@ def references(design):
     results=[]
     for method in ('B0','B1','B2','B3T'):
         item=dict(design=design,method=method,status='FAILED',source_revision=METHODS.get(method,('supplied_source',))[0])
+        item['generator_status']='PASS' if method=='B0' else 'PENDING'
         stage='PHYSICAL_BACKEND_FAIL'
         try:
             if method!='B0':
@@ -152,6 +174,7 @@ def references(design):
                     '--source',common,'--output',output,'--liberty',ANNOTATED]
                 env=dict(os.environ,PACT_ORFS_ROOT=str(NAMESPACE/'orfs'))
                 execute(command if method=='B1' else docker(command),folder/method/'generation',env=env)
+                item['generator_status']='PASS'
                 archpath=output/('architecture.json' if method=='B1' else 'canonical.json')
             candidate=ScanArchitecture.from_json(archpath)
             report=route(design,method,archpath,preparation)
@@ -163,39 +186,52 @@ def references(design):
                 DRC=report['DRC_errors'],correctness=correctness,
                 provenance=external_binding(folder/method/'physical/route_result.json'))
         except Exception as error:
+            if item['generator_status']=='PENDING':
+                item['generator_status']='FAIL'
             item.update(failure_class=stage,error=str(error),traceback=traceback.format_exc())
-            write(OUT/f'failures/{design}_{method}_reference.json',item,immutable=True)
+            write(result_path(f'failures/{design}_{method}_reference.json'),item,immutable=True)
         results.append(item)
-        write(OUT/f'baselines/{design}_references.json',dict(design=design,records=results))
+        write(result_path(f'baselines/{design}_references.json'),dict(design=design,records=results))
         print('REFERENCE',design,method,item['status'],item.get('error',''),flush=True)
-    qualified=[r for r in results if r['status']=='QUALIFIED']
-    if not qualified:
-        write(OUT/f'physical/{design}/presearch_qualification.json',dict(design=design,status='PACT_EXECUTION_BLOCKED',
-            failure_class='PHYSICAL_BACKEND_FAIL',error='No permitted reference passed the frozen gates'),immutable=True)
+    try:
+        selected=select_reference(results)
+    except ValueError as error:
+        write(result_path(f'physical/{design}/presearch_qualification.json'),dict(design=design,status='PACT_EXECUTION_BLOCKED',
+            failure_class='PHYSICAL_BACKEND_FAIL',error=str(error)),immutable=True)
         return
-    selected=min(qualified,key=lambda r:(r['routed_scan_wirelength_um'],r['method']))
-    write(OUT/f'baselines/{design}_selected.json',dict(selected,frozen_utc=now(),
+    write(result_path(f'baselines/{design}_selected.json'),dict(selected,frozen_utc=now(),
         selection_rule='minimum qualified routed scan cost among B0/B1/B2/B3T before PACT search'),immutable=True)
-    write(OUT/f'physical/{design}/presearch_qualification.json',dict(design=design,status='INFRASTRUCTURE_QUALIFIED',
+    write(result_path(f'physical/{design}/presearch_qualification.json'),dict(design=design,status='INFRASTRUCTURE_QUALIFIED',
         selected_reference=selected['method'],gates=dict(synthesis='PASS',scan='PASS',ATPG='PASS',topology='PASS',
         placement='PASS',reference_method='PASS',routing='PASS',extraction='PASS',timing='PASS',DRC='PASS')),immutable=True)
 
 
 def main():
+    global ATTEMPT
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--design',choices=DESIGNS)
+    p.add_argument('--attempt',choices=('runtime_paths_repaired',))
     args=p.parse_args()
+    ATTEMPT=args.attempt or ''
     os.environ.update(PACT_DEPENDENCY_ROOT='/root/pact-deps',PACT_EXPERIMENT_ROOT='/mnt/d/PACT_EXPERIMENTS',
         OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',NUMBA_NUM_THREADS='1',PATH='/usr/bin:'+os.environ['PATH'])
     assert sha('/usr/bin/openroad')==read(ROOT/'results/pact_oss_benchmark/protocol/tool_versions.json')['implementation_binary_sha256']
     assert sha(REPAIRED)==read(ROOT/'results/pact_end_to_end_20261004/upstream_repair/qualification.json')['repaired_executable_sha256']
+    # WSL may tear down a mount between executor calls. Restore the existing
+    # image read-only within the lifetime of this worker, never rebuild it.
+    if subprocess.run(['mountpoint','-q','/mnt/pact-oss-recovery']).returncode:
+        subprocess.run(['mount','-o','loop,ro',str(TEMP/'recovery_20261003/build-storage.ext4'),
+            '/mnt/pact-oss-recovery'],check=True)
+    for path in (ANNOTATED,*(entry[1] for entry in METHODS.values())):
+        if not path.is_file():
+            raise FileNotFoundError('Qualified runtime input unavailable: '+str(path))
     for design in ([args.design] if args.design else DESIGNS):
-        if (OUT/f'physical/{design}/presearch_qualification.json').exists():
+        if result_path(f'physical/{design}/presearch_qualification.json').exists():
             continue
         try:
             references(design)
         except Exception as error:
-            write(OUT/f'failures/{design}_reference_preparation.json',dict(design=design,status='PACT_EXECUTION_BLOCKED',
+            write(result_path(f'failures/{design}_reference_preparation.json'),dict(design=design,status='PACT_EXECUTION_BLOCKED',
                 failure_class='SCAN_TOPOLOGY_FAIL',error=str(error),traceback=traceback.format_exc()),immutable=True)
             print('REFERENCE_PREPARATION_FAILED',design,str(error),flush=True)
 
