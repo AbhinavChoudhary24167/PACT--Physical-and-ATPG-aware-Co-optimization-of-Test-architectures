@@ -97,17 +97,40 @@ def register():
     return protocol
 
 
-def prepare(design):
+def direct_endpoint_scan_order(source):
+    """Accept direct terminal-Q outputs with the same strict SI-to-Q traversal."""
+    try:
+        return supplied_scan_order(source)
+    except ValueError:
+        ff = scan_ff_instances(source)
+        by_si = {r.si_net:r for r in ff}
+        if len(by_si) != len(ff):
+            raise ValueError('Multiple FFs driven from one scan net')
+        order, net = [], 'test_si'
+        while net in by_si:
+            r = by_si[net]
+            if r.name in order:
+                raise ValueError('Scan chain contains a loop')
+            order.append(r.name)
+            net = r.q_net
+        if len(order) != len(ff) or net != 'test_so':
+            raise ValueError('No complete direct SI-to-SO FF path')
+        return tuple(order)
+
+
+def prepare(design, repaired_endpoint=False):
     protocol = read(OUT/'manifests/campaign_preregistration.json')
     row = next(r for r in protocol['designs'] if r['design']==design)
     source = Path(row['source_file']['path'])
     assert sha(source)==row['source_file']['sha256']
     folder = RUN/'inputs'/design
+    if repaired_endpoint:
+        folder = folder/'source_endpoint_repaired'
     folder.mkdir(parents=True,exist_ok=True)
     record = dict(design=design, source=row['source_file'], gates={}, status='INFRASTRUCTURE_PENDING')
     stage = 'BENCHMARK_SOURCE_FAIL'
     try:
-        order = supplied_scan_order(source)
+        order = direct_endpoint_scan_order(source) if repaired_endpoint else supplied_scan_order(source)
         write(folder/'source_scan_order.json',list(order),immutable=True)
         record['gates']['source_topology']='PASS'
         stage = 'ATPG_FAIL'
@@ -161,8 +184,8 @@ def prepare(design):
             placed_def=external_binding(folder/'placed.def'),placed_netlist=external_binding(folder/'placed.v'))
     except Exception as error:
         record.update(status='PACT_EXECUTION_BLOCKED',failure_class=stage,error=str(error),traceback=traceback.format_exc())
-        write(OUT/f'failures/{design}_preparation.json',record,immutable=True)
-    write(OUT/f'physical/{design}/preparation.json',record,immutable=True)
+        write(OUT/f"failures/{design}_preparation{'_repaired' if repaired_endpoint else ''}.json",record,immutable=True)
+    write(OUT/f"physical/{design}/preparation{'_repaired' if repaired_endpoint else ''}.json",record,immutable=True)
     print(design,record['status'],record.get('error',''),flush=True)
     return record
 
@@ -171,6 +194,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('action',choices=('register','prepare','manifest'))
     p.add_argument('--design',choices=DESIGNS)
+    p.add_argument('--repaired-endpoint',action='store_true')
     args=p.parse_args()
     os.environ.update(OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',NUMBA_NUM_THREADS='1',
         PACT_EXPERIMENT_ROOT='/mnt/d/PACT_EXPERIMENTS',PACT_DEPENDENCY_ROOT=str(DEPS),
@@ -179,15 +203,19 @@ def main():
         register()
     elif args.action=='prepare':
         for design in ([args.design] if args.design else DESIGNS):
-            if not (OUT/f'physical/{design}/preparation.json').exists():
-                prepare(design)
+            receipt=OUT/f"physical/{design}/preparation{'_repaired' if args.repaired_endpoint else ''}.json"
+            if not receipt.exists():
+                prepare(design,args.repaired_endpoint)
     else:
         protocol=read(OUT/'manifests/campaign_preregistration.json')
         for row in protocol['designs']:
-            preparation=read(OUT/f"physical/{row['design']}/preparation.json")
+            receipt=OUT/f"physical/{row['design']}/preparation_repaired.json"
+            if not receipt.exists():
+                receipt=OUT/f"physical/{row['design']}/preparation.json"
+            preparation=read(receipt)
             stats=preparation.get('ATPG_statistics',{})
             row.update(ATPG_target_fault_count=stats.get('total'),ATPG_pattern_count=stats.get('patterns'),
-                compatibility=preparation['status'], qualification_receipt=binding(OUT/f"physical/{row['design']}/preparation.json"))
+                compatibility=preparation['status'], qualification_receipt=binding(receipt))
         write(OUT/'manifests/generalization_benchmark_manifest.json',dict(schema='pact_generalization_benchmarks_v1',
             frozen_utc=now(),selection_preregistration=binding(OUT/'manifests/campaign_preregistration.json'),
             designs=protocol['designs'],no_PACT_search_executed=True),immutable=True)
