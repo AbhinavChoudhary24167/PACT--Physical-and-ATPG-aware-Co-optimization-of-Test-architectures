@@ -140,8 +140,159 @@ def csv_text(fields,rows):
     return out.getvalue()
 
 
+def physical_timings():
+    benchmark={r['design']:r for r in read(OUT/'manifests/generalization_benchmark_manifest.json')['designs']}
+    rows=[]
+    for folder in sorted(RUN.glob('baseline*')):
+        if not folder.is_dir():
+            continue
+        for path in sorted(folder.glob('**/execution.json')):
+            parts=path.relative_to(RUN).parts
+            if len(parts)<4 or parts[1] not in benchmark:
+                continue
+            data=read(path)
+            info=benchmark[parts[1]]
+            rows.append(dict(design=parts[1],FF_count=info['FF_count'],ATPG_pattern_count=info['ATPG_pattern_count'],
+                attempt=parts[0],method=parts[2],stage='/'.join(parts[3:-1]) or 'FAN_original_workload',
+                wall_seconds=data.get('wall_seconds',data.get('runtime_seconds')),
+                CPU_seconds=None,peak_RSS_KiB=None,exit_code=data.get('exit_code'),
+                timed_out=data.get('timed_out'),provenance=external_binding(path)))
+    for r in collect()[2]:
+        rows.append(dict(design=r['design'],FF_count=r['FF_count'],ATPG_pattern_count=r['ATPG_pattern_count'],
+            attempt='final_reference_measurement',method=r['method'],stage='extraction_simulation_activity_analysis',
+            wall_seconds=r['measurement_wall_seconds'],**r['measurement_resources'],exit_code=0,timed_out=False,
+            provenance=r['provenance']['measurement']))
+    write(OUT/'physical_qualification_timings.json',dict(schema='pact_generalization_physical_timing_v1',
+        scope='PHYSICAL_ONLY; all retained attempts, including failed stages; no solver timing',
+        records=rows,updated_utc=now(),missing_resource_policy='Unavailable CPU/RSS is null; wall time is never substituted for solver cost'))
+    (OUT/'physical_qualification_timings.csv').write_text(csv_text(('design','FF_count','ATPG_pattern_count',
+        'attempt','method','stage','wall_seconds','CPU_seconds','peak_RSS_KiB','exit_code','timed_out'),rows))
+    return rows
+
+
+def readable_report(status,counts,outcomes,refs,measured):
+    by_name={r['design']:r for r in measured}
+    freeze=read(OUT/'manifests/pact_v1_frozen_manifest.json')
+    verification=read(OUT/'manifests/freeze_verification.json')
+    current=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+    changes=subprocess.check_output(['git','diff','--name-only',freeze['repository_sha']],cwd=ROOT,text=True).splitlines()
+    untracked=subprocess.check_output(['git','ls-files','--others','--exclude-standard'],cwd=ROOT,text=True).splitlines()
+    commits=subprocess.check_output(['git','log','--reverse','--format=%h %s',freeze['repository_sha']+'..HEAD'],cwd=ROOT,text=True)
+    (OUT/'repository_changes.txt').write_text('\n'.join(sorted(set(changes+untracked)))+'\n')
+    write(OUT/'repository_state_at_report.json',dict(starting_SHA=freeze['repository_sha'],
+        SHA_at_report_assembly=current,branch='experiment/generalization-scalability-20261004',
+        commits=commits.splitlines(),changed_files=sorted(set(changes+untracked)),
+        ending_SHA_note='The final response supplies the commit containing this report; a commit cannot embed its own SHA'),immutable=True)
+    lines=[f'# {status}', '',
+        'The forward campaign is blocked before PACT search by the missing unseen-design P0 initialization contract. '
+        'No new PACT candidate was evaluated, preselected, routed, or qualified. '
+        'Generalization benefit and solver runtime/memory scaling therefore remain unmeasured.', '',
+        '## Frozen core', '',
+        f'- Tag: `{freeze["tag"]}` at `{freeze["repository_sha"]}`.',
+        f'- Integrity: `{verification["status"]}`; no historical search, routing, ATPG, or extraction was rerun.',
+        '- [Exact manifest](manifests/pact_v1_frozen_manifest.json), [integrity receipt](manifests/freeze_verification.json), '
+        'and [additive provenance relocations](manifests/pact_v1_frozen_relocated_manifest.json).',
+        '- All original canonical dictionaries and the original primary CSV byte prefix remain unchanged. '
+        'The relocated bindings recover identical bytes from retained evidence/Git without editing historical receipts.', '',
+        '## Preregistered unseen set', '',
+        f'Selected {counts["selected"]}; infrastructure-qualified {counts["infrastructure_qualified"]}; '
+        f'references with qualified extracted activity {counts["references_with_activity_measurements"]}; '
+        'new PACT designs completed end-to-end: 0.', '',
+        'All eight available unused mapped circuits were selected before outcomes from the pinned FAN ISCAS89 source set. '
+        'They span 6–1,728 FFs and 21–145 patterns. No selected circuit was removed after outcomes. '
+        'The available unseen set has a gap between 29 and 1,426 FFs; it supplies no new medium-size circuit.', '',
+        '| Design | FFs | Patterns | Infrastructure | Reference | PACT outcome |',
+        '|---|---:|---:|---|---|---|']
+    for r in outcomes:
+        lines.append(f'| {r["design"]} | {r["FF_count"]} | {r["ATPG_pattern_count"]} | '
+            f'{r["infrastructure_status"]} | {r.get("selected_reference","—")} | PACT_EXECUTION_BLOCKED |')
+    lines += ['', '`s208` and `s510` hit the unchanged requirement of at least eight FFs per chain with K=2. '
+        'Their ATPG receipts are retained. K and the guard were preserved.', '',
+        '## External references', '',
+        'Each available reference was selected as the minimum qualified routed scan cost among B0/B1/B2/B3T. '
+        'The two long-buffer-path failures on s38417 were repaired before final reference selection, using retained routes. '
+        'Earlier provisional/failing receipts are preserved. '
+        '[Selection and all-method provenance](baselines/generalization_baselines.json).', '',
+        '| Design | Reference | Routed scan WL (µm) | E (fF transitions) | H4 | H8 | WNS (ns) | DRC | Fault coverage (%) |',
+        '|---|---|---:|---:|---:|---:|---:|---:|---:|']
+    for r in refs:
+        activity=by_name.get(r['design'])
+        values=[f'{activity[k]:.10g}' if activity else 'unavailable' for k in ('E','H4','H8')]
+        coverage=f'{activity["fault_coverage"]:.10g}' if activity else 'see FAN receipt'
+        lines.append(f'| {r["design"]} | {r["method"]} | {r["routed_scan_wirelength_um"]:.10g} | '
+            + ' | '.join(values)+f' | {r["timing"]["setup_wns_ns"]:.10g} | {r["DRC"]} | {coverage} |')
+    lines += ['', 'These rows are external references. Primary and alternative PACT candidates, and their changes '
+        'in WL/E/H4/H8, are unavailable because no search started. '
+        'The original three-design PACT rows and legitimate alternatives remain in '
+        '[canonical results](canonical/generalization_canonical_results.json) and '
+        '[the full table](canonical/generalization_results_table.csv). '
+        '[The primary comparison CSV](canonical/generalization_primary_comparison.csv) retains the original bytes as its prefix.', '',
+        '## Qualification and repairs', '',
+        'Qualified new references retain topology, exact FF inventory/placement, routing, extraction, timing reporting, '
+        'zero DRC, serial replay, and FAN correctness gates. Activity measurements additionally check functional source/parity '
+        'and complete FF transition agreement. FAN comparisons cover the complete collapsed target classes, equivalence '
+        'weights, detected collapsed classes, weighted full/detected counts, patterns, and coverage. '
+        'Uncollapsed class-member identities are not enumerated.', '',
+        'Engineering repairs were isolated on repair branches and integrated only after focused regressions: '
+        'direct scan-output endpoint recovery; existing runtime paths; reporting-field lookup; '
+        'functional FF identity through Q-net renaming; and replacing the arbitrary eight-buffer traversal limit '
+        'with a finite graph bound. The optimizer, metrics, objective, operators, and frozen files were preserved. '
+        'The traversal repair changes only its guard expression; before/after gate, WL, functional verification, '
+        'and net/capacitance mapping outputs are exactly equal on a previously passing unseen design. '
+        'Fifteen focused regression tests passed.', '',
+        '## Initialization blocker and scientific conclusion', '',
+        'The frozen loader raises `KeyError("s1196")` because its design table and artifact lookups cover only the '
+        'historical three circuits. Its Stage-B starts also require a measured representative P0 from an earlier '
+        'stateful search archive. That archive depends on prior candidate-sensitive/v2 selections and an earlier '
+        'working-PACT architecture. The repository contains sealed historical endpoints, rather than a complete '
+        'unseen-input construction rule. [Bound dependency audit](searches/initialization_audit.json); '
+        '[reproduced loader failure](failures/frozen_initialization_contract.json).', '',
+        'The unresolved protocol must specify the precursor physical-input role, initial working-PACT seed and budget, '
+        'qualification/seed propagation through the precursor stages, and how those stages fit the per-design routing limit. '
+        'No P0 was omitted, substituted, or synthesized under an invented rule.', '',
+        'New primary candidates improving E, H4, H8, or all three: **not measured**. '
+        'Mixed outcomes and negligible-benefit outcomes: **not measured**. '
+        'No scientific support or rejection of PACT generalization can be inferred from this dataset.', '',
+        '## Scalability', '',
+        '`PACT_SCALABILITY_NOT_MEASURED`. Exact candidate evaluations, solver CPU/RSS, evaluations/s, evaluator time, '
+        'overhead, stagnation/restarts, and candidate-selection time have no new observations. '
+        '[The scalability JSON](scalability_results.json) has an empty search dataset; '
+        '[the CSV](scalability_results.csv) contains its header only. '
+        'Measured route and reference activity times/resources are separate physical-stage records. '
+        'No scaling model or size-of-impracticality claim is supported.', '',
+        'The preregistered search remains seed 11, K=2, epsilon 0.02/0.05/0.10, balanced weights (1,1,1), '
+        '20,000 maximum evaluations, and the fixed runtime rule 300×max(1,ceil(FF/600)) seconds. '
+        'Neighborhood, segment, archive, lane, and stagnation settings remain frozen. '
+        '[Exact configuration](searches/exact_configuration.json).']
+    if measured:
+        times=[r['measurement_wall_seconds'] for r in measured]
+        memory=[r['measurement_resources']['peak_RSS_KiB'] for r in measured]
+        lines += ['',f'Qualified reference activity measurement wall time: {min(times):.3f}–{max(times):.3f} s; '
+            f'maximum RSS across those subprocess trees: {min(memory)/1024:.3f}–{max(memory)/1024:.3f} MiB. '
+            'These observations include extraction, simulation, and activity analysis; they are separate from solver cost.']
+    lines += ['', '## Measurement scope', '',
+        'Routed scan WL remains the connected scan-path net-length upper bound, including shared functional branches. '
+        'E remains ground-plus-pin capacitance times transitions; H4/H8 remain source-localized peak bins per cycle '
+        'over all data nets. These measurements do not establish watts, IR drop, signoff timing, or silicon reliability. '
+        'The hotspot definitions were preserved and no ablation was run.', '',
+        '## Repository and retained evidence', '',
+        f'Starting SHA: `{freeze["repository_sha"]}`. Branch: `experiment/generalization-scalability-20261004`. '
+        f'Commit at report assembly: `{current}`. The final response identifies the commit containing the report.', '',
+        '[Commit/file inventory](repository_state_at_report.json); [changed files](repository_changes.txt). '
+        'Heavy new inputs, tools already present, routed databases, SPEFs, VCDs, and detailed execution logs remain at '
+        '`D:\\PACT_EXPERIMENTS\\results\\pact_generalization_20261004`; repository receipts bind them by exact hash. '
+        'No duplicate installation or temporary build tree was committed.', '', '```text',commits.rstrip(),'```', '',
+        '## Remaining work', '',
+        'Resolve a reproducible unseen-design P0 construction protocol that retains frozen warm-start semantics. '
+        'Then run the preregistered searches, preselect at most three distinct candidates per design before route, '
+        'qualify every selected candidate, and collect solver-only scalability data. '
+        'The present artifacts are a reproducible blocked campaign checkpoint, not a completed generalization result.', '']
+    (OUT/'generalization_report.md').write_text('\n'.join(lines),encoding='utf-8')
+
+
 def report(seal=False):
     outcomes,refs,measured=collect()
+    physical_timings()
     counts=dict(selected=len(outcomes),infrastructure_qualified=len(refs),
         references_with_activity_measurements=len(measured),new_PACT_searches_executed=0,
         new_PACT_candidates_preselected=0,new_PACT_designs_completed_end_to_end=0)
@@ -173,6 +324,9 @@ def report(seal=False):
     original=read(CORE/'canonical_results.json')
     canonical=dict(schema='pact_generalization_canonical_results_v1',status=status,created_utc=now(),
         frozen_core=binding(CORE/'canonical_results.json'),frozen_record_count=len(original['records']),
+        frozen_core_status=original['status'],frozen_core_primary_candidates=original['primary_candidates'],
+        frozen_core_primary_selection_reason=original['primary_selection_reason'],
+        frozen_search_records=original['searches'],
         records=original['records']+measured,design_outcomes=outcomes,
         new_PACT_primary_candidates={},new_PACT_alternative_candidates={},
         counts=counts,scientific_conclusion='No new PACT outcome is available; reference activity is not evidence of PACT benefit',
@@ -189,12 +343,21 @@ def report(seal=False):
     target.write_bytes(old_csv+addition)
     assert target.read_bytes().startswith(old_csv)
     metadata=[dict(design=r['design'],candidate=r['candidate'],correctness_status='PASS',
-        solver_runtime_seconds=r.get('runtime',{}).get('search_seconds'),
-        exact_evaluation_count=None,record_scope='FROZEN_CORE_UNCHANGED') for r in original['records']]
+        solver_runtime_seconds=r.get('search_runtime_seconds',r.get('runtime',{}).get('search_seconds')),
+        exact_evaluation_count=r.get('candidates_evaluated'),record_scope='FROZEN_CORE_UNCHANGED') for r in original['records']]
     metadata += [dict(design=r['design'],candidate=r['candidate'],correctness_status='PASS',
         solver_runtime_seconds=None,exact_evaluation_count=None,record_scope='NEW_EXTERNAL_REFERENCE_ONLY') for r in measured]
     write(OUT/'canonical/table_context.json',dict(records=metadata,
         note='Original canonical dictionaries and primary CSV prefix are unchanged; appended rows are qualified external references, without PACT comparisons'),immutable=True)
+    full_rows=[]
+    for r,context in zip(canonical['records'],metadata):
+        full_rows.append(dict(r,**context,
+            delta_routed_scan_wirelength_um_percent=r['deltas_percent']['routed_scan_wirelength_um'],
+            delta_E_percent=r['deltas_percent']['E'],delta_H4_percent=r['deltas_percent']['H4'],
+            delta_H8_percent=r['deltas_percent']['H8']))
+    (OUT/'canonical/generalization_results_table.csv').write_text(csv_text(
+        fields+['correctness_status','solver_runtime_seconds','exact_evaluation_count','record_scope'],full_rows))
+    readable_report(status,counts,outcomes,refs,measured)
     write(OUT/'completion.json',dict(status=status,created_utc=now(),counts=counts,
         core_freeze_status=read(OUT/'manifests/freeze_verification.json')['status'],
         repository_sha_at_assembly=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
