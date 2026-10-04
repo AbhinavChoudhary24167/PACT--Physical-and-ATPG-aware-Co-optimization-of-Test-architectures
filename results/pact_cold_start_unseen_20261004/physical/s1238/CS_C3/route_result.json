@@ -1,0 +1,329 @@
+{
+  "DRC_errors": 0,
+  "activity_status": "PENDING",
+  "architecture_sha256": "921f305e0512f1ab98acceddaba454fd9ce4228c18d0f03a7a840eecd32f1d94",
+  "archive": {
+    "bytes": 227497,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s1238/CS_C3/5_2_route.odb.gz",
+    "sha256": "e92ebe8f76c9cc8a19c8ff34b547ab2cdbd894ed096db74aefcba43692842570"
+  },
+  "candidate": "CS_C3",
+  "created_utc": "2026-10-04T18:25:11.122748+00:00",
+  "design": "s1238",
+  "extraction": {
+    "bytes": 563841,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s1238/CS_C3/extracted.spef",
+    "sha256": "5c2dbe0c1cff0a2f267ca8f470063281ef165d9b377473407e5572d9288e0e9a"
+  },
+  "extraction_wall_seconds": 1.0281042569999954,
+  "functional_verification": {
+    "execution": {
+      "command": [
+        "/usr/bin/openroad",
+        "-exit",
+        "-python",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_export.py",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical_gates/s1238/CS_C3/s1238/CS_C3"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "exit_code": 0,
+      "stderr": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s1238/CS_C3/functional_export/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 390,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s1238/CS_C3/functional_export/stdout.txt",
+        "sha256": "9f02cd4ce8c30c46dbaf03d80c91aecbff472b0c28423767f71e15bd874e0722"
+      },
+      "timed_out": false,
+      "timestamp_utc": "2026-10-04T18:25:08.896382+00:00",
+      "wall_seconds": 7.05194635099997
+    },
+    "functional": {
+      "FF_placement": "exact",
+      "functional_sinks_and_outputs": 1029,
+      "rule": "source identity and inversion parity through buffers/inverters; gate function families unchanged",
+      "source_placed_database": {
+        "bytes": 671825,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/orfs/results/nangate45/s1238/phase0b_s11_B0/3_place.odb",
+        "sha256": "d473d3735c408e14042c61caaea57c7824bd908ddfc02d847e7bdcc8eb06f644"
+      },
+      "status": "PASS"
+    },
+    "outputs": {
+      "functional_verification.json": {
+        "bytes": 469,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical_gates/s1238/CS_C3/s1238/CS_C3/functional_verification.json",
+        "sha256": "e240572c72a104e2100664651396b64dc73bc1969d438f2ba40dba3cede756aa"
+      },
+      "net_mapping.json": {
+        "bytes": 93597,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical_gates/s1238/CS_C3/s1238/CS_C3/net_mapping.json",
+        "sha256": "be0e7f8dae9575328e30f102d46dada280bcfcea2ddaa5e1440147ad9e23bc19"
+      },
+      "topology_verification.json": {
+        "bytes": 4983,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical_gates/s1238/CS_C3/s1238/CS_C3/topology_verification.json",
+        "sha256": "8ec01de200693a3e8e7b0e3655a0bc24f8a5b0df4ca1ff54303e637725fcf643"
+      }
+    }
+  },
+  "gates": {
+    "DRC": "PASS",
+    "FF_inventory": "PASS",
+    "FF_placement": "PASS",
+    "extraction": "PASS",
+    "functional_connections": "PASS",
+    "rewire": "PASS",
+    "routing": "PASS",
+    "timing": "PASS",
+    "topology": "PASS"
+  },
+  "postroute_verification": {
+    "K": 2,
+    "all_chain_inputs_outputs_verified": true,
+    "bounded_scan_path_link_count": 20,
+    "edges": [
+      {
+        "chain": 0,
+        "dest_ff": "U_G44",
+        "exact_routed_length_um": null,
+        "exclusive_scan_net": false,
+        "net_length_upper_bound_um": 24.1,
+        "source_ff": "U_G33",
+        "transparent_buffers": []
+      },
+      {
+        "chain": 0,
+        "dest_ff": "U_G41",
+        "exact_routed_length_um": null,
+        "exclusive_scan_net": false,
+        "net_length_upper_bound_um": 33.11,
+        "source_ff": "U_G44",
+        "transparent_buffers": []
+      },
+      {
+        "chain": 0,
+        "dest_ff": "U_G42",
+        "exact_routed_length_um": null,
+        "exclusive_scan_net": false,
+        "net_length_upper_bound_um": 5.84,
+        "source_ff": "U_G41",
+        "transparent_buffers": []
+      },
+      {
+        "chain": 0,
+        "dest_ff": "U_G37",
+        "exact_routed_length_um": null,
+        "exclusive_scan_net": false,
+        "net_length_upper_bound_um": 33.32,
+        "source_ff": "U_G42",
+        "transparent_buffers": []
+      },
+      {
+        "chain": 0,
+        "dest_ff": "U_G38",
+        "exact_routed_length_um": null,
+        "exclusive_scan_net": false,
+        "net_length_upper_bound_um": 19.26,
+        "source_ff": "U_G37",
+        "transparent_buffers": []
+      },
+      {
+        "chain": 0,
+        "dest_ff": "U_G36",
+        "exact_routed_length_um": null,
+        "exclusive_scan_net": false,
+        "net_length_upper_bound_um": 22.22,
+        "source_ff": "U_G38",
+        "transparent_buffers": []
+      },
+      {
+        "chain": 0,
+        "dest_ff": "U_G35",
+        "exact_routed_length_um": null,
+        "exclusive_scan_net": false,
+        "net_length_upper_bound_um": 22.53,
+        "source_ff": "U_G36",
+        "transparent_buffers": []
+      },
+      {
+        "chain": 0,
+        "dest_ff": "U_G46",
+        "exact_routed_length_um": null,
+        "exclusive_scan_net": false,
+        "net_length_upper_bound_um": 32.01,
+        "source_ff": "U_G35",
+        "transparent_buffers": []
+      },
+      {
+        "chain": 1,
+        "dest_ff": "U_G31",
+        "exact_routed_length_um": null,
+        "exclusive_scan_net": false,
+        "net_length_upper_bound_um": 51.95,
+        "source_ff": "U_G39",
+        "transparent_buffers": []
+      },
+      {
+        "chain": 1,
+        "dest_ff": "U_G30",
+        "exact_routed_length_um": null,
+        "exclusive_scan_net": false,
+        "net_length_upper_bound_um": 20.32,
+        "source_ff": "U_G31",
+        "transparent_buffers": []
+      },
+      {
+        "chain": 1,
+        "dest_ff": "U_G43",
+        "exact_routed_length_um": null,
+        "exclusive_scan_net": false,
+        "net_length_upper_bound_um": 18.92,
+        "source_ff": "U_G30",
+        "transparent_buffers": []
+      },
+      {
+        "chain": 1,
+        "dest_ff": "U_G45",
+        "exact_routed_length_um": null,
+        "exclusive_scan_net": false,
+        "net_length_upper_bound_um": 15.2,
+        "source_ff": "U_G43",
+        "transparent_buffers": []
+      },
+      {
+        "chain": 1,
+        "dest_ff": "U_G32",
+        "exact_routed_length_um": null,
+        "exclusive_scan_net": false,
+        "net_length_upper_bound_um": 32.6,
+        "source_ff": "U_G45",
+        "transparent_buffers": []
+      },
+      {
+        "chain": 1,
+        "dest_ff": "U_G34",
+        "exact_routed_length_um": null,
+        "exclusive_scan_net": false,
+        "net_length_upper_bound_um": 16.05,
+        "source_ff": "U_G32",
+        "transparent_buffers": []
+      },
+      {
+        "chain": 1,
+        "dest_ff": "U_G40",
+        "exact_routed_length_um": null,
+        "exclusive_scan_net": false,
+        "net_length_upper_bound_um": 40.66,
+        "source_ff": "U_G34",
+        "transparent_buffers": []
+      },
+      {
+        "chain": 1,
+        "dest_ff": "U_G29",
+        "exact_routed_length_um": null,
+        "exclusive_scan_net": false,
+        "net_length_upper_bound_um": 16.35,
+        "source_ff": "U_G40",
+        "transparent_buffers": []
+      }
+    ],
+    "exact_internal_ff_scan_only_total_um": null,
+    "exact_scan_only_total_um": null,
+    "exclusive_exact_edge_count": 0,
+    "fixed_port_positions_verified": true,
+    "port_centers_dbu": {
+      "test_si": [
+        140,
+        59500
+      ],
+      "test_si_1": [
+        85620,
+        57260
+      ],
+      "test_so": [
+        140,
+        42700
+      ],
+      "test_so_1": [
+        140,
+        56140
+      ]
+    },
+    "port_links": [
+      {
+        "chain": 0,
+        "kind": "SI_to_first_FF",
+        "net_length_upper_bound_um": 14.09,
+        "transparent_buffers": [
+          "hold32",
+          "input16",
+          "hold33"
+        ]
+      },
+      {
+        "chain": 0,
+        "kind": "last_FF_to_SO",
+        "net_length_upper_bound_um": 28.72,
+        "transparent_buffers": [
+          "output18"
+        ]
+      },
+      {
+        "chain": 1,
+        "kind": "SI_to_first_FF",
+        "net_length_upper_bound_um": 7.065,
+        "transparent_buffers": []
+      },
+      {
+        "chain": 1,
+        "kind": "last_FF_to_SO",
+        "net_length_upper_bound_um": 24.14,
+        "transparent_buffers": []
+      }
+    ],
+    "routed_full_scan_path_net_length_upper_bound_um": 478.455,
+    "scan_edges": 16,
+    "scan_ff_count": 18,
+    "status": "PASS"
+  },
+  "reference_hash": "e8dc57ee4fbfe5edc351f716d2916759a6e97604b904473c1e27cc6d9a346bbc",
+  "route_wall_seconds": 85.41868360499996,
+  "routed_odb_sha256": "b07f440db1a0798a03a4fa54c6d296ad547a76c72445a552d7677538e89a8000",
+  "routed_scan_wirelength_um": 478.455,
+  "scientific_method_change": false,
+  "selection": {
+    "bytes": 6801,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/selections/s1238/preselected_candidates.json",
+    "sha256": "6ecd57556485e77dad332e34bbeebb6d236bce0d7d62840a2fc184366a18e781"
+  },
+  "source_placed_database": {
+    "bytes": 671825,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/orfs/results/nangate45/s1238/phase0b_s11_B0/3_place.odb",
+    "sha256": "d473d3735c408e14042c61caaea57c7824bd908ddfc02d847e7bdcc8eb06f644"
+  },
+  "status": "PHYSICAL_GATES_PASS",
+  "structured_metrics": {
+    "congestion": null,
+    "detailed_route_drc_errors": 0,
+    "detailed_route_vias": 4065,
+    "global_route_overflow": null,
+    "global_route_wirelength_um": 11191,
+    "hold_tns_ns": 0,
+    "hold_violated_endpoints": 0,
+    "hold_wns_ns": 0.0145669,
+    "layer_utilization": {},
+    "max_cap_violations": 0,
+    "max_fanout_violations": 0,
+    "max_slew_violations": 0,
+    "pdnsim_classification": "NOT_RUN_NO_QUALIFIED_TEST_CURRENT_MODEL",
+    "setup_tns_ns": 0,
+    "setup_violated_endpoints": 0,
+    "setup_wns_ns": 9.0761,
+    "timing_stage": "global_route",
+    "total_detailed_route_wirelength_um": 7007
+  }
+}

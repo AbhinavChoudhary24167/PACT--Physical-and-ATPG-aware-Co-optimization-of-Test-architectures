@@ -298,7 +298,17 @@ def qualify(selection_path, input_path=None):
     write(OUT/f'physical/{design}/selection_snapshot.json', dict(
         created_utc=now(), selection=context['selection_binding'], input=context['package_binding'],
         records=[dict(candidate=r['candidate'], architecture_hash=a.sha256(), architecture=r['architecture'])
-            for r, a in context['validated']], all_candidates_frozen_before_any_candidate_routing=True), immutable=True)
+            for r, a in context['validated']], all_candidates_frozen_before_any_candidate_routing=True,
+        executed_sources={name: binding(ROOT/name) for name in (
+            'scripts/pact_cold_start_physical.py', 'scripts/phase0c_rewire_odb.py',
+            'scripts/pact_generalization_routed.py', 'scripts/pact_generalization_scan_masters.py',
+            'scripts/pact_generalization_export.py', 'scripts/physical_effect_export.py',
+            'src/pact/integration/permutation.py', 'src/pact/integration/patterns.py',
+            'src/pact/integration/replay.py', 'src/pact/integration/qualification.py')},
+        tools=dict(OpenROAD=external_binding('/usr/bin/openroad'), FAN=external_binding(REPAIRED)),
+        technology=dict(library=external_binding(LIB),
+            extraction_rules=external_binding(FLOW/'platforms/nangate45/rcx_patterns.rules'),
+            FAN_library=external_binding(FAN/'techlib/mod_nangate45.mdt'))), immutable=True)
     physical, atpg, final = [], [], []
     for row, after in context['validated']:
         candidate = row['candidate']
@@ -308,6 +318,7 @@ def qualify(selection_path, input_path=None):
         af.mkdir(parents=True, exist_ok=True)
         result = dict(design=design, candidate=candidate, architecture_hash=after.sha256(),
             selection=context['selection_binding'], input=context['package_binding'], created_utc=now(), status='PENDING')
+        result['started_utc'] = result['created_utc']
         stage = 'PACT_PHYSICAL_FAILURE'
         try:
             routed = route_candidate(context, row, after, pf)
@@ -343,13 +354,14 @@ def qualify(selection_path, input_path=None):
                 executions['FAN'] = read(fan_execution)
             limited = isinstance(error, (ResourcePolicyError, subprocess.TimeoutExpired)) or any(
                 r.get('timed_out') or r.get('exit_code') in (-9, 137) for r in executions.values())
-            result.update(status=stage, failure_class='RESOURCE_LIMIT' if limited else stage,
+            result.update(status=stage, failure_class='RESOURCE_LIMIT' if limited else stage, completed_utc=now(),
                 executions=executions, error=str(error), traceback=traceback.format_exc())
             write(OUT/f'failures/{design}_{candidate}_qualification.json', result, immutable=True)
             if not any(r['candidate']==candidate for r in physical):
                 physical.append(dict(result))
             elif not any(r['candidate']==candidate for r in atpg):
                 atpg.append(dict(result))
+        result.setdefault('completed_utc', now())
         write(pf/'qualification_pending_activity.json', result, immutable=True)
         copy_compact(pf, OUT/f'physical/{design}/{candidate}')
         copy_compact(af, OUT/f'atpg/{design}/{candidate}')

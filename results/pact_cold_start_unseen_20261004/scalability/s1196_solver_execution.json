@@ -1,0 +1,37 @@
+{
+  "attempt": 1,
+  "created_utc": "2026-10-04T18:11:01.572718+00:00",
+  "design": "s1196",
+  "execution": {
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "-o",
+      "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/searches/s1196/resources.txt",
+      "/root/pact-deps/pact-venv/bin/python",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cold_start.py",
+      "search",
+      "--design",
+      "s1196"
+    ],
+    "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+    "exit_code": 0,
+    "stderr": {
+      "bytes": 0,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/searches/s1196/execution/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 387,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/searches/s1196/execution/stdout.txt",
+      "sha256": "b97eac2e26567fd258ecc9797c60ca218d5caebd838455e6676e025ff1da65cf"
+    },
+    "timed_out": false,
+    "timestamp_utc": "2026-10-04T18:11:27.156230+00:00",
+    "wall_seconds": 25.165783896000008
+  },
+  "per_loop_seconds": 300,
+  "scope": "SOLVER_ONLY; no routing/ATPG/extraction",
+  "status": "PASS",
+  "worker_deadline_seconds": 1800
+}

@@ -1,0 +1,226 @@
+{
+  "accepted": 35,
+  "archive_insertions": 13,
+  "archive_size": 1,
+  "attempts": 4048,
+  "baselines": [
+    {
+      "architecture": {
+        "bytes": 4202,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s953/budget_0.02/architectures/ac13bc68f090dd8f6921fee11362f5c63dc32f7376f0acabf1d895f26894e371.json",
+        "sha256": "457d2fdbe76ed3af79af3df7112936377cdaf7fa6e3f486d72601f8e9097280d"
+      },
+      "architecture_sha256": "ac13bc68f090dd8f6921fee11362f5c63dc32f7376f0acabf1d895f26894e371",
+      "chain_sizes": [
+        15,
+        14
+      ],
+      "discovered_attempt": 0,
+      "discovered_evaluation": 0,
+      "discovered_loop_seconds": 0.0,
+      "discovered_utc": "2026-10-04T18:07:16.645276+00:00",
+      "label": "B2",
+      "metrics": {
+        "E_stateful_ff": 230862.69126415832,
+        "H4_stateful_ff": 120.50239031999999,
+        "H8_stateful_ff": 48.79035235,
+        "timing_max_edge_um": 18.770000000000003,
+        "wire_um": 243.64000000000001
+      },
+      "parent": "B2",
+      "parent_architecture_sha256": "ac13bc68f090dd8f6921fee11362f5c63dc32f7376f0acabf1d895f26894e371"
+    }
+  ],
+  "config": {
+    "archive_size": 16,
+    "epsilon": 0.02,
+    "lane_attempts": 150,
+    "max_evaluations": 20000,
+    "neighbors": 16,
+    "seconds": 300,
+    "seed": 11,
+    "segment": 8,
+    "stagnation_attempts": 2000,
+    "weights": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "convergence": [
+    {
+      "accepted": 1,
+      "attempts": 1,
+      "champions": [
+        [
+          246.16,
+          225838.55804949085,
+          48.79035235,
+          17.869999999999997,
+          120.50239031999999
+        ],
+        [
+          243.64000000000001,
+          230862.69126415832,
+          48.79035235,
+          18.770000000000003,
+          120.50239031999999
+        ],
+        [
+          243.64000000000001,
+          230862.69126415832,
+          48.79035235,
+          18.770000000000003,
+          120.50239031999999
+        ],
+        [
+          246.16,
+          225838.55804949085,
+          48.79035235,
+          17.869999999999997,
+          120.50239031999999
+        ]
+      ],
+      "evaluations": 1,
+      "screened_infeasible": 0,
+      "seconds": 1.2888640239999987
+    },
+    {
+      "accepted": 35,
+      "attempts": 4048,
+      "champions": [
+        [
+          247.82,
+          199890.14438822062,
+          48.79035235,
+          17.869999999999997,
+          120.50239031999999
+        ],
+        [
+          243.64000000000001,
+          230862.69126415832,
+          48.79035235,
+          18.770000000000003,
+          120.50239031999999
+        ],
+        [
+          243.64000000000001,
+          230862.69126415832,
+          48.79035235,
+          18.770000000000003,
+          120.50239031999999
+        ],
+        [
+          247.82,
+          199890.14438822062,
+          48.79035235,
+          17.869999999999997,
+          120.50239031999999
+        ]
+      ],
+      "evaluations": 416,
+      "screened_infeasible": 2975,
+      "seconds": 3.8779949350000003
+    }
+  ],
+  "evaluations": 416,
+  "final_stagnation_attempts": 2000,
+  "initial_reference_archive_insertions": 1,
+  "initialization_seconds": 1.8432711600000005,
+  "instrumentation": {
+    "independent_replay_seconds": 0.15494513999999882,
+    "independent_replays": 2,
+    "state_constructions": 28,
+    "state_score_calls": 444,
+    "state_score_seconds": 0.1807140839999697
+  },
+  "model_profile": {
+    "geometry_seconds": 0.06837852400004607,
+    "reduction_seconds": 0.17770678999996292,
+    "rollback_seconds": 0.46558412199998855,
+    "scan_waveform_seconds": 1.5726223090000104,
+    "spatial_seconds": 0.525064238000013,
+    "stateful_propagation_seconds": 0.23794491000003504
+  },
+  "reference_label": "B2",
+  "reference_score": [
+    243.64000000000001,
+    230862.69126415832,
+    48.79035235,
+    18.770000000000003,
+    120.50239031999999
+  ],
+  "rejected_exact_moves": 381,
+  "restarts": 26,
+  "runtime_seconds": 5.927680038000002,
+  "screened_infeasible": 2975,
+  "search_seconds": 3.8779930269999987,
+  "selected": [
+    {
+      "architecture": {
+        "bytes": 4202,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s953/budget_0.02/architectures/1f2cf215d3e58fa0f088acf4f4cf11a96ca23914cb6bf45fc775323578e0c5e5.json",
+        "sha256": "65850ab5563dc902461d3f4097bf139ee588d74343f9565ec1a09035d5618618"
+      },
+      "architecture_sha256": "1f2cf215d3e58fa0f088acf4f4cf11a96ca23914cb6bf45fc775323578e0c5e5",
+      "chain_sizes": [
+        15,
+        14
+      ],
+      "discovered_attempt": 1661,
+      "discovered_evaluation": 181,
+      "discovered_loop_seconds": 2.435754498999998,
+      "discovered_utc": "2026-10-04T18:07:19.106938+00:00",
+      "label": "B2:cross_chain_swap",
+      "metrics": {
+        "E_stateful_ff": 199890.1443882173,
+        "H4_stateful_ff": 120.50239032,
+        "H8_stateful_ff": 48.79035234999999,
+        "timing_max_edge_um": 17.869999999999997,
+        "wire_um": 247.82
+      },
+      "new": true,
+      "parent": "B2",
+      "parent_architecture_sha256": "ac13bc68f090dd8f6921fee11362f5c63dc32f7376f0acabf1d895f26894e371",
+      "roles": [
+        "best_E",
+        "balanced"
+      ]
+    },
+    {
+      "architecture": {
+        "bytes": 4202,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s953/budget_0.02/architectures/ac13bc68f090dd8f6921fee11362f5c63dc32f7376f0acabf1d895f26894e371.json",
+        "sha256": "457d2fdbe76ed3af79af3df7112936377cdaf7fa6e3f486d72601f8e9097280d"
+      },
+      "architecture_sha256": "ac13bc68f090dd8f6921fee11362f5c63dc32f7376f0acabf1d895f26894e371",
+      "chain_sizes": [
+        15,
+        14
+      ],
+      "discovered_attempt": 0,
+      "discovered_evaluation": 0,
+      "discovered_loop_seconds": 0.0,
+      "discovered_utc": "2026-10-04T18:07:16.645276+00:00",
+      "label": "B2",
+      "metrics": {
+        "E_stateful_ff": 230862.69126416,
+        "H4_stateful_ff": 120.50239032,
+        "H8_stateful_ff": 48.79035234999999,
+        "timing_max_edge_um": 18.770000000000003,
+        "wire_um": 243.64000000000001
+      },
+      "new": false,
+      "parent": "B2",
+      "parent_architecture_sha256": "ac13bc68f090dd8f6921fee11362f5c63dc32f7376f0acabf1d895f26894e371",
+      "roles": [
+        "best_H4",
+        "best_H8"
+      ]
+    }
+  ],
+  "stagnation_termination_events": 1,
+  "termination": "stagnation",
+  "wire_ceiling_um": 248.51280000000003,
+  "wire_reference_um": 243.64000000000001
+}

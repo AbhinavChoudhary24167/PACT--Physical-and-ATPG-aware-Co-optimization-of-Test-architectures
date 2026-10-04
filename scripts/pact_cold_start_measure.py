@@ -76,7 +76,10 @@ def prepare_row(row, root=None):
         'scripts/pact_cold_start_measure_analyze.py')}
     write(root / 'manifest.json', dict(schema='pact_cold_start_exact_activity_v1', rows=[row], created_utc=now(),
         library=external_binding(LIB), simulation_cells=external_binding(CELLS), extraction_rules=external_binding(RULES),
-        executed_sources=sources, deadline_seconds=1800, initialization_inputs='artifact row only; no historical P0/archive',
+        executed_sources=sources,
+        tools={name: external_binding('/usr/bin/' + name) for name in ('openroad', 'iverilog', 'vvp')},
+        python_runtime=dict(executable=external_binding(sys.executable), version=sys.version),
+        deadline_seconds=1800, initialization_inputs='artifact row only; no historical P0/archive',
         measurement_semantics='Frozen OpenRCX ground+Liberty pin C*N; all_data E, source-attributed H4/H8; exact Icarus functional scan replay'), immutable=True)
     return root, folder
 
@@ -133,8 +136,15 @@ def measure_prepared(root, folder, timeout_seconds=1800):
             raise ValueError('Executed source binding changed')
     for name in ('library', 'simulation_cells', 'extraction_rules'):
         frozen.check_binding(manifest[name])
+    for item in manifest['tools'].values():
+        frozen.check_binding(item)
+    frozen.check_binding(manifest['python_runtime']['executable'])
+    if sha('/usr/bin/openroad') != read(ROOT / 'results/pact_oss_benchmark/protocol/tool_versions.json')['implementation_binary_sha256']:
+        raise ValueError('Frozen common-backend OpenROAD executable changed')
     validate_row(row)
+    import resource
     began = time.perf_counter()
+    launcher_before = resource.getrusage(resource.RUSAGE_SELF)
     deadline = began + timeout_seconds
     result = dict(design=row['design'], role=row['role'], architecture_sha256=row['architecture_sha256'],
         status='PENDING', manifest=external_binding(root / 'manifest.json'), created_utc=now(),
@@ -188,14 +198,18 @@ exit
             partial_VCD_policy='Retain failed-stage artifacts for diagnosis; exclude all partial/unqualified activity from scientific results')
     stages = {p.name.removesuffix('.execution.json'): read(p) for p in folder.glob('*.execution.json')}
     vcd_path = folder / 'activity.vcd'
+    launcher_after = resource.getrusage(resource.RUSAGE_SELF)
+    launcher_cpu = launcher_after.ru_utime + launcher_after.ru_stime - launcher_before.ru_utime - launcher_before.ru_stime
     instrumentation = dict(stages=stages, analysis=read(folder / 'analysis_instrumentation.json') if (folder / 'analysis_instrumentation.json').exists() else None,
         analysis_failure_localization=read(folder / 'analysis_live.json') if result['status'] == 'FAILED' and (folder / 'analysis_live.json').exists() else None,
         VCD=dict(bytes=vcd_path.stat().st_size if vcd_path.exists() else 0, complete=result['VCD_complete']),
         VCD_generation=dict(wall_seconds=None, shared_stage='simulate',
             reason='VVP performs simulation and $dumpvars emission in the same process; isolated generation time is not observable without changing execution semantics'),
         total_wall_seconds=time.perf_counter() - began,
-        total_CPU_seconds=sum(r.get('CPU_seconds', 0.) for r in stages.values()),
-        peak_RSS_KiB=max([r.get('peak_RSS_KiB', 0) for r in stages.values()] or [0]),
+        launcher_CPU_seconds=launcher_cpu, launcher_peak_RSS_KiB=launcher_after.ru_maxrss,
+        total_CPU_seconds=launcher_cpu + sum(r.get('CPU_seconds', 0.) for r in stages.values()),
+        peak_RSS_KiB=max([launcher_after.ru_maxrss] + [r.get('peak_RSS_KiB', 0) for r in stages.values()]),
+        resources_scope='CPU sum of launcher and sequential child stages; RSS maximum of per-process lifetime high-water marks; not summed simultaneous tree RSS',
         numerical_semantics='Unchanged frozen parser and metric arithmetic; only timers inserted', scientific_method_change=False)
     write(folder / 'instrumentation.json', instrumentation, immutable=True)
     result.update(wall_seconds=instrumentation['total_wall_seconds'], CPU_seconds=instrumentation['total_CPU_seconds'],
