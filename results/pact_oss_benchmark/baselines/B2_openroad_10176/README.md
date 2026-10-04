@@ -1,3 +1,0 @@
-# Pinned 2-Opt baseline
-
-Exact head: `6fff875551fe13a2aae3a22f871a6ca7f8d5c1cf`. The full archive and exact recursive submodules are in D: scratch storage and indexed in build_sources.json. DFT source bytes match the commit-addressed Git blob audit. Release configuration used GCC 13.3.0, CMake 3.28.3, GUI/GPU/tests disabled, Python enabled and LTO disabled. Configuration failed because SWIG >=4.3 is absent; Tcl headers are also missing. No binary or B2 architecture was produced. Source-archive VCS warnings are retained; they do not substitute for the explicit immutable source hashes. This is an environment/build qualification failure, not evidence that the algorithm is defective or impossible to build elsewhere.
