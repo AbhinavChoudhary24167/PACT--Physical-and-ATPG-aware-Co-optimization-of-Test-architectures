@@ -71,8 +71,8 @@ def run(design):
         all_data=summary['scopes']['all_data']
         record.update(status='QUALIFIED',wall_seconds=result['wall_seconds'],
             E=all_data['cap_weighted_ff_transitions']['total'],
-            H4=all_data['grids']['4']['cap_peak_per_cycle']['max'],
-            H8=all_data['grids']['8']['cap_peak_per_cycle']['max'],
+            H4=all_data['grids']['4']['cap_peak_per_cycle']['maximum'],
+            H8=all_data['grids']['8']['cap_peak_per_cycle']['maximum'],
             folder=str(folder),resources=external_binding(folder/'resources.txt'),
             summary=external_binding(folder/'activity_summary.json'))
     except Exception as error:
@@ -92,13 +92,45 @@ def run(design):
     print('REFERENCE_MEASUREMENT',design,record['status'],record.get('error',''),flush=True)
 
 
+def recover(design):
+    """Reconcile reporting-only failure by checking existing completed outputs."""
+    root=RUN/'reference_measurement'/design
+    manifest=read(root/'manifest.json')
+    row=manifest['rows'][0]
+    folder=root/design/row['role']
+    for name in ('export','extract','compile','simulate'):
+        assert read(folder/f'{name}.execution.json')['returncode']==0
+    for name in ('topology_verification.json','functional_verification.json','FF_transition_crosscheck.json'):
+        assert read(folder/name)['status']=='PASS'
+    summary=read(folder/'activity_summary.json')
+    assert sha(folder/'activity.vcd')==summary['VCD']['sha256']
+    for b in read(folder/'simulation_manifest.json')['inputs'].values():
+        assert sha(b['path'])==b['sha256']
+    for b in manifest['executed_sources'].values():
+        assert sha(ROOT/b['path'].removeprefix('repo://'))==b['sha256']
+    all_data=summary['scopes']['all_data']
+    result=dict(design=design,status='QUALIFIED',selected_reference=row['role'],
+        E=all_data['cap_weighted_ff_transitions']['total'],
+        H4=all_data['grids']['4']['cap_peak_per_cycle']['maximum'],
+        H8=all_data['grids']['8']['cap_peak_per_cycle']['maximum'],
+        folder=str(folder),summary=external_binding(folder/'activity_summary.json'),
+        resources=external_binding(folder/'resources.txt'),
+        wall_seconds=read(root/'execution/execution.json')['wall_seconds'],
+        classification='IMPLEMENTATION_REPAIR',repair='Correct adapter lookup from max to frozen maximum field',
+        supersedes=binding(OUT/f'physical/{design}/reference_measurement/result.json'),
+        scientific_metric_change=False,additional_EDA_executions=0)
+    write(OUT/f'physical/{design}/reference_measurement/result_recovered.json',result,immutable=True)
+    print(design,'QUALIFIED_FROM_EXISTING_EVIDENCE',result['E'],result['H4'],result['H8'])
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--design',choices=DESIGNS,required=True)
+    p.add_argument('--recover-receipt',action='store_true')
     args=p.parse_args()
     os.environ.update(PACT_DEPENDENCY_ROOT='/root/pact-deps',PACT_EXPERIMENT_ROOT='/mnt/d/PACT_EXPERIMENTS',
         OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',NUMBA_NUM_THREADS='1',PATH='/usr/bin:'+os.environ['PATH'])
-    run(args.design)
+    (recover if args.recover_receipt else run)(args.design)
 
 
 if __name__=='__main__':
