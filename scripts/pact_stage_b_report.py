@@ -116,12 +116,18 @@ def report(output, public):
                 row.update(routed_wire_overhead_percent=None, routed_budget_pass=None,
                     Stage_A_front_3_objectives='unknown', Stage_A_front_4_objectives='unknown')
             measured.append(row)
+    # Also identify the final frontier after adding every qualified Stage-B point.
+    for row, original in zip(measured, private):
+        peers = [b for b in baseline + private if b['design']==row['design'] and b['status']=='QUALIFIED']
+        for four, key in ((False, 'combined_front_3_objectives'), (True, 'combined_front_4_objectives')):
+            row[key] = ('unknown' if original['status']!='QUALIFIED' else
+                'dominated' if any(dominates(point(b, four), point(original, four)) for b in peers) else 'nondominated')
     status = ('PACT_STAGE_B_MULTI_DESIGN_CONVERGENCE' if len(set(good))==3 else
               'PACT_STAGE_B_PARTIAL_CONVERGENCE' if good else
               'PACT_STAGE_B_ROUTED_ACTIVITY_ADVANCE' if partial else 'PACT_STAGE_B_NO_ADVANCE')
     write_json(output/'private_measured_results.json', private)
     write_json(output/'classification.json', dict(status=status, simultaneous_improvement_designs=sorted(set(good)),
-        partial_improvement_designs=sorted(set(partial)), qualified=sum(r['status']=='QUALIFIED' for r in measured),
+        partial_improvement_designs=sorted(set(partial)-set(good)), qualified=sum(r['status']=='QUALIFIED' for r in measured),
         criteria='Multi-design convergence requires a new measured four-objective Stage-A frontier point per design with E,H4,H8 all strictly lower than routed-best B2/B3T and routed wire within its configured epsilon.'))
     write_csv(public/'search_configuration.csv', searches)
     write_csv(public/'candidate_results.csv', before)
@@ -155,12 +161,18 @@ def report(output, public):
         'Percentages use full precision measured values: 100*(candidate/reference-1). P0 denotes the original frozen balanced representative. Negative deltas improve the corresponding metric.', '', table(pair_view),
         '## 8. Pareto interpretation', '',
         'Both exact frozen Stage-A dominance (wire,E,H8) and the expanded set (wire,E,H4,H8) are shown in comparison.csv and routed_results.csv. Front membership compares every qualified measured Stage-A point, including nonrepresentative P0 points. Unmeasured points remain unknown.', '',
+        'The combined frontier additionally includes every qualified Stage-B selection.', '',
+        table([{k: r[k] for k in ('candidate', 'Stage_A_front_3_objectives', 'Stage_A_front_4_objectives',
+            'combined_front_3_objectives', 'combined_front_4_objectives')} for r in measured]),
         '## 9. Generalization across the three designs', '',
-        'Simultaneous bounded improvements: '+(', '.join(sorted(set(good))) or 'none')+'. Partial E/hotspot improvements: '+(', '.join(sorted(set(partial))) or 'none')+'. All three designs remain included.', '',
+        'Simultaneous bounded improvements: '+(', '.join(sorted(set(good))) or 'none')+'. Designs with only partial E/hotspot improvements: '+(', '.join(sorted(set(partial)-set(good))) or 'none')+'. All three designs remain included.', '',
+        'The success is over retained endpoints, with one fixed method/configuration across designs. s15850 C2, the E winner, improves all three measured activity metrics; its balanced C1 and H4 C3 winners regress measured H4. Thus a balanced scalar alone does not consistently select the successful endpoint. The s15850 gains are modest, and this single seed/workload/physical context does not establish statistical or technology-wide generalization.', '',
         '## 10. Failures and limitations', '',
         'The physical estimate constrains scan edges but measured scan cost contains shared fanout, buffers and routed detours. The stateful activity predictor has bounded logic coverage and a fixed baseline buffer skeleton. Hotspot ties and routing-induced load/location changes can prevent proxy improvements from transferring. Search is local and finite; a negative result does not prove infeasibility. s15850 is retained as the difficult case, with its measured deltas and runtime shown above. No watts, IR-drop or signoff-power claim follows from these switching proxies.', '',
         'The following focused comparison shows whether the selected predicted improvements transferred to the unchanged routed flow; every delta uses its corresponding physical reference.', '',
         table([{k: round(v, 6) if isinstance(v, float) else v for k,v in r.items()} for r in transfer]),
+        'A focused s15850 diagnostic reuses saved per-net/per-cycle counts; it adds no search, route or simulation. B2 and the first two selected candidates have exact waveform agreement on all 2,616 source-identical represented nets. At C1\'s measured H4 peak, the represented contribution is 497.674 fF·transitions and the omitted contribution is 202.295. At B2\'s full-circuit peak they are 476.436 and 203.806. The routed-minus-model capacitance correction at C1\'s peak is -2.594, with zero waveform discrepancy. Thus the full peak regresses even as the maximum over the represented subset improves; incomplete spatial coverage changes which bin/cycle is decisive.', '',
+        'A separate diagnostic adds B2\'s frozen omitted-net bin/cycle background to the unchanged predictor on these saved pairs. For C1, H4 changes from the original prediction of -7.448% to +5.071%, versus measured +2.900%. For C2 it changes from +2.158% to -2.975%, versus measured -3.968%. This recovers both H4 directions without tuning per candidate, but overshoots and does not recover the H8 directions. It is a hypothesis test, not the executed Stage-B method or a qualified replacement. Detailed decompositions and contributors are in s15850_hotspot_diagnostic.csv, s15850_hotspot_contributors.csv and s15850_background_probe.csv.', '',
         '## 11. External/tool bugs encountered', '',
         'No new external repair was required by this Stage-B implementation. The following previously qualified repairs remain frozen Stage-A dependencies; their public pull requests were open and unmerged when checked for this report.', '',
         '| Inherited blocker | Repair branch and upstream status | Scientific semantics |',
@@ -170,8 +182,7 @@ def report(output, public):
         '| Renamed input port alias omitted from exported Verilog | `fix/verilog-input-alias`: [OpenSTA alias PR](https://github.com/The-OpenROAD-Project/OpenSTA/pull/420), open | Corrects serialization direction/connectivity; no scan optimization change. |', '',
         'The qualified backend and its experimental submodule binding were reused without rebuild or retuning. Scientific reproduction receipts and source/configuration hashes stay in private experiment storage; public artifacts contain neutral architecture labels and relative links. Public upstream descriptions, commit messages and patches were checked for local provenance values.', '',
         '## 12. Next action', '',
-        ('Repeat the same frozen method on an additional physical context to test transfer before expanding claims.' if len(set(good))==3 else
-         'Use these selected measured pairs to isolate proxy-to-route error on the resistant design, then test the smallest activity/load or move-operator correction indicated by the failing metrics. Preserve the present measured campaign as its comparator.'), '']
+        'Test an omitted-logic/background correction against all saved s15850 pairs, requiring both H4 and H8 ranking to improve before new physical runs. The fixed-background probe identifies the H4 coverage problem but is insufficient for H8; extend only the relevant omitted logic or candidate-sensitive background indicated by these pairs. Preserve this campaign as the measured comparator.', '']
     (public/'REPORT.md').write_text('\n'.join(lines))
     print(status, 'qualified', sum(r['status']=='QUALIFIED' for r in measured), flush=True)
 

@@ -60,7 +60,10 @@ Public results:
 - `routed_results.csv`: every selected routed/measured outcome.
 - `comparison.csv`: exact deltas and both dominance definitions versus B2/B3T/P0.
 - `prediction_transfer.csv`: proxy-to-measured activity transfer.
-- `stage_a_comparator.csv`: all qualified frozen comparator points.
+- `stage_a_comparator.csv`: all frozen comparator points and qualification statuses.
+- `s15850_hotspot_diagnostic.csv`, `s15850_hotspot_contributors.csv` and
+  `s15850_background_probe.csv`: focused saved-count coverage diagnostics. The
+  background probe is separate from the executed search method.
 - `architectures/` and `inputs/`: portable selected orders and predictor inputs.
 
 The publication branch contains a clean method/results export based on the
