@@ -1,0 +1,10 @@
+{
+  "design": "s38417",
+  "error": "Command failed: /mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_runtime_paths_repaired/s38417/B0/physical/topology/execution.json",
+  "failure_class": "PHYSICAL_BACKEND_FAIL",
+  "generator_status": "PASS",
+  "method": "B0",
+  "source_revision": "supplied_source",
+  "status": "FAILED",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_physical.py\", line 180, in references\n    command=[exe,'-python','-no_init','-exit',ROOT/'scripts/pact_generalization_openroad.py',\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_physical.py\", line 108, in route\n    execute(['/usr/bin/openroad','-python','-no_init','-exit',ROOT/'scripts/phase0d_verify_routed.py',\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_infrastructure.py\", line 59, in execute\n    raise RuntimeError('Command failed: ' + str(receipt))\nRuntimeError: Command failed: /mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_runtime_paths_repaired/s38417/B0/physical/topology/execution.json\n"
+}
