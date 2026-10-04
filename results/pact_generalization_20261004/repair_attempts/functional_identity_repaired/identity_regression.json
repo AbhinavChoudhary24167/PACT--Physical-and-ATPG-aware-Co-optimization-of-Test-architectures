@@ -1,0 +1,1166 @@
+{
+  "FF_count": 1728,
+  "after": "All functional sources proven before resolving FFs by exact instance identity",
+  "before": "Q-net label change beyond a single BUF_X1 alias rejected",
+  "classification": "IMPLEMENTATION_REPAIR",
+  "created_utc": "2026-10-04T13:04:56.340132+00:00",
+  "frozen_gate": "Retain source/physical/ATPG FF identities and functional source/parity",
+  "proof": {
+    "Q_net_renames": {
+      "U_CRC_OUT_1_0": {
+        "placed": "net38",
+        "source": "CRC_OUT_1_0"
+      },
+      "U_CRC_OUT_1_1": {
+        "placed": "net39",
+        "source": "CRC_OUT_1_1"
+      },
+      "U_CRC_OUT_1_10": {
+        "placed": "net40",
+        "source": "CRC_OUT_1_10"
+      },
+      "U_CRC_OUT_1_11": {
+        "placed": "net41",
+        "source": "CRC_OUT_1_11"
+      },
+      "U_CRC_OUT_1_12": {
+        "placed": "net42",
+        "source": "CRC_OUT_1_12"
+      },
+      "U_CRC_OUT_1_13": {
+        "placed": "net43",
+        "source": "CRC_OUT_1_13"
+      },
+      "U_CRC_OUT_1_14": {
+        "placed": "net44",
+        "source": "CRC_OUT_1_14"
+      },
+      "U_CRC_OUT_1_15": {
+        "placed": "net45",
+        "source": "CRC_OUT_1_15"
+      },
+      "U_CRC_OUT_1_16": {
+        "placed": "net46",
+        "source": "CRC_OUT_1_16"
+      },
+      "U_CRC_OUT_1_17": {
+        "placed": "net47",
+        "source": "CRC_OUT_1_17"
+      },
+      "U_CRC_OUT_1_18": {
+        "placed": "net48",
+        "source": "CRC_OUT_1_18"
+      },
+      "U_CRC_OUT_1_19": {
+        "placed": "net49",
+        "source": "CRC_OUT_1_19"
+      },
+      "U_CRC_OUT_1_2": {
+        "placed": "net50",
+        "source": "CRC_OUT_1_2"
+      },
+      "U_CRC_OUT_1_20": {
+        "placed": "net51",
+        "source": "CRC_OUT_1_20"
+      },
+      "U_CRC_OUT_1_21": {
+        "placed": "net52",
+        "source": "CRC_OUT_1_21"
+      },
+      "U_CRC_OUT_1_22": {
+        "placed": "net53",
+        "source": "CRC_OUT_1_22"
+      },
+      "U_CRC_OUT_1_23": {
+        "placed": "net54",
+        "source": "CRC_OUT_1_23"
+      },
+      "U_CRC_OUT_1_24": {
+        "placed": "net55",
+        "source": "CRC_OUT_1_24"
+      },
+      "U_CRC_OUT_1_25": {
+        "placed": "net56",
+        "source": "CRC_OUT_1_25"
+      },
+      "U_CRC_OUT_1_26": {
+        "placed": "net57",
+        "source": "CRC_OUT_1_26"
+      },
+      "U_CRC_OUT_1_27": {
+        "placed": "net58",
+        "source": "CRC_OUT_1_27"
+      },
+      "U_CRC_OUT_1_28": {
+        "placed": "net59",
+        "source": "CRC_OUT_1_28"
+      },
+      "U_CRC_OUT_1_29": {
+        "placed": "net60",
+        "source": "CRC_OUT_1_29"
+      },
+      "U_CRC_OUT_1_3": {
+        "placed": "net61",
+        "source": "CRC_OUT_1_3"
+      },
+      "U_CRC_OUT_1_30": {
+        "placed": "net62",
+        "source": "CRC_OUT_1_30"
+      },
+      "U_CRC_OUT_1_4": {
+        "placed": "net63",
+        "source": "CRC_OUT_1_4"
+      },
+      "U_CRC_OUT_1_5": {
+        "placed": "net64",
+        "source": "CRC_OUT_1_5"
+      },
+      "U_CRC_OUT_1_6": {
+        "placed": "net65",
+        "source": "CRC_OUT_1_6"
+      },
+      "U_CRC_OUT_1_7": {
+        "placed": "net66",
+        "source": "CRC_OUT_1_7"
+      },
+      "U_CRC_OUT_1_8": {
+        "placed": "net67",
+        "source": "CRC_OUT_1_8"
+      },
+      "U_CRC_OUT_1_9": {
+        "placed": "net68",
+        "source": "CRC_OUT_1_9"
+      },
+      "U_CRC_OUT_2_0": {
+        "placed": "net69",
+        "source": "CRC_OUT_2_0"
+      },
+      "U_CRC_OUT_2_1": {
+        "placed": "net70",
+        "source": "CRC_OUT_2_1"
+      },
+      "U_CRC_OUT_2_10": {
+        "placed": "net71",
+        "source": "CRC_OUT_2_10"
+      },
+      "U_CRC_OUT_2_11": {
+        "placed": "net72",
+        "source": "CRC_OUT_2_11"
+      },
+      "U_CRC_OUT_2_12": {
+        "placed": "net73",
+        "source": "CRC_OUT_2_12"
+      },
+      "U_CRC_OUT_2_13": {
+        "placed": "net74",
+        "source": "CRC_OUT_2_13"
+      },
+      "U_CRC_OUT_2_14": {
+        "placed": "net75",
+        "source": "CRC_OUT_2_14"
+      },
+      "U_CRC_OUT_2_15": {
+        "placed": "net76",
+        "source": "CRC_OUT_2_15"
+      },
+      "U_CRC_OUT_2_16": {
+        "placed": "net77",
+        "source": "CRC_OUT_2_16"
+      },
+      "U_CRC_OUT_2_17": {
+        "placed": "net78",
+        "source": "CRC_OUT_2_17"
+      },
+      "U_CRC_OUT_2_18": {
+        "placed": "net79",
+        "source": "CRC_OUT_2_18"
+      },
+      "U_CRC_OUT_2_19": {
+        "placed": "net80",
+        "source": "CRC_OUT_2_19"
+      },
+      "U_CRC_OUT_2_2": {
+        "placed": "net81",
+        "source": "CRC_OUT_2_2"
+      },
+      "U_CRC_OUT_2_20": {
+        "placed": "net82",
+        "source": "CRC_OUT_2_20"
+      },
+      "U_CRC_OUT_2_21": {
+        "placed": "net83",
+        "source": "CRC_OUT_2_21"
+      },
+      "U_CRC_OUT_2_22": {
+        "placed": "net84",
+        "source": "CRC_OUT_2_22"
+      },
+      "U_CRC_OUT_2_23": {
+        "placed": "net85",
+        "source": "CRC_OUT_2_23"
+      },
+      "U_CRC_OUT_2_24": {
+        "placed": "net86",
+        "source": "CRC_OUT_2_24"
+      },
+      "U_CRC_OUT_2_25": {
+        "placed": "net87",
+        "source": "CRC_OUT_2_25"
+      },
+      "U_CRC_OUT_2_26": {
+        "placed": "net88",
+        "source": "CRC_OUT_2_26"
+      },
+      "U_CRC_OUT_2_27": {
+        "placed": "net89",
+        "source": "CRC_OUT_2_27"
+      },
+      "U_CRC_OUT_2_28": {
+        "placed": "net90",
+        "source": "CRC_OUT_2_28"
+      },
+      "U_CRC_OUT_2_29": {
+        "placed": "net91",
+        "source": "CRC_OUT_2_29"
+      },
+      "U_CRC_OUT_2_3": {
+        "placed": "net92",
+        "source": "CRC_OUT_2_3"
+      },
+      "U_CRC_OUT_2_30": {
+        "placed": "net93",
+        "source": "CRC_OUT_2_30"
+      },
+      "U_CRC_OUT_2_31": {
+        "placed": "net94",
+        "source": "FE_OFN1_CRC_OUT_2_31"
+      },
+      "U_CRC_OUT_2_4": {
+        "placed": "net95",
+        "source": "CRC_OUT_2_4"
+      },
+      "U_CRC_OUT_2_5": {
+        "placed": "net96",
+        "source": "CRC_OUT_2_5"
+      },
+      "U_CRC_OUT_2_6": {
+        "placed": "net97",
+        "source": "CRC_OUT_2_6"
+      },
+      "U_CRC_OUT_2_7": {
+        "placed": "net98",
+        "source": "CRC_OUT_2_7"
+      },
+      "U_CRC_OUT_2_8": {
+        "placed": "net99",
+        "source": "CRC_OUT_2_8"
+      },
+      "U_CRC_OUT_2_9": {
+        "placed": "net100",
+        "source": "CRC_OUT_2_9"
+      },
+      "U_CRC_OUT_3_0": {
+        "placed": "net101",
+        "source": "CRC_OUT_3_0"
+      },
+      "U_CRC_OUT_3_1": {
+        "placed": "net102",
+        "source": "CRC_OUT_3_1"
+      },
+      "U_CRC_OUT_3_10": {
+        "placed": "net103",
+        "source": "CRC_OUT_3_10"
+      },
+      "U_CRC_OUT_3_11": {
+        "placed": "net104",
+        "source": "CRC_OUT_3_11"
+      },
+      "U_CRC_OUT_3_12": {
+        "placed": "net105",
+        "source": "CRC_OUT_3_12"
+      },
+      "U_CRC_OUT_3_13": {
+        "placed": "net106",
+        "source": "CRC_OUT_3_13"
+      },
+      "U_CRC_OUT_3_14": {
+        "placed": "net107",
+        "source": "CRC_OUT_3_14"
+      },
+      "U_CRC_OUT_3_15": {
+        "placed": "net108",
+        "source": "CRC_OUT_3_15"
+      },
+      "U_CRC_OUT_3_16": {
+        "placed": "net109",
+        "source": "CRC_OUT_3_16"
+      },
+      "U_CRC_OUT_3_17": {
+        "placed": "net110",
+        "source": "CRC_OUT_3_17"
+      },
+      "U_CRC_OUT_3_18": {
+        "placed": "net111",
+        "source": "CRC_OUT_3_18"
+      },
+      "U_CRC_OUT_3_19": {
+        "placed": "net112",
+        "source": "CRC_OUT_3_19"
+      },
+      "U_CRC_OUT_3_2": {
+        "placed": "net113",
+        "source": "CRC_OUT_3_2"
+      },
+      "U_CRC_OUT_3_20": {
+        "placed": "net114",
+        "source": "CRC_OUT_3_20"
+      },
+      "U_CRC_OUT_3_21": {
+        "placed": "net115",
+        "source": "CRC_OUT_3_21"
+      },
+      "U_CRC_OUT_3_22": {
+        "placed": "net116",
+        "source": "CRC_OUT_3_22"
+      },
+      "U_CRC_OUT_3_23": {
+        "placed": "net117",
+        "source": "CRC_OUT_3_23"
+      },
+      "U_CRC_OUT_3_24": {
+        "placed": "net118",
+        "source": "CRC_OUT_3_24"
+      },
+      "U_CRC_OUT_3_25": {
+        "placed": "net119",
+        "source": "CRC_OUT_3_25"
+      },
+      "U_CRC_OUT_3_26": {
+        "placed": "net120",
+        "source": "CRC_OUT_3_26"
+      },
+      "U_CRC_OUT_3_27": {
+        "placed": "net121",
+        "source": "CRC_OUT_3_27"
+      },
+      "U_CRC_OUT_3_28": {
+        "placed": "net122",
+        "source": "CRC_OUT_3_28"
+      },
+      "U_CRC_OUT_3_29": {
+        "placed": "net123",
+        "source": "CRC_OUT_3_29"
+      },
+      "U_CRC_OUT_3_3": {
+        "placed": "net124",
+        "source": "CRC_OUT_3_3"
+      },
+      "U_CRC_OUT_3_30": {
+        "placed": "net125",
+        "source": "CRC_OUT_3_30"
+      },
+      "U_CRC_OUT_3_31": {
+        "placed": "net126",
+        "source": "FE_OFN2_CRC_OUT_3_31"
+      },
+      "U_CRC_OUT_3_4": {
+        "placed": "net127",
+        "source": "CRC_OUT_3_4"
+      },
+      "U_CRC_OUT_3_5": {
+        "placed": "net128",
+        "source": "CRC_OUT_3_5"
+      },
+      "U_CRC_OUT_3_6": {
+        "placed": "net129",
+        "source": "CRC_OUT_3_6"
+      },
+      "U_CRC_OUT_3_7": {
+        "placed": "net130",
+        "source": "CRC_OUT_3_7"
+      },
+      "U_CRC_OUT_3_8": {
+        "placed": "net131",
+        "source": "CRC_OUT_3_8"
+      },
+      "U_CRC_OUT_3_9": {
+        "placed": "net132",
+        "source": "CRC_OUT_3_9"
+      },
+      "U_CRC_OUT_4_0": {
+        "placed": "net133",
+        "source": "CRC_OUT_4_0"
+      },
+      "U_CRC_OUT_4_1": {
+        "placed": "net134",
+        "source": "CRC_OUT_4_1"
+      },
+      "U_CRC_OUT_4_10": {
+        "placed": "net135",
+        "source": "CRC_OUT_4_10"
+      },
+      "U_CRC_OUT_4_11": {
+        "placed": "net136",
+        "source": "CRC_OUT_4_11"
+      },
+      "U_CRC_OUT_4_12": {
+        "placed": "net137",
+        "source": "CRC_OUT_4_12"
+      },
+      "U_CRC_OUT_4_13": {
+        "placed": "net138",
+        "source": "CRC_OUT_4_13"
+      },
+      "U_CRC_OUT_4_14": {
+        "placed": "net139",
+        "source": "CRC_OUT_4_14"
+      },
+      "U_CRC_OUT_4_15": {
+        "placed": "net140",
+        "source": "CRC_OUT_4_15"
+      },
+      "U_CRC_OUT_4_16": {
+        "placed": "net141",
+        "source": "CRC_OUT_4_16"
+      },
+      "U_CRC_OUT_4_17": {
+        "placed": "net142",
+        "source": "CRC_OUT_4_17"
+      },
+      "U_CRC_OUT_4_18": {
+        "placed": "net143",
+        "source": "CRC_OUT_4_18"
+      },
+      "U_CRC_OUT_4_19": {
+        "placed": "net144",
+        "source": "CRC_OUT_4_19"
+      },
+      "U_CRC_OUT_4_2": {
+        "placed": "net145",
+        "source": "CRC_OUT_4_2"
+      },
+      "U_CRC_OUT_4_20": {
+        "placed": "net146",
+        "source": "CRC_OUT_4_20"
+      },
+      "U_CRC_OUT_4_21": {
+        "placed": "net147",
+        "source": "CRC_OUT_4_21"
+      },
+      "U_CRC_OUT_4_22": {
+        "placed": "net148",
+        "source": "CRC_OUT_4_22"
+      },
+      "U_CRC_OUT_4_23": {
+        "placed": "net149",
+        "source": "CRC_OUT_4_23"
+      },
+      "U_CRC_OUT_4_24": {
+        "placed": "net150",
+        "source": "CRC_OUT_4_24"
+      },
+      "U_CRC_OUT_4_25": {
+        "placed": "net151",
+        "source": "CRC_OUT_4_25"
+      },
+      "U_CRC_OUT_4_26": {
+        "placed": "net152",
+        "source": "CRC_OUT_4_26"
+      },
+      "U_CRC_OUT_4_27": {
+        "placed": "net153",
+        "source": "CRC_OUT_4_27"
+      },
+      "U_CRC_OUT_4_28": {
+        "placed": "net154",
+        "source": "CRC_OUT_4_28"
+      },
+      "U_CRC_OUT_4_29": {
+        "placed": "net155",
+        "source": "CRC_OUT_4_29"
+      },
+      "U_CRC_OUT_4_3": {
+        "placed": "net156",
+        "source": "CRC_OUT_4_3"
+      },
+      "U_CRC_OUT_4_30": {
+        "placed": "net157",
+        "source": "CRC_OUT_4_30"
+      },
+      "U_CRC_OUT_4_31": {
+        "placed": "net158",
+        "source": "CRC_OUT_4_31"
+      },
+      "U_CRC_OUT_4_4": {
+        "placed": "net159",
+        "source": "CRC_OUT_4_4"
+      },
+      "U_CRC_OUT_4_5": {
+        "placed": "net160",
+        "source": "CRC_OUT_4_5"
+      },
+      "U_CRC_OUT_4_6": {
+        "placed": "net161",
+        "source": "CRC_OUT_4_6"
+      },
+      "U_CRC_OUT_4_7": {
+        "placed": "net162",
+        "source": "CRC_OUT_4_7"
+      },
+      "U_CRC_OUT_4_8": {
+        "placed": "net163",
+        "source": "CRC_OUT_4_8"
+      },
+      "U_CRC_OUT_4_9": {
+        "placed": "net164",
+        "source": "CRC_OUT_4_9"
+      },
+      "U_CRC_OUT_5_0": {
+        "placed": "net165",
+        "source": "CRC_OUT_5_0"
+      },
+      "U_CRC_OUT_5_1": {
+        "placed": "net166",
+        "source": "CRC_OUT_5_1"
+      },
+      "U_CRC_OUT_5_10": {
+        "placed": "net167",
+        "source": "CRC_OUT_5_10"
+      },
+      "U_CRC_OUT_5_11": {
+        "placed": "net168",
+        "source": "CRC_OUT_5_11"
+      },
+      "U_CRC_OUT_5_12": {
+        "placed": "net169",
+        "source": "CRC_OUT_5_12"
+      },
+      "U_CRC_OUT_5_13": {
+        "placed": "net170",
+        "source": "CRC_OUT_5_13"
+      },
+      "U_CRC_OUT_5_14": {
+        "placed": "net171",
+        "source": "CRC_OUT_5_14"
+      },
+      "U_CRC_OUT_5_15": {
+        "placed": "net172",
+        "source": "CRC_OUT_5_15"
+      },
+      "U_CRC_OUT_5_16": {
+        "placed": "net173",
+        "source": "CRC_OUT_5_16"
+      },
+      "U_CRC_OUT_5_17": {
+        "placed": "net174",
+        "source": "CRC_OUT_5_17"
+      },
+      "U_CRC_OUT_5_18": {
+        "placed": "net175",
+        "source": "CRC_OUT_5_18"
+      },
+      "U_CRC_OUT_5_19": {
+        "placed": "net176",
+        "source": "CRC_OUT_5_19"
+      },
+      "U_CRC_OUT_5_2": {
+        "placed": "net177",
+        "source": "CRC_OUT_5_2"
+      },
+      "U_CRC_OUT_5_20": {
+        "placed": "net178",
+        "source": "CRC_OUT_5_20"
+      },
+      "U_CRC_OUT_5_21": {
+        "placed": "net179",
+        "source": "CRC_OUT_5_21"
+      },
+      "U_CRC_OUT_5_22": {
+        "placed": "net180",
+        "source": "CRC_OUT_5_22"
+      },
+      "U_CRC_OUT_5_23": {
+        "placed": "net181",
+        "source": "CRC_OUT_5_23"
+      },
+      "U_CRC_OUT_5_24": {
+        "placed": "net182",
+        "source": "CRC_OUT_5_24"
+      },
+      "U_CRC_OUT_5_25": {
+        "placed": "net183",
+        "source": "CRC_OUT_5_25"
+      },
+      "U_CRC_OUT_5_26": {
+        "placed": "net184",
+        "source": "CRC_OUT_5_26"
+      },
+      "U_CRC_OUT_5_27": {
+        "placed": "net185",
+        "source": "CRC_OUT_5_27"
+      },
+      "U_CRC_OUT_5_28": {
+        "placed": "net186",
+        "source": "CRC_OUT_5_28"
+      },
+      "U_CRC_OUT_5_29": {
+        "placed": "net187",
+        "source": "CRC_OUT_5_29"
+      },
+      "U_CRC_OUT_5_3": {
+        "placed": "net188",
+        "source": "CRC_OUT_5_3"
+      },
+      "U_CRC_OUT_5_30": {
+        "placed": "net189",
+        "source": "CRC_OUT_5_30"
+      },
+      "U_CRC_OUT_5_31": {
+        "placed": "net190",
+        "source": "CRC_OUT_5_31"
+      },
+      "U_CRC_OUT_5_4": {
+        "placed": "net191",
+        "source": "CRC_OUT_5_4"
+      },
+      "U_CRC_OUT_5_5": {
+        "placed": "net192",
+        "source": "CRC_OUT_5_5"
+      },
+      "U_CRC_OUT_5_6": {
+        "placed": "net193",
+        "source": "CRC_OUT_5_6"
+      },
+      "U_CRC_OUT_5_7": {
+        "placed": "net194",
+        "source": "CRC_OUT_5_7"
+      },
+      "U_CRC_OUT_5_8": {
+        "placed": "net195",
+        "source": "CRC_OUT_5_8"
+      },
+      "U_CRC_OUT_5_9": {
+        "placed": "net196",
+        "source": "CRC_OUT_5_9"
+      },
+      "U_CRC_OUT_6_0": {
+        "placed": "net197",
+        "source": "CRC_OUT_6_0"
+      },
+      "U_CRC_OUT_6_1": {
+        "placed": "net198",
+        "source": "CRC_OUT_6_1"
+      },
+      "U_CRC_OUT_6_10": {
+        "placed": "net199",
+        "source": "CRC_OUT_6_10"
+      },
+      "U_CRC_OUT_6_11": {
+        "placed": "net200",
+        "source": "CRC_OUT_6_11"
+      },
+      "U_CRC_OUT_6_12": {
+        "placed": "net201",
+        "source": "CRC_OUT_6_12"
+      },
+      "U_CRC_OUT_6_13": {
+        "placed": "net202",
+        "source": "CRC_OUT_6_13"
+      },
+      "U_CRC_OUT_6_14": {
+        "placed": "net203",
+        "source": "CRC_OUT_6_14"
+      },
+      "U_CRC_OUT_6_15": {
+        "placed": "net204",
+        "source": "CRC_OUT_6_15"
+      },
+      "U_CRC_OUT_6_16": {
+        "placed": "net205",
+        "source": "CRC_OUT_6_16"
+      },
+      "U_CRC_OUT_6_17": {
+        "placed": "net206",
+        "source": "CRC_OUT_6_17"
+      },
+      "U_CRC_OUT_6_18": {
+        "placed": "net207",
+        "source": "CRC_OUT_6_18"
+      },
+      "U_CRC_OUT_6_19": {
+        "placed": "net208",
+        "source": "CRC_OUT_6_19"
+      },
+      "U_CRC_OUT_6_2": {
+        "placed": "net209",
+        "source": "CRC_OUT_6_2"
+      },
+      "U_CRC_OUT_6_20": {
+        "placed": "net210",
+        "source": "CRC_OUT_6_20"
+      },
+      "U_CRC_OUT_6_21": {
+        "placed": "net211",
+        "source": "CRC_OUT_6_21"
+      },
+      "U_CRC_OUT_6_22": {
+        "placed": "net212",
+        "source": "CRC_OUT_6_22"
+      },
+      "U_CRC_OUT_6_23": {
+        "placed": "net213",
+        "source": "CRC_OUT_6_23"
+      },
+      "U_CRC_OUT_6_24": {
+        "placed": "net214",
+        "source": "CRC_OUT_6_24"
+      },
+      "U_CRC_OUT_6_25": {
+        "placed": "net215",
+        "source": "CRC_OUT_6_25"
+      },
+      "U_CRC_OUT_6_26": {
+        "placed": "net216",
+        "source": "CRC_OUT_6_26"
+      },
+      "U_CRC_OUT_6_27": {
+        "placed": "net217",
+        "source": "CRC_OUT_6_27"
+      },
+      "U_CRC_OUT_6_28": {
+        "placed": "net218",
+        "source": "CRC_OUT_6_28"
+      },
+      "U_CRC_OUT_6_29": {
+        "placed": "net219",
+        "source": "CRC_OUT_6_29"
+      },
+      "U_CRC_OUT_6_3": {
+        "placed": "net220",
+        "source": "CRC_OUT_6_3"
+      },
+      "U_CRC_OUT_6_30": {
+        "placed": "net221",
+        "source": "CRC_OUT_6_30"
+      },
+      "U_CRC_OUT_6_31": {
+        "placed": "net222",
+        "source": "FE_OFN5_CRC_OUT_6_31"
+      },
+      "U_CRC_OUT_6_4": {
+        "placed": "net223",
+        "source": "CRC_OUT_6_4"
+      },
+      "U_CRC_OUT_6_5": {
+        "placed": "net224",
+        "source": "CRC_OUT_6_5"
+      },
+      "U_CRC_OUT_6_6": {
+        "placed": "net225",
+        "source": "CRC_OUT_6_6"
+      },
+      "U_CRC_OUT_6_7": {
+        "placed": "net226",
+        "source": "CRC_OUT_6_7"
+      },
+      "U_CRC_OUT_6_8": {
+        "placed": "net227",
+        "source": "CRC_OUT_6_8"
+      },
+      "U_CRC_OUT_6_9": {
+        "placed": "net228",
+        "source": "CRC_OUT_6_9"
+      },
+      "U_CRC_OUT_7_0": {
+        "placed": "net229",
+        "source": "CRC_OUT_7_0"
+      },
+      "U_CRC_OUT_7_1": {
+        "placed": "net230",
+        "source": "CRC_OUT_7_1"
+      },
+      "U_CRC_OUT_7_10": {
+        "placed": "net231",
+        "source": "CRC_OUT_7_10"
+      },
+      "U_CRC_OUT_7_11": {
+        "placed": "net232",
+        "source": "CRC_OUT_7_11"
+      },
+      "U_CRC_OUT_7_12": {
+        "placed": "net233",
+        "source": "CRC_OUT_7_12"
+      },
+      "U_CRC_OUT_7_13": {
+        "placed": "net234",
+        "source": "CRC_OUT_7_13"
+      },
+      "U_CRC_OUT_7_14": {
+        "placed": "net235",
+        "source": "CRC_OUT_7_14"
+      },
+      "U_CRC_OUT_7_15": {
+        "placed": "net236",
+        "source": "CRC_OUT_7_15"
+      },
+      "U_CRC_OUT_7_16": {
+        "placed": "net237",
+        "source": "CRC_OUT_7_16"
+      },
+      "U_CRC_OUT_7_17": {
+        "placed": "net238",
+        "source": "CRC_OUT_7_17"
+      },
+      "U_CRC_OUT_7_18": {
+        "placed": "net239",
+        "source": "CRC_OUT_7_18"
+      },
+      "U_CRC_OUT_7_19": {
+        "placed": "net240",
+        "source": "CRC_OUT_7_19"
+      },
+      "U_CRC_OUT_7_2": {
+        "placed": "net241",
+        "source": "CRC_OUT_7_2"
+      },
+      "U_CRC_OUT_7_20": {
+        "placed": "net242",
+        "source": "CRC_OUT_7_20"
+      },
+      "U_CRC_OUT_7_21": {
+        "placed": "net243",
+        "source": "CRC_OUT_7_21"
+      },
+      "U_CRC_OUT_7_22": {
+        "placed": "net244",
+        "source": "CRC_OUT_7_22"
+      },
+      "U_CRC_OUT_7_23": {
+        "placed": "net245",
+        "source": "CRC_OUT_7_23"
+      },
+      "U_CRC_OUT_7_24": {
+        "placed": "net246",
+        "source": "CRC_OUT_7_24"
+      },
+      "U_CRC_OUT_7_25": {
+        "placed": "net247",
+        "source": "CRC_OUT_7_25"
+      },
+      "U_CRC_OUT_7_26": {
+        "placed": "net248",
+        "source": "CRC_OUT_7_26"
+      },
+      "U_CRC_OUT_7_27": {
+        "placed": "net249",
+        "source": "CRC_OUT_7_27"
+      },
+      "U_CRC_OUT_7_28": {
+        "placed": "net250",
+        "source": "CRC_OUT_7_28"
+      },
+      "U_CRC_OUT_7_29": {
+        "placed": "net251",
+        "source": "CRC_OUT_7_29"
+      },
+      "U_CRC_OUT_7_3": {
+        "placed": "net252",
+        "source": "CRC_OUT_7_3"
+      },
+      "U_CRC_OUT_7_30": {
+        "placed": "net253",
+        "source": "CRC_OUT_7_30"
+      },
+      "U_CRC_OUT_7_31": {
+        "placed": "net254",
+        "source": "FE_OFN6_CRC_OUT_7_31"
+      },
+      "U_CRC_OUT_7_4": {
+        "placed": "net255",
+        "source": "CRC_OUT_7_4"
+      },
+      "U_CRC_OUT_7_5": {
+        "placed": "net256",
+        "source": "CRC_OUT_7_5"
+      },
+      "U_CRC_OUT_7_6": {
+        "placed": "net257",
+        "source": "CRC_OUT_7_6"
+      },
+      "U_CRC_OUT_7_7": {
+        "placed": "net258",
+        "source": "CRC_OUT_7_7"
+      },
+      "U_CRC_OUT_7_8": {
+        "placed": "net259",
+        "source": "CRC_OUT_7_8"
+      },
+      "U_CRC_OUT_7_9": {
+        "placed": "net260",
+        "source": "CRC_OUT_7_9"
+      },
+      "U_CRC_OUT_8_0": {
+        "placed": "net261",
+        "source": "CRC_OUT_8_0"
+      },
+      "U_CRC_OUT_8_1": {
+        "placed": "net262",
+        "source": "CRC_OUT_8_1"
+      },
+      "U_CRC_OUT_8_10": {
+        "placed": "net263",
+        "source": "CRC_OUT_8_10"
+      },
+      "U_CRC_OUT_8_11": {
+        "placed": "net264",
+        "source": "CRC_OUT_8_11"
+      },
+      "U_CRC_OUT_8_12": {
+        "placed": "net265",
+        "source": "CRC_OUT_8_12"
+      },
+      "U_CRC_OUT_8_13": {
+        "placed": "net266",
+        "source": "CRC_OUT_8_13"
+      },
+      "U_CRC_OUT_8_14": {
+        "placed": "net267",
+        "source": "CRC_OUT_8_14"
+      },
+      "U_CRC_OUT_8_15": {
+        "placed": "net268",
+        "source": "CRC_OUT_8_15"
+      },
+      "U_CRC_OUT_8_16": {
+        "placed": "net269",
+        "source": "CRC_OUT_8_16"
+      },
+      "U_CRC_OUT_8_17": {
+        "placed": "net270",
+        "source": "CRC_OUT_8_17"
+      },
+      "U_CRC_OUT_8_18": {
+        "placed": "net271",
+        "source": "CRC_OUT_8_18"
+      },
+      "U_CRC_OUT_8_19": {
+        "placed": "net272",
+        "source": "CRC_OUT_8_19"
+      },
+      "U_CRC_OUT_8_2": {
+        "placed": "net273",
+        "source": "CRC_OUT_8_2"
+      },
+      "U_CRC_OUT_8_20": {
+        "placed": "net274",
+        "source": "CRC_OUT_8_20"
+      },
+      "U_CRC_OUT_8_21": {
+        "placed": "net275",
+        "source": "CRC_OUT_8_21"
+      },
+      "U_CRC_OUT_8_22": {
+        "placed": "net276",
+        "source": "CRC_OUT_8_22"
+      },
+      "U_CRC_OUT_8_23": {
+        "placed": "net277",
+        "source": "CRC_OUT_8_23"
+      },
+      "U_CRC_OUT_8_24": {
+        "placed": "net278",
+        "source": "CRC_OUT_8_24"
+      },
+      "U_CRC_OUT_8_25": {
+        "placed": "net279",
+        "source": "CRC_OUT_8_25"
+      },
+      "U_CRC_OUT_8_26": {
+        "placed": "net280",
+        "source": "CRC_OUT_8_26"
+      },
+      "U_CRC_OUT_8_27": {
+        "placed": "net281",
+        "source": "CRC_OUT_8_27"
+      },
+      "U_CRC_OUT_8_28": {
+        "placed": "net282",
+        "source": "CRC_OUT_8_28"
+      },
+      "U_CRC_OUT_8_29": {
+        "placed": "net283",
+        "source": "CRC_OUT_8_29"
+      },
+      "U_CRC_OUT_8_3": {
+        "placed": "net284",
+        "source": "CRC_OUT_8_3"
+      },
+      "U_CRC_OUT_8_30": {
+        "placed": "net285",
+        "source": "CRC_OUT_8_30"
+      },
+      "U_CRC_OUT_8_31": {
+        "placed": "net286",
+        "source": "FE_OFN7_CRC_OUT_8_31"
+      },
+      "U_CRC_OUT_8_4": {
+        "placed": "net287",
+        "source": "CRC_OUT_8_4"
+      },
+      "U_CRC_OUT_8_5": {
+        "placed": "net288",
+        "source": "CRC_OUT_8_5"
+      },
+      "U_CRC_OUT_8_6": {
+        "placed": "net289",
+        "source": "CRC_OUT_8_6"
+      },
+      "U_CRC_OUT_8_7": {
+        "placed": "net290",
+        "source": "CRC_OUT_8_7"
+      },
+      "U_CRC_OUT_8_8": {
+        "placed": "net291",
+        "source": "CRC_OUT_8_8"
+      },
+      "U_CRC_OUT_8_9": {
+        "placed": "net292",
+        "source": "CRC_OUT_8_9"
+      },
+      "U_CRC_OUT_9_0": {
+        "placed": "net293",
+        "source": "CRC_OUT_9_0"
+      },
+      "U_CRC_OUT_9_1": {
+        "placed": "net294",
+        "source": "CRC_OUT_9_1"
+      },
+      "U_CRC_OUT_9_10": {
+        "placed": "net295",
+        "source": "CRC_OUT_9_10"
+      },
+      "U_CRC_OUT_9_11": {
+        "placed": "net296",
+        "source": "CRC_OUT_9_11"
+      },
+      "U_CRC_OUT_9_12": {
+        "placed": "net297",
+        "source": "CRC_OUT_9_12"
+      },
+      "U_CRC_OUT_9_13": {
+        "placed": "net298",
+        "source": "CRC_OUT_9_13"
+      },
+      "U_CRC_OUT_9_14": {
+        "placed": "net299",
+        "source": "CRC_OUT_9_14"
+      },
+      "U_CRC_OUT_9_15": {
+        "placed": "net300",
+        "source": "CRC_OUT_9_15"
+      },
+      "U_CRC_OUT_9_16": {
+        "placed": "net301",
+        "source": "CRC_OUT_9_16"
+      },
+      "U_CRC_OUT_9_17": {
+        "placed": "net302",
+        "source": "CRC_OUT_9_17"
+      },
+      "U_CRC_OUT_9_18": {
+        "placed": "net303",
+        "source": "CRC_OUT_9_18"
+      },
+      "U_CRC_OUT_9_19": {
+        "placed": "net304",
+        "source": "CRC_OUT_9_19"
+      },
+      "U_CRC_OUT_9_2": {
+        "placed": "net305",
+        "source": "CRC_OUT_9_2"
+      },
+      "U_CRC_OUT_9_20": {
+        "placed": "net306",
+        "source": "CRC_OUT_9_20"
+      },
+      "U_CRC_OUT_9_21": {
+        "placed": "net307",
+        "source": "CRC_OUT_9_21"
+      },
+      "U_CRC_OUT_9_22": {
+        "placed": "net308",
+        "source": "CRC_OUT_9_22"
+      },
+      "U_CRC_OUT_9_23": {
+        "placed": "net309",
+        "source": "CRC_OUT_9_23"
+      },
+      "U_CRC_OUT_9_24": {
+        "placed": "net310",
+        "source": "CRC_OUT_9_24"
+      },
+      "U_CRC_OUT_9_25": {
+        "placed": "net311",
+        "source": "CRC_OUT_9_25"
+      },
+      "U_CRC_OUT_9_26": {
+        "placed": "net312",
+        "source": "CRC_OUT_9_26"
+      },
+      "U_CRC_OUT_9_27": {
+        "placed": "net313",
+        "source": "CRC_OUT_9_27"
+      },
+      "U_CRC_OUT_9_28": {
+        "placed": "net314",
+        "source": "CRC_OUT_9_28"
+      },
+      "U_CRC_OUT_9_29": {
+        "placed": "net315",
+        "source": "CRC_OUT_9_29"
+      },
+      "U_CRC_OUT_9_3": {
+        "placed": "net316",
+        "source": "CRC_OUT_9_3"
+      },
+      "U_CRC_OUT_9_30": {
+        "placed": "net317",
+        "source": "CRC_OUT_9_30"
+      },
+      "U_CRC_OUT_9_31": {
+        "placed": "net318",
+        "source": "CRC_OUT_9_31"
+      },
+      "U_CRC_OUT_9_4": {
+        "placed": "net319",
+        "source": "CRC_OUT_9_4"
+      },
+      "U_CRC_OUT_9_5": {
+        "placed": "net320",
+        "source": "CRC_OUT_9_5"
+      },
+      "U_CRC_OUT_9_6": {
+        "placed": "net321",
+        "source": "CRC_OUT_9_6"
+      },
+      "U_CRC_OUT_9_7": {
+        "placed": "net322",
+        "source": "CRC_OUT_9_7"
+      },
+      "U_CRC_OUT_9_8": {
+        "placed": "net323",
+        "source": "CRC_OUT_9_8"
+      },
+      "U_CRC_OUT_9_9": {
+        "placed": "net324",
+        "source": "CRC_OUT_9_9"
+      }
+    },
+    "functional_sinks_and_outputs": 31541,
+    "placed": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s35932/placed.v",
+    "rule": "Exact source identity and inversion parity through buffers/inverters; identical nontransparent function families",
+    "source": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s35932/compatible.v",
+    "status": "PASS"
+  },
+  "scientific_method_change": false
+}

@@ -142,7 +142,15 @@ def references(design):
     folder.mkdir(parents=True,exist_ok=True)
     patterns=Path(preparation['patterns']['path'])
     source=Path(preparation['source']['path'])
-    identity,aliases=phase0b_ff_identity_map(source,Path(preparation['placed_netlist']['path']),parse_fan_pat(patterns))
+    try:
+        identity,aliases=phase0b_ff_identity_map(source,Path(preparation['placed_netlist']['path']),parse_fan_pat(patterns))
+    except ValueError:
+        from pact_generalization_identity import identity_map
+        identity,proof=identity_map(patterns.parent/'compatible.v',Path(preparation['placed_netlist']['path']),
+            parse_fan_pat(patterns),LIB)
+        aliases=dict(classification='IMPLEMENTATION_REPAIR',
+            repair='Prove every functional source/parity and FF inventory before accepting Q-net renames',
+            proof=proof,scientific_method_change=False)
     write(folder/'ff_identity_map.json',dict(records=identity,transparent_aliases=aliases),immutable=True)
     cells=extract_def_scan_cells(Path(preparation['placed_def']['path']),[r['physical_instance'] for r in identity],'CK')
     input_folder=patterns.parent
@@ -210,7 +218,7 @@ def main():
     global ATTEMPT
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--design',choices=DESIGNS)
-    p.add_argument('--attempt',choices=('runtime_paths_repaired',))
+    p.add_argument('--attempt',choices=('runtime_paths_repaired','functional_identity_repaired'))
     args=p.parse_args()
     ATTEMPT=args.attempt or ''
     os.environ.update(PACT_DEPENDENCY_ROOT='/root/pact-deps',PACT_EXPERIMENT_ROOT='/mnt/d/PACT_EXPERIMENTS',
