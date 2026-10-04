@@ -1,0 +1,28 @@
+{
+  "CPU_seconds": 1395.3409760000002,
+  "VCD_complete": false,
+  "architecture_sha256": "0a1d92a059887ded69b21674089374171237efcd72c1034949bfc6b0a3076852",
+  "created_utc": "2026-10-04T18:45:25.319628+00:00",
+  "design": "s38584",
+  "error": "Measurement stage failed: /mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38584/REF_B3T/s38584/REF_B3T/simulate.execution.json",
+  "failure_class": "RESOURCE_LIMIT",
+  "folder": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38584/REF_B3T/s38584/REF_B3T",
+  "independent_design_policy": true,
+  "instrumentation": {
+    "bytes": 5313,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38584/REF_B3T/s38584/REF_B3T/instrumentation.json",
+    "sha256": "6a21fafa2accb93bd5ee161422f4e7b56f9778951cc0a555c7e5d3dd669c141d"
+  },
+  "manifest": {
+    "bytes": 8338,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38584/REF_B3T/manifest.json",
+    "sha256": "80a40dc7fa8b17ded9daea3df7996db7593e5762765af4fc40c0e7251ccd36d3"
+  },
+  "partial_VCD_policy": "Retain failed-stage artifacts for diagnosis; exclude all partial/unqualified activity from scientific results",
+  "peak_RSS_KiB": 1446208,
+  "role": "REF_B3T",
+  "status": "FAILED",
+  "timeout_seconds": 1800,
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cold_start_measure.py\", line 178, in measure_prepared\n    execute_stage(['/usr/bin/vvp', folder / 'simulation.vvp'], folder, 'simulate', deadline)\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cold_start_measure.py\", line 121, in execute_stage\n    raise RuntimeError('Measurement stage failed: ' + str(receipt))\nRuntimeError: Measurement stage failed: /mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38584/REF_B3T/s38584/REF_B3T/simulate.execution.json\n",
+  "wall_seconds": 1800.2766592850003
+}

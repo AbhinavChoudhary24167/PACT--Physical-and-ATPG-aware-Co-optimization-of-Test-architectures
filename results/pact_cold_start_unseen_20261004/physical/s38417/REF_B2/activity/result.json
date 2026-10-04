@@ -1,0 +1,28 @@
+{
+  "CPU_seconds": 1418.067949,
+  "VCD_complete": false,
+  "architecture_sha256": "7976c63f510aee3caa8a6b280fad5f65a91669947347f79d7861eb3b56b6f0f0",
+  "created_utc": "2026-10-04T18:11:54.872179+00:00",
+  "design": "s38417",
+  "error": "Measurement stage failed: /mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38417/REF_B2/s38417/REF_B2/simulate.execution.json",
+  "failure_class": "RESOURCE_LIMIT",
+  "folder": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38417/REF_B2/s38417/REF_B2",
+  "independent_design_policy": true,
+  "instrumentation": {
+    "bytes": 5270,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38417/REF_B2/s38417/REF_B2/instrumentation.json",
+    "sha256": "30bba9dad89579a23342104df7e28c3e3693c507025fc46d6cd67bffc301521d"
+  },
+  "manifest": {
+    "bytes": 8363,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38417/REF_B2/manifest.json",
+    "sha256": "3973ad5239b0451bcaa76d0343b30baebda3ffba6c0dabbc2a0d93db48b2d5fc"
+  },
+  "partial_VCD_policy": "Retain failed-stage artifacts for diagnosis; exclude all partial/unqualified activity from scientific results",
+  "peak_RSS_KiB": 1302900,
+  "role": "REF_B2",
+  "status": "FAILED",
+  "timeout_seconds": 1800,
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cold_start_measure.py\", line 178, in measure_prepared\n    execute_stage(['/usr/bin/vvp', folder / 'simulation.vvp'], folder, 'simulate', deadline)\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cold_start_measure.py\", line 121, in execute_stage\n    raise RuntimeError('Measurement stage failed: ' + str(receipt))\nRuntimeError: Measurement stage failed: /mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38417/REF_B2/s38417/REF_B2/simulate.execution.json\n",
+  "wall_seconds": 1800.3142555200002
+}

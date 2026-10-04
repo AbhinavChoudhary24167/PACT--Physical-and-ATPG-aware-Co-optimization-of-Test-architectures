@@ -2,7 +2,7 @@
 """Aggregate prospective exact evidence; snapshots never announce completion."""
 import argparse
 import csv
-from datetime import datetime
+from datetime import datetime, timedelta
 import io
 import json
 import math
@@ -165,10 +165,13 @@ def terminal_design_stop(design, method):
         path=OUT/f'physical/{design}/REF_{method}/activity/result.json'
         result=maybe(path)
         if result and result.get('status')=='FAILED':
+            reason=f'New independent REF_{method} exact-activity measurement failed ({result.get("failure_class","PHYSICAL_BACKEND_FAIL")})'
+            if result.get('failure_class')=='RESOURCE_LIMIT' and result.get('timeout_seconds'):
+                reason+=f' at the fixed {result["timeout_seconds"]}-second deadline; complete VCD and exact E/H4/H8 are unavailable'
             return dict(status='PACT_EXECUTION_BLOCKED',terminal=True,
                 failure_class=result.get('failure_class','PHYSICAL_BACKEND_FAIL'),failure_domain='MEASUREMENT',
                 blocker_subtype='REFERENCE_EXACT_ACTIVITY',stage='REFERENCE_EXACT_ACTIVITY',
-                reason='New campaign exact external-reference activity measurement failed; this design stops independently',
+                reason=reason+'; only this design stops independently',
                 stop_receipt=binding(path),failure=result)
     return None
 
@@ -259,15 +262,57 @@ def audit_order(design, candidate=None):
         OUT/f'searches/{design}/search_configuration.json',OUT/f'searches/{design}/search_results.json',
         OUT/f'selections/{design}/preselected_candidates.json']
     names=['reference_frozen','cold_start_input','search_configuration','search_results','preselected_candidates']
-    stamps=[];receipts={}
+    stamps=[];receipts={};values={};start_proof=None
     for name,path in zip(names,paths):
         value=maybe(path)
+        values[name]=value
         receipts[name]=binding(path) if value else None
         stamps.append((name,value.get('created_utc') if value else None))
     if candidate:
+        snapshot_path=OUT/f'physical/{design}/selection_snapshot.json'
+        execution_path=OUT/f'physical/{design}/{candidate}/rewire/execution.json'
+        snapshot=maybe(snapshot_path);execution=maybe(execution_path)
+        receipts.update(selection_snapshot=binding(snapshot_path) if snapshot else None,
+            rewire_execution=binding(execution_path) if execution else None)
+        stamps.append(('selection_snapshot',snapshot.get('created_utc') if snapshot else None))
+        if snapshot:
+            selection=values['preselected_candidates']
+            if selection is None or bound(snapshot['selection']).resolve()!=paths[-1].resolve() or bound(snapshot['input']).resolve()!=paths[1].resolve():
+                raise ValueError('Physical selection snapshot does not bind this immutable selection/input')
+            if not snapshot.get('all_candidates_frozen_before_any_candidate_routing'):
+                raise ValueError('Physical selection snapshot does not freeze all candidates')
+            for source in snapshot['executed_sources'].values():bound(source)
+            def architecture_records(records):
+                return [(r['candidate'],r['architecture_hash'],sha(bound(r['architecture']))) for r in records]
+            if architecture_records(snapshot['records'])!=architecture_records(selection['records']):
+                raise ValueError('Physical selection snapshot changed the frozen candidate list')
+        if execution:
+            if snapshot is None:
+                raise ValueError('Physical execution lacks an immutable selection snapshot')
+            selected=next((r for r in values['preselected_candidates']['records'] if r['candidate']==candidate),None)
+            command=execution.get('command',[])
+            if selected is None or command.count('--architecture')!=1:
+                raise ValueError('Rewire execution does not identify one preselected architecture')
+            index=command.index('--architecture')+1
+            if index>=len(command) or local_path(command[index]).resolve()!=bound(selected['architecture']).resolve():
+                raise ValueError('Rewire execution architecture differs from immutable preselection')
+            wall=execution.get('wall_seconds')
+            if not isinstance(wall,(int,float)) or not math.isfinite(wall) or wall<0 or not execution.get('timestamp_utc'):
+                raise ValueError('Rewire execution lacks a valid measured execution interval')
+            completed=datetime.fromisoformat(execution['timestamp_utc'])
+            started=completed-timedelta(seconds=wall)
+            stamps.extend((('rewire_execution_start_derived',started.isoformat()),('rewire_execution_completed',completed.isoformat())))
+            start_proof=dict(selection_snapshot=receipts['selection_snapshot'],rewire_execution=receipts['rewire_execution'],
+                architecture=selected['architecture'],execution_start_derived_utc=started.isoformat(),
+                execution_completed_utc=completed.isoformat(),wall_seconds=wall,
+                start_time_basis='Reconstructed execution-interval start: immutable completion timestamp minus measured wall_seconds; not a separately recorded process-launch timestamp')
+        else:
+            stamps.extend((('rewire_execution_start_derived',None),('rewire_execution_completed',None)))
         for name,path in (('physical_results',OUT/f'physical/{design}/{candidate}/route_result.json'),
             ('atpg_results',OUT/f'atpg/{design}/{candidate}/atpg_result.json')):
             value=maybe(path)
+            if value and value.get('status') in ('PHYSICAL_GATES_PASS','ATPG_GATES_PASS') and start_proof is None:
+                raise ValueError('Successful physical/ATPG gate lacks actual preselection-before-execution proof')
             receipts[name]=binding(path) if value else None
             stamps.append((name,value.get('created_utc') if value else None))
     present=[(label,datetime.fromisoformat(stamp)) for label,stamp in stamps if stamp]
@@ -275,8 +320,9 @@ def audit_order(design, candidate=None):
     if not passed:
         raise ValueError('Prospective receipt execution chronology failed: '+str(stamps))
     return dict(status='PASS' if all(stamp for _,stamp in stamps) else 'PARTIAL',timestamps=dict(stamps),
-        receipts=receipts,preselection_before_physical_implementation=passed,
-        aggregate_receipt_timestamps='Physical/ATPG aggregate created_utc summarizes completed stages; per-candidate success completion timestamps establish gate order')
+        receipts=receipts,preselection_before_physical_implementation=passed if start_proof else None,
+        physical_execution_start_proof=start_proof,
+        aggregate_receipt_timestamps='Physical/ATPG aggregate created_utc summarizes completed stages; per-candidate completions establish gate order, while bound selection_snapshot and rewire execution interval establish preselection before implementation')
 
 
 def candidate_row(entry, selected, reference, search):
@@ -377,6 +423,10 @@ def measurement_rows():
         result=read(path);instrument=read(path.parent/'instrumentation.json')
         stages=instrument.get('stages',{});analysis=instrument.get('analysis') or {}
         analysis_stages=analysis.get('stages',{})
+        diagnosis_path=OUT/f'scalability/measurement_{result["design"]}_terminal_diagnosis.json'
+        diagnosis=maybe(diagnosis_path) if result['role'].startswith('REF_') and result['status']=='FAILED' else None
+        if diagnosis and bound(diagnosis['result']).resolve()!=path.resolve():
+            raise ValueError('Independent reference timeout diagnosis binds another result')
         rows.append(dict(design=result['design'],candidate=result['role'],status=result['status'],
             failure_class=result.get('failure_class'),compile=stages.get('compile'),simulation=stages.get('simulate'),
             VCD_generation=instrument.get('VCD_generation'),VCD=instrument.get('VCD'),
@@ -385,6 +435,8 @@ def measurement_rows():
             E_computation=analysis_stages.get('E_computation_all_data'),H4_computation=analysis_stages.get('H4_computation_all_data'),
             H8_computation=analysis_stages.get('H8_computation_all_data'),
             total_wall_seconds=result['wall_seconds'],CPU_seconds=result.get('CPU_seconds'),peak_RSS_KiB=result.get('peak_RSS_KiB'),
+            fixed_deadline_seconds=result.get('timeout_seconds'),error=result.get('error'),
+            terminal_diagnosis=diagnosis,terminal_diagnosis_receipt=binding(diagnosis_path) if diagnosis else None,
             scope='PHYSICAL_MEASUREMENT_ONLY; exact all_data metrics; inclusive/exclusive parser spans not additive',
             result=binding(path),instrumentation=binding(path.parent/'instrumentation.json')))
     return rows
@@ -544,6 +596,26 @@ def display(value, digits=3):
     return str(value)
 
 
+def reference_failure_prose(data):
+    """State new independent failures separately from earlier timeout evidence."""
+    lines=['Earlier campaign measurement evidence (separate from new attempts): the prior s38417 reference VVP simulation reached its fixed 1,800-second deadline before parsing or metric reductions. Its retained partial VCD and prior timeout diagnosis are diagnostic only and do not terminate a new campaign unit or supply E/H4/H8.']
+    for row in data['physical_measurement_scalability']:
+        if not row['candidate'].startswith('REF_') or row['status']!='FAILED':continue
+        simulation=row.get('simulation') or {};diagnosis=row.get('terminal_diagnosis') or {}
+        deadline=row.get('fixed_deadline_seconds') or diagnosis.get('fixed_deadline_seconds')
+        reason=f'reached its independently fixed {display(deadline)}-second deadline during functional VVP simulation with integrated VCD emission' if simulation.get('timed_out') else row.get('error') or row.get('failure_class')
+        vcd=row.get('VCD') or {}
+        lines.append(f'New independent {row["design"]} {row["candidate"]} exact-reference attempt: FAILED/{row.get("failure_class")}; {reason}. '+
+            f'Workflow wall {display(row["total_wall_seconds"])} s, CPU {display(row.get("CPU_seconds"))} s, maximum process RSS {display(row.get("peak_RSS_KiB"))} KiB; '+
+            f'VVP wall {display(simulation.get("wall_seconds"))} s, CPU {display(simulation.get("CPU_seconds"))} s, process RSS {display(simulation.get("peak_RSS_KiB"))} KiB. '+
+            f'VCD complete={vcd.get("complete")}, bytes={display(vcd.get("bytes"))}; parser/transition and exact E/H4/H8 stages '+
+            ('were not executed.' if diagnosis.get('parser_transition_and_E_H_stages_executed') is False else 'have no qualified result.')+
+            ' No partial activity value is included. Only this design stops under the independent-unit policy; the other registered units continue independently. '+
+            f'Result: {row["result"]["path"]}; new terminal diagnosis: '+
+            (row['terminal_diagnosis_receipt']['path'] if row.get('terminal_diagnosis_receipt') else 'unavailable')+'.')
+    return lines
+
+
 def markdown(data, sealed=False):
     c=data['counts'];primary,secondary=scientific_assessment(data,sealed)
     text=[f'Cold-start unseen designs attempted: {c["unseen_designs_attempted"]}',
@@ -565,11 +637,11 @@ def markdown(data, sealed=False):
         text.append('| '+' | '.join(values)+' |')
     text+=['','Negative percentages are improvements. N/A means unavailable exact data. Search estimates are kept in JSON and never substituted for measured activity. Physically qualified means route/topology/function/placement/timing/DRC, FAN identities/weights, and complete VCD FF transitions all passed.',
         'Useful activity improvement counts any exact E/H4/H8 gain above the fixed tolerance among retained candidates. It does not erase another metric regression or routed-wire increase. The design status follows its preselected balanced primary. All alternatives contribute to explicitly named any-candidate counts.','',
-        '| Design | FFs | FAN patterns | Reference | Initialized | Search completed | Preselected | Qualified | Design status |',
-        '|---|---:|---:|---|---|---|---:|---:|---|']
+        '| Design | FFs | FAN patterns | Reference | Initialized | Search completed | Preselected | Qualified | Design status | Blocker reason |',
+        '|---|---:|---:|---|---|---|---:|---:|---|---|']
     for r in data['design_outcomes']:
         text.append('| '+' | '.join(map(str,(r['design'],r['FF_count'],r['ATPG_pattern_count'],r['selected_reference'] or 'N/A',
-            r['initialized'],r['search_completed'],len(r['preselected_candidates']),len(r['qualified_candidates']),r['status'])))+' |')
+            r['initialized'],r['search_completed'],len(r['preselected_candidates']),len(r['qualified_candidates']),r['status'],(r.get('reason') or r['failure_class']) if r.get('failure_class') else 'N/A')))+' |')
     text+=['',f'{c["initialized_without_historical_state"]} designs initialized with zero historical per-design state; {c["searches_completed"]} completed all registered epsilon lanes; {c["designs_with_physically_qualified_candidate"]} produced at least one exactly qualified candidate.',
         f'E improved on {c["designs_improving_E"]} designs, H4 on {c["designs_improving_H4"]}, H8 on {c["designs_improving_H8"]}, and all three on {c["designs_improving_all_three"]}. Routed cost, WNS, DRC and weighted FAN coverage accompany every available comparison above.',
         f'The opening mixed/no count describes {c["designs_with_mixed_or_no_improvement"]} preselected-primary outcomes (including completed searches with no new candidate). Separately, {c["designs_with_any_mixed_candidate"]} designs have at least one exact mixed candidate, including {c["designs_with_alternative_mixed_candidate"]} with a mixed alternative; {c["designs_with_any_no_or_negligible_candidate"]} have a no/negligible-benefit candidate. These flags can overlap useful-improvement counts and never change the primary.',
@@ -596,11 +668,11 @@ def markdown(data, sealed=False):
             ' This observation is separate from a registered resource-policy failure. It establishes neither a scaling law nor a memory-bandwidth or other hardware cause.']
     solver_failed=[r for r in data['design_outcomes'] if r.get('failure_class')=='RESOURCE_LIMIT' and r.get('failure_domain')=='SOLVER']
     text+=['','First observed solver resource bottleneck: '+(solver_failed[0]['design']+' exceeded its registered worker policy; preserve its failure receipt.' if solver_failed else 'No solver resource bottleneck established by completed observations; limited samples do not support extrapolation.'),
-        'First observed physical measurement bottleneck: the retained s38417 reference VVP simulation reached the previous fixed 1,800-second deadline before exact parsing or metric reductions. Its partial VCD is diagnostic evidence only. The separately retained diagnosis records cycle progress and VCD size; it contributes no E/H4/H8 value.',
+        *reference_failure_prose(data),
         'Solver runtime growth is observable only through the measured FF/pattern/evaluation rows. No fitted scalability law or extrapolated FF cutoff is claimed. Sparse size coverage and workload differences prevent attributing a runtime change solely to FF count.','',
         'Execution hardware: WSL kernel 6.18.33.2, four logical cores, MemTotal 4,010,612 KiB and 8 GiB swap. Solver and physical measurement jobs may overlap. These runtimes are observations from concurrent campaign execution, not isolated scaling benchmarks.','',
         'Provenance and limits','',
-        'reference_frozen -> cold_start_input -> search_configuration -> search_results -> preselected_candidates -> per-candidate physical -> per-candidate ATPG -> final_qualification is audited by bound receipts and completion timestamps. Aggregate physical/ATPG summary timestamps summarize previously executed gates. Every retained candidate remains in the dataset, including failures. Engineering observer repairs and failed diagnostic attempts are retained separately from scientific outcomes.',
+        'reference_frozen -> cold_start_input -> search_configuration -> search_results -> preselected_candidates -> selection_snapshot -> per-candidate rewire -> physical -> ATPG -> final_qualification is audited by bound receipts. The immutable selection snapshot binds every retained candidate and the input; each rewire command binds its preselected architecture. Rewire execution-interval starts are reconstructed explicitly as completion timestamp minus measured wall duration, proving selection preceded implementation; they are not separately recorded process-launch timestamps. Physical/ATPG per-candidate completions establish subsequent gate order, and aggregate timestamps summarize completed gates. Every retained candidate remains in the dataset, including failures. Engineering observer repairs and failed diagnostic attempts are retained separately from scientific outcomes.',
         'The metric scope remains all_data ground-plus-pin capacitance times measured transitions. H4/H8 locate demand at sources in fixed spatial bins per cycle. Routed scan cost is the connected scan-net upper bound and can include functional branches. Search scores omit unrepresented fanins, delay/glitches and candidate resizing/buffer changes; actual route and exact activity remain authoritative. These are not watts, IR-drop, signoff power, reliability, or uncollapsed-member identity claims.','',
         'HISTORICAL QUALIFIED CORE','',
         'The s5378/s9234/s15850 core appears only in canonical/historical_qualified_core.json and this separate section. All 12 original record dictionaries and historical primary choices are copied exactly, with their original values and classifications. They were not cold-start training, seeds or runtime inputs.','',
@@ -622,6 +694,7 @@ def final_qualification(data):
             ('search_configuration',OUT/f'searches/{design}/search_configuration.json'),
             ('search_results',OUT/f'searches/{design}/search_results.json'),
             ('preselected_candidates',OUT/f'selections/{design}/preselected_candidates.json'),
+            ('selection_snapshot',OUT/f'physical/{design}/selection_snapshot.json'),
             ('physical_results',OUT/f'physical/{design}/physical_results.json'),
             ('atpg_results',OUT/f'atpg/{design}/atpg_results.json'))}
         record=dict(schema='pact_cold_start_final_qualification_v1',created_utc=now(),design=design,
