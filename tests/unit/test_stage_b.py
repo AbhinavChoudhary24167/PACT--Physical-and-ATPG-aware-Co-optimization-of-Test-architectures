@@ -66,3 +66,12 @@ def test_stage_b_preserves_reversed_capacity_start():
     np.testing.assert_allclose(score, sf.reference(model, reversed_sizes), rtol=1e-9, atol=1e-6)
     with pytest.raises(ValueError):
         model.validate([np.array([0]), np.array([1, 2, 3, 4])])
+
+
+def test_report_preserves_frozen_and_expanded_dominance():
+    from pact_stage_b_report import point, relation
+    baseline = dict(routed_scan_path_cost_um=100, measured_E=1000, measured_H4=20, measured_H8=10)
+    candidate = dict(routed_scan_path_cost_um=99, measured_E=900, measured_H4=21, measured_H8=9)
+    assert relation(point(candidate, False), point(baseline, False)) == 'dominating'
+    assert relation(point(candidate), point(baseline)) == 'nondominated'
+    assert relation(point(baseline), point(baseline)) == 'nondominated'
