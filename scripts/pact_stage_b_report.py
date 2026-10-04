@@ -84,7 +84,8 @@ def report(output, public):
                 setup_WNS_ns=r['setup_WNS_ns'], setup_TNS_ns=r['setup_TNS_ns'],
                 hold_WNS_ns=r['hold_WNS_ns'], hold_TNS_ns=r['hold_TNS_ns'],
                 topology=r['topology_qualification'], functional=r['functional_qualification'],
-                FF_transition=r['FF_transition_qualification'])
+                FF_transition=r['FF_transition_qualification'], failure_stage=r['failure_stage'],
+                failure_reason=r['failure_reason'])
             if r['status']=='QUALIFIED':
                 a = point(r)
                 row['routed_wire_overhead_percent'] = 100*(a[0]/float(physical['routed_scan_path_cost_um'])-1)
@@ -132,7 +133,7 @@ def report(output, public):
         for i, r in enumerate(read(output/'selection'/f'{design}.json')):
             arch = json.loads(Path(r['architecture']).read_text())
             write_json(public/'architectures'/f'{design}_C{i+1}.json', arch)
-    routed_view = [{k: r[k] for k in ('design','candidate','epsilon','scan_wire_um','E','H4','H8','DRC','setup_WNS_ns','hold_WNS_ns','routed_budget_pass')} for r in measured]
+    routed_view = [{k: r[k] for k in ('design','candidate','epsilon','status','scan_wire_um','E','H4','H8','DRC','setup_WNS_ns','hold_WNS_ns','routed_budget_pass')} for r in measured]
     pre_view = [{k: round(r[k], 4) if isinstance(r[k], float) else r[k] for k in
         ('design','epsilon','candidate','roles','new','proxy_wire_um','proxy_E','proxy_H4','proxy_H8')} for r in before]
     pair_view = [{k: round(r[k], 6) if isinstance(r[k], float) else r[k] for k in r} for r in comparisons]
