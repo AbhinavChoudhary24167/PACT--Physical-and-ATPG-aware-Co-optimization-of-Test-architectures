@@ -1,0 +1,7 @@
+{
+  "design": "s35932",
+  "error": "Q identity changed without unique transparent BUF_X1 alias for U_CRC_OUT_8_31",
+  "failure_class": "SCAN_TOPOLOGY_FAIL",
+  "status": "PACT_EXECUTION_BLOCKED",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_physical.py\", line 232, in main\n    references(design)\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_physical.py\", line 145, in references\n    identity,aliases=phase0b_ff_identity_map(source,Path(preparation['placed_netlist']['path']),parse_fan_pat(patterns))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/scan/phase0b_identity.py\", line 43, in phase0b_ff_identity_map\n    aliases = transparent_q_buffer_aliases(source, placed)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/scan/phase0b_identity.py\", line 32, in transparent_q_buffer_aliases\n    raise ValueError(f\"Q identity changed without unique transparent BUF_X1 alias for {name}\")\nValueError: Q identity changed without unique transparent BUF_X1 alias for U_CRC_OUT_8_31\n"
+}
