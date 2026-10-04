@@ -57,7 +57,7 @@ def test_constrained_retained_candidates_match_independent_replay():
 
 
 def test_stage_b_preserves_reversed_capacity_start():
-    from pact_stage_b import Model
+    from pact.optimizer.stage_b_inputs import Model
     model, orders = fixture()
     model.__class__ = Model
     reversed_sizes = [np.array([0, 1]), np.array([2, 3, 4])]
@@ -69,7 +69,7 @@ def test_stage_b_preserves_reversed_capacity_start():
 
 
 def test_report_preserves_frozen_and_expanded_dominance():
-    from pact_stage_b_report import point, relation
+    from pact.analysis.stage_b import point, relation
     baseline = dict(routed_scan_path_cost_um=100, measured_E=1000, measured_H4=20, measured_H8=10)
     candidate = dict(routed_scan_path_cost_um=99, measured_E=900, measured_H4=21, measured_H8=9)
     assert relation(point(candidate, False), point(baseline, False)) == 'dominating'

@@ -132,6 +132,7 @@ def report(output, public):
     for design in DESIGNS:
         for i, r in enumerate(read(output/'selection'/f'{design}.json')):
             arch = json.loads(Path(r['architecture']).read_text())
+            arch.pop('architecture_sha256', None)
             write_json(public/'architectures'/f'{design}_C{i+1}.json', arch)
     routed_view = [{k: r[k] for k in ('design','candidate','epsilon','status','scan_wire_um','E','H4','H8','DRC','setup_WNS_ns','hold_WNS_ns','routed_budget_pass')} for r in measured]
     pre_view = [{k: round(r[k], 4) if isinstance(r[k], float) else r[k] for k in
@@ -161,7 +162,13 @@ def report(output, public):
         'The following focused comparison shows whether the selected predicted improvements transferred to the unchanged routed flow; every delta uses its corresponding physical reference.', '',
         table([{k: round(v, 6) if isinstance(v, float) else v for k,v in r.items()} for r in transfer]),
         '## 11. External/tool bugs encountered', '',
-        'No new external repair was required by this Stage-B implementation. Previously qualified B3T repairs remain frozen Stage-A dependencies. Scientific reproduction receipts and source/configuration hashes stay in private experiment storage; public artifacts contain neutral architecture labels and relative links.', '',
+        'No new external repair was required by this Stage-B implementation. The following previously qualified repairs remain frozen Stage-A dependencies; their public pull requests were open and unmerged when checked for this report.', '',
+        '| Inherited blocker | Repair branch and upstream status | Scientific semantics |',
+        '| --- | --- | --- |',
+        '| Non-static scan-pin library accessor called without an object receiver | `fix/dft-dbnetwork-member-receiver`: [OpenROAD receiver PR](https://github.com/mwsoli/OpenROAD/pull/1), open | Compile-only qualification of the existing receiver; no objective/operator change. |',
+        '| Fixed SO endpoint disconnected after restitching; stale scan-list order | `fix/dft-scan-output-topology`: [OpenROAD topology PR](https://github.com/mwsoli/OpenROAD/pull/2), open | Reconstructs the chosen ordering and preserves functional fanout; clustering, search cost and capacity rules remain unchanged. |',
+        '| Renamed input port alias omitted from exported Verilog | `fix/verilog-input-alias`: [OpenSTA alias PR](https://github.com/The-OpenROAD-Project/OpenSTA/pull/420), open | Corrects serialization direction/connectivity; no scan optimization change. |', '',
+        'The qualified backend and its experimental submodule binding were reused without rebuild or retuning. Scientific reproduction receipts and source/configuration hashes stay in private experiment storage; public artifacts contain neutral architecture labels and relative links. Public upstream descriptions, commit messages and patches were checked for local provenance values.', '',
         '## 12. Next action', '',
         ('Repeat the same frozen method on an additional physical context to test transfer before expanding claims.' if len(set(good))==3 else
          'Use these selected measured pairs to isolate proxy-to-route error on the resistant design, then test the smallest activity/load or move-operator correction indicated by the failing metrics. Preserve the present measured campaign as its comparator.'), '']
