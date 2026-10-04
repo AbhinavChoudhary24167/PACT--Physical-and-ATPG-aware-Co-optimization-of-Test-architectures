@@ -11,12 +11,12 @@ from pact.scan.model import ScanArchitecture
 from pact.integration.qualification import simulate
 
 
-def requalify(design,methods,prior):
+def requalify(design,methods,prior,attempt):
     original=OUT/f'repair_attempts/{prior}/baselines/{design}_references.json'
     records=read(original)['records']
     assert {r['method'] for r in records}=={'B0','B1','B2','B3T'},'Wait for all reference outcomes'
     oldroot=RUN/f'baseline_{prior}'/design
-    physical.ATTEMPT='buffer_traversal_repaired'
+    physical.ATTEMPT=attempt
     folder=physical.baseline_folder(design)
     folder.mkdir(parents=True,exist_ok=True)
     shutil.copy2(oldroot/'ff_identity_map.json',folder/'ff_identity_map.json')
@@ -66,7 +66,8 @@ if __name__=='__main__':
     p.add_argument('--design',required=True)
     p.add_argument('--methods',nargs='+',required=True)
     p.add_argument('--prior-attempt',default='runtime_paths_repaired')
+    p.add_argument('--attempt',choices=('buffer_traversal_repaired','sized_scan_cells_repaired'),default='buffer_traversal_repaired')
     a=p.parse_args()
     os.environ.update(PACT_DEPENDENCY_ROOT='/root/pact-deps',PACT_EXPERIMENT_ROOT='/mnt/d/PACT_EXPERIMENTS',
         OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',NUMBA_NUM_THREADS='1',PATH='/usr/bin:'+os.environ['PATH'])
-    requalify(a.design,a.methods,a.prior_attempt)
+    requalify(a.design,a.methods,a.prior_attempt,a.attempt)

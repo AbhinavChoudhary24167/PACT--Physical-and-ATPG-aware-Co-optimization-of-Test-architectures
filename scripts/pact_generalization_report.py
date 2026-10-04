@@ -12,7 +12,7 @@ from pact_generalization_infrastructure import RUN,DESIGNS,external_binding
 from pact_generalization_measure import selected
 from pact_generalization_physical import select_reference,prep
 
-ATTEMPTS=('buffer_traversal_repaired','functional_identity_repaired','runtime_paths_repaired')
+ATTEMPTS=('sized_scan_cells_repaired','buffer_traversal_repaired','functional_identity_repaired','runtime_paths_repaired')
 SCALABILITY_FIELDS=('design','FF_count','chain_count','ATPG_pattern_count','target_fault_count',
     'epsilon','seed','total_exact_candidate_evaluations','accepted_moves','rejected_moves',
     'archive_insertions','stagnation_events','restart_count','wall_seconds','CPU_seconds',
@@ -85,6 +85,11 @@ def collect():
             if receipt.exists():
                 result=read(receipt)
                 row['reference_measurement_status']=result['status']
+                if result['status']=='FAILED':
+                    row['reference_measurement_failure']=dict(failure_class=result['failure_class'],
+                        receipt=binding(receipt),wall_seconds=result.get('execution',{}).get('wall_seconds'),
+                        localized_stage=read(OUT/f'failures/{name}_measurement_localization.json').get('localized_stage')
+                            if (OUT/f'failures/{name}_measurement_localization.json').exists() else None)
                 if result['status']=='QUALIFIED':
                     assert result['selected_reference']==ref['method']
                     assert sha(result['summary']['path'])==result['summary']['sha256']
@@ -162,6 +167,19 @@ def physical_timings():
             attempt='final_reference_measurement',method=r['method'],stage='extraction_simulation_activity_analysis',
             wall_seconds=r['measurement_wall_seconds'],**r['measurement_resources'],exit_code=0,timed_out=False,
             provenance=r['provenance']['measurement']))
+    for design in DESIGNS:
+        path=OUT/f'physical/{design}/reference_measurement/result.json'
+        if not path.exists():
+            continue
+        failed=read(path)
+        if failed['status']=='FAILED' and failed.get('failure_class')=='RESOURCE_LIMIT':
+            data=failed['execution']
+            info=benchmark[design]
+            rows.append(dict(design=design,FF_count=info['FF_count'],ATPG_pattern_count=info['ATPG_pattern_count'],
+                attempt='reference_measurement_resource_limit',method=failed['selected_reference'],
+                stage='incomplete_physical_metric_measurement',wall_seconds=data['wall_seconds'],
+                CPU_seconds=None,peak_RSS_KiB=None,exit_code=data['exit_code'],timed_out=data['timed_out'],
+                provenance=binding(path)))
     write(OUT/'physical_qualification_timings.json',dict(schema='pact_generalization_physical_timing_v1',
         scope='PHYSICAL_ONLY; all retained attempts, including failed stages; no solver timing',
         records=rows,updated_utc=now(),missing_resource_policy='Unavailable CPU/RSS is null; wall time is never substituted for solver cost'))
@@ -184,7 +202,8 @@ def readable_report(status,counts,outcomes,refs,measured):
         commits=commits.splitlines(),changed_files=sorted(set(changes+untracked)),
         ending_SHA_note='The final response supplies the commit containing this report; a commit cannot embed its own SHA'),immutable=True)
     lines=[f'# {status}', '',
-        'The forward campaign is blocked before PACT search by the missing unseen-design P0 initialization contract. '
+        'The forward campaign is blocked by the fixed-budget physical-metric simulation resource limit and, independently, '
+        'by the missing unseen-design P0 initialization contract before PACT search. '
         'No new PACT candidate was evaluated, preselected, routed, or qualified. '
         'Generalization benefit and solver runtime/memory scaling therefore remain unmeasured.', '',
         '## Frozen core', '',
@@ -236,10 +255,11 @@ def readable_report(status,counts,outcomes,refs,measured):
         'Engineering repairs were isolated on repair branches and integrated only after focused regressions: '
         'direct scan-output endpoint recovery; existing runtime paths; reporting-field lookup; '
         'functional FF identity through Q-net renaming; and replacing the arbitrary eight-buffer traversal limit '
-        'with a finite graph bound. The optimizer, metrics, objective, operators, and frozen files were preserved. '
+        'with a finite graph bound; and recognizing SDFF_X2 only after proving its frozen-library state/pin functions '
+        'identical to SDFF_X1. No FF identities were dropped. The optimizer, metrics, objective, operators, and frozen files were preserved. '
         'The traversal repair changes only its guard expression; before/after gate, WL, functional verification, '
         'and net/capacitance mapping outputs are exactly equal on a previously passing unseen design. '
-        'Fifteen focused regression tests passed.', '',
+        'Nineteen focused regression tests passed.', '',
         '## Initialization blocker and scientific conclusion', '',
         'The frozen loader raises `KeyError("s1196")` because its design table and artifact lookups cover only the '
         'historical three circuits. Its Stage-B starts also require a measured representative P0 from an earlier '
@@ -253,8 +273,15 @@ def readable_report(status,counts,outcomes,refs,measured):
         'New primary candidates improving E, H4, H8, or all three: **not measured**. '
         'Mixed outcomes and negligible-benefit outcomes: **not measured**. '
         'No scientific support or rejection of PACT generalization can be inferred from this dataset.', '',
+        'The s38417 B2 reference passed structural, functional, routing, timing, DRC, extraction, and FAN gates, '
+        'but its Icarus simulation exceeded the fixed 1,800-second measurement limit. Export, extraction, and compilation '
+        'had completed; simulation and FF-transition/activity analysis had not. The partial VCD is retained by hash and '
+        'excluded from every activity result. [Localized resource failure](failures/s38417_measurement_localization.json). '
+        'This is an observed resource block under the campaign budget, rather than evidence against the PACT objective. '
+        'Other reference routing ran concurrently; the observed wall time is not an isolated solver benchmark.', '',
         '## Scalability', '',
-        '`PACT_SCALABILITY_NOT_MEASURED`. Exact candidate evaluations, solver CPU/RSS, evaluations/s, evaluator time, '
+        'Solver: `PACT_SCALABILITY_NOT_MEASURED`. Physical metrics: `PHYSICAL_METRIC_SCALABILITY_BLOCKED_AT_s38417`. '
+        'Exact candidate evaluations, solver CPU/RSS, evaluations/s, evaluator time, '
         'overhead, stagnation/restarts, and candidate-selection time have no new observations. '
         '[The scalability JSON](scalability_results.json) has an empty search dataset; '
         '[the CSV](scalability_results.csv) contains its header only. '
@@ -283,7 +310,8 @@ def readable_report(status,counts,outcomes,refs,measured):
         '`D:\\PACT_EXPERIMENTS\\results\\pact_generalization_20261004`; repository receipts bind them by exact hash. '
         'No duplicate installation or temporary build tree was committed.', '', '```text',commits.rstrip(),'```', '',
         '## Remaining work', '',
-        'Resolve a reproducible unseen-design P0 construction protocol that retains frozen warm-start semantics. '
+        'Resolve a reproducible unseen-design P0 construction protocol that retains frozen warm-start semantics, '
+        'and the localized physical-metric simulation resource limit with evidence that preserves measurement semantics. '
         'Then run the preregistered searches, preselect at most three distinct candidates per design before route, '
         'qualify every selected candidate, and collect solver-only scalability data. '
         'The present artifacts are a reproducible blocked campaign checkpoint, not a completed generalization result.', '']
@@ -305,7 +333,8 @@ def report(seal=False):
     # This report handles the reproduced initialization blocker, not PACT runs.
     assert not list((OUT/'searches').glob('*/budget_*/search.json'))
     assert read(OUT/'failures/frozen_initialization_contract.json')['PACT_searches_executed']==0
-    status='PACT_V1_GENERALIZATION_BLOCKED_BY_INITIALIZATION'
+    resource_blockers=[r['design'] for r in outcomes if r.get('reference_measurement_failure',{}).get('failure_class')=='RESOURCE_LIMIT']
+    status='PACT_V1_GENERALIZATION_BLOCKED_BY_SCALABILITY' if resource_blockers else 'PACT_V1_GENERALIZATION_BLOCKED_BY_INITIALIZATION'
     write(OUT/'baselines/generalization_baselines.json',dict(schema='pact_generalization_baselines_v1',
         status='PRESEARCH_REFERENCES_RECORDED',selection_rule='minimum qualified routed scan cost among B0/B1/B2/B3T before PACT search',
         created_utc=now(),records=refs,all_design_outcomes=outcomes,
@@ -315,7 +344,8 @@ def report(seal=False):
         configuration=binding(OUT/'searches/exact_configuration.json'),
         blocker=binding(OUT/'failures/frozen_initialization_contract.json')),immutable=True)
     write(OUT/'scalability_results.json',dict(schema='pact_generalization_scalability_v1',records=[],
-        classification='PACT_SCALABILITY_NOT_MEASURED',executed_search_count=0,
+        classification='PACT_SCALABILITY_NOT_MEASURED',classification_scope='SOLVER_ONLY',executed_search_count=0,
+        physical_metric_resource_blockers=resource_blockers,
         reason='The frozen loader fails before model/search initialization; physical stage time is recorded separately',
         blocked_designs=outcomes,physical_reference_measurements=[{k:r[k] for k in ('design',
             'route_wall_seconds','measurement_wall_seconds','measurement_resources')} for r in measured]),immutable=True)
@@ -331,6 +361,7 @@ def report(seal=False):
         new_PACT_primary_candidates={},new_PACT_alternative_candidates={},
         counts=counts,scientific_conclusion='No new PACT outcome is available; reference activity is not evidence of PACT benefit',
         computational_scalability='PACT_SCALABILITY_NOT_MEASURED')
+    canonical['physical_metric_resource_blockers']=resource_blockers
     assert canonical['records'][:len(original['records'])]==original['records']
     write(OUT/'canonical/generalization_canonical_results.json',canonical,immutable=True)
     old_csv=(CORE/'primary_comparison.csv').read_bytes()
@@ -363,6 +394,7 @@ def report(seal=False):
         repository_sha_at_assembly=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
         branch=subprocess.check_output(['git','branch','--show-current'],cwd=ROOT,text=True).strip(),
         scientific_method_changes=0,computational_scalability='PACT_SCALABILITY_NOT_MEASURED',
+        computational_scalability_scope='SOLVER_ONLY',physical_metric_resource_blockers=resource_blockers,
         required_next_action='Resolve the unseen-design P0 construction protocol while preserving frozen warm-start semantics',
         artifacts={str(p.relative_to(OUT)):binding(p) for p in (OUT/'baselines/generalization_baselines.json',
             OUT/'searches/selected_candidate_manifest.json',OUT/'scalability_results.json',OUT/'scalability_results.csv',

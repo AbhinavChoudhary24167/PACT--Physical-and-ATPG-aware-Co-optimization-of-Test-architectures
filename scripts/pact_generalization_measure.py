@@ -15,7 +15,7 @@ from pact.integration.patterns import fan_workload,serialize
 
 
 def selected(design):
-    attempts=('buffer_traversal_repaired','functional_identity_repaired','runtime_paths_repaired')
+    attempts=('sized_scan_cells_repaired','buffer_traversal_repaired','functional_identity_repaired','runtime_paths_repaired')
     attempt=next((a for a in attempts if (OUT/f'repair_attempts/{a}/baselines/{design}_selected.json').is_file()),None)
     if attempt is None:
         raise ValueError('No frozen reference for this design')

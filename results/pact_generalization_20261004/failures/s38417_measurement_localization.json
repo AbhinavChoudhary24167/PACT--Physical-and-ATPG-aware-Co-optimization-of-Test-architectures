@@ -1,0 +1,76 @@
+{
+  "CPU_seconds": null,
+  "activity_summary_produced": false,
+  "budget_extended": false,
+  "completed_stages": {
+    "compile": {
+      "command": [
+        "iverilog",
+        "-g2012",
+        "-DTETRAMAX",
+        "-s",
+        "tb",
+        "-o",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s38417/s38417/B2/simulation.vvp",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s38417/s38417/B2/stimulus.v",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s38417/s38417/B2/routed.v",
+        "/root/pact-deps/FAN_ATPG/techlib/NangateOpenCellLibrary.v"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "returncode": 0,
+      "seconds": 40.20828145099995
+    },
+    "export": {
+      "command": [
+        "openroad",
+        "-python",
+        "-no_init",
+        "-exit",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_export.py",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s38417/s38417/B2"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "returncode": 0,
+      "seconds": 13.679672622999988
+    },
+    "extract": {
+      "command": [
+        "openroad",
+        "-no_init",
+        "-exit",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s38417/s38417/B2/extract.tcl"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "returncode": 0,
+      "seconds": 8.214583385000424
+    }
+  },
+  "design": "s38417",
+  "execution": {
+    "bytes": 1038,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s38417/execution/execution.json",
+    "sha256": "59660dd6053f4650bb27427c8ded04e732d7223b4bc411132fbbf2037c22d206"
+  },
+  "fixed_timeout_seconds": 1800,
+  "intended_shift_cycles": 171780,
+  "last_observed_cycle_id": null,
+  "last_observed_schedule_entry": null,
+  "localized_stage": "Icarus vvp functional simulation",
+  "partial_VCD": {
+    "bytes": 1687957172,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s38417/s38417/B2/activity.vcd",
+    "sha256": "f6eb43b32f3ed11b52235be9e8bf270cf138feb0e6292208a6c596beacfcfc9e"
+  },
+  "peak_RSS_KiB": null,
+  "progress_is_not_correctness_qualification": true,
+  "resource_limitation": "Whole-group timeout terminated time(1) before CPU/RSS summary was flushed",
+  "scientific_conclusion": "No E/H4/H8 or FF transition qualification may be derived from the incomplete VCD",
+  "scientific_method_change": false,
+  "source_failure": {
+    "bytes": 2266,
+    "path": "repo://results/pact_generalization_20261004/failures/s38417_reference_measurement.json",
+    "sha256": "c2e1f9a674021b1ea0d574d091fee7d490230ce19f958231b1daf05d9646c224"
+  },
+  "status": "RESOURCE_LIMIT",
+  "wall_seconds_at_cutoff": 1800.0574783200004
+}
