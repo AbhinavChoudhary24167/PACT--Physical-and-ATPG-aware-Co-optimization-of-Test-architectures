@@ -1,0 +1,77 @@
+{
+  "created_utc": "2026-10-04T18:33:11.527095+00:00",
+  "design": "s38417",
+  "historical_read_guard": [
+    "s5378",
+    "s9234",
+    "s15850",
+    "/results/pact_stage_b/",
+    "/reports/end_to_end/",
+    "/results/pact_end_to_end_20261004/",
+    "/reports/v2/"
+  ],
+  "initial_architecture": "Frozen strongest qualified external reference only",
+  "input": {
+    "bytes": 5628,
+    "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s38417/cold_start_input.json",
+    "sha256": "1594c5c39e77ebfd3c7c2854ea777d13e90a050587cfca2c3d9a0a3be6856d88"
+  },
+  "prerequisite_activity_measurement": false,
+  "schema": "pact_cold_start_initialization_diagnostic_v1",
+  "scope": "LOADER_ONLY; no search, mutation, selection, routing or activity measurement",
+  "scratch_minimum_free_GiB": 20,
+  "solver_threads": 1,
+  "sources": {
+    "scripts/pact_cold_start_initialization_diagnostic.py": {
+      "bytes": 8001,
+      "path": "repo://scripts/pact_cold_start_initialization_diagnostic.py",
+      "sha256": "4bd47a8d889096747562e134ed3db58eac1be4f6f6ec453a29fd4f516fbd95bd"
+    },
+    "src/pact/integration/patterns.py": {
+      "bytes": 3926,
+      "path": "repo://src/pact/integration/patterns.py",
+      "sha256": "6c029a6cc7bdcd979709890feec9b155d655972702dc06c7ebdd21d20fb5d5b9"
+    },
+    "src/pact/optimizer/candidate_physical.py": {
+      "bytes": 9410,
+      "path": "repo://src/pact/optimizer/candidate_physical.py",
+      "sha256": "85c6705d290b3d374c5f68fde6fb469725d590151d8ec508dd6037058d2fb4a8"
+    },
+    "src/pact/optimizer/candidate_sensitive.py": {
+      "bytes": 11132,
+      "path": "repo://src/pact/optimizer/candidate_sensitive.py",
+      "sha256": "9cf1a8e67f650bc71848813b39d35b9701f8844f0ac503b0b86edc46289cb834"
+    },
+    "src/pact/optimizer/candidate_stateful.py": {
+      "bytes": 19808,
+      "path": "repo://src/pact/optimizer/candidate_stateful.py",
+      "sha256": "6b31d6eb4e97f4325e5d46456d1ad96eedd7b604be71b7c16ae39bc08a334303"
+    },
+    "src/pact/optimizer/cold_start.py": {
+      "bytes": 6086,
+      "path": "repo://src/pact/optimizer/cold_start.py",
+      "sha256": "682940b9a6bfc0a79e49d6b1555774671e8eb21854b14f55402a6c7a3aed6407"
+    },
+    "src/pact/optimizer/implementation_v2.py": {
+      "bytes": 15702,
+      "path": "repo://src/pact/optimizer/implementation_v2.py",
+      "sha256": "c4aa23d475c460b8cdfff6bf496a77ee2a8c03b0ae82c885acd623e03005b32e"
+    },
+    "src/pact/optimizer/stage_b_inputs.py": {
+      "bytes": 2183,
+      "path": "repo://src/pact/optimizer/stage_b_inputs.py",
+      "sha256": "c346da8d052264d6ce224163f9c34743cb5f35a6e4af4eb0779f3752e8a9c874"
+    },
+    "src/pact/optimizer/stateful_geometry.py": {
+      "bytes": 6671,
+      "path": "repo://src/pact/optimizer/stateful_geometry.py",
+      "sha256": "380c2f461cea2c045e882d298541a8d4df1d8dc277cbb85e07461cec10bee459"
+    },
+    "src/pact/scan/model.py": {
+      "bytes": 2521,
+      "path": "repo://src/pact/scan/model.py",
+      "sha256": "8f65e4aefe4ca1ba616f73589c7dd38c5dab7c22fee0ce265fcb596a415d1c85"
+    }
+  },
+  "timeout_seconds": 1800
+}
