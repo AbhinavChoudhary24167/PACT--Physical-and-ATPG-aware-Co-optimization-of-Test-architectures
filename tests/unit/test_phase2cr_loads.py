@@ -7,6 +7,8 @@ import pytest
 from pact.scan.model import ScanArchitecture, ScanCell, ScanChain
 from pact.analysis.phase2b_loads import construct_weights as legacy, hpwl, pin_loads
 from pact.analysis.phase2cr_loads import construct_weights, construct_with_audit, selected_graph, CAP_PER_UM
+from pact.environment import dependency_path, relocate
+from pact.experiment_storage import experiment_root
 
 
 @pytest.fixture
@@ -125,16 +127,20 @@ def test_rejects_ambiguous_buffer_and_bijection(case):
 def test_historical_frozen_weights_reproduce_exactly():
     root=Path(__file__).resolve().parents[2]
     freeze=root/'results/phase2c_repair/freeze.json'
-    lib=Path('/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib')
+    lib=dependency_path('OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib')
     if not freeze.exists() or not lib.exists():
-        pytest.skip('Frozen external evidence unavailable; mandatory experiment gate also checks all 21')
-    l=pin_loads(lib.read_text()); f=json.loads(freeze.read_text())
+        pytest.skip('Frozen external Liberty/weights unavailable; this optional gate covers historical 21-order evidence')
+    l=pin_loads(lib.read_text()); f=relocate(json.loads(freeze.read_text()))
+    if any(not Path(r['architecture_path']).is_file() or
+           not (experiment_root()/'results/phase2b_activity_model'/r['architecture_sha256']/'predictor_weights.json').is_file()
+           for r in f['architectures']):
+        pytest.skip('Historical external architecture/weight set unavailable')
     for r in f['architectures']:
         a=ScanArchitecture.from_json(Path(r['architecture_path']))
         g=json.loads((root/f"results/phase2c_repair/{r['design']}.placed_graph.json").read_text())
         before=a.canonical_dict()
         old=legacy(a,old_graph(g),l,g['scan_ports'])
-        p=Path('/mnt/d/PACT_EXPERIMENTS/results/phase2b_activity_model')/a.sha256()/'predictor_weights.json'
+        p=experiment_root()/'results/phase2b_activity_model'/a.sha256()/'predictor_weights.json'
         expected=json.loads(p.read_text()); names=sorted(g['FFs'])
         for m in old:
             np.testing.assert_array_equal(old[m],[expected[m][n] for n in names])

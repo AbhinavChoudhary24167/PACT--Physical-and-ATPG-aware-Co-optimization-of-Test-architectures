@@ -4,6 +4,8 @@
 This adds evidence in the receiver recovery namespace. Exact B2 and the
 original failed B3 remain untouched. No optimizer is implemented in Python.
 """
+from pact.environment import dependency_path
+from pact.experiment_storage import experiment_root
 import argparse
 from pathlib import Path
 import re
@@ -99,7 +101,7 @@ def container(args, flow_inputs=False):
     command = docker(args)
     mounts = ['--mount', f'type=bind,source={SOURCE},target=/build_storage/{NAME}/source,readonly']
     if flow_inputs:
-        mounts += ['--mount', 'type=bind,source=/root/pact-deps/OpenROAD-flow-scripts/flow/results,target=/root/pact-deps/OpenROAD-flow-scripts/flow/results,readonly']
+        mounts += ['--mount', ('type=bind,source=' + str(dependency_path("OpenROAD-flow-scripts")) + '/flow/results,target=' + str(dependency_path("OpenROAD-flow-scripts")) + '/flow/results,readonly')]
     position = command.index('--entrypoint')
     command[position:position] = mounts
     return command

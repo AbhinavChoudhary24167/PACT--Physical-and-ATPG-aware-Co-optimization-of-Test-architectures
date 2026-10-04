@@ -2,7 +2,7 @@
 set -uo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 VENV="${PACT_VENV:-$ROOT/.venv}"
-OUT="$ROOT/artifacts/raw/tests"
+OUT="${PACT_EXPERIMENT_ROOT:-$ROOT/scratch}/tests"
 mkdir -p "$OUT"
 cd "$ROOT" || exit 2
 timeout 120s "$VENV/bin/python" -m pytest -q > "$OUT/pytest.log" 2>&1

@@ -3,6 +3,7 @@ import json
 import math
 from pathlib import Path
 import re
+from pact.environment import dependency_path, relocate
 import numpy as np
 from pact.scan.model import ScanArchitecture,ScanCell,ScanChain
 from pact.scan.validate import validate_scan
@@ -11,7 +12,7 @@ from pact.analysis.phase2b_loads import pin_loads
 from .costs import PlacedCosts
 
 
-def read(path):return json.loads(Path(path).read_text(encoding='utf-8-sig'))
+def read(path):return relocate(json.loads(Path(path).read_text(encoding='utf-8-sig')))
 
 
 def orders_for(arch,costs):
@@ -32,7 +33,7 @@ def load_design(root,design,k,liberty=None):
     folder=root/f'artifacts/derived/phase0c/{design}/s11/k2'
     arch=ScanArchitecture.from_json(folder/'B0.architecture.json')
     graph=read(root/f'results/phase2c_repair/{design}.placed_graph.json')
-    if liberty is None:liberty=Path('/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib')
+    if liberty is None:liberty=dependency_path('OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib')
     loads=pin_loads(Path(liberty).read_text())
     defs=(root/f'artifacts/raw/phase0b/placements/{design}/s11/placed.def').read_text()
     unit=float(re.search(r'UNITS DISTANCE MICRONS\s+(\d+)',defs)[1])

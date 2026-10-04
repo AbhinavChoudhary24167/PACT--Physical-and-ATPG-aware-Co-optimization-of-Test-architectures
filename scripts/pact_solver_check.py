@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Verify exported solutions against independent shift replay and qualified costs."""
+from pact.environment import dependency_path
+from pact.experiment_storage import experiment_root
 import argparse
 from pathlib import Path
 import sys
@@ -20,7 +22,7 @@ def check(design,folder):
     _,costs,patterns,_,_=load_design(ROOT,design,2)
     result=read(folder/'result.json')
     graph=read(ROOT/f'results/phase2c_repair/{design}.placed_graph.json')
-    loads=pin_loads(Path('/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib').read_text())
+    loads=pin_loads(Path(f'{dependency_path("OpenROAD-flow-scripts")}/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib').read_text())
     rows=[result['selected'],min(result['archive'],key=lambda r:r['metrics']['scan_hpwl_um'])]
     checked=[]
     for row in rows:

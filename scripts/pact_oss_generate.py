@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Qualify immutable B2/B3 binaries and canonical K=2 outputs, sequentially."""
+from pact.environment import dependency_path
+from pact.experiment_storage import experiment_root
 import argparse
 import csv
 import hashlib
@@ -71,7 +73,7 @@ def generate(method):
                 '--liberty', '/scratch/NangateOpenCellLibrary_typical_dft.lib']
         command = docker(args)
         mount_at = command.index('--entrypoint')
-        command[mount_at:mount_at] = ['--mount', 'type=bind,source=/root/pact-deps/OpenROAD-flow-scripts/flow/results,target=/root/pact-deps/OpenROAD-flow-scripts/flow/results,readonly']
+        command[mount_at:mount_at] = ['--mount', ('type=bind,source=' + str(dependency_path("OpenROAD-flow-scripts")) + '/flow/results,target=' + str(dependency_path("OpenROAD-flow-scripts")) + '/flow/results,readonly')]
         target = folder / design
         target.mkdir(parents=True, exist_ok=True)
         shutil.copy2(Path(__file__).with_name('pact_oss_generator.py'), target / 'executed_generator.py')

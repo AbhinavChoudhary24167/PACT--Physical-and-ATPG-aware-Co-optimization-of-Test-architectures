@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Add explicit scan-test semantics to an isolated Nangate45 Liberty copy."""
 from __future__ import annotations
+from pact.environment import dependency_path
+from pact.experiment_storage import experiment_root
 
 import hashlib
 import json
@@ -8,7 +10,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = Path("/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib")
+SOURCE = Path(f'{dependency_path("OpenROAD-flow-scripts")}/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib')
 OUTPUT = ROOT / "artifacts/derived/phase0b/lib/NangateOpenCellLibrary_typical_dft.lib"
 ANNOTATION = '''\n\ttest_cell () {
 \t\tff ("IQ", "IQN") {

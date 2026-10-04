@@ -1,4 +1,6 @@
 """Read-only upstream integrity audit; writes exclusively to the new Phase-2D directory."""
+from pact.environment import dependency_path
+from pact.experiment_storage import experiment_root
 from pathlib import Path
 import hashlib
 import json
@@ -52,7 +54,7 @@ def main():
                   upstream_snapshot=snapshots, python=sys.version,
                   git_commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip())
     write(OUT / 'initial_integrity.json', result)
-    flow = Path('/root/pact-deps/OpenROAD-flow-scripts/flow')
+    flow = Path(f'{dependency_path("OpenROAD-flow-scripts")}/flow')
     inventory = {}
     for design, block in [('s5378','s5378'), ('s9234','s9234f'), ('s15850','s15850')]:
         folders = [flow / 'results/nangate45' / block / 'base', flow / 'results/nangate45' / block / 'phase0b_s11_B0']

@@ -1,4 +1,6 @@
 """Fixed-model historical diagnostics and separate implementation/physical outcomes."""
+from pact.environment import python_executable
+from pact.experiment_storage import experiment_root
 import csv
 import gzip
 import itertools
@@ -262,7 +264,7 @@ def report(out):
         '## Execution and evidence', '',
         'One prepare and one search per design; no depth sweep, placement change, ATPG regeneration, seed sweep or historical reroute. The search command was:', '',
         '```sh', 'export PYTHONPATH=.optimizer-deps:src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1',
-        'PY=/root/pact-deps/pact-venv/bin/python',
+        f'PY={python_executable()}',
         '$PY scripts/pact_candidate_stateful.py prepare --design <design>',
         '$PY scripts/pact_candidate_stateful.py search --design <design> --seconds 180 --max-evaluations 20000 --route-limit 2',
         '$PY scripts/pact_candidate_stateful.py route --design <design> --route-seconds 600',

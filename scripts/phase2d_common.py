@@ -1,4 +1,6 @@
 """Phase-2D paths, immutable identity, and bounded command recording."""
+from pact.environment import dependency_path
+from pact.experiment_storage import experiment_root
 from phase2d_preflight import ROOT, OUT, sha, read, write
 from datetime import datetime, timezone
 from pathlib import Path
@@ -10,7 +12,7 @@ import time
 sys.path.insert(0, str(ROOT / 'src'))
 PRIOR = ROOT / 'results/phase2c_repair_multiseed'
 REPAIRED = ROOT / 'results/phase2c_repair'
-FLOW = Path('/root/pact-deps/OpenROAD-flow-scripts/flow')
+FLOW = Path(f'{dependency_path("OpenROAD-flow-scripts")}/flow')
 PLATFORM = FLOW / 'platforms/nangate45'
 DESIGNS = ('s5378', 's9234', 's15850')
 BLOCKS = dict(s5378='s5378', s9234='s9234f', s15850='s15850')
@@ -18,7 +20,7 @@ SEED = 29
 ENDPOINTS = [('M3_load','cap_total'), ('M3_load_local','cap_local_peak'),
              ('M5_hpwl','wire_total'), ('M5_hpwl_local','wire_local_peak')]
 ENV = dict(os.environ, PYTHONDONTWRITEBYTECODE='1', OPENBLAS_NUM_THREADS='1',
-           PYTHONPATH=str(ROOT/'src')+':/mnt/d/PACT_EXPERIMENTS/cache/phase2a_python')
+           PYTHONPATH=str(ROOT/'src')+f':{experiment_root()}/cache/phase2a_python')
 
 def now():
     return datetime.now(timezone.utc).isoformat()

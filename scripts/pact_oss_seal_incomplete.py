@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Seal a factual incomplete Stage A after an observed baseline build failure."""
+from pact.environment import python_executable
+from pact.experiment_storage import experiment_root
 import csv
 from datetime import datetime, timezone
 from pathlib import Path
@@ -197,7 +199,7 @@ def main():
              'Implemented metrics, Pareto membership and A1–A5 are unavailable. The tables retain explicit statuses and empty measurements. '
              'Saved P0 predictions are diagnostics; B0/B1 rescoring was not performed after the pending baseline build gate. '
              'The complete archive includes points without imported implemented evidence; a complete implemented Pareto claim is not made.\n\n'
-             'Tests: `PYTHONPATH=.optimizer-deps:src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 /root/pact-deps/pact-venv/bin/python '
+             f'Tests: `PYTHONPATH=.optimizer-deps:src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 {python_executable()} '
              '-m pytest -q tests/unit/test_oss_benchmark.py tests/unit/test_candidate_stateful.py --junitxml=results/pact_oss_benchmark/stage_a/protocol_tests.xml`: **16 passed**. '
              'These include deterministic selection, unit scaling, measurement independence, rejection of FF/placement/K/capacity/endpoint confounders, '
              'and all six existing stateful correctness/rollback/search tests. Native qualification is additional executed tool evidence.\n\n'

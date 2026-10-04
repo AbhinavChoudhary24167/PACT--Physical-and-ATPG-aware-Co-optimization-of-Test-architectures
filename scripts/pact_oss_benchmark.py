@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Additive OSS benchmark provenance; never modifies PACT models or old evidence."""
 from __future__ import annotations
+from pact.environment import dependency_path
+from pact.experiment_storage import experiment_root
 
 import argparse
 from datetime import datetime, timezone
@@ -19,7 +21,8 @@ GIT = os.environ.get('PACT_BENCHMARK_GIT', 'git')
 
 
 def read(path):
-    return json.loads(Path(path).read_text())
+    from pact.environment import relocate
+    return relocate(json.loads(Path(path).read_text()))
 
 
 def binding(path):
@@ -77,7 +80,7 @@ def freeze():
                 raise ValueError('Frozen input changed: ' + design + '/' + name)
             inputs[design][name] = actual
         block = 's9234f' if design == 's9234' else design
-        flow = Path('/root/pact-deps/OpenROAD-flow-scripts/flow')
+        flow = Path(('' + str(dependency_path("OpenROAD-flow-scripts")) + '/flow'))
         base = flow / f'results/nangate45/{block}/phase0b_s11_B0'
         for name in ('3_place.odb', '3_place.sdc'):
             inputs[design][name] = binding(base / name)

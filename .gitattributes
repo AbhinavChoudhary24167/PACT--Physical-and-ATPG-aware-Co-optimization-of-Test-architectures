@@ -1,19 +1,18 @@
+* text=auto
 *.sh text eol=lf
 *.py text eol=lf
 *.tcl text eol=lf
 *.mk text eol=lf
 *.sdc text eol=lf
+# Hash-bound compact research data retain exact original bytes
 artifacts/** -text
-reports/phase0d/optimizer_v1/** -text
-reports/end_to_end/** -text
-# Preserve CSV CRLF and external tool logs exactly as hash-indexed evidence.
-reports/physical_effect/** -text whitespace=-trailing-space
-results/pact_v2/** -text whitespace=-trailing-space
-results/pact_candidate_sensitive/** -text whitespace=-trailing-space
-results/pact_candidate_stateful/** -text whitespace=-trailing-space
-results/pact_oss_benchmark/** -text whitespace=-trailing-space
-artifacts/manifests/phase0c/*.json text eol=lf
-config/phase0c*.json text eol=lf
-config/phase0d*.json text eol=lf
-docs/PACT_PHASE0C*.md text eol=lf
-reports/PACT_PHASE0C*.md text eol=lf
+artifacts/** whitespace=cr-at-eol
+reports/physical_effect/** -text
+reports/physical_effect/** whitespace=cr-at-eol
+results/** -text
+results/** whitespace=cr-at-eol
+*.md text eol=lf
+*.gz -text
+# Intentionally retained inputs/measurement exports are data
+artifacts/raw/** linguist-generated=true
+results/** linguist-generated=true

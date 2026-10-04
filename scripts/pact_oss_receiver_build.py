@@ -129,7 +129,7 @@ def prepare():
     write(REPAIR / 'before_edit.json', dict(status=run_git('status', '--short'), HEAD=run_git('rev-parse', 'HEAD').strip(),
         remotes=run_git('remote', '-v'), latest_commit=run_git('log', '-1', '--oneline'),
         upstream_base_sha=BASE, branch=BRANCH, exact_recursive_source_binding=binding(original.RECOVERY / 'baselines' / OLD / 'source_manifest.json')))
-    identity = {key:subprocess.check_output(['/mnt/d/Git/cmd/git.exe', 'config', '--get', 'user.'+key], text=True, cwd=ROOT).strip()
+    identity = {key:subprocess.check_output(['git', 'config', '--get', 'user.'+key], text=True, cwd=ROOT).strip()
                 for key in ('name', 'email')}
     for key,value in identity.items():
         run_git('config', 'user.'+key, value)

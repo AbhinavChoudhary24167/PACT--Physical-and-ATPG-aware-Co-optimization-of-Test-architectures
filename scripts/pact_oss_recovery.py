@@ -4,6 +4,7 @@
 All new receipts are additive under recovery_20261003. The historical seal stays
 unchanged. Commands run in an immutable Docker image and are recorded verbatim.
 """
+from pact.experiment_storage import experiment_root
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -21,7 +22,7 @@ from pact_oss_acquire import TEMP
 IMAGE = 'sha256:f05cee3219a02f26289f02f00e11a3fc986ab51a482a0000a2da810cda219a6e'
 RECOVERY = OUT / 'recovery_20261003'
 DATA = TEMP / 'recovery_20261003'
-MOUNT = Path('/mnt/pact-oss-recovery')
+MOUNT = Path(str(experiment_root() / "build"))
 METHOD = 'B2_openroad_10176'
 
 

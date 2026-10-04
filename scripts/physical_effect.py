@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Frozen nine-architecture physical experiment. No optimizer is executed."""
+from pact.environment import dependency_path
+from pact.experiment_storage import experiment_root
 import argparse
 import csv
 import gzip
@@ -20,10 +22,10 @@ from pact.integration.patterns import fan_workload, serialize
 from pact.analysis.phase2b_reference import parse_spef
 
 OUT = Path(os.environ.get('PACT_PHYSICAL_EFFECT_OUT', ROOT / 'reports/physical_effect'))
-FLOW = Path('/root/pact-deps/OpenROAD-flow-scripts/flow')
+FLOW = Path(f'{dependency_path("OpenROAD-flow-scripts")}/flow')
 PLATFORM = FLOW / 'platforms/nangate45'
 LIB = PLATFORM / 'lib/NangateOpenCellLibrary_typical.lib'
-CELLS = Path('/root/pact-deps/FAN_ATPG/techlib/NangateOpenCellLibrary.v')
+CELLS = Path(f'{dependency_path("FAN_ATPG")}/techlib/NangateOpenCellLibrary.v')
 RULES = PLATFORM / 'rcx_patterns.rules'
 
 def read(p):

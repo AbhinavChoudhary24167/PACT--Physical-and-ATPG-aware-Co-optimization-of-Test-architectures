@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Qualify the unchanged common input and actual native K=2 DFT generator."""
+from pact.experiment_storage import experiment_root
 from datetime import datetime, timezone
 import json
 from pathlib import Path
@@ -9,7 +10,7 @@ import time
 
 from pact_oss_benchmark import ROOT, OUT, DESIGNS, binding, read, verify, write
 
-TEMP = Path('/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003')
+TEMP = Path(('' + str(experiment_root()) + '/tmp/pact_oss_20261003'))
 
 
 def execute(command, folder, label):

@@ -31,8 +31,12 @@ def peak_rss():
     class Counters(ctypes.Structure):
         _fields_=[('cb',wintypes.DWORD),('PageFaultCount',wintypes.DWORD)]+[(n,ctypes.c_size_t) for n in ('PeakWorkingSetSize','WorkingSetSize','QuotaPeakPagedPoolUsage','QuotaPagedPoolUsage','QuotaPeakNonPagedPoolUsage','QuotaNonPagedPoolUsage','PagefileUsage','PeakPagefileUsage')]
     counters=Counters();counters.cb=ctypes.sizeof(counters)
-    kernel=ctypes.WinDLL('kernel32');kernel.GetCurrentProcess.restype=wintypes.HANDLE
-    if not ctypes.WinDLL('psapi').GetProcessMemoryInfo(kernel.GetCurrentProcess(),ctypes.byref(counters),counters.cb):return None
+    kernel=ctypes.WinDLL('kernel32')
+    kernel.GetCurrentProcess.restype = ctypes.c_void_p
+    memory_info = ctypes.WinDLL('psapi').GetProcessMemoryInfo
+    memory_info.argtypes = (ctypes.c_void_p, ctypes.c_void_p, ctypes.c_ulong)
+    memory_info.restype = ctypes.c_int
+    if not memory_info(kernel.GetCurrentProcess(),ctypes.byref(counters),counters.cb):return None
     return int(counters.PeakWorkingSetSize)
 
 

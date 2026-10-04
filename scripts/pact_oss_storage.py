@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Verify D-backed mount on every invocation; recover an owned fallback build."""
+from pact.experiment_storage import experiment_root
 import argparse
 from datetime import datetime, timezone
 import gzip
@@ -14,7 +15,7 @@ from pact_oss_acquire import TEMP
 
 DATA = TEMP / 'recovery_20261003'
 DISK = DATA / 'build-storage.ext4'
-MOUNT = Path('/mnt/pact-oss-recovery')
+MOUNT = Path(str(experiment_root() / "build"))
 PROOF = OUT / 'recovery_20261003'
 
 
@@ -62,8 +63,8 @@ def relocate():
     expected_roots = {'B2_openroad_10176', 'toolchain', 'toolchain_build', 'toolchain_sources'}
     if {p.name for p in MOUNT.iterdir()} != expected_roots:
         raise RuntimeError('Fallback directory contains unexpected files; no deletion is permitted')
-    backup = Path('/mnt/pact-oss-recovery-wsl-fallback-20261003')
-    temporary = Path('/mnt/pact-oss-recovery-data-20261003')
+    backup = Path(str(experiment_root() / 'build-backup'))
+    temporary = Path(str(experiment_root() / 'build-transfer'))
     if backup.exists():
         raise RuntimeError('Relocation backup already exists')
     temporary.mkdir(parents=True, exist_ok=True)
@@ -91,7 +92,7 @@ def relocate():
         json.dump(before, stream, sort_keys=True)
     # Delete only the exact newly-created generated backup after byte-for-byte
     # verification of its recoverable D: copy. No qualified/user path is touched.
-    if backup.resolve() != Path('/mnt/pact-oss-recovery-wsl-fallback-20261003'):
+    if backup.resolve() != Path(str(experiment_root() / 'build-backup')):
         raise RuntimeError('Unexpected resolved cleanup target')
     shutil.rmtree(backup)
     write(PROOF / 'storage_relocation.json', dict(status='PASS', timestamp_start=started,

@@ -3,7 +3,7 @@
 Repository source and compact, version-controlled reports deliberately remain
 outside this module.  Every transient or potentially large experiment path is
 derived here so an individual experiment cannot quietly fall back to the host
-OS temporary directory (C: on the qualification workstation).
+OS temporary directory.
 """
 from __future__ import annotations
 
@@ -18,8 +18,8 @@ from typing import Any, Mapping, MutableMapping
 
 
 EXPERIMENT_ROOT_ENV = "PACT_EXPERIMENT_ROOT"
-DEFAULT_WINDOWS_EXPERIMENT_ROOT = Path(r"D:\PACT_EXPERIMENTS")
-DEFAULT_WSL_EXPERIMENT_ROOT = Path("/mnt/d/PACT_EXPERIMENTS")
+DEFAULT_WINDOWS_EXPERIMENT_ROOT = Path(__file__).resolve().parents[2] / 'scratch'
+DEFAULT_WSL_EXPERIMENT_ROOT = DEFAULT_WINDOWS_EXPERIMENT_ROOT
 DEFAULT_MIN_FREE_GIB = 20.0
 LOW_DISK_STATUS = "PACT_EXPERIMENT_ABORTED_LOW_DISK_SPACE"
 
@@ -52,9 +52,8 @@ def experiment_root(
 ) -> Path:
     """Resolve the one experiment root; command line overrides environment.
 
-    The native-Windows default is D:, and WSL uses the same physical volume via
-    ``/mnt/d``.  There is intentionally no repository, home, or system-temp
-    fallback.
+    Defaults to the ignored checkout scratch directory. Set PACT_EXPERIMENT_ROOT
+    to a larger volume for physical campaigns; command-line selection wins.
     """
     environment = os.environ if environ is None else environ
     selected = command_line or environment.get(EXPERIMENT_ROOT_ENV)

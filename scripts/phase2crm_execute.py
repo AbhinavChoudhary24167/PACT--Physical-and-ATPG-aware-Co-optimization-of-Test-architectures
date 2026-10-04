@@ -1,4 +1,5 @@
 """Bounded physical jobs in the new directory; inherited route flow unchanged."""
+from pact.experiment_storage import experiment_root
 from phase2crm_audit import *
 import os
 import shutil
@@ -6,7 +7,7 @@ import tempfile
 import xml.etree.ElementTree as ET
 
 ENV=dict(os.environ,PYTHONDONTWRITEBYTECODE='1',OPENBLAS_NUM_THREADS='1',
-    PYTHONPATH=str(ROOT/'src')+':/mnt/d/PACT_EXPERIMENTS/cache/phase2a_python')
+    PYTHONPATH=str(ROOT/'src')+f':{experiment_root()}/cache/phase2a_python')
 
 def verify():
     for p,h in read(OUT/'freeze.json')['files'].items():check(p,h)

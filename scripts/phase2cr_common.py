@@ -1,4 +1,6 @@
 """Phase-2C-R only: immutable evidence helpers, no physical execution."""
+from pact.environment import dependency_path
+from pact.experiment_storage import experiment_root
 import hashlib
 import json
 from pathlib import Path
@@ -11,8 +13,8 @@ REPORT = ROOT / 'results/phase2c_repair'
 B = ROOT / 'reports/phase2b_activity_model'
 A = ROOT / 'reports/phase2a_shift_activity'
 C = ROOT / 'reports/phase2c'
-WORK = Path('/mnt/d/PACT_EXPERIMENTS/results/phase2b_activity_model')
-PLATFORM = Path('/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45')
+WORK = Path(f'{experiment_root()}/results/phase2b_activity_model')
+PLATFORM = Path(f'{dependency_path("OpenROAD-flow-scripts")}/flow/platforms/nangate45')
 LIB = PLATFORM / 'lib/NangateOpenCellLibrary_typical.lib'
 DESIGNS = ('s5378', 's9234', 's15850')
 

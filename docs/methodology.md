@@ -1,11 +1,21 @@
 # Methodology
 
-The fixed experimental object is the synthesized combinational logic, FF set, placement, platform, clock, and ATPG test set. An architecture changes only legal scan SI/SO connectivity. Every generated architecture is validated and SHA256-hashed over canonical JSON.
+PACT keeps physical cost, total switching and local peaks separate. Legal transformations preserve FF bijection, clock domains and capacities. Fixed SI/SO endpoints must survive restitching, scan metadata and exported connectivity.
 
-The activity simulator serially shifts each desired logical FF state into its chain from scan-in to scan-out. A shift cycle records toggles for every cell. Initial state is explicitly all-zero unless a verified previous capture state is available; this assumption must be reported. For parallel chains, a pattern consumes the maximum chain length in clocks and shorter chains do not toggle after their load completes.
+## Models and schedules
 
-Geometric scan length is the sum of Manhattan distances between adjacent placed cells in each chain. It excludes ports unless explicit endpoint coordinates are supplied. Spatial activity uses fixed placement bounds and nonoverlapping grid bins. Local density is toggles divided by the number of FFs in the bin; empty bins have zero density. Gini is computed over per-bin cumulative toggles. None of these values is an IR-drop measurement.
+The working solver uses repaired M3 load and M5 HPWL costs. `phase2cr_loads` is authoritative for selected SO branch ownership, functional-plus-scan geometry/pin load and coefficient 0.103981. Its schedule carries loaded patterns from zero, uses 10×10 bins and 81 contained 2×2 windows, and excludes capture/final unload. These are not edge-Hamming costs.
 
-The distance-weighted hotspot is the maximum over shift clocks and bins of the sum of local bin densities within Manhattan radius one, with each contributing bin weighted by `1 / (1 + Manhattan bin distance)`. Out-of-die bins contribute zero. Per-cycle and per-bin percentiles include unoccupied bins as zeros. Placement extraction currently uses DEF component origins, not scan-pin coordinates; this limitation is tracked in the report.
+The implementation-aware path uses stored FAN load/capture-response states and exact load/unload trajectories. QN is Q's complement. Candidate-stateful propagation evaluates simultaneous settled inputs through three nontransparent levels; BUF/INV do not consume depth. Unrepresented fanins and outputs beyond the bound are omitted and recorded as coverage limits.
 
-The success gate requires independently qualified OpenROAD DFT and FAN_ATPG tools, an unambiguous ATPG-to-physical FF map, real ATPG patterns, at least two nontrivial designs or multiple physical seeds, and a fully rerun physical implementation with only scan ordering varied. Missing gates force a partial or not-established classification.
+E is the all-data sum of ground-plus-pin capacitance times transitions, in fF·transitions. Coupling is excluded from the primary metric. H4/H8 are maximum cycle/bin values on 4×4/8×8 source-localized grids. Each net's entire capacitance is assigned to its source; metal crossing bins is not distributed energy attribution. Zero-delay simulation does not establish watts, physical glitches or IR-drop.
+
+## Physical qualification
+
+Search wire is port-inclusive Manhattan scan HPWL. Measured routed scan cost is a connected scan-path net-length upper bound including functional branches on shared nets. It differs from total detailed-route wire and exact scan-only attribution.
+
+Qualification requires FF membership once, SI/internal/fixed-SO traversal without cycles/forks/orphans, consistent metadata/exported Verilog, unchanged functional D/CK/Q/QN fanout as applicable, independent workload and FF-transition checks, zero detailed-route DRC and available nonnegative global-route setup/hold values. Global-route timing is not detailed-route signoff.
+
+Stage B requires `W_proxy <= (1+epsilon)*W_proxy(reference)` before activity work. The reference minimizes measured routed scan cost among B2/B3T. Routed budget acceptance is checked independently after implementation. Dominance is reported for both Stage A's (wire,E,H8) and expanded (wire,E,H4,H8) coordinates against all qualified comparators.
+
+Historical defects and negative gates remain in [history](history.md). Cleanup changes no scientific objectives or optimization parameters.

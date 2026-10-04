@@ -1,4 +1,5 @@
 """Evidence-only comparison of new implementations with stored baselines."""
+from pact.environment import python_executable
 import csv
 import gzip
 from pathlib import Path
@@ -175,7 +176,7 @@ Run from the repository in the existing WSL Ubuntu-24.04 environment:
 
 ```sh
 export PYTHONPATH=.optimizer-deps:src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
-PY=/root/pact-deps/pact-venv/bin/python
+PY={python_executable()}
 for d in s5378 s9234 s15850; do
   $PY scripts/pact_v2.py search --design "$d" --seconds 180 --max-evaluations 20000 --route-limit 3
   $PY scripts/pact_v2.py route --design "$d" --route-seconds 600

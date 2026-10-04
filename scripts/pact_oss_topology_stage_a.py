@@ -126,7 +126,7 @@ if __name__ == '__main__':
     parser.add_argument('action', choices=('prepare','route','measure','collect'))
     parser.add_argument('--design', choices=DESIGNS)
     args = parser.parse_args()
-    os.environ.setdefault('PACT_BENCHMARK_GIT', '/mnt/d/Git/cmd/git.exe')
+    os.environ.setdefault('PACT_BENCHMARK_GIT', 'git')
     measure, results = configure_modules()
     if args.action == 'prepare':
         prepare()

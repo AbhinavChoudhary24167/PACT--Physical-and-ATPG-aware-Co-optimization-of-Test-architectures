@@ -1,4 +1,6 @@
 """Independent Phase-2C paths, identity and immutable input gates."""
+from pact.environment import dependency_path
+from pact.experiment_storage import experiment_root
 import hashlib
 import json
 from pathlib import Path
@@ -11,8 +13,8 @@ from pact.phase0d.campaign import file_sha256, atomic_write_json as write
 REPORT = ROOT / 'reports/phase2c'
 OLD = ROOT / 'reports/phase2b_activity_model'
 A = ROOT / 'reports/phase2a_shift_activity'
-WORK = Path('/mnt/d/PACT_EXPERIMENTS/results/phase2c')
-FLOW = Path('/root/pact-deps/OpenROAD-flow-scripts/flow')
+WORK = Path(f'{experiment_root()}/results/phase2c')
+FLOW = Path(f'{dependency_path("OpenROAD-flow-scripts")}/flow')
 PLATFORM = FLOW / 'platforms/nangate45'
 LIB = PLATFORM / 'lib/NangateOpenCellLibrary_typical.lib'
 RULES = PLATFORM / 'rcx_patterns.rules'

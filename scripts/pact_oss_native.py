@@ -3,6 +3,7 @@
 
 Run with openroad -python. No scan_replace, placement, routing, or ATPG is run.
 """
+from pact.environment import dependency_path
 import argparse
 import json
 from pathlib import Path
@@ -60,7 +61,7 @@ def run(design_name, source, output, liberty, optimize=False):
     ff = {i.getName(): i for i in block.getInsts() if i.getMaster().getName() == 'SDFF_X1'}
     max_length = max(map(lambda c: len(c.cells), reference.chains))
     commands = [
-        f'read_sdc /root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/{"s9234f" if design_name == "s9234" else design_name}/phase0b_s11_B0/3_place.sdc',
+        f'read_sdc {dependency_path("OpenROAD-flow-scripts")}/flow/results/nangate45/{"s9234f" if design_name == "s9234" else design_name}/phase0b_s11_B0/3_place.sdc',
         f'set_dft_config -max_chains 2 -max_length {max_length} -clock_mixing no_mix '
         '-scan_enable_name_pattern test_se -scan_in_name_pattern test_si_{} -scan_out_name_pattern test_so_{}',
         'report_dft_config', 'report_dft_plan -verbose', 'execute_dft_plan']

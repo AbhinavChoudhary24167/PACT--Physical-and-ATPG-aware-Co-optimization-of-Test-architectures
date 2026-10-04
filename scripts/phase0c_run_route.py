@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Resumable bounded Phase-0C route attempt from a frozen physical seed."""
 from __future__ import annotations
+from pact.environment import dependency_path
+from pact.experiment_storage import experiment_root
 
 import argparse
 import gzip
@@ -17,7 +19,7 @@ from phase0b_run_command import run
 
 
 ROOT = Path(__file__).resolve().parents[1]
-FLOW = Path("/root/pact-deps/OpenROAD-flow-scripts/flow")
+FLOW = Path(f'{dependency_path("OpenROAD-flow-scripts")}/flow')
 BLOCK = {"s5378": "s5378", "s9234": "s9234f", "s15850": "s15850"}
 
 

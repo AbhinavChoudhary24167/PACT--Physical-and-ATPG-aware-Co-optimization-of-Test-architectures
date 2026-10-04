@@ -1,135 +1,67 @@
-# PACT — Physical- and ATPG-aware Co-optimization of Test Architectures
+# PACT
 
-The new **PACT Implementation-Aware Backend v2** synthesizes scan architectures
-from existing ATPG load/capture-response states, extracted FF loads, physical
-port geometry and an explicit spatial switching objective. Run
-`python scripts/pact_v2.py search --design s5378 --seconds 180 --output <new-directory>`
-in the qualified environment. See the [backend formulation](docs/pact_v2_backend.md)
-and [new implementation results](results/pact_v2/README.md) for commands, measured
-Pareto relationships, candidate identities and limitations. Prior baselines remain
-unchanged; the historical milestones below describe their original evidence.
+**Physical and ATPG-aware Co-optimization of Test Architectures.** PACT is a deterministic research tool for constructing legal scan orders, optimizing physical/activity tradeoffs and qualifying implementations with OpenROAD/ORFS and stored FAN ATPG workloads.
 
-The physical-effect milestone is **PACT_PHYSICAL_EFFECT_MIXED**. Simulation of
-nine exact routed implementations under the qualified ATPG load/capture/unload
-workloads shows lower PACT total non-clock transition activity and extracted
-capacitance-weighted switching versus each strongest physical start. Unweighted
-spatial peaks improve only on s9234; J50 retains important activity advantages.
-See the [physical-effect report](reports/physical_effect/final_report.md),
-[frozen methodology](reports/physical_effect/methodology.md), and
-[comparison data](reports/physical_effect/comparison.csv). These are zero-delay
-net-switching measurements, not signoff power or IR-drop. The solver and
-historical recommendations remain frozen.
+## Motivation and key idea
 
-The integration entry point is now `pact-integrate` (or
-`python scripts/pact_integrate.py`). It consumes a saved constrained solver
-recommendation, emits a concrete scan-only OpenROAD patch and serial ATPG
-workload, and independently checks load/unload semantics. See the
-[integration guide](docs/end_to_end.md) and
-[three-design end-to-end report](reports/end_to_end/final_report.md).
-The solver itself remains frozen at `WORKING_SOLVER`.
+Short scan wire need not mean low switching hotspots. PACT preserves FF membership, capacities, clock domains and serial load/unload semantics while searching physical cost and separate activity objectives. Proxy improvements must survive implemented measurement.
 
-The working optimizer is now available as `pact-optimize` (or
-`python scripts/pact_optimize.py` from this checkout). Install with
-`pip install -e '.[optimizer]'`, then run
-`pact-optimize --design s5378 --chains 2 --time-budget 60 --output run/s5378`.
-It uses exact incremental repaired M3/M5 activity costs, spatial construction,
-bounded Pareto search and anytime checkpoints. See
-[usage and implementation](docs/working_optimizer.md),
-[current implementation note](current_solution.md), and
-[measured solution status](solution_status.md).
-The historical experiment descriptions below remain as background.
+## Architecture / workflow
 
-## Working solver
+Architecture + stored workload → candidate evaluation → bounded search → selective physical implementation → measured comparison. PACT includes an exact incremental M3/M5 working solver, bounded candidate-stateful evaluator, Stage-B physical-budget activity lanes, scan-only export, independent workload replay and topology/functional/FF/routing qualification. See [architecture](docs/architecture.md) and [methodology](docs/methodology.md).
 
-Current engineering status: **WORKING_SOLVER**. The maintained entry point is
-`pact-optimize`; the older v1/v2 scripts remain available for reproducing their
-recorded experiments. The working solver preserves repaired M3/M5 semantics
-and returns optimized chains, a bounded Pareto set, objective values, runtime,
-peak memory, evaluation counts and convergence checkpoints.
+## Current status
 
-```bash
-pip install -e '.[optimizer,dev]'
-# Self-contained algorithm-scaling example; no placed-design archives required.
-pact-optimize --synthetic 10000 --time-budget 60 --output run/scaling_10k
-# Requires the placed design, mapped ATPG inputs and Liberty described in the guide.
-pact-optimize --design s5378 --chains 2 --time-budget 60 --output run/s5378
+Saved records at `f2569d498cd5f26a88c4954ec163498eb3cf7d91` support completed Stage A (`PACT_STAGE_A_PHYSICAL_RESULTS_COMPLETE`, `PACT_EXTERNAL_BENCHMARK_COMPLETE`) and later Stage B (`PACT_STAGE_B_MULTI_DESIGN_CONVERGENCE`), with nine qualified Stage-B selections across s5378/s9234/s15850. The research program remains in progress: full-network hotspot prediction and complete detected-fault identity equivalence remain unresolved. [Research status](docs/research_status.md) is canonical.
+
+## Repository structure
+
+| Path | Purpose |
+|---|---|
+| `src/pact/` | Solver, scan/activity/physical models and integration |
+| `scripts/`, `tests/` | Current runners, adapters and essential regressions |
+| `config/`, `experiments/`, `benchmarks/` | Schemas, physical settings and provenance |
+| `artifacts/` | Minimal placed/workload inputs and fixtures |
+| `results/pact_stage_b/`, `results/stage_a/` | Portable current inputs/orders and compact measured comparisons |
+| `docs/` | Canonical user/research documentation |
+| `reports/repository_cleanup/` | Storage audit, decisions and validation |
+
+## Requirements and installation
+
+Python 3.11+ and numerical dependencies support portable workflows/tests. Physical work additionally needs Linux/WSL, qualified OpenROAD/ORFS, FAN_ATPG and Icarus Verilog.
+
+```sh
+python -m venv .venv
+# Linux/WSL: source .venv/bin/activate
+# PowerShell: .venv/Scripts/Activate.ps1
+python -m pip install -e '.[optimizer,dev]'
 ```
 
-The three real 60-second runs improved M3 total by 5.87%, 3.04% and 1.44%
-against their strongest existing physical starts, with improved local peaks.
-Six selected new routes passed with zero DRC errors. Synthetic 100K-FF scaling
-completed in 60.31 seconds at 349 MiB with 200 chains; two long chains required
-1.25 GiB and substantially reduced throughput. These measurements do not claim
-industrial-scale ATPG performance or signoff power improvement.
+Dependency pins and configurable locations are in [installation](docs/installation.md).
 
-See [measured results and limitations](solution_status.md),
-[input schema and CLI guide](docs/working_optimizer.md), and the
-[repository update and experiment index](docs/repository_update.md).
+## Quick start / running PACT
 
-PACT (Physical- and ATPG-aware Co-optimization of Test Architectures) tests whether legal scan-chain orderings create a reproducible conflict between physical scan cost and ATPG-derived shift-activity hotspots. This repository contains the experimental infrastructure, raw evidence, and a gate-based Phase-0 report. It does not contain machine learning.
-
-The original research question is:
-
-> Can an intervention-aware learning model jointly reason over physical-design state and ATPG-derived activity to predict the marginal impact of legal scan-architecture transformations, enabling closed-loop optimization of test power integrity, routability, timing, and test cost while preserving test quality by construction?
-
-The work evaluates test-mode power and IR-drop risk, scan-chain routing congestion, timing degradation, excessive scan wirelength, test time, physical locality, and costly iteration between DFT and physical-design teams.
-
-The hypothesis is open. A missing tool, unverified flip-flop identity map, or failed physical rerun is recorded as a failed gate, not replaced with simulated research evidence.
-
-## Historical Phase-0 reproduction
-
-Run from this repository in Ubuntu WSL. External ORFS and FAN_ATPG checkouts are kept outside this Git repository; set the three environment variables to the qualified installations before reproducing the observed s5378/s9234 subset:
-
-```bash
-bash scripts/collect_versions.sh
-export PACT_ORFS_ROOT=/path/to/OpenROAD-flow-scripts
-export PACT_FAN_ATPG_ROOT=/path/to/FAN_ATPG
-export PACT_VENV=/path/to/pact-venv
-bash scripts/run_phase0.sh
+```sh
+pact-optimize --synthetic 64 --chains 2 --time-budget 1 --output scratch/example
+python -m pact.cli validate-scan --architecture scratch/example/optimized.architecture.json
+python -m pytest -q
 ```
 
-`run_phase0.sh` intentionally returns status 2 after reproducing the available subset because the central conflict did not replicate and OpenROAD-native ordering was not extracted for these designs. To recheck saved campaigns without repeating physical implementation, run `bash scripts/finalize_phase0.sh`. See `reports/PHASE0_FINAL_REPORT.md` for measured results and `docs/methodology.md` for metric definitions.
+This is an algorithm example, not research evidence. Use `pact-optimize --help`, `pact-integrate --help` and [usage](docs/usage.md) for real input/integration workflows.
 
-## Historical research status
+## Reproducing current experiments and benchmarks
 
-PACT is progressing through a staged qualification process for physical- and ATPG-aware scan-architecture optimization.
+```sh
+python scripts/verify_reproducibility.py
+python scripts/pact_stage_b_search.py --input results/pact_stage_b/inputs/s5378.json.gz --output scratch/stage_b/s5378 --seconds 300 --epsilons 0.02 0.05 0.10
+```
 
-### Phase-0C — Completed
+The first command checks saved inputs/orders without a new search. The second runs the recorded method; use one numerical thread and fresh output. Wall-clock endpoints vary across hosts. See [experiment registry](docs/experiments.md), [baseline definitions](docs/benchmarks.md), [method](docs/stage_b_method.md) and [reproducibility](docs/reproducibility.md), including exact physical inputs not distributed publicly.
 
-Status: `PACT_PHASE0C_LEARNING_GATE_FAIL`
+## Tests, limitations and research
 
-Phase-0C completed a frozen campaign over s5378, s9234, and s15850; five conditional physical seeds; and K in {1, 2, 4, 8}. All 375 planned architecture routes were attempted and qualified with zero detailed-route DRC. The campaign established reproducible physical/activity conflict, cross-seed and cross-design replication, and large legal search spaces. It did not establish that learned optimization is scientifically necessary: the frozen deterministic portfolio covered the observed Pareto set, and the tested local-swap intervention was insufficiently rich. No ML model was trained.
+`python -m pytest -q` runs unit and small integration regressions. External physical qualification requires separate tools/inputs. Current evidence is small Nangate45 designs, fixed workload/placement and K=2; it does not establish industrial stateful scaling, watts, IR-drop or signoff power/timing. Negative/dominated outcomes remain in the result tables. No learned model has been introduced. [History](docs/history.md) summarizes unsuccessful gates and corrected methodology.
 
-### Phase-0D — Pilot Completed; Optimizer v1 Qualified
+## Contributing, citation and license
 
-Pilot status: `PILOT_COMPLETE_NO_ROUTE_QUALIFIED`
-
-Phase-0D studies richer legal interventions and budgeted deterministic search using a structural-check, analytical-proxy, Pareto-filter, and selective-route funnel. Its primary question is:
-
-> Under bounded compute and physical-evaluation budgets, do deterministic search methods leave a reproducible optimization gap large enough that investigating learned guidance is scientifically justified?
-
-The frozen one-context pilot verified all seven intervention classes and all 117 ATPG target reconstructions. Four equal-budget deterministic searches completed 32 logical search evaluations; early stopping occurred after eight evaluations per method. No child was nondominated against the qualified Phase-0C `P` start, so the frozen filter selected no new physical route. The naive maximum-budget campaign projects to roughly 70 serial hours and was not launched.
-
-This pilot is not a Phase-0D PASS or FAIL decision. Current evidence and progress are in `reports/phase0d/STATUS.md` and `reports/phase0d/PILOT_REPORT.md`.
-
-### Optimizer v1 milestone
-
-Optimizer-v1 status: `PACT_OPTIMIZER_V1_PROXY_ADVANCE`
-
-Routed status: `PACT_OPTIMIZER_V1_ROUTE_QUALIFIED`
-
-The Phase-0D pilot showed that bounded small local perturbations around the physically optimized `P` architecture did not produce a new nondominated solution in the tested context. PACT therefore now treats scan-architecture generation directly as a multi-objective synthesis problem rather than attempting to justify ML a priori.
-
-Optimizer v1 combines:
-
-- global physical/activity-aware construction from empty balanced chains;
-- large-neighborhood destroy/repair search;
-- a fixed-K Pareto archive over the physical proxy and exact H_eff8;
-- bounded, resumable wall-clock optimization; and
-- selective physical validation.
-
-The frozen 60-second s5378/seed11/K2 experiment exactly evaluated 24 unique generated architectures and added five points to the combined Phase-0C/PACT proxy Pareto front. The selected balanced/activity representative (2157.81 µm HPWL proxy, H_eff8 59.0) then qualified after routing with zero detailed-route DRC and an exact structural reconstruction pass. HPWL remains a proxy; routed physical evidence is reported separately.
-
-For fixed K, the primary objectives are physical scan cost and effective shift activity. K remains a higher-level architecture variable controlling scan parallelism and test time. Phase-0D is not finished: the next experiment is a frozen-parameter transfer test on s9234/seed11/K2, not a broad benchmark campaign.
-
-ML has not been introduced. It will only be considered later if a working deterministic optimizer demonstrates that candidate-evaluation cost is itself the limiting factor. See `reports/phase0d/optimizer_v1/OPTIMIZER_V1_REPORT.md` and `reports/phase0d/optimizer_v1/OPTIMIZER_V1_METHOD.md`.
+Preserve independent replay, topology invariants and the distinction between predicted and measured results; see [development](docs/development.md). No paper DOI is declared. Cite this repository, exact revision and experiment export using [CITATION.cff](CITATION.cff). PACT code is [MIT licensed](LICENSE); external tools/imported assets retain their own provenance and licensing.

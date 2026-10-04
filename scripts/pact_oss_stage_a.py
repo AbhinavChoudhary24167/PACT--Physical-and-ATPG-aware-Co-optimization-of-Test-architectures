@@ -156,7 +156,7 @@ if __name__ == '__main__':
     parser.add_argument('action', choices=('prepare','route'))
     parser.add_argument('--design', choices=DESIGNS)
     args = parser.parse_args()
-    os.environ.setdefault('PACT_BENCHMARK_GIT', '/mnt/d/Git/cmd/git.exe')
+    os.environ.setdefault('PACT_BENCHMARK_GIT', 'git')
     if args.action=='prepare': prepare()
     elif args.design: route(args.design)
     else: parser.error('--design is required')

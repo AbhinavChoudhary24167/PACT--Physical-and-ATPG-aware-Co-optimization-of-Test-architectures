@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Additive B3S endpoint-correctness recovery; frozen methods stay untouched."""
+from pact.environment import dependency_path
+from pact.experiment_storage import experiment_root
 import argparse
 import hashlib
 import json
@@ -43,7 +45,7 @@ def container(args, repaired=True, flow=False):
                       '--mount', f'type=bind,source={BUILD},target=/build_storage/{name}/build']
         extra += ['--env', f'TMPDIR=/build_storage/{NAME}/compiler_tmp']
     if flow:
-        extra += ['--mount', 'type=bind,source=/root/pact-deps/OpenROAD-flow-scripts/flow/results,target=/root/pact-deps/OpenROAD-flow-scripts/flow/results,readonly']
+        extra += ['--mount', f'type=bind,source={dependency_path("OpenROAD-flow-scripts")}/flow/results,target={dependency_path("OpenROAD-flow-scripts")}/flow/results,readonly']
     command[command.index('--entrypoint'):command.index('--entrypoint')] = extra
     return command
 

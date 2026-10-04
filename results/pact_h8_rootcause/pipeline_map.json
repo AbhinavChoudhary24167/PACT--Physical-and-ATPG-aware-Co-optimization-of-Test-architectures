@@ -1,0 +1,212 @@
+{
+  "architecture_hash": "4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40",
+  "design": "s9234",
+  "equivalence": {
+    "capacitance_units": true,
+    "grid": true,
+    "major_scope_difference": "prediction omits outputs with depth>3 or unavailable fanins; measurement uses all_data",
+    "physical_glitch_measurement": false,
+    "routed_segment_attribution": false,
+    "scope": false,
+    "shift_windows": true,
+    "source_localization": true,
+    "transition_semantics": "settled snapshots vs zero-delay VCD events; checked per represented net"
+  },
+  "pipeline_generator_sha256": "d2cea711089c7b93377d52624bc88cbf6fedfc1a817891b3b54330eea333c695",
+  "provenance": {
+    "export_invocation": "openroad -python -no_init -exit scripts/pact_h8_export.py results/pact_h8_rootcause",
+    "model_version": "candidate_stateful/depth=3/baseline=9d910302",
+    "repository_commit": "9d9103027918b1d4af2b209e6d36133ad82d4a4e",
+    "script_invocation": "PYTHONPATH=.optimizer-deps:src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 /root/pact-deps/pact-venv/bin/python scripts/pact_h8_rootcause.py {index|analyze --design DESIGN|report}",
+    "source_code": {
+      "scripts/pact_candidate_export.py": "381faa8f5eeca1d0e696f257558abd7d2c7ac4cd93fce9faf4acbd32a7b272df",
+      "scripts/pact_candidate_stateful.py": "7970b65bed37c5c8cb33bba8d75bacd175bcf327a361eedc64408788b74e8b45",
+      "scripts/pact_h8_export.py": "7be0df94b83ddd3c67d69a09ddf8768ced36afcb297622afdda4eca39d17923a",
+      "scripts/pact_h8_rootcause.py": "aba81db85a00326a8b43973d8a0d73600165a17647aa72762a9f9fcc69d67a3f",
+      "scripts/pact_v2.py": "6190c1703d1f9ee856f7f476d263bcf99d67b8978ad35cb07d88e7aef43e5c36",
+      "scripts/physical_effect.py": "d8d335b4777b1a81339e64d3ca709261d6faebfb213d2101fd2d70e65629a62f",
+      "scripts/physical_effect_export.py": "bab58e7e4b0db7da1fb18d85b192793dae174164a9022d41ece14f9b949aba34",
+      "src/pact/analysis/h8_rootcause.py": "40ebb96d3d27920f49baa3680ab2269980609fe0cdff731a9abe34f6e30577de",
+      "src/pact/optimizer/candidate_stateful.py": "6b31d6eb4e97f4325e5d46456d1ad96eedd7b604be71b7c16ae39bc08a334303",
+      "src/pact/optimizer/stateful_geometry.py": "380c2f461cea2c045e882d298541a8d4df1d8dc277cbb85e07461cec10bee459",
+      "src/pact/physical_effect.py": "b68bbf6d9b02158d69c11f3f40e0722defd507c5de6e8813bb94bb9a2b498a8c"
+    },
+    "timestamp": "2026-10-03T04:23:18.967671+00:00"
+  },
+  "source_evidence_sha256": "ef7334598ca6a372d80ea0afa65d11edc3480d807cd9df7fc410b29b5951221a",
+  "stages": [
+    {
+      "capacitance_definition": "none at waveform stage",
+      "coordinate_convention": "micrometres; driver cell origin; external input port bounding-box centre; die [xmin,ymin,xmax,ymax]",
+      "input_artifact": [
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s9234.pat",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s9234/ff_identity_map.json",
+        "results/pact_candidate_sensitive/s9234/architectures/4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40.json",
+        "results/pact_candidate_sensitive/s9234/topology.json"
+      ],
+      "output_artifact": [
+        "in-memory State.waves (packed before-SI/after-SI/after-FF)",
+        "results/pact_h8_rootcause/s9234/4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40/net_discrepancy.csv"
+      ],
+      "relevant_function": "packed_scan; packed_input; packed_function; State.__init__; update_field",
+      "source_file": "src/pact/optimizer/candidate_stateful.py",
+      "source_sha256": "6b31d6eb4e97f4325e5d46456d1ad96eedd7b604be71b7c16ae39bc08a334303",
+      "spatial_bin_definition": "8x8 equal-area half-open die bins; maximum belongs to last bin; id=8*y+x; whole net at driver",
+      "stage": "1_predicted_transitions",
+      "transition_definition": "sum of two adjacent settled XORs per cycle; all fanins simultaneous; depth=3, BUF/INV depth=0"
+    },
+    {
+      "capacitance_definition": "baseline ground/MMST * candidate shared-terminal MMST + candidate sink pins; named zero-span/missing-ground fallbacks",
+      "coordinate_convention": "micrometres; driver cell origin; external input port bounding-box centre; die [xmin,ymin,xmax,ymax]",
+      "input_artifact": [
+        "results/pact_candidate_sensitive/s9234/topology.json",
+        "reports/physical_effect/s9234/T/net_activity_capacitance.csv",
+        "results/pact_candidate_sensitive/s9234/architectures/4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40.json"
+      ],
+      "output_artifact": [
+        "in-memory State.caps; per-net geometry audit",
+        "results/pact_h8_rootcause/s9234/4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40/net_discrepancy.csv"
+      ],
+      "relevant_function": "Geometry.terminal_sets; evaluate; estimate; mmst",
+      "source_file": "src/pact/optimizer/stateful_geometry.py",
+      "source_sha256": "380c2f461cea2c045e882d298541a8d4df1d8dc277cbb85e07461cec10bee459",
+      "spatial_bin_definition": "8x8 equal-area half-open die bins; maximum belongs to last bin; id=8*y+x; whole net at driver",
+      "stage": "2_candidate_capacitance",
+      "transition_definition": "binary 0<->1 counts per measured shift cycle; initialization/capture/PI and SE setup excluded"
+    },
+    {
+      "capacitance_definition": "ground fF + Liberty sink pin fF; incident coupling excluded from primary weight",
+      "coordinate_convention": "micrometres; driver cell origin; external input port bounding-box centre; die [xmin,ymin,xmax,ymax]",
+      "input_artifact": [
+        "results/pact_candidate_sensitive/s9234/topology.json"
+      ],
+      "output_artifact": [
+        "in-memory bins_by_net"
+      ],
+      "relevant_function": "Model.__init__: bins_by_net",
+      "source_file": "src/pact/optimizer/candidate_stateful.py",
+      "source_sha256": "6b31d6eb4e97f4325e5d46456d1ad96eedd7b604be71b7c16ae39bc08a334303",
+      "spatial_bin_definition": "8x8 equal-area half-open die bins; maximum belongs to last bin; id=8*y+x; whole net at driver",
+      "stage": "3_predicted_spatial_assignment",
+      "transition_definition": "binary 0<->1 counts per measured shift cycle; initialization/capture/PI and SE setup excluded"
+    },
+    {
+      "capacitance_definition": "ground fF + Liberty sink pin fF; incident coupling excluded from primary weight",
+      "coordinate_convention": "micrometres; driver cell origin; external input port bounding-box centre; die [xmin,ymin,xmax,ymax]",
+      "input_artifact": [
+        "State.waves",
+        "State.caps",
+        "bins_by_net"
+      ],
+      "output_artifact": [
+        "results/pact_candidate_stateful/s9234/diagnostics.json",
+        "results/pact_candidate_stateful/comparison.csv",
+        "results/pact_h8_rootcause/s9234/4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40/bin_comparison.csv"
+      ],
+      "relevant_function": "update_field; State.score -> implementation_v2.reduce",
+      "source_file": "src/pact/optimizer/candidate_stateful.py",
+      "source_sha256": "6b31d6eb4e97f4325e5d46456d1ad96eedd7b604be71b7c16ae39bc08a334303",
+      "spatial_bin_definition": "8x8 equal-area half-open die bins; maximum belongs to last bin; id=8*y+x; whole net at driver",
+      "stage": "4_predicted_H8",
+      "transition_definition": "H8=max_cycle,bin sum_net_in_bin C_candidate*N_settled; E=sum_cycle,bin field"
+    },
+    {
+      "capacitance_definition": "none until OpenRCX extraction",
+      "coordinate_convention": "ODB database units converted to micrometres; FF origins verified against canonical architecture",
+      "input_artifact": [
+        "results/pact_candidate_sensitive/s9234/architectures/4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40.json",
+        "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.odb",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s9234/s11/placed.v",
+        "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.sdc",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s9234/s11/placed.def",
+        "results/pact_candidate_sensitive/measurement/manifest.json"
+      ],
+      "output_artifact": [
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s9234/4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40/route_result.json",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s9234/4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40/5_2_route.odb.gz",
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/routed.odb",
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/routed.v"
+      ],
+      "relevant_function": "route_selected -> phase0c_rewire_odb.py -> existing ORFS adapter",
+      "source_file": "scripts/pact_solver_routes.py",
+      "source_sha256": "9d24b23b66bdedeebfe1ccd27403fced930e93b1017e64ce951e5e9f659c06e0",
+      "spatial_bin_definition": "not a bin computation",
+      "stage": "5_routed_implementation",
+      "transition_definition": "not an activity computation"
+    },
+    {
+      "capacitance_definition": "none at event-count stage",
+      "coordinate_convention": "micrometres; driver cell origin; external input port bounding-box centre; die [xmin,ymin,xmax,ymax]",
+      "input_artifact": [
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/activity.vcd",
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/cycles.json.gz",
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/net_mapping.json",
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/workload.json"
+      ],
+      "output_artifact": [
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/transitions.npz",
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/FF_transition_crosscheck.json"
+      ],
+      "relevant_function": "vcd_transitions; analyze (Icarus stimulus from physical_effect.stimulus)",
+      "source_file": "src/pact/physical_effect.py",
+      "source_sha256": "b68bbf6d9b02158d69c11f3f40e0722defd507c5de6e8813bb94bb9a2b498a8c",
+      "spatial_bin_definition": "8x8 equal-area half-open die bins; maximum belongs to last bin; id=8*y+x; whole net at driver",
+      "stage": "6_VCD_switching",
+      "transition_definition": "binary 0<->1 counts per measured shift cycle; initialization/capture/PI and SE setup excluded; final timestamp cycle marker defines window; zero-delay final VCD events, no SDF/specify delays"
+    },
+    {
+      "capacitance_definition": "ground fF + Liberty sink pin fF; incident coupling excluded from primary weight; OpenRCX corner0, threshold0.1fF, cc_model10; missing switched C fails",
+      "coordinate_convention": "micrometres; driver cell origin; external input port bounding-box centre; die [xmin,ymin,xmax,ymax]",
+      "input_artifact": [
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/extracted.spef",
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/routed.odb",
+        "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+      ],
+      "output_artifact": [
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/net_activity_capacitance.csv"
+      ],
+      "relevant_function": "analyze -> pact.analysis.phase2b_reference.parse_spef; physical_effect_export pin_loads",
+      "source_file": "src/pact/physical_effect.py",
+      "source_sha256": "b68bbf6d9b02158d69c11f3f40e0722defd507c5de6e8813bb94bb9a2b498a8c",
+      "spatial_bin_definition": "8x8 equal-area half-open die bins; maximum belongs to last bin; id=8*y+x; whole net at driver",
+      "stage": "7_extracted_capacitance",
+      "transition_definition": "binary 0<->1 counts per measured shift cycle; initialization/capture/PI and SE setup excluded"
+    },
+    {
+      "capacitance_definition": "ground fF + Liberty sink pin fF; incident coupling excluded from primary weight",
+      "coordinate_convention": "micrometres; driver cell origin; external input port bounding-box centre; die [xmin,ymin,xmax,ymax]",
+      "input_artifact": [
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/routed.odb"
+      ],
+      "output_artifact": [
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/net_mapping.json"
+      ],
+      "relevant_function": "driver/port net loop -> net_mapping.json; spatial_bin",
+      "source_file": "scripts/physical_effect_export.py",
+      "source_sha256": "bab58e7e4b0db7da1fb18d85b192793dae174164a9022d41ece14f9b949aba34",
+      "spatial_bin_definition": "8x8 equal-area half-open die bins; maximum belongs to last bin; id=8*y+x; whole net at driver",
+      "stage": "8_measured_spatial_assignment",
+      "transition_definition": "binary 0<->1 counts per measured shift cycle; initialization/capture/PI and SE setup excluded"
+    },
+    {
+      "capacitance_definition": "ground fF + Liberty sink pin fF; incident coupling excluded from primary weight",
+      "coordinate_convention": "micrometres; driver cell origin; external input port bounding-box centre; die [xmin,ymin,xmax,ymax]",
+      "input_artifact": [
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/transitions.npz",
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/net_activity_capacitance.csv",
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/net_mapping.json"
+      ],
+      "output_artifact": [
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/activity_summary.json",
+        "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/spatial_bins.json",
+        "stored comparison.csv"
+      ],
+      "relevant_function": "analyze: all_data grids[8] cap_peak_per_cycle.maximum",
+      "source_file": "src/pact/physical_effect.py",
+      "source_sha256": "b68bbf6d9b02158d69c11f3f40e0722defd507c5de6e8813bb94bb9a2b498a8c",
+      "spatial_bin_definition": "8x8 equal-area half-open die bins; maximum belongs to last bin; id=8*y+x; whole net at driver",
+      "stage": "9_measured_H8",
+      "transition_definition": "H8=max_cycle,bin sum_all_nonclock_unique_driver_nets (C_ground+C_pin)*N_VCD; E=full sum"
+    }
+  ]
+}

@@ -18,7 +18,7 @@ REPOSITORY = ACCOUNT + '/OpenROAD'
 TARGET = 'mwsoli/OpenROAD'
 TARGET_BRANCH = 'dft/scan-chain-optimizer'
 UPSTREAM = build.RECOVERY / 'upstream'
-WINDOWS_GIT = '/mnt/d/Git/cmd/git.exe'
+WINDOWS_GIT = 'git'
 
 
 def environment():

@@ -1,4 +1,5 @@
 """Read-only boundary verification and physical inventory for the new experiment."""
+from pact.experiment_storage import experiment_root
 from phase2cr_common import *
 import platform
 import subprocess
@@ -6,7 +7,7 @@ import time
 from collections import Counter
 
 OUT = ROOT/'results/phase2c_repair_multiseed'
-CW = Path('/mnt/d/PACT_EXPERIMENTS/results/phase2c')
+CW = Path(f'{experiment_root()}/results/phase2c')
 
 def boundary():
     start=time.perf_counter()

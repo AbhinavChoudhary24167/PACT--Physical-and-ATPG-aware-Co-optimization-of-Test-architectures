@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Read-only integration check of translation geometry on sealed B1 databases."""
+from pact.experiment_storage import experiment_root
 import json
 from pathlib import Path
 import sys
@@ -8,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from pact_oss_generator import endpoint_geometry, file_hash
 
 ROOT = Path(__file__).resolve().parents[1]
-TEMP = Path('/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003')
+TEMP = Path(('' + str(experiment_root()) + '/tmp/pact_oss_20261003'))
 OUT = ROOT / 'results/pact_oss_benchmark/recovery_20261003'
 
 

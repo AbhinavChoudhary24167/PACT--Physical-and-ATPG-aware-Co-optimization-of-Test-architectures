@@ -1,0 +1,39 @@
+{
+  "checks": [
+    "full canonical identities",
+    "saved E/H8 reproduction",
+    "complete cycle/bin residual closure",
+    "selected and problematic pair peak net sums",
+    "historical input and source checksums",
+    "lossless deterministic export compression"
+  ],
+  "classification": "PACT_H8_ROOT_CAUSE_IDENTIFIED",
+  "historical_inputs_unchanged": true,
+  "limitation": "Unknown excluded settled/event partition and future prediction accuracy; fault sets remain unknown",
+  "new_physical_runs": 0,
+  "problem_pairs": 37,
+  "production_model_sources_unchanged": true,
+  "provenance": {
+    "export_invocation": "openroad -python -no_init -exit scripts/pact_h8_export.py results/pact_h8_rootcause",
+    "model_version": "candidate_stateful/depth=3/baseline=9d910302",
+    "repository_commit": "9d9103027918b1d4af2b209e6d36133ad82d4a4e",
+    "script_invocation": "PYTHONPATH=.optimizer-deps:src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 /root/pact-deps/pact-venv/bin/python scripts/pact_h8_rootcause.py {index|analyze --design DESIGN|report}",
+    "source_code": {
+      "scripts/pact_candidate_export.py": "381faa8f5eeca1d0e696f257558abd7d2c7ac4cd93fce9faf4acbd32a7b272df",
+      "scripts/pact_candidate_stateful.py": "7970b65bed37c5c8cb33bba8d75bacd175bcf327a361eedc64408788b74e8b45",
+      "scripts/pact_h8_export.py": "7be0df94b83ddd3c67d69a09ddf8768ced36afcb297622afdda4eca39d17923a",
+      "scripts/pact_h8_rootcause.py": "aba81db85a00326a8b43973d8a0d73600165a17647aa72762a9f9fcc69d67a3f",
+      "scripts/pact_v2.py": "6190c1703d1f9ee856f7f476d263bcf99d67b8978ad35cb07d88e7aef43e5c36",
+      "scripts/physical_effect.py": "d8d335b4777b1a81339e64d3ca709261d6faebfb213d2101fd2d70e65629a62f",
+      "scripts/physical_effect_export.py": "bab58e7e4b0db7da1fb18d85b192793dae174164a9022d41ece14f9b949aba34",
+      "src/pact/analysis/h8_rootcause.py": "40ebb96d3d27920f49baa3680ab2269980609fe0cdff731a9abe34f6e30577de",
+      "src/pact/optimizer/candidate_stateful.py": "6b31d6eb4e97f4325e5d46456d1ad96eedd7b604be71b7c16ae39bc08a334303",
+      "src/pact/optimizer/stateful_geometry.py": "380c2f461cea2c045e882d298541a8d4df1d8dc277cbb85e07461cec10bee459",
+      "src/pact/physical_effect.py": "b68bbf6d9b02158d69c11f3f40e0722defd507c5de6e8813bb94bb9a2b498a8c"
+    },
+    "timestamp": "2026-10-03T04:23:18.967671+00:00"
+  },
+  "reconstructed_architectures": 28,
+  "tests_passed": 19,
+  "tests_seconds": 11.15
+}

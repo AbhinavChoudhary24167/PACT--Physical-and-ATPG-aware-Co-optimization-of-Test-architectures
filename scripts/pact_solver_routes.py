@@ -4,6 +4,8 @@
 One invocation consumes an output-local route plan before external execution.
 No optimizer or historical experiment contract is modified by this adapter.
 """
+from pact.environment import dependency_path
+from pact.experiment_storage import experiment_root
 import argparse
 import gzip
 import json
@@ -60,7 +62,7 @@ def route_selected(design,unique,output,variant_prefix='solver_s11',route_second
         raise ValueError('Route plan changed; use a fresh namespace')
     write_json(plan,desired)
     summary=[]
-    flow=Path('/root/pact-deps/OpenROAD-flow-scripts/flow')
+    flow=Path(f'{dependency_path("OpenROAD-flow-scripts")}/flow')
     block='s9234f' if design=='s9234' else design
     base=flow/f'results/nangate45/{block}/phase0b_s11_B0'
     frozen_def=ROOT/f'artifacts/raw/phase0b/placements/{design}/s11/placed.def'

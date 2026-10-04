@@ -4,6 +4,8 @@
 PASS means the eligibility policy was verified. Explicitly ineligible caches
 remain preserved and are excluded from reuse; they do not become qualified.
 """
+from pact.environment import dependency_path
+from pact.experiment_storage import experiment_root
 import hashlib
 import json
 import os
@@ -14,7 +16,7 @@ import subprocess
 from pact_oss_benchmark import ROOT, OUT, DESIGNS, GIT, binding, read, write
 
 P0 = '9d9103027918b1d4af2b209e6d36133ad82d4a4e'
-ORFS = Path('/root/pact-deps/OpenROAD-flow-scripts')
+ORFS = Path(('' + str(dependency_path("OpenROAD-flow-scripts")) + ''))
 ORFS_PIN = '5e8b1450d19263f797a27c4f371b9dd19f32a3aa'
 RECEIPT = OUT / 'receiver_recovery_20261003/reuse_preflight/eligibility.json'
 NAMESPACES = ('pact_candidate_stateful', 'pact_candidate_sensitive', 'pact_v2')

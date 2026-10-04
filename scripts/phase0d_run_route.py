@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Route one shortlisted Phase-0D architecture under a hard, resumable budget."""
 from __future__ import annotations
+from pact.environment import dependency_path
+from pact.experiment_storage import experiment_root
 
 import argparse
 import gzip
@@ -60,7 +62,7 @@ def route_one(design: str, seed: int, K: int, candidate_dir: Path, cap_seconds: 
     if proxy.get("architecture_sha256") != architecture.sha256() or len(architecture.chains) != K:
         raise ValueError("Candidate architecture/proxy/K mismatch")
 
-    flow = Path(os.environ.get("PACT_ORFS_FLOW", "/root/pact-deps/OpenROAD-flow-scripts/flow"))
+    flow = Path(os.environ.get("PACT_ORFS_FLOW", f'{dependency_path("OpenROAD-flow-scripts")}/flow'))
     block = BLOCK[design]
     base = flow / f"results/nangate45/{block}/phase0b_s{seed}_B0"
     variant_name = f"phase0d_{evidence_namespace}_s{seed}_k{K}_{architecture.sha256()[:12]}"

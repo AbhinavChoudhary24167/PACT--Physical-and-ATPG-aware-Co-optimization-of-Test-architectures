@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Pin public OpenROAD source snapshots without touching qualified installations."""
+from pact.environment import dependency_path
+from pact.experiment_storage import experiment_root
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 import hashlib
@@ -10,7 +12,7 @@ import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'results/pact_oss_benchmark'
-TEMP = Path('/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003')
+TEMP = Path(('' + str(experiment_root()) + '/tmp/pact_oss_20261003'))
 UPSTREAM = 'https://api.github.com/repos/The-OpenROAD-Project/OpenROAD'
 
 
@@ -36,8 +38,8 @@ def main():
     versions = dict(timestamp=datetime.now(timezone.utc).isoformat(),
                     implementation_openroad_version=subprocess.check_output(['openroad', '-version'], text=True).strip(),
                     implementation_binary_sha256=hashlib.sha256(Path('/usr/bin/openroad').read_bytes()).hexdigest(),
-                    ORFS_commit=subprocess.check_output(['git', '-C', '/root/pact-deps/OpenROAD-flow-scripts', 'rev-parse', 'HEAD'], text=True).strip(),
-                    installed_source_checkout_commit=subprocess.check_output(['git', '-C', '/root/pact-deps/OpenROAD', 'rev-parse', 'HEAD'], text=True).strip(),
+                    ORFS_commit=subprocess.check_output(['git', '-C', ('' + str(dependency_path("OpenROAD-flow-scripts")) + ''), 'rev-parse', 'HEAD'], text=True).strip(),
+                    installed_source_checkout_commit=subprocess.check_output(['git', '-C', ('' + str(dependency_path("OpenROAD")) + ''), 'rev-parse', 'HEAD'], text=True).strip(),
                     note='Installed source checkout and native binary revisions differ; source is acquired at the binary version revision for native semantics.',
                     temporary_storage=str(TEMP), baselines={})
     for method, pr, revision in methods:

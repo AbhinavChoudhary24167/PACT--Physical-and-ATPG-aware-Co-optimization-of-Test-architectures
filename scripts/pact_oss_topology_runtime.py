@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """R0: supply the unused import-time optimizer dependency in isolated storage."""
+from pact.environment import python_executable
+from pact.experiment_storage import experiment_root
 from datetime import datetime, timezone
 import json
 import os
@@ -13,7 +15,7 @@ from pact_oss_benchmark import ROOT, binding, write
 FOLDER = r.CAMPAIGN / 'stage_a_runtime'
 EXTRA = r.DATA / 'stage_a_runtime/extra'
 WHEELS = r.DATA / 'stage_a_runtime/wheels'
-PYTHON = '/root/pact-deps/pact-venv/bin/python'
+PYTHON = f'{python_executable()}'
 
 
 def execute(command, label, env=None):

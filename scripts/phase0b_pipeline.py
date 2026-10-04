@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Resume bounded, evidence-preserving Phase-0B physical campaigns."""
 from __future__ import annotations
+from pact.environment import dependency_path, python_executable
+from pact.experiment_storage import experiment_root
 
 import argparse
 import hashlib
@@ -13,8 +15,8 @@ from phase0b_run_command import run
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ORFS = Path("/root/pact-deps/OpenROAD-flow-scripts/flow")
-VENV = Path("/root/pact-deps/pact-venv/bin/python")
+ORFS = Path(f'{dependency_path("OpenROAD-flow-scripts")}/flow')
+VENV = Path(f'{python_executable()}')
 LIBERTY = ORFS / "platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
 ANNOTATED = ROOT / "artifacts/derived/phase0b/lib/NangateOpenCellLibrary_typical_dft.lib"
 BLOCKS = {"s5378": "s5378", "s9234": "s9234f", "s15850": "s15850"}

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Seal an observed Stage-A outcome without changing the experiment or P0."""
+from pact.experiment_storage import experiment_root
 import argparse
 import csv
 from datetime import datetime, timezone
@@ -219,7 +220,7 @@ def seal(args):
             runtime.append(dict(design=design,method=method,stage='architecture_generation',
                 elapsed_seconds=execution['elapsed_seconds'],peak_RSS_kbytes=rss(generated/'generator.resource.txt'),
                 reused=method=='B2',source=str(generated/'generate.execution.json')))
-            scratch=Path('/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003')/('recovery_20261003' if method=='B2' else 'receiver_recovery_20261003')/name/design
+            scratch=Path(('' + str(experiment_root()) + '/tmp/pact_oss_20261003'))/('recovery_20261003' if method=='B2' else 'receiver_recovery_20261003')/name/design
             for path in sorted(scratch.iterdir()):
                 if path.is_file():
                     external['generator/'+name+'/'+design+'/'+path.name]=binding(path)

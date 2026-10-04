@@ -1,4 +1,5 @@
 """Render a factual final report from the measured comparison, then seal evidence."""
+from pact.environment import python_executable
 from physical_effect_report import collect, plots, delta
 from physical_effect import *
 
@@ -242,12 +243,12 @@ optimization campaign. A PDN/current model is required before claiming IR benefi
 Run with the existing Ubuntu-24.04 toolchain and qualified external paths:
 
 ```bash
-PYTHONPATH=src:.optimizer-deps /root/pact-deps/pact-venv/bin/python scripts/physical_effect.py prepare
+PYTHONPATH=src:.optimizer-deps {python_executable()} scripts/physical_effect.py prepare
 # prepare is first-run only and refuses to overwrite the frozen manifest.
-PYTHONPATH=src:.optimizer-deps /root/pact-deps/pact-venv/bin/python scripts/physical_effect.py run --design s5378
-PYTHONPATH=src:.optimizer-deps /root/pact-deps/pact-venv/bin/python scripts/physical_effect.py run --design s9234
-PYTHONPATH=src:.optimizer-deps /root/pact-deps/pact-venv/bin/python scripts/physical_effect.py run --design s15850
-PYTHONPATH=src:.optimizer-deps /root/pact-deps/pact-venv/bin/python scripts/physical_effect_finalize.py
+PYTHONPATH=src:.optimizer-deps {python_executable()} scripts/physical_effect.py run --design s5378
+PYTHONPATH=src:.optimizer-deps {python_executable()} scripts/physical_effect.py run --design s9234
+PYTHONPATH=src:.optimizer-deps {python_executable()} scripts/physical_effect.py run --design s15850
+PYTHONPATH=src:.optimizer-deps {python_executable()} scripts/physical_effect_finalize.py
 ```
 
 Existing manifests contain absolute artifact paths and must be verified or
