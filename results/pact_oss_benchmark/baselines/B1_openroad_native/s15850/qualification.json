@@ -8,7 +8,7 @@
     267
   ],
   "commands": [
-    "read_sdc /root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s15850/phase0b_s11_B0/3_place.sdc",
+    "read_sdc dep://OpenROAD-flow-scripts/flow/results/nangate45/s15850/phase0b_s11_B0/3_place.sdc",
     "set_dft_config -max_chains 2 -max_length 267 -clock_mixing no_mix -scan_enable_name_pattern test_se -scan_in_name_pattern test_si_{} -scan_out_name_pattern test_so_{}",
     "report_dft_config",
     "report_dft_plan -verbose",
@@ -22,6 +22,6 @@
     "test_so_1": "test_so_1"
   },
   "liberty": "existing verified test_cell-only annotation; downstream unchanged",
-  "source": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/placed_common/s15850/3_place.odb",
+  "source": "run://tmp/pact_oss_20261003/placed_common/s15850/3_place.odb",
   "status": "PASS"
 }

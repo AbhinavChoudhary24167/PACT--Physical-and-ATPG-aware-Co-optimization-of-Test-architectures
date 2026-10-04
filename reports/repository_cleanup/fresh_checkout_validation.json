@@ -1,10 +1,10 @@
 {
   "source_revision": "c447774a300a63e18811bbccbcb139b22b3c9319",
-  "source_archive": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\cleanup-work\\fresh-checkout-c447774a",
+  "source_archive": "archive://fresh-checkout-c447774a",
   "includes_git_history": false,
   "includes_ignored_dependencies": false,
-  "tests_command": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\.pact-validation-env\\Scripts\\python.exe -m pytest -q --junitxml=C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\repository_cleanup\\fresh_checkout_tests.xml",
-  "replay_command": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\.pact-validation-env\\Scripts\\python.exe scripts/verify_reproducibility.py",
+  "tests_command": "env://validation/Scripts\\python.exe -m pytest -q --junitxml=repo://reports\\repository_cleanup\\fresh_checkout_tests.xml",
+  "replay_command": "env://validation/Scripts\\python.exe scripts/verify_reproducibility.py",
   "environment": "Resolved validation venv; PYTHONPATH points to fresh source; package.__file__ asserted inside archive; dedicated empty cache directories.",
   "retained_hashes_verified_in_git_index": 674,
   "source_archive_tests": {
@@ -24,11 +24,11 @@
       "s15850"
     ]
   },
-  "working_directory": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\cleanup-work\\fresh-checkout-c447774a",
+  "working_directory": "archive://fresh-checkout-c447774a",
   "environment_variables": {
-    "PYTHONPATH": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\cleanup-work\\fresh-checkout-c447774a\\src",
-    "MPLCONFIGDIR": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\cleanup-work\\fresh-checkout-c447774a\\scratch\\matplotlib",
-    "tests_NUMBA_CACHE_DIR": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\cleanup-work\\fresh-checkout-c447774a\\scratch\\unit-numba",
-    "replay_NUMBA_CACHE_DIR": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\cleanup-work\\fresh-checkout-c447774a\\scratch\\replay-numba"
+    "PYTHONPATH": "archive://fresh-checkout-c447774a/src",
+    "MPLCONFIGDIR": "archive://fresh-checkout-c447774a/scratch\\matplotlib",
+    "tests_NUMBA_CACHE_DIR": "archive://fresh-checkout-c447774a/scratch\\unit-numba",
+    "replay_NUMBA_CACHE_DIR": "archive://fresh-checkout-c447774a/scratch\\replay-numba"
   }
 }

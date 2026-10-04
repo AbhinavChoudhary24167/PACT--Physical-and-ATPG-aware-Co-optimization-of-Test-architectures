@@ -21,8 +21,16 @@ def main():
     args = parser.parse_args()
     manifest = ROOT / 'reports/repository_cleanup/retained_evidence_sha256.json'
     hashes = json.loads(manifest.read_text())
+    normalization = json.loads((manifest.parent / 'path_metadata_normalization.json').read_text())['files']
+    for relative, record in normalization.items():
+        if hashlib.sha256((ROOT / relative).read_bytes()).hexdigest() != record['public_sha256']:
+            raise ValueError('Changed portable metadata export: ' + relative)
     for relative, expected in hashes.items():
         path = ROOT / relative
+        if relative in normalization:
+            if expected != normalization[relative]['original_sha256']:
+                raise ValueError('Original evidence binding differs: ' + relative)
+            expected = normalization[relative]['public_sha256']
         if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != expected:
             raise ValueError('Missing or changed retained evidence: ' + relative)
     export = ROOT / 'results/stage_a'
@@ -58,7 +66,9 @@ def main():
             np.testing.assert_allclose(State(model, orders).score(), score, rtol=1e-9, atol=1e-6)
             checked += 1
         print(design, 'PASS', flush=True)
-    print(f'PASS: {len(hashes)} original evidence hashes; {checked} architecture replays')
+    normalized = len(set(hashes) & set(normalization))
+    print(f'PASS: {len(hashes)} retained evidence bindings ({len(hashes)-normalized} unchanged original hashes, '
+          f'{normalized} audited portable metadata exports); {checked} architecture replays')
 
 
 if __name__ == '__main__':

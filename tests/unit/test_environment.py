@@ -16,3 +16,6 @@ def test_dependency_override_and_receipt_relocation(monkeypatch):
     assert result['nested'] == [str(Path('/configured/orfs/flow')), str(Path('/configured/runs/results/example'))]
     assert result['sha256'] == receipt['sha256'] == 'unchanged'
     assert receipt['path'].startswith('/mnt/c/')
+    assert relocate('repo://results/example/input.json') == str(ROOT / 'results/example/input.json')
+    assert relocate('dep://OpenROAD-flow-scripts/flow') == str(Path('/configured/orfs/flow'))
+    assert relocate('run://results/example') == str(Path('/configured/runs/results/example'))

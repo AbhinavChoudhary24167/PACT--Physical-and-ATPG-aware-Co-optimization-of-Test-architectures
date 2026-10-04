@@ -1,7 +1,7 @@
 {
   "common_route_adapter": {
     "bytes": 8324,
-    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_solver_routes.py",
+    "path": "repo://scripts/pact_solver_routes.py",
     "sha256": "9d24b23b66bdedeebfe1ccd27403fced930e93b1017e64ce951e5e9f659c06e0"
   },
   "design": "s5378",
@@ -17,7 +17,7 @@
     "3b627d8af4f2c34c3bcf71a0822d2b8a612e01fe06e766beda14a95854bd11d9": {
       "archive": {
         "bytes": 563916,
-        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/3b627d8af4f2c34c3bcf71a0822d2b8a612e01fe06e766beda14a95854bd11d9/5_2_route.odb.gz",
+        "path": "repo://results/pact_v2/routes/s5378/3b627d8af4f2c34c3bcf71a0822d2b8a612e01fe06e766beda14a95854bd11d9/5_2_route.odb.gz",
         "sha256": "f001b6e93f30f727adfa99ba3fd395dc10d34baac85d860825267b52112b982c"
       },
       "report": {
@@ -1698,20 +1698,20 @@
             "-python",
             "-no_init",
             "-exit",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0c_rewire_odb.py",
+            "repo://scripts/phase0c_rewire_odb.py",
             "--source",
-            "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+            "dep://OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
             "--architecture",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s5378/architectures/3b627d8af4f2c34c3bcf71a0822d2b8a612e01fe06e766beda14a95854bd11d9.json",
+            "repo://results/pact_v2/s5378/architectures/3b627d8af4f2c34c3bcf71a0822d2b8a612e01fe06e766beda14a95854bd11d9.json",
             "--output",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_3b627d8af4f2/3_place.odb"
+            "repo://results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_3b627d8af4f2/3_place.odb"
           ],
-          "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+          "cwd": "maintenance://PACT",
           "elapsed_s": 1.388432621999982,
           "end_utc": "2026-09-28T14:08:30.664845+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_3b627d8af4f2/3_place.odb": "0a5a9d6cccddf56dd0a082485aa8a76add33108d70b9717246319473e8fd130f"
+            "repo://results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_3b627d8af4f2/3_place.odb": "0a5a9d6cccddf56dd0a082485aa8a76add33108d70b9717246319473e8fd130f"
           },
           "required_outputs_present": true,
           "start_utc": "2026-09-28T14:08:29.276416+00:00",
@@ -1725,26 +1725,26 @@
           "command": [
             "make",
             "-o",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_3b627d8af4f2/3_place.odb",
+            "repo://results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_3b627d8af4f2/3_place.odb",
             "-o",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_3b627d8af4f2/3_place.sdc",
-            "DESIGN_CONFIG=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s5378_orfs/config.mk",
+            "repo://results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_3b627d8af4f2/3_place.sdc",
+            "DESIGN_CONFIG=repo://experiments/phase0/s5378_orfs/config.mk",
             "FLOW_VARIANT=pactv2_3b627d8af4f2",
-            "WORK_HOME=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs",
+            "WORK_HOME=repo://results/pact_v2/routes/s5378/orfs",
             "GRT_SEED=11",
             "NUM_CORES=2",
             "OPENROAD_EXE=/usr/bin/openroad",
             "YOSYS_EXE=/usr/bin/yosys",
             "route"
           ],
-          "cwd": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+          "cwd": "dep://OpenROAD-flow-scripts/flow",
           "elapsed_s": 135.930400609,
           "end_utc": "2026-09-28T14:10:46.704080+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/logs/nangate45/s5378/pactv2_3b627d8af4f2/5_1_grt.json": "3669b2dd0ed093080f4b302cc86392ee706a46e83cb74f69f5c0f9124db151dd",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/logs/nangate45/s5378/pactv2_3b627d8af4f2/5_2_route.json": "705d26209be51c3c7bfcdffa3e9f97e71b5076f6b938d873c041f58d552bef9d",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_3b627d8af4f2/5_2_route.odb": "8c7909759b1c8c75edd7c0d0bb14c4ff8561e50dcf9f4c8f2d3159585732d097"
+            "repo://results/pact_v2/routes/s5378/orfs/logs/nangate45/s5378/pactv2_3b627d8af4f2/5_1_grt.json": "3669b2dd0ed093080f4b302cc86392ee706a46e83cb74f69f5c0f9124db151dd",
+            "repo://results/pact_v2/routes/s5378/orfs/logs/nangate45/s5378/pactv2_3b627d8af4f2/5_2_route.json": "705d26209be51c3c7bfcdffa3e9f97e71b5076f6b938d873c041f58d552bef9d",
+            "repo://results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_3b627d8af4f2/5_2_route.odb": "8c7909759b1c8c75edd7c0d0bb14c4ff8561e50dcf9f4c8f2d3159585732d097"
           },
           "required_outputs_present": true,
           "start_utc": "2026-09-28T14:08:30.773682+00:00",
@@ -1780,7 +1780,7 @@
       },
       "report_binding": {
         "bytes": 51927,
-        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/3b627d8af4f2c34c3bcf71a0822d2b8a612e01fe06e766beda14a95854bd11d9/route_result.json",
+        "path": "repo://results/pact_v2/routes/s5378/3b627d8af4f2c34c3bcf71a0822d2b8a612e01fe06e766beda14a95854bd11d9/route_result.json",
         "sha256": "0f2075663ecb59433101f2a218da5a826dd2fb44a154536cf69d29120b7b8c8a"
       },
       "reused": true
@@ -1788,7 +1788,7 @@
     "42dfdefa69502dd9c3716d9b2d7a0bf79d48be347a1e8786750551db65ff0db9": {
       "archive": {
         "bytes": 563604,
-        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/42dfdefa69502dd9c3716d9b2d7a0bf79d48be347a1e8786750551db65ff0db9/5_2_route.odb.gz",
+        "path": "repo://results/pact_candidate_stateful/routes/s5378/42dfdefa69502dd9c3716d9b2d7a0bf79d48be347a1e8786750551db65ff0db9/5_2_route.odb.gz",
         "sha256": "80da7a176eb0a019d84ebdac5c0bf597bcf66d2134ced1c8bb1fa2084de22d72"
       },
       "report": {
@@ -3469,20 +3469,20 @@
             "-python",
             "-no_init",
             "-exit",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0c_rewire_odb.py",
+            "repo://scripts/phase0c_rewire_odb.py",
             "--source",
-            "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+            "dep://OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
             "--architecture",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/s5378/architectures/42dfdefa69502dd9c3716d9b2d7a0bf79d48be347a1e8786750551db65ff0db9.json",
+            "repo://results/pact_candidate_stateful/s5378/architectures/42dfdefa69502dd9c3716d9b2d7a0bf79d48be347a1e8786750551db65ff0db9.json",
             "--output",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_42dfdefa6950/3_place.odb"
+            "repo://results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_42dfdefa6950/3_place.odb"
           ],
-          "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+          "cwd": "maintenance://PACT",
           "elapsed_s": 1.8014580230000092,
           "end_utc": "2026-09-29T03:06:11.087599+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_42dfdefa6950/3_place.odb": "6847810dadc2cac6c19af74abdca9fd5b22efc9e438f0f07d13704023ebbe2aa"
+            "repo://results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_42dfdefa6950/3_place.odb": "6847810dadc2cac6c19af74abdca9fd5b22efc9e438f0f07d13704023ebbe2aa"
           },
           "required_outputs_present": true,
           "start_utc": "2026-09-29T03:06:09.286149+00:00",
@@ -3496,26 +3496,26 @@
           "command": [
             "make",
             "-o",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_42dfdefa6950/3_place.odb",
+            "repo://results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_42dfdefa6950/3_place.odb",
             "-o",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_42dfdefa6950/3_place.sdc",
-            "DESIGN_CONFIG=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s5378_orfs/config.mk",
+            "repo://results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_42dfdefa6950/3_place.sdc",
+            "DESIGN_CONFIG=repo://experiments/phase0/s5378_orfs/config.mk",
             "FLOW_VARIANT=pactv2_42dfdefa6950",
-            "WORK_HOME=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/orfs",
+            "WORK_HOME=repo://results/pact_candidate_stateful/routes/s5378/orfs",
             "GRT_SEED=11",
             "NUM_CORES=2",
             "OPENROAD_EXE=/usr/bin/openroad",
             "YOSYS_EXE=/usr/bin/yosys",
             "route"
           ],
-          "cwd": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+          "cwd": "dep://OpenROAD-flow-scripts/flow",
           "elapsed_s": 122.41422327999999,
           "end_utc": "2026-09-29T03:08:13.617731+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/orfs/logs/nangate45/s5378/pactv2_42dfdefa6950/5_1_grt.json": "400f9af469625224d892b4c99afed776207990ce786011eab570007cc0d2e9e7",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/orfs/logs/nangate45/s5378/pactv2_42dfdefa6950/5_2_route.json": "1f921396bef011d9c492ec58fc34a6d19243fb5dca4c6c6c9fc453966932197c",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_42dfdefa6950/5_2_route.odb": "80d00e514f059e29f50e6b7cac68ccaa68a57a334b3a0721c524b5432a68f055"
+            "repo://results/pact_candidate_stateful/routes/s5378/orfs/logs/nangate45/s5378/pactv2_42dfdefa6950/5_1_grt.json": "400f9af469625224d892b4c99afed776207990ce786011eab570007cc0d2e9e7",
+            "repo://results/pact_candidate_stateful/routes/s5378/orfs/logs/nangate45/s5378/pactv2_42dfdefa6950/5_2_route.json": "1f921396bef011d9c492ec58fc34a6d19243fb5dca4c6c6c9fc453966932197c",
+            "repo://results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_42dfdefa6950/5_2_route.odb": "80d00e514f059e29f50e6b7cac68ccaa68a57a334b3a0721c524b5432a68f055"
           },
           "required_outputs_present": true,
           "start_utc": "2026-09-29T03:06:11.203548+00:00",
@@ -3551,7 +3551,7 @@
       },
       "report_binding": {
         "bytes": 52082,
-        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/42dfdefa69502dd9c3716d9b2d7a0bf79d48be347a1e8786750551db65ff0db9/route_result.json",
+        "path": "repo://results/pact_candidate_stateful/routes/s5378/42dfdefa69502dd9c3716d9b2d7a0bf79d48be347a1e8786750551db65ff0db9/route_result.json",
         "sha256": "f4f620e95719d22a1e1c20e4ecd7185e2a832e09b881690de746452057926001"
       },
       "reused": true
@@ -3559,7 +3559,7 @@
     "524e797e930947d722d25f683b74606ed558ee8aee242fe36392eb6c5a583ea5": {
       "archive": {
         "bytes": 562989,
-        "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/524e797e930947d722d25f683b74606ed558ee8aee242fe36392eb6c5a583ea5/5_2_route.odb.gz",
+        "path": "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/524e797e930947d722d25f683b74606ed558ee8aee242fe36392eb6c5a583ea5/5_2_route.odb.gz",
         "sha256": "b1ec18abe06d8bb6e825714a3535cc0ecab74b46d070ab1682e21d3442cdff3f"
       },
       "attempt_started_this_invocation": true,
@@ -5236,20 +5236,20 @@
             "-python",
             "-no_init",
             "-exit",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0c_rewire_odb.py",
+            "repo://scripts/phase0c_rewire_odb.py",
             "--source",
-            "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+            "dep://OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
             "--architecture",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/recovery_20261003/baselines/B2_openroad_10176/s5378/canonical.json",
+            "repo://results/pact_oss_benchmark/recovery_20261003/baselines/B2_openroad_10176/s5378/canonical.json",
             "--output",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_524e797e9309/3_place.odb"
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_524e797e9309/3_place.odb"
           ],
-          "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+          "cwd": "maintenance://PACT",
           "elapsed_s": 1.1767898949999562,
           "end_utc": "2026-10-03T20:43:28.818955+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_524e797e9309/3_place.odb": "7b609bb8f71b4f0394a31204704fff36cd12e79d56a6a6e29853afa3fbe92eef"
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_524e797e9309/3_place.odb": "7b609bb8f71b4f0394a31204704fff36cd12e79d56a6a6e29853afa3fbe92eef"
           },
           "required_outputs_present": true,
           "start_utc": "2026-10-03T20:43:27.642167+00:00",
@@ -5263,26 +5263,26 @@
           "command": [
             "make",
             "-o",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_524e797e9309/3_place.odb",
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_524e797e9309/3_place.odb",
             "-o",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_524e797e9309/3_place.sdc",
-            "DESIGN_CONFIG=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s5378_orfs/config.mk",
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_524e797e9309/3_place.sdc",
+            "DESIGN_CONFIG=repo://experiments/phase0/s5378_orfs/config.mk",
             "FLOW_VARIANT=oss_receiver_s11_524e797e9309",
-            "WORK_HOME=/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs",
+            "WORK_HOME=run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs",
             "GRT_SEED=11",
             "NUM_CORES=2",
             "OPENROAD_EXE=/usr/bin/openroad",
             "YOSYS_EXE=/usr/bin/yosys",
             "route"
           ],
-          "cwd": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+          "cwd": "dep://OpenROAD-flow-scripts/flow",
           "elapsed_s": 171.85822158000008,
           "end_utc": "2026-10-03T20:46:20.763307+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/logs/nangate45/s5378/oss_receiver_s11_524e797e9309/5_1_grt.json": "9010b6c503766d4fd64be1d577ae61db9eb7a84fd0910a4a08b59d5bb10d40cb",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/logs/nangate45/s5378/oss_receiver_s11_524e797e9309/5_2_route.json": "6064452ad3c67146998fe377766f470b762fba6532c224399a5a5e8dbf5339e3",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_524e797e9309/5_2_route.odb": "693752ccdfab90a632953db58126244f9f06813d84290fbb80b271800e03066f"
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/logs/nangate45/s5378/oss_receiver_s11_524e797e9309/5_1_grt.json": "9010b6c503766d4fd64be1d577ae61db9eb7a84fd0910a4a08b59d5bb10d40cb",
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/logs/nangate45/s5378/oss_receiver_s11_524e797e9309/5_2_route.json": "6064452ad3c67146998fe377766f470b762fba6532c224399a5a5e8dbf5339e3",
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_524e797e9309/5_2_route.odb": "693752ccdfab90a632953db58126244f9f06813d84290fbb80b271800e03066f"
           },
           "required_outputs_present": true,
           "start_utc": "2026-10-03T20:43:28.905125+00:00",
@@ -5318,7 +5318,7 @@
       },
       "report_binding": {
         "bytes": 51974,
-        "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/524e797e930947d722d25f683b74606ed558ee8aee242fe36392eb6c5a583ea5/route_result.json",
+        "path": "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/524e797e930947d722d25f683b74606ed558ee8aee242fe36392eb6c5a583ea5/route_result.json",
         "sha256": "180a245d0bc8a009a6ad4dfed15abf38a664306fe0682ce15a0d8ce2956c0720"
       },
       "reused": false
@@ -5326,7 +5326,7 @@
     "ae86d9068718134a0016c7dc484716e3e4439c0978f5cfcdef79c037ac566f86": {
       "archive": {
         "bytes": 562069,
-        "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/ae86d9068718134a0016c7dc484716e3e4439c0978f5cfcdef79c037ac566f86/5_2_route.odb.gz",
+        "path": "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/ae86d9068718134a0016c7dc484716e3e4439c0978f5cfcdef79c037ac566f86/5_2_route.odb.gz",
         "sha256": "0163cfec85857ec3e5c96e98c0cbe50c1c265cd13b9e95ec7eb449389b0e3f7d"
       },
       "attempt_started_this_invocation": true,
@@ -7003,20 +7003,20 @@
             "-python",
             "-no_init",
             "-exit",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0c_rewire_odb.py",
+            "repo://scripts/phase0c_rewire_odb.py",
             "--source",
-            "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+            "dep://OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
             "--architecture",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/stage_a/canonical/s5378/B0/ae86d9068718134a0016c7dc484716e3e4439c0978f5cfcdef79c037ac566f86.json",
+            "repo://results/pact_oss_benchmark/stage_a/canonical/s5378/B0/ae86d9068718134a0016c7dc484716e3e4439c0978f5cfcdef79c037ac566f86.json",
             "--output",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_ae86d9068718/3_place.odb"
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_ae86d9068718/3_place.odb"
           ],
-          "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+          "cwd": "maintenance://PACT",
           "elapsed_s": 1.3272041319999914,
           "end_utc": "2026-10-03T20:37:41.355635+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_ae86d9068718/3_place.odb": "7a93eb59c172b243ae26f5daab7fa536cc1d6895bf9a6046b79f01b16b76e4d8"
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_ae86d9068718/3_place.odb": "7a93eb59c172b243ae26f5daab7fa536cc1d6895bf9a6046b79f01b16b76e4d8"
           },
           "required_outputs_present": true,
           "start_utc": "2026-10-03T20:37:40.028447+00:00",
@@ -7030,26 +7030,26 @@
           "command": [
             "make",
             "-o",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_ae86d9068718/3_place.odb",
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_ae86d9068718/3_place.odb",
             "-o",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_ae86d9068718/3_place.sdc",
-            "DESIGN_CONFIG=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s5378_orfs/config.mk",
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_ae86d9068718/3_place.sdc",
+            "DESIGN_CONFIG=repo://experiments/phase0/s5378_orfs/config.mk",
             "FLOW_VARIANT=oss_receiver_s11_ae86d9068718",
-            "WORK_HOME=/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs",
+            "WORK_HOME=run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs",
             "GRT_SEED=11",
             "NUM_CORES=2",
             "OPENROAD_EXE=/usr/bin/openroad",
             "YOSYS_EXE=/usr/bin/yosys",
             "route"
           ],
-          "cwd": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+          "cwd": "dep://OpenROAD-flow-scripts/flow",
           "elapsed_s": 172.64931225200002,
           "end_utc": "2026-10-03T20:40:34.620003+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/logs/nangate45/s5378/oss_receiver_s11_ae86d9068718/5_1_grt.json": "115638ac9252fde7db51a4241e9bc73c1fc9f33d03d9edc9bf668790febd1293",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/logs/nangate45/s5378/oss_receiver_s11_ae86d9068718/5_2_route.json": "8d254088508e977e204ca526c249b15c820ee430035bf43164477c5109728d14",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_ae86d9068718/5_2_route.odb": "a6dd4e26fe534e7d3057bc3a0d1aeb0fda1f19c38cf874bcc71c4aeaf7d5f03b"
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/logs/nangate45/s5378/oss_receiver_s11_ae86d9068718/5_1_grt.json": "115638ac9252fde7db51a4241e9bc73c1fc9f33d03d9edc9bf668790febd1293",
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/logs/nangate45/s5378/oss_receiver_s11_ae86d9068718/5_2_route.json": "8d254088508e977e204ca526c249b15c820ee430035bf43164477c5109728d14",
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_ae86d9068718/5_2_route.odb": "a6dd4e26fe534e7d3057bc3a0d1aeb0fda1f19c38cf874bcc71c4aeaf7d5f03b"
           },
           "required_outputs_present": true,
           "start_utc": "2026-10-03T20:37:41.473766+00:00",
@@ -7085,7 +7085,7 @@
       },
       "report_binding": {
         "bytes": 52011,
-        "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/ae86d9068718134a0016c7dc484716e3e4439c0978f5cfcdef79c037ac566f86/route_result.json",
+        "path": "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/ae86d9068718134a0016c7dc484716e3e4439c0978f5cfcdef79c037ac566f86/route_result.json",
         "sha256": "ad96688ca6b067156aa3f5da8b1f937216bb619207ef6baaedad358d7fc442f4"
       },
       "reused": false
@@ -7093,7 +7093,7 @@
     "b2614a3a06b35038b1a94d9315b9dbd91df65b837a4421f12ec12e6c3c3286ac": {
       "archive": {
         "bytes": 563671,
-        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/b2614a3a06b35038b1a94d9315b9dbd91df65b837a4421f12ec12e6c3c3286ac/5_2_route.odb.gz",
+        "path": "repo://results/pact_candidate_stateful/routes/s5378/b2614a3a06b35038b1a94d9315b9dbd91df65b837a4421f12ec12e6c3c3286ac/5_2_route.odb.gz",
         "sha256": "1127565ba9d431ca981e34420ac893f99d2bcc520340fdceffdc598ac6b7befb"
       },
       "report": {
@@ -8774,20 +8774,20 @@
             "-python",
             "-no_init",
             "-exit",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0c_rewire_odb.py",
+            "repo://scripts/phase0c_rewire_odb.py",
             "--source",
-            "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+            "dep://OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
             "--architecture",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/s5378/architectures/b2614a3a06b35038b1a94d9315b9dbd91df65b837a4421f12ec12e6c3c3286ac.json",
+            "repo://results/pact_candidate_stateful/s5378/architectures/b2614a3a06b35038b1a94d9315b9dbd91df65b837a4421f12ec12e6c3c3286ac.json",
             "--output",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_b2614a3a06b3/3_place.odb"
+            "repo://results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_b2614a3a06b3/3_place.odb"
           ],
-          "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+          "cwd": "maintenance://PACT",
           "elapsed_s": 1.4293922130000283,
           "end_utc": "2026-09-29T03:08:18.266250+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_b2614a3a06b3/3_place.odb": "37cfe194c31b1961fa25790a823b91a41f789f8de6b16dd627171a88795286d0"
+            "repo://results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_b2614a3a06b3/3_place.odb": "37cfe194c31b1961fa25790a823b91a41f789f8de6b16dd627171a88795286d0"
           },
           "required_outputs_present": true,
           "start_utc": "2026-09-29T03:08:16.836865+00:00",
@@ -8801,26 +8801,26 @@
           "command": [
             "make",
             "-o",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_b2614a3a06b3/3_place.odb",
+            "repo://results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_b2614a3a06b3/3_place.odb",
             "-o",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_b2614a3a06b3/3_place.sdc",
-            "DESIGN_CONFIG=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s5378_orfs/config.mk",
+            "repo://results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_b2614a3a06b3/3_place.sdc",
+            "DESIGN_CONFIG=repo://experiments/phase0/s5378_orfs/config.mk",
             "FLOW_VARIANT=pactv2_b2614a3a06b3",
-            "WORK_HOME=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/orfs",
+            "WORK_HOME=repo://results/pact_candidate_stateful/routes/s5378/orfs",
             "GRT_SEED=11",
             "NUM_CORES=2",
             "OPENROAD_EXE=/usr/bin/openroad",
             "YOSYS_EXE=/usr/bin/yosys",
             "route"
           ],
-          "cwd": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+          "cwd": "dep://OpenROAD-flow-scripts/flow",
           "elapsed_s": 125.65443646400001,
           "end_utc": "2026-09-29T03:10:24.013350+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/orfs/logs/nangate45/s5378/pactv2_b2614a3a06b3/5_1_grt.json": "c4bf595fb29c1d9cf0b81cd7a23aa6c99ea6b9a39de50b78662a7eb7aabe6773",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/orfs/logs/nangate45/s5378/pactv2_b2614a3a06b3/5_2_route.json": "0f4a33cf9e43ffcc1da2f866703d4325134f7e9e556e47a4c89a568aa4ecb2ee",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_b2614a3a06b3/5_2_route.odb": "a113f941453cf1bfb3cb40ad1478ee1157314e62eb2bc0f5e6e9faeb1535378b"
+            "repo://results/pact_candidate_stateful/routes/s5378/orfs/logs/nangate45/s5378/pactv2_b2614a3a06b3/5_1_grt.json": "c4bf595fb29c1d9cf0b81cd7a23aa6c99ea6b9a39de50b78662a7eb7aabe6773",
+            "repo://results/pact_candidate_stateful/routes/s5378/orfs/logs/nangate45/s5378/pactv2_b2614a3a06b3/5_2_route.json": "0f4a33cf9e43ffcc1da2f866703d4325134f7e9e556e47a4c89a568aa4ecb2ee",
+            "repo://results/pact_candidate_stateful/routes/s5378/orfs/results/nangate45/s5378/pactv2_b2614a3a06b3/5_2_route.odb": "a113f941453cf1bfb3cb40ad1478ee1157314e62eb2bc0f5e6e9faeb1535378b"
           },
           "required_outputs_present": true,
           "start_utc": "2026-09-29T03:08:18.358952+00:00",
@@ -8856,7 +8856,7 @@
       },
       "report_binding": {
         "bytes": 52104,
-        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_stateful/routes/s5378/b2614a3a06b35038b1a94d9315b9dbd91df65b837a4421f12ec12e6c3c3286ac/route_result.json",
+        "path": "repo://results/pact_candidate_stateful/routes/s5378/b2614a3a06b35038b1a94d9315b9dbd91df65b837a4421f12ec12e6c3c3286ac/route_result.json",
         "sha256": "9fd29d355dc89c4f8f9e7ecceab5e7fba641c72f5195824736f9a0e9964ae538"
       },
       "reused": true
@@ -8864,7 +8864,7 @@
     "b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16": {
       "archive": {
         "bytes": 563066,
-        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16/5_2_route.odb.gz",
+        "path": "repo://results/pact_v2/routes/s5378/b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16/5_2_route.odb.gz",
         "sha256": "d0609679c9ddba48de949af9fe6937e7f7a66fbf666cf15c0f2b92ee1aeef761"
       },
       "report": {
@@ -10545,20 +10545,20 @@
             "-python",
             "-no_init",
             "-exit",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0c_rewire_odb.py",
+            "repo://scripts/phase0c_rewire_odb.py",
             "--source",
-            "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+            "dep://OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
             "--architecture",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s5378/architectures/b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16.json",
+            "repo://results/pact_v2/s5378/architectures/b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16.json",
             "--output",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_b5c4710dcf54/3_place.odb"
+            "repo://results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_b5c4710dcf54/3_place.odb"
           ],
-          "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+          "cwd": "maintenance://PACT",
           "elapsed_s": 1.7857274730000086,
           "end_utc": "2026-09-28T14:06:05.519821+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_b5c4710dcf54/3_place.odb": "41ae4ad8b9f2a2bc4e6fe45c71b7ad932fc290a5c3d0429626083408880a4195"
+            "repo://results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_b5c4710dcf54/3_place.odb": "41ae4ad8b9f2a2bc4e6fe45c71b7ad932fc290a5c3d0429626083408880a4195"
           },
           "required_outputs_present": true,
           "start_utc": "2026-09-28T14:06:03.734099+00:00",
@@ -10572,26 +10572,26 @@
           "command": [
             "make",
             "-o",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_b5c4710dcf54/3_place.odb",
+            "repo://results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_b5c4710dcf54/3_place.odb",
             "-o",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_b5c4710dcf54/3_place.sdc",
-            "DESIGN_CONFIG=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s5378_orfs/config.mk",
+            "repo://results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_b5c4710dcf54/3_place.sdc",
+            "DESIGN_CONFIG=repo://experiments/phase0/s5378_orfs/config.mk",
             "FLOW_VARIANT=pactv2_b5c4710dcf54",
-            "WORK_HOME=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs",
+            "WORK_HOME=repo://results/pact_v2/routes/s5378/orfs",
             "GRT_SEED=11",
             "NUM_CORES=2",
             "OPENROAD_EXE=/usr/bin/openroad",
             "YOSYS_EXE=/usr/bin/yosys",
             "route"
           ],
-          "cwd": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+          "cwd": "dep://OpenROAD-flow-scripts/flow",
           "elapsed_s": 140.32455338900002,
           "end_utc": "2026-09-28T14:08:26.007351+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/logs/nangate45/s5378/pactv2_b5c4710dcf54/5_1_grt.json": "1d8cc185dee0a57ebaad65407eeb47db868ba15d174fc251aa6a6519ca85f7b2",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/logs/nangate45/s5378/pactv2_b5c4710dcf54/5_2_route.json": "1ff4f5c92e02e622489098970bf6ae3eb042b2f7c5e6a9a2d484ddb216f998e2",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_b5c4710dcf54/5_2_route.odb": "9b365a723aa393f0b8211236575be0ab462d001db4b2ae983e88b90d23f30a00"
+            "repo://results/pact_v2/routes/s5378/orfs/logs/nangate45/s5378/pactv2_b5c4710dcf54/5_1_grt.json": "1d8cc185dee0a57ebaad65407eeb47db868ba15d174fc251aa6a6519ca85f7b2",
+            "repo://results/pact_v2/routes/s5378/orfs/logs/nangate45/s5378/pactv2_b5c4710dcf54/5_2_route.json": "1ff4f5c92e02e622489098970bf6ae3eb042b2f7c5e6a9a2d484ddb216f998e2",
+            "repo://results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_b5c4710dcf54/5_2_route.odb": "9b365a723aa393f0b8211236575be0ab462d001db4b2ae983e88b90d23f30a00"
           },
           "required_outputs_present": true,
           "start_utc": "2026-09-28T14:06:05.682838+00:00",
@@ -10627,7 +10627,7 @@
       },
       "report_binding": {
         "bytes": 51956,
-        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16/route_result.json",
+        "path": "repo://results/pact_v2/routes/s5378/b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16/route_result.json",
         "sha256": "61d32a8ace8b2c617169fde3f8dbc641d0929c96f451fb0e4792da0d54e8e9c8"
       },
       "reused": true
@@ -10635,7 +10635,7 @@
     "b72833ffdd2bea7e2cfdb313767af85f5ab47835b13d56822b42ca6736040808": {
       "archive": {
         "bytes": 562812,
-        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/b72833ffdd2bea7e2cfdb313767af85f5ab47835b13d56822b42ca6736040808/5_2_route.odb.gz",
+        "path": "repo://results/pact_candidate_sensitive/routes/s5378/b72833ffdd2bea7e2cfdb313767af85f5ab47835b13d56822b42ca6736040808/5_2_route.odb.gz",
         "sha256": "bc538d28d75eff9e367d5a5fa59d2ff8c22d9ebe8d0273e68e4c09f3ee944311"
       },
       "report": {
@@ -12316,20 +12316,20 @@
             "-python",
             "-no_init",
             "-exit",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0c_rewire_odb.py",
+            "repo://scripts/phase0c_rewire_odb.py",
             "--source",
-            "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+            "dep://OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
             "--architecture",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/s5378/architectures/b72833ffdd2bea7e2cfdb313767af85f5ab47835b13d56822b42ca6736040808.json",
+            "repo://results/pact_candidate_sensitive/s5378/architectures/b72833ffdd2bea7e2cfdb313767af85f5ab47835b13d56822b42ca6736040808.json",
             "--output",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_b72833ffdd2b/3_place.odb"
+            "repo://results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_b72833ffdd2b/3_place.odb"
           ],
-          "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+          "cwd": "maintenance://PACT",
           "elapsed_s": 1.5914281420000407,
           "end_utc": "2026-09-28T19:27:53.476565+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_b72833ffdd2b/3_place.odb": "06b3305510c003f066a37bc6b0b6d42c8c16a301957ed5d054e94bb1a2ce3b47"
+            "repo://results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_b72833ffdd2b/3_place.odb": "06b3305510c003f066a37bc6b0b6d42c8c16a301957ed5d054e94bb1a2ce3b47"
           },
           "required_outputs_present": true,
           "start_utc": "2026-09-28T19:27:51.885137+00:00",
@@ -12343,26 +12343,26 @@
           "command": [
             "make",
             "-o",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_b72833ffdd2b/3_place.odb",
+            "repo://results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_b72833ffdd2b/3_place.odb",
             "-o",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_b72833ffdd2b/3_place.sdc",
-            "DESIGN_CONFIG=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s5378_orfs/config.mk",
+            "repo://results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_b72833ffdd2b/3_place.sdc",
+            "DESIGN_CONFIG=repo://experiments/phase0/s5378_orfs/config.mk",
             "FLOW_VARIANT=pactv2_b72833ffdd2b",
-            "WORK_HOME=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/orfs",
+            "WORK_HOME=repo://results/pact_candidate_sensitive/routes/s5378/orfs",
             "GRT_SEED=11",
             "NUM_CORES=2",
             "OPENROAD_EXE=/usr/bin/openroad",
             "YOSYS_EXE=/usr/bin/yosys",
             "route"
           ],
-          "cwd": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+          "cwd": "dep://OpenROAD-flow-scripts/flow",
           "elapsed_s": 141.8704461110001,
           "end_utc": "2026-09-28T19:30:15.455675+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/orfs/logs/nangate45/s5378/pactv2_b72833ffdd2b/5_1_grt.json": "9799b0519f21fa4c617a16208444e82f3f383b996d1b336b205f1b25bb496974",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/orfs/logs/nangate45/s5378/pactv2_b72833ffdd2b/5_2_route.json": "d6ae690b0b6d544ef0641da0d8073ccac33df2e2b4049f38b529fdd57977b9f5",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_b72833ffdd2b/5_2_route.odb": "bfdcf41cf1aea0455cd28dff9f532642ee08e455c97235b80b967b528b42320d"
+            "repo://results/pact_candidate_sensitive/routes/s5378/orfs/logs/nangate45/s5378/pactv2_b72833ffdd2b/5_1_grt.json": "9799b0519f21fa4c617a16208444e82f3f383b996d1b336b205f1b25bb496974",
+            "repo://results/pact_candidate_sensitive/routes/s5378/orfs/logs/nangate45/s5378/pactv2_b72833ffdd2b/5_2_route.json": "d6ae690b0b6d544ef0641da0d8073ccac33df2e2b4049f38b529fdd57977b9f5",
+            "repo://results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_b72833ffdd2b/5_2_route.odb": "bfdcf41cf1aea0455cd28dff9f532642ee08e455c97235b80b967b528b42320d"
           },
           "required_outputs_present": true,
           "start_utc": "2026-09-28T19:27:53.585237+00:00",
@@ -12398,7 +12398,7 @@
       },
       "report_binding": {
         "bytes": 52105,
-        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/b72833ffdd2bea7e2cfdb313767af85f5ab47835b13d56822b42ca6736040808/route_result.json",
+        "path": "repo://results/pact_candidate_sensitive/routes/s5378/b72833ffdd2bea7e2cfdb313767af85f5ab47835b13d56822b42ca6736040808/route_result.json",
         "sha256": "88bbd7ae774b7377c7c1713d0892b7a1d57f2cece59b71461bac13fe47af73ed"
       },
       "reused": true
@@ -12406,7 +12406,7 @@
     "c11dfeee8d449781c780160151a7d1fb97bfdf4d6675e42ee864ffb7f5e7d31c": {
       "archive": {
         "bytes": 563351,
-        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/c11dfeee8d449781c780160151a7d1fb97bfdf4d6675e42ee864ffb7f5e7d31c/5_2_route.odb.gz",
+        "path": "repo://results/pact_candidate_sensitive/routes/s5378/c11dfeee8d449781c780160151a7d1fb97bfdf4d6675e42ee864ffb7f5e7d31c/5_2_route.odb.gz",
         "sha256": "dfa071d02c07d7cd10f5f6f17bbcd9fb33304d36c9ee15f7edcee408955de3da"
       },
       "report": {
@@ -14087,20 +14087,20 @@
             "-python",
             "-no_init",
             "-exit",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0c_rewire_odb.py",
+            "repo://scripts/phase0c_rewire_odb.py",
             "--source",
-            "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+            "dep://OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
             "--architecture",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/s5378/architectures/c11dfeee8d449781c780160151a7d1fb97bfdf4d6675e42ee864ffb7f5e7d31c.json",
+            "repo://results/pact_candidate_sensitive/s5378/architectures/c11dfeee8d449781c780160151a7d1fb97bfdf4d6675e42ee864ffb7f5e7d31c.json",
             "--output",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_c11dfeee8d44/3_place.odb"
+            "repo://results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_c11dfeee8d44/3_place.odb"
           ],
-          "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+          "cwd": "maintenance://PACT",
           "elapsed_s": 1.9346819579998282,
           "end_utc": "2026-09-28T19:25:26.319592+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_c11dfeee8d44/3_place.odb": "5fac9c8401098d93e9311e11d7014e91026a18c3503a2e84c694c6e551b0cc93"
+            "repo://results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_c11dfeee8d44/3_place.odb": "5fac9c8401098d93e9311e11d7014e91026a18c3503a2e84c694c6e551b0cc93"
           },
           "required_outputs_present": true,
           "start_utc": "2026-09-28T19:25:24.384913+00:00",
@@ -14114,26 +14114,26 @@
           "command": [
             "make",
             "-o",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_c11dfeee8d44/3_place.odb",
+            "repo://results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_c11dfeee8d44/3_place.odb",
             "-o",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_c11dfeee8d44/3_place.sdc",
-            "DESIGN_CONFIG=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s5378_orfs/config.mk",
+            "repo://results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_c11dfeee8d44/3_place.sdc",
+            "DESIGN_CONFIG=repo://experiments/phase0/s5378_orfs/config.mk",
             "FLOW_VARIANT=pactv2_c11dfeee8d44",
-            "WORK_HOME=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/orfs",
+            "WORK_HOME=repo://results/pact_candidate_sensitive/routes/s5378/orfs",
             "GRT_SEED=11",
             "NUM_CORES=2",
             "OPENROAD_EXE=/usr/bin/openroad",
             "YOSYS_EXE=/usr/bin/yosys",
             "route"
           ],
-          "cwd": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+          "cwd": "dep://OpenROAD-flow-scripts/flow",
           "elapsed_s": 141.57656884200014,
           "end_utc": "2026-09-28T19:27:48.012996+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/orfs/logs/nangate45/s5378/pactv2_c11dfeee8d44/5_1_grt.json": "b10fb4cf43b12b1bf7899012e15ea16ff82f4d6db66b6282f4c9a3871760982c",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/orfs/logs/nangate45/s5378/pactv2_c11dfeee8d44/5_2_route.json": "ce00b632fb544f7cbc8fbfc42397a5dd02499bf250f5a7d156cefa5b4e14246f",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_c11dfeee8d44/5_2_route.odb": "e9da35421475eb593bdf25e0bd43ebbb74273a6f40ef4f43498cebbb60cfa5a0"
+            "repo://results/pact_candidate_sensitive/routes/s5378/orfs/logs/nangate45/s5378/pactv2_c11dfeee8d44/5_1_grt.json": "b10fb4cf43b12b1bf7899012e15ea16ff82f4d6db66b6282f4c9a3871760982c",
+            "repo://results/pact_candidate_sensitive/routes/s5378/orfs/logs/nangate45/s5378/pactv2_c11dfeee8d44/5_2_route.json": "ce00b632fb544f7cbc8fbfc42397a5dd02499bf250f5a7d156cefa5b4e14246f",
+            "repo://results/pact_candidate_sensitive/routes/s5378/orfs/results/nangate45/s5378/pactv2_c11dfeee8d44/5_2_route.odb": "e9da35421475eb593bdf25e0bd43ebbb74273a6f40ef4f43498cebbb60cfa5a0"
           },
           "required_outputs_present": true,
           "start_utc": "2026-09-28T19:25:26.436438+00:00",
@@ -14169,7 +14169,7 @@
       },
       "report_binding": {
         "bytes": 52104,
-        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s5378/c11dfeee8d449781c780160151a7d1fb97bfdf4d6675e42ee864ffb7f5e7d31c/route_result.json",
+        "path": "repo://results/pact_candidate_sensitive/routes/s5378/c11dfeee8d449781c780160151a7d1fb97bfdf4d6675e42ee864ffb7f5e7d31c/route_result.json",
         "sha256": "bf5d17d1ebf3af296bed77d05a66cacf3108ce0d6720656fd8c378eefb034dfb"
       },
       "reused": true
@@ -14177,7 +14177,7 @@
     "c3c411e9b14ee9237bc0fe7710a314a3363d697c02b047510d35d40f149aa94a": {
       "archive": {
         "bytes": 561399,
-        "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/c3c411e9b14ee9237bc0fe7710a314a3363d697c02b047510d35d40f149aa94a/5_2_route.odb.gz",
+        "path": "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/c3c411e9b14ee9237bc0fe7710a314a3363d697c02b047510d35d40f149aa94a/5_2_route.odb.gz",
         "sha256": "5df4952bea30fb90b87cfef02a5a85cedf4777d261d89aeb84938ff75382a35a"
       },
       "attempt_started_this_invocation": true,
@@ -15853,20 +15853,20 @@
             "-python",
             "-no_init",
             "-exit",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0c_rewire_odb.py",
+            "repo://scripts/phase0c_rewire_odb.py",
             "--source",
-            "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+            "dep://OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
             "--architecture",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/topology_recovery_20261004/baselines/B3T_openroad_10666_serialization_repaired/s5378/canonical.json",
+            "repo://results/pact_oss_benchmark/topology_recovery_20261004/baselines/B3T_openroad_10666_serialization_repaired/s5378/canonical.json",
             "--output",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c3c411e9b14e/3_place.odb"
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c3c411e9b14e/3_place.odb"
           ],
-          "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+          "cwd": "maintenance://PACT",
           "elapsed_s": 1.630536903999996,
           "end_utc": "2026-10-03T20:46:26.487631+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c3c411e9b14e/3_place.odb": "a139fb506be9f0b3c12a88d47d4eeea705f15f1b282f79fa0d1c2dd10f02aadc"
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c3c411e9b14e/3_place.odb": "a139fb506be9f0b3c12a88d47d4eeea705f15f1b282f79fa0d1c2dd10f02aadc"
           },
           "required_outputs_present": true,
           "start_utc": "2026-10-03T20:46:24.857098+00:00",
@@ -15880,26 +15880,26 @@
           "command": [
             "make",
             "-o",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c3c411e9b14e/3_place.odb",
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c3c411e9b14e/3_place.odb",
             "-o",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c3c411e9b14e/3_place.sdc",
-            "DESIGN_CONFIG=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s5378_orfs/config.mk",
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c3c411e9b14e/3_place.sdc",
+            "DESIGN_CONFIG=repo://experiments/phase0/s5378_orfs/config.mk",
             "FLOW_VARIANT=oss_receiver_s11_c3c411e9b14e",
-            "WORK_HOME=/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs",
+            "WORK_HOME=run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs",
             "GRT_SEED=11",
             "NUM_CORES=2",
             "OPENROAD_EXE=/usr/bin/openroad",
             "YOSYS_EXE=/usr/bin/yosys",
             "route"
           ],
-          "cwd": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+          "cwd": "dep://OpenROAD-flow-scripts/flow",
           "elapsed_s": 159.76676824699996,
           "end_utc": "2026-10-03T20:49:06.339306+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/logs/nangate45/s5378/oss_receiver_s11_c3c411e9b14e/5_1_grt.json": "de630c1afcb317ad56787e4961343ba069cea506196053c26a9377e40e27aa5b",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/logs/nangate45/s5378/oss_receiver_s11_c3c411e9b14e/5_2_route.json": "5503e658b690a3c31bc99ea4cb99c2e635b2b4a1e3b0e38766276001a063312b",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c3c411e9b14e/5_2_route.odb": "ba177798720cacca9e0b0b8d6a9ff4ad162dcb17d78806b01c0f82e4d3c18390"
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/logs/nangate45/s5378/oss_receiver_s11_c3c411e9b14e/5_1_grt.json": "de630c1afcb317ad56787e4961343ba069cea506196053c26a9377e40e27aa5b",
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/logs/nangate45/s5378/oss_receiver_s11_c3c411e9b14e/5_2_route.json": "5503e658b690a3c31bc99ea4cb99c2e635b2b4a1e3b0e38766276001a063312b",
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c3c411e9b14e/5_2_route.odb": "ba177798720cacca9e0b0b8d6a9ff4ad162dcb17d78806b01c0f82e4d3c18390"
           },
           "required_outputs_present": true,
           "start_utc": "2026-10-03T20:46:26.572580+00:00",
@@ -15935,7 +15935,7 @@
       },
       "report_binding": {
         "bytes": 51995,
-        "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/c3c411e9b14ee9237bc0fe7710a314a3363d697c02b047510d35d40f149aa94a/route_result.json",
+        "path": "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/c3c411e9b14ee9237bc0fe7710a314a3363d697c02b047510d35d40f149aa94a/route_result.json",
         "sha256": "e7a6cd29185ebdd93def04f9f5cf7120f3723127e8f5643325bfccd018f82233"
       },
       "reused": false
@@ -15943,7 +15943,7 @@
     "c4eabc41cb50cae503f52eb2deae1101321804849abf1dab0dc8b97e58f90bb5": {
       "archive": {
         "bytes": 563474,
-        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/c4eabc41cb50cae503f52eb2deae1101321804849abf1dab0dc8b97e58f90bb5/5_2_route.odb.gz",
+        "path": "repo://results/pact_v2/routes/s5378/c4eabc41cb50cae503f52eb2deae1101321804849abf1dab0dc8b97e58f90bb5/5_2_route.odb.gz",
         "sha256": "31163ab3a4cf3b955a25c70623f3ce5f8c5a146cb95e1d125a6bef0ab31fb24a"
       },
       "report": {
@@ -17624,20 +17624,20 @@
             "-python",
             "-no_init",
             "-exit",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0c_rewire_odb.py",
+            "repo://scripts/phase0c_rewire_odb.py",
             "--source",
-            "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+            "dep://OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
             "--architecture",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/s5378/architectures/c4eabc41cb50cae503f52eb2deae1101321804849abf1dab0dc8b97e58f90bb5.json",
+            "repo://results/pact_v2/s5378/architectures/c4eabc41cb50cae503f52eb2deae1101321804849abf1dab0dc8b97e58f90bb5.json",
             "--output",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_c4eabc41cb50/3_place.odb"
+            "repo://results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_c4eabc41cb50/3_place.odb"
           ],
-          "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+          "cwd": "maintenance://PACT",
           "elapsed_s": 1.9924328090000358,
           "end_utc": "2026-09-28T14:03:41.354557+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_c4eabc41cb50/3_place.odb": "33236237bfb0b427cd5f4ebb1fa15922cc66ead38c34c18cd3827fc8009e52b8"
+            "repo://results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_c4eabc41cb50/3_place.odb": "33236237bfb0b427cd5f4ebb1fa15922cc66ead38c34c18cd3827fc8009e52b8"
           },
           "required_outputs_present": true,
           "start_utc": "2026-09-28T14:03:39.362058+00:00",
@@ -17651,26 +17651,26 @@
           "command": [
             "make",
             "-o",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_c4eabc41cb50/3_place.odb",
+            "repo://results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_c4eabc41cb50/3_place.odb",
             "-o",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_c4eabc41cb50/3_place.sdc",
-            "DESIGN_CONFIG=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s5378_orfs/config.mk",
+            "repo://results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_c4eabc41cb50/3_place.sdc",
+            "DESIGN_CONFIG=repo://experiments/phase0/s5378_orfs/config.mk",
             "FLOW_VARIANT=pactv2_c4eabc41cb50",
-            "WORK_HOME=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs",
+            "WORK_HOME=repo://results/pact_v2/routes/s5378/orfs",
             "GRT_SEED=11",
             "NUM_CORES=2",
             "OPENROAD_EXE=/usr/bin/openroad",
             "YOSYS_EXE=/usr/bin/yosys",
             "route"
           ],
-          "cwd": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+          "cwd": "dep://OpenROAD-flow-scripts/flow",
           "elapsed_s": 138.369346227,
           "end_utc": "2026-09-28T14:05:59.879966+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/logs/nangate45/s5378/pactv2_c4eabc41cb50/5_1_grt.json": "de7c3ef805c9d7d3f696c35b7be7f4735b9b580398f3a862181ccf734698f8d7",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/logs/nangate45/s5378/pactv2_c4eabc41cb50/5_2_route.json": "802d9a202dcafcb4552106998a5c2f453c86a8339b50cf8a6081eea580d6cdf7",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_c4eabc41cb50/5_2_route.odb": "27356ec6e62ce2ad34d375446f4f09b7c7ec600b4876cf0d0ed53722202b6c1b"
+            "repo://results/pact_v2/routes/s5378/orfs/logs/nangate45/s5378/pactv2_c4eabc41cb50/5_1_grt.json": "de7c3ef805c9d7d3f696c35b7be7f4735b9b580398f3a862181ccf734698f8d7",
+            "repo://results/pact_v2/routes/s5378/orfs/logs/nangate45/s5378/pactv2_c4eabc41cb50/5_2_route.json": "802d9a202dcafcb4552106998a5c2f453c86a8339b50cf8a6081eea580d6cdf7",
+            "repo://results/pact_v2/routes/s5378/orfs/results/nangate45/s5378/pactv2_c4eabc41cb50/5_2_route.odb": "27356ec6e62ce2ad34d375446f4f09b7c7ec600b4876cf0d0ed53722202b6c1b"
           },
           "required_outputs_present": true,
           "start_utc": "2026-09-28T14:03:41.510620+00:00",
@@ -17706,7 +17706,7 @@
       },
       "report_binding": {
         "bytes": 51959,
-        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_v2/routes/s5378/c4eabc41cb50cae503f52eb2deae1101321804849abf1dab0dc8b97e58f90bb5/route_result.json",
+        "path": "repo://results/pact_v2/routes/s5378/c4eabc41cb50cae503f52eb2deae1101321804849abf1dab0dc8b97e58f90bb5/route_result.json",
         "sha256": "bd280f964b9e74479712d0c2b091bed62e30d0ed3261dbd5f1ec91449cf6a840"
       },
       "reused": true
@@ -17714,7 +17714,7 @@
     "c8c27dc62915a502b882d8e0a6d8dc3632b6de93fdddf658607c3e84f475928b": {
       "archive": {
         "bytes": 563324,
-        "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/c8c27dc62915a502b882d8e0a6d8dc3632b6de93fdddf658607c3e84f475928b/5_2_route.odb.gz",
+        "path": "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/c8c27dc62915a502b882d8e0a6d8dc3632b6de93fdddf658607c3e84f475928b/5_2_route.odb.gz",
         "sha256": "92cf044dae0fac7c525d91b198ecfdaca3d81b0bbb313d73ef58083b453da840"
       },
       "attempt_started_this_invocation": true,
@@ -19390,20 +19390,20 @@
             "-python",
             "-no_init",
             "-exit",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0c_rewire_odb.py",
+            "repo://scripts/phase0c_rewire_odb.py",
             "--source",
-            "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
+            "dep://OpenROAD-flow-scripts/flow/results/nangate45/s5378/phase0b_s11_B0/3_place.odb",
             "--architecture",
-            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_oss_benchmark/stage_a/canonical/s5378/B1/c8c27dc62915a502b882d8e0a6d8dc3632b6de93fdddf658607c3e84f475928b.json",
+            "repo://results/pact_oss_benchmark/stage_a/canonical/s5378/B1/c8c27dc62915a502b882d8e0a6d8dc3632b6de93fdddf658607c3e84f475928b.json",
             "--output",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c8c27dc62915/3_place.odb"
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c8c27dc62915/3_place.odb"
           ],
-          "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+          "cwd": "maintenance://PACT",
           "elapsed_s": 1.5377254789999597,
           "end_utc": "2026-10-03T20:40:39.236258+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c8c27dc62915/3_place.odb": "a41993cf7f2c7699eb599e52e1503de1378895f931a7f0e782974c162d7278a0"
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c8c27dc62915/3_place.odb": "a41993cf7f2c7699eb599e52e1503de1378895f931a7f0e782974c162d7278a0"
           },
           "required_outputs_present": true,
           "start_utc": "2026-10-03T20:40:37.698536+00:00",
@@ -19417,26 +19417,26 @@
           "command": [
             "make",
             "-o",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c8c27dc62915/3_place.odb",
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c8c27dc62915/3_place.odb",
             "-o",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c8c27dc62915/3_place.sdc",
-            "DESIGN_CONFIG=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/experiments/phase0/s5378_orfs/config.mk",
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c8c27dc62915/3_place.sdc",
+            "DESIGN_CONFIG=repo://experiments/phase0/s5378_orfs/config.mk",
             "FLOW_VARIANT=oss_receiver_s11_c8c27dc62915",
-            "WORK_HOME=/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs",
+            "WORK_HOME=run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs",
             "GRT_SEED=11",
             "NUM_CORES=2",
             "OPENROAD_EXE=/usr/bin/openroad",
             "YOSYS_EXE=/usr/bin/yosys",
             "route"
           ],
-          "cwd": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+          "cwd": "dep://OpenROAD-flow-scripts/flow",
           "elapsed_s": 164.07800127499996,
           "end_utc": "2026-10-03T20:43:23.914992+00:00",
           "exit_code": 0,
           "outputs": {
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/logs/nangate45/s5378/oss_receiver_s11_c8c27dc62915/5_1_grt.json": "31afc2a2ff0ca77af25523e2f0022939a45a7ffa9f1f9e676548b09694d74d67",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/logs/nangate45/s5378/oss_receiver_s11_c8c27dc62915/5_2_route.json": "37e484653b9da7635ea7108c93356bdfd94121812657519ea78b1a05b48ab97f",
-            "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c8c27dc62915/5_2_route.odb": "0a4ddc84094759f736ed7204c3b4a08c378c4aae2250f268ce44d8d1020873b7"
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/logs/nangate45/s5378/oss_receiver_s11_c8c27dc62915/5_1_grt.json": "31afc2a2ff0ca77af25523e2f0022939a45a7ffa9f1f9e676548b09694d74d67",
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/logs/nangate45/s5378/oss_receiver_s11_c8c27dc62915/5_2_route.json": "37e484653b9da7635ea7108c93356bdfd94121812657519ea78b1a05b48ab97f",
+            "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/orfs/results/nangate45/s5378/oss_receiver_s11_c8c27dc62915/5_2_route.odb": "0a4ddc84094759f736ed7204c3b4a08c378c4aae2250f268ce44d8d1020873b7"
           },
           "required_outputs_present": true,
           "start_utc": "2026-10-03T20:40:39.307961+00:00",
@@ -19472,7 +19472,7 @@
       },
       "report_binding": {
         "bytes": 51984,
-        "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/c8c27dc62915a502b882d8e0a6d8dc3632b6de93fdddf658607c3e84f475928b/route_result.json",
+        "path": "run://tmp/pact_oss_20261003/topology_recovery_20261004/stage_a/routes/s5378/c8c27dc62915a502b882d8e0a6d8dc3632b6de93fdddf658607c3e84f475928b/route_result.json",
         "sha256": "33bb6aca193435fefd8e522e349b1a8b6d32af5d1e645ffd21a19b5c56f466a6"
       },
       "reused": false
@@ -19480,7 +19480,7 @@
   },
   "rewiring_adapter": {
     "bytes": 8666,
-    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/phase0c_rewire_odb.py",
+    "path": "repo://scripts/phase0c_rewire_odb.py",
     "sha256": "7f655d611891fe7ec74370fd2598cfb12ee5f1babd6d976c109ac158014763dc"
   }
 }

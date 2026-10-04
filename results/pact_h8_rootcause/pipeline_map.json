@@ -17,7 +17,7 @@
     "export_invocation": "openroad -python -no_init -exit scripts/pact_h8_export.py results/pact_h8_rootcause",
     "model_version": "candidate_stateful/depth=3/baseline=9d910302",
     "repository_commit": "9d9103027918b1d4af2b209e6d36133ad82d4a4e",
-    "script_invocation": "PYTHONPATH=.optimizer-deps:src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 /root/pact-deps/pact-venv/bin/python scripts/pact_h8_rootcause.py {index|analyze --design DESIGN|report}",
+    "script_invocation": "PYTHONPATH=.optimizer-deps:src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 env://qualified/bin/python scripts/pact_h8_rootcause.py {index|analyze --design DESIGN|report}",
     "source_code": {
       "scripts/pact_candidate_export.py": "381faa8f5eeca1d0e696f257558abd7d2c7ac4cd93fce9faf4acbd32a7b272df",
       "scripts/pact_candidate_stateful.py": "7970b65bed37c5c8cb33bba8d75bacd175bcf327a361eedc64408788b74e8b45",
@@ -39,8 +39,8 @@
       "capacitance_definition": "none at waveform stage",
       "coordinate_convention": "micrometres; driver cell origin; external input port bounding-box centre; die [xmin,ymin,xmax,ymax]",
       "input_artifact": [
-        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s9234.pat",
-        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/derived/s9234/ff_identity_map.json",
+        "repo://artifacts/raw/tool_qualification/fan_atpg/patterns/FAN_s9234.pat",
+        "repo://artifacts/derived/s9234/ff_identity_map.json",
         "results/pact_candidate_sensitive/s9234/architectures/4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40.json",
         "results/pact_candidate_sensitive/s9234/topology.json"
       ],
@@ -115,15 +115,15 @@
       "coordinate_convention": "ODB database units converted to micrometres; FF origins verified against canonical architecture",
       "input_artifact": [
         "results/pact_candidate_sensitive/s9234/architectures/4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40.json",
-        "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.odb",
-        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s9234/s11/placed.v",
-        "/root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.sdc",
-        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/artifacts/raw/phase0b/placements/s9234/s11/placed.def",
+        "dep://OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.odb",
+        "repo://artifacts/raw/phase0b/placements/s9234/s11/placed.v",
+        "dep://OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.sdc",
+        "repo://artifacts/raw/phase0b/placements/s9234/s11/placed.def",
         "results/pact_candidate_sensitive/measurement/manifest.json"
       ],
       "output_artifact": [
-        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s9234/4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40/route_result.json",
-        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_candidate_sensitive/routes/s9234/4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40/5_2_route.odb.gz",
+        "repo://results/pact_candidate_sensitive/routes/s9234/4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40/route_result.json",
+        "repo://results/pact_candidate_sensitive/routes/s9234/4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40/5_2_route.odb.gz",
         "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/routed.odb",
         "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/routed.v"
       ],
@@ -160,7 +160,7 @@
       "input_artifact": [
         "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/extracted.spef",
         "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/routed.odb",
-        "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+        "dep://OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
       ],
       "output_artifact": [
         "results/pact_candidate_sensitive/measurement/s9234/4d6ff90b2adc/net_activity_capacitance.csv"

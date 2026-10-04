@@ -56,7 +56,7 @@
     }
   ],
   "tests": {
-    "environment": "WSL Ubuntu-24.04, /root/pact-deps/pact-venv/bin/python, PYTHONPATH=.optimizer-deps:src",
+    "environment": "WSL Ubuntu-24.04, env://qualified/bin/python, PYTHONPATH=.optimizer-deps:src",
     "focused": {
       "command": "python -m pytest tests/unit/test_implementation_v2.py -q",
       "passed": 5,

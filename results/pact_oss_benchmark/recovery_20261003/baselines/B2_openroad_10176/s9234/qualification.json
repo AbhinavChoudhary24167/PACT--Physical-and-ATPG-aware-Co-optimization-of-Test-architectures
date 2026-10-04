@@ -22,7 +22,7 @@
     105
   ],
   "commands": [
-    "read_sdc /root/pact-deps/OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.sdc",
+    "read_sdc dep://OpenROAD-flow-scripts/flow/results/nangate45/s9234f/phase0b_s11_B0/3_place.sdc",
     "set_dft_config -max_chains 2 -max_length 106 -clock_mixing no_mix -scan_enable_name_pattern test_se -scan_in_name_pattern test_si_{} -scan_out_name_pattern test_so_{}",
     "report_dft_config",
     "report_dft_plan -verbose",

@@ -9,7 +9,7 @@ python -m venv .venv
 python -m pip install -e '.[optimizer,dev]'
 ```
 
-Numba is required by optimizer/stateful evaluation. Windows supports portable numerical workflows/tests; physical adapters target Linux/WSL with OpenROAD's Python interface, ORFS, FAN_ATPG, Yosys and Icarus Verilog.
+Basic package usage installs with `python -m pip install -e .`; this includes the numerical/data libraries declared in `pyproject.toml`. Numba is required by optimizer/stateful evaluation, and pytest is needed for tests, hence the quick start installs `.[optimizer,dev]`. OpenROAD, FAN_ATPG and PDKs are not needed to import PACT or run its synthetic example. Physical adapters target Linux/WSL with OpenROAD's Python interface, ORFS, FAN_ATPG, Yosys and Icarus Verilog.
 
 ```sh
 export PACT_DEPENDENCY_ROOT="$PWD/external"

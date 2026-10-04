@@ -8,7 +8,11 @@ Stage-B bundles contain exact architectures, load/response arrays, topology, pri
 
 ## Exact physical reproduction
 
-Exact reruns also require frozen placed ODB/SDC, technology libraries, common backend and B3T build/submodule bindings. Their hashes remain in protocol/method/repair manifests and completion receipts. Readers relocate historical execution paths in memory using repository/dependency/scratch configuration; original receipt bytes remain intact.
+Exact reruns also require frozen placed ODB/SDC, technology libraries, common backend and B3T build/submodule bindings. Their hashes remain in protocol/method/repair manifests and completion receipts.
+
+Public receipt metadata uses `repo://`, `dep://` and `run://` aliases for repository, dependency and experiment roots. Readers resolve these using the checkout and `PACT_DEPENDENCY_ROOT` / individual dependency overrides / `PACT_EXPERIMENT_ROOT`. Historical Python environments and maintenance archives use descriptive `env://`, `archive://` and `maintenance://` aliases and are not distributed inputs. Standard container mount paths describe the adapter contract, not a personal machine.
+
+[The normalization ledger](../reports/repository_cleanup/path_metadata_normalization.json) records original/public byte identities for path and hostname metadata exports. Numbers, architecture identities, source/tool revisions and embedded historical hashes are unchanged. Embedded hash bindings describe the original receipts; recover their original bytes from the ledger's `original_revision`. The verification script checks both unchanged original inputs and the audited public exports. Publication did not rerun or relabel scientific measurements.
 
 Full ODB/VCD/DEF/SPEF and compiled simulation trees are excluded. No public download location for private physical records is established. Obtain hash-bound inputs from the experiment custodian, or recover tracked originals from pre-cleanup revision `f2569d498cd5f26a88c4954ec163498eb3cf7d91` before an approved history rewrite. Some outputs existed only externally; Git recovery cannot supply them. A newly generated placement is a new physical realization unless hashes match.
 

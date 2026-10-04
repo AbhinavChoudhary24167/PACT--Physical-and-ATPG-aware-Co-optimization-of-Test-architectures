@@ -32,6 +32,13 @@ def relocate(value):
     if not isinstance(value, str):
         return value
     normalized = value.replace('\\', '/')
+    if normalized.startswith('repo://'):
+        return str(ROOT / normalized[len('repo://'):])
+    if normalized.startswith('dep://'):
+        return str(dependency_path(normalized[len('dep://'):]))
+    if normalized.startswith('run://'):
+        from .experiment_storage import experiment_root
+        return str(experiment_root() / normalized[len('run://'):])
     if normalized.startswith(('/mnt/c/', 'C:/')):
         for folder in ('artifacts', 'reports', 'results', 'src', 'scripts', 'tests', 'config', 'docs', 'experiments'):
             marker = '/' + folder + '/'

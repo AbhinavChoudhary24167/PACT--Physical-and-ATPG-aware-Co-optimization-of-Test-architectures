@@ -1,67 +1,85 @@
 # PACT
 
-**Physical and ATPG-aware Co-optimization of Test Architectures.** PACT is a deterministic research tool for constructing legal scan orders, optimizing physical/activity tradeoffs and qualifying implementations with OpenROAD/ORFS and stored FAN ATPG workloads.
+**Physical and ATPG-aware Co-optimization of Test Architectures.** PACT constructs legal scan orders and searches physical cost and switching activity using stored ATPG workloads. It combines an exact incremental scan solver, bounded stateful logic evaluation and OpenROAD physical qualification.
 
-## Motivation and key idea
+Short scan wire need not mean low switching hotspots. PACT preserves flip-flop membership, chain capacities, clock domains and serial load/unload behavior while keeping physical cost, total activity and local peaks separate. Predicted gains are checked against implemented measurements.
 
-Short scan wire need not mean low switching hotspots. PACT preserves FF membership, capacities, clock domains and serial load/unload semantics while searching physical cost and separate activity objectives. Proxy improvements must survive implemented measurement.
+## Quick start
 
-## Architecture / workflow
-
-Architecture + stored workload → candidate evaluation → bounded search → selective physical implementation → measured comparison. PACT includes an exact incremental M3/M5 working solver, bounded candidate-stateful evaluator, Stage-B physical-budget activity lanes, scan-only export, independent workload replay and topology/functional/FF/routing qualification. See [architecture](docs/architecture.md) and [methodology](docs/methodology.md).
-
-## Current status
-
-Saved records at `f2569d498cd5f26a88c4954ec163498eb3cf7d91` support completed Stage A (`PACT_STAGE_A_PHYSICAL_RESULTS_COMPLETE`, `PACT_EXTERNAL_BENCHMARK_COMPLETE`) and later Stage B (`PACT_STAGE_B_MULTI_DESIGN_CONVERGENCE`), with nine qualified Stage-B selections across s5378/s9234/s15850. The research program remains in progress: full-network hotspot prediction and complete detected-fault identity equivalence remain unresolved. [Research status](docs/research_status.md) is canonical.
-
-## Repository structure
-
-| Path | Purpose |
-|---|---|
-| `src/pact/` | Solver, scan/activity/physical models and integration |
-| `scripts/`, `tests/` | Current runners, adapters and essential regressions |
-| `config/`, `experiments/`, `benchmarks/` | Schemas, physical settings and provenance |
-| `artifacts/` | Minimal placed/workload inputs and fixtures |
-| `results/pact_stage_b/`, `results/stage_a/` | Portable current inputs/orders and compact measured comparisons |
-| `docs/` | Canonical user/research documentation |
-| `reports/repository_cleanup/` | Storage audit, decisions and validation |
-
-## Requirements and installation
-
-Python 3.11+ and numerical dependencies support portable workflows/tests. Physical work additionally needs Linux/WSL, qualified OpenROAD/ORFS, FAN_ATPG and Icarus Verilog.
+Python 3.11+ supports the numerical workflows on Windows and Linux. Run from the repository root:
 
 ```sh
 python -m venv .venv
 # Linux/WSL: source .venv/bin/activate
 # PowerShell: .venv/Scripts/Activate.ps1
 python -m pip install -e '.[optimizer,dev]'
-```
-
-Dependency pins and configurable locations are in [installation](docs/installation.md).
-
-## Quick start / running PACT
-
-```sh
 pact-optimize --synthetic 64 --chains 2 --time-budget 1 --output scratch/example
-python -m pact.cli validate-scan --architecture scratch/example/optimized.architecture.json
+pact validate-scan --architecture scratch/example/optimized.architecture.json
 python -m pytest -q
 ```
 
-This is an algorithm example, not research evidence. Use `pact-optimize --help`, `pact-integrate --help` and [usage](docs/usage.md) for real input/integration workflows.
+The [synthetic example](examples/synthetic/README.md) needs no physical-design tools. It demonstrates the algorithm; it is not benchmark evidence. Use a fresh output directory for each run. See [installation](docs/installation.md) for dependencies and [usage](docs/usage.md) for real inputs and `pact-integrate`.
 
-## Reproducing current experiments and benchmarks
+## Current research status
+
+| Scope | Retained evidence |
+|---|---|
+| Implemented | Exact incremental M3/M5 solver, candidate-stateful evaluation, Stage-B activity lanes under physical budgets, scan-only export and independent ATPG replay |
+| Stage A measured | 19/19 selected records qualified; 27/30 indexed architectures qualified using the common Nangate45 backend |
+| Stage B measured | Nine qualified routed selections across s5378, s9234 and s15850; all pass their routed wire budgets |
+| In progress | Reliable full-network hotspot prediction, complete detected-fault identity equivalence and broader scaling |
+
+These claims come from the [Stage-A completion receipt](results/pact_oss_benchmark/topology_recovery_20261004/completion.json) and [Stage-B measured report](results/pact_stage_b/REPORT.md). Several predicted hotspot gains fail to transfer physically, and some selections remain dominated by the original comparison front. [Research status](docs/research_status.md) explains the scope and negative outcomes. The research program remains in progress.
+
+## Workflow
+
+```text
+Placed design + stored ATPG workload
+                 |
+                 v
+     Physical and activity evaluation
+                 |
+                 v
+      Constrained multi-objective search
+                 |
+                 v
+       Candidate scan architecture
+                 |
+                 v
+ OpenROAD implementation + independent replay
+                 |
+                 v
+         Measured comparison
+```
+
+See [architecture](docs/architecture.md) and [methodology](docs/methodology.md). Physical qualification additionally requires the qualified Linux/WSL OpenROAD/ORFS, FAN_ATPG, simulation toolchain and exact physical inputs; these are not required for the synthetic example or package import.
+
+## Reproducing current results
 
 ```sh
 python scripts/verify_reproducibility.py
-python scripts/pact_stage_b_search.py --input results/pact_stage_b/inputs/s5378.json.gz --output scratch/stage_b/s5378 --seconds 300 --epsilons 0.02 0.05 0.10
 ```
 
-The first command checks saved inputs/orders without a new search. The second runs the recorded method; use one numerical thread and fresh output. Wall-clock endpoints vary across hosts. See [experiment registry](docs/experiments.md), [baseline definitions](docs/benchmarks.md), [method](docs/stage_b_method.md) and [reproducibility](docs/reproducibility.md), including exact physical inputs not distributed publicly.
+This checks retained input bindings, portable Stage-B bundles and saved architecture scores without starting a search or EDA campaign. [Reproducibility](docs/reproducibility.md) distinguishes portable replay from full physical reruns. [Stage-B method](docs/stage_b_method.md) documents the recorded search interface, while [benchmarks](docs/benchmarks.md) preserves exact upstream and local-repair provenance.
 
-## Tests, limitations and research
+## Repository and documentation
 
-`python -m pytest -q` runs unit and small integration regressions. External physical qualification requires separate tools/inputs. Current evidence is small Nangate45 designs, fixed workload/placement and K=2; it does not establish industrial stateful scaling, watts, IR-drop or signoff power/timing. Negative/dominated outcomes remain in the result tables. No learned model has been introduced. [History](docs/history.md) summarizes unsuccessful gates and corrected methodology.
+| Path | Purpose |
+|---|---|
+| `src/pact/`, `scripts/`, `tests/` | Current models, entry points, adapters and regression coverage |
+| `config/`, `experiments/`, `benchmarks/` | Schemas, physical settings and provenance |
+| `examples/` | Small self-contained usage example |
+| `artifacts/` | Minimal placed/workload inputs and structural fixtures |
+| `results/stage_a/`, `results/pact_stage_b/` | Compact comparisons, portable inputs and selected orders |
+| `docs/` | Canonical user and research documentation |
+| `reports/` | Scientific evidence and repository maintenance audits |
+
+Start with [installation](docs/installation.md), [usage](docs/usage.md) and [research status](docs/research_status.md). Continue with the [experiment registry](docs/experiments.md), [development guide](docs/development.md) and concise [history](docs/history.md).
+
+## Limitations
+
+Current measured evidence covers small Nangate45 designs, fixed workloads/placements and K=2. Bounded logic coverage and candidate capacitance errors limit hotspot prediction. Coverage/count agreement does not establish complete detected-fault identity equivalence. Switching proxies do not establish watts, IR-drop or signoff power/timing. No learned model is implemented.
 
 ## Contributing, citation and license
 
-Preserve independent replay, topology invariants and the distinction between predicted and measured results; see [development](docs/development.md). No paper DOI is declared. Cite this repository, exact revision and experiment export using [CITATION.cff](CITATION.cff). PACT code is [MIT licensed](LICENSE); external tools/imported assets retain their own provenance and licensing.
+Contributions should preserve topology invariants, independent replay and the distinction between predicted and measured results; see [development](docs/development.md). Cite this repository, the exact revision and experiment export using [CITATION.cff](CITATION.cff); no publication DOI is declared. PACT code is [MIT licensed](LICENSE). External tools and imported assets retain their own attribution and licensing.

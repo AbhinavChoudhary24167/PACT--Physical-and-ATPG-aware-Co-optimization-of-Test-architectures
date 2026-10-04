@@ -75,7 +75,7 @@
     "export_invocation": "openroad -python -no_init -exit scripts/pact_h8_export.py results/pact_h8_rootcause",
     "model_version": "candidate_stateful/depth=3/baseline=9d910302",
     "repository_commit": "9d9103027918b1d4af2b209e6d36133ad82d4a4e",
-    "script_invocation": "PYTHONPATH=.optimizer-deps:src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 /root/pact-deps/pact-venv/bin/python scripts/pact_h8_rootcause.py {index|analyze --design DESIGN|report}",
+    "script_invocation": "PYTHONPATH=.optimizer-deps:src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 env://qualified/bin/python scripts/pact_h8_rootcause.py {index|analyze --design DESIGN|report}",
     "source_code": {
       "scripts/pact_candidate_export.py": "381faa8f5eeca1d0e696f257558abd7d2c7ac4cd93fce9faf4acbd32a7b272df",
       "scripts/pact_candidate_stateful.py": "7970b65bed37c5c8cb33bba8d75bacd175bcf327a361eedc64408788b74e8b45",
