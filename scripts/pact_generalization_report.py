@@ -77,8 +77,13 @@ def collect():
                 'routed_scan_wirelength_um','timing','DRC','status','source_revision','provenance','frozen_utc')}
             compact.update(qualification=binding(path),selection_receipt=binding(reference_path),
                 all_references=binding(records_path),reference_attempt=attempt,
+                correctness=ref['correctness'],
                 methods=[{key:r.get(key) for key in ('method','status','generator_status',
-                    'routed_scan_wirelength_um','failure_class','error')} for r in records])
+                    'routed_scan_wirelength_um','failure_class','error')} for r in selection_records])
+            export_gate=OUT/f'physical/{name}/reference_export_gates/{ref["method"]}/receipt.json'
+            if export_gate.exists():
+                assert read(export_gate)['status']=='PASS'
+                compact['functional_and_FF_placement_qualification']=binding(export_gate)
             refs.append(compact)
             folder=OUT/f'physical/{name}/reference_measurement'
             receipt=folder/('result_recovered.json' if (folder/'result_recovered.json').exists() else 'result.json')
@@ -116,6 +121,9 @@ def collect():
                         uncollapsed_member_identity_equivalence='NOT_ENUMERATED',
                         provenance=dict(reference=binding(reference_path),measurement=binding(receipt),
                             measurement_summary=result['summary'],faults=ref['correctness']['faults'])))
+            else:
+                row['reference_measurement_status']='NOT_STARTED_CAMPAIGN_STOPPED'
+                row['reference_measurement_reason']='Further full simulations stopped after the measured s38417 resource limit; no partial/proxy activity substituted'
         else:
             preparation=prep(name)
             row.update(infrastructure_status=preparation['status'],
@@ -135,6 +143,69 @@ def collect():
             row['failures']=failures
         outcomes.append(row)
     return outcomes,refs,measured
+
+
+def canonical_reference_records(refs,measured,outcomes):
+    """Include routed/extracted references with explicitly unavailable activity."""
+    activities={r['design']:r for r in measured}
+    outcome_by_name={r['design']:r for r in outcomes}
+    records=[]
+    for reference in refs:
+        name=reference['design']
+        if name in activities:
+            records.append(activities[name])
+            continue
+        outcome=outcome_by_name[name]
+        statistics=reference['correctness']['statistics']
+        route=read(reference['provenance']['path'])
+        records.append(dict(design=name,candidate=reference['method'],method=reference['method'],
+            record_kind='NEW_ROUTED_EXTRACTED_REFERENCE_ACTIVITY_UNAVAILABLE',
+            FF_count=outcome['FF_count'],chain_count=2,ATPG_pattern_count=outcome['ATPG_pattern_count'],
+            target_faults=statistics['total'],detected_faults=statistics['detected'],
+            fault_coverage=100*statistics['detected']/statistics['total'],
+            FAN_reported_coverage=statistics['coverage'],architecture_hash=reference['architecture_hash'],
+            routed_scan_wirelength_um=reference['routed_scan_wirelength_um'],E=None,H4=None,H8=None,
+            WNS=reference['timing']['setup_wns_ns'],hold_WNS=reference['timing']['hold_wns_ns'],
+            DRC_count=reference['DRC'],qualification_status='ROUTED_EXTRACTED_REFERENCE_ACTIVITY_UNAVAILABLE',
+            correctness_status='FAN_PASS; ACTIVITY_FF_TRANSITION_CHECK_UNAVAILABLE',
+            activity_status=outcome['reference_measurement_status'],
+            gates=dict(topology='PASS',functional='PASS',FF_placement='PASS',routing='PASS',
+                extraction='PASS',timing='PASS',DRC='PASS',FAN='PASS',FF_transition_crosscheck='UNAVAILABLE'),
+            deltas_percent=dict(E=None,H4=None,H8=None,routed_scan_wirelength_um=0.),
+            solver_runtime_seconds=None,exact_evaluation_count=None,
+            route_wall_seconds=route['route_wall_seconds'],measurement_wall_seconds=None,
+            metric_scope=read(CORE/'canonical_results.json')['records'][0]['metric_scope'],
+            fault_identity_scope=read(CORE/'canonical_results.json')['records'][0]['fault_identity_scope'],
+            uncollapsed_member_identity_equivalence='NOT_ENUMERATED',
+            provenance=dict(reference=reference['selection_receipt'],
+                functional_and_FF_placement=reference['functional_and_FF_placement_qualification'],
+                faults=reference['correctness']['faults'])))
+    return records
+
+
+def preflight(outcomes,refs,measured):
+    gates_path=OUT/'physical/reference_export_gates.json'
+    gates=read(gates_path)
+    assert gates['status']=='PASS' and len(gates['records'])==4*len(refs)==24
+    for item in gates['records']:
+        assert item['status']=='PASS'
+        receipt_path=ROOT/item['receipt']['path'].removeprefix('repo://')
+        assert sha(receipt_path)==item['receipt']['sha256']
+        receipt=read(receipt_path)
+        assert receipt['status']=='PASS' and receipt['FF_placement']=='exact'
+        for name in ('topology_verification.json','functional_verification.json'):
+            assert sha(receipt_path.parent/name)==receipt['outputs'][name]['sha256']
+        assert all(receipt[key]==0 for key in ('routing_executions','ATPG_executions',
+            'simulation_executions','PACT_search_executions'))
+    new_rows=canonical_reference_records(refs,measured,outcomes)
+    assert len(outcomes)==8 and len(new_rows)==6 and len(measured)==4
+    assert {r['design'] for r in new_rows}=={r['design'] for r in refs}
+    assert sum(r['E'] is None for r in new_rows)==2
+    assert all(r['PACT_searches_executed']==0 for r in outcomes)
+    original=read(CORE/'canonical_results.json')
+    for row in original['records']+new_rows:
+        assert set(('E','H4','H8','routed_scan_wirelength_um'))<=set(row['deltas_percent'])
+    return new_rows
 
 
 def csv_text(fields,rows):
@@ -195,6 +266,8 @@ def readable_report(status,counts,outcomes,refs,measured):
     current=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     changes=subprocess.check_output(['git','diff','--name-only',freeze['repository_sha']],cwd=ROOT,text=True).splitlines()
     untracked=subprocess.check_output(['git','ls-files','--others','--exclude-standard'],cwd=ROOT,text=True).splitlines()
+    untracked += [str((OUT/name).relative_to(ROOT)).replace('\\','/') for name in (
+        'generalization_report.md','completion.json','repository_changes.txt','repository_state_at_report.json')]
     commits=subprocess.check_output(['git','log','--reverse','--format=%h %s',freeze['repository_sha']+'..HEAD'],cwd=ROOT,text=True)
     (OUT/'repository_changes.txt').write_text('\n'.join(sorted(set(changes+untracked)))+'\n')
     write(OUT/'repository_state_at_report.json',dict(starting_SHA=freeze['repository_sha'],
@@ -237,7 +310,8 @@ def readable_report(status,counts,outcomes,refs,measured):
     for r in refs:
         activity=by_name.get(r['design'])
         values=[f'{activity[k]:.10g}' if activity else 'unavailable' for k in ('E','H4','H8')]
-        coverage=f'{activity["fault_coverage"]:.10g}' if activity else 'see FAN receipt'
+        statistics=r['correctness']['statistics']
+        coverage=f'{100*statistics["detected"]/statistics["total"]:.10g}'
         lines.append(f'| {r["design"]} | {r["method"]} | {r["routed_scan_wirelength_um"]:.10g} | '
             + ' | '.join(values)+f' | {r["timing"]["setup_wns_ns"]:.10g} | {r["DRC"]} | {coverage} |')
     lines += ['', 'These rows are external references. Primary and alternative PACT candidates, and their changes '
@@ -248,8 +322,10 @@ def readable_report(status,counts,outcomes,refs,measured):
         '[The primary comparison CSV](canonical/generalization_primary_comparison.csv) retains the original bytes as its prefix.', '',
         '## Qualification and repairs', '',
         'Qualified new references retain topology, exact FF inventory/placement, routing, extraction, timing reporting, '
-        'zero DRC, serial replay, and FAN correctness gates. Activity measurements additionally check functional source/parity '
-        'and complete FF transition agreement. FAN comparisons cover the complete collapsed target classes, equivalence '
+        'zero DRC, serial replay, and FAN correctness gates. All 24 retained reference routes pass the frozen functional '
+        'source/parity and exact FF-placement export checks. [All-reference gate receipts](physical/reference_export_gates.json). '
+        'Completed activity measurements additionally check complete FF transition agreement. '
+        'FAN comparisons cover the complete collapsed target classes, equivalence '
         'weights, detected collapsed classes, weighted full/detected counts, patterns, and coverage. '
         'Uncollapsed class-member identities are not enumerated.', '',
         'Engineering repairs were isolated on repair branches and integrated only after focused regressions: '
@@ -279,6 +355,10 @@ def readable_report(status,counts,outcomes,refs,measured):
         'excluded from every activity result. [Localized resource failure](failures/s38417_measurement_localization.json). '
         'This is an observed resource block under the campaign budget, rather than evidence against the PACT objective. '
         'Other reference routing ran concurrently; the observed wall time is not an isolated solver benchmark.', '',
+        'The s38584 full activity simulation was not started after this resource stop. Its four existing references '
+        'completed routing, extraction, FAN, functional and FF-placement qualification. The canonical table includes '
+        'its B3T reference and the s38417 B2 reference with null E/H4/H8, an explicit activity-unavailable status, '
+        'and no PACT benefit or proxy values.', '',
         '## Scalability', '',
         'Solver: `PACT_SCALABILITY_NOT_MEASURED`. Physical metrics: `PHYSICAL_METRIC_SCALABILITY_BLOCKED_AT_s38417`. '
         'Exact candidate evaluations, solver CPU/RSS, evaluations/s, evaluator time, '
@@ -318,8 +398,12 @@ def readable_report(status,counts,outcomes,refs,measured):
     (OUT/'generalization_report.md').write_text('\n'.join(lines),encoding='utf-8')
 
 
-def report(seal=False):
+def report(seal=False,check=False):
     outcomes,refs,measured=collect()
+    if check:
+        new_rows=preflight(outcomes,refs,measured)
+        print('REPORT_PREFLIGHT_PASS',len(outcomes),len(refs),len(measured),len(new_rows),flush=True)
+        return
     physical_timings()
     counts=dict(selected=len(outcomes),infrastructure_qualified=len(refs),
         references_with_activity_measurements=len(measured),new_PACT_searches_executed=0,
@@ -333,12 +417,13 @@ def report(seal=False):
     # This report handles the reproduced initialization blocker, not PACT runs.
     assert not list((OUT/'searches').glob('*/budget_*/search.json'))
     assert read(OUT/'failures/frozen_initialization_contract.json')['PACT_searches_executed']==0
+    new_rows=preflight(outcomes,refs,measured)
     resource_blockers=[r['design'] for r in outcomes if r.get('reference_measurement_failure',{}).get('failure_class')=='RESOURCE_LIMIT']
     status='PACT_V1_GENERALIZATION_BLOCKED_BY_SCALABILITY' if resource_blockers else 'PACT_V1_GENERALIZATION_BLOCKED_BY_INITIALIZATION'
     write(OUT/'baselines/generalization_baselines.json',dict(schema='pact_generalization_baselines_v1',
         status='PRESEARCH_REFERENCES_RECORDED',selection_rule='minimum qualified routed scan cost among B0/B1/B2/B3T before PACT search',
         created_utc=now(),records=refs,all_design_outcomes=outcomes,
-        PACT_searches_started=False),immutable=True)
+        PACT_searches_started=False,functional_and_FF_placement_gates=binding(OUT/'physical/reference_export_gates.json')),immutable=True)
     write(OUT/'searches/selected_candidate_manifest.json',dict(schema='pact_generalization_candidate_selection_v1',
         status='NOT_EXECUTED_INITIALIZATION_BLOCKED',records=[],design_outcomes=outcomes,
         configuration=binding(OUT/'searches/exact_configuration.json'),
@@ -357,7 +442,7 @@ def report(seal=False):
         frozen_core_status=original['status'],frozen_core_primary_candidates=original['primary_candidates'],
         frozen_core_primary_selection_reason=original['primary_selection_reason'],
         frozen_search_records=original['searches'],
-        records=original['records']+measured,design_outcomes=outcomes,
+        records=original['records']+new_rows,design_outcomes=outcomes,
         new_PACT_primary_candidates={},new_PACT_alternative_candidates={},
         counts=counts,scientific_conclusion='No new PACT outcome is available; reference activity is not evidence of PACT benefit',
         computational_scalability='PACT_SCALABILITY_NOT_MEASURED')
@@ -367,8 +452,9 @@ def report(seal=False):
     old_csv=(CORE/'primary_comparison.csv').read_bytes()
     fields=next(csv.reader(io.StringIO(old_csv.decode())))
     added=[{key:r.get(key) for key in fields}|{
-        'delta_routed_scan_wirelength_um_percent':0.,'delta_E_percent':0.,'delta_H4_percent':0.,'delta_H8_percent':0.}
-        for r in measured]
+        'delta_routed_scan_wirelength_um_percent':0.,'delta_E_percent':r['deltas_percent']['E'],
+        'delta_H4_percent':r['deltas_percent']['H4'],'delta_H8_percent':r['deltas_percent']['H8']}
+        for r in new_rows]
     addition=csv_text(fields,added).split('\n',1)[1].encode()
     target=OUT/'canonical/generalization_primary_comparison.csv'
     target.write_bytes(old_csv+addition)
@@ -376,8 +462,10 @@ def report(seal=False):
     metadata=[dict(design=r['design'],candidate=r['candidate'],correctness_status='PASS',
         solver_runtime_seconds=r.get('search_runtime_seconds',r.get('runtime',{}).get('search_seconds')),
         exact_evaluation_count=r.get('candidates_evaluated'),record_scope='FROZEN_CORE_UNCHANGED') for r in original['records']]
-    metadata += [dict(design=r['design'],candidate=r['candidate'],correctness_status='PASS',
-        solver_runtime_seconds=None,exact_evaluation_count=None,record_scope='NEW_EXTERNAL_REFERENCE_ONLY') for r in measured]
+    metadata += [dict(design=r['design'],candidate=r['candidate'],correctness_status=r['correctness_status'],
+        solver_runtime_seconds=None,exact_evaluation_count=None,record_scope=r['record_kind'],
+        qualification_status=r['qualification_status'],activity_status=r.get('activity_status','QUALIFIED'),
+        PACT_status='PACT_EXECUTION_BLOCKED',primary_candidate=None,alternative_candidates=[]) for r in new_rows]
     write(OUT/'canonical/table_context.json',dict(records=metadata,
         note='Original canonical dictionaries and primary CSV prefix are unchanged; appended rows are qualified external references, without PACT comparisons'),immutable=True)
     full_rows=[]
@@ -387,7 +475,8 @@ def report(seal=False):
             delta_E_percent=r['deltas_percent']['E'],delta_H4_percent=r['deltas_percent']['H4'],
             delta_H8_percent=r['deltas_percent']['H8']))
     (OUT/'canonical/generalization_results_table.csv').write_text(csv_text(
-        fields+['correctness_status','solver_runtime_seconds','exact_evaluation_count','record_scope'],full_rows))
+        fields+['correctness_status','solver_runtime_seconds','exact_evaluation_count','record_scope',
+            'qualification_status','activity_status','PACT_status','primary_candidate','alternative_candidates'],full_rows))
     readable_report(status,counts,outcomes,refs,measured)
     write(OUT/'completion.json',dict(status=status,created_utc=now(),counts=counts,
         core_freeze_status=read(OUT/'manifests/freeze_verification.json')['status'],
@@ -405,5 +494,6 @@ def report(seal=False):
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--seal',action='store_true')
+    p.add_argument('--check',action='store_true',help='Validate final assembly without writing completion artifacts')
     a=p.parse_args()
-    report(a.seal)
+    report(a.seal,a.check)
