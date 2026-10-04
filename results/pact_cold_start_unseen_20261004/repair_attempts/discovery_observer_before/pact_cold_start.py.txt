@@ -163,7 +163,7 @@ def search(design):
                 row=frame.f_locals.get('row')
                 champions=frame.f_locals.get('champions')
                 if row is not None and champions is not None:
-                    values=frame.f_locals['values']
+                    def values(s):return [*s[solver.ACTIVITY],solver.activity_score(s,frame.f_locals['ref']['score'],config.weights)]
                     if any(old is None or value<values(old['score'])[i]-1e-10*max(1.,abs(value))
                            for i,(value,old) in enumerate(zip(values(row['score']),champions))):
                         parent=frame.f_back.f_locals

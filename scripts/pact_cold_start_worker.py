@@ -9,9 +9,13 @@ from pact_generalization_infrastructure import execute
 p=argparse.ArgumentParser();p.add_argument('--design',required=True);a=p.parse_args()
 data=read(OUT/f'inputs/{a.design}/cold_start_input.json')
 loop_seconds=300*max(1,math.ceil(data['FF_count']/600))
-folder=RUN/'searches'/a.design
+base=RUN/'searches'/a.design
+folder=base
+attempt=1
+while (folder/'execution/execution.json').exists():
+    attempt+=1;folder=base/f'attempt_{attempt:02d}'
 folder.mkdir(parents=True,exist_ok=True)
-record=dict(design=a.design,created_utc=now(),per_loop_seconds=loop_seconds,
+record=dict(design=a.design,attempt=attempt,created_utc=now(),per_loop_seconds=loop_seconds,
     worker_deadline_seconds=max(1800,4*loop_seconds),scope='SOLVER_ONLY; no routing/ATPG/extraction')
 try:
     result=execute(['/usr/bin/time','-v','-o',folder/'resources.txt',sys.executable,

@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-10-04T18:03:38.226098+00:00",
+  "design": "s953",
+  "error": "'ref'",
+  "stage": "search",
+  "status": "PACT_EXECUTION_BLOCKED",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cold_start.py\", line 272, in <module>\n    register() if a.action=='register' else globals()[a.action](a.design)\n                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cold_start.py\", line 196, in search\n    result=solver.optimize(model,starts,contract.data['reference_method'],config,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stage_b.py\", line 75, in optimize\n    consider(row)\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stage_b.py\", line 67, in consider\n    archive.insert(row['score'][ACTIVITY], row['orders'], row['label'])\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cold_start.py\", line 168, in insert\n    for i,(value,old) in enumerate(zip(values(row['score']),champions))):\n                                       ^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cold_start.py\", line 166, in values\n    def values(s):return [*s[solver.ACTIVITY],solver.activity_score(s,frame.f_locals['ref']['score'],config.weights)]\n                                                                      ~~~~~~~~~~~~~~^^^^^^^\nKeyError: 'ref'\n"
+}
