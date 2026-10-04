@@ -92,6 +92,8 @@ def report(output, public):
                 all_base = [b for b in baseline if b['design']==design and b['status']=='QUALIFIED']
                 row['Stage_A_front_3_objectives'] = 'dominated' if any(dominates(point(b, False), point(r, False)) for b in all_base) else 'nondominated'
                 row['Stage_A_front_4_objectives'] = 'dominated' if any(dominates(point(b), a) for b in all_base) else 'nondominated'
+                frontier_extension = (row['Stage_A_front_4_objectives']=='nondominated' and
+                    not any(np.array_equal(a, point(b)) for b in all_base))
                 for b in (b for b in all_base if b['method'] in ('B2','B3T') or (b['method']=='P0' and b['representative']=='True')):
                     pct = 100*(a/point(b)-1)
                     comparisons.append(dict(design=design, candidate=label, versus=b['method'],
@@ -105,9 +107,9 @@ def report(output, public):
                     proxy_H4_percent=float(proxy_delta[1]), measured_H4_percent=float(100*activity_delta[1]),
                     proxy_H8_percent=float(proxy_delta[2]), measured_H8_percent=float(100*activity_delta[2]),
                     routed_budget_pass=row['routed_budget_pass']))
-                if row['routed_budget_pass'] and np.all(activity_delta < 0):
+                if frontier_extension and row['routed_budget_pass'] and np.all(activity_delta < 0):
                     good.append(design)
-                elif row['routed_budget_pass'] and activity_delta[0]<0 and np.any(activity_delta[1:]<0):
+                elif frontier_extension and row['routed_budget_pass'] and activity_delta[0]<0 and np.any(activity_delta[1:]<0):
                     partial.append(design)
             else:
                 row.update(routed_wire_overhead_percent=None, routed_budget_pass=None,
@@ -119,7 +121,7 @@ def report(output, public):
     write_json(output/'private_measured_results.json', private)
     write_json(output/'classification.json', dict(status=status, simultaneous_improvement_designs=sorted(set(good)),
         partial_improvement_designs=sorted(set(partial)), qualified=sum(r['status']=='QUALIFIED' for r in measured),
-        criteria='Multi-design convergence requires a measured candidate per design with E,H4,H8 all strictly lower than routed-best B2/B3T and routed wire within its configured epsilon.'))
+        criteria='Multi-design convergence requires a new measured four-objective Stage-A frontier point per design with E,H4,H8 all strictly lower than routed-best B2/B3T and routed wire within its configured epsilon.'))
     write_csv(public/'search_configuration.csv', searches)
     write_csv(public/'candidate_results.csv', before)
     write_csv(public/'routed_results.csv', measured)
@@ -135,7 +137,7 @@ def report(output, public):
         ('design','epsilon','candidate','roles','new','proxy_wire_um','proxy_E','proxy_H4','proxy_H8')} for r in before]
     pair_view = [{k: round(r[k], 6) if isinstance(r[k], float) else r[k] for k in r} for r in comparisons]
     lines = ['# PACT Stage-B constrained method-convergence report', '', '## 1. Status', '', status, '',
-        'Convergence requires measured E, H4 and H8 improvements against the routed-best B2/B3T reference under the actual routed wire budget. Scalar search scores do not establish superiority.', '',
+        'Convergence requires a new measured wire/E/H4/H8 frontier point with E, H4 and H8 improvements against the routed-best B2/B3T reference under the actual routed wire budget. A candidate dominated by the known Stage-A results does not count as an advance. Scalar search scores do not establish superiority.', '',
         '## 2. What changed', '',
         'Added a separate constrained search using the existing candidate-stateful evaluator. Physical cost is a hard feasibility condition. Geometry screens infeasible proposals before waveform updates. Four activity lanes retain E, H4, H8 and balanced winners separately. Fixed-capacity mutation operators, bounded archive and independent final replay are reused. The exact B3T chain-capacity permutation is preserved. No external repair or frozen-method change was made.', '',
         '## 3. Optimization formulation', '',
