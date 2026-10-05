@@ -14,6 +14,32 @@ from pact_gate09_report import number
 from pact_experiment_receipts import atomic_write
 
 
+def classify_campaign(reports, holds, families):
+    primary = [next((row for row in report['rows'] if row['role']==report['primary_candidate']), None)
+               for report in reports]
+    qualified = bool(primary) and all(row and row['qualification_status']=='QUALIFIED' for row in primary)
+    strong = bool(reports) and all(set((report['reference_method'],'B4','B5')) <=
+                                  set(report['summary']['PACT_DOMINATES']) for report in reports)
+    if any(report['summary']['PACT_DOMINATED_BY'] for report in reports):
+        status = 'PACT_GATE09_COMPETITOR_DOMINANCE_OBSERVED'
+    elif not holds and len(families)>=2 and qualified and strong:
+        status = 'PACT_GATE09_COMPETITIVE_GENERALIZATION_CONFIRMED'
+    elif qualified and any(report['classification'] in ('PACT_ACTIVITY_MIXED','PACT_ACTIVITY_IMPROVEMENT_ALL_COORDINATES')
+                           for report in reports):
+        status = 'PACT_GATE09_MIXED_GENERALIZATION'
+    else:
+        status = 'PACT_GATE09_INCONCLUSIVE'
+    if holds or len(families)<2:
+        generalization = 'PACT_GATE09_INCONCLUSIVE_RESOURCE_OR_ADMISSION_LIMITED'
+    elif status == 'PACT_GATE09_COMPETITIVE_GENERALIZATION_CONFIRMED':
+        generalization = 'PACT_GATE09_UNSEEN_GENERALIZATION_CONFIRMED_WITHIN_FIXED_COHORT'
+    elif qualified:
+        generalization = 'PACT_GATE09_UNSEEN_QUALIFICATION_OBSERVED_WITHIN_FIXED_COHORT'
+    else:
+        generalization = 'PACT_GATE09_INCONCLUSIVE'
+    return status, generalization
+
+
 def create(output):
     if output.exists():
         raise ValueError('Preserve prior campaign report')
@@ -26,24 +52,12 @@ def create(output):
     reports = [admission.read(r['report']['path']) for r in ledger['records']
                if r['status']=='COMPETITIVE_COMPARISON_TERMINAL']
     rows = [dict(row) for report in reports for row in report['rows']]
-    primary = {r['design']:next((row for row in r['rows'] if row['role']==r['primary_candidate']),None) for r in reports}
     dominated_by = {r['design']:r['summary']['PACT_DOMINATED_BY'] for r in reports}
     dominates = {r['design']:r['summary']['PACT_DOMINATES'] for r in reports}
     mutual = {r['design']:r['summary']['MUTUALLY_NONDOMINATED'] for r in reports}
     holds = [r for r in ledger['records'] if r['status']!='COMPETITIVE_COMPARISON_TERMINAL']
     families = sorted({r['design_family'] for r in rows if r['design'] in ('b14_opt','b15_opt')})
-    all_primary_qualified = bool(primary) and all(r and r['qualification_status']=='QUALIFIED' for r in primary.values())
-    strong = bool(reports) and all(set((r['reference_method'],'B4','B5')) <= set(r['summary']['PACT_DOMINATES']) for r in reports)
-    if any(dominated_by.values()):
-        status = 'PACT_GATE09_COMPETITOR_DOMINANCE_OBSERVED'
-    elif not holds and len(families)>=2 and all_primary_qualified and strong:
-        status = 'PACT_GATE09_COMPETITIVE_GENERALIZATION_CONFIRMED'
-    elif all_primary_qualified and any(r['classification'] in ('PACT_ACTIVITY_MIXED','PACT_ACTIVITY_IMPROVEMENT_ALL_COORDINATES') for r in reports):
-        status = 'PACT_GATE09_MIXED_GENERALIZATION'
-    else:
-        status = 'PACT_GATE09_INCONCLUSIVE'
-    generalization = ('PACT_GATE09_INCONCLUSIVE_RESOURCE_OR_ADMISSION_LIMITED' if holds or len(families)<2 else
-        'PACT_GATE09_UNSEEN_GENERALIZATION_CONFIRMED_WITHIN_FIXED_COHORT' if all_primary_qualified else 'PACT_GATE09_INCONCLUSIVE')
+    status, generalization = classify_campaign(reports, holds, families)
     if holds:
         next_action = 'Resolve the documented source/reference/resource admission hold, then test further unseen base-family designs with the same frozen method and controls; keep any new campaign separate.'
     elif any(dominated_by.values()):

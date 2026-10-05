@@ -192,7 +192,7 @@ def aggregate(meta, design, output):
     fair = validate_fairness(rows, meta, design)
     status = ('PACT_GATE09_COMPETITOR_DOMINANCE_OBSERVED' if dominated_by else
         'PACT_GATE09_MIXED_GENERALIZATION' if classification=='PACT_ACTIVITY_MIXED' else
-        'PACT_GATE09_B14_COMPETITIVE_COMPARISON_COMPLETE' if all(r['qualification_status']=='QUALIFIED' for r in rows) else
+        'PACT_GATE09_COMPETITIVE_COMPARISON_COMPLETE' if all(r['qualification_status']=='QUALIFIED' for r in rows) else
         'PACT_GATE09_INCONCLUSIVE')
     summary = dict(GATE09_STATUS=status, PACT_FROZEN=True, PACT_SHA='71b059d9d1a00735d79b6a428693eaba549a5f33',
         OPENROAD_SHA='08f67ee5ecd14db5a42be8c610bbfd1ccf079299',
@@ -217,7 +217,7 @@ def aggregate(meta, design, output):
         source_preparation=admission.binding(meta / f'physical/{design}/preparation.json'),
         optional_competitors=admission.read(references.BASE_META / 'optional_competitor_discovery.json')['projects'],
         claims=dict(established='These design/method measurements and qualification receipts',
-            observed='One unseen b14 design at primary seed 11 and Nangate45',
+            observed=design+' at primary seed 11 and Nangate45',
             hypothesis='Any explanation of proxy/final differences requires follow-up after this campaign',
             not_established='Universal superiority, joules/power reduction, arbitrary scaling, independent evidence from related compositions'),
         no_proprietary_benchmarking=True, no_post_outcome_tuning=True)
@@ -244,7 +244,7 @@ def render(report, path, protocol, meta):
         'D also reserves 20 GiB plus max(5 GiB, the per-design retained/projected trace and count-cache allowance). '
         'The source and mapped all-state next-state equivalence, FF inventory, placement, route, extraction, '
         'timing, DRC, FAN workload and exact external-reference activity gates passed. '
-        'The admitted source is pinned cad-polito-it/I99T, EUPL-1.2; b14 is previously unseen in PACT campaigns.', '',
+        'The admitted source is pinned cad-polito-it/I99T, EUPL-1.2; this design was admitted as unseen in PACT campaigns.', '',
         '## C. Frozen methodology', '',
         'PACT source 71b059d9d1a00735d79b6a428693eaba549a5f33; qualified CPU continuation from merged PR #3. '
         'K=2, seed 11, epsilon 0.02/0.05/0.10, 900 seconds per mutation loop, 7200-second search worker ceiling. '
@@ -262,7 +262,7 @@ def render(report, path, protocol, meta):
     lines += ['', 'B4 and B5 reuse the frozen phase0c A/J50 implementations, one architecture each. '
         'Their load-PPI mismatch is a proxy and does not optimize routed exact E directly. '
         'B3T is explicitly OPENROAD_QUALIFIED_PATCHED. All methods use the same qualified FAN generic circuit/reporter repair; '
-        'the earlier 446-pattern workload was invalidated and preserved, and the corrected 453-pattern workload is common. '
+        'the earlier b14 446-pattern workload was invalidated and preserved; each design uses its corrected common workload. '
         'Minimal probes, source patches, branch SHAs and failed attempts are retained. Upstream issue creation was attempted; '
         'GitHub returned 403 “Resource not accessible by integration,” so issue drafts remain saved.', '',
         '## E. Fairness', '', json.dumps(report['fairness'], indent=2), '',
