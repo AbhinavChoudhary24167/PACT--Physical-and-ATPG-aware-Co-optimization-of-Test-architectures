@@ -48,10 +48,11 @@ def validate(directory, output):
         except Exception as error:
             failures.append(dict(path=str(path), error='Invalid JSON: '+str(error)))
             continue
-        if (value.get('status') not in ('QUALIFIED', 'PASS', 'SOURCE_MAPPED_EQUIVALENCE_QUALIFIED_PENDING_PHYSICAL_ATPG_REFERENCE',
+        if (value.get('status') not in ('QUALIFIED', 'PASS', 'SEARCH_COMPLETE', 'SOURCE_MAPPED_EQUIVALENCE_QUALIFIED_PENDING_PHYSICAL_ATPG_REFERENCE',
                 'PACT_GATE09_ADMISSION_COMPLETE', 'COMPETITIVE_COMPARISON_TERMINAL') and
                 value.get('schema') not in ('pact_cpu_exact_activity_v1', 'pact_cold_start_input_v1',
-                    'pact_gate09_comparison_v1', 'pact_gate09_competitor_freeze_v1')):
+                    'pact_gate09_comparison_v1', 'pact_gate09_competitor_freeze_v1',
+                    'pact_gate09_campaign_report_v1', 'pact_gate09_fixed_cohort_execution_v1')):
             continue
         bound = list(bindings(value))
         if value.get('status') == 'QUALIFIED' and value.get('output_folder') and value.get('complete'):
