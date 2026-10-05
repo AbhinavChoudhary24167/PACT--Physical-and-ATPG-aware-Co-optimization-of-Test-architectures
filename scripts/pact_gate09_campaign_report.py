@@ -40,10 +40,10 @@ def classify_campaign(reports, holds, families):
     return status, generalization
 
 
-def create(output):
+def create(output, ledger_path=None):
     if output.exists():
         raise ValueError('Preserve prior campaign report')
-    ledger_path = references.BASE_META / 'cohort_execution.json'
+    ledger_path = ledger_path or references.BASE_META / 'cohort_execution.json'
     ledger = admission.read(ledger_path)
     if ledger['state'] != 'COHORT_TERMINAL':
         raise ValueError('Wait for terminal cohort admission/comparison outcomes')
@@ -204,5 +204,6 @@ def create(output):
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--ledger',type=Path,help='Explicit preserved continuation ledger; never replace the original')
     args=parser.parse_args()
-    create(args.output)
+    create(args.output,args.ledger)

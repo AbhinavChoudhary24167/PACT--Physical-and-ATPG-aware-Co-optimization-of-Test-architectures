@@ -1,0 +1,39 @@
+{
+  "correction": "Bind prior failed preparation only when it exists; new source with qualified dependency needs no failed predecessor",
+  "focused_tests": {
+    "passed": 4,
+    "exit_code": 0,
+    "command": "PYTHONPATH=.optimizer-deps:src:scripts /root/pact-deps/pact-venv/bin/python -m pytest tests/test_gate09_cohort_registration.py tests/test_gate09_report.py -q",
+    "seconds": 0.94
+  },
+  "schema": "pact_gate09_metadata_registration_qualification_v1",
+  "budgets_or_parameters_changed": false,
+  "scientific_method_changes": 0,
+  "artifacts": [
+    {
+      "path": "repo://scripts/pact_gate09_cohort_reference_registered.py",
+      "sha256": "df89772719b755d98f80bb0b35ff3705cceb8f1f4487c508efb2246d6bb0a002",
+      "bytes": 3060
+    },
+    {
+      "path": "repo://scripts/pact_gate09_cohort_resume.py",
+      "sha256": "2353714ebf80c9688834963477b3351e534f2a375abcfa45b0e9217ad692f88c",
+      "bytes": 5840
+    },
+    {
+      "path": "repo://tests/test_gate09_cohort_registration.py",
+      "sha256": "eb09d6138af5fca7dddf2c1ab0ca91e396bf4d2e430102d0c430b709a517ce7c",
+      "bytes": 1804
+    }
+  ],
+  "original_failure": {
+    "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/primary_b15_opt/workers/b15_opt/prepare.json",
+    "sha256": "f2b4db5fa66a72c005d69fd99f0f2a6c22b936575de93adb5e552a8b2d0862e6",
+    "bytes": 4003
+  },
+  "fresh_namespace": "metadata_registration_DESIGN",
+  "preserved_source_reexecution_permitted": false,
+  "status": "QUALIFIED_GENERIC_METADATA_REGISTRATION_REPAIR",
+  "original_child_CPU_seconds": 0,
+  "original_ATPG_or_placement_launches": 0
+}

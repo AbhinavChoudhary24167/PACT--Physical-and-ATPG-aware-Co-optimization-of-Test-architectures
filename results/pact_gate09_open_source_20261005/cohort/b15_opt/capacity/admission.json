@@ -1,0 +1,286 @@
+{
+  "backend": {
+    "FAN": {
+      "branch": "fix/report-fault-scan-identities",
+      "classification": "UPSTREAM_IMPLEMENTATION_REPAIR",
+      "identity_scope": "Full collapsed SAF target class identities, weights and status; uncollapsed member identities not enumerated",
+      "original_executable_sha256": "f868b389d4fab6fb402b0bd8ecb1c952796eebfab09f633b083339e5e58c7cfd",
+      "records": [
+        {
+          "complete_collapsed_classes": 8077,
+          "design": "s5378",
+          "export_sha256": "96d32717dc6cf861406e2b9b5f4a08d7405693168e1271232066edaf9c6ce916",
+          "statistics": {
+            "coverage": 96.04,
+            "detected": 11354,
+            "patterns": 117,
+            "total": 11822
+          },
+          "statistics_unchanged": true
+        },
+        {
+          "complete_collapsed_classes": 11493,
+          "design": "s9234",
+          "export_sha256": "ab0f5feae91e036f9c657c64e2385f2bede70b761482b8bfc22e96cd4073bace",
+          "statistics": {
+            "coverage": 94.14,
+            "detected": 15511,
+            "patterns": 156,
+            "total": 16476
+          },
+          "statistics_unchanged": true
+        },
+        {
+          "complete_collapsed_classes": 22524,
+          "design": "s15850",
+          "export_sha256": "acc49b5746f300c92010162fc3f41098b0f4c8ebde0cc93086e04ee888b4752f",
+          "statistics": {
+            "coverage": 94.62,
+            "detected": 29763,
+            "patterns": 133,
+            "total": 31456
+          },
+          "statistics_unchanged": true
+        }
+      ],
+      "repair_commit": "05ac6173535418711b60ee22df391da7a4a82252",
+      "repaired_executable_sha256": "4a569e9887443dfb85dcc7dafd95654570938f525692a760e4e14662163305bd",
+      "reporter_source": {
+        "bytes": 39678,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scratch/FAN_ATPG-report-repair/pkg/fan/src/atpg_cmd.cpp",
+        "sha256": "82b3b891cf5a8a942a7482c6e357ece10ea31cc448c810e78e2f138f606104ac"
+      },
+      "semantics": "Reporting only; fault extraction, ATPG, simulator, library and patterns unchanged",
+      "source_commit": "26b2b36c0e9db11a4b6d9e759df6e44357121f39",
+      "status": "PASS"
+    },
+    "ORFS_commit": "5e8b1450d19263f797a27c4f371b9dd19f32a3aa",
+    "OpenRCX": {
+      "declared_source_tree_sha": "79c14afd7ca08804105d7f0c194a9652360a60b1",
+      "distribution": "Bundled in common OpenROAD binary; src/rcx at the parent revision",
+      "parent_OpenROAD_revision": "08f67ee5ecd14db5a42be8c610bbfd1ccf079299"
+    },
+    "OpenSTA": {
+      "B3T_commit": "d21c1ae6f97cc2f28d7f2ba5892c24293b8d2259",
+      "B3T_parent": "244797f162b465751912b651d55d9854296aa745",
+      "common_backend_declared_commit": "76c4d6df3537ccce331b5caa812196c3330ba7c4",
+      "common_backend_state": "Bundled in SHA-bound /usr/bin/openroad; upstream Git pin acquired separately; independent rebuild not performed"
+    },
+    "baselines": {
+      "B1_openroad_native": {
+        "base_revision": "08f67ee5ecd14db5a42be8c610bbfd1ccf079299",
+        "commit": "08f67ee5ecd14db5a42be8c610bbfd1ccf079299",
+        "repository": "https://github.com/The-OpenROAD-Project/OpenROAD"
+      },
+      "B2_openroad_10176": {
+        "base_revision": "21512b0ab68cc3bc7e11a772e1ec32f6f90e0eec",
+        "commit": "6fff875551fe13a2aae3a22f871a6ca7f8d5c1cf",
+        "repository": "https://github.com/donn/difetto-ord"
+      },
+      "B3_openroad_10666": {
+        "base_revision": "b084e4561bf51f905345ff0f767434095d79d3bc",
+        "commit": "746c748b19cd2b9d7fb6aa3afe53fe4c31ce3656",
+        "repository": "https://github.com/mwsoli/OpenROAD"
+      }
+    },
+    "implementation_binary_sha256": "fcd7dcfc37d329bd43a7ede75805319a2e70e6879da11d42b4fd1c2e50e645c3",
+    "implementation_openroad_version": "26Q2-1164-g08f67ee5ec",
+    "installed_source_checkout_commit": "dc5eee77c45dba8e5ace2fc89c38c6d9a4ed6e0f",
+    "note": "Installed source checkout and native binary revisions differ; source is acquired at the binary version revision for native semantics.",
+    "platform": "Nangate45",
+    "platform_provenance": {
+      "bytes": 12170,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cpu_scalability_20261005/spef_patch/implementation_evidence.json",
+      "sha256": "1af092318f10cd076945320ebaf6a798c93cccb0403ffe93fe1eacc825d03620"
+    },
+    "runtime_tree_observations": {
+      "FAN_qualified_repair": {
+        "head": {
+          "command": [
+            "git",
+            "-C",
+            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scratch/FAN_ATPG-report-repair",
+            "rev-parse",
+            "HEAD"
+          ],
+          "exit_code": 0,
+          "stderr": "",
+          "stdout": "05ac6173535418711b60ee22df391da7a4a82252"
+        },
+        "status": {
+          "command": [
+            "git",
+            "-C",
+            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scratch/FAN_ATPG-report-repair",
+            "status",
+            "--short"
+          ],
+          "exit_code": 0,
+          "stderr": "",
+          "stdout": "?? bin/opt/common_test\n?? bin/opt/fan\n?? bin/opt/lht_pat_test\n?? bin/opt/mdt_test\n?? bin/opt/pat_test\n?? bin/opt/sdf_test\n?? bin/opt/vlog2pmt\n?? bin/opt/vlog_test\n?? lib/opt/libcommon.a\n?? lib/opt/libcore.a\n?? lib/opt/libfan.a\n?? lib/opt/libinterface.a\n?? pkg/common/bin/opt/common_test\n?? pkg/common/lib/opt/cmd.d\n?? pkg/common/lib/opt/cmd.o\n?? pkg/common/lib/opt/common_test.d\n?? pkg/common/lib/opt/common_test.exe\n?? pkg/common/lib/opt/common_test.o\n?? pkg/common/lib/opt/get_opt.d\n?? pkg/common/lib/opt/get_opt.o\n?? pkg/common/lib/opt/libcommon.a\n?? pkg/common/lib/opt/sys_cmd.d\n?? pkg/common/lib/opt/sys_cmd.o\n?? pkg/common/lib/opt/tm_usage.d\n?? pkg/common/lib/opt/tm_usage.o\n?? pkg/core/lib/opt/atpg.d\n?? pkg/core/lib/opt/atpg.o\n?? pkg/core/lib/opt/circuit.d\n?? pkg/core/lib/opt/circuit.o\n?? pkg/core/lib/opt/fault.d\n?? pkg/core/lib/opt/fault.o\n?? pkg/core/lib/opt/libcore.a\n?? pkg/core/lib/opt/logic.d\n?? pkg/core/lib/opt/logic.o\n?? pkg/core/lib/opt/pattern_rw.d\n?? pkg/core/lib/opt/pattern_rw.o\n?? pkg/core/lib/opt/simulator.d\n?? pkg/core/lib/opt/simulator.o\n?? pkg/fan/bin/opt/fan\n?? pkg/fan/lib/opt/atpg_cmd.d\n?? pkg/fan/lib/opt/atpg_cmd.o\n?? pkg/fan/lib/opt/libfan.a\n?? pkg/fan/lib/opt/main.d\n?? pkg/fan/lib/opt/main.exe\n?? pkg/fan/lib/opt/main.o\n?? pkg/fan/lib/opt/misc_cmd.d\n?? pkg/fan/lib/opt/misc_cmd.o\n?? pkg/fan/lib/opt/setup_cmd.d\n?? pkg/fan/lib/opt/setup_cmd.o\n?? pkg/interface/bin/opt/lht_pat_test\n?? pkg/interface/bin/opt/mdt_test\n?? pkg/interface/bin/opt/pat_test\n?? pkg/interface/bin/opt/sdf_test\n?? pkg/interface/bin/opt/vlog2pmt\n?? pkg/interface/bin/opt/vlog_test\n?? pkg/interface/lib/opt/cell.d\n?? pkg/interface/lib/opt/cell.o\n?? pkg/interface/lib/opt/lex_n_yacc/\n?? pkg/interface/lib/opt/lht_pat_file.d\n?? pkg/interface/lib/opt/lht_pat_file.o\n?? pkg/interface/lib/opt/lht_pat_test.d\n?? pkg/interface/lib/opt/lht_pat_test.exe\n?? pkg/interface/lib/opt/lht_pat_test.o\n?? pkg/interface/lib/opt/libinterface.a\n?? pkg/interface/lib/opt/mdt_file.d\n?? pkg/interface/lib/opt/mdt_file.o\n?? pkg/interface/lib/opt/mdt_test.d\n?? pkg/interface/lib/opt/mdt_test.exe\n?? pkg/interface/lib/opt/mdt_test.o\n?? pkg/interface/lib/opt/netlist.d\n?? pkg/interface/lib/opt/netlist.o\n?? pkg/interface/lib/opt/netlist_builder.d\n?? pkg/interface/lib/opt/netlist_builder.o\n?? pkg/interface/lib/opt/pat_file.d\n?? pkg/interface/lib/opt/pat_file.o\n?? pkg/interface/lib/opt/pat_test.d\n?? pkg/interface/lib/opt/pat_test.exe\n?? pkg/interface/lib/opt/pat_test.o\n?? pkg/interface/lib/opt/primitive.d\n?? pkg/interface/lib/opt/primitive.o\n?? pkg/interface/lib/opt/sdf_file.d\n?? pkg/interface/lib/opt/sdf_file.o\n?? pkg/interface/lib/opt/sdf_test.d\n?? pkg/interface/lib/opt/sdf_test.exe\n?? pkg/interface/lib/opt/sdf_test.o\n?? pkg/interface/lib/opt/techlib.d\n?? pkg/interface/lib/opt/techlib.o\n?? pkg/interface/lib/opt/techlib_builder.d\n?? pkg/interface/lib/opt/techlib_builder.o\n?? pkg/interface/lib/opt/vlog2pmt.d\n?? pkg/interface/lib/opt/vlog2pmt.exe\n?? pkg/interface/lib/opt/vlog2pmt.o\n?? pkg/interface/lib/opt/vlog_file.d\n?? pkg/interface/lib/opt/vlog_file.o\n?? pkg/interface/lib/opt/vlog_test.d\n?? pkg/interface/lib/opt/vlog_test.exe\n?? pkg/interface/lib/opt/vlog_test.o"
+        }
+      },
+      "FAN_upstream": {
+        "head": {
+          "command": [
+            "git",
+            "-C",
+            "/root/pact-deps/FAN_ATPG",
+            "rev-parse",
+            "HEAD"
+          ],
+          "exit_code": 0,
+          "stderr": "",
+          "stdout": "26b2b36c0e9db11a4b6d9e759df6e44357121f39"
+        },
+        "status": {
+          "command": [
+            "git",
+            "-C",
+            "/root/pact-deps/FAN_ATPG",
+            "status",
+            "--short"
+          ],
+          "exit_code": 0,
+          "stderr": "",
+          "stdout": "M pat/FAN_s15850.pat\n M pat/FAN_s15850.stil\n M pat/FAN_s5378.pat\n M pat/FAN_s5378.stil\n M pat/FAN_s9234.pat\n M pat/FAN_s9234.stil\n M rpt/FAN_s15850.rpt\n M rpt/FAN_s27.rpt\n M rpt/FAN_s5378.rpt\n M rpt/FAN_s9234.rpt\n M rpt/s15850_fsim.rpt\n M rpt/s27_fsim.rpt\n M rpt/s5378_fsim.rpt\n M rpt/s9234_fsim.rpt\n?? bin/opt/common_test\n?? bin/opt/fan\n?? bin/opt/lht_pat_test\n?? bin/opt/mdt_test\n?? bin/opt/pat_test\n?? bin/opt/sdf_test\n?? bin/opt/vlog2pmt\n?? bin/opt/vlog_test\n?? lib/opt/libcommon.a\n?? lib/opt/libcore.a\n?? lib/opt/libfan.a\n?? lib/opt/libinterface.a\n?? pkg/common/bin/opt/common_test\n?? pkg/common/lib/opt/cmd.d\n?? pkg/common/lib/opt/cmd.o\n?? pkg/common/lib/opt/common_test.d\n?? pkg/common/lib/opt/common_test.exe\n?? pkg/common/lib/opt/common_test.o\n?? pkg/common/lib/opt/get_opt.d\n?? pkg/common/lib/opt/get_opt.o\n?? pkg/common/lib/opt/libcommon.a\n?? pkg/common/lib/opt/sys_cmd.d\n?? pkg/common/lib/opt/sys_cmd.o\n?? pkg/common/lib/opt/tm_usage.d\n?? pkg/common/lib/opt/tm_usage.o\n?? pkg/core/lib/opt/atpg.d\n?? pkg/core/lib/opt/atpg.o\n?? pkg/core/lib/opt/circuit.d\n?? pkg/core/lib/opt/circuit.o\n?? pkg/core/lib/opt/fault.d\n?? pkg/core/lib/opt/fault.o\n?? pkg/core/lib/opt/libcore.a\n?? pkg/core/lib/opt/logic.d\n?? pkg/core/lib/opt/logic.o\n?? pkg/core/lib/opt/pattern_rw.d\n?? pkg/core/lib/opt/pattern_rw.o\n?? pkg/core/lib/opt/simulator.d\n?? pkg/core/lib/opt/simulator.o\n?? pkg/fan/bin/opt/fan\n?? pkg/fan/lib/opt/atpg_cmd.d\n?? pkg/fan/lib/opt/atpg_cmd.o\n?? pkg/fan/lib/opt/libfan.a\n?? pkg/fan/lib/opt/main.d\n?? pkg/fan/lib/opt/main.exe\n?? pkg/fan/lib/opt/main.o\n?? pkg/fan/lib/opt/misc_cmd.d\n?? pkg/fan/lib/opt/misc_cmd.o\n?? pkg/fan/lib/opt/setup_cmd.d\n?? pkg/fan/lib/opt/setup_cmd.o\n?? pkg/interface/bin/opt/lht_pat_test\n?? pkg/interface/bin/opt/mdt_test\n?? pkg/interface/bin/opt/pat_test\n?? pkg/interface/bin/opt/sdf_test\n?? pkg/interface/bin/opt/vlog2pmt\n?? pkg/interface/bin/opt/vlog_test\n?? pkg/interface/lib/opt/cell.d\n?? pkg/interface/lib/opt/cell.o\n?? pkg/interface/lib/opt/lex_n_yacc/\n?? pkg/interface/lib/opt/lht_pat_file.d\n?? pkg/interface/lib/opt/lht_pat_file.o\n?? pkg/interface/lib/opt/lht_pat_test.d\n?? pkg/interface/lib/opt/lht_pat_test.exe\n?? pkg/interface/lib/opt/lht_pat_test.o\n?? pkg/interface/lib/opt/libinterface.a\n?? pkg/interface/lib/opt/mdt_file.d\n?? pkg/interface/lib/opt/mdt_file.o\n?? pkg/interface/lib/opt/mdt_test.d\n?? pkg/interface/lib/opt/mdt_test.exe\n?? pkg/interface/lib/opt/mdt_test.o\n?? pkg/interface/lib/opt/netlist.d\n?? pkg/interface/lib/opt/netlist.o\n?? pkg/interface/lib/opt/netlist_builder.d\n?? pkg/interface/lib/opt/netlist_builder.o\n?? pkg/interface/lib/opt/pat_file.d\n?? pkg/interface/lib/opt/pat_file.o\n?? pkg/interface/lib/opt/pat_test.d\n?? pkg/interface/lib/opt/pat_test.exe\n?? pkg/interface/lib/opt/pat_test.o\n?? pkg/interface/lib/opt/primitive.d\n?? pkg/interface/lib/opt/primitive.o\n?? pkg/interface/lib/opt/sdf_file.d\n?? pkg/interface/lib/opt/sdf_file.o\n?? pkg/interface/lib/opt/sdf_test.d\n?? pkg/interface/lib/opt/sdf_test.exe\n?? pkg/interface/lib/opt/sdf_test.o\n?? pkg/interface/lib/opt/techlib.d\n?? pkg/interface/lib/opt/techlib.o\n?? pkg/interface/lib/opt/techlib_builder.d\n?? pkg/interface/lib/opt/techlib_builder.o\n?? pkg/interface/lib/opt/vlog2pmt.d\n?? pkg/interface/lib/opt/vlog2pmt.exe\n?? pkg/interface/lib/opt/vlog2pmt.o\n?? pkg/interface/lib/opt/vlog_file.d\n?? pkg/interface/lib/opt/vlog_file.o\n?? pkg/interface/lib/opt/vlog_test.d\n?? pkg/interface/lib/opt/vlog_test.exe\n?? pkg/interface/lib/opt/vlog_test.o"
+        }
+      },
+      "ORFS": {
+        "head": {
+          "command": [
+            "git",
+            "-C",
+            "/root/pact-deps/OpenROAD-flow-scripts",
+            "rev-parse",
+            "HEAD"
+          ],
+          "exit_code": 0,
+          "stderr": "",
+          "stdout": "5e8b1450d19263f797a27c4f371b9dd19f32a3aa"
+        },
+        "status": {
+          "command": [
+            "git",
+            "-C",
+            "/root/pact-deps/OpenROAD-flow-scripts",
+            "status",
+            "--short"
+          ],
+          "exit_code": 0,
+          "stderr": "",
+          "stdout": ""
+        }
+      },
+      "OpenROAD_binary_version": {
+        "command": [
+          "/usr/bin/openroad",
+          "-version"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "26Q2-1164-g08f67ee5ec"
+      },
+      "OpenROAD_installed_source_checkout": {
+        "head": {
+          "command": [
+            "git",
+            "-C",
+            "/root/pact-deps/OpenROAD",
+            "rev-parse",
+            "HEAD"
+          ],
+          "exit_code": 0,
+          "stderr": "",
+          "stdout": "dc5eee77c45dba8e5ace2fc89c38c6d9a4ed6e0f"
+        },
+        "status": {
+          "command": [
+            "git",
+            "-C",
+            "/root/pact-deps/OpenROAD",
+            "status",
+            "--short"
+          ],
+          "exit_code": 0,
+          "stderr": "",
+          "stdout": ""
+        }
+      },
+      "Yosys_binary": {
+        "bytes": 8174408,
+        "path": "/usr/bin/yosys",
+        "sha256": "88c0a12bb814a1a8716b1ae10b482e35d3005ed558e1f5f626b3dc983ea3abd0"
+      },
+      "Yosys_version": {
+        "command": [
+          "/usr/bin/yosys",
+          "-V"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "Yosys 0.33 (git sha1 2584903a060)"
+      }
+    },
+    "temporary_storage": "run://tmp/pact_oss_20261003",
+    "timestamp": "2026-10-03T09:00:56.418127+00:00",
+    "upstream_component_receipt": {
+      "bytes": 1517,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/common_backend_components.json",
+      "sha256": "fbd1013be98d346bd3a9c73b9c76bd8215f2f4d20eede0ca003628fb79b65c83"
+    }
+  },
+  "capacity": {
+    "per_design_margin": "Pending admitted artifact dimensions; fixed floor is a minimum, not a sufficient per-design budget",
+    "status": "PASS",
+    "volumes": {
+      "C": {
+        "deficit_bytes": 0,
+        "free_bytes": 19089616896,
+        "minimum_free_bytes": 6442450944,
+        "status": "PASS"
+      },
+      "D": {
+        "deficit_bytes": 0,
+        "free_bytes": 39160520704,
+        "minimum_free_bytes": 26843545600,
+        "status": "PASS"
+      }
+    }
+  },
+  "created_utc": "2026-10-05T19:54:42.386420+00:00",
+  "guard": "Source probe rechecks all frozen sources, pinned source inputs, mapping binary and Liberty before heavy execution",
+  "heavy_launch_allowed": false,
+  "protocol": {
+    "bytes": 79703,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate9_large_scale_unseen_20261005/benchmark_preregistration.json",
+    "sha256": "01b05577c885e878f98466315d8232cd9773d332c61d8c7510ab8870dcb44717"
+  },
+  "provenance_reference": {
+    "bytes": 16533,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/01_capacity_pass/admission.json",
+    "sha256": "923b2fa25ee04bf184b5627f1cdf30dda2f00fe7b7e64a0dfe1018850dfbd8f6"
+  },
+  "provenance_status": "PASS",
+  "reference_qualified": false,
+  "resource_snapshot": {
+    "C": {
+      "free": 19089616896,
+      "total": 199569510400,
+      "used": 180479893504
+    },
+    "D": {
+      "free": 39160520704,
+      "total": 125828067328,
+      "used": 86667546624
+    },
+    "F": {
+      "free": 81275244544,
+      "total": 362531516416,
+      "used": 281256271872
+    }
+  },
+  "schema": "pact_gate09_capacity_refresh_v1",
+  "scientific_campaigns_reexecuted": 0,
+  "status": "PACT_GATE09_REFERENCE_ADMISSION_PENDING"
+}

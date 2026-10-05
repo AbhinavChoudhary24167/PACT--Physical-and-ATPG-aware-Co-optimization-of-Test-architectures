@@ -1,0 +1,65 @@
+{
+  "Linux_boot_id": "b194490b-19d2-4dd2-b046-69801b3c2671",
+  "PID": 1990,
+  "admission_hold_design": "b15_opt",
+  "completed_utc": "2026-10-05T19:56:18.866782+00:00",
+  "created_utc": "2026-10-05T18:39:02.310431+00:00",
+  "current_design": "b15_opt",
+  "dependency_repair": {
+    "bytes": 17558,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/dependency_repairs/FAN_ATPG/compound_reporter_qualification.json",
+    "sha256": "71bc45f4e54c8928ff50a635d829a8e17b7f18ad6e582f5ae496a93520d06a24"
+  },
+  "design_order": [
+    "b14_opt",
+    "b15_opt",
+    "b17_opt",
+    "b18_opt"
+  ],
+  "protocol": {
+    "bytes": 79703,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate9_large_scale_unseen_20261005/benchmark_preregistration.json",
+    "sha256": "01b05577c885e878f98466315d8232cd9773d332c61d8c7510ab8870dcb44717"
+  },
+  "records": [
+    {
+      "completion": {
+        "bytes": 1018,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/completion/b14_opt.json",
+        "sha256": "87b20bf6b540e693dd8dcf5afd1fda7d10fed12f1e3bbe356066ca25fd47baee"
+      },
+      "design": "b14_opt",
+      "report": {
+        "bytes": 61554,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/final/b14_opt/comparison.json",
+        "sha256": "3328085e460f0dbc82e79fd80f8b47761d801b7929e986a1b9c4d32621d045df"
+      },
+      "status": "COMPETITIVE_COMPARISON_TERMINAL"
+    },
+    {
+      "design": "b15_opt",
+      "reason": "Frozen 900s ATPG / common preparation gate did not qualify",
+      "receipt": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/primary_b15_opt/workers/b15_opt/prepare.json",
+      "status": "ATPG_OR_PLACEMENT_ADMISSION_HOLD"
+    },
+    {
+      "design": "b17_opt",
+      "reason": "Fixed-order cohort stopped at b15_opt; no claim of source incompatibility or PACT failure",
+      "status": "DEFERRED_PRIOR_ADMISSION_HOLD"
+    },
+    {
+      "design": "b18_opt",
+      "reason": "Fixed-order cohort stopped at b15_opt; no claim of source incompatibility or PACT failure",
+      "status": "DEFERRED_PRIOR_ADMISSION_HOLD"
+    }
+  ],
+  "schema": "pact_gate09_fixed_cohort_execution_v1",
+  "scientific_method_changes": 0,
+  "source": {
+    "bytes": 9840,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_cohort.py",
+    "sha256": "4ed6aff54f09378a2b6c3ceb774d16b3a4df40ee84abded5df66160f278d9eb0"
+  },
+  "state": "COHORT_TERMINAL",
+  "stop_policy": "First source, reference or resource admission hold; never stop or change order because of PACT activity outcomes"
+}
