@@ -127,8 +127,39 @@ def blif_witness(text, model):
             raise ValueError('Unsupported BLIF directive: ' + tag)
         else:
             retained.append(raw)
-    if set(ports.get('.inputs', [])) != set(model['inputs']) or set(ports.get('.outputs', [])) != set(model['outputs']):
-        raise ValueError('BENCH/BLIF functional port population differs')
+    if set(ports.get('.inputs', [])) != set(model['inputs']):
+        raise ValueError('BENCH/BLIF functional input population differs')
+    # Exporters may give a public output and its internal signal different
+    # names. Accept only an explicit positive identity truth-table path, never
+    # a guessed suffix/name substitution or a general logic transformation.
+    buffers = {}
+    for i, raw in enumerate(logical):
+        fields = raw.split('#', 1)[0].split()
+        if len(fields) == 3 and fields[0] == '.names':
+            table = []
+            for following in logical[i + 1:]:
+                cube = following.split('#', 1)[0].split()
+                if cube and cube[0].startswith('.'):
+                    break
+                if cube:
+                    table.append(cube)
+            if table == [['1', '1']]:
+                if fields[2] in buffers:
+                    raise ValueError('Duplicate BLIF identity driver')
+                buffers[fields[2]] = fields[1]
+    aliases = {}
+    for public in ports.get('.outputs', []):
+        current, path = public, [public]
+        while current not in set(model['outputs']) and current in buffers:
+            current = buffers[current]
+            if current in path:
+                raise ValueError('BLIF output alias cycle')
+            path.append(current)
+        if current not in model['outputs'] or current in aliases:
+            raise ValueError('BENCH/BLIF functional output population differs; no bijective explicit identity alias')
+        aliases[current] = dict(BLIF_port=public, identity_path=path)
+    if set(aliases) != set(model['outputs']):
+        raise ValueError('BENCH/BLIF functional output population differs')
     if set(latches) != set(model['flops']):
         raise ValueError('BENCH/BLIF state population differs')
     for q in model['flops']:
@@ -141,7 +172,7 @@ def blif_witness(text, model):
     for i, q in enumerate(model['flops']):
         lines.extend([f'.names {ppi[i]} {q}', '1 1',
                       f'.names {latches[q]["D"]} {ppo[i]}', '1 1'])
-    return '\n'.join(lines + ['.end', '']), latches
+    return '\n'.join(lines + ['.end', '']), latches, aliases
 
 
 def prepare(bench, blif, design, output):
@@ -149,7 +180,7 @@ def prepare(bench, blif, design, output):
     if output.exists():
         raise ValueError('Fresh source-witness directory required')
     model = parse_bench(Path(bench).read_text())
-    golden, latches = blif_witness(Path(blif).read_text(), model)
+    golden, latches, aliases = blif_witness(Path(blif).read_text(), model)
     output.mkdir(parents=True)
     for name, text in (('bench_comb.v', emit_bench(model, 'gate')),
                        ('blif_comb.blif', golden), ('scan_input.v', emit_bench(model, design, True))):
@@ -161,6 +192,7 @@ def prepare(bench, blif, design, output):
                    source_FF_to_scan_instance=[dict(Q=q, D=model['assignments'][q][1][0], scan_instance=f'U_SCAN_{i:04d}')
                                                for i, q in enumerate(model['flops'])],
                    source_initial_state_histogram=dict(Counter(row['initial'] for row in latches.values())),
+                   functional_output_aliases=aliases,
                    adaptation=dict(clock='Single positive-edge CK; explicit physical interpretation of implicit BENCH/BLIF state steps',
                                    scan='SE=0 retains source D/Q equations; SE=1 shifts all source FFs in lexical Q-name order; original K=1 source before registered K=2 baselines',
                                    reset='No reset inserted; BLIF initial values recorded; all PPI states quantified in next-state witness',

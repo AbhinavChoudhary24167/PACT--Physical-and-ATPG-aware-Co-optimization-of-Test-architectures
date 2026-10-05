@@ -132,7 +132,7 @@ def mapped_witness(mapped, model, design, adapter):
         unsupported_cells=[], macros=[])
 
 
-def probe(design, audit_path):
+def probe(design, audit_path, attempt=None):
     prereg = admission.read(admission.INTAKE)
     audited = admission.read(audit_path)
     if audited['provenance_status'] != 'PASS' or audited['capacity']['status'] != 'PASS':
@@ -152,8 +152,19 @@ def probe(design, audit_path):
     physical = admission.read(ROOT / 'results/pact_cpu_scalability_20261005/spef_patch/implementation_evidence.json')
     if admission.verify(physical['bindings']['library'])['status'] != 'PASS':
         raise ValueError('Frozen Nangate45 Liberty changed')
+    if attempt is not None and attempt != 'blif_output_aliases':
+        raise ValueError('Unregistered infrastructure attempt')
     folder = RAW / 'sources' / design
     receipt = META / 'source_admission' / (design + '.json')
+    prior = receipt if attempt else None
+    if attempt:
+        if not prior.exists():
+            raise ValueError('Alias repair requires preserved failed source-interface probe')
+        earlier = admission.read(prior)
+        if earlier.get('stages') or earlier.get('error') != 'BENCH/BLIF functional port population differs':
+            raise ValueError('Alias attempt cannot replace a synthesis/equivalence outcome')
+        folder = folder / attempt
+        receipt = receipt.with_name(design + '__' + attempt + '.json')
     if receipt.exists() or folder.exists():
         raise ValueError('Preserve completed or failed source probe; fresh attempt required')
     record = dict(schema='pact_gate09_source_admission_v1', design=design,
@@ -162,6 +173,7 @@ def probe(design, audit_path):
                   source_files=row['source_files'], adapter_source=admission.binding(ROOT / 'scripts/pact_gate09_source.py'),
                   runner_source=admission.binding(Path(__file__)), Yosys=yosys, Liberty=physical['bindings']['library'],
                   capacity=require_capacity(prereg), reference_qualified=False, PACT_search_started=False,
+                  infrastructure_attempt=attempt, prior_probe=admission.binding(prior) if prior else None,
                   stages={}, qualification={})
     try:
         bench, blif = (admission.resolve(row['source_files'][kind]['path']) for kind in ('bench', 'blif'))
@@ -206,6 +218,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--design', required=True)
     parser.add_argument('--audit', type=Path, required=True)
+    parser.add_argument('--attempt', choices=('blif_output_aliases',))
     args = parser.parse_args()
-    result = probe(args.design, args.audit)
+    result = probe(args.design, args.audit, args.attempt)
     raise SystemExit(0 if result['status'].startswith('SOURCE_MAPPED') else 2)
