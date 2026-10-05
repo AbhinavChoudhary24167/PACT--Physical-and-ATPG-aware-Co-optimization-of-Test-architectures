@@ -1,0 +1,99 @@
+{
+  "DRC": 0,
+  "FF_count": 449,
+  "algorithm_family": "A",
+  "architecture": {
+    "bytes": 60269,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/B4/architecture.json",
+    "sha256": "04fd1c2c75711c472872a84533a7c30001107934cd0ebc32b4c5316fddcd36d2"
+  },
+  "architecture_candidates_generated": 1,
+  "architecture_hash": "c89534940ac3dda36c59faea6ea409568be882c2694ebab6d2ebace23c8210bc",
+  "candidate_routes_before_selection": 0,
+  "chain_count": 2,
+  "chain_lengths": [
+    225,
+    224
+  ],
+  "correctness": {
+    "export": {
+      "bytes": 4173506,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/B4/correctness/fan/export.json",
+      "sha256": "8bb009e752d0c6dc286fc77ef96093ceb397bc9732a47b233db1a6e8eaf7bc86"
+    },
+    "faults": {
+      "bytes": 720,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/B4/correctness/test_correctness.json",
+      "sha256": "c7e19f59fee73bcf0463d945de161308a11a9d8d8730a80e45cbbac2931649a7"
+    },
+    "serial": {
+      "bytes": 465,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/B4/correctness/serial_replay.json",
+      "sha256": "54a8f1d742cfed6526fd79bccf28aa1c2640747a981b805c48655f131d154f90"
+    },
+    "statistics": {
+      "coverage": 96.75,
+      "detected": 55935,
+      "patterns": 464,
+      "total": 57814
+    }
+  },
+  "definitions": {
+    "bytes": 8783,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/manifests/competitive_method_definitions.json",
+    "sha256": "8380cc99b45acf9bc571b214d5ef9edbf883a1af32ea8d3a0b1d1006bc3be9a0"
+  },
+  "design": "b15_opt",
+  "frozen_utc": "2026-10-05T21:13:11.456587+00:00",
+  "generation_wall_seconds": 13.984478270000182,
+  "generator_status": "PASS",
+  "identity_map": {
+    "bytes": 80505,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/ff_identity_map.json",
+    "sha256": "8c5e4137826e4a0e3e2fd035d92e10713e36e8ac76d1b942362cefc920dccec1"
+  },
+  "method": "B4",
+  "patterns": {
+    "bytes": 487355,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/patterns.pat",
+    "sha256": "89b3b47b37131976501265aa72b96de79504ac12ed1cf95887aec6c16e387002"
+  },
+  "preselection": {
+    "bytes": 4366,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt_heuristics_preselected.json",
+    "sha256": "048462688fd34b5176faae09b0e38bb2281be870f2e35333401fe10ea7686da5"
+  },
+  "provenance": {
+    "bytes": 120262,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/B4/physical/route_result.json",
+    "sha256": "0d0f7ad5f4f9152f08057361fac158466055b1cf190bd1440cb1046ce4b5d548"
+  },
+  "routed_scan_wirelength_um": 37422.085,
+  "source": {
+    "bytes": 8563,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/scan/phase0c.py",
+    "sha256": "e43da79d76d363fe67ae120d5e53a3c2d04a9a2f44549601d8df2daabc05cf3e"
+  },
+  "source_revision": "e43da79d76d363fe67ae120d5e53a3c2d04a9a2f44549601d8df2daabc05cf3e",
+  "status": "QUALIFIED",
+  "timing": {
+    "congestion": null,
+    "detailed_route_drc_errors": 0,
+    "detailed_route_vias": 49698,
+    "global_route_overflow": null,
+    "global_route_wirelength_um": 177996,
+    "hold_tns_ns": 0,
+    "hold_violated_endpoints": 0,
+    "hold_wns_ns": 0.00176774,
+    "layer_utilization": {},
+    "max_cap_violations": 0,
+    "max_fanout_violations": 0,
+    "max_slew_violations": 0,
+    "pdnsim_classification": "NOT_RUN_NO_QUALIFIED_TEST_CURRENT_MODEL",
+    "setup_tns_ns": 0,
+    "setup_violated_endpoints": 0,
+    "setup_wns_ns": 7.50187,
+    "timing_stage": "global_route",
+    "total_detailed_route_wirelength_um": 127078
+  }
+}
