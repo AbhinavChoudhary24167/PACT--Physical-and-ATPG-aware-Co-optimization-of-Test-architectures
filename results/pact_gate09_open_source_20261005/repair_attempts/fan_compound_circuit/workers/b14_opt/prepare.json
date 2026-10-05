@@ -1,0 +1,62 @@
+{
+  "CPU_seconds": 2.149314,
+  "PACT_search_started": false,
+  "PID": 501,
+  "action": "prepare",
+  "capacity": {
+    "per_design_margin": "Pending admitted artifact dimensions; fixed floor is a minimum, not a sufficient per-design budget",
+    "status": "PASS",
+    "volumes": {
+      "C": {
+        "deficit_bytes": 0,
+        "free_bytes": 19956039680,
+        "minimum_free_bytes": 6442450944,
+        "status": "PASS"
+      },
+      "D": {
+        "deficit_bytes": 0,
+        "free_bytes": 41562083328,
+        "minimum_free_bytes": 26843545600,
+        "status": "PASS"
+      }
+    }
+  },
+  "child_peak_RSS_KiB": 311152,
+  "children_CPU_seconds": 573.1531,
+  "common_FAN_backend": {
+    "bytes": 871192,
+    "path": "/root/pact-deps/FAN_ATPG-gate09-crash-repair/bin/opt/fan",
+    "sha256": "7899c442849a0a4f15f48ace159adea62883aee7a5b3846896e0ad9d0c753418"
+  },
+  "completed_utc": "2026-10-05T15:46:33.355215+00:00",
+  "created_utc": "2026-10-05T15:36:54.690114+00:00",
+  "dependency_repair": {
+    "bytes": 8725,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/dependency_repairs/FAN_ATPG/qualification.json",
+    "sha256": "f4b327274418e0b8aaf364ce3e06c80292d3badf9818a54af34822fd7357728d"
+  },
+  "design": "b14_opt",
+  "harness": {
+    "bytes": 11920,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_reference.py",
+    "sha256": "dad542010df2012bb8f0fd6bbd4dc264cbf250389f5bc59b6242f28b71fcf398"
+  },
+  "peak_RSS_KiB": 24448,
+  "qualified_repair_source_SHA": "458c6889887811ce20c2970969a264c9acf5a9dd",
+  "receipt": {
+    "bytes": 5526,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_circuit/physical/b14_opt/preparation.json",
+    "sha256": "7285e68d4c81b516e160a6e5db0734f619f0996ee235fdb259412a088ff33d4e"
+  },
+  "repair_attempt": "fan_compound_circuit",
+  "schema": "pact_gate09_reference_worker_v1",
+  "scientific_method_changes": 0,
+  "source_admission": {
+    "bytes": 7087,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/source_admission/b14_opt__mapped_library_models.json",
+    "sha256": "4357549cb9ee68cb0e9149fc0274783c584dc57661976a1917153a2754436ade"
+  },
+  "source_and_destination_adaptation_only": true,
+  "status": "PLACEMENT_READY_PENDING_REFERENCES",
+  "wall_seconds": 573.089620289
+}

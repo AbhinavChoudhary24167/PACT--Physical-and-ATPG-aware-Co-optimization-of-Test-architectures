@@ -1,0 +1,165 @@
+{
+  "created_utc": "2026-10-05T15:36:54.923999+00:00",
+  "dependency_repair": {
+    "bytes": 8725,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/dependency_repairs/FAN_ATPG/qualification.json",
+    "sha256": "f4b327274418e0b8aaf364ce3e06c80292d3badf9818a54af34822fd7357728d"
+  },
+  "design_order": [
+    "b14_opt",
+    "b15_opt",
+    "b17_opt",
+    "b18_opt"
+  ],
+  "designs": [
+    {
+      "ATPG_pattern_count": null,
+      "FF_count": 245,
+      "PACT_search_started": false,
+      "compatibility": "PENDING_TECHNOLOGY_MAPPING_AND_REFERENCE_QUALIFICATION",
+      "design": "b14_opt",
+      "eligible": false,
+      "family": "b14",
+      "gate_count_semantics": "Syntactic sequential BENCH assignments, including DFFs; unmapped and not an admitted technology-mapped count",
+      "independence_role": "base family",
+      "reference": null,
+      "reference_activity": null,
+      "reference_architecture": null,
+      "source_FF_count": 245,
+      "source_admission": {
+        "bytes": 31996,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b14_opt/blif_output_aliases/adapter.json",
+        "sha256": "c9d4bbfda36abaa2e303c1dc23b8cf1f43d28fb2e951a45f2ec498962ad82952"
+      },
+      "source_cell_histogram": {
+        "AND": 527,
+        "DFF": 245,
+        "NAND": 4083,
+        "NOR": 49,
+        "NOT": 430,
+        "OR": 258
+      },
+      "source_commit": "8a2c3b500ee7ff20e7031de92592b737bedc6d8c",
+      "source_file": {
+        "bytes": 299255,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b14_opt/blif_output_aliases/mapped.v",
+        "sha256": "782e4d02e92036ae000179dd79a2a82b45abe5948e7427e4e6ca071d709dc4c4"
+      },
+      "source_files": {
+        "bench": {
+          "bytes": 166588,
+          "git_blob_sha1": "3ce4ac58852005242b0849cfa3f077b7586a75c7",
+          "path": "D:\\PACT_EXPERIMENTS\\results\\pact_gate9_large_scale_unseen_20261005\\sources\\i99t\\b14\\b14_opt.bench",
+          "sha256": "a5dd6526ba4dcaf71e4acf0ba6c8601bbde751d6373cc0bfffc2de7cb0281dfe",
+          "url": "https://raw.githubusercontent.com/cad-polito-it/I99T/8a2c3b500ee7ff20e7031de92592b737bedc6d8c/i99t/b14/b14_opt.bench"
+        },
+        "blif": {
+          "bytes": 216518,
+          "git_blob_sha1": "fe865dbc277346fb70420fb653793fda9a38cbdb",
+          "path": "D:\\PACT_EXPERIMENTS\\results\\pact_gate9_large_scale_unseen_20261005\\sources\\i99t\\b14\\b14_opt.blif",
+          "sha256": "2ce6a59f46591fb1a52d7321e67e67e6dffbe6fb61257d67bbdda7ff33a9af5c",
+          "url": "https://raw.githubusercontent.com/cad-polito-it/I99T/8a2c3b500ee7ff20e7031de92592b737bedc6d8c/i99t/b14/b14_opt.blif"
+        }
+      },
+      "source_gate_assignments": 5592,
+      "source_primary_inputs": 32,
+      "source_primary_outputs": 54
+    }
+  ],
+  "fixed_method": {
+    "K": 2,
+    "candidate_selection": "Existing balanced/best_E/best_H4/best_H8 role order, exact hash deduplication, maximum three before routing",
+    "configuration_hash": "f50524da9313a117db84491cfcc2ffad211066bbc096818e0cccf9cecdb1b229",
+    "configurations": [
+      {
+        "archive_size": 16,
+        "epsilon": 0.02,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 900,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "archive_size": 16,
+        "epsilon": 0.05,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 900,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "archive_size": 16,
+        "epsilon": 0.1,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 900,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "epsilons": [
+      0.02,
+      0.05,
+      0.1
+    ],
+    "maximum_candidates_per_design": 3,
+    "mutation_loop_seconds": 900,
+    "objectives": "Existing E/H4/H8 definitions, equal weights, operators and acceptance rules unchanged",
+    "physical_parameters": "Existing frozen Nangate45 backend, clock/constraints, utilization, routing/DRC and timing-stage definitions; no per-design rescue",
+    "reference_rule": "Existing minimum qualified routed scan cost among permitted B0/B1/B2/B3T, frozen before PACT search; ties follow existing deterministic ordering",
+    "search_worker_ceiling_seconds": 7200,
+    "seed": 11,
+    "workload": "Existing frozen FAN collapsed-fault workload and exact settled-count activity definitions; preserve fault-class multiplicities, identity signatures and FF-Q replay"
+  },
+  "gate": "GATE09",
+  "harness": {
+    "bytes": 11920,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_reference.py",
+    "sha256": "dad542010df2012bb8f0fd6bbd4dc264cbf250389f5bc59b6242f28b71fcf398"
+  },
+  "original_failed_preparation": {
+    "bytes": 1500,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/physical/b14_opt/preparation.json",
+    "sha256": "58b0e678dd3128200ed9baf250939745053acad1c8c214af19333d7d605bf643"
+  },
+  "original_protocol": {
+    "bytes": 79703,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate9_large_scale_unseen_20261005/benchmark_preregistration.json",
+    "sha256": "01b05577c885e878f98466315d8232cd9773d332c61d8c7510ab8870dcb44717"
+  },
+  "other_designs": "Remain in immutable prospective cohort; no outcome-dependent substitution",
+  "physical_parameters": {
+    "CORE_UTILIZATION": 35,
+    "PLACE_DENSITY_LB_ADDON": 0.2,
+    "TNS_END_PERCENT": 100,
+    "clock_period_ns": 10.0,
+    "physical_seed": 11,
+    "route_threads": 2
+  },
+  "reference_rule": "Existing minimum qualified routed scan cost among permitted B0/B1/B2/B3T, frozen before PACT search; ties follow existing deterministic ordering",
+  "schema": "pact_gate09_reference_preparation_v1",
+  "scientific_method_changes": 0
+}
