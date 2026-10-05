@@ -34,7 +34,7 @@ def validate(directory, output):
     tools = {name: admission.verify(value) for name,value in protocol['frozen_tools'].items()}
     prior = admission.read(ROOT / 'results/pact_gate09_open_source_20261005/00_preflight/admission.json')
     historical = {name: admission.verify(row['expected']) for name,row in prior['preservation']['historical'].items()}
-    recent = {name: admission.verify(row['expected']) for name,row in prior['preservation']['recent'].items()}
+    recent = {name: admission.verify(row.get('expected', row['observed'])) for name,row in prior['preservation']['recent'].items()}
     failures = []
     checked = {}
     snapshots = {p.stem: p for p in directory.rglob('execution_sources/*.py')}
@@ -48,10 +48,17 @@ def validate(directory, output):
         except Exception as error:
             failures.append(dict(path=str(path), error='Invalid JSON: '+str(error)))
             continue
-        if value.get('status') not in ('QUALIFIED', 'PASS', 'SOURCE_MAPPED_EQUIVALENCE_QUALIFIED_PENDING_PHYSICAL_ATPG_REFERENCE',
-                'PACT_GATE09_ADMISSION_COMPLETE', 'COMPETITIVE_COMPARISON_TERMINAL'):
+        if (value.get('status') not in ('QUALIFIED', 'PASS', 'SOURCE_MAPPED_EQUIVALENCE_QUALIFIED_PENDING_PHYSICAL_ATPG_REFERENCE',
+                'PACT_GATE09_ADMISSION_COMPLETE', 'COMPETITIVE_COMPARISON_TERMINAL') and
+                value.get('schema') not in ('pact_cpu_exact_activity_v1', 'pact_cold_start_input_v1',
+                    'pact_gate09_comparison_v1', 'pact_gate09_competitor_freeze_v1')):
             continue
-        for item in bindings(value):
+        bound = list(bindings(value))
+        if value.get('status') == 'QUALIFIED' and value.get('output_folder') and value.get('complete'):
+            folder = admission.resolve(value['output_folder'])
+            trace = admission.read(folder / 'activity_summary.json')['activity_trace']
+            bound.append(dict(path=str(folder / 'activity.counts.gz'), sha256=trace['sha256'], bytes=trace['bytes']))
+        for item in bound:
             key = (item['path'], item['sha256'])
             if key in checked:
                 continue
