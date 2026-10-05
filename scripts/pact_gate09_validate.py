@@ -26,6 +26,15 @@ def bindings(value):
             yield from bindings(child)
 
 
+def verify_with_snapshot(item, snapshots):
+    result = admission.verify(item)
+    if result['status'] != 'PASS' and item['sha256'] in snapshots:
+        archived = admission.binding(snapshots[item['sha256']])
+        if archived['sha256'] == item['sha256'] and archived['bytes'] == item.get('bytes', archived['bytes']):
+            result = dict(status='PASS', original_path=item['path'], preserved_execution_source=archived)
+    return result
+
+
 def validate(directory, output):
     if output.exists():
         raise ValueError('Preserve previous validation')
@@ -63,10 +72,7 @@ def validate(directory, output):
             key = (item['path'], item['sha256'])
             if key in checked:
                 continue
-            result = admission.verify(item)
-            if result['status'] != 'PASS' and item['sha256'] in snapshots:
-                archived = admission.binding(snapshots[item['sha256']])
-                result = dict(status='PASS', original_path=item['path'], preserved_execution_source=archived)
+            result = verify_with_snapshot(item, snapshots)
             checked[key] = result
             if result['status'] != 'PASS':
                 failures.append(dict(receipt=str(path), artifact=item, verification=result))

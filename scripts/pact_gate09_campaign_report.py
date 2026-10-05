@@ -113,7 +113,11 @@ def create(output, ledger_path=None):
         'C≥6 GiB and D≥25 GiB remained fixed. Per-design D admission adds the registered 20 GiB scratch reserve '
         'plus max(5 GiB, retained packages, projected complete traces and one complete count cache). '
         'The inactive 16 GiB build image was relocated to F with copy/rehash verification and a D symlink; required evidence was preserved. '
-        'All deletion/relocation receipts remain in the campaign. Only qualified uncompressed count caches were removed after gzip evidence and crosschecks passed.', '',
+        'A later projected-capacity hold was resolved by relocating 37 inactive build-source fixtures (1,083,340,023 bytes) to F, '
+        'rehashing each copy, removing only its verified duplicate and retaining a byte-identical D-path symlink. '
+        'All deletion/relocation receipts remain in the campaign. Qualified uncompressed count caches were removed only after gzip evidence and crosschecks passed. '
+        'The prospective source-registration adapter binds a failed predecessor only when one exists; its first failed launch performed no scientific work. '
+        'Both b15 continuations reused the admitted source; the capacity continuation also reused identical qualified patterns and placement without repeating ATPG or placement.', '',
         '| Design | Base/composition family | Source FFs | Admission/comparison outcome |', '|---|---|---:|---|']
     for entry in protocol['cohort']:
         state = next(r for r in ledger['records'] if r['design']==entry['design'])
