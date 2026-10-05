@@ -170,8 +170,10 @@ def route(meta, raw, design, method, physical):
         raise ValueError('Preselection canonical hash changed')
     prep = admission.read(meta / f'physical/{design}/preparation.json')
     identity = admission.read(raw / f'baselines/{design}/ff_identity_map.json')['records']
-    retained = admission.read(meta / f'workers/{design}/retained_reference_qualification.json')
-    original = admission.read(retained['retained_original_fault_export']['path'])
+    retained_path = meta / f'workers/{design}/retained_reference_qualification.json'
+    original_path = (admission.read(retained_path)['retained_original_fault_export']['path']
+        if retained_path.exists() else raw / f'baselines/{design}/original_workload/export.json')
+    original = admission.read(original_path)
     result = dict(row, status='FAILED', preselection=admission.binding(selection))
     try:
         report = physical.route(design, method, path, prep)
@@ -273,7 +275,8 @@ def search(meta, raw, design, protocol):
     adapter_path.parent.mkdir(parents=True, exist_ok=True)
     adapter_path.write_text(budget_adapter(cold.search))
     from pact_cold_start_measure import execute_stage
-    gate = admission.read(meta / f'measurements/{design}/B3T/preparation.json')
+    method = admission.read(meta / f'baselines/{design}_selected.json')['method']
+    gate = admission.read(meta / f'measurements/{design}/{method}/preparation.json')
     measure.capacity(protocol, gate['dimensions'], gate['retained_bytes'])
     execute_stage([sys.executable, Path(__file__), 'search-child', '--design', design,
         '--meta', meta, '--raw', raw], raw / f'search_worker/{design}', 'search', time.perf_counter()+7200)
@@ -322,7 +325,8 @@ def worker(args):
         elif args.action == 'generate':
             generate(meta, raw, design)
         elif args.action == 'route':
-            prepared = admission.read(meta / f'measurements/{design}/B3T/preparation.json')
+            method = admission.read(meta / f'baselines/{design}_selected.json')['method']
+            prepared = admission.read(meta / f'measurements/{design}/{method}/preparation.json')
             record['capacity'] = measure.capacity(protocol, prepared['dimensions'], prepared['retained_bytes'])
             route(meta, raw, design, args.method, physical)
         elif args.action == 'input':
