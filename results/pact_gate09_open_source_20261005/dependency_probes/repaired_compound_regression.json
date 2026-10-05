@@ -1,0 +1,154 @@
+{
+  "capacity": {
+    "per_design_margin": "Pending admitted artifact dimensions; fixed floor is a minimum, not a sufficient per-design budget",
+    "status": "PASS",
+    "volumes": {
+      "C": {
+        "deficit_bytes": 0,
+        "free_bytes": 20175970304,
+        "minimum_free_bytes": 6442450944,
+        "status": "PASS"
+      },
+      "D": {
+        "deficit_bytes": 0,
+        "free_bytes": 41562152960,
+        "minimum_free_bytes": 26843545600,
+        "status": "PASS"
+      }
+    }
+  },
+  "mode": "dbg",
+  "patch": {
+    "command": [
+      "git",
+      "-C",
+      "/root/pact-deps/FAN_ATPG-gate09-crash-repair",
+      "diff",
+      "--",
+      "pkg/core/src/circuit.cpp"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "diff --git a/pkg/core/src/circuit.cpp b/pkg/core/src/circuit.cpp\nindex 5690b7a..1200dcc 100644\n--- a/pkg/core/src/circuit.cpp\n+++ b/pkg/core/src/circuit.cpp\n@@ -323,9 +323,15 @@ void Circuit::createCircuitComb()\n \t\t\tcreateCircuitPmt(combGateID, cellInTop, pmt);\n \t\t}\n \t}\n-\tif ((int)top->getNCell() > 0)\n+\t// A library cell can contain several primitives with different levels.\n+\t// Keep PO/PPO after every driver, including primitives in earlier cells.\n+\tcircuitLvl_ = 2;\n+\tfor (int i = 0; i < numPI_ + numPPI_ + numComb_; ++i)\n \t{\n-\t\tcircuitLvl_ = circuitGates_[cellIndexToGateIndex_[top->getNCell() - 1]].numLevel_ + 2;\n+\t\tif (circuitGates_[i].numLevel_ + 2 > circuitLvl_)\n+\t\t{\n+\t\t\tcircuitLvl_ = circuitGates_[i].numLevel_ + 2;\n+\t\t}\n \t}\n }\n \n@@ -473,15 +479,15 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,\n \t\t\tcircuitGates_[gateID].gateType_ = Gate::MUX;\n \t\t\tbreak;\n \t\tcase Pmt::AND:\n-\t\t\tif (cell->getNPort() == 3)\n+\t\t\tif (pmt->getNPort() == 3)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::AND2;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 4)\n+\t\t\telse if (pmt->getNPort() == 4)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::AND3;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 5)\n+\t\t\telse if (pmt->getNPort() == 5)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::AND4;\n \t\t\t}\n@@ -491,15 +497,15 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,\n \t\t\t}\n \t\t\tbreak;\n \t\tcase Pmt::NAND:\n-\t\t\tif (cell->getNPort() == 3)\n+\t\t\tif (pmt->getNPort() == 3)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::NAND2;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 4)\n+\t\t\telse if (pmt->getNPort() == 4)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::NAND3;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 5)\n+\t\t\telse if (pmt->getNPort() == 5)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::NAND4;\n \t\t\t}\n@@ -509,15 +515,15 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,\n \t\t\t}\n \t\t\tbreak;\n \t\tcase Pmt::OR:\n-\t\t\tif (cell->getNPort() == 3)\n+\t\t\tif (pmt->getNPort() == 3)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::OR2;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 4)\n+\t\t\telse if (pmt->getNPort() == 4)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::OR3;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 5)\n+\t\t\telse if (pmt->getNPort() == 5)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::OR4;\n \t\t\t}\n@@ -527,15 +533,15 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,\n \t\t\t}\n \t\t\tbreak;\n \t\tcase Pmt::NOR:\n-\t\t\tif (cell->getNPort() == 3)\n+\t\t\tif (pmt->getNPort() == 3)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::NOR2;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 4)\n+\t\t\telse if (pmt->getNPort() == 4)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::NOR3;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 5)\n+\t\t\telse if (pmt->getNPort() == 5)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::NOR4;\n \t\t\t}\n@@ -545,11 +551,11 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,\n \t\t\t}\n \t\t\tbreak;\n \t\tcase Pmt::XOR:\n-\t\t\tif (cell->getNPort() == 3)\n+\t\t\tif (pmt->getNPort() == 3)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::XOR2;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 4)\n+\t\t\telse if (pmt->getNPort() == 4)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::XOR3;\n \t\t\t}\n@@ -559,11 +565,11 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,\n \t\t\t}\n \t\t\tbreak;\n \t\tcase Pmt::XNOR:\n-\t\t\tif (cell->getNPort() == 3)\n+\t\t\tif (pmt->getNPort() == 3)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::XNOR2;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 4)\n+\t\t\telse if (pmt->getNPort() == 4)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::XNOR3;\n \t\t\t}"
+  },
+  "results": [
+    {
+      "command": [
+        "g++",
+        "-std=c++11",
+        "-g",
+        "-O1",
+        "-I/root/pact-deps/FAN_ATPG-gate09-crash-repair/include",
+        "/root/pact-deps/FAN_ATPG-gate09-crash-repair/tests/compound_circuit_test.cpp",
+        "-L/root/pact-deps/FAN_ATPG-gate09-crash-repair/lib/dbg",
+        "-lcore",
+        "-linterface",
+        "-lcommon",
+        "-o",
+        "/root/pact-deps/FAN_ATPG-gate09-crash-repair/tests/compound_circuit_test_dbg",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer"
+      ],
+      "exit_code": 0,
+      "label": "compile",
+      "stderr": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/repaired_compound_regression/compile.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/repaired_compound_regression/compile.stdout.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "wall_seconds": 5.540801584999997
+    },
+    {
+      "command": [
+        "/root/pact-deps/FAN_ATPG-gate09-crash-repair/tests/compound_circuit_test_dbg",
+        "/root/pact-deps/FAN_ATPG-gate09-crash-repair/techlib/mod_nangate45.mdt",
+        "/root/pact-deps/FAN_ATPG-gate09-crash-repair/tests/compound_scan.v",
+        "depth"
+      ],
+      "exit_code": 0,
+      "label": "depth",
+      "stderr": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/repaired_compound_regression/depth.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 11,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/repaired_compound_regression/depth.stdout.txt",
+        "sha256": "52ca5957bfcb33df9bb4374a4a524dfd38d91ec3e4379dbd388375b9b907a687"
+      },
+      "wall_seconds": 0.08239543199999844
+    },
+    {
+      "command": [
+        "/root/pact-deps/FAN_ATPG-gate09-crash-repair/tests/compound_circuit_test_dbg",
+        "/root/pact-deps/FAN_ATPG-gate09-crash-repair/techlib/mod_nangate45.mdt",
+        "/root/pact-deps/FAN_ATPG-gate09-crash-repair/tests/compound_scan.v",
+        "arity"
+      ],
+      "exit_code": 0,
+      "label": "arity",
+      "stderr": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/repaired_compound_regression/arity.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 11,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/repaired_compound_regression/arity.stdout.txt",
+        "sha256": "1be5f007b30e19651ed082b587cbe760bb76c03b16b42cc34a57e55f6d935bba"
+      },
+      "wall_seconds": 0.07497766899999192
+    },
+    {
+      "command": [
+        "/root/pact-deps/FAN_ATPG-gate09-crash-repair/tests/compound_circuit_test_dbg",
+        "/root/pact-deps/FAN_ATPG-gate09-crash-repair/techlib/mod_nangate45.mdt",
+        "/root/pact-deps/FAN_ATPG-gate09-crash-repair/tests/compound_scan.v",
+        "truth"
+      ],
+      "exit_code": 0,
+      "label": "truth",
+      "stderr": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/repaired_compound_regression/truth.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 11,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/repaired_compound_regression/truth.stdout.txt",
+        "sha256": "8c07255fcb0ca82ae7b48025807eb0d1ae5d7c03a8c6e904e7f006d66e43ddd9"
+      },
+      "wall_seconds": 0.07315782099999524
+    }
+  ],
+  "source_SHA": {
+    "command": [
+      "git",
+      "-C",
+      "/root/pact-deps/FAN_ATPG-gate09-crash-repair",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "26b2b36c0e9db11a4b6d9e759df6e44357121f39"
+  },
+  "tests": [
+    {
+      "bytes": 3911,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/repaired_compound_regression/compound_circuit_test.cpp",
+      "sha256": "aa332840e1f1646b1b7d140fa8996abc379f2a20ff117dca3a39f356a56d7c3b"
+    },
+    {
+      "bytes": 292,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/repaired_compound_regression/compound_scan.v",
+      "sha256": "2593f1f745aaa312219aadb5c2627e8208b8b2892ca910db328e8039e51716e4"
+    }
+  ]
+}

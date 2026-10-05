@@ -1,0 +1,41 @@
+{
+  "PACT_source_changes": 0,
+  "dependency": "FAN_ATPG",
+  "diagnostic_driver_failure": "First driver copied upstream executable then failed before source mutation: AttributeError for missing helper; resumed with explicit hash verification",
+  "original_binary": {
+    "bytes": 44776392,
+    "path": "/root/pact-deps/FAN_ATPG-gate09-crash-repair/bin/dbg/fan",
+    "sha256": "df385d80bb48ebb5439a699dd919cae6c7345caf54d6755f603342968972dfda"
+  },
+  "parent_SHA": {
+    "command": [
+      "git",
+      "-C",
+      "/root/pact-deps/FAN_ATPG-gate09-crash-repair",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "26b2b36c0e9db11a4b6d9e759df6e44357121f39"
+  },
+  "patch": {
+    "bytes": 3666,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_circuit_repair/compound_circuit.patch",
+    "sha256": "8037bc54e2e76cb3f6ac354831a8e53f246b991798eaddc457f96fe75f2f9982"
+  },
+  "qualified": false,
+  "reason": "Generic compound-cell circuit levels and primitive arity; no search, fault-model, compression, workload or benchmark optimization changes",
+  "repair_branch": "fix/atpg-crash-on-valid-netlist",
+  "schema": "pact_gate09_dependency_repair_application_v1",
+  "source": {
+    "bytes": 27968,
+    "path": "/root/pact-deps/FAN_ATPG-gate09-crash-repair/pkg/core/src/circuit.cpp",
+    "sha256": "5e1545cd928f68e8370b166d46f12c1ad5080640985c6c2fa8fd3b22fc897a98"
+  },
+  "upstream_diagnostic_binary_preserved": {
+    "bytes": 44776392,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_circuit_repair/upstream_sanitized_fan",
+    "sha256": "df385d80bb48ebb5439a699dd919cae6c7345caf54d6755f603342968972dfda"
+  }
+}

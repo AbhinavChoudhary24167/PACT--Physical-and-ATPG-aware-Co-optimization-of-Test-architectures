@@ -1,0 +1,77 @@
+{
+  "CPU_seconds": 0.16280999999999998,
+  "binary": {
+    "bytes": 44776392,
+    "path": "/root/pact-deps/FAN_ATPG-gate09-crash-repair/bin/dbg/fan",
+    "sha256": "df385d80bb48ebb5439a699dd919cae6c7345caf54d6755f603342968972dfda"
+  },
+  "capacity": {
+    "per_design_margin": "Pending admitted artifact dimensions; fixed floor is a minimum, not a sufficient per-design budget",
+    "status": "PASS",
+    "volumes": {
+      "C": {
+        "deficit_bytes": 0,
+        "free_bytes": 20223074304,
+        "minimum_free_bytes": 6442450944,
+        "status": "PASS"
+      },
+      "D": {
+        "deficit_bytes": 0,
+        "free_bytes": 41562173440,
+        "minimum_free_bytes": 26843545600,
+        "status": "PASS"
+      }
+    }
+  },
+  "command": [
+    "make",
+    "-j1",
+    "install",
+    "MODE=dbg",
+    "CFLAGS=-Wall -g -O1 -fsanitize=address,undefined -fno-omit-frame-pointer"
+  ],
+  "cwd": "/root/pact-deps/FAN_ATPG-gate09-crash-repair",
+  "exit_code": 0,
+  "harness": {
+    "bytes": 2112,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scratch/gate09_fan_build.py",
+    "sha256": "d15302398840f29933cc09d07a461aba24b7c4dade3f4931bd5271c28d78d735"
+  },
+  "peak_RSS_KiB": 18616,
+  "source_SHA": {
+    "command": [
+      "git",
+      "-C",
+      "/root/pact-deps/FAN_ATPG-gate09-crash-repair",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "26b2b36c0e9db11a4b6d9e759df6e44357121f39"
+  },
+  "stderr": {
+    "bytes": 0,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/repaired_sanitized_build/stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout": {
+    "bytes": 276,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/repaired_sanitized_build/stdout.txt",
+    "sha256": "95c41d53d6b5d730d75cdf5529ce40593207c2b47160a145e90fabadac5bf4f3"
+  },
+  "tracked_diff": {
+    "command": [
+      "git",
+      "-C",
+      "/root/pact-deps/FAN_ATPG-gate09-crash-repair",
+      "diff",
+      "--",
+      "pkg"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": ""
+  },
+  "wall_seconds": 0.2983266800000006
+}

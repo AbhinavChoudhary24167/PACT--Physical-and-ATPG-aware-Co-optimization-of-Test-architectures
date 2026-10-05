@@ -1,0 +1,77 @@
+{
+  "CPU_seconds": 9.426871,
+  "binary": {
+    "bytes": 44789480,
+    "path": "/root/pact-deps/FAN_ATPG-gate09-crash-repair/bin/dbg/fan",
+    "sha256": "cc6c27df6c4bc40b9832f0ee6dec0f21c21c59d26fcc3d3ab76df91a2fd366ae"
+  },
+  "capacity": {
+    "per_design_margin": "Pending admitted artifact dimensions; fixed floor is a minimum, not a sufficient per-design budget",
+    "status": "PASS",
+    "volumes": {
+      "C": {
+        "deficit_bytes": 0,
+        "free_bytes": 20195004416,
+        "minimum_free_bytes": 6442450944,
+        "status": "PASS"
+      },
+      "D": {
+        "deficit_bytes": 0,
+        "free_bytes": 41562161152,
+        "minimum_free_bytes": 26843545600,
+        "status": "PASS"
+      }
+    }
+  },
+  "command": [
+    "make",
+    "-j1",
+    "install",
+    "MODE=dbg",
+    "CFLAGS=-Wall -g -O1 -fsanitize=address,undefined -fno-omit-frame-pointer"
+  ],
+  "cwd": "/root/pact-deps/FAN_ATPG-gate09-crash-repair",
+  "exit_code": 0,
+  "harness": {
+    "bytes": 2112,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scratch/gate09_fan_build.py",
+    "sha256": "d15302398840f29933cc09d07a461aba24b7c4dade3f4931bd5271c28d78d735"
+  },
+  "peak_RSS_KiB": 258088,
+  "source_SHA": {
+    "command": [
+      "git",
+      "-C",
+      "/root/pact-deps/FAN_ATPG-gate09-crash-repair",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "26b2b36c0e9db11a4b6d9e759df6e44357121f39"
+  },
+  "stderr": {
+    "bytes": 0,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/repaired_sanitized_build_after_patch/stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout": {
+    "bytes": 386,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/repaired_sanitized_build_after_patch/stdout.txt",
+    "sha256": "f28ab59d7069744d86ebe45daa7814b5427fa1c279f2c172019df3584308331e"
+  },
+  "tracked_diff": {
+    "command": [
+      "git",
+      "-C",
+      "/root/pact-deps/FAN_ATPG-gate09-crash-repair",
+      "diff",
+      "--",
+      "pkg"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "diff --git a/pkg/core/src/circuit.cpp b/pkg/core/src/circuit.cpp\nindex 5690b7a..1200dcc 100644\n--- a/pkg/core/src/circuit.cpp\n+++ b/pkg/core/src/circuit.cpp\n@@ -323,9 +323,15 @@ void Circuit::createCircuitComb()\n \t\t\tcreateCircuitPmt(combGateID, cellInTop, pmt);\n \t\t}\n \t}\n-\tif ((int)top->getNCell() > 0)\n+\t// A library cell can contain several primitives with different levels.\n+\t// Keep PO/PPO after every driver, including primitives in earlier cells.\n+\tcircuitLvl_ = 2;\n+\tfor (int i = 0; i < numPI_ + numPPI_ + numComb_; ++i)\n \t{\n-\t\tcircuitLvl_ = circuitGates_[cellIndexToGateIndex_[top->getNCell() - 1]].numLevel_ + 2;\n+\t\tif (circuitGates_[i].numLevel_ + 2 > circuitLvl_)\n+\t\t{\n+\t\t\tcircuitLvl_ = circuitGates_[i].numLevel_ + 2;\n+\t\t}\n \t}\n }\n \n@@ -473,15 +479,15 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,\n \t\t\tcircuitGates_[gateID].gateType_ = Gate::MUX;\n \t\t\tbreak;\n \t\tcase Pmt::AND:\n-\t\t\tif (cell->getNPort() == 3)\n+\t\t\tif (pmt->getNPort() == 3)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::AND2;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 4)\n+\t\t\telse if (pmt->getNPort() == 4)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::AND3;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 5)\n+\t\t\telse if (pmt->getNPort() == 5)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::AND4;\n \t\t\t}\n@@ -491,15 +497,15 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,\n \t\t\t}\n \t\t\tbreak;\n \t\tcase Pmt::NAND:\n-\t\t\tif (cell->getNPort() == 3)\n+\t\t\tif (pmt->getNPort() == 3)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::NAND2;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 4)\n+\t\t\telse if (pmt->getNPort() == 4)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::NAND3;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 5)\n+\t\t\telse if (pmt->getNPort() == 5)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::NAND4;\n \t\t\t}\n@@ -509,15 +515,15 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,\n \t\t\t}\n \t\t\tbreak;\n \t\tcase Pmt::OR:\n-\t\t\tif (cell->getNPort() == 3)\n+\t\t\tif (pmt->getNPort() == 3)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::OR2;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 4)\n+\t\t\telse if (pmt->getNPort() == 4)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::OR3;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 5)\n+\t\t\telse if (pmt->getNPort() == 5)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::OR4;\n \t\t\t}\n@@ -527,15 +533,15 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,\n \t\t\t}\n \t\t\tbreak;\n \t\tcase Pmt::NOR:\n-\t\t\tif (cell->getNPort() == 3)\n+\t\t\tif (pmt->getNPort() == 3)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::NOR2;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 4)\n+\t\t\telse if (pmt->getNPort() == 4)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::NOR3;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 5)\n+\t\t\telse if (pmt->getNPort() == 5)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::NOR4;\n \t\t\t}\n@@ -545,11 +551,11 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,\n \t\t\t}\n \t\t\tbreak;\n \t\tcase Pmt::XOR:\n-\t\t\tif (cell->getNPort() == 3)\n+\t\t\tif (pmt->getNPort() == 3)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::XOR2;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 4)\n+\t\t\telse if (pmt->getNPort() == 4)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::XOR3;\n \t\t\t}\n@@ -559,11 +565,11 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,\n \t\t\t}\n \t\t\tbreak;\n \t\tcase Pmt::XNOR:\n-\t\t\tif (cell->getNPort() == 3)\n+\t\t\tif (pmt->getNPort() == 3)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::XNOR2;\n \t\t\t}\n-\t\t\telse if (cell->getNPort() == 4)\n+\t\t\telse if (pmt->getNPort() == 4)\n \t\t\t{\n \t\t\t\tcircuitGates_[gateID].gateType_ = Gate::XNOR3;\n \t\t\t}"
+  },
+  "wall_seconds": 9.742104832999999
+}

@@ -1,0 +1,217 @@
+{
+  "attempt": "original_faults_atpg",
+  "harness": {
+    "bytes": 4856,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_fan_probe.py",
+    "sha256": "5a76bd543e83450a6c4eb4d51ab48cd45c681f80c3fd98aac9deae9f01368da8"
+  },
+  "original_protocol": {
+    "bytes": 79703,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate9_large_scale_unseen_20261005/benchmark_preregistration.json",
+    "sha256": "01b05577c885e878f98466315d8232cd9773d332c61d8c7510ab8870dcb44717"
+  },
+  "results": {
+    "single_scan_ff_atpg": {
+      "CPU_seconds": 0.046309,
+      "PACT_search_started": false,
+      "binary": {
+        "bytes": 871192,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scratch/FAN_ATPG-report-repair/bin/opt/fan",
+        "sha256": "4a569e9887443dfb85dcc7dafd95654570938f525692a760e4e14662163305bd"
+      },
+      "capacity": {
+        "per_design_margin": "Pending admitted artifact dimensions; fixed floor is a minimum, not a sufficient per-design budget",
+        "status": "PASS",
+        "volumes": {
+          "C": {
+            "deficit_bytes": 0,
+            "free_bytes": 20907327488,
+            "minimum_free_bytes": 6442450944,
+            "status": "PASS"
+          },
+          "D": {
+            "deficit_bytes": 0,
+            "free_bytes": 41609891840,
+            "minimum_free_bytes": 26843545600,
+            "status": "PASS"
+          }
+        }
+      },
+      "command": [
+        "/usr/bin/stdbuf",
+        "-oL",
+        "-eL",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scratch/FAN_ATPG-report-repair/bin/opt/fan",
+        "-f",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/original_faults_atpg/single_scan_ff_atpg/probe.script"
+      ],
+      "created_utc": "2026-10-05T15:09:57.372923+00:00",
+      "exit_code": 0,
+      "input": {
+        "bytes": 244,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/original_faults_atpg/single_scan_ff.v",
+        "sha256": "d62bce846b805a8a765b86aeac3d5dd48c972426ae4128da41681b8fa16bcbca"
+      },
+      "library": {
+        "bytes": 37473,
+        "path": "/root/pact-deps/FAN_ATPG/techlib/mod_nangate45.mdt",
+        "sha256": "65cfdc14815c7c256573fb7210d502593c14eb7b96f33cc6b13420f1c95abcbe"
+      },
+      "optimization_or_workload_generation": true,
+      "peak_RSS_KiB": 18788,
+      "schema": "pact_gate09_fan_diagnostic_v1",
+      "script": {
+        "bytes": 402,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/original_faults_atpg/single_scan_ff_atpg/probe.script",
+        "sha256": "809d69276592c4263cda88053855a4405c113887256476d97366d13cbf0444f5"
+      },
+      "stderr": {
+        "bytes": 38,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/original_faults_atpg/single_scan_ff_atpg/stderr.txt",
+        "sha256": "b77d93253eaaabb55b88c074e6a3b227694e8f49f76747fa4f2abdab2234b31a"
+      },
+      "stdout": {
+        "bytes": 5419,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/original_faults_atpg/single_scan_ff_atpg/stdout.txt",
+        "sha256": "9e7dd755a89b8404550b51552a4f57bbe65e36f44c080e797fbb4192d1891954"
+      },
+      "timed_out": false,
+      "wall_seconds": 0.45385933699999725
+    },
+    "source_atpg": {
+      "CPU_seconds": 2.783673999999999,
+      "PACT_search_started": false,
+      "binary": {
+        "bytes": 871192,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scratch/FAN_ATPG-report-repair/bin/opt/fan",
+        "sha256": "4a569e9887443dfb85dcc7dafd95654570938f525692a760e4e14662163305bd"
+      },
+      "capacity": {
+        "per_design_margin": "Pending admitted artifact dimensions; fixed floor is a minimum, not a sufficient per-design budget",
+        "status": "PASS",
+        "volumes": {
+          "C": {
+            "deficit_bytes": 0,
+            "free_bytes": 20894466048,
+            "minimum_free_bytes": 6442450944,
+            "status": "PASS"
+          },
+          "D": {
+            "deficit_bytes": 0,
+            "free_bytes": 41608458240,
+            "minimum_free_bytes": 26843545600,
+            "status": "PASS"
+          }
+        }
+      },
+      "command": [
+        "/usr/bin/stdbuf",
+        "-oL",
+        "-eL",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scratch/FAN_ATPG-report-repair/bin/opt/fan",
+        "-f",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/original_faults_atpg/source_atpg/probe.script"
+      ],
+      "created_utc": "2026-10-05T15:10:42.333223+00:00",
+      "exit_code": -11,
+      "input": {
+        "bytes": 299255,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b14_opt/blif_output_aliases/mapped.v",
+        "sha256": "782e4d02e92036ae000179dd79a2a82b45abe5948e7427e4e6ca071d709dc4c4"
+      },
+      "library": {
+        "bytes": 37473,
+        "path": "/root/pact-deps/FAN_ATPG/techlib/mod_nangate45.mdt",
+        "sha256": "65cfdc14815c7c256573fb7210d502593c14eb7b96f33cc6b13420f1c95abcbe"
+      },
+      "optimization_or_workload_generation": true,
+      "peak_RSS_KiB": 23152,
+      "schema": "pact_gate09_fan_diagnostic_v1",
+      "script": {
+        "bytes": 387,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/original_faults_atpg/source_atpg/probe.script",
+        "sha256": "29eb3ac5937bb31fe79ead5cd94c3286b123e92c5a54bbc0116820929b090a52"
+      },
+      "stderr": {
+        "bytes": 38,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/original_faults_atpg/source_atpg/stderr.txt",
+        "sha256": "b77d93253eaaabb55b88c074e6a3b227694e8f49f76747fa4f2abdab2234b31a"
+      },
+      "stdout": {
+        "bytes": 1415495,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/original_faults_atpg/source_atpg/stdout.txt",
+        "sha256": "c9019873da516e66db443581eea5aa4412085ab7a4a2535c150f293513a6a794"
+      },
+      "timed_out": false,
+      "wall_seconds": 22.049929425000002
+    },
+    "source_fault_setup": {
+      "CPU_seconds": 2.829559,
+      "PACT_search_started": false,
+      "binary": {
+        "bytes": 871192,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scratch/FAN_ATPG-report-repair/bin/opt/fan",
+        "sha256": "4a569e9887443dfb85dcc7dafd95654570938f525692a760e4e14662163305bd"
+      },
+      "capacity": {
+        "per_design_margin": "Pending admitted artifact dimensions; fixed floor is a minimum, not a sufficient per-design budget",
+        "status": "PASS",
+        "volumes": {
+          "C": {
+            "deficit_bytes": 0,
+            "free_bytes": 20906754048,
+            "minimum_free_bytes": 6442450944,
+            "status": "PASS"
+          },
+          "D": {
+            "deficit_bytes": 0,
+            "free_bytes": 41609879552,
+            "minimum_free_bytes": 26843545600,
+            "status": "PASS"
+          }
+        }
+      },
+      "command": [
+        "/usr/bin/stdbuf",
+        "-oL",
+        "-eL",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scratch/FAN_ATPG-report-repair/bin/opt/fan",
+        "-f",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/original_faults_atpg/source_fault_setup/probe.script"
+      ],
+      "created_utc": "2026-10-05T15:10:19.521421+00:00",
+      "exit_code": 0,
+      "input": {
+        "bytes": 299255,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b14_opt/blif_output_aliases/mapped.v",
+        "sha256": "782e4d02e92036ae000179dd79a2a82b45abe5948e7427e4e6ca071d709dc4c4"
+      },
+      "library": {
+        "bytes": 37473,
+        "path": "/root/pact-deps/FAN_ATPG/techlib/mod_nangate45.mdt",
+        "sha256": "65cfdc14815c7c256573fb7210d502593c14eb7b96f33cc6b13420f1c95abcbe"
+      },
+      "optimization_or_workload_generation": false,
+      "peak_RSS_KiB": 22372,
+      "schema": "pact_gate09_fan_diagnostic_v1",
+      "script": {
+        "bytes": 293,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/original_faults_atpg/source_fault_setup/probe.script",
+        "sha256": "9ad4a262adc6994f856630d95d9562eca7d04d57401916a980a3070c247d2add"
+      },
+      "stderr": {
+        "bytes": 38,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/original_faults_atpg/source_fault_setup/stderr.txt",
+        "sha256": "b77d93253eaaabb55b88c074e6a3b227694e8f49f76747fa4f2abdab2234b31a"
+      },
+      "stdout": {
+        "bytes": 1415370,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/original_faults_atpg/source_fault_setup/stdout.txt",
+        "sha256": "b0813a21454a814e95514b8bff2a7939ec07e2d1d5299eb152018dc2e2a1ca67"
+      },
+      "timed_out": false,
+      "wall_seconds": 21.975877292999996
+    }
+  },
+  "schema": "pact_gate09_fan_probe_set_v1"
+}
