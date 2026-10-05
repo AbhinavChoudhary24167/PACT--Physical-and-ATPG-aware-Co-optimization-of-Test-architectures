@@ -43,3 +43,13 @@ def test_empty_regression_evidence_cannot_qualify_repair(tmp_path):
                                    benchmark_specific_optimization=False, focused_tests=[])))
     with pytest.raises(ValueError, match='Both circuit and reporter'):
         reference.qualified_dependency(path)
+
+
+def test_preparation_cannot_be_reused_after_generation_or_fault_model_changes():
+    flags = dict(reporting_only_relative_to_predecessor=True, preparation_reuse_permitted=True,
+                 ATPG_generation_algorithm_changed=False, fault_universe_changed=False)
+    for repair in (None, {}, dict(flags, reporting_only_relative_to_predecessor=False),
+                   dict(flags, preparation_reuse_permitted=False),
+                   dict(flags, ATPG_generation_algorithm_changed=True), dict(flags, fault_universe_changed=True)):
+        with pytest.raises(ValueError):
+            reference.reuse_preparation(Path('old_preparation.json'), {}, repair)

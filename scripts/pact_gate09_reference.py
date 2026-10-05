@@ -25,6 +25,21 @@ from pact_experiment_receipts import atomic_write
 META, RAW = BASE_META, BASE_RAW
 
 
+def reference_capacity(protocol, source):
+    """Add a source-sized preparation/route allowance to the immutable floor."""
+    measured = sum(source[key]['bytes'] for key in ('mapped_netlist', 'mapped_json'))
+    margin = dict(C=64 * 1024**2, D=max(512 * 1024**2, 128 * measured))
+    policy = dict(protocol['resource_policy'])
+    policy['C_minimum_free_bytes'] += margin['C']
+    policy['D_minimum_floor_bytes'] += margin['D']
+    result = require_capacity(dict(protocol, resource_policy=policy))
+    result['per_design_margin'] = dict(stage='ATPG_AND_PHYSICAL_REFERENCE_PREPARATION',
+        measured_source_bytes=measured, additional_bytes=margin,
+        rule='C +64 MiB; D +max(512 MiB,128*(mapped netlist bytes + mapped JSON bytes))',
+        exact_activity_margin='Must be recalculated from the actual pattern/cycle/net dimensions before activity jobs')
+    return result
+
+
 def repair_namespace(attempt, dependency_repair):
     if bool(attempt) != bool(dependency_repair):
         raise ValueError('A repair receipt and a separate attempt namespace are both required')
@@ -42,7 +57,12 @@ def qualified_dependency(path):
             or repair['PACT_source_changes'] != 0 or repair['scientific_parameters_changed']
             or repair['benchmark_specific_optimization']):
         raise ValueError('Only a qualified generic FAN infrastructure repair can change the backend')
-    if {record['label'] for record in repair['focused_tests']} != {'compound_circuit', 'reporter_control'}:
+    required_tests = {'compound_circuit', 'reporter_control'}
+    if repair.get('reporting_only_relative_to_predecessor'):
+        required_tests |= {'compound_reporter', 'b14_failed_probe'}
+    if repair.get('circuit_connectivity_repair'):
+        required_tests |= {'compound_reporter', 'b14_failed_probe', 'shared_net_arity', 'shared_net_truth'}
+    if not required_tests <= {record['label'] for record in repair['focused_tests']}:
         raise ValueError('Both circuit and reporter regressions are required')
     for value in [repair['binary'], repair['library'], repair['original_frozen_FAN'], *repair['files'].values()]:
         if admission.verify(value)['status'] != 'PASS':
@@ -51,6 +71,40 @@ def qualified_dependency(path):
         if record['exit_code'] or any(admission.verify(record[key])['status'] != 'PASS' for key in ('stdout', 'stderr')):
             raise ValueError('Dependency repair focused regression is not qualified')
     return repair
+
+
+def reuse_preparation(path, source, repair):
+    """Reuse completed ATPG/placement only across a qualified reporting-only fix."""
+    if not repair or not all(repair.get(flag) is True for flag in
+            ('reporting_only_relative_to_predecessor', 'preparation_reuse_permitted')):
+        raise ValueError('Preparation reuse requires a qualified reporting-only repair')
+    if repair.get('ATPG_generation_algorithm_changed') is not False or repair.get('fault_universe_changed') is not False:
+        raise ValueError('ATPG generation and fault universe must be unchanged for reuse')
+    predecessor_binding = repair['predecessor']
+    if admission.verify(predecessor_binding)['status'] != 'PASS':
+        raise ValueError('Preparation predecessor binding changed')
+    predecessor = qualified_dependency(Path(predecessor_binding['path']))
+    old = admission.read(path)
+    if (old['design'] != source['design'] or old['source'] != source['mapped_netlist'] or
+            old['status'] != 'PLACEMENT_READY_PENDING_REFERENCES' or
+            set(old['gates'].values()) != {'PASS'}):
+        raise ValueError('Only the same admitted successfully prepared design can be reused')
+    if old['ATPG_execution']['command'][0] != predecessor['binary']['path']:
+        raise ValueError('Prepared ATPG backend is not the qualified repair predecessor')
+    for key in ('source', 'patterns', 'placed_def', 'placed_netlist', 'config', 'SDC', 'source_placed_database'):
+        if admission.verify(old[key])['status'] != 'PASS':
+            raise ValueError('Prepared artifact changed: ' + key)
+    for key in ('ATPG_execution', 'placement_execution', 'seed_execution'):
+        execution = old[key]
+        if execution['exit_code'] or execution['timed_out'] or any(
+                admission.verify(execution[stream])['status'] != 'PASS' for stream in ('stdout', 'stderr')):
+            raise ValueError('Prepared execution evidence is not qualified: ' + key)
+    return dict(old, reuse=dict(classification='QUALIFIED_REPORTING_ONLY_INFRASTRUCTURE_REPAIR',
+        preparation=admission.binding(path), predecessor=predecessor_binding,
+        compatible_netlist=admission.binding(Path(old['patterns']['path']).parent / 'compatible.v'),
+        source_scan_order=admission.binding(Path(old['patterns']['path']).parent / 'source_scan_order.json'),
+        additional_ATPG_generations=0, additional_placement_executions=0,
+        scientific_method_changes=0, workload_unchanged=True, placement_unchanged=True))
 
 
 def configure(source_receipt, attempt=None, dependency_repair=None):
@@ -74,7 +128,7 @@ def configure(source_receipt, attempt=None, dependency_repair=None):
     for value in [*protocol['frozen_sources'].values(), *protocol['frozen_tools'].values()]:
         if admission.verify(value)['status'] != 'PASS':
             raise ValueError('Frozen implementation/tool changed')
-    require_capacity(protocol)
+    reference_capacity(protocol, source)
     os.environ.update(PACT_DEPENDENCY_ROOT='/root/pact-deps', PACT_EXPERIMENT_ROOT='/mnt/d/PACT_EXPERIMENTS',
                       OMP_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1', NUMBA_NUM_THREADS='1', PATH='/usr/bin:' + os.environ['PATH'])
     import pact_generalization_infrastructure as infrastructure
@@ -94,12 +148,12 @@ def configure(source_receipt, attempt=None, dependency_repair=None):
         return original_read(path)
 
     def guarded_execute(command, folder, *args, **kwargs):
-        gate = require_capacity(protocol)
+        gate = reference_capacity(protocol, source)
         atomic_write(Path(folder) / 'gate09_capacity.json', gate, immutable=True)
         return original_execute(command, folder, *args, **kwargs)
 
     def guarded_simulate(*args, **kwargs):
-        require_capacity(protocol)
+        reference_capacity(protocol, source)
         return original_simulate(*args, **kwargs)
 
     infrastructure.execute = physical.execute = guarded_execute
@@ -133,7 +187,7 @@ def register_source(design, source, protocol, dependency_repair=None):
         harness=admission.binding(Path(__file__)), scientific_method_changes=0), immutable=True)
 
 
-def run(action, source_receipt, attempt=None, dependency_repair=None):
+def run(action, source_receipt, attempt=None, dependency_repair=None, preparation_from=None):
     began = time.perf_counter()
     design, source, protocol, infrastructure, physical, repair = configure(source_receipt, attempt, dependency_repair)
     result_path = META / 'workers' / design / (action + '.json')
@@ -142,7 +196,7 @@ def run(action, source_receipt, attempt=None, dependency_repair=None):
     record = dict(schema='pact_gate09_reference_worker_v1', action=action, design=design,
                   created_utc=datetime.now(timezone.utc).isoformat(), PID=os.getpid(),
                   source_admission=admission.binding(source_receipt), harness=admission.binding(Path(__file__)),
-                  capacity=require_capacity(protocol), scientific_method_changes=0,
+                  capacity=reference_capacity(protocol, source), scientific_method_changes=0,
                   repair_attempt=attempt,
                   dependency_repair=admission.binding(dependency_repair) if dependency_repair else None,
                   common_FAN_backend=repair['binary'] if repair else admission.binding(infrastructure.REPAIRED),
@@ -162,6 +216,10 @@ def run(action, source_receipt, attempt=None, dependency_repair=None):
             result = infrastructure.prepare(design)
             record.update(status=result['status'], receipt=admission.binding(META / f'physical/{design}/preparation.json'))
         else:
+            if preparation_from:
+                retained = reuse_preparation(preparation_from, source, repair)
+                atomic_write(META / f'physical/{design}/preparation.json', retained, immutable=True)
+                record['retained_preparation'] = admission.binding(preparation_from)
             mount = '/mnt/pact-oss-recovery'
             if subprocess.run(['mountpoint', '-q', mount]).returncode:
                 Path(mount).mkdir(parents=True, exist_ok=True)
@@ -198,6 +256,9 @@ if __name__ == '__main__':
     parser.add_argument('--source-admission', type=Path, required=True)
     parser.add_argument('--attempt', help='Separate namespace for a qualified infrastructure repair')
     parser.add_argument('--dependency-repair', type=Path)
+    parser.add_argument('--preparation-from', type=Path, help='Reuse bound ATPG/placement across reporting-only repairs')
     args = parser.parse_args()
-    result = run(args.action, args.source_admission, args.attempt, args.dependency_repair)
+    if args.preparation_from and args.action != 'references':
+        parser.error('--preparation-from applies only to reference qualification')
+    result = run(args.action, args.source_admission, args.attempt, args.dependency_repair, args.preparation_from)
     raise SystemExit(0 if result['status'] in ('PLACEMENT_READY_PENDING_REFERENCES', 'INFRASTRUCTURE_QUALIFIED') else 2)

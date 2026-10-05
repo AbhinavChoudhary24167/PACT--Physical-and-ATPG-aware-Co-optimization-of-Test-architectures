@@ -1,0 +1,53 @@
+diff --git a/pkg/fan/src/atpg_cmd.cpp b/pkg/fan/src/atpg_cmd.cpp
+index 48ac467..81d5986 100644
+--- a/pkg/fan/src/atpg_cmd.cpp
++++ b/pkg/fan/src/atpg_cmd.cpp
+@@ -581,6 +581,7 @@ bool ReportFaultCmd::exec(const std::vector<std::string> &argv)
+ 			Cell *libc = c->libc_;
+ 			Cell *pmt = libc->getCell(pmtid);
+ 			Port *p = NULL;
++			Port *primitivePin = NULL;
+ 			if (pid < 0)
+ 			{ // must be CK,SE,SI pins on FF
+ 				if (pid == -1)
+@@ -622,6 +623,7 @@ bool ReportFaultCmd::exec(const std::vector<std::string> &argv)
+ 						{
+ 							continue;
+ 						}
++						primitivePin = pmt->getPort(i);
+ 						Net *n = pmt->getPort(i)->exNet_;
+ 						if (!n)
+ 						{
+@@ -650,14 +652,16 @@ bool ReportFaultCmd::exec(const std::vector<std::string> &argv)
+ 				int inCount = 0;
+ 				for (int i = 0; i < pmt->getNPort(); ++i)
+ 				{
+-					if (pmt->getPort(i)->type_ == Port::INPUT)
++					if (pmt->getPort(i)->type_ != Port::INPUT)
+ 					{
+-						++inCount;
++						continue;
+ 					}
++					++inCount;
+ 					if (inCount != pid)
+ 					{
+ 						continue;
+ 					}
++					primitivePin = pmt->getPort(i);
+ 					Net *n = pmt->getPort(i)->exNet_;
+ 					if (!n)
+ 					{
+@@ -684,6 +688,13 @@ bool ReportFaultCmd::exec(const std::vector<std::string> &argv)
+ 			{
+ 				std::cout << c->name_ << "/" << p->name_ << " ";
+ 			}
++			else if (primitivePin)
++			{
++				// A compound-cell primitive pin need not reach a public cell port.
++				// Name the existing fault site; do not change its class or weight.
++				std::cout << c->name_ << "/" << pmt->name_ << "/"
++				          << primitivePin->name_ << " ";
++			}
+ 			std::cout << "(" << libc->name_ << ")";
+ 		}
+ 		std::cout << " [equivalent=" << (*it)->equivalent_ << "]\n";

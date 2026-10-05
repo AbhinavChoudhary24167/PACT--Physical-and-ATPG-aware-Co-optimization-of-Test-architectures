@@ -1,0 +1,17 @@
+{
+  "status": "FAILED_ATTEMPTS_PRESERVED",
+  "attempts": [
+    {
+      "stage": "reporter_only_b14_failed_probe",
+      "reason": "MUX extra-fanin defect; saved b14 workload cannot be reused"
+    },
+    {
+      "stage": "connectivity_reporter_optimized_build",
+      "reason": "copy2 restored an older source timestamp; make did not rebuild reporter; unchanged binary retained"
+    },
+    {
+      "stage": "connectivity_compound_reporter",
+      "reason": "Reporter remained old after skipped rebuild; corrected with fresh source timestamp"
+    }
+  ]
+}

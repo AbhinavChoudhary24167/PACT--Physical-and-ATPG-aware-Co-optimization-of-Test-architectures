@@ -1,0 +1,409 @@
+{
+  "ATPG_generation_algorithm_changed": false,
+  "PACT_source_changes": 0,
+  "benchmark_specific_optimization": false,
+  "binary": {
+    "bytes": 871192,
+    "path": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/bin/opt/fan",
+    "sha256": "b554618c945f68dcf242f0baa9542b52bbfc8f8b2abb72378009bdec3b62433e"
+  },
+  "branch": "fix/shared-compound-net-drivers",
+  "builds": [
+    {
+      "bytes": 2219,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/dependency_probes/upstream_sanitized_build.json",
+      "sha256": "1941e8be2f8494c0242c8a08c51e47c92024899850cb5716604d1a58a4010cdb"
+    },
+    {
+      "bytes": 6350,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/dependency_probes/repaired_sanitized_build_after_patch.json",
+      "sha256": "4505789eb8943d47b59bf031ec26c026275fd608e2985d380bebc2fb599fb5be"
+    },
+    {
+      "bytes": 2145,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/dependency_probes/combined_repair_optimized_build.json",
+      "sha256": "13aa1e3550cff1339736cbdd3090b7f8f01f3710598000ce14295108cd96f5aa"
+    },
+    {
+      "bytes": 1200,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/build_binding.json",
+      "sha256": "71ce4d9cca4309bff499f52fd467e68ca3bb21f86b46a3fbbfc99cce00862063"
+    },
+    {
+      "bytes": 1874,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/core_build_binding.json",
+      "sha256": "bfbbde19a1a5dc083a9cef4e5beed0e4f628da0d5ecb9293cd5c3099376822f4"
+    },
+    {
+      "bytes": 1227,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/final_rebuilt_binding.json",
+      "sha256": "297f8c07e9fe70f26f66b8ad0e6d888c65b44816f05ff71271fa24e291eee045"
+    }
+  ],
+  "capacity": {
+    "per_design_margin": "Pending admitted artifact dimensions; fixed floor is a minimum, not a sufficient per-design budget",
+    "status": "PASS",
+    "volumes": {
+      "C": {
+        "deficit_bytes": 0,
+        "free_bytes": 20611649536,
+        "minimum_free_bytes": 6442450944,
+        "status": "PASS"
+      },
+      "D": {
+        "deficit_bytes": 0,
+        "free_bytes": 41529389056,
+        "minimum_free_bytes": 26843545600,
+        "status": "PASS"
+      }
+    }
+  },
+  "circuit_connectivity_repair": true,
+  "circuit_repair_SHA": "db0026435c99e29e00cc2d6b966bd561232935b9",
+  "combined_SHA": "4c253bfa613e5827f17c42a5fce8be7bea779e1e",
+  "connectivity_patch": {
+    "bytes": 529,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/shared_net_connectivity.patch",
+    "sha256": "9771b47fc88a46c4797dddd214789564fbbd841eb96d2efea28176423f88ef17"
+  },
+  "connectivity_reproduction": {
+    "bytes": 3016,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/shared_net_reproduction.json",
+    "sha256": "84821b66c8494923352084627f184bd14688fcd4dd6987ad9a4863b8a2269354"
+  },
+  "dependency": "FAN_ATPG",
+  "fault_universe_changed": true,
+  "fault_universe_correction": "Remove spurious fanins introduced by treating receiver pins as drivers; SAF model unchanged",
+  "files": {
+    "pkg/core/src/circuit.cpp": {
+      "bytes": 28064,
+      "path": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/pkg/core/src/circuit.cpp",
+      "sha256": "814f78904121e8c8cc4298d3820a9899e3825f5394967012995dcfa3194d6527"
+    },
+    "pkg/fan/src/atpg_cmd.cpp": {
+      "bytes": 40077,
+      "path": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/pkg/fan/src/atpg_cmd.cpp",
+      "sha256": "ff834380535a43a804701e6a09a9e817b708e8ea6658bc8d67d26690ccccaa6c"
+    },
+    "tests/compound_circuit_test.cpp": {
+      "bytes": 3911,
+      "path": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/tests/compound_circuit_test.cpp",
+      "sha256": "aa332840e1f1646b1b7d140fa8996abc379f2a20ff117dca3a39f356a56d7c3b"
+    },
+    "tests/compound_mux.v": {
+      "bytes": 273,
+      "path": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/tests/compound_mux.v",
+      "sha256": "bc75b2be952bc95e4bf55386543a35e17649e8bdebfe62360939b9735bb80060"
+    },
+    "tests/compound_mux_test.cpp": {
+      "bytes": 3250,
+      "path": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/tests/compound_mux_test.cpp",
+      "sha256": "17660560fdaa35bcf88ac0c5d0bfc7ac57eca3d2ab6f7687b0cf6a42e65fa6f4"
+    },
+    "tests/compound_scan.v": {
+      "bytes": 292,
+      "path": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/tests/compound_scan.v",
+      "sha256": "2593f1f745aaa312219aadb5c2627e8208b8b2892ca910db328e8039e51716e4"
+    },
+    "tests/report_compound_faults.py": {
+      "bytes": 3730,
+      "path": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/tests/report_compound_faults.py",
+      "sha256": "4c7ebe7bc407eeb6c8cc1bca697268b4a5af3ec8a56f73b7e62586eaaea9ad1a"
+    },
+    "tests/report_fault_scan.py": {
+      "bytes": 2159,
+      "path": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/tests/report_fault_scan.py",
+      "sha256": "de3a32d68526d74d4ba986ca761bb1e2903d60b0b034bf2a4bb1d866794d3656"
+    },
+    "tests/run_compound_circuit.py": {
+      "bytes": 2079,
+      "path": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/tests/run_compound_circuit.py",
+      "sha256": "06c2c6ffd7a613f38d93f00e3073f2934459b7977c5912473aaa1ac91efd0447"
+    }
+  },
+  "focused_tests": [
+    {
+      "command": [
+        "python3",
+        "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/tests/run_compound_circuit.py",
+        "--mode",
+        "opt"
+      ],
+      "cwd": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair",
+      "exit_code": 0,
+      "label": "compound_circuit",
+      "stderr": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/qualified_compound_circuit.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 57,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/qualified_compound_circuit.stdout.txt",
+        "sha256": "bd2fdfda31f5b76118434963bb46e1a71435001327b98ea654c1cebd5dd056df"
+      },
+      "wall_seconds": 3.801543935000012
+    },
+    {
+      "command": [
+        "python3",
+        "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/tests/report_fault_scan.py",
+        "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/bin/opt/fan",
+        "/root/pact-deps/FAN_ATPG-gate09-crash-repair/techlib/mod_nangate45.mdt",
+        "/root/pact-deps/FAN_ATPG-gate09-crash-repair/mod_netlist/s27.v",
+        "/root/pact-deps/FAN_ATPG/pat/FAN_s27.pat"
+      ],
+      "cwd": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair",
+      "exit_code": 0,
+      "label": "reporter_control",
+      "stderr": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/qualified_reporter_control.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 75,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/qualified_reporter_control.stdout.txt",
+        "sha256": "679b934650a10e6001efa676fa5ebd9bfbd57ad443ad977963227a824b806180"
+      },
+      "wall_seconds": 0.11169406099998014
+    },
+    {
+      "command": [
+        "python3",
+        "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/tests/report_compound_faults.py",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/core_fixed_reporter_opt",
+        "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/bin/opt/fan",
+        "/root/pact-deps/FAN_ATPG-gate09-crash-repair/techlib/mod_nangate45.mdt",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/minimal.v",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/minimal.pat"
+      ],
+      "cwd": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair",
+      "exit_code": 0,
+      "label": "compound_reporter",
+      "stderr": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/qualified_compound_reporter.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 107,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/qualified_compound_reporter.stdout.txt",
+        "sha256": "8c909fafdf7ea91b8c6a3b0cadfb67506f12978b72e9a98b06713aa5d0a91591"
+      },
+      "wall_seconds": 0.3332898890000138
+    },
+    {
+      "command": [
+        "python3",
+        "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/tests/report_compound_faults.py",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/core_fixed_reporter_opt",
+        "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/bin/opt/fan",
+        "/root/pact-deps/FAN_ATPG-gate09-crash-repair/techlib/mod_nangate45.mdt",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b14_opt/blif_output_aliases/mapped.v",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_circuit/inputs/b14_opt/patterns.pat"
+      ],
+      "cwd": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair",
+      "exit_code": 0,
+      "label": "b14_failed_probe",
+      "stderr": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/qualified_b14_failed_probe.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 107,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/qualified_b14_failed_probe.stdout.txt",
+        "sha256": "8c909fafdf7ea91b8c6a3b0cadfb67506f12978b72e9a98b06713aa5d0a91591"
+      },
+      "wall_seconds": 4.122483760000023
+    },
+    {
+      "command": [
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/shared_net_after_mux_test",
+        "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/techlib/mod_nangate45.mdt",
+        "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/tests/compound_mux.v",
+        "arity"
+      ],
+      "cwd": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair",
+      "exit_code": 0,
+      "label": "shared_net_arity",
+      "stderr": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/shared_net_after_arity.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 11,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/shared_net_after_arity.stdout.txt",
+        "sha256": "1be5f007b30e19651ed082b587cbe760bb76c03b16b42cc34a57e55f6d935bba"
+      },
+      "wall_seconds": 0.05060514800000249
+    },
+    {
+      "command": [
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/shared_net_after_mux_test",
+        "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/techlib/mod_nangate45.mdt",
+        "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/tests/compound_mux.v",
+        "truth"
+      ],
+      "cwd": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair",
+      "exit_code": 0,
+      "label": "shared_net_truth",
+      "stderr": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/shared_net_after_truth.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 11,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/shared_net_after_truth.stdout.txt",
+        "sha256": "8c07255fcb0ca82ae7b48025807eb0d1ae5d7c03a8c6e904e7f006d66e43ddd9"
+      },
+      "wall_seconds": 0.04321978300001206
+    }
+  ],
+  "harness": {
+    "bytes": 7675,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scratch/gate09_fan_report_qualify.py",
+    "sha256": "0580e8bc836bbdfa992eeda30f72d5fc62a1ca96ea36ccfe7df6851e388124fb"
+  },
+  "historical_impact": {
+    "s38417": {
+      "cell_types": [
+        "AND2_X1",
+        "AND2_X2",
+        "AND3_X1",
+        "AND3_X2",
+        "AND3_X4",
+        "AND4_X1",
+        "AND4_X4",
+        "BUF_X3",
+        "INV_X1",
+        "INV_X2",
+        "INV_X4",
+        "NAND2_X1",
+        "NAND3_X1",
+        "NAND4_X1",
+        "NOR2_X1",
+        "NOR2_X2",
+        "NOR3_X1",
+        "NOR3_X2",
+        "NOR4_X1",
+        "NOR4_X2",
+        "OR2_X1",
+        "OR3_X1",
+        "OR3_X2",
+        "OR4_X1",
+        "OR4_X4",
+        "SDFF_X1"
+      ],
+      "compound_cell_trigger_present": false,
+      "historical_campaign_reruns": 0,
+      "source": {
+        "bytes": 1121993,
+        "path": "/root/pact-deps/FAN_ATPG/mod_netlist/s38417.v",
+        "sha256": "da4c3f062ad0c9255952b636a4fd1d1e5e5a4569a1ab102949f9c36b4c30ac47"
+      }
+    },
+    "s38584": {
+      "cell_types": [
+        "AND2_X1",
+        "AND2_X2",
+        "AND2_X4",
+        "AND3_X1",
+        "AND3_X2",
+        "AND3_X4",
+        "AND4_X1",
+        "BUF_X3",
+        "BUF_X8",
+        "INV_X1",
+        "INV_X2",
+        "INV_X4",
+        "NAND2_X1",
+        "NAND2_X2",
+        "NAND3_X1",
+        "NAND4_X1",
+        "NAND4_X2",
+        "NOR2_X1",
+        "NOR2_X2",
+        "NOR3_X1",
+        "NOR3_X2",
+        "NOR4_X1",
+        "OR2_X1",
+        "OR2_X2",
+        "OR2_X4",
+        "OR3_X1",
+        "OR3_X2",
+        "OR3_X4",
+        "OR4_X1",
+        "SDFF_X1"
+      ],
+      "compound_cell_trigger_present": false,
+      "historical_campaign_reruns": 0,
+      "source": {
+        "bytes": 1412037,
+        "path": "/root/pact-deps/FAN_ATPG/mod_netlist/s38584.v",
+        "sha256": "cab7a3dab756412cd8da4d5bb3be6466fea102c09a0507781b078ab6e4c33d2b"
+      }
+    }
+  },
+  "infrastructure_repair_precedes_reference_admission": true,
+  "library": {
+    "bytes": 37473,
+    "path": "/root/pact-deps/FAN_ATPG/techlib/mod_nangate45.mdt",
+    "sha256": "65cfdc14815c7c256573fb7210d502593c14eb7b96f33cc6b13420f1c95abcbe"
+  },
+  "minimal_reproduction": {
+    "bytes": 1072,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/reproduction.json",
+    "sha256": "66597f5d04c35aca7e7d7a827823272fdf70ea125e019c75a669a07baf27c3a3"
+  },
+  "original_frozen_FAN": {
+    "bytes": 871192,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scratch/FAN_ATPG-report-repair/bin/opt/fan",
+    "sha256": "4a569e9887443dfb85dcc7dafd95654570938f525692a760e4e14662163305bd"
+  },
+  "patch": {
+    "bytes": 1692,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/compound_reporter.patch",
+    "sha256": "0a6152bd3db2bfa258bef3d54ca7a9e80a0d4b4bce5d13b69b9fe8c77f858f57"
+  },
+  "predecessor": {
+    "bytes": 8725,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/dependency_repairs/FAN_ATPG/qualification.json",
+    "sha256": "f4b327274418e0b8aaf364ce3e06c80292d3badf9818a54af34822fd7357728d"
+  },
+  "preparation_reuse_permitted": false,
+  "reporter_original_SHA": "05ac6173535418711b60ee22df391da7a4a82252",
+  "reporter_predecessor_SHA": "458c6889887811ce20c2970969a264c9acf5a9dd",
+  "reporter_repair_SHA": "4c253bfa613e5827f17c42a5fce8be7bea779e1e",
+  "reporting_only_relative_to_predecessor": false,
+  "schema": "pact_gate09_dependency_repair_qualification_v3",
+  "scientific_parameters_changed": false,
+  "scope": "Qualified primitive level/arity repair plus driving-only shared-net fanins and resolved internal fault names",
+  "source_reference_admission_still_pending": true,
+  "status": "QUALIFIED_GENERIC_INFRASTRUCTURE_REPAIR",
+  "tracked_source_diff": {
+    "command": [
+      "git",
+      "-C",
+      "/root/pact-deps/FAN_ATPG-gate09-reporter-repair",
+      "diff",
+      "--exit-code",
+      "HEAD",
+      "--",
+      "pkg",
+      "tests"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": ""
+  },
+  "upstream_SHA": "26b2b36c0e9db11a4b6d9e759df6e44357121f39",
+  "upstream_reporting": {
+    "bytes": 799,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/dependency_probes/FAN_upstream_reporting.json",
+    "sha256": "31442babd763f040ef84f367da172a850ab97fafe051644702f7c44a6d24840e"
+  }
+}

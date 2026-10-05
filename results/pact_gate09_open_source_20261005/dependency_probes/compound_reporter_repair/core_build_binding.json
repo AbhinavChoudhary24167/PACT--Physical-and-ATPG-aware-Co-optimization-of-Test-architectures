@@ -1,0 +1,44 @@
+{
+  "binary": {
+    "bytes": 871192,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/core_fixed_reporter_opt",
+    "sha256": "21ee5b990fd608ac7d8e8cf0ae4813ce33e0f1307841b432fb345f7f5d91be4b"
+  },
+  "core_source": {
+    "bytes": 28064,
+    "path": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/pkg/core/src/circuit.cpp",
+    "sha256": "814f78904121e8c8cc4298d3820a9899e3825f5394967012995dcfa3194d6527"
+  },
+  "execution": {
+    "command": [
+      "make",
+      "-j1",
+      "install",
+      "MODE=opt"
+    ],
+    "cwd": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair",
+    "exit_code": 0,
+    "stderr": {
+      "bytes": 3225,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/core_optimized_build.stderr.txt",
+      "sha256": "ac40c5b5a3941342405420beb9a66d1ecbdde8988e68c042e96fc6f58a22daea"
+    },
+    "stdout": {
+      "bytes": 468,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/core_optimized_build.stdout.txt",
+      "sha256": "cce3cd91a07af3f1bad851b0f7153eaf1c73f0d88377fe838c0691e85d8a1bbd"
+    },
+    "wall_seconds": 8.227063443
+  },
+  "preserved_reporter_patch": {
+    "bytes": 40077,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/reporter_source_preserved_before_core_build.cpp",
+    "sha256": "ff834380535a43a804701e6a09a9e817b708e8ea6658bc8d67d26690ccccaa6c"
+  },
+  "reporter_source": {
+    "bytes": 39678,
+    "path": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/pkg/fan/src/atpg_cmd.cpp",
+    "sha256": "82b3b891cf5a8a942a7482c6e357ece10ea31cc448c810e78e2f138f606104ac"
+  },
+  "source_SHA": "5893339c064bc3f02884edcd0bea220e1f0119d2"
+}
