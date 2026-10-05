@@ -10,6 +10,7 @@ from datetime import datetime, timezone
 import inspect
 import json
 import os
+import platform
 from pathlib import Path
 import resource
 import shutil
@@ -271,15 +272,26 @@ def search(meta, raw, design, protocol):
         preregistration=admission.binding(admission.INTAKE),
         changes=['seconds expression: 300*max(1,ceil(FF/600)) -> 900', 'runtime policy receipt text'],
         evaluator='Frozen qualified CPU incremental State; independent cpu_reference.reference',
-        worker_ceiling_seconds=7200, solver_parameters_changed=False), immutable=True)
+        worker_ceiling_seconds=7200, solver_parameters_changed=False,
+        machine=dict(platform=platform.platform(), machine=platform.machine(),
+            CPU_count=os.cpu_count(), python=sys.version, executable=admission.binding(Path(sys.executable)),
+            memory={line.split(':')[0]: int(line.split()[1]) for line in Path('/proc/meminfo').read_text().splitlines()
+                if line.split(':')[0] in ('MemTotal', 'MemAvailable', 'SwapTotal')})), immutable=True)
     adapter_path.parent.mkdir(parents=True, exist_ok=True)
     adapter_path.write_text(budget_adapter(cold.search))
     from pact_cold_start_measure import execute_stage
     method = admission.read(meta / f'baselines/{design}_selected.json')['method']
     gate = admission.read(meta / f'measurements/{design}/{method}/preparation.json')
     measure.capacity(protocol, gate['dimensions'], gate['retained_bytes'])
-    execute_stage([sys.executable, Path(__file__), 'search-child', '--design', design,
-        '--meta', meta, '--raw', raw], raw / f'search_worker/{design}', 'search', time.perf_counter()+7200)
+    worker_folder = raw / f'search_worker/{design}'
+    worker_folder.mkdir(parents=True, exist_ok=False)
+    try:
+        execute_stage([sys.executable, Path(__file__), 'search-child', '--design', design,
+            '--meta', meta, '--raw', raw], worker_folder, 'search', time.perf_counter()+7200)
+    finally:
+        receipt = worker_folder / 'search.execution.json'
+        if receipt.exists():
+            atomic_write(meta / f'workers/{design}/search.execution.json', admission.read(receipt), immutable=True)
     selected = admission.read(meta / f'selections/{design}/preselected_candidates.json')
     if len(selected['records']) > 3 or selected['candidate_routes_before_selection'] != 0:
         raise ValueError('Frozen preselection invariant failed')
