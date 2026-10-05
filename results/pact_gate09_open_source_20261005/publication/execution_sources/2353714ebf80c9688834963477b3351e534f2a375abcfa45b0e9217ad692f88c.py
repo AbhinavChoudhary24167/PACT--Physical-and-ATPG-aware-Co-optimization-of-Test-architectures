@@ -14,26 +14,6 @@ import pact_gate09_reference as references
 from pact_experiment_receipts import atomic_write
 
 
-def require_same_preparation(meta, source_path, certificate):
-    worker = admission.read(meta / 'workers/b15_opt/prepare.json')
-    path = meta / 'physical/b15_opt/preparation.json'
-    prep = admission.read(path)
-    source = admission.read(source_path)
-    repair = references.qualified_dependency(certificate)
-    if (worker['status'] != 'PLACEMENT_READY_PENDING_REFERENCES' or
-            prep['status'] != 'PLACEMENT_READY_PENDING_REFERENCES' or
-            worker['source_admission']['sha256'] != admission.digest(source_path) or
-            worker['common_FAN_backend'] != repair['binary'] or
-            worker['qualified_repair_source_SHA'] != repair['combined_SHA'] or
-            prep['source'] != source['mapped_netlist'] or
-            admission.verify(worker['receipt'])['status'] != 'PASS'):
-        raise ValueError('Prepared workload/source/backend differs; continuation cannot reuse it')
-    for key in ('source','patterns','placed_def','placed_netlist','source_placed_database','SDC','config'):
-        if admission.verify(prep[key])['status'] != 'PASS':
-            raise ValueError('Prepared artifact changed: '+key)
-    return admission.binding(path)
-
-
 def resume(previous_path, certificate, ledger_path):
     if ledger_path.exists():
         raise ValueError('Preserve previous resume; no implicit replay')
@@ -41,7 +21,6 @@ def resume(previous_path, certificate, ledger_path):
     design = previous['admission_hold_design']
     if previous['state'] != 'COHORT_TERMINAL' or design != 'b15_opt':
         raise ValueError('This adapter only resumes the preserved prospective-registration stop')
-    capacity_recovery = previous['records'][1]['status'] == 'PACT_GATE09_BLOCKED_CAPACITY'
     failed_meta, failed_raw = references.repair_namespace('primary_'+design, certificate)
     failure_path = failed_meta / f'workers/{design}/prepare.json'
     failure = admission.read(failure_path)
@@ -58,17 +37,9 @@ def resume(previous_path, certificate, ledger_path):
     for binding in (source['mapped_netlist'], source['mapped_json'], *source['stages'].values()):
         if admission.verify(binding)['status'] != 'PASS':
             raise ValueError('Preserved source qualification changed')
-    retained_preparation = None
-    if capacity_recovery:
-        relocation = references.BASE_META / 'storage_fixture_relocation.json'
-        if admission.read(relocation)['status'] != 'PASS':
-            raise ValueError('Verified cache relocation required before capacity continuation')
-        prepared_meta, _ = references.repair_namespace('metadata_registration_'+design, certificate)
-        retained_preparation = require_same_preparation(prepared_meta, source_path, certificate)
     script = inspect.getsource(original.admit_and_run)
     replacements = {
-        "folder = references.BASE_META / f'cohort/{design}'": ("folder = references.BASE_META / f'cohort_capacity_recovered/{design}'" if capacity_recovery else
-            "folder = references.BASE_META / f'cohort_metadata_registration/{design}'"),
+        "folder = references.BASE_META / f'cohort/{design}'": "folder = references.BASE_META / f'cohort_metadata_registration/{design}'",
         "attempt = 'primary_'+design": "attempt = 'metadata_registration_'+design",
         "ROOT / 'scripts/pact_gate09_cohort_reference.py'": "ROOT / 'scripts/pact_gate09_cohort_reference_registered.py'"}
     expected = [1,1,2]
@@ -83,27 +54,17 @@ def resume(previous_path, certificate, ledger_path):
                 source_or_mapping_reexecutions=0, scientific_method_changes=0), immutable=True)
             print('REUSE_QUALIFIED_SOURCE', design, flush=True)
             return True
-        if label == 'prepare' and retained_preparation and source_path in command:
-            require_same_preparation(prepared_meta, source_path, certificate)
-            atomic_write(folder / 'preparation_reuse.json', dict(status='PASS',preparation=retained_preparation,
-                source=admission.binding(source_path),dependency_repair=admission.binding(certificate),
-                ATPG_or_placement_reexecutions=0,scientific_method_changes=0),immutable=True)
-            print('REUSE_IDENTICAL_QUALIFIED_PREPARATION',design,flush=True)
-            return True
         return original.run(command, folder, label)
     namespace = dict(original.__dict__, run=run)
     exec(compile(script, '<Gate09-qualified-metadata-only-cohort-continuation>', 'exec'), namespace)
     record = dict(schema='pact_gate09_fixed_cohort_execution_v1', state='RESUMING_FIXED_COHORT',
         created_utc=original.now(), PID=os.getpid(), Linux_boot_id=Path('/proc/sys/kernel/random/boot_id').read_text().strip(),
         previous_execution=admission.binding(previous_path), prior_registration_failure=admission.binding(failure_path),
-        retained_preparation=retained_preparation,
-        storage_relocation=admission.binding(relocation) if capacity_recovery else None,
         protocol=admission.binding(admission.INTAKE), dependency_repair=admission.binding(certificate),
         source=admission.binding(Path(__file__)), original_controller=admission.binding(Path(original.__file__)),
         design_order=protocol['cohort_order'], records=[r for r in previous['records'] if r['status']=='COMPETITIVE_COMPARISON_TERMINAL'],
         stop_policy=previous['stop_policy'], scientific_method_changes=0,
-        correction=('Verified cache relocation; identical qualified source/workload/placement/backend retained; no scientific job repeated'
-            if capacity_recovery else 'Metadata registration requires a prior failed-preparation binding only when one exists; no scientific job was repeated'))
+        correction='Metadata registration requires a prior failed-preparation binding only when one exists; no scientific job was repeated')
     atomic_write(ledger_path, record, immutable=True)
     blocked = None
     for current in protocol['cohort_order'][protocol['cohort_order'].index(design):]:

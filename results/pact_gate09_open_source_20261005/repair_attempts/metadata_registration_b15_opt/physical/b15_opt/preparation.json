@@ -1,0 +1,124 @@
+{
+  "ATPG_execution": {
+    "command": [
+      "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/bin/opt/fan",
+      "-f",
+      "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/atpg.script"
+    ],
+    "cwd": "/root/pact-deps/FAN_ATPG",
+    "exit_code": 0,
+    "stderr": {
+      "bytes": 0,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/atpg_generate/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 4149,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/atpg_generate/stdout.txt",
+      "sha256": "f3082d4db8c0af13c5794ea4c8b3f104c5c2d6c4ce3c40517b76541fb2504b6d"
+    },
+    "timed_out": false,
+    "timestamp_utc": "2026-10-05T20:03:47.752840+00:00",
+    "wall_seconds": 118.68204394399999
+  },
+  "ATPG_statistics": {
+    "coverage": 96.75,
+    "detected": 55935,
+    "patterns": 464,
+    "total": 57814
+  },
+  "SDC": {
+    "bytes": 10285,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.sdc",
+    "sha256": "f401061c2f34b7689dfa8cb86e08d877ad444103fe6d897be619d635f52857e6"
+  },
+  "config": {
+    "bytes": 525,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/config.mk",
+    "sha256": "852347ee305ee9b303cb3c0a2133b08a0b715a8774245892b3dcbd77d8fe8183"
+  },
+  "design": "b15_opt",
+  "gates": {
+    "ATPG": "PASS",
+    "placement": "PASS",
+    "scan_representation": "PASS",
+    "source_topology": "PASS",
+    "synthesis": "PASS"
+  },
+  "patterns": {
+    "bytes": 487355,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/patterns.pat",
+    "sha256": "89b3b47b37131976501265aa72b96de79504ac12ed1cf95887aec6c16e387002"
+  },
+  "placed_def": {
+    "bytes": 921071,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/placed.def",
+    "sha256": "ef180416e080e2cf7b60d57431d990cf695f1f8750c7da92625584d5e7d68f10"
+  },
+  "placed_netlist": {
+    "bytes": 479787,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/placed.v",
+    "sha256": "fd42074558b0c73d5296c78221b55bb817797316dada4d0360937bda4e6e4242"
+  },
+  "placement_execution": {
+    "command": [
+      "make",
+      "DESIGN_CONFIG=/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/config.mk",
+      "WORK_HOME=/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs",
+      "FLOW_VARIANT=generalization_source",
+      "NUM_CORES=2",
+      "OPENROAD_EXE=/usr/bin/openroad",
+      "YOSYS_EXE=/usr/bin/yosys",
+      "place"
+    ],
+    "cwd": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+    "exit_code": 0,
+    "stderr": {
+      "bytes": 1117,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/synthesis_placement/stderr.txt",
+      "sha256": "1823369a62dd6a4fd4e36d875e4f3611e5220a46393f1f9c59ab2d1c2a9567e7"
+    },
+    "stdout": {
+      "bytes": 79946,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/synthesis_placement/stdout.txt",
+      "sha256": "8882db1843a444e4cabe41817a824ccef200c5623f13031c87acf08360aaa7d9"
+    },
+    "timed_out": false,
+    "timestamp_utc": "2026-10-05T20:05:01.098749+00:00",
+    "wall_seconds": 71.67636284100001
+  },
+  "seed_execution": {
+    "command": [
+      "/usr/bin/openroad",
+      "-no_init",
+      "-exit",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/tcl/phase0b_seed_placement.tcl"
+    ],
+    "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+    "exit_code": 0,
+    "stderr": {
+      "bytes": 0,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/seed_placement/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 1187,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/seed_placement/stdout.txt",
+      "sha256": "08bf9e30e10542e807b67f590c7bf5ea90db470da2c2f47c73a014ed2bc7efdc"
+    },
+    "timed_out": false,
+    "timestamp_utc": "2026-10-05T20:05:02.384466+00:00",
+    "wall_seconds": 1.0822575809999648
+  },
+  "source": {
+    "bytes": 497703,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b15_opt/mapped.v",
+    "sha256": "3a1f3e6dfcfa3e7e457fa6c3b9e7baffa8a651ce6e43641efc82a59a9c8de536"
+  },
+  "source_placed_database": {
+    "bytes": 2719149,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.odb",
+    "sha256": "bf91895d023be9e935d4948e9ca76f40d7bef722d5c863b09479a1141e41ae67"
+  },
+  "status": "PLACEMENT_READY_PENDING_REFERENCES"
+}

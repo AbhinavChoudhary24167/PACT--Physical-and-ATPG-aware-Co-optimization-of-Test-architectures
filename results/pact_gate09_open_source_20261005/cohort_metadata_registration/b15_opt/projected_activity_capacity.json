@@ -1,0 +1,11 @@
+{
+  "PACT_search_started": false,
+  "before_reference_routing": true,
+  "dimensions": {
+    "cycles": 210656,
+    "nets": 8434
+  },
+  "error": "PACT_GATE09_BLOCKED_CAPACITY: {\"volumes\": {\"C\": {\"free_bytes\": 19009241088, \"minimum_free_bytes\": 6442450944, \"deficit_bytes\": 0, \"status\": \"PASS\"}, \"D\": {\"free_bytes\": 39117762560, \"minimum_free_bytes\": 39783539497, \"deficit_bytes\": 665776937, \"status\": \"BLOCKED\"}}, \"status\": \"PACT_GATE09_BLOCKED_CAPACITY\", \"per_design_margin\": {\"dimensions\": {\"nets\": 8434, \"cycles\": 210656}, \"retained_bytes\": 5105065, \"projected_remaining_bytes\": 18308703017, \"rule\": \"20 GiB + max(5 GiB, retained packages + nine projected complete traces + one complete count cache +512 MiB)\", \"fixed_floor_retained\": true}}",
+  "retained_bytes": 5105065,
+  "status": "PACT_GATE09_BLOCKED_CAPACITY"
+}
