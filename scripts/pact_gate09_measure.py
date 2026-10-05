@@ -10,6 +10,7 @@ import gzip
 import json
 import os
 from pathlib import Path
+import resource
 import shutil
 import sys
 import time
@@ -24,6 +25,8 @@ from pact_experiment_receipts import atomic_write
 
 def capacity(protocol, dimensions=None, retained_bytes=0):
     policy = dict(protocol['resource_policy'])
+    if policy['D_minimum_floor_bytes'] < admission.MINIMUM_D or policy['C_minimum_free_bytes'] < admission.MINIMUM_C:
+        raise ValueError('Gate-09 fixed capacity floor cannot be reduced')
     if dimensions:
         cells = dimensions['nets'] * dimensions['cycles']
         # Complete traces for B0-B5 plus at most three PACT candidates and
@@ -190,6 +193,54 @@ def run(design, method, protocol, meta, raw):
     cpu.run(source, 'GATE09_PRIMARY', 'normal', 7200)
 
 
+def worker(args):
+    began = time.perf_counter()
+    meta, raw = references.repair_namespace(args.attempt, args.dependency_repair)
+    source = admission.read(args.source_admission)
+    design = source['design']
+    name = 'measure_' + args.action + '_' + args.method
+    result_path = meta / f'workers/{design}/{name}.json'
+    state_path = result_path.with_name(name + '.lifecycle.json')
+    if result_path.exists() or state_path.exists():
+        raise ValueError('Preserve prior started/completed exact stage; no implicit replay')
+    snapshot = meta / f'execution_sources/{admission.digest(Path(__file__))}.py'
+    snapshot.parent.mkdir(parents=True, exist_ok=True)
+    if not snapshot.exists():
+        snapshot.write_bytes(Path(__file__).read_bytes())
+    record = dict(schema='pact_gate09_exact_worker_v1', action=args.action, method=args.method, design=design,
+        created_utc=datetime.now(timezone.utc).isoformat(), PID=os.getpid(),
+        Linux_boot_id=Path('/proc/sys/kernel/random/boot_id').read_text().strip(),
+        source_admission=admission.binding(args.source_admission),
+        dependency_repair=admission.binding(args.dependency_repair), harness=admission.binding(snapshot),
+        code_commit=admission.command(['git', '-C', str(ROOT), 'rev-parse', 'HEAD'])['stdout'],
+        scientific_method_changes=0, heavy_workers=1, CPU_only=True, timeout_regime='normal',
+        CPU_activity_ceiling_seconds=7200, PACT_search_started=False)
+    atomic_write(state_path, dict(record, state='REGISTERED'), immutable=True)
+    atomic_write(result_path.with_name(name + '.registered.json'), dict(record, state='REGISTERED'), immutable=True)
+    try:
+        _, source, protocol, _, _, _ = references.configure(args.source_admission, args.attempt, args.dependency_repair)
+        atomic_write(result_path.with_name(name + '.started.json'), dict(record, state='STARTED'), immutable=True)
+        atomic_write(state_path, dict(record, state='STARTED'))
+        if args.action == 'prepare':
+            prepare(design, args.method, source, protocol, meta, raw)
+            receipt = meta / f'measurements/{design}/{args.method}/preparation.json'
+        else:
+            run(design, args.method, protocol, meta, raw)
+            receipt = meta / f'activity/GATE09_PRIMARY/{design}/{args.method}/normal/result.json'
+        record.update(status=admission.read(receipt)['status'], receipt=admission.binding(receipt), completed=True)
+    except (Exception, SystemExit) as error:
+        record.update(status='PACT_GATE09_EXACT_REFERENCE_BLOCKED', error=str(error),
+                      traceback=traceback.format_exc(), completed=False)
+    usage, children = resource.getrusage(resource.RUSAGE_SELF), resource.getrusage(resource.RUSAGE_CHILDREN)
+    record.update(completed_utc=datetime.now(timezone.utc).isoformat(), wall_seconds=time.perf_counter()-began,
+        CPU_seconds=usage.ru_utime+usage.ru_stime, children_CPU_seconds=children.ru_utime+children.ru_stime,
+        peak_RSS_KiB=usage.ru_maxrss, child_peak_RSS_KiB=children.ru_maxrss)
+    atomic_write(result_path, record, immutable=True)
+    atomic_write(state_path, dict(record, state='COMPLETED' if record['completed'] else 'FAILED'))
+    print('GATE09_EXACT_WORKER', design, args.method, record['status'], flush=True)
+    return record
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('action', choices=('prepare', 'run'))
@@ -198,8 +249,5 @@ if __name__ == '__main__':
     parser.add_argument('--attempt', required=True)
     parser.add_argument('--dependency-repair', type=Path, required=True)
     args = parser.parse_args()
-    design, source, protocol, _, _, _ = references.configure(args.source_admission, args.attempt, args.dependency_repair)
-    if args.action == 'prepare':
-        prepare(design, args.method, source, protocol, references.META, references.RAW)
-    else:
-        run(design, args.method, protocol, references.META, references.RAW)
+    result = worker(args)
+    raise SystemExit(0 if result['completed'] else 2)
