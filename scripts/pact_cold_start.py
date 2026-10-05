@@ -33,7 +33,8 @@ SOURCE_NAMES=('src/pact/optimizer/stage_b.py','src/pact/optimizer/search.py',
     'src/pact/optimizer/stage_b_inputs.py','src/pact/optimizer/implementation_v2.py',
     'src/pact/optimizer/candidate_sensitive.py','src/pact/optimizer/candidate_physical.py',
     'src/pact/optimizer/candidate_stateful.py','src/pact/optimizer/stateful_geometry.py',
-    'src/pact/optimizer/cold_start.py','scripts/pact_cold_start.py','scripts/pact_cold_start_export.py')
+    'src/pact/optimizer/cold_start.py','src/pact/optimizer/cpu_incremental.py','src/pact/optimizer/cpu_reference.py',
+    'scripts/pact_cold_start.py','scripts/pact_cold_start_export.py')
 
 
 def register():
@@ -132,7 +133,7 @@ def prepare(design):
     print('COLD_START_INPUT_READY',design,selected['method'],flush=True)
 
 
-def search(design):
+def search(design, *, state_type=sf.State, reference_evaluator=sf.reference):
     folder=OUT/'searches'/design
     manifest=OUT/f'inputs/{design}/cold_start_input.json'
     contract_data=read(manifest)
@@ -172,7 +173,7 @@ def search(design):
                             discovered_attempt=parent.get('attempts',0),discovered_utc=now(),
                             discovered_loop_seconds=time.perf_counter()-parent['search_began'] if 'search_began' in parent else 0.))
                 return admitted
-        class CountState(sf.State):
+        class CountState(state_type):
             def __init__(self,*args,**kwargs):
                 counts['state_constructions']+=1;super().__init__(*args,**kwargs)
             def score(self):
@@ -180,7 +181,7 @@ def search(design):
                 counts['state_score_calls']+=1;counts['state_score_seconds']+=time.perf_counter()-tick
                 return value
         def replay(m,o):
-            tick=time.perf_counter();value=sf.reference(m,o)
+            tick=time.perf_counter();value=reference_evaluator(m,o)
             counts['independent_replays']+=1;counts['independent_replay_seconds']+=time.perf_counter()-tick
             return value
         last_progress={}
@@ -215,7 +216,7 @@ def search(design):
             restarts=counts['state_constructions']-len(starts)-1,
             final_stagnation_attempts=last_progress.get('stagnation_attempts'),
             stagnation_termination_events=int(result['termination']=='stagnation'),
-            model_profile={k:model.profile[k]-profile_before[k] for k in model.profile})
+            model_profile={k:model.profile[k]-profile_before.get(k,0.) for k in model.profile})
         write(out/'search.json',result,immutable=True)
         lanes.append(dict(epsilon=config.epsilon,receipt=binding(out/'search.json')))
         print('COLD_START_SEARCH_LANE_COMPLETE',design,config.epsilon,result['evaluations'],result['termination'],flush=True)

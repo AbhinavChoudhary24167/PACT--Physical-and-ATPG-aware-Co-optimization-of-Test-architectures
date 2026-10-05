@@ -23,3 +23,5 @@ reports/repository_cleanup/*.xml text eol=lf
 artifacts/raw/** linguist-generated=true
 results/** linguist-generated=true
 results/**/*.diff linguist-generated=false
+# Collector qualification binds its LF source bytes on Windows and WSL.
+/src/pact/activity/counts_vpi.cpp text eol=lf

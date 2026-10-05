@@ -1,0 +1,66 @@
+{
+  "classifications": [
+    "PACT_CPU_INCREMENTAL_EVALUATOR_QUALIFIED",
+    "PACT_CPU_SPATIAL_SCALABILITY_ADVANCE",
+    "PACT_CPU_ROLLBACK_SCALABILITY_ADVANCE"
+  ],
+  "exact_mutations": 128,
+  "historical_unchanged": true,
+  "maximum_absolute_metric_errors": [
+    0.0,
+    3.075599670410156e-05,
+    0.0,
+    0.0,
+    4.547473508864641e-13
+  ],
+  "path_and_acceptance": "IDENTICAL",
+  "registered_tolerance": {
+    "atol": 1e-06,
+    "rtol": 1e-09
+  },
+  "selected_architectures_and_independent_metrics": "IDENTICAL",
+  "status": "PASS",
+  "table": {
+    "CPU_seconds": {
+      "after": 131.655086,
+      "before": 423.786331
+    },
+    "evaluations_per_second": {
+      "after": 1.5962261920205059,
+      "before": 0.3364601480397806
+    },
+    "geometry_seconds": {
+      "after": 0.48397617599982823,
+      "before": 0.48602479400042853
+    },
+    "loop_wall_seconds": {
+      "after": 80.189136502,
+      "before": 380.431384655
+    },
+    "peak_RSS_KiB": {
+      "after": 1551964,
+      "before": 1537588
+    },
+    "reduction_seconds": {
+      "after": 0.4467946879998266,
+      "before": 0.4575833710000836
+    },
+    "rollback_seconds": {
+      "after": 0.529311139000086,
+      "before": 157.45560628499956
+    },
+    "scan_waveform_seconds": {
+      "after": 25.159715038000087,
+      "before": 24.20724864500005
+    },
+    "spatial_seconds": {
+      "after": 25.174017753999934,
+      "before": 179.8717134709999
+    },
+    "stateful_propagation_seconds": {
+      "after": 9.684440105999869,
+      "before": 9.809716321000082
+    }
+  },
+  "throughput_ratio": 4.744176097288586
+}

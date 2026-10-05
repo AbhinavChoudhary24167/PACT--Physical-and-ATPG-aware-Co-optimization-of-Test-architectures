@@ -292,7 +292,7 @@ def copy_compact(source, destination):
         shutil.copy2(source/'fan/execution.json', target/'execution.json')
 
 
-def qualify(selection_path, input_path=None):
+def qualify(selection_path, input_path=None, *, stop_on_correctness_failure=False):
     context = load_selection(selection_path, input_path)
     design = context['design']
     write(OUT/f'physical/{design}/selection_snapshot.json', dict(
@@ -356,6 +356,9 @@ def qualify(selection_path, input_path=None):
                 r.get('timed_out') or r.get('exit_code') in (-9, 137) for r in executions.values())
             result.update(status=stage, failure_class='RESOURCE_LIMIT' if limited else stage, completed_utc=now(),
                 executions=executions, error=str(error), traceback=traceback.format_exc())
+            result['scientific_stop'] = bool(stop_on_correctness_failure and not limited
+                and str(error) not in ('Detailed route DRC gate failed',
+                    'Frozen nonnegative setup/hold WNS gate failed'))
             write(OUT/f'failures/{design}_{candidate}_qualification.json', result, immutable=True)
             if not any(r['candidate']==candidate for r in physical):
                 physical.append(dict(result))
@@ -367,6 +370,8 @@ def qualify(selection_path, input_path=None):
         copy_compact(af, OUT/f'atpg/{design}/{candidate}')
         final.append(result)
         print('CANDIDATE_QUALIFICATION', design, candidate, result['status'], flush=True)
+        if result.get('scientific_stop'):
+            break
     common = dict(design=design, selection=context['selection_binding'], input=context['package_binding'], created_utc=now())
     write(OUT/f'physical/{design}/physical_results.json', dict(common, records=physical), immutable=True)
     write(OUT/f'atpg/{design}/atpg_results.json', dict(common, records=atpg), immutable=True)

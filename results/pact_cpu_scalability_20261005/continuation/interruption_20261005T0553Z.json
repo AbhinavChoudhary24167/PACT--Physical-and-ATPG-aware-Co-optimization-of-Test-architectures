@@ -1,0 +1,75 @@
+{
+  "status": "INTERRUPTED_NO_COMPLETION_RECEIPT",
+  "observed_utc": "2026-10-05T05:53:06Z",
+  "created_utc": "2026-10-05T05:57:21.1422225Z",
+  "design": "s38584",
+  "active_epsilon": 0.02,
+  "last_progress": {
+    "accepted": 27,
+    "attempts": 396,
+    "champions": [
+      [
+        10222.855,
+        1325628497.954363,
+        640.80244296,
+        308.25,
+        2009.1665832793879
+      ],
+      [
+        10222.215,
+        1327238441.6881745,
+        638.1596099314138,
+        308.25,
+        1971.856691766257
+      ],
+      [
+        10167.314999999999,
+        1328112325.8900576,
+        628.3657050300001,
+        308.25,
+        2015.1924924040009
+      ],
+      [
+        10194.295,
+        1327808015.3341079,
+        628.3657050300001,
+        308.25,
+        1995.0951862840006
+      ]
+    ],
+    "evaluations": 97,
+    "lane": 2,
+    "screened_infeasible": 259,
+    "seconds": 334.312100225,
+    "stagnation_attempts": 7
+  },
+  "progress_sha256": "c6a0b3676096e754f2bbdb79d08dceefcc63768ebf35a7cd376ecfdd688c0bc4",
+  "search_log_path": "D:\\PACT_EXPERIMENTS\\results\\pact_cpu_scalability_20261005\\continuation_campaign\\workers\\s38584\\search.log",
+  "search_log_sha256": "bd39d7b3559072b32f8d3e8582b448da7e078fa64a3ae37d574a8ebcdb747154",
+  "complete": false,
+  "measured_timeout": null,
+  "measured_CPU_seconds": null,
+  "measured_peak_RSS_KiB": null,
+  "interruption_cause": "UNDETERMINED; no worker or completion receipt at live check; recent WSL startup and unclean journal observed",
+  "scientific_failure_established": false,
+  "OOM_established": false,
+  "disk_failure_established": false,
+  "s38417_search_status": "NOT_STARTED",
+  "preselected_candidate_packages": 0,
+  "reference_activity_status": {
+    "s38584": "QUALIFIED",
+    "s38417": "QUALIFIED"
+  },
+  "capacity_snapshot": {
+    "C": {
+      "free_bytes": 531906560,
+      "used_bytes": 199037603840
+    },
+    "D": {
+      "free_bytes": 25123098624,
+      "used_bytes": 100704968704
+    }
+  },
+  "preserved_partial_attempt": true,
+  "next_action": "Restore stable execution and host disk headroom; use a separately recorded cold start with unchanged frozen input/configuration; preserve interrupted partial attempt"
+}

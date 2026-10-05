@@ -10,8 +10,7 @@ import numpy as np
 from scipy.spatial import cKDTree
 from .search import Archive, proposal, update_locations
 from .implementation_v2 import order_id
-from .cpu_incremental import State
-from .candidate_stateful import reference
+from .candidate_stateful import State, reference
 
 ACTIVITY = np.array([1, 4, 2])  # E, H4, H8
 ROLES = ('best_E', 'best_H4', 'best_H8', 'balanced')

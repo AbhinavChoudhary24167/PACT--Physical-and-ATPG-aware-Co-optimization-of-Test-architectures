@@ -1,0 +1,5977 @@
+{
+  "CPU_seconds": 180.02961699999997,
+  "FF_count": 1728,
+  "accepted": 19,
+  "attempts": 301,
+  "backend": "incremental",
+  "config": {
+    "epsilon": 0.02,
+    "evaluations": 128,
+    "seed": 11,
+    "stopping": "fixed evaluation development witness",
+    "threads": 1
+  },
+  "cprofile": [
+    {
+      "calls": 237,
+      "cumulative_seconds": 127.153723651,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/cpu_incremental.py",
+      "function": "change",
+      "line": 39,
+      "primitive_calls": 237,
+      "self_seconds": 116.54321199600001
+    },
+    {
+      "calls": 3,
+      "cumulative_seconds": 34.586854756,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/candidate_stateful.py",
+      "function": "reference",
+      "line": 333,
+      "primitive_calls": 3,
+      "self_seconds": 29.409168361000003
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 15.246240640000002,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/candidate_stateful.py",
+      "function": "__init__",
+      "line": 199,
+      "primitive_calls": 4,
+      "self_seconds": 11.72676786
+    },
+    {
+      "calls": 1680520,
+      "cumulative_seconds": 3.1506001340000003,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/candidate_stateful.py",
+      "function": "packed_function",
+      "line": 45,
+      "primitive_calls": 483855,
+      "self_seconds": 3.1506001340000003
+    },
+    {
+      "calls": 581187,
+      "cumulative_seconds": 4.327549708,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/numeric.py",
+      "function": "array_equal",
+      "line": 2471,
+      "primitive_calls": 581187,
+      "self_seconds": 2.716099733
+    },
+    {
+      "calls": 20142,
+      "cumulative_seconds": 2.6168961150000003,
+      "file": "~",
+      "function": "<built-in method numpy.zeros>",
+      "line": 0,
+      "primitive_calls": 20142,
+      "self_seconds": 2.6168961150000003
+    },
+    {
+      "calls": 107991,
+      "cumulative_seconds": 4.15853475,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stateful_geometry.py",
+      "function": "mmst",
+      "line": 5,
+      "primitive_calls": 107991,
+      "self_seconds": 1.5978057490000002
+    },
+    {
+      "calls": 599933,
+      "cumulative_seconds": 1.1967390260000002,
+      "file": "~",
+      "function": "<method 'reduce' of 'numpy.ufunc' objects>",
+      "line": 0,
+      "primitive_calls": 599933,
+      "self_seconds": 1.1967390260000002
+    },
+    {
+      "calls": 581180,
+      "cumulative_seconds": 5.785877950000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/cpu_incremental.py",
+      "function": "put",
+      "line": 76,
+      "primitive_calls": 581180,
+      "self_seconds": 1.1766290940000002
+    },
+    {
+      "calls": 1263278,
+      "cumulative_seconds": 1.405667558,
+      "file": "~",
+      "function": "<built-in method builtins.min>",
+      "line": 0,
+      "primitive_calls": 1263278,
+      "self_seconds": 1.002487329
+    },
+    {
+      "calls": 1252615,
+      "cumulative_seconds": 0.574376218,
+      "file": "~",
+      "function": "<method 'get' of 'dict' objects>",
+      "line": 0,
+      "primitive_calls": 1252615,
+      "self_seconds": 0.5739160670000001
+    },
+    {
+      "calls": 437071,
+      "cumulative_seconds": 0.6969855260000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stateful_geometry.py",
+      "function": "<genexpr>",
+      "line": 7,
+      "primitive_calls": 437071,
+      "self_seconds": 0.5723333580000001
+    },
+    {
+      "calls": 116869,
+      "cumulative_seconds": 0.515127833,
+      "file": "~",
+      "function": "<method 'copy' of 'numpy.ndarray' objects>",
+      "line": 0,
+      "primitive_calls": 116869,
+      "self_seconds": 0.515127833
+    },
+    {
+      "calls": 107991,
+      "cumulative_seconds": 5.139352722,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stateful_geometry.py",
+      "function": "evaluate",
+      "line": 104,
+      "primitive_calls": 107991,
+      "self_seconds": 0.49658699700000003
+    },
+    {
+      "calls": 1,
+      "cumulative_seconds": 178.089864752,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stage_b.py",
+      "function": "optimize",
+      "line": 50,
+      "primitive_calls": 1,
+      "self_seconds": 0.38125601600000003
+    },
+    {
+      "calls": 581197,
+      "cumulative_seconds": 1.361196529,
+      "file": "~",
+      "function": "<method 'all' of 'numpy.ndarray' objects>",
+      "line": 0,
+      "primitive_calls": 581197,
+      "self_seconds": 0.344012392
+    },
+    {
+      "calls": 139,
+      "cumulative_seconds": 0.32898378500000003,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stateful_geometry.py",
+      "function": "terminal_sets",
+      "line": 95,
+      "primitive_calls": 139,
+      "self_seconds": 0.30376937800000003
+    },
+    {
+      "calls": 457407,
+      "cumulative_seconds": 0.298111132,
+      "file": "~",
+      "function": "<built-in method _heapq.heappop>",
+      "line": 0,
+      "primitive_calls": 457407,
+      "self_seconds": 0.298111132
+    },
+    {
+      "calls": 121590,
+      "cumulative_seconds": 0.29482213100000004,
+      "file": "~",
+      "function": "<built-in method builtins.sorted>",
+      "line": 0,
+      "primitive_calls": 121590,
+      "self_seconds": 0.281126009
+    },
+    {
+      "calls": 107991,
+      "cumulative_seconds": 0.25978375400000003,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stateful_geometry.py",
+      "function": "estimate",
+      "line": 23,
+      "primitive_calls": 107991,
+      "self_seconds": 0.25978375400000003
+    },
+    {
+      "calls": 1592148,
+      "cumulative_seconds": 0.24607594400000002,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stateful_geometry.py",
+      "function": "<genexpr>",
+      "line": 14,
+      "primitive_calls": 1592148,
+      "self_seconds": 0.24607594400000002
+    },
+    {
+      "calls": 1868622,
+      "cumulative_seconds": 0.232422867,
+      "file": "~",
+      "function": "<built-in method builtins.abs>",
+      "line": 0,
+      "primitive_calls": 1868622,
+      "self_seconds": 0.232422867
+    },
+    {
+      "calls": 723863,
+      "cumulative_seconds": 0.228339023,
+      "file": "~",
+      "function": "<method 'add' of 'set' objects>",
+      "line": 0,
+      "primitive_calls": 723863,
+      "self_seconds": 0.2282944
+    },
+    {
+      "calls": 581205,
+      "cumulative_seconds": 1.0172176560000001,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/_methods.py",
+      "function": "_all",
+      "line": 64,
+      "primitive_calls": 581205,
+      "self_seconds": 0.22091516700000002
+    },
+    {
+      "calls": 136,
+      "cumulative_seconds": 0.438017137,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/cpu_incremental.py",
+      "function": "_reduce_dirty",
+      "line": 26,
+      "primitive_calls": 136,
+      "self_seconds": 0.195414511
+    },
+    {
+      "calls": 1228515,
+      "cumulative_seconds": 0.178622728,
+      "file": "~",
+      "function": "<built-in method builtins.len>",
+      "line": 0,
+      "primitive_calls": 1228515,
+      "self_seconds": 0.178622728
+    },
+    {
+      "calls": 1164551,
+      "cumulative_seconds": 0.163321467,
+      "file": "~",
+      "function": "<built-in method numpy.asarray>",
+      "line": 0,
+      "primitive_calls": 1164551,
+      "self_seconds": 0.163321467
+    },
+    {
+      "calls": 1263068,
+      "cumulative_seconds": 0.157104285,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stateful_geometry.py",
+      "function": "<lambda>",
+      "line": 14,
+      "primitive_calls": 1263068,
+      "self_seconds": 0.157104285
+    },
+    {
+      "calls": 7,
+      "cumulative_seconds": 5.279154668,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stateful_geometry.py",
+      "function": "capacitances",
+      "line": 115,
+      "primitive_calls": 7,
+      "self_seconds": 0.134184206
+    },
+    {
+      "calls": 437071,
+      "cumulative_seconds": 0.12465216800000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stateful_geometry.py",
+      "function": "<genexpr>",
+      "line": 107,
+      "primitive_calls": 437071,
+      "self_seconds": 0.12465216800000001
+    },
+    {
+      "calls": 486152,
+      "cumulative_seconds": 0.121176952,
+      "file": "~",
+      "function": "<method 'items' of 'dict' objects>",
+      "line": 0,
+      "primitive_calls": 486152,
+      "self_seconds": 0.121176952
+    },
+    {
+      "calls": 108889,
+      "cumulative_seconds": 0.186370844,
+      "file": "~",
+      "function": "<built-in method builtins.sum>",
+      "line": 0,
+      "primitive_calls": 108889,
+      "self_seconds": 0.11901650100000001
+    },
+    {
+      "calls": 584535,
+      "cumulative_seconds": 0.093172633,
+      "file": "~",
+      "function": "<built-in method numpy.asanyarray>",
+      "line": 0,
+      "primitive_calls": 584535,
+      "self_seconds": 0.093172633
+    },
+    {
+      "calls": 581187,
+      "cumulative_seconds": 0.090229136,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/numeric.py",
+      "function": "_array_equal_dispatcher",
+      "line": 2452,
+      "primitive_calls": 581187,
+      "self_seconds": 0.090229136
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 0.07608398400000001,
+      "file": "~",
+      "function": "<built-in method numpy.asfortranarray>",
+      "line": 0,
+      "primitive_calls": 4,
+      "self_seconds": 0.07608398400000001
+    },
+    {
+      "calls": 437071,
+      "cumulative_seconds": 0.06735434300000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stateful_geometry.py",
+      "function": "<genexpr>",
+      "line": 109,
+      "primitive_calls": 437071,
+      "self_seconds": 0.06735434300000001
+    },
+    {
+      "calls": 247,
+      "cumulative_seconds": 0.064441365,
+      "file": "~",
+      "function": "<method 'update' of 'dict' objects>",
+      "line": 0,
+      "primitive_calls": 247,
+      "self_seconds": 0.064441365
+    },
+    {
+      "calls": 151507,
+      "cumulative_seconds": 0.044252126,
+      "file": "~",
+      "function": "<built-in method _heapq.heappush>",
+      "line": 0,
+      "primitive_calls": 151507,
+      "self_seconds": 0.044252126
+    },
+    {
+      "calls": 400,
+      "cumulative_seconds": 0.10326054700000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/implementation_v2.py",
+      "function": "physical",
+      "line": 88,
+      "primitive_calls": 400,
+      "self_seconds": 0.043212245
+    },
+    {
+      "calls": 151,
+      "cumulative_seconds": 0.08606287,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/candidate_stateful.py",
+      "function": "packed_input",
+      "line": 78,
+      "primitive_calls": 151,
+      "self_seconds": 0.041338422
+    },
+    {
+      "calls": 237,
+      "cumulative_seconds": 127.18917623,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cpu_scalability.py",
+      "function": "change",
+      "line": 107,
+      "primitive_calls": 237,
+      "self_seconds": 0.024625614
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 0.019134839,
+      "file": "~",
+      "function": "<built-in method _io.open>",
+      "line": 0,
+      "primitive_calls": 4,
+      "self_seconds": 0.019134839
+    },
+    {
+      "calls": 67854,
+      "cumulative_seconds": 0.013696122000000002,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stateful_geometry.py",
+      "function": "<lambda>",
+      "line": 106,
+      "primitive_calls": 67854,
+      "self_seconds": 0.013696122000000002
+    },
+    {
+      "calls": 800,
+      "cumulative_seconds": 0.013269564000000001,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py",
+      "function": "diff",
+      "line": 1413,
+      "primitive_calls": 800,
+      "self_seconds": 0.012325462
+    },
+    {
+      "calls": 301,
+      "cumulative_seconds": 0.018014791000000002,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/search.py",
+      "function": "proposal",
+      "line": 110,
+      "primitive_calls": 301,
+      "self_seconds": 0.011652376
+    },
+    {
+      "calls": 129,
+      "cumulative_seconds": 0.017955023,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/search.py",
+      "function": "insert",
+      "line": 43,
+      "primitive_calls": 129,
+      "self_seconds": 0.010920686
+    },
+    {
+      "calls": 5518,
+      "cumulative_seconds": 0.010294675000000001,
+      "file": "~",
+      "function": "<method 'reshape' of 'numpy.ndarray' objects>",
+      "line": 0,
+      "primitive_calls": 5518,
+      "self_seconds": 0.010294675000000001
+    },
+    {
+      "calls": 897,
+      "cumulative_seconds": 0.010765263,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stage_b.py",
+      "function": "activity_score",
+      "line": 45,
+      "primitive_calls": 897,
+      "self_seconds": 0.009791042
+    },
+    {
+      "calls": 128,
+      "cumulative_seconds": 0.009578493,
+      "file": "~",
+      "function": "<built-in method _heapq.heapify>",
+      "line": 0,
+      "primitive_calls": 128,
+      "self_seconds": 0.009578493
+    },
+    {
+      "calls": 800,
+      "cumulative_seconds": 0.015723983,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/shape_base.py",
+      "function": "vstack",
+      "line": 218,
+      "primitive_calls": 800,
+      "self_seconds": 0.008437168
+    },
+    {
+      "calls": 9643,
+      "cumulative_seconds": 0.08775516300000001,
+      "file": "~",
+      "function": "<method 'max' of 'numpy.ndarray' objects>",
+      "line": 0,
+      "primitive_calls": 9643,
+      "self_seconds": 0.007314015
+    },
+    {
+      "calls": 302,
+      "cumulative_seconds": 0.042073665,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_arraypad_impl.py",
+      "function": "pad",
+      "line": 546,
+      "primitive_calls": 302,
+      "self_seconds": 0.006971648
+    },
+    {
+      "calls": 8199,
+      "cumulative_seconds": 0.33107693600000004,
+      "file": "~",
+      "function": "<method 'sum' of 'numpy.ndarray' objects>",
+      "line": 0,
+      "primitive_calls": 8199,
+      "self_seconds": 0.006474907
+    },
+    {
+      "calls": 9613,
+      "cumulative_seconds": 0.0061538040000000006,
+      "file": "~",
+      "function": "<built-in method builtins.max>",
+      "line": 0,
+      "primitive_calls": 9613,
+      "self_seconds": 0.0061538040000000006
+    },
+    {
+      "calls": 302,
+      "cumulative_seconds": 0.007913203,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_stride_tricks_impl.py",
+      "function": "_broadcast_to",
+      "line": 447,
+      "primitive_calls": 302,
+      "self_seconds": 0.006009607
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 0.005932199,
+      "file": "~",
+      "function": "<method '__exit__' of '_io._IOBase' objects>",
+      "line": 0,
+      "primitive_calls": 4,
+      "self_seconds": 0.005932199
+    },
+    {
+      "calls": 897,
+      "cumulative_seconds": 0.016353282,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stage_b.py",
+      "function": "values",
+      "line": 61,
+      "primitive_calls": 897,
+      "self_seconds": 0.0055880190000000005
+    },
+    {
+      "calls": 302,
+      "cumulative_seconds": 0.007132615,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_arraypad_impl.py",
+      "function": "_pad_simple",
+      "line": 87,
+      "primitive_calls": 302,
+      "self_seconds": 0.005425121000000001
+    },
+    {
+      "calls": 800,
+      "cumulative_seconds": 0.006733964,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/shape_base.py",
+      "function": "atleast_2d",
+      "line": 78,
+      "primitive_calls": 800,
+      "self_seconds": 0.005288676
+    },
+    {
+      "calls": 303,
+      "cumulative_seconds": 0.009739055,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/ffi.py",
+      "function": "__call__",
+      "line": 210,
+      "primitive_calls": 301,
+      "self_seconds": 0.0049743800000000005
+    },
+    {
+      "calls": 1636,
+      "cumulative_seconds": 0.004605024,
+      "file": "~",
+      "function": "<built-in method numpy.array>",
+      "line": 0,
+      "primitive_calls": 1636,
+      "self_seconds": 0.004605024
+    },
+    {
+      "calls": 9643,
+      "cumulative_seconds": 0.080441148,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/_methods.py",
+      "function": "_amax",
+      "line": 39,
+      "primitive_calls": 9643,
+      "self_seconds": 0.004443021
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 0.0044108080000000004,
+      "file": "~",
+      "function": "<method 'read' of '_io.BufferedReader' objects>",
+      "line": 0,
+      "primitive_calls": 4,
+      "self_seconds": 0.0044108080000000004
+    },
+    {
+      "calls": 604,
+      "cumulative_seconds": 0.020107281,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_arraypad_impl.py",
+      "function": "_as_pairs",
+      "line": 471,
+      "primitive_calls": 604,
+      "self_seconds": 0.004249313
+    },
+    {
+      "calls": 21,
+      "cumulative_seconds": 0.0041528960000000005,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stage_b_inputs.py",
+      "function": "<genexpr>",
+      "line": 18,
+      "primitive_calls": 21,
+      "self_seconds": 0.004146872
+    },
+    {
+      "calls": 8199,
+      "cumulative_seconds": 0.324602029,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/_methods.py",
+      "function": "_sum",
+      "line": 47,
+      "primitive_calls": 8199,
+      "self_seconds": 0.003950083
+    },
+    {
+      "calls": 604,
+      "cumulative_seconds": 0.00454758,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_arraypad_impl.py",
+      "function": "_set_pad_area",
+      "line": 130,
+      "primitive_calls": 604,
+      "self_seconds": 0.0036481340000000004
+    },
+    {
+      "calls": 129,
+      "cumulative_seconds": 0.036498551000000004,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stage_b.py",
+      "function": "consider",
+      "line": 63,
+      "primitive_calls": 129,
+      "self_seconds": 0.003226964
+    },
+    {
+      "calls": 120,
+      "cumulative_seconds": 0.004268382,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/numeric.py",
+      "function": "roll",
+      "line": 1226,
+      "primitive_calls": 60,
+      "self_seconds": 0.003007287
+    },
+    {
+      "calls": 133,
+      "cumulative_seconds": 0.010514308,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/implementation_v2.py",
+      "function": "order_id",
+      "line": 94,
+      "primitive_calls": 133,
+      "self_seconds": 0.0022345660000000003
+    },
+    {
+      "calls": 3819,
+      "cumulative_seconds": 0.002147856,
+      "file": "~",
+      "function": "<built-in method time.perf_counter>",
+      "line": 0,
+      "primitive_calls": 3819,
+      "self_seconds": 0.002147856
+    },
+    {
+      "calls": 132,
+      "cumulative_seconds": 0.467621979,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/cpu_incremental.py",
+      "function": "score",
+      "line": 144,
+      "primitive_calls": 132,
+      "self_seconds": 0.002087466
+    },
+    {
+      "calls": 532,
+      "cumulative_seconds": 0.0016805910000000002,
+      "file": "~",
+      "function": "<method 'update' of '_hashlib.HASH' objects>",
+      "line": 0,
+      "primitive_calls": 532,
+      "self_seconds": 0.0016805910000000002
+    },
+    {
+      "calls": 584,
+      "cumulative_seconds": 0.004123008,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "_wrapreduction_any_all",
+      "line": 86,
+      "primitive_calls": 584,
+      "self_seconds": 0.0016741170000000001
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00156879,
+      "file": "~",
+      "function": "<built-in method _pickle.load>",
+      "line": 0,
+      "primitive_calls": 2,
+      "self_seconds": 0.00156879
+    },
+    {
+      "calls": 137,
+      "cumulative_seconds": 0.001565118,
+      "file": "~",
+      "function": "<built-in method _hashlib.openssl_sha256>",
+      "line": 0,
+      "primitive_calls": 137,
+      "self_seconds": 0.001565118
+    },
+    {
+      "calls": 302,
+      "cumulative_seconds": 0.001487632,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/serialize.py",
+      "function": "_numba_unpickle",
+      "line": 30,
+      "primitive_calls": 302,
+      "self_seconds": 0.001478251
+    },
+    {
+      "calls": 132,
+      "cumulative_seconds": 0.469149391,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cpu_scalability.py",
+      "function": "score",
+      "line": 116,
+      "primitive_calls": 132,
+      "self_seconds": 0.0012786940000000001
+    },
+    {
+      "calls": 302,
+      "cumulative_seconds": 0.0011812810000000002,
+      "file": "~",
+      "function": "<method 'round' of 'numpy.ndarray' objects>",
+      "line": 0,
+      "primitive_calls": 302,
+      "self_seconds": 0.0011812810000000002
+    },
+    {
+      "calls": 3939,
+      "cumulative_seconds": 0.0011782820000000001,
+      "file": "~",
+      "function": "<method 'append' of 'list' objects>",
+      "line": 0,
+      "primitive_calls": 3939,
+      "self_seconds": 0.0011782820000000001
+    },
+    {
+      "calls": 949,
+      "cumulative_seconds": 0.001155229,
+      "file": "~",
+      "function": "<built-in method builtins.hasattr>",
+      "line": 0,
+      "primitive_calls": 949,
+      "self_seconds": 0.001155229
+    },
+    {
+      "calls": 301,
+      "cumulative_seconds": 0.019319586,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cpu_scalability.py",
+      "function": "timed_proposal",
+      "line": 90,
+      "primitive_calls": 301,
+      "self_seconds": 0.001147196
+    },
+    {
+      "calls": 532,
+      "cumulative_seconds": 0.0011455690000000001,
+      "file": "~",
+      "function": "<method 'tobytes' of 'numpy.ndarray' objects>",
+      "line": 0,
+      "primitive_calls": 532,
+      "self_seconds": 0.0011455690000000001
+    },
+    {
+      "calls": 129,
+      "cumulative_seconds": 0.019167638,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cpu_scalability.py",
+      "function": "insert",
+      "line": 96,
+      "primitive_calls": 129,
+      "self_seconds": 0.001111765
+    },
+    {
+      "calls": 249,
+      "cumulative_seconds": 0.001068301,
+      "file": "~",
+      "function": "<built-in method numpy.arange>",
+      "line": 0,
+      "primitive_calls": 249,
+      "self_seconds": 0.001068301
+    },
+    {
+      "calls": 604,
+      "cumulative_seconds": 0.0010174720000000002,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_arraypad_impl.py",
+      "function": "_view_roi",
+      "line": 59,
+      "primitive_calls": 604,
+      "self_seconds": 0.0010174720000000002
+    },
+    {
+      "calls": 800,
+      "cumulative_seconds": 0.001995162,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/shape_base.py",
+      "function": "_arrays_for_stack_dispatcher",
+      "line": 206,
+      "primitive_calls": 800,
+      "self_seconds": 0.0009649620000000001
+    },
+    {
+      "calls": 1891,
+      "cumulative_seconds": 0.001014076,
+      "file": "~",
+      "function": "<built-in method builtins.isinstance>",
+      "line": 0,
+      "primitive_calls": 1891,
+      "self_seconds": 0.00094859
+    },
+    {
+      "calls": 128,
+      "cumulative_seconds": 0.0009189650000000001,
+      "file": "~",
+      "function": "<method 'update' of 'set' objects>",
+      "line": 0,
+      "primitive_calls": 128,
+      "self_seconds": 0.0009189650000000001
+    },
+    {
+      "calls": 5,
+      "cumulative_seconds": 0.0015641230000000002,
+      "file": "~",
+      "function": "<built-in method _pickle.loads>",
+      "line": 0,
+      "primitive_calls": 5,
+      "self_seconds": 0.000900768
+    },
+    {
+      "calls": 1208,
+      "cumulative_seconds": 0.000899446,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_arraypad_impl.py",
+      "function": "_slice_at_axis",
+      "line": 34,
+      "primitive_calls": 1208,
+      "self_seconds": 0.000899446
+    },
+    {
+      "calls": 800,
+      "cumulative_seconds": 0.002851578,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/shape_base.py",
+      "function": "_vhstack_dispatcher",
+      "line": 214,
+      "primitive_calls": 800,
+      "self_seconds": 0.000856416
+    },
+    {
+      "calls": 295,
+      "cumulative_seconds": 0.003387787,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "all",
+      "line": 2586,
+      "primitive_calls": 295,
+      "self_seconds": 0.0008044590000000001
+    },
+    {
+      "calls": 310,
+      "cumulative_seconds": 0.000777098,
+      "file": "~",
+      "function": "<built-in method numpy.empty>",
+      "line": 0,
+      "primitive_calls": 310,
+      "self_seconds": 0.000777098
+    },
+    {
+      "calls": 6,
+      "cumulative_seconds": 0.0007661230000000001,
+      "file": "~",
+      "function": "<built-in method builtins.print>",
+      "line": 0,
+      "primitive_calls": 6,
+      "self_seconds": 0.0007661230000000001
+    },
+    {
+      "calls": 302,
+      "cumulative_seconds": 0.002772286,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "round",
+      "line": 3620,
+      "primitive_calls": 302,
+      "self_seconds": 0.0007214950000000001
+    },
+    {
+      "calls": 454,
+      "cumulative_seconds": 0.0006844850000000001,
+      "file": "~",
+      "function": "<method 'tolist' of 'numpy.ndarray' objects>",
+      "line": 0,
+      "primitive_calls": 454,
+      "self_seconds": 0.0006844850000000001
+    },
+    {
+      "calls": 304,
+      "cumulative_seconds": 0.0023139750000000002,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "_wrapfunc",
+      "line": 48,
+      "primitive_calls": 304,
+      "self_seconds": 0.000654505
+    },
+    {
+      "calls": 60,
+      "cumulative_seconds": 0.0008486310000000001,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/numeric.py",
+      "function": "normalize_axis_tuple",
+      "line": 1427,
+      "primitive_calls": 60,
+      "self_seconds": 0.000649913
+    },
+    {
+      "calls": 302,
+      "cumulative_seconds": 0.008522578000000001,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_stride_tricks_impl.py",
+      "function": "broadcast_to",
+      "line": 474,
+      "primitive_calls": 302,
+      "self_seconds": 0.000609375
+    },
+    {
+      "calls": 137,
+      "cumulative_seconds": 0.000607047,
+      "file": "~",
+      "function": "<method 'hexdigest' of '_hashlib.HASH' objects>",
+      "line": 0,
+      "primitive_calls": 137,
+      "self_seconds": 0.000607047
+    },
+    {
+      "calls": 906,
+      "cumulative_seconds": 0.000545621,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_arraypad_impl.py",
+      "function": "<genexpr>",
+      "line": 121,
+      "primitive_calls": 906,
+      "self_seconds": 0.000545621
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 0.0006552540000000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/search.py",
+      "function": "locate",
+      "line": 135,
+      "primitive_calls": 4,
+      "self_seconds": 0.000540292
+    },
+    {
+      "calls": 309,
+      "cumulative_seconds": 0.0049513790000000005,
+      "file": "~",
+      "function": "<built-in method builtins.any>",
+      "line": 0,
+      "primitive_calls": 309,
+      "self_seconds": 0.000530655
+    },
+    {
+      "calls": 614,
+      "cumulative_seconds": 0.001312166,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "notify",
+      "line": 243,
+      "primitive_calls": 614,
+      "self_seconds": 0.000509867
+    },
+    {
+      "calls": 614,
+      "cumulative_seconds": 0.001898916,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "broadcast",
+      "line": 209,
+      "primitive_calls": 614,
+      "self_seconds": 0.000505583
+    },
+    {
+      "calls": 307,
+      "cumulative_seconds": 0.0019879940000000003,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "end_event",
+      "line": 404,
+      "primitive_calls": 307,
+      "self_seconds": 0.000502823
+    },
+    {
+      "calls": 302,
+      "cumulative_seconds": 0.00048291200000000005,
+      "file": "~",
+      "function": "<method 'astype' of 'numpy.ndarray' objects>",
+      "line": 0,
+      "primitive_calls": 302,
+      "self_seconds": 0.00048291200000000005
+    },
+    {
+      "calls": 678,
+      "cumulative_seconds": 0.00045378100000000005,
+      "file": "~",
+      "function": "<built-in method builtins.getattr>",
+      "line": 0,
+      "primitive_calls": 678,
+      "self_seconds": 0.00045378100000000005
+    },
+    {
+      "calls": 906,
+      "cumulative_seconds": 0.00044738000000000004,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_arraypad_impl.py",
+      "function": "<genexpr>",
+      "line": 110,
+      "primitive_calls": 906,
+      "self_seconds": 0.00044738000000000004
+    },
+    {
+      "calls": 302,
+      "cumulative_seconds": 0.0020454650000000002,
+      "file": "~",
+      "function": "<method 'min' of 'numpy.ndarray' objects>",
+      "line": 0,
+      "primitive_calls": 302,
+      "self_seconds": 0.0004425
+    },
+    {
+      "calls": 307,
+      "cumulative_seconds": 0.001625279,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "start_event",
+      "line": 390,
+      "primitive_calls": 307,
+      "self_seconds": 0.00043590500000000005
+    },
+    {
+      "calls": 7,
+      "cumulative_seconds": 0.000422686,
+      "file": "~",
+      "function": "<method 'sort' of 'numpy.ndarray' objects>",
+      "line": 0,
+      "primitive_calls": 7,
+      "self_seconds": 0.000422686
+    },
+    {
+      "calls": 289,
+      "cumulative_seconds": 0.001945424,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "any",
+      "line": 2474,
+      "primitive_calls": 289,
+      "self_seconds": 0.00040574400000000004
+    },
+    {
+      "calls": 209,
+      "cumulative_seconds": 0.0005418640000000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/types/abstract.py",
+      "function": "__hash__",
+      "line": 121,
+      "primitive_calls": 127,
+      "self_seconds": 0.00037723000000000005
+    },
+    {
+      "calls": 860,
+      "cumulative_seconds": 0.000365005,
+      "file": "~",
+      "function": "<built-in method numpy.lib.array_utils.normalize_axis_index>",
+      "line": 0,
+      "primitive_calls": 860,
+      "self_seconds": 0.000365005
+    },
+    {
+      "calls": 3,
+      "cumulative_seconds": 0.000644529,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/numeric.py",
+      "function": "isclose",
+      "line": 2320,
+      "primitive_calls": 3,
+      "self_seconds": 0.00036079700000000005
+    },
+    {
+      "calls": 365,
+      "cumulative_seconds": 0.00035188900000000003,
+      "file": "~",
+      "function": "<method 'ravel' of 'numpy.ndarray' objects>",
+      "line": 0,
+      "primitive_calls": 365,
+      "self_seconds": 0.00035188900000000003
+    },
+    {
+      "calls": 19,
+      "cumulative_seconds": 0.000349716,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/search.py",
+      "function": "update_locations",
+      "line": 140,
+      "primitive_calls": 19,
+      "self_seconds": 0.000342957
+    },
+    {
+      "calls": 3,
+      "cumulative_seconds": 0.0019888970000000003,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py",
+      "function": "assert_allclose",
+      "line": 1671,
+      "primitive_calls": 3,
+      "self_seconds": 0.00033038500000000004
+    },
+    {
+      "calls": 302,
+      "cumulative_seconds": 0.000474894,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py",
+      "function": "iterable",
+      "line": 374,
+      "primitive_calls": 302,
+      "self_seconds": 0.000320271
+    },
+    {
+      "calls": 622,
+      "cumulative_seconds": 0.000500054,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "_guard_kind",
+      "line": 66,
+      "primitive_calls": 622,
+      "self_seconds": 0.000292721
+    },
+    {
+      "calls": 614,
+      "cumulative_seconds": 0.000775629,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "__init__",
+      "line": 100,
+      "primitive_calls": 614,
+      "self_seconds": 0.000292648
+    },
+    {
+      "calls": 307,
+      "cumulative_seconds": 0.00040798900000000004,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "on_end",
+      "line": 270,
+      "primitive_calls": 307,
+      "self_seconds": 0.00028097800000000003
+    },
+    {
+      "calls": 3,
+      "cumulative_seconds": 0.001644994,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py",
+      "function": "assert_array_compare",
+      "line": 738,
+      "primitive_calls": 3,
+      "self_seconds": 0.000275093
+    },
+    {
+      "calls": 303,
+      "cumulative_seconds": 0.002136989,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/ffi.py",
+      "function": "__enter__",
+      "line": 77,
+      "primitive_calls": 303,
+      "self_seconds": 0.000269601
+    },
+    {
+      "calls": 906,
+      "cumulative_seconds": 0.000267828,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_stride_tricks_impl.py",
+      "function": "<genexpr>",
+      "line": 452,
+      "primitive_calls": 906,
+      "self_seconds": 0.000267828
+    },
+    {
+      "calls": 303,
+      "cumulative_seconds": 0.002435506,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/ffi.py",
+      "function": "__exit__",
+      "line": 83,
+      "primitive_calls": 303,
+      "self_seconds": 0.000266262
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00079447,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/cpu.py",
+      "function": "load_additional_registries",
+      "line": 102,
+      "primitive_calls": 2,
+      "self_seconds": 0.000265459
+    },
+    {
+      "calls": 138,
+      "cumulative_seconds": 0.000261716,
+      "file": "~",
+      "function": "<method 'clear' of 'set' objects>",
+      "line": 0,
+      "primitive_calls": 138,
+      "self_seconds": 0.000261716
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 15.338399373000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/cpu_incremental.py",
+      "function": "__init__",
+      "line": 17,
+      "primitive_calls": 4,
+      "self_seconds": 0.0002498
+    },
+    {
+      "calls": 1208,
+      "cumulative_seconds": 0.00023472,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/multiarray.py",
+      "function": "concatenate",
+      "line": 197,
+      "primitive_calls": 1208,
+      "self_seconds": 0.00023472
+    },
+    {
+      "calls": 633,
+      "cumulative_seconds": 0.00021455200000000002,
+      "file": "~",
+      "function": "<method 'startswith' of 'str' objects>",
+      "line": 0,
+      "primitive_calls": 633,
+      "self_seconds": 0.00021455200000000002
+    },
+    {
+      "calls": 302,
+      "cumulative_seconds": 0.00019865800000000002,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_stride_tricks_impl.py",
+      "function": "_maybe_view_as_subclass",
+      "line": 25,
+      "primitive_calls": 302,
+      "self_seconds": 0.00019865800000000002
+    },
+    {
+      "calls": 800,
+      "cumulative_seconds": 0.00019276500000000002,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py",
+      "function": "_diff_dispatcher",
+      "line": 1409,
+      "primitive_calls": 800,
+      "self_seconds": 0.00019276500000000002
+    },
+    {
+      "calls": 302,
+      "cumulative_seconds": 0.001602965,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/_methods.py",
+      "function": "_amin",
+      "line": 43,
+      "primitive_calls": 302,
+      "self_seconds": 0.00018833900000000001
+    },
+    {
+      "calls": 897,
+      "cumulative_seconds": 0.00018748000000000001,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/multiarray.py",
+      "function": "dot",
+      "line": 751,
+      "primitive_calls": 897,
+      "self_seconds": 0.00018748000000000001
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 15.338591442,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cpu_scalability.py",
+      "function": "__init__",
+      "line": 102,
+      "primitive_calls": 4,
+      "self_seconds": 0.000185548
+    },
+    {
+      "calls": 6,
+      "cumulative_seconds": 0.000250059,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py",
+      "function": "robust_any_difference",
+      "line": 759,
+      "primitive_calls": 6,
+      "self_seconds": 0.00018371200000000002
+    },
+    {
+      "calls": 303,
+      "cumulative_seconds": 0.00209253,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/base.py",
+      "function": "exit_fn",
+      "line": 1268,
+      "primitive_calls": 303,
+      "self_seconds": 0.00018225900000000002
+    },
+    {
+      "calls": 436,
+      "cumulative_seconds": 0.00017889200000000002,
+      "file": "~",
+      "function": "<built-in method builtins.iter>",
+      "line": 0,
+      "primitive_calls": 436,
+      "self_seconds": 0.00017889200000000002
+    },
+    {
+      "calls": 302,
+      "cumulative_seconds": 0.00017658700000000002,
+      "file": "~",
+      "function": "<method '__exit__' of 'numpy.nditer' objects>",
+      "line": 0,
+      "primitive_calls": 302,
+      "self_seconds": 0.00017658700000000002
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.048245865000000006,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/dispatcher.py",
+      "function": "compile",
+      "line": 860,
+      "primitive_calls": 2,
+      "self_seconds": 0.000175644
+    },
+    {
+      "calls": 303,
+      "cumulative_seconds": 0.001749282,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/base.py",
+      "function": "enter_fn",
+      "line": 1265,
+      "primitive_calls": 303,
+      "self_seconds": 0.00017395500000000002
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 0.00025772400000000003,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/types/common.py",
+      "function": "__init__",
+      "line": 49,
+      "primitive_calls": 10,
+      "self_seconds": 0.000172019
+    },
+    {
+      "calls": 129,
+      "cumulative_seconds": 0.00017191100000000001,
+      "file": "~",
+      "function": "<method 'copy' of 'list' objects>",
+      "line": 0,
+      "primitive_calls": 129,
+      "self_seconds": 0.00017191100000000001
+    },
+    {
+      "calls": 7,
+      "cumulative_seconds": 0.0050314240000000005,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stage_b_inputs.py",
+      "function": "validate",
+      "line": 14,
+      "primitive_calls": 7,
+      "self_seconds": 0.000170335
+    },
+    {
+      "calls": 86,
+      "cumulative_seconds": 0.001667852,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/value.py",
+      "function": "is_declaration",
+      "line": 231,
+      "primitive_calls": 86,
+      "self_seconds": 0.000161693
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 0.004897172,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "_load_defined_symbols",
+      "line": 1098,
+      "primitive_calls": 4,
+      "self_seconds": 0.00016153
+    },
+    {
+      "calls": 18,
+      "cumulative_seconds": 0.00043840000000000003,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/typing/context.py",
+      "function": "install_registry",
+      "line": 495,
+      "primitive_calls": 18,
+      "self_seconds": 0.00015521100000000002
+    },
+    {
+      "calls": 43,
+      "cumulative_seconds": 0.000287672,
+      "file": "<frozen importlib._bootstrap>",
+      "function": "_handle_fromlist",
+      "line": 1390,
+      "primitive_calls": 43,
+      "self_seconds": 0.000155105
+    },
+    {
+      "calls": 134,
+      "cumulative_seconds": 0.00025429500000000003,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/utils.py",
+      "function": "stream_list",
+      "line": 475,
+      "primitive_calls": 134,
+      "self_seconds": 0.00015274100000000002
+    },
+    {
+      "calls": 6,
+      "cumulative_seconds": 0.001021364,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stage_b.py",
+      "function": "record",
+      "line": 89,
+      "primitive_calls": 6,
+      "self_seconds": 0.00015031200000000002
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 0.00039528500000000005,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "set_env",
+      "line": 1410,
+      "primitive_calls": 10,
+      "self_seconds": 0.000145625
+    },
+    {
+      "calls": 307,
+      "cumulative_seconds": 0.000205794,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "on_start",
+      "line": 265,
+      "primitive_calls": 307,
+      "self_seconds": 0.00014215900000000002
+    },
+    {
+      "calls": 102,
+      "cumulative_seconds": 0.00194067,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/module.py",
+      "function": "__next__",
+      "line": 220,
+      "primitive_calls": 102,
+      "self_seconds": 0.000139309
+    },
+    {
+      "calls": 6,
+      "cumulative_seconds": 0.000137748,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py",
+      "function": "<lambda>",
+      "line": 857,
+      "primitive_calls": 6,
+      "self_seconds": 0.000137748
+    },
+    {
+      "calls": 614,
+      "cumulative_seconds": 0.000134234,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "is_start",
+      "line": 138,
+      "primitive_calls": 614,
+      "self_seconds": 0.000134234
+    },
+    {
+      "calls": 800,
+      "cumulative_seconds": 0.00013092,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/shape_base.py",
+      "function": "_atleast_2d_dispatcher",
+      "line": 74,
+      "primitive_calls": 800,
+      "self_seconds": 0.00013092
+    },
+    {
+      "calls": 308,
+      "cumulative_seconds": 0.000127715,
+      "file": "~",
+      "function": "<built-in method builtins.callable>",
+      "line": 0,
+      "primitive_calls": 308,
+      "self_seconds": 0.000127715
+    },
+    {
+      "calls": 307,
+      "cumulative_seconds": 0.00012350500000000002,
+      "file": "~",
+      "function": "<method 'acquire' of '_thread.RLock' objects>",
+      "line": 0,
+      "primitive_calls": 307,
+      "self_seconds": 0.00012350500000000002
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.000122345,
+      "file": "~",
+      "function": "<method 'wrap' of 'numpy._core._multiarray_umath._array_converter' objects>",
+      "line": 0,
+      "primitive_calls": 2,
+      "self_seconds": 0.000122345
+    },
+    {
+      "calls": 3,
+      "cumulative_seconds": 0.000127696,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/_ufunc_config.py",
+      "function": "__enter__",
+      "line": 472,
+      "primitive_calls": 3,
+      "self_seconds": 0.000117138
+    },
+    {
+      "calls": 128,
+      "cumulative_seconds": 0.00011516900000000001,
+      "file": "~",
+      "function": "<method 'copy' of 'set' objects>",
+      "line": 0,
+      "primitive_calls": 128,
+      "self_seconds": 0.00011516900000000001
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00023998700000000002,
+      "file": "/usr/lib/python3.12/contextlib.py",
+      "function": "__exit__",
+      "line": 567,
+      "primitive_calls": 2,
+      "self_seconds": 0.00011469500000000001
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.016081396,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/caching.py",
+      "function": "_load_index",
+      "line": 581,
+      "primitive_calls": 2,
+      "self_seconds": 0.000109778
+    },
+    {
+      "calls": 303,
+      "cumulative_seconds": 0.000106082,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/ffi.py",
+      "function": "__getattr__",
+      "line": 153,
+      "primitive_calls": 303,
+      "self_seconds": 0.000106082
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.001163379,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "__init__",
+      "line": 645,
+      "primitive_calls": 2,
+      "self_seconds": 9.857500000000001e-05
+    },
+    {
+      "calls": 289,
+      "cumulative_seconds": 9.8162e-05,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "_any_dispatcher",
+      "line": 2469,
+      "primitive_calls": 289,
+      "self_seconds": 9.8162e-05
+    },
+    {
+      "calls": 102,
+      "cumulative_seconds": 0.0005555730000000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/ffi.py",
+      "function": "__del__",
+      "line": 392,
+      "primitive_calls": 102,
+      "self_seconds": 9.603400000000001e-05
+    },
+    {
+      "calls": 60,
+      "cumulative_seconds": 9.581800000000001e-05,
+      "file": "~",
+      "function": "<built-in method fromkeys>",
+      "line": 0,
+      "primitive_calls": 60,
+      "self_seconds": 9.581800000000001e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 9.578200000000001e-05,
+      "file": "~",
+      "function": "<method 'as_arrays' of 'numpy._core._multiarray_umath._array_converter' objects>",
+      "line": 0,
+      "primitive_calls": 2,
+      "self_seconds": 9.578200000000001e-05
+    },
+    {
+      "calls": 102,
+      "cumulative_seconds": 0.000443566,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/ffi.py",
+      "function": "close",
+      "line": 349,
+      "primitive_calls": 102,
+      "self_seconds": 9.513700000000001e-05
+    },
+    {
+      "calls": 6,
+      "cumulative_seconds": 0.000486515,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py",
+      "function": "func_assert_same_pos",
+      "line": 777,
+      "primitive_calls": 6,
+      "self_seconds": 9.205500000000001e-05
+    },
+    {
+      "calls": 160,
+      "cumulative_seconds": 0.000495891,
+      "file": "~",
+      "function": "<built-in method builtins.next>",
+      "line": 0,
+      "primitive_calls": 152,
+      "self_seconds": 8.8954e-05
+    },
+    {
+      "calls": 302,
+      "cumulative_seconds": 8.737500000000001e-05,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_stride_tricks_impl.py",
+      "function": "_broadcast_to_dispatcher",
+      "line": 470,
+      "primitive_calls": 302,
+      "self_seconds": 8.737500000000001e-05
+    },
+    {
+      "calls": 134,
+      "cumulative_seconds": 0.00039256100000000004,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/typing/templates.py",
+      "function": "new_registrations",
+      "line": 1322,
+      "primitive_calls": 134,
+      "self_seconds": 8.5998e-05
+    },
+    {
+      "calls": 295,
+      "cumulative_seconds": 8.508900000000001e-05,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "_all_dispatcher",
+      "line": 2581,
+      "primitive_calls": 295,
+      "self_seconds": 8.508900000000001e-05
+    },
+    {
+      "calls": 35,
+      "cumulative_seconds": 0.000337286,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/types/abstract.py",
+      "function": "_intern",
+      "line": 49,
+      "primitive_calls": 35,
+      "self_seconds": 8.2125e-05
+    },
+    {
+      "calls": 614,
+      "cumulative_seconds": 8.1167e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "kind",
+      "line": 108,
+      "primitive_calls": 614,
+      "self_seconds": 8.1167e-05
+    },
+    {
+      "calls": 213,
+      "cumulative_seconds": 0.000376884,
+      "file": "~",
+      "function": "<built-in method builtins.hash>",
+      "line": 0,
+      "primitive_calls": 131,
+      "self_seconds": 8.016900000000001e-05
+    },
+    {
+      "calls": 307,
+      "cumulative_seconds": 7.8785e-05,
+      "file": "~",
+      "function": "<method 'release' of '_thread.RLock' objects>",
+      "line": 0,
+      "primitive_calls": 307,
+      "self_seconds": 7.8785e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.016777133,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/caching.py",
+      "function": "_load_data",
+      "line": 614,
+      "primitive_calls": 2,
+      "self_seconds": 7.547100000000001e-05
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 0.0006633040000000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/typing/typeof.py",
+      "function": "_typeof_ndarray",
+      "line": 246,
+      "primitive_calls": 10,
+      "self_seconds": 7.396300000000001e-05
+    },
+    {
+      "calls": 122,
+      "cumulative_seconds": 7.2335e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/types/npytypes.py",
+      "function": "key",
+      "line": 482,
+      "primitive_calls": 122,
+      "self_seconds": 7.2335e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.000122862,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/executionengine.py",
+      "function": "_find_module_ptr",
+      "line": 145,
+      "primitive_calls": 2,
+      "self_seconds": 7.1815e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00021190500000000003,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/itanium_mangler.py",
+      "function": "prepend_namespace",
+      "line": 179,
+      "primitive_calls": 2,
+      "self_seconds": 7.1127e-05
+    },
+    {
+      "calls": 302,
+      "cumulative_seconds": 7.0641e-05,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "_round_dispatcher",
+      "line": 3616,
+      "primitive_calls": 302,
+      "self_seconds": 7.0641e-05
+    },
+    {
+      "calls": 120,
+      "cumulative_seconds": 0.00010243000000000001,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/numeric.py",
+      "function": "<genexpr>",
+      "line": 1476,
+      "primitive_calls": 120,
+      "self_seconds": 7.0561e-05
+    },
+    {
+      "calls": 25,
+      "cumulative_seconds": 0.000340154,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/types/abstract.py",
+      "function": "_type_reconstructor",
+      "line": 71,
+      "primitive_calls": 25,
+      "self_seconds": 7.0277e-05
+    },
+    {
+      "calls": 17,
+      "cumulative_seconds": 7.0182e-05,
+      "file": "/usr/lib/python3.12/ctypes/__init__.py",
+      "function": "cast",
+      "line": 517,
+      "primitive_calls": 17,
+      "self_seconds": 7.0182e-05
+    },
+    {
+      "calls": 302,
+      "cumulative_seconds": 6.8791e-05,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_arraypad_impl.py",
+      "function": "_pad_dispatcher",
+      "line": 538,
+      "primitive_calls": 302,
+      "self_seconds": 6.8791e-05
+    },
+    {
+      "calls": 16,
+      "cumulative_seconds": 0.000321119,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/base.py",
+      "function": "install_registry",
+      "line": 352,
+      "primitive_calls": 16,
+      "self_seconds": 6.8136e-05
+    },
+    {
+      "calls": 14,
+      "cumulative_seconds": 0.000852133,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/typing/typeof.py",
+      "function": "typeof",
+      "line": 27,
+      "primitive_calls": 14,
+      "self_seconds": 6.6536e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00043035500000000005,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "_add_module",
+      "line": 1402,
+      "primitive_calls": 2,
+      "self_seconds": 6.462300000000001e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00024389800000000002,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/module.py",
+      "function": "triple",
+      "line": 151,
+      "primitive_calls": 2,
+      "self_seconds": 6.2771e-05
+    },
+    {
+      "calls": 41,
+      "cumulative_seconds": 0.0007294640000000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/value.py",
+      "function": "name",
+      "line": 157,
+      "primitive_calls": 41,
+      "self_seconds": 6.2519e-05
+    },
+    {
+      "calls": 57,
+      "cumulative_seconds": 0.001012315,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/module.py",
+      "function": "_next",
+      "line": 251,
+      "primitive_calls": 57,
+      "self_seconds": 6.225000000000001e-05
+    },
+    {
+      "calls": 8,
+      "cumulative_seconds": 0.00028673,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/environment.py",
+      "function": "_rebuild_env",
+      "line": 46,
+      "primitive_calls": 8,
+      "self_seconds": 6.1834e-05
+    },
+    {
+      "calls": 14,
+      "cumulative_seconds": 0.0009591900000000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/dispatcher.py",
+      "function": "typeof_pyval",
+      "line": 678,
+      "primitive_calls": 14,
+      "self_seconds": 6.1721e-05
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 0.000368024,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/types/npytypes.py",
+      "function": "__init__",
+      "line": 444,
+      "primitive_calls": 10,
+      "self_seconds": 6.154500000000001e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00026744000000000003,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/executionengine.py",
+      "function": "_raw_object_cache_getbuffer",
+      "line": 196,
+      "primitive_calls": 2,
+      "self_seconds": 6.0489e-05
+    },
+    {
+      "calls": 134,
+      "cumulative_seconds": 8.006900000000001e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/utils.py",
+      "function": "sublist_iterator",
+      "line": 484,
+      "primitive_calls": 134,
+      "self_seconds": 5.58e-05
+    },
+    {
+      "calls": 120,
+      "cumulative_seconds": 5.5450000000000006e-05,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/numeric.py",
+      "function": "_roll_dispatcher",
+      "line": 1222,
+      "primitive_calls": 120,
+      "self_seconds": 5.5450000000000006e-05
+    },
+    {
+      "calls": 307,
+      "cumulative_seconds": 5.4282000000000006e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "is_end",
+      "line": 148,
+      "primitive_calls": 307,
+      "self_seconds": 5.4282000000000006e-05
+    },
+    {
+      "calls": 86,
+      "cumulative_seconds": 8.2064e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/value.py",
+      "function": "__init__",
+      "line": 87,
+      "primitive_calls": 86,
+      "self_seconds": 5.3479e-05
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 0.000537751,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/types/abstract.py",
+      "function": "__call__",
+      "line": 61,
+      "primitive_calls": 10,
+      "self_seconds": 5.2690000000000005e-05
+    },
+    {
+      "calls": 6,
+      "cumulative_seconds": 5.0236000000000005e-05,
+      "file": "~",
+      "function": "<built-in method builtins.round>",
+      "line": 0,
+      "primitive_calls": 6,
+      "self_seconds": 5.0236000000000005e-05
+    },
+    {
+      "calls": 110,
+      "cumulative_seconds": 5.0234e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/ffi.py",
+      "function": "__init__",
+      "line": 342,
+      "primitive_calls": 110,
+      "self_seconds": 5.0234e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 7.3451e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/ir/module.py",
+      "function": "__repr__",
+      "line": 243,
+      "primitive_calls": 2,
+      "self_seconds": 5.0144000000000006e-05
+    },
+    {
+      "calls": 3,
+      "cumulative_seconds": 6.6844e-05,
+      "file": "/usr/lib/python3.12/weakref.py",
+      "function": "__setitem__",
+      "line": 164,
+      "primitive_calls": 3,
+      "self_seconds": 4.9439000000000006e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 5.7956000000000006e-05,
+      "file": "<frozen posixpath>",
+      "function": "join",
+      "line": 71,
+      "primitive_calls": 2,
+      "self_seconds": 4.8726e-05
+    },
+    {
+      "calls": 51,
+      "cumulative_seconds": 9.381500000000001e-05,
+      "file": "~",
+      "function": "<built-in method _abc._abc_instancecheck>",
+      "line": 0,
+      "primitive_calls": 51,
+      "self_seconds": 4.7624000000000003e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.011356507,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "unserialize_library",
+      "line": 1168,
+      "primitive_calls": 2,
+      "self_seconds": 4.589e-05
+    },
+    {
+      "calls": 45,
+      "cumulative_seconds": 0.0007069820000000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/module.py",
+      "function": "_next",
+      "line": 240,
+      "primitive_calls": 45,
+      "self_seconds": 4.4289e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.000307896,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "_scan_and_fix_unresolved_refs",
+      "line": 1305,
+      "primitive_calls": 2,
+      "self_seconds": 4.3606e-05
+    },
+    {
+      "calls": 102,
+      "cumulative_seconds": 4.3535e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/ffi.py",
+      "function": "detach",
+      "line": 359,
+      "primitive_calls": 102,
+      "self_seconds": 4.3535e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 4.4291e-05,
+      "file": "~",
+      "function": "<built-in method _abc._abc_subclasscheck>",
+      "line": 0,
+      "primitive_calls": 1,
+      "self_seconds": 4.3185e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.001206503,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "create_library",
+      "line": 1161,
+      "primitive_calls": 2,
+      "self_seconds": 4.3124e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 4.3959000000000004e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "__init__",
+      "line": 529,
+      "primitive_calls": 2,
+      "self_seconds": 4.3084e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.0014111890000000002,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/base.py",
+      "function": "refresh",
+      "line": 261,
+      "primitive_calls": 2,
+      "self_seconds": 4.2752e-05
+    },
+    {
+      "calls": 155,
+      "cumulative_seconds": 4.2709e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/types/abstract.py",
+      "function": "key",
+      "line": 96,
+      "primitive_calls": 155,
+      "self_seconds": 4.2709e-05
+    },
+    {
+      "calls": 12,
+      "cumulative_seconds": 5.1500000000000005e-05,
+      "file": "<frozen importlib._bootstrap>",
+      "function": "parent",
+      "line": 645,
+      "primitive_calls": 12,
+      "self_seconds": 4.2491000000000004e-05
+    },
+    {
+      "calls": 34,
+      "cumulative_seconds": 7.1716e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/types/abstract.py",
+      "function": "__eq__",
+      "line": 124,
+      "primitive_calls": 34,
+      "self_seconds": 4.2454000000000004e-05
+    },
+    {
+      "calls": 1,
+      "cumulative_seconds": 4.6754e-05,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/_ufunc_config.py",
+      "function": "inner",
+      "line": 496,
+      "primitive_calls": 1,
+      "self_seconds": 4.2299e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.048757321000000006,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/dispatcher.py",
+      "function": "_compile_for_args",
+      "line": 342,
+      "primitive_calls": 2,
+      "self_seconds": 4.2114000000000004e-05
+    },
+    {
+      "calls": 5,
+      "cumulative_seconds": 0.00012782600000000002,
+      "file": "<frozen importlib._bootstrap>",
+      "function": "_gcd_import",
+      "line": 1375,
+      "primitive_calls": 5,
+      "self_seconds": 4.1193000000000004e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.000465808,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "magic_tuple",
+      "line": 1298,
+      "primitive_calls": 2,
+      "self_seconds": 4.0621e-05
+    },
+    {
+      "calls": 14,
+      "cumulative_seconds": 0.0007618260000000001,
+      "file": "/usr/lib/python3.12/functools.py",
+      "function": "wrapper",
+      "line": 904,
+      "primitive_calls": 14,
+      "self_seconds": 3.9421e-05
+    },
+    {
+      "calls": 151,
+      "cumulative_seconds": 3.9194000000000005e-05,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/multiarray.py",
+      "function": "packbits",
+      "line": 1184,
+      "primitive_calls": 151,
+      "self_seconds": 3.9194000000000005e-05
+    },
+    {
+      "calls": 6,
+      "cumulative_seconds": 4.2501000000000005e-05,
+      "file": "/usr/lib/python3.12/contextlib.py",
+      "function": "_push_exit_callback",
+      "line": 548,
+      "primitive_calls": 6,
+      "self_seconds": 3.9143e-05
+    },
+    {
+      "calls": 6,
+      "cumulative_seconds": 0.00022873700000000002,
+      "file": "/usr/lib/python3.12/contextlib.py",
+      "function": "enter_context",
+      "line": 511,
+      "primitive_calls": 6,
+      "self_seconds": 3.8804e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00044568900000000004,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/typing/context.py",
+      "function": "load_additional_registries",
+      "line": 811,
+      "primitive_calls": 2,
+      "self_seconds": 3.8681000000000005e-05
+    },
+    {
+      "calls": 1,
+      "cumulative_seconds": 5.0308e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stage_b.py",
+      "function": "__post_init__",
+      "line": 32,
+      "primitive_calls": 1,
+      "self_seconds": 3.8016e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00010269000000000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/itanium_mangler.py",
+      "function": "_escape_string",
+      "line": 63,
+      "primitive_calls": 2,
+      "self_seconds": 3.7987e-05
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 4.6915e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/ffi.py",
+      "function": "__init__",
+      "line": 275,
+      "primitive_calls": 10,
+      "self_seconds": 3.7221e-05
+    },
+    {
+      "calls": 3,
+      "cumulative_seconds": 6.0407000000000006e-05,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py",
+      "function": "assert_same_inf_values",
+      "line": 808,
+      "primitive_calls": 3,
+      "self_seconds": 3.7163e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.012156193000000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/compiler.py",
+      "function": "_rebuild",
+      "line": 227,
+      "primitive_calls": 2,
+      "self_seconds": 3.6731000000000005e-05
+    },
+    {
+      "calls": 60,
+      "cumulative_seconds": 3.5277e-05,
+      "file": "~",
+      "function": "<built-in method _operator.index>",
+      "line": 0,
+      "primitive_calls": 60,
+      "self_seconds": 3.5277e-05
+    },
+    {
+      "calls": 1,
+      "cumulative_seconds": 3.3022e-05,
+      "file": "~",
+      "function": "<method 'disable' of '_lsprof.Profiler' objects>",
+      "line": 0,
+      "primitive_calls": 1,
+      "self_seconds": 3.3022e-05
+    },
+    {
+      "calls": 1,
+      "cumulative_seconds": 3.2386000000000005e-05,
+      "file": "/usr/lib/python3.12/threading.py",
+      "function": "RLock",
+      "line": 124,
+      "primitive_calls": 1,
+      "self_seconds": 3.2386000000000005e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 6.4381e-05,
+      "file": "/usr/lib/python3.12/re/__init__.py",
+      "function": "sub",
+      "line": 179,
+      "primitive_calls": 2,
+      "self_seconds": 3.2358000000000004e-05
+    },
+    {
+      "calls": 12,
+      "cumulative_seconds": 6.9808e-05,
+      "file": "/usr/lib/python3.12/contextlib.py",
+      "function": "__init__",
+      "line": 104,
+      "primitive_calls": 12,
+      "self_seconds": 3.1831e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.011310617,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "_unserialize",
+      "line": 936,
+      "primitive_calls": 2,
+      "self_seconds": 3.1272e-05
+    },
+    {
+      "calls": 8,
+      "cumulative_seconds": 0.000153988,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "install_timer",
+      "line": 337,
+      "primitive_calls": 8,
+      "self_seconds": 3.0855e-05
+    },
+    {
+      "calls": 44,
+      "cumulative_seconds": 3.0343e-05,
+      "file": "~",
+      "function": "<built-in method __new__ of type object at 0xa44b40>",
+      "line": 0,
+      "primitive_calls": 44,
+      "self_seconds": 3.0343e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00043822800000000003,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/module.py",
+      "function": "parse_assembly",
+      "line": 11,
+      "primitive_calls": 2,
+      "self_seconds": 3.0286e-05
+    },
+    {
+      "calls": 3,
+      "cumulative_seconds": 0.0006757540000000001,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py",
+      "function": "compare",
+      "line": 1770,
+      "primitive_calls": 3,
+      "self_seconds": 2.9615e-05
+    },
+    {
+      "calls": 18,
+      "cumulative_seconds": 0.000111959,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/target_extension.py",
+      "function": "get_local_target",
+      "line": 53,
+      "primitive_calls": 18,
+      "self_seconds": 2.8777000000000002e-05
+    },
+    {
+      "calls": 51,
+      "cumulative_seconds": 2.6353000000000003e-05,
+      "file": "~",
+      "function": "<method 'decode' of 'bytes' objects>",
+      "line": 0,
+      "primitive_calls": 51,
+      "self_seconds": 2.6353000000000003e-05
+    },
+    {
+      "calls": 51,
+      "cumulative_seconds": 0.00011991200000000001,
+      "file": "<frozen abc>",
+      "function": "__instancecheck__",
+      "line": 117,
+      "primitive_calls": 51,
+      "self_seconds": 2.6097e-05
+    },
+    {
+      "calls": 8,
+      "cumulative_seconds": 0.000240673,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/module.py",
+      "function": "functions",
+      "line": 189,
+      "primitive_calls": 8,
+      "self_seconds": 2.5925e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.000374219,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/targets.py",
+      "function": "get_process_triple",
+      "line": 18,
+      "primitive_calls": 2,
+      "self_seconds": 2.5871e-05
+    },
+    {
+      "calls": 8,
+      "cumulative_seconds": 0.00021217700000000003,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/module.py",
+      "function": "global_variables",
+      "line": 176,
+      "primitive_calls": 8,
+      "self_seconds": 2.5010000000000003e-05
+    },
+    {
+      "calls": 20,
+      "cumulative_seconds": 0.000264209,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/ffi.py",
+      "function": "close",
+      "line": 280,
+      "primitive_calls": 20,
+      "self_seconds": 2.5006e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00025155,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "_wrapit",
+      "line": 38,
+      "primitive_calls": 2,
+      "self_seconds": 2.4918e-05
+    },
+    {
+      "calls": 47,
+      "cumulative_seconds": 4.7972e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/common.py",
+      "function": "_decode_string",
+      "line": 9,
+      "primitive_calls": 47,
+      "self_seconds": 2.4847e-05
+    },
+    {
+      "calls": 12,
+      "cumulative_seconds": 9.4126e-05,
+      "file": "/usr/lib/python3.12/contextlib.py",
+      "function": "helper",
+      "line": 299,
+      "primitive_calls": 12,
+      "self_seconds": 2.4318e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 5.8539e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/dispatcher.py",
+      "function": "add_overload",
+      "line": 293,
+      "primitive_calls": 2,
+      "self_seconds": 2.4274000000000002e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.000541049,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/cpu.py",
+      "function": "get_executable",
+      "line": 269,
+      "primitive_calls": 2,
+      "self_seconds": 2.4243e-05
+    },
+    {
+      "calls": 6,
+      "cumulative_seconds": 4.2738e-05,
+      "file": "~",
+      "function": "<method 'all' of 'numpy.generic' objects>",
+      "line": 0,
+      "primitive_calls": 6,
+      "self_seconds": 2.3758000000000002e-05
+    },
+    {
+      "calls": 14,
+      "cumulative_seconds": 0.001503496,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "wrapper",
+      "line": 1069,
+      "primitive_calls": 14,
+      "self_seconds": 2.3723000000000003e-05
+    },
+    {
+      "calls": 6,
+      "cumulative_seconds": 0.0008394160000000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cpu_scalability.py",
+      "function": "<lambda>",
+      "line": 130,
+      "primitive_calls": 6,
+      "self_seconds": 2.3057000000000003e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00301936,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/module.py",
+      "function": "parse_bitcode",
+      "line": 29,
+      "primitive_calls": 2,
+      "self_seconds": 2.2018e-05
+    },
+    {
+      "calls": 7,
+      "cumulative_seconds": 0.00046307600000000004,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "sort",
+      "line": 941,
+      "primitive_calls": 7,
+      "self_seconds": 2.1876000000000002e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.045667276,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/caching.py",
+      "function": "_load_overload",
+      "line": 724,
+      "primitive_calls": 2,
+      "self_seconds": 2.1859000000000002e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.000432638,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "_create_empty_module",
+      "line": 1224,
+      "primitive_calls": 2,
+      "self_seconds": 2.1818e-05
+    },
+    {
+      "calls": 14,
+      "cumulative_seconds": 4.4833e-05,
+      "file": "/usr/lib/python3.12/functools.py",
+      "function": "dispatch",
+      "line": 818,
+      "primitive_calls": 14,
+      "self_seconds": 2.175e-05
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 3.1943e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/np/numpy_support.py",
+      "function": "from_dtype",
+      "line": 85,
+      "primitive_calls": 10,
+      "self_seconds": 2.1467000000000003e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.0015755880000000002,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "_finalize_specific",
+      "line": 1007,
+      "primitive_calls": 2,
+      "self_seconds": 2.1005e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.032910319,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/caching.py",
+      "function": "load",
+      "line": 567,
+      "primitive_calls": 2,
+      "self_seconds": 2.0771e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00013943,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/itanium_mangler.py",
+      "function": "mangle_identifier",
+      "line": 107,
+      "primitive_calls": 2,
+      "self_seconds": 2.0752e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.0023367540000000003,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "_finalize_final_module",
+      "line": 792,
+      "primitive_calls": 2,
+      "self_seconds": 2.0571e-05
+    },
+    {
+      "calls": 25,
+      "cumulative_seconds": 3.6115e-05,
+      "file": "/usr/lib/python3.12/copyreg.py",
+      "function": "_reconstructor",
+      "line": 41,
+      "primitive_calls": 25,
+      "self_seconds": 2.0541000000000002e-05
+    },
+    {
+      "calls": 16,
+      "cumulative_seconds": 2.9791000000000003e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/module.py",
+      "function": "__init__",
+      "line": 215,
+      "primitive_calls": 16,
+      "self_seconds": 2.0240000000000003e-05
+    },
+    {
+      "calls": 108,
+      "cumulative_seconds": 2.0110000000000002e-05,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/multiarray.py",
+      "function": "unpackbits",
+      "line": 1241,
+      "primitive_calls": 108,
+      "self_seconds": 2.0110000000000002e-05
+    },
+    {
+      "calls": 112,
+      "cumulative_seconds": 1.9663e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/common.py",
+      "function": "_is_shutting_down",
+      "line": 27,
+      "primitive_calls": 112,
+      "self_seconds": 1.9663e-05
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 0.000229196,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/executionengine.py",
+      "function": "get_global_value_address",
+      "line": 73,
+      "primitive_calls": 10,
+      "self_seconds": 1.8274e-05
+    },
+    {
+      "calls": 12,
+      "cumulative_seconds": 0.00010481000000000001,
+      "file": "/usr/lib/python3.12/contextlib.py",
+      "function": "__exit__",
+      "line": 141,
+      "primitive_calls": 8,
+      "self_seconds": 1.7825e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.047125129,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/caching.py",
+      "function": "load_overload",
+      "line": 713,
+      "primitive_calls": 2,
+      "self_seconds": 1.7787e-05
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 0.00014872,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/context.py",
+      "function": "get_global_context",
+      "line": 9,
+      "primitive_calls": 4,
+      "self_seconds": 1.7745e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.000565431,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/caching.py",
+      "function": "_index_key",
+      "line": 764,
+      "primitive_calls": 2,
+      "self_seconds": 1.7617e-05
+    },
+    {
+      "calls": 14,
+      "cumulative_seconds": 1.7494000000000002e-05,
+      "file": "/usr/lib/python3.12/weakref.py",
+      "function": "__getitem__",
+      "line": 414,
+      "primitive_calls": 14,
+      "self_seconds": 1.7494000000000002e-05
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 2.2966e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/ffi.py",
+      "function": "__del__",
+      "line": 293,
+      "primitive_calls": 10,
+      "self_seconds": 1.7436e-05
+    },
+    {
+      "calls": 86,
+      "cumulative_seconds": 1.7125e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/value.py",
+      "function": "is_global",
+      "line": 125,
+      "primitive_calls": 86,
+      "self_seconds": 1.7125e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 2.0843e-05,
+      "file": "/usr/lib/python3.12/re/__init__.py",
+      "function": "_compile",
+      "line": 280,
+      "primitive_calls": 2,
+      "self_seconds": 1.6147e-05
+    },
+    {
+      "calls": 3,
+      "cumulative_seconds": 0.00019670200000000002,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "_wrapreduction",
+      "line": 66,
+      "primitive_calls": 3,
+      "self_seconds": 1.6068000000000003e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 3.2256000000000004e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/base.py",
+      "function": "insert_user_function",
+      "line": 388,
+      "primitive_calls": 2,
+      "self_seconds": 1.5986000000000002e-05
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 1.5655000000000002e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/np/numpy_support.py",
+      "function": "map_layout",
+      "line": 221,
+      "primitive_calls": 10,
+      "self_seconds": 1.5655000000000002e-05
+    },
+    {
+      "calls": 8,
+      "cumulative_seconds": 1.5484e-05,
+      "file": "/usr/lib/python3.12/weakref.py",
+      "function": "get",
+      "line": 194,
+      "primitive_calls": 8,
+      "self_seconds": 1.5484e-05
+    },
+    {
+      "calls": 14,
+      "cumulative_seconds": 2.3771e-05,
+      "file": "<string>",
+      "function": "<lambda>",
+      "line": 1,
+      "primitive_calls": 14,
+      "self_seconds": 1.5055e-05
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 8.2006e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/caching.py",
+      "function": "<lambda>",
+      "line": 780,
+      "primitive_calls": 4,
+      "self_seconds": 1.48e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 8.3726e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/typing/context.py",
+      "function": "_load_builtins",
+      "line": 482,
+      "primitive_calls": 2,
+      "self_seconds": 1.4498e-05
+    },
+    {
+      "calls": 5,
+      "cumulative_seconds": 0.00014572400000000002,
+      "file": "/usr/lib/python3.12/importlib/__init__.py",
+      "function": "import_module",
+      "line": 73,
+      "primitive_calls": 5,
+      "self_seconds": 1.3957e-05
+    },
+    {
+      "calls": 60,
+      "cumulative_seconds": 1.3905000000000002e-05,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/multiarray.py",
+      "function": "empty_like",
+      "line": 115,
+      "primitive_calls": 60,
+      "self_seconds": 1.3905000000000002e-05
+    },
+    {
+      "calls": 12,
+      "cumulative_seconds": 0.00010442800000000001,
+      "file": "/usr/lib/python3.12/contextlib.py",
+      "function": "__enter__",
+      "line": 132,
+      "primitive_calls": 8,
+      "self_seconds": 1.3845e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.6199000000000002e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/ir/module.py",
+      "function": "_get_body_lines",
+      "line": 217,
+      "primitive_calls": 2,
+      "self_seconds": 1.3577e-05
+    },
+    {
+      "calls": 8,
+      "cumulative_seconds": 2.9049000000000003e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/environment.py",
+      "function": "lookup_environment",
+      "line": 60,
+      "primitive_calls": 8,
+      "self_seconds": 1.3565000000000001e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.000171725,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "_finalize_dynamic_globals",
+      "line": 778,
+      "primitive_calls": 2,
+      "self_seconds": 1.3504000000000001e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.000163541,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/targets.py",
+      "function": "get_host_cpu_name",
+      "line": 108,
+      "primitive_calls": 2,
+      "self_seconds": 1.3453000000000001e-05
+    },
+    {
+      "calls": 6,
+      "cumulative_seconds": 5.9675e-05,
+      "file": "/usr/lib/python3.12/contextlib.py",
+      "function": "_push_cm_exit",
+      "line": 543,
+      "primitive_calls": 6,
+      "self_seconds": 1.2749000000000001e-05
+    },
+    {
+      "calls": 15,
+      "cumulative_seconds": 1.9464000000000002e-05,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/numeric.py",
+      "function": "<genexpr>",
+      "line": 2412,
+      "primitive_calls": 15,
+      "self_seconds": 1.2650000000000001e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.012168832000000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/caching.py",
+      "function": "rebuild",
+      "line": 477,
+      "primitive_calls": 2,
+      "self_seconds": 1.2639e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.999e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/ir/module.py",
+      "function": "__init__",
+      "line": 7,
+      "primitive_calls": 2,
+      "self_seconds": 1.2620000000000001e-05
+    },
+    {
+      "calls": 86,
+      "cumulative_seconds": 1.2211e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/ffi.py",
+      "function": "_dispose",
+      "line": 368,
+      "primitive_calls": 86,
+      "self_seconds": 1.2211e-05
+    },
+    {
+      "calls": 20,
+      "cumulative_seconds": 1.1642000000000001e-05,
+      "file": "~",
+      "function": "<method 'encode' of 'str' objects>",
+      "line": 0,
+      "primitive_calls": 20,
+      "self_seconds": 1.1642000000000001e-05
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 6.696500000000001e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/compiler_lock.py",
+      "function": "acquire",
+      "line": 11,
+      "primitive_calls": 4,
+      "self_seconds": 1.1614000000000001e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.1180000000000001e-05,
+      "file": "~",
+      "function": "<method 'sub' of 're.Pattern' objects>",
+      "line": 0,
+      "primitive_calls": 2,
+      "self_seconds": 1.1180000000000001e-05
+    },
+    {
+      "calls": 5,
+      "cumulative_seconds": 8.065000000000001e-05,
+      "file": "<frozen importlib._bootstrap>",
+      "function": "_find_and_load",
+      "line": 1349,
+      "primitive_calls": 5,
+      "self_seconds": 1.0863000000000001e-05
+    },
+    {
+      "calls": 1,
+      "cumulative_seconds": 6.109400000000001e-05,
+      "file": "<string>",
+      "function": "__init__",
+      "line": 2,
+      "primitive_calls": 1,
+      "self_seconds": 1.0786000000000001e-05
+    },
+    {
+      "calls": 6,
+      "cumulative_seconds": 1.0752000000000001e-05,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py",
+      "function": "isnumber",
+      "line": 750,
+      "primitive_calls": 6,
+      "self_seconds": 1.0752000000000001e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 9.0433e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/executionengine.py",
+      "function": "add_module",
+      "line": 84,
+      "primitive_calls": 2,
+      "self_seconds": 1.0591e-05
+    },
+    {
+      "calls": 8,
+      "cumulative_seconds": 7.5833e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "install_listener",
+      "line": 312,
+      "primitive_calls": 8,
+      "self_seconds": 1.0427e-05
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 9.010100000000001e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/compiler_lock.py",
+      "function": "release",
+      "line": 15,
+      "primitive_calls": 4,
+      "self_seconds": 1.0307000000000001e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00010322300000000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/compiler_lock.py",
+      "function": "_acquire_compile_lock",
+      "line": 32,
+      "primitive_calls": 2,
+      "self_seconds": 1.0257e-05
+    },
+    {
+      "calls": 6,
+      "cumulative_seconds": 2.2965e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/ffi.py",
+      "function": "__str__",
+      "line": 300,
+      "primitive_calls": 6,
+      "self_seconds": 1.0195e-05
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 3.4658e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/sigutils.py",
+      "function": "normalize_signature",
+      "line": 22,
+      "primitive_calls": 2,
+      "self_seconds": 1.0125e-05
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 1.5103000000000001e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/context.py",
+      "function": "__init__",
+      "line": 15,
+      "primitive_calls": 4,
+      "self_seconds": 1.0084e-05
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 2.9198e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "unregister",
+      "line": 195,
+      "primitive_calls": 4,
+      "self_seconds": 1.0075000000000001e-05
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 3.6208e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "register",
+      "line": 182,
+      "primitive_calls": 4,
+      "self_seconds": 1.0017e-05
+    },
+    {
+      "calls": 8,
+      "cumulative_seconds": 0.000150388,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/module.py",
+      "function": "_dispose",
+      "line": 248,
+      "primitive_calls": 8,
+      "self_seconds": 9.953000000000001e-06
+    },
+    {
+      "calls": 8,
+      "cumulative_seconds": 0.00014229500000000002,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/module.py",
+      "function": "_dispose",
+      "line": 237,
+      "primitive_calls": 8,
+      "self_seconds": 9.923000000000001e-06
+    },
+    {
+      "calls": 49,
+      "cumulative_seconds": 9.724e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/value.py",
+      "function": "is_function",
+      "line": 129,
+      "primitive_calls": 49,
+      "self_seconds": 9.724e-06
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 9.694e-06,
+      "file": "~",
+      "function": "<built-in method _ctypes.byref>",
+      "line": 0,
+      "primitive_calls": 10,
+      "self_seconds": 9.694e-06
+    },
+    {
+      "calls": 3,
+      "cumulative_seconds": 2.3244000000000003e-05,
+      "file": "~",
+      "function": "<method 'any' of 'numpy.ndarray' objects>",
+      "line": 0,
+      "primitive_calls": 3,
+      "self_seconds": 9.587e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 1.6309000000000003e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/cgutils.py",
+      "function": "normalize_ir_text",
+      "line": 1188,
+      "primitive_calls": 4,
+      "self_seconds": 9.562000000000001e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 2.9550000000000003e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/ffi.py",
+      "function": "__hash__",
+      "line": 409,
+      "primitive_calls": 4,
+      "self_seconds": 9.098e-06
+    },
+    {
+      "calls": 3,
+      "cumulative_seconds": 9.070000000000001e-06,
+      "file": "/usr/lib/python3.12/weakref.py",
+      "function": "__init__",
+      "line": 352,
+      "primitive_calls": 3,
+      "self_seconds": 9.070000000000001e-06
+    },
+    {
+      "calls": 12,
+      "cumulative_seconds": 9.009000000000001e-06,
+      "file": "~",
+      "function": "<method 'rpartition' of 'str' objects>",
+      "line": 0,
+      "primitive_calls": 12,
+      "self_seconds": 9.009000000000001e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.000365732,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "add_module",
+      "line": 1105,
+      "primitive_calls": 2,
+      "self_seconds": 8.937000000000001e-06
+    },
+    {
+      "calls": 18,
+      "cumulative_seconds": 4.4178e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/target_extension.py",
+      "function": "current_target",
+      "line": 47,
+      "primitive_calls": 18,
+      "self_seconds": 8.908e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 6.6654e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/caching.py",
+      "function": "_data_path",
+      "line": 632,
+      "primitive_calls": 2,
+      "self_seconds": 8.698e-06
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 1.5353e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/types/misc.py",
+      "function": "unliteral",
+      "line": 63,
+      "primitive_calls": 10,
+      "self_seconds": 8.609e-06
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 0.00027081500000000004,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/ffi.py",
+      "function": "__exit__",
+      "line": 290,
+      "primitive_calls": 10,
+      "self_seconds": 8.446e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.000174904,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "_get_host_cpu_name",
+      "line": 1322,
+      "primitive_calls": 2,
+      "self_seconds": 8.256e-06
+    },
+    {
+      "calls": 1,
+      "cumulative_seconds": 0.00010047700000000001,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "amax",
+      "line": 3165,
+      "primitive_calls": 1,
+      "self_seconds": 7.792000000000001e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00013943,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "scan_unresolved_symbols",
+      "line": 1024,
+      "primitive_calls": 2,
+      "self_seconds": 7.732e-06
+    },
+    {
+      "calls": 16,
+      "cumulative_seconds": 7.2143e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/base.py",
+      "function": "insert_func_defn",
+      "line": 368,
+      "primitive_calls": 16,
+      "self_seconds": 7.683e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 1.462e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/module.py",
+      "function": "__init__",
+      "line": 52,
+      "primitive_calls": 4,
+      "self_seconds": 7.541e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 9.884e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/base.py",
+      "function": "append",
+      "line": 138,
+      "primitive_calls": 2,
+      "self_seconds": 7.520000000000001e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 7.5e-06,
+      "file": "~",
+      "function": "<method '_insert' of '_dispatcher.Dispatcher' objects>",
+      "line": 0,
+      "primitive_calls": 2,
+      "self_seconds": 7.5e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 7.370000000000001e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/ir/_utils.py",
+      "function": "__init__",
+      "line": 9,
+      "primitive_calls": 2,
+      "self_seconds": 7.370000000000001e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.0005366840000000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/typing/context.py",
+      "function": "refresh",
+      "line": 232,
+      "primitive_calls": 2,
+      "self_seconds": 7.269e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00013631300000000002,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "_verify_declare_only_symbols",
+      "line": 784,
+      "primitive_calls": 2,
+      "self_seconds": 7.260000000000001e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 7.258000000000001e-06,
+      "file": "~",
+      "function": "<method 'set' of '_contextvars.ContextVar' objects>",
+      "line": 0,
+      "primitive_calls": 4,
+      "self_seconds": 7.258000000000001e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 8.466e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/dispatcher.py",
+      "function": "_compilation_chain_init_hook",
+      "line": 235,
+      "primitive_calls": 2,
+      "self_seconds": 7.189e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 8.8502e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "get_pointer_to_function",
+      "line": 986,
+      "primitive_calls": 2,
+      "self_seconds": 6.897e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.3243e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/itanium_mangler.py",
+      "function": "_len_encoded",
+      "line": 94,
+      "primitive_calls": 2,
+      "self_seconds": 6.887e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 6.5809e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/module.py",
+      "function": "name",
+      "line": 124,
+      "primitive_calls": 2,
+      "self_seconds": 6.847000000000001e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 6.6970000000000004e-06,
+      "file": "~",
+      "function": "<built-in method numba._dynfunc.make_function>",
+      "line": 0,
+      "primitive_calls": 2,
+      "self_seconds": 6.6970000000000004e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 6.436000000000001e-06,
+      "file": "~",
+      "function": "<method 'reset' of '_contextvars.ContextVar' objects>",
+      "line": 0,
+      "primitive_calls": 4,
+      "self_seconds": 6.436000000000001e-06
+    },
+    {
+      "calls": 3,
+      "cumulative_seconds": 1.1374000000000002e-05,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/_ufunc_config.py",
+      "function": "__exit__",
+      "line": 488,
+      "primitive_calls": 3,
+      "self_seconds": 6.3760000000000004e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 6.375000000000001e-06,
+      "file": "/usr/lib/python3.12/contextlib.py",
+      "function": "__init__",
+      "line": 481,
+      "primitive_calls": 2,
+      "self_seconds": 6.375000000000001e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 6.317000000000001e-06,
+      "file": "~",
+      "function": "<built-in method numpy._core._multiarray_umath._make_extobj>",
+      "line": 0,
+      "primitive_calls": 4,
+      "self_seconds": 6.317000000000001e-06
+    },
+    {
+      "calls": 16,
+      "cumulative_seconds": 4.741e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/base.py",
+      "function": "_insert_getattr_defn",
+      "line": 372,
+      "primitive_calls": 16,
+      "self_seconds": 6.167e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00021802800000000002,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/funcdesc.py",
+      "function": "llvm_cpython_wrapper_name",
+      "line": 117,
+      "primitive_calls": 2,
+      "self_seconds": 6.1230000000000005e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 7.421500000000001e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/executionengine.py",
+      "function": "get_function_address",
+      "line": 65,
+      "primitive_calls": 2,
+      "self_seconds": 6.054e-06
+    },
+    {
+      "calls": 16,
+      "cumulative_seconds": 4.2503e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/base.py",
+      "function": "_insert_get_constant_defn",
+      "line": 384,
+      "primitive_calls": 16,
+      "self_seconds": 6.035000000000001e-06
+    },
+    {
+      "calls": 16,
+      "cumulative_seconds": 4.5215e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/base.py",
+      "function": "_insert_cast_defn",
+      "line": 380,
+      "primitive_calls": 16,
+      "self_seconds": 5.981e-06
+    },
+    {
+      "calls": 16,
+      "cumulative_seconds": 4.5712000000000006e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/base.py",
+      "function": "_insert_setattr_defn",
+      "line": 376,
+      "primitive_calls": 16,
+      "self_seconds": 5.786e-06
+    },
+    {
+      "calls": 14,
+      "cumulative_seconds": 5.589e-06,
+      "file": "~",
+      "function": "<built-in method _abc.get_cache_token>",
+      "line": 0,
+      "primitive_calls": 14,
+      "self_seconds": 5.589e-06
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 5.58e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/types/abstract.py",
+      "function": "__str__",
+      "line": 118,
+      "primitive_calls": 10,
+      "self_seconds": 5.58e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 8.657e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/utils.py",
+      "function": "bit_length",
+      "line": 464,
+      "primitive_calls": 2,
+      "self_seconds": 5.541e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 5.501e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/imputils.py",
+      "function": "user_function",
+      "line": 227,
+      "primitive_calls": 2,
+      "self_seconds": 5.501e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.001176362,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/executionengine.py",
+      "function": "finalize_object",
+      "line": 94,
+      "primitive_calls": 2,
+      "self_seconds": 5.4300000000000005e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 5.37e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "_object_getbuffer_hook",
+      "line": 904,
+      "primitive_calls": 2,
+      "self_seconds": 5.37e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 5.248e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/caching.py",
+      "function": "_cache_log",
+      "line": 34,
+      "primitive_calls": 4,
+      "self_seconds": 5.248e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 7.2204e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/compiler_lock.py",
+      "function": "__enter__",
+      "line": 19,
+      "primitive_calls": 4,
+      "self_seconds": 5.239e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.000268283,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "reshape",
+      "line": 207,
+      "primitive_calls": 2,
+      "self_seconds": 5.099000000000001e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 0.00012093800000000001,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "scan_defined_symbols",
+      "line": 1043,
+      "primitive_calls": 2,
+      "self_seconds": 5.088e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 9.516800000000001e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/compiler_lock.py",
+      "function": "__exit__",
+      "line": 22,
+      "primitive_calls": 4,
+      "self_seconds": 5.067e-06
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 4.928e-06,
+      "file": "~",
+      "function": "<method 'from_address' of '_ctypes.PyCArrayType' objects>",
+      "line": 0,
+      "primitive_calls": 10,
+      "self_seconds": 4.928e-06
+    },
+    {
+      "calls": 12,
+      "cumulative_seconds": 2.2713e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/sigutils.py",
+      "function": "check_type",
+      "line": 43,
+      "primitive_calls": 12,
+      "self_seconds": 4.836e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.3353e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/typing/typeof.py",
+      "function": "_typeof_int",
+      "line": 134,
+      "primitive_calls": 2,
+      "self_seconds": 4.6960000000000004e-06
+    },
+    {
+      "calls": 1,
+      "cumulative_seconds": 9.7793e-05,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "amin",
+      "line": 3303,
+      "primitive_calls": 1,
+      "self_seconds": 4.6350000000000005e-06
+    },
+    {
+      "calls": 5,
+      "cumulative_seconds": 5.983e-06,
+      "file": "<frozen importlib._bootstrap>",
+      "function": "_sanity_check",
+      "line": 1285,
+      "primitive_calls": 5,
+      "self_seconds": 4.605e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 5.792000000000001e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/itanium_mangler.py",
+      "function": "_fix_lead_digit",
+      "line": 84,
+      "primitive_calls": 2,
+      "self_seconds": 4.505e-06
+    },
+    {
+      "calls": 3,
+      "cumulative_seconds": 8.335e-06,
+      "file": "/usr/lib/python3.12/weakref.py",
+      "function": "__new__",
+      "line": 347,
+      "primitive_calls": 3,
+      "self_seconds": 4.454e-06
+    },
+    {
+      "calls": 6,
+      "cumulative_seconds": 4.425e-06,
+      "file": "/usr/lib/python3.12/contextlib.py",
+      "function": "_create_exit_wrapper",
+      "line": 471,
+      "primitive_calls": 6,
+      "self_seconds": 4.425e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 5.801e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/dispatcher.py",
+      "function": "_callback_add_llvm_timer",
+      "line": 710,
+      "primitive_calls": 2,
+      "self_seconds": 4.424e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 5.0970000000000005e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/ir/module.py",
+      "function": "_get_metadata_lines",
+      "line": 225,
+      "primitive_calls": 2,
+      "self_seconds": 4.0420000000000004e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 2.0672e-05,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/funcdesc.py",
+      "function": "lookup_module",
+      "line": 87,
+      "primitive_calls": 2,
+      "self_seconds": 3.951e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 3.922e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "resolve",
+      "line": 1051,
+      "primitive_calls": 2,
+      "self_seconds": 3.922e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 3.7080000000000003e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/caching.py",
+      "function": "_guard_against_spurious_io_errors",
+      "line": 750,
+      "primitive_calls": 4,
+      "self_seconds": 3.7080000000000003e-06
+    },
+    {
+      "calls": 1,
+      "cumulative_seconds": 4.515e-06,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/numeric.py",
+      "function": "isscalar",
+      "line": 1911,
+      "primitive_calls": 1,
+      "self_seconds": 3.58e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 3.5400000000000004e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/ffi.py",
+      "function": "__bool__",
+      "line": 307,
+      "primitive_calls": 4,
+      "self_seconds": 3.5400000000000004e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 3.4780000000000004e-06,
+      "file": "~",
+      "function": "<built-in method sys.exc_info>",
+      "line": 0,
+      "primitive_calls": 2,
+      "self_seconds": 3.4780000000000004e-06
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 3.418e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/types/abstract.py",
+      "function": "__init__",
+      "line": 93,
+      "primitive_calls": 10,
+      "self_seconds": 3.418e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 3.388e-06,
+      "file": "~",
+      "function": "<method 'endswith' of 'str' objects>",
+      "line": 0,
+      "primitive_calls": 2,
+      "self_seconds": 3.388e-06
+    },
+    {
+      "calls": 6,
+      "cumulative_seconds": 3.3580000000000003e-06,
+      "file": "~",
+      "function": "<method 'append' of 'collections.deque' objects>",
+      "line": 0,
+      "primitive_calls": 6,
+      "self_seconds": 3.3580000000000003e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 8.959e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/dispatcher.py",
+      "function": "cb_llvm",
+      "line": 868,
+      "primitive_calls": 2,
+      "self_seconds": 3.158e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 4.6191000000000005e-05,
+      "file": "<frozen abc>",
+      "function": "__subclasscheck__",
+      "line": 121,
+      "primitive_calls": 1,
+      "self_seconds": 3.006e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 4.896e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/dispatcher.py",
+      "function": "cb_compiler",
+      "line": 864,
+      "primitive_calls": 2,
+      "self_seconds": 2.9860000000000003e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 5.852e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/common.py",
+      "function": "_encode_string",
+      "line": 4,
+      "primitive_calls": 4,
+      "self_seconds": 2.9570000000000002e-06
+    },
+    {
+      "calls": 1,
+      "cumulative_seconds": 1.3795000000000001e-05,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "max",
+      "line": 3049,
+      "primitive_calls": 1,
+      "self_seconds": 2.9360000000000003e-06
+    },
+    {
+      "calls": 3,
+      "cumulative_seconds": 1.3657000000000002e-05,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/_methods.py",
+      "function": "_any",
+      "line": 55,
+      "primitive_calls": 3,
+      "self_seconds": 2.7780000000000003e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 2.6640000000000002e-06,
+      "file": "~",
+      "function": "<method 'join' of 'str' objects>",
+      "line": 0,
+      "primitive_calls": 4,
+      "self_seconds": 2.6640000000000002e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 2.646e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/misc/llvm_pass_timings.py",
+      "function": "record_legacy",
+      "line": 329,
+      "primitive_calls": 4,
+      "self_seconds": 2.646e-06
+    },
+    {
+      "calls": 16,
+      "cumulative_seconds": 2.553e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/module.py",
+      "function": "__iter__",
+      "line": 229,
+      "primitive_calls": 16,
+      "self_seconds": 2.553e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 2.544e-06,
+      "file": "~",
+      "function": "<method 'split' of 'str' objects>",
+      "line": 0,
+      "primitive_calls": 4,
+      "self_seconds": 2.544e-06
+    },
+    {
+      "calls": 1,
+      "cumulative_seconds": 2.515e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/search.py",
+      "function": "__init__",
+      "line": 41,
+      "primitive_calls": 1,
+      "self_seconds": 2.515e-06
+    },
+    {
+      "calls": 6,
+      "cumulative_seconds": 2.454e-06,
+      "file": "~",
+      "function": "<method 'pop' of 'collections.deque' objects>",
+      "line": 0,
+      "primitive_calls": 6,
+      "self_seconds": 2.454e-06
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 2.452e-06,
+      "file": "~",
+      "function": "<built-in method builtins.id>",
+      "line": 0,
+      "primitive_calls": 10,
+      "self_seconds": 2.452e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 2.322e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/cpu.py",
+      "function": "codegen",
+      "line": 157,
+      "primitive_calls": 4,
+      "self_seconds": 2.322e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 2.211e-06,
+      "file": "~",
+      "function": "<method 'remove' of 'list' objects>",
+      "line": 0,
+      "primitive_calls": 4,
+      "self_seconds": 2.211e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 2.2020000000000003e-06,
+      "file": "~",
+      "function": "<built-in method _weakref.proxy>",
+      "line": 0,
+      "primitive_calls": 2,
+      "self_seconds": 2.2020000000000003e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 3.61e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "done",
+      "line": 276,
+      "primitive_calls": 4,
+      "self_seconds": 2.153e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 6.274e-06,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py",
+      "function": "copy",
+      "line": 935,
+      "primitive_calls": 2,
+      "self_seconds": 2.102e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.961e-06,
+      "file": "~",
+      "function": "<method 'pop' of 'dict' objects>",
+      "line": 0,
+      "primitive_calls": 2,
+      "self_seconds": 1.961e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 1.94e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/dispatcher.py",
+      "function": "_callback_add_timer",
+      "line": 694,
+      "primitive_calls": 4,
+      "self_seconds": 1.94e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.93e-06,
+      "file": "~",
+      "function": "<built-in method builtins.bin>",
+      "line": 0,
+      "primitive_calls": 2,
+      "self_seconds": 1.93e-06
+    },
+    {
+      "calls": 7,
+      "cumulative_seconds": 1.895e-06,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "_sort_dispatcher",
+      "line": 935,
+      "primitive_calls": 7,
+      "self_seconds": 1.895e-06
+    },
+    {
+      "calls": 1,
+      "cumulative_seconds": 3.006e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/types/abstract.py",
+      "function": "_autoincr",
+      "line": 20,
+      "primitive_calls": 1,
+      "self_seconds": 1.8600000000000002e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 1.81e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/entrypoints.py",
+      "function": "init_all",
+      "line": 11,
+      "primitive_calls": 4,
+      "self_seconds": 1.81e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.799e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "_set_compiled_object",
+      "line": 634,
+      "primitive_calls": 2,
+      "self_seconds": 1.799e-06
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 1.729e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/binding/ffi.py",
+      "function": "__enter__",
+      "line": 287,
+      "primitive_calls": 10,
+      "self_seconds": 1.729e-06
+    },
+    {
+      "calls": 3,
+      "cumulative_seconds": 1.61e-06,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/numeric.py",
+      "function": "_isclose_dispatcher",
+      "line": 2316,
+      "primitive_calls": 3,
+      "self_seconds": 1.61e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.599e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "enable_object_caching",
+      "line": 622,
+      "primitive_calls": 2,
+      "self_seconds": 1.599e-06
+    },
+    {
+      "calls": 10,
+      "cumulative_seconds": 1.506e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "codegen",
+      "line": 548,
+      "primitive_calls": 10,
+      "self_seconds": 1.506e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 2.9360000000000003e-06,
+      "file": "<frozen posixpath>",
+      "function": "_get_sep",
+      "line": 41,
+      "primitive_calls": 2,
+      "self_seconds": 1.458e-06
+    },
+    {
+      "calls": 3,
+      "cumulative_seconds": 1.4090000000000002e-06,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/_ufunc_config.py",
+      "function": "__init__",
+      "line": 462,
+      "primitive_calls": 3,
+      "self_seconds": 1.4090000000000002e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.91e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/dispatcher.py",
+      "function": "_callback_add_compiler_timer",
+      "line": 706,
+      "primitive_calls": 2,
+      "self_seconds": 1.347e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.317e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/runtime/nrt.py",
+      "function": "initialize",
+      "line": 19,
+      "primitive_calls": 2,
+      "self_seconds": 1.317e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.2870000000000001e-06,
+      "file": "~",
+      "function": "<method 'isdigit' of 'str' objects>",
+      "line": 0,
+      "primitive_calls": 2,
+      "self_seconds": 1.2870000000000001e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.2360000000000001e-06,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "_max_dispatcher",
+      "line": 3044,
+      "primitive_calls": 2,
+      "self_seconds": 1.2360000000000001e-06
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 1.2170000000000002e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "__init__",
+      "line": 262,
+      "primitive_calls": 4,
+      "self_seconds": 1.2170000000000002e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.1860000000000002e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "is_symbol_defined",
+      "line": 1093,
+      "primitive_calls": 2,
+      "self_seconds": 1.1860000000000002e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.157e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/typing/templates.py",
+      "function": "__setstate__",
+      "line": 78,
+      "primitive_calls": 2,
+      "self_seconds": 1.157e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.086e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "_ensure_finalized",
+      "line": 567,
+      "primitive_calls": 2,
+      "self_seconds": 1.086e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.086e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/dispatcher.py",
+      "function": "__enter__",
+      "line": 178,
+      "primitive_calls": 2,
+      "self_seconds": 1.086e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.0360000000000001e-06,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/dispatcher.py",
+      "function": "__exit__",
+      "line": 182,
+      "primitive_calls": 2,
+      "self_seconds": 1.0360000000000001e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 1.0250000000000001e-06,
+      "file": "~",
+      "function": "<method 'values' of 'dict' objects>",
+      "line": 0,
+      "primitive_calls": 2,
+      "self_seconds": 1.0250000000000001e-06
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 9.76e-07,
+      "file": "~",
+      "function": "<built-in method posix.fspath>",
+      "line": 0,
+      "primitive_calls": 2,
+      "self_seconds": 9.76e-07
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 9.55e-07,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "_reshape_dispatcher",
+      "line": 203,
+      "primitive_calls": 2,
+      "self_seconds": 9.55e-07
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 9.35e-07,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/codegen.py",
+      "function": "name",
+      "line": 555,
+      "primitive_calls": 4,
+      "self_seconds": 9.35e-07
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 9.15e-07,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/typing/typeof.py",
+      "function": "_typeof_float",
+      "line": 124,
+      "primitive_calls": 2,
+      "self_seconds": 9.15e-07
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 9.05e-07,
+      "file": "~",
+      "function": "<method 'clear' of 'dict' objects>",
+      "line": 0,
+      "primitive_calls": 2,
+      "self_seconds": 9.05e-07
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 8.850000000000001e-07,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/base.py",
+      "function": "__init__",
+      "line": 37,
+      "primitive_calls": 2,
+      "self_seconds": 8.850000000000001e-07
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 8.750000000000001e-07,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/misc/llvm_pass_timings.py",
+      "function": "__init__",
+      "line": 325,
+      "primitive_calls": 2,
+      "self_seconds": 8.750000000000001e-07
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 8.440000000000001e-07,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/llvmlite/ir/module.py",
+      "function": "get_identified_types",
+      "line": 214,
+      "primitive_calls": 2,
+      "self_seconds": 8.440000000000001e-07
+    },
+    {
+      "calls": 1,
+      "cumulative_seconds": 7.85e-07,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "shape",
+      "line": 2122,
+      "primitive_calls": 1,
+      "self_seconds": 7.85e-07
+    },
+    {
+      "calls": 4,
+      "cumulative_seconds": 7.74e-07,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/event.py",
+      "function": "duration",
+      "line": 286,
+      "primitive_calls": 4,
+      "self_seconds": 7.74e-07
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 7.53e-07,
+      "file": "~",
+      "function": "<method 'values' of 'collections.OrderedDict' objects>",
+      "line": 0,
+      "primitive_calls": 2,
+      "self_seconds": 7.53e-07
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 7.030000000000001e-07,
+      "file": "/usr/lib/python3.12/collections/__init__.py",
+      "function": "__missing__",
+      "line": 609,
+      "primitive_calls": 2,
+      "self_seconds": 7.030000000000001e-07
+    },
+    {
+      "calls": 1,
+      "cumulative_seconds": 6.75e-07,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/optimizer/stage_b.py",
+      "function": "<genexpr>",
+      "line": 57,
+      "primitive_calls": 1,
+      "self_seconds": 6.75e-07
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 6.64e-07,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py",
+      "function": "_copy_dispatcher",
+      "line": 931,
+      "primitive_calls": 2,
+      "self_seconds": 6.64e-07
+    },
+    {
+      "calls": 1,
+      "cumulative_seconds": 5.830000000000001e-07,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "_min_dispatcher",
+      "line": 3182,
+      "primitive_calls": 1,
+      "self_seconds": 5.830000000000001e-07
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 5.32e-07,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/typing/templates.py",
+      "function": "args",
+      "line": 49,
+      "primitive_calls": 2,
+      "self_seconds": 5.32e-07
+    },
+    {
+      "calls": 3,
+      "cumulative_seconds": 4.59e-07,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/multiarray.py",
+      "function": "result_type",
+      "line": 713,
+      "primitive_calls": 3,
+      "self_seconds": 4.59e-07
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 4.42e-07,
+      "file": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps/numba/core/base.py",
+      "function": "get_env_name",
+      "line": 290,
+      "primitive_calls": 2,
+      "self_seconds": 4.42e-07
+    },
+    {
+      "calls": 2,
+      "cumulative_seconds": 3.61e-07,
+      "file": "/usr/lib/python3.12/contextlib.py",
+      "function": "__enter__",
+      "line": 564,
+      "primitive_calls": 2,
+      "self_seconds": 3.61e-07
+    },
+    {
+      "calls": 1,
+      "cumulative_seconds": 2.7100000000000003e-07,
+      "file": "/root/pact-deps/pact-venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+      "function": "_shape_dispatcher",
+      "line": 2118,
+      "primitive_calls": 1,
+      "self_seconds": 2.7100000000000003e-07
+    }
+  ],
+  "evaluations": 128,
+  "evaluations_per_second": 0.9427721662800673,
+  "historical_unchanged": true,
+  "loop_wall_seconds": 135.76981223899998,
+  "manifest_sha256": "a6960da6ab021c7ede1b1948ec852450df8a979e2b3658c25fdd41a1864642d7",
+  "memory_and_boundary_policy": "cProfile copy/allocation/dispatcher self and cumulative timings; nested attribution, not additive exclusive phases",
+  "patterns": 21,
+  "peak_RSS_KiB": 1551628,
+  "profile": {
+    "geometry_seconds": 0.4820961090001106,
+    "reduction_seconds": 0.4661180630002377,
+    "rollback_seconds": 0.5067138699997997,
+    "scan_waveform_seconds": 25.107674190999973,
+    "spatial_seconds": 91.11818858499979,
+    "spatial_tile_copy_seconds": 0.46001775700017333,
+    "stateful_propagation_seconds": 9.934116924000136
+  },
+  "selected": [
+    {
+      "order_id": "2656c7f84d63abbf460b147079dc32e6ee56d8b75a291575cfdab9171fdb83e3",
+      "roles": [
+        "best_E"
+      ],
+      "score": [
+        12425.95,
+        161685690.33566356,
+        413.87394377038,
+        51.09,
+        1195.4740061923799
+      ]
+    },
+    {
+      "order_id": "75bfaead056bb2ad27ad1cbad2f020634dcf7d592b8cc139bd431f71c4b7d9b1",
+      "roles": [
+        "best_H4"
+      ],
+      "score": [
+        12334.310000000001,
+        162384226.572284,
+        423.905332990839,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "order_id": "602822e11e8d6243486e0750b976493f256e223e20664ec85755903c05ecbbfd",
+      "roles": [
+        "best_H8",
+        "balanced"
+      ],
+      "score": [
+        12303.41,
+        162393195.34689724,
+        412.3525010490928,
+        51.09,
+        1182.3064684572232
+      ]
+    }
+  ],
+  "source_sha256": {
+    "src/pact/optimizer/__init__.py": "29ba1ab37f1bcfe78e1b45c375fe13f566fc35d17eb7c9dc2dfcbf1b3ef33d17",
+    "src/pact/optimizer/candidate_physical.py": "85c6705d290b3d374c5f68fde6fb469725d590151d8ec508dd6037058d2fb4a8",
+    "src/pact/optimizer/candidate_sensitive.py": "9cf1a8e67f650bc71848813b39d35b9701f8844f0ac503b0b86edc46289cb834",
+    "src/pact/optimizer/candidate_stateful.py": "6b31d6eb4e97f4325e5d46456d1ad96eedd7b604be71b7c16ae39bc08a334303",
+    "src/pact/optimizer/cli.py": "3c3c7f33bf142c5d443c31b066e5ee704c6348a515cffdd207ae2bb1a27495cf",
+    "src/pact/optimizer/cold_start.py": "682940b9a6bfc0a79e49d6b1555774671e8eb21854b14f55402a6c7a3aed6407",
+    "src/pact/optimizer/costs.py": "02c1fa695d861f75ff262ee126537b0a6bc70c6cd19cdc672cb0e8fe20de3d9a",
+    "src/pact/optimizer/cpu_incremental.py": "a786c08be75f67d9ee2d7bba1a8d9077bacc63d02fab8bb870a93a4c55b941b7",
+    "src/pact/optimizer/implementation_v2.py": "c4aa23d475c460b8cdfff6bf496a77ee2a8c03b0ae82c885acd623e03005b32e",
+    "src/pact/optimizer/io.py": "5c2c4446bbf9e5e51bef627f5c5ffcaeefad9a8e9c9ee1d79ac6482763cd76ac",
+    "src/pact/optimizer/kernels.py": "a5913fb29a50f1b5b2e95f08e07436f671f097d48d415711e0e0c5593f1cd511",
+    "src/pact/optimizer/search.py": "5031897a140358c2fbff794377c6756202536a02767718c7f454ed9d85029d5f",
+    "src/pact/optimizer/stage_b.py": "e3e14861f0f4dfc9588b469eabe91e50cec864701f1df022070b2f77f6ec6972",
+    "src/pact/optimizer/stage_b_inputs.py": "c346da8d052264d6ce224163f9c34743cb5f35a6e4af4eb0779f3752e8a9c874",
+    "src/pact/optimizer/stateful_geometry.py": "380c2f461cea2c045e882d298541a8d4df1d8dc277cbb85e07461cec10bee459"
+  },
+  "termination": "evaluation_budget",
+  "timers": {
+    "archive_seconds": 0.0189273620001984,
+    "mutation_generation_seconds": 0.018897621000178333,
+    "state_construction_seconds": 15.338576847000013
+  },
+  "trace": [
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "a77975e6f5ecbaa8f4737fa475f5d9fb4da4266ff4140625be9832c26eed7194",
+      "score": [
+        12196.25,
+        162222448.0315779,
+        419.7293724600003,
+        51.09,
+        1193.20810283
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        0
+      ],
+      "order_id": "8e06354cc7613f214e69b4f45e585a0a381f98efbe4303b2095a832bbf837b41",
+      "score": [
+        12204.57,
+        162178199.92474705,
+        419.7293724600003,
+        51.09,
+        1193.20810283
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "675aa589fe30fca67f20502e89ba4220beb0d4d775f1436f4ac3d8d1bc52d451",
+      "score": [
+        12217.11,
+        162224371.53124034,
+        419.7293724600003,
+        51.09,
+        1193.20810283
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        0
+      ],
+      "order_id": "a6ea09b7e6cef45de7308fed279634edaa36b5439385564ad1f46c24e3274ec0",
+      "score": [
+        12208.51,
+        162121203.97516268,
+        419.7293724600003,
+        51.09,
+        1193.20810283
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0,
+        1
+      ],
+      "order_id": "772f5a07abb28d0c31f9d4ff4ccfd47d21d20168393e09e9aa8957296e2ed39e",
+      "score": [
+        12417.51,
+        162300243.6092206,
+        419.7293724600003,
+        66.9,
+        1193.20810283
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "f52262c84a13e762f14b161b286095112700b2eb97f45b282eafdfb5207a3bee",
+      "score": [
+        12228.07,
+        162150802.70713,
+        419.7293724600003,
+        51.09,
+        1193.20810283
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "c362f0b7073634d594ef574dfe841c7d55f56255ab39fb298828b0664588cb45",
+      "score": [
+        12233.49,
+        162197150.84645635,
+        419.7293724600003,
+        51.09,
+        1193.20810283
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0,
+        1
+      ],
+      "order_id": "fb13ebd519152f438718e4f644aae2393b96026036e65d1b9c1e0ffad3de9757",
+      "score": [
+        12214.39,
+        162184730.75946137,
+        419.7293724600003,
+        51.09,
+        1188.26253844
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "f3fb79e8285a0e8d73e11c14dab82c68d98c27a143b28b402d3be581b9273b4c",
+      "score": [
+        12257.83,
+        162168079.4523306,
+        419.7293724600003,
+        51.09,
+        1193.20810283
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "cd6f4d030c6f207d5d0a1b3e258c22e4736e2de01cb36ecb5dfbafe731ac5d6f",
+      "score": [
+        12233.210000000001,
+        162126307.13338843,
+        419.7293724600003,
+        51.09,
+        1193.20810283
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        0
+      ],
+      "order_id": "f6329f510f1e7cf3228d946037bf43098e18e34aed4ce85b877d30b2445735f8",
+      "score": [
+        12246.25,
+        162119149.03091758,
+        419.7293724600003,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "03e5b326956a092c09de0dda7387473704acd04a3892938570354a97d23d49a7",
+      "score": [
+        12343.65,
+        162169865.18295258,
+        414.3160883600003,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        0
+      ],
+      "order_id": "49390a89daa4f58edab16b383b94501874e6c5b6ffc3b754cf3ca77b2ea93245",
+      "score": [
+        12290.75,
+        162107948.7596411,
+        419.7293724600003,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        0
+      ],
+      "order_id": "3ec31bc90a09bbaa011f5797590c43a9d481aa7fcb076ff33c04bb5bfc9c736d",
+      "score": [
+        12299.35,
+        162098531.58361417,
+        419.7293724600003,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "2be66c9738cb834413e1108a49cba1e3f3514940e013e10306d6a326acf159ae",
+      "score": [
+        12310.03,
+        162111711.8691765,
+        419.7293724600003,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        0
+      ],
+      "order_id": "55643664c54cfea92ce3435d3c6741199b48df0257bcdceedeefb4d8713d1fdc",
+      "score": [
+        12314.11,
+        162046797.400774,
+        419.7293724600003,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        0
+      ],
+      "order_id": "2be2f1041c801d7b2d040c7dcf2f73a90496b3d31a729f5ca96e8d3d0771d071",
+      "score": [
+        12329.97,
+        161934045.78707176,
+        419.7293724600003,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "e039c884938bf03a2cb11dd6acde29cf674e06177c87cebf1e773670152ceaa3",
+      "score": [
+        12336.19,
+        161999272.08349872,
+        419.7293724600003,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "13cdfb9f00cf63d3328ba03b58d717e3bdcbe9c6fef3306d5dae224fc50acdcd",
+      "score": [
+        12338.09,
+        161970680.79746893,
+        419.7293724600003,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "777c8e4a9ca3f6fb987b5f4e82cbfdcbbb6599d8ac7736e9e1748f83b7e38051",
+      "score": [
+        12335.67,
+        162031622.0916219,
+        419.7293724600003,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        1
+      ],
+      "order_id": "7994d89b4010863e67404750a45bbaf28359ba79b3a80de155c5173e06f08f96",
+      "score": [
+        12343.27,
+        161838966.31026292,
+        419.7293724600003,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        0
+      ],
+      "order_id": "79bca7de09ce147cc8705dd0e25a8801ef5512e9006e86a9b5d76f7fc359d5fd",
+      "score": [
+        12348.869999999999,
+        161836341.4848928,
+        423.16314546000035,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "cee2a4323ca13e84803f6b691150d5112cb3aead3c0a4b2f71b350296a672e58",
+      "score": [
+        12377.93,
+        161976435.26105243,
+        423.16314546000035,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "eb434ae70dad3e1eab0080d6dd91407262e7df045712e36cf606d311b5972478",
+      "score": [
+        12378.45,
+        161846790.79708934,
+        423.16314546000035,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "38a6caf7f4b2252f1df4d71ed4d3ac107bc523f29d78deaed691806ea790577c",
+      "score": [
+        12396.25,
+        161899845.12975585,
+        424.43922986000035,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        0
+      ],
+      "order_id": "d6fc3bf36eb8df9a266792dc0038900b61cbe335bd5a188608dd573fc3959a53",
+      "score": [
+        12383.970000000001,
+        161832430.45533648,
+        421.0766971703803,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "21d1b3ac8fb4bc69c2145011babe323da76dd63c1e638261122afd1fba9e732f",
+      "score": [
+        12400.77,
+        161863711.75865644,
+        421.0766971703803,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        1
+      ],
+      "order_id": "7ecead0c6587989298f9e29df06dd7a113ce79e6a88252ec7329a3a9943bf1e9",
+      "score": [
+        12395.41,
+        161770737.02949792,
+        421.0766971703803,
+        51.09,
+        1194.7387294349896
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        1
+      ],
+      "order_id": "8ecce47031bf2366560e6edc840dfd3c5ba81d3287d13d9d13b722da6c39c927",
+      "score": [
+        12407.33,
+        161705028.1528361,
+        421.0766971703803,
+        51.09,
+        1195.4740061923799
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        0
+      ],
+      "order_id": "084682b20a81c40ca9c6a69ef3793e738d0bfb2c918a1b5af5efbfb1f8c1fde6",
+      "score": [
+        12423.29,
+        161690019.59461692,
+        413.8739437703804,
+        51.09,
+        1195.4740061923799
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "cc16234d710c6ccc24a9c8ab2acd56cdae29a4545bae4f7e7fd6391c1853f1f7",
+      "score": [
+        12425.09,
+        161704739.05751774,
+        413.8739437703804,
+        51.09,
+        1195.4740061923799
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "17824445c05afb6c234873ccb14b0f2a6cbdbe57d5116b0e2dd40e7a45ba9703",
+      "score": [
+        12423.29,
+        161807187.51520032,
+        413.8739437703804,
+        51.09,
+        1195.4740061923799
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "63737aa4967fb89d1a686ada6e03bea39ff0cc50509ebcb7e73ad6a98460e3b4",
+      "score": [
+        12426.05,
+        161696926.23168612,
+        413.8739437703804,
+        51.09,
+        1195.4740061923799
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "6b44eca3472cf759301f7d7fc63ab1f7112d5ad156d82471e2a2bfd6343c9db9",
+      "score": [
+        12427.470000000001,
+        161736168.08165264,
+        413.8739437703804,
+        51.09,
+        1195.4740061923799
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        1
+      ],
+      "order_id": "2656c7f84d63abbf460b147079dc32e6ee56d8b75a291575cfdab9171fdb83e3",
+      "score": [
+        12425.95,
+        161685690.33566356,
+        413.8739437703804,
+        51.09,
+        1195.4740061923799
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0,
+        1
+      ],
+      "order_id": "0e1c7eaa4a6fff548bbf4c5b47b967578693ce144ada884f8f559e1d21b137fa",
+      "score": [
+        12236.09,
+        162270902.59516996,
+        419.7293724600003,
+        51.09,
+        1205.4552300307141
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "10c93ee97e017a1cdd6a03201de147906aad4c7e630cf40654bee688345bc380",
+      "score": [
+        12237.71,
+        162233484.1073697,
+        419.7293724600003,
+        51.09,
+        1188.26253844
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "c0846765a3894236c53430106d579e8219a936227108ebd9a503b8d7fc141f4f",
+      "score": [
+        12236.65,
+        162170986.1846857,
+        419.7293724600003,
+        51.09,
+        1188.26253844
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "74a454c81072081dbebb9720962d63b7be428187ff03d5816d87813c20409a6b",
+      "score": [
+        12259.63,
+        162192864.53239775,
+        419.7293724600003,
+        51.09,
+        1188.26253844
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0,
+        1
+      ],
+      "order_id": "8ebc6b649aea6e3c10c0809d7107c730892f1d207fd1281c8b213acf7638177c",
+      "score": [
+        12370.03,
+        162296586.73543766,
+        419.7293724600003,
+        51.09,
+        1188.26253844
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "a15a0496192820c6f04b29811ee3520751590ab7ee53b6a79b3ab7aa7652836d",
+      "score": [
+        12287.79,
+        162248797.2666889,
+        419.7293724600003,
+        51.09,
+        1188.26253844
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "6781f9f2f7370a045d019a6608632d4b375d2afe96dfeece726d310ce1ba0892",
+      "score": [
+        12249.51,
+        162193058.65979868,
+        419.2302208600003,
+        51.09,
+        1189.5257540400003
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0,
+        1
+      ],
+      "order_id": "8f393c42f534f9f6ff258c767689a8b48f3f87bd4161b3331357ba51c8fd1fad",
+      "score": [
+        12365.27,
+        162254337.01791543,
+        419.7293724600003,
+        89.13000000000002,
+        1195.15201995
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "2750f71dca99b5b970d50232f9636489d74a3a63f0efecfbe301acb255dd982d",
+      "score": [
+        12242.369999999999,
+        162194640.2183311,
+        419.7293724600003,
+        51.09,
+        1188.26253844
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "75dbf1170001cd032f62095579b440bda56fa1af5360c469a93b6ebb42bac183",
+      "score": [
+        12225.79,
+        162253882.01685378,
+        419.7293724600003,
+        51.09,
+        1188.26253844
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "614b0ef7dfab5df8c46a65ed6e2c613d5127cd770e8015f489577ea2a49044d4",
+      "score": [
+        12235.189999999999,
+        162144366.37611064,
+        419.7293724600003,
+        51.09,
+        1188.26253844
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0,
+        1
+      ],
+      "order_id": "f0093daf40d04478d4381b4e2ea67221411b25f1c0995ce18c928affc9a88c75",
+      "score": [
+        12247.11,
+        162235491.9060458,
+        419.7293724600003,
+        51.09,
+        1203.7820020380714
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "6ff0b865583e66749eb17e14a4f8897b275d52082f12c7b97b9eb69f01983adb",
+      "score": [
+        12240.23,
+        162165572.40617347,
+        419.7293724600003,
+        51.09,
+        1188.26253844
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "1be65c695144051ab3f5b3bf3c7ccac260c46ea8af0d7975ae2c12aceedfc35f",
+      "score": [
+        12250.369999999999,
+        162091810.7444046,
+        419.7293724600003,
+        51.09,
+        1188.3309766480716
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "62549b530065e3aebe0d2ded0277eed66fad88c5b88b32ff4b591300bb62f431",
+      "score": [
+        12231.49,
+        162220855.02587742,
+        419.7293724600003,
+        51.09,
+        1188.26253844
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "637abe250055005b81f219b5a623e493a6173e18597652d3330a2328182edeaa",
+      "score": [
+        12270.55,
+        162223543.01634118,
+        419.7293724600003,
+        51.09,
+        1188.26253844
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "db508d2626edd980ceb1c643bc3e8d2a0a67017a907bdcdd510a2afba9d5e70e",
+      "score": [
+        12251.99,
+        162276231.48850936,
+        419.7293724600003,
+        51.09,
+        1188.26253844
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "7682531e82ae188e62828d34f3ab9a227863b190bbb51ea333b4be2f362faf42",
+      "score": [
+        12245.189999999999,
+        162290420.31372437,
+        419.7293724600003,
+        51.09,
+        1188.26253844
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "9e326e168adef581611b904859924e3ebc09d91facbca1cf85ae9a5be9bb6999",
+      "score": [
+        12264.49,
+        162174878.90542713,
+        419.7293724600003,
+        51.09,
+        1188.707783954088
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "573d19e374e6cbf2c857693c2490ef7b66ca97e485db73b8999715b57b1df33f",
+      "score": [
+        12246.95,
+        162277054.77408564,
+        419.7293724600003,
+        51.09,
+        1188.26253844
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        0,
+        1
+      ],
+      "order_id": "1f85cead52ac101e9ec2a4841358c7de8da821861d8ad9aba9f29263ce2ef9da",
+      "score": [
+        12226.93,
+        162397110.86138484,
+        419.7293724600003,
+        51.09,
+        1185.8196796480715
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "d18e7c9588d84418f9bd51d4d51424a3d15823bb293be0fe9f340194194b005f",
+      "score": [
+        12247.25,
+        162421922.4089377,
+        419.7293724600003,
+        51.09,
+        1185.8196796480715
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "955d2af75e445055bbaf5551cd828e108489857aac634f865d6ae5b7bd7a846c",
+      "score": [
+        12264.49,
+        162442340.25748676,
+        419.7293724600003,
+        51.09,
+        1185.8196796480715
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "2d42eae2b91ad92026339e3f2974a06f9e71d1131602ce1d2012fa88a2e6ff4a",
+      "score": [
+        12237.19,
+        162432142.2097441,
+        419.7293724600003,
+        51.09,
+        1185.8196796480715
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "75d900d9b771def8bb64c7472f9e88ee144d22cc4446579f52db379eba877070",
+      "score": [
+        12260.53,
+        162420402.7624582,
+        419.7293724600003,
+        51.09,
+        1185.8196796480715
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        1
+      ],
+      "order_id": "e4a740fc49eb63f5b29fa8020f833f33294738a1a1a510d3e5831f4ff21d613b",
+      "score": [
+        12242.79,
+        162376483.13148788,
+        419.7293724600003,
+        51.09,
+        1182.17622705
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "263d3a8354ec821c527fd298598ed04e8874fe3dd0c583559a04fd1b8acd8c14",
+      "score": [
+        12252.57,
+        162401852.3409343,
+        419.7293724600003,
+        51.09,
+        1191.1267046271378
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "e9b9608b334614440cde28cdf3fc2fe34d68cea557ab8a1f1f540ca3738ac393",
+      "score": [
+        12262.170000000002,
+        162365620.9459808,
+        419.7293724600003,
+        51.09,
+        1189.4764224719106
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "0a3b395aae12c7a5acfe4e1e57d0d3c7e44fb1b76364b95fffd80ae87d577347",
+      "score": [
+        12411.89,
+        162495396.99960053,
+        419.7293724600003,
+        93.33,
+        1204.2899346033287
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "5242a749ad17a69bc976ddd5440ea9629305b6ee1134185c418d4f984c57c6f5",
+      "score": [
+        12275.25,
+        162498429.29970884,
+        419.7293724600003,
+        51.09,
+        1182.17622705
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "7db6ca1fd9afb231baaac02dc950912e362f623ba37d9b9b871245e8535a7c7b",
+      "score": [
+        12253.330000000002,
+        162344738.53436548,
+        419.7293724600003,
+        51.09,
+        1182.17622705
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        1
+      ],
+      "order_id": "c5a74bc18046b1cc6dac1d2a0d5d6c7e644e9241bc5ebd924baf6ceae66d9d6e",
+      "score": [
+        12261.41,
+        162372225.22128937,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "363876264c62e5a76257bd1deeafa7f0045993a1f8202096fedf1ed185d7694b",
+      "score": [
+        12261.79,
+        162346658.8110241,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "1141f78f8e1c17ed69de88130d790fd15ea40fb3afe651dd862634ae3504f669",
+      "score": [
+        12281.07,
+        162426389.4477272,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0,
+        1
+      ],
+      "order_id": "63803be90606a499e632fda79bc5c32efdb241e04320bf5518ade0c6f4f8deb0",
+      "score": [
+        12283.35,
+        162477820.64056695,
+        419.7293724600003,
+        51.09,
+        1186.8344280499182
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "1c0ad22e8b1bcb12e829c50a15fbcded8d42381da01870863aabe0997039080b",
+      "score": [
+        12276.79,
+        162362756.27687627,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "c8195d4f2dc3b7b4f782b14a61372d365a375eac51ff8693d5e258497839dab2",
+      "score": [
+        12316.75,
+        162422578.96194863,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0,
+        1
+      ],
+      "order_id": "dc8b38c371a7e68c6f7eac30ffde62399f32822b51b3670a10c5545e2eaea45c",
+      "score": [
+        12299.33,
+        162388444.29420072,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "146c4e34e7016cad2bbbdf8208cfb3fbcde39a943946b13c6e8ed512386800d1",
+      "score": [
+        12290.29,
+        162434592.80696794,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "786c0195587f99717f16e4b353c4dfea6b27ee5a616151d39e739fa549409b31",
+      "score": [
+        12323.11,
+        162358069.8165156,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "48f26edd99e88e6953e994643fcda767029c8a8a16a88fff85fda06c4b737a38",
+      "score": [
+        12300.61,
+        162353868.9302429,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "7b456b82735f76363e38e56ea2927d80d870369dfe436060fba3f229a21814ca",
+      "score": [
+        12276.69,
+        162333642.83639058,
+        424.9590207789986,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "d1fd288a4095aa2cb4e42c6d4491e21a98e50e4ffec6aca8df3cedf8b79cce4f",
+      "score": [
+        12313.73,
+        162370297.87917432,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0,
+        1
+      ],
+      "order_id": "14a336b8547b408df4c82cd28ddc6e2a5eec09a50d5897db5dc90aadba3fb3a6",
+      "score": [
+        12325.75,
+        162271623.06976458,
+        419.7293724600003,
+        65.80000000000001,
+        1206.2905005486866
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0,
+        1
+      ],
+      "order_id": "7386aa542f4b704c0cbbd1f3c75beec367c48b34fc7317d891a00c52a29e0e82",
+      "score": [
+        12276.89,
+        162471343.76658314,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "f18693b4787a4f4fcda770162d513518a10520ff7aabd6bc2a770fa472f3cade",
+      "score": [
+        12327.990000000002,
+        162345861.41995704,
+        428.03862818703976,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "c7034236c94a9f4d1d7f8066d677241a139dd12ecafa7c3be21aa4a38767ef85",
+      "score": [
+        12280.970000000001,
+        162453395.8136695,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "9606fbe5627f2b04d3a45ccea2f09e060322cde0ff25b61b444bdcb5ef59c2b5",
+      "score": [
+        12291.55,
+        162465190.10669518,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "602822e11e8d6243486e0750b976493f256e223e20664ec85755903c05ecbbfd",
+      "score": [
+        12303.41,
+        162393195.34689724,
+        412.35250104909323,
+        51.09,
+        1182.3064684572232
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "8f02d4dcb5af14509d5ce67ffa228b17b44d52ba4c5d83231cdafc4484c6709f",
+      "score": [
+        12265.59,
+        162458591.76517802,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "718b1f85cf1ca88de85613ffb50dc91873bce480d61387df1bd77658e50d91a4",
+      "score": [
+        12263.970000000001,
+        162349773.23741764,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0,
+        1
+      ],
+      "order_id": "18f94c778d1c53459497241c435a90feffaec9c90779167d8f0081c0b2f9c4b1",
+      "score": [
+        12415.61,
+        162507445.83178014,
+        431.60283261250873,
+        53.30000000000002,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "93ad1873fdbd7c41f82a9d42aeb2a34dff40e1c93ecdd913ab856ac2e0c4aba8",
+      "score": [
+        12295.35,
+        162390635.81048194,
+        419.7293724600003,
+        51.09,
+        1185.7256175569282
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "2c745367e4a6d7e919adea04dfa9cf29ab2c1a9ac7dc0aa190d835f3c0660cb7",
+      "score": [
+        12311.51,
+        162412202.75507855,
+        419.7293724600003,
+        51.09,
+        1181.216067347223
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "86e85fa6ea6c236ebacc7ec9d585d678d1b5dff2edd20f3998ac711fa1a7e3b2",
+      "score": [
+        12284.11,
+        162274461.73017266,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "a32dee1c429a89327077af8c00a7da9ce6005d185f59a66bd97526bdaac13fdd",
+      "score": [
+        12293.09,
+        162394645.4531842,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "a9dc2c072d2d5b43ea68fc79e6a028e577cbe0f6117d9607ae345be5df5cd0c1",
+      "score": [
+        12272.189999999999,
+        162302462.57822794,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0,
+        1
+      ],
+      "order_id": "49266f16cecc0436e8d915b0ecc050283fe459423737f11bcb2a98cadee7f9cc",
+      "score": [
+        12283.97,
+        162431935.39202222,
+        419.7293724600003,
+        51.09,
+        1186.3025962235486
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "4d4c5ed3fc712bb7e8ed063005de21962557be1058af3932771b6a18f2e37295",
+      "score": [
+        12298.150000000001,
+        162407676.05167913,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "22492f31aa0c82ad6f54e75b46763bbe9e8df0e4bb213eef9cff7917dbe9e516",
+      "score": [
+        12301.990000000002,
+        162381056.3152567,
+        414.3890743500003,
+        75.58,
+        1179.779925863222
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0,
+        1
+      ],
+      "order_id": "de40feee89e224fd1557b06b7c69c8bbbae868f0a72d1ca7724942c7d54b488c",
+      "score": [
+        12277.369999999999,
+        162393207.35403138,
+        419.7293724600003,
+        51.09,
+        1179.7715730014634
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        0
+      ],
+      "order_id": "75bfaead056bb2ad27ad1cbad2f020634dcf7d592b8cc139bd431f71c4b7d9b1",
+      "score": [
+        12334.310000000001,
+        162384226.572284,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "3f8e59fd84d5a510bce823b21c546bbbbb62e6d2e4121030c9fe3ee5b7618c3e",
+      "score": [
+        12346.61,
+        162458576.27130133,
+        419.23531064062547,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "e5b038b874785f445c6fcc3f2b28136e40cc5997050c311ce63261ebeab3fae9",
+      "score": [
+        12345.75,
+        162322189.86059177,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "28b020698a7b67ab7882084d8819510eb6c18ffcf921a377d73c82e7beb299cf",
+      "score": [
+        12351.35,
+        162363575.67261726,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "87fe0a56035b7001acee9ace0add112c96e8bc8382df5fc8b8f368db96c0dc7a",
+      "score": [
+        12379.310000000001,
+        162426797.4562278,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "46046064ba4f714d349494060bcc4f7ab3665fd819ce6e9e3c5877ce815d0889",
+      "score": [
+        12372.73,
+        162524747.7492194,
+        423.9053329908394,
+        51.09,
+        1189.3222765014634
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "606910d846ade3c0bd452afc4af07eb8deda0d3522dde714bcd4ae088c739a98",
+      "score": [
+        12337.11,
+        162378430.49929196,
+        423.9053329908394,
+        51.09,
+        1182.897384972
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "198eb4b2cbc63e0a20251603866566a9286eb5a92fcece50dd41f1c180188dda",
+      "score": [
+        12356.39,
+        162464499.47810024,
+        423.9053329908394,
+        51.09,
+        1203.4547522520477
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "997c791f498bd8e129b59130a09776ed22cde34a273ff6724ae3f51a2c5fdef0",
+      "score": [
+        12343.23,
+        162468303.06278446,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "f2ae39fdcfd95fe1892bb09179526c1dde54229fbe502b0cf7e9c97e3196289e",
+      "score": [
+        12379.350000000002,
+        162445363.78636503,
+        423.9053329908394,
+        51.09,
+        1181.9229621569284
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "08f597360d729e2af7d96d9ce004e776a11fffe62dd153b5fa35035358ef0380",
+      "score": [
+        12365.23,
+        162367597.36313128,
+        423.9053329908394,
+        51.09,
+        1183.3289969136565
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "bcd3b01d0e32e4a72cba1e849604c5e1e723d8b602825f4256d29dba8ee6e3a6",
+      "score": [
+        12359.57,
+        162421416.50010633,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "d5708539f2e06fa021d1593d8645b70202a0cd9f23e798bb71e20796e0e989db",
+      "score": [
+        12353.45,
+        162449500.94100645,
+        423.9053329908394,
+        51.09,
+        1182.7080864469283
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "a51af501c8fef85b73f9b10d8af4e6deaf859f0184abdcde57afe04dcaaa6e20",
+      "score": [
+        12341.530000000002,
+        162405153.89062613,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "fab71b9920c1f819418597d630387553151eddb32f106cf9fee93a7b058c0845",
+      "score": [
+        12344.470000000001,
+        162400959.56621683,
+        423.9053329908394,
+        51.09,
+        1180.2041031666529
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "f8e5c52b5bcb5cb94c9001f4cb6254b3308613e305d36786e03b5c9edad129ac",
+      "score": [
+        12354.25,
+        162420139.77835155,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "1ff0839214aa08f4f7358bbf59282d57ec4f416fe417156c497d4d8fb81962ad",
+      "score": [
+        12358.29,
+        162439651.81947485,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "85c8b607e781c082bd18d8280c6abf1f63daa37440881b0463a52c505a94ff24",
+      "score": [
+        12380.470000000001,
+        162479357.9391911,
+        423.9053329908394,
+        51.09,
+        1210.5910303572232
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "be8bc0584fd8980356c21d53525ad2a0715703b31c5612fdf9eaccc02d155120",
+      "score": [
+        12355.190000000002,
+        162399555.75201514,
+        421.7771268908394,
+        51.09,
+        1194.849923925465
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0,
+        1
+      ],
+      "order_id": "378455e42535bfd710503b98f12cc2424b4b8ae2d6032acdbb259fdf18737638",
+      "score": [
+        12343.43,
+        162414084.15079746,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "35712d279bac1e5733c000c4df04da432c72c7e3ffea6debe158f363b6786855",
+      "score": [
+        12349.369999999999,
+        162326323.7775607,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "3d2984e13d81b52b9941417f61258fd93c11f4679d56116b90b76179f0e7383d",
+      "score": [
+        12339.77,
+        162375661.2029403,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "702faf96c1c830b8e51db226b400b9e02111dacaa91eadeefddf51592f4524af",
+      "score": [
+        12336.87,
+        162464360.34768927,
+        423.9053329908394,
+        51.09,
+        1182.57996914239
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "dcdeb8a23d52dcfc508593a19659c46b86225ead93c33e65e6728da94aed01bb",
+      "score": [
+        12357.29,
+        162355707.57812583,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "30e6fe5701d6c2afad223718792228ee35910c53b1b762e676506448691e174c",
+      "score": [
+        12348.37,
+        162409098.0341426,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "8c357a6135a76dcdc37c0cd3629672e4e1e1edd5396981587c4fa11f023affc3",
+      "score": [
+        12403.010000000002,
+        162402370.84610564,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        0
+      ],
+      "order_id": "61a1ea5b9e9fb4839bf5b04f3ae623ab847783858f2b4e69375e61a6d9ec9bdf",
+      "score": [
+        12353.970000000001,
+        162408847.719069,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "22ff25a83558594e5d54904c4c504e9380766730693a36d893cbba882b64b958",
+      "score": [
+        12369.91,
+        162451430.70202515,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "c08dd257ef21f75494ee58518aad520b094347713992ecb8ddf2cafbe2c5e61a",
+      "score": [
+        12359.91,
+        162469372.8830328,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "9247c8d092b35c331ed07f31ecd5d3934947d627735990919719e7a76aead13c",
+      "score": [
+        12374.11,
+        162491042.91374016,
+        423.9053329908394,
+        51.09,
+        1179.7591923569285
+      ]
+    },
+    {
+      "accepted": false,
+      "operator": [
+        1
+      ],
+      "order_id": "3c6cc4ece70f6cd2ad85cabcdeffb52440af433f46d6c96c409bda96e7919fc3",
+      "score": [
+        12400.23,
+        162385284.67442515,
+        423.9053329908394,
+        51.09,
+        1211.3282921680714
+      ]
+    },
+    {
+      "accepted": true,
+      "operator": [
+        0
+      ],
+      "order_id": "92f1787dc2bc2ca5a3aa75cb8434e89044db6b1fc70e809ab2ad749c946d2554",
+      "score": [
+        12219.41,
+        162236261.9833958,
+        417.84304046000034,
+        51.09,
+        1193.20810283
+      ]
+    }
+  ],
+  "witness": "s35932",
+  "workflow_wall_seconds": 178.23888500299998
+}
