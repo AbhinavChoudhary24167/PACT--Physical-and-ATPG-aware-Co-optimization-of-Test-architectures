@@ -1,0 +1,56 @@
+{
+  "FF_crosscheck": {
+    "bytes": 211,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/FF_transition_crosscheck.json",
+    "sha256": "748d41be894ada2fc53cdee3a3620bcf39604d43b18db23e6a4eacc68de2e2e7"
+  },
+  "PACT_search_started": false,
+  "capacity": {
+    "per_design_margin": {
+      "dimensions": null,
+      "fixed_floor_retained": true,
+      "projected_remaining_bytes": null,
+      "retained_bytes": 0,
+      "rule": "20 GiB + max(5 GiB, retained packages + nine projected complete traces + one complete count cache +512 MiB)"
+    },
+    "status": "PASS",
+    "volumes": {
+      "C": {
+        "deficit_bytes": 0,
+        "free_bytes": 22089175040,
+        "minimum_free_bytes": 6442450944,
+        "status": "PASS"
+      },
+      "D": {
+        "deficit_bytes": 0,
+        "free_bytes": 41106432000,
+        "minimum_free_bytes": 26843545600,
+        "status": "PASS"
+      }
+    }
+  },
+  "created_utc": "2026-10-05T17:57:26.808965+00:00",
+  "design": "b14_opt",
+  "exact": {
+    "bytes": 6523,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/activity/GATE09_PRIMARY/b14_opt/B3T/normal/result.json",
+    "sha256": "e342803c24f65d292e4c506771cc039fa2b0693e103debd22cef16b16ad186df"
+  },
+  "exact_summary": {
+    "bytes": 5976,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/activity_summary.json",
+    "sha256": "12b222c19b0b672f8ced74251c6eb49f8d6fdb0395925c700f8128df25042be9"
+  },
+  "physical": {
+    "bytes": 439,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/physical/b14_opt/presearch_qualification.json",
+    "sha256": "e596aa02888670bac9e66b918d80bee0d0ef95d8d321c79765d401e04de2ff67"
+  },
+  "reference": {
+    "bytes": 9725,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt_selected.json",
+    "sha256": "df6b8042d34b0f0638852c160d2417e2fec35ee8ed2618d70d768b05daf629f3"
+  },
+  "schema": "pact_gate09_reference_admission_v1",
+  "status": "PACT_GATE09_ADMISSION_COMPLETE"
+}

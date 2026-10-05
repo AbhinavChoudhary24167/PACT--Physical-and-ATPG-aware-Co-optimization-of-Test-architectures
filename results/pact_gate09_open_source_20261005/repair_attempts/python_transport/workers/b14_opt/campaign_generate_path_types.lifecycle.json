@@ -1,0 +1,39 @@
+{
+  "CPU_only": true,
+  "CPU_seconds": 1.087413,
+  "Linux_boot_id": "b194490b-19d2-4dd2-b046-69801b3c2671",
+  "PID": 503,
+  "action": "generate",
+  "child_peak_RSS_KiB": 21620,
+  "children_CPU_seconds": 0.014627,
+  "code_commit": "625712211b5e9bb7be4c2aa06d1f914aea565bfb",
+  "completed": false,
+  "completed_utc": "2026-10-05T17:58:27.561932+00:00",
+  "created_utc": "2026-10-05T17:58:22.119234+00:00",
+  "dependency_repair": {
+    "bytes": 17558,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/dependency_repairs/FAN_ATPG/compound_reporter_qualification.json",
+    "sha256": "71bc45f4e54c8928ff50a635d829a8e17b7f18ad6e582f5ae496a93520d06a24"
+  },
+  "design": "b14_opt",
+  "error": "'str' object has no attribute 'read_text'",
+  "execution_id": "path_types",
+  "harness": {
+    "bytes": 24196,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/execution_sources/60bf1a313f098406ab965258ed72797d87f54767a4390671e10356b9ed9ba34d.py",
+    "sha256": "60bf1a313f098406ab965258ed72797d87f54767a4390671e10356b9ed9ba34d"
+  },
+  "method": null,
+  "peak_RSS_KiB": 23184,
+  "schema": "pact_gate09_campaign_worker_v1",
+  "scientific_method_changes": 0,
+  "source_admission": {
+    "bytes": 7087,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/source_admission/b14_opt__mapped_library_models.json",
+    "sha256": "4357549cb9ee68cb0e9149fc0274783c584dc57661976a1917153a2754436ade"
+  },
+  "state": "FAILED",
+  "status": "PACT_GATE09_CAMPAIGN_STAGE_BLOCKED",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_campaign.py\", line 323, in worker\n    generate(meta, raw, design)\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_campaign.py\", line 127, in generate\n    base = ScanArchitecture.from_json(b0['architecture']['path'])\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/scan/model.py\", line 61, in from_json\n    obj = json.loads(path.read_text(encoding=\"utf-8\"))\n                     ^^^^^^^^^^^^^^\nAttributeError: 'str' object has no attribute 'read_text'\n",
+  "wall_seconds": 5.51245253999997
+}
