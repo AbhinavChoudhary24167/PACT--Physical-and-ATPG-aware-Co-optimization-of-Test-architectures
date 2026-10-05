@@ -12,6 +12,7 @@ from pact_generalization_infrastructure import external_binding,REPAIRED
 from pact_cold_start_measure import execute_stage,validate_row,LIB,RULES,CELLS
 from pact_cpu_gates import require_continuation_allowed
 from pact_cpu_continue_search import OUT,RUN
+ACTIVITY_OUT=ROOT/'results/pact_cpu_scalability_20261005/activity/continuation'
 
 
 def frozen_tools():
@@ -105,7 +106,7 @@ def activity(design):
         if remaining<=0:raise RuntimeError('Normal activity ceiling exhausted during preparation')
         compact(folder,'continuation','normal',remaining,spef_evidence=evidence)
         target=OUT/f'activity_workflows/{design}/{row["role"]}.json'
-        measured_path=ROOT/'results/pact_cpu_scalability_20261005/activity/continuation'/design/row['role']/'normal/result.json'
+        measured_path=ACTIVITY_OUT/design/row['role']/'normal/result.json'
         result=read(measured_path);stages={p.name.removesuffix('.execution.json'):read(p) for p in folder.glob('*.execution.json')}
         write(target,dict(design=design,candidate=row['role'],configured_timeout_seconds=7200,timeout_regime='normal',
             preparation_stages=stages,measurement=binding(measured_path),wall_seconds=time.perf_counter()-began,
@@ -127,7 +128,7 @@ def aggregate(design):
         r=dict(design=design,candidate=name,status=pending['status'],architecture_hash=selected['architecture_hash'],
             epsilon=selected['epsilon'],route_roles=selected['route_roles'],seed=selected['seed'],
             exact_reference_activity=binding(reference_path),physical_and_ATPG=pending)
-        activity_path=ROOT/'results/pact_cpu_scalability_20261005/activity/continuation'/design/name/'normal/result.json'
+        activity_path=ACTIVITY_OUT/design/name/'normal/result.json'
         if activity_path.exists():
             measured=read(activity_path)
             if measured['status']=='QUALIFIED' and measured['complete']:
