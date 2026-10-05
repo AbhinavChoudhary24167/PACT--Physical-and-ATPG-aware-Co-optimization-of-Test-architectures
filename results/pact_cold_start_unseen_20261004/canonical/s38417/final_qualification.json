@@ -1,0 +1,99 @@
+{
+  "all_preselected_candidates_retained": true,
+  "candidate_count": 0,
+  "created_utc": "2026-10-05T02:39:46.333313+00:00",
+  "design": "s38417",
+  "outcome": {
+    "ATPG_pattern_count": 105,
+    "FF_count": 1636,
+    "activity_improvements": {
+      "E": false,
+      "H4": false,
+      "H8": false
+    },
+    "all_three_improved": false,
+    "alternative_mixed_tradeoff": false,
+    "any_candidate_mixed_tradeoff": false,
+    "any_candidate_no_or_negligible_benefit": false,
+    "attempted": true,
+    "blocker_subtype": "REFERENCE_EXACT_ACTIVITY",
+    "candidates": [],
+    "design": "s38417",
+    "eligible": true,
+    "failure": {
+      "CPU_seconds": 1418.067949,
+      "VCD_complete": false,
+      "architecture_sha256": "7976c63f510aee3caa8a6b280fad5f65a91669947347f79d7861eb3b56b6f0f0",
+      "created_utc": "2026-10-04T18:11:54.872179+00:00",
+      "design": "s38417",
+      "error": "Measurement stage failed: /mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38417/REF_B2/s38417/REF_B2/simulate.execution.json",
+      "failure_class": "RESOURCE_LIMIT",
+      "folder": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38417/REF_B2/s38417/REF_B2",
+      "independent_design_policy": true,
+      "instrumentation": {
+        "bytes": 5270,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38417/REF_B2/s38417/REF_B2/instrumentation.json",
+        "sha256": "30bba9dad89579a23342104df7e28c3e3693c507025fc46d6cd67bffc301521d"
+      },
+      "manifest": {
+        "bytes": 8363,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38417/REF_B2/manifest.json",
+        "sha256": "3973ad5239b0451bcaa76d0343b30baebda3ffba6c0dabbc2a0d93db48b2d5fc"
+      },
+      "partial_VCD_policy": "Retain failed-stage artifacts for diagnosis; exclude all partial/unqualified activity from scientific results",
+      "peak_RSS_KiB": 1302900,
+      "role": "REF_B2",
+      "status": "FAILED",
+      "timeout_seconds": 1800,
+      "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cold_start_measure.py\", line 178, in measure_prepared\n    execute_stage(['/usr/bin/vvp', folder / 'simulation.vvp'], folder, 'simulate', deadline)\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cold_start_measure.py\", line 121, in execute_stage\n    raise RuntimeError('Measurement stage failed: ' + str(receipt))\nRuntimeError: Measurement stage failed: /mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38417/REF_B2/s38417/REF_B2/simulate.execution.json\n",
+      "wall_seconds": 1800.3142555200002
+    },
+    "failure_class": "RESOURCE_LIMIT",
+    "failure_domain": "MEASUREMENT",
+    "initialization_receipt": {
+      "bytes": 335990,
+      "path": "repo://results/pact_cold_start_unseen_20261004/scalability/s38417_initialization_diagnostic.json",
+      "sha256": "6abfb53ddd5f31237cae467f1e84223f8d6285e405c967233784b8bc75c9b6dd"
+    },
+    "initialization_scope": "LOADER_ONLY_DIAGNOSTIC; optimizer not executed",
+    "initialized": true,
+    "preselected_candidates": [],
+    "primary_candidate": null,
+    "primary_scientific_category": null,
+    "qualified_candidates": [],
+    "reason": "New independent REF_B2 exact-activity measurement failed (RESOURCE_LIMIT) at the fixed 1800-second deadline; complete VCD and exact E/H4/H8 are unavailable; only this design stops independently",
+    "search_completed": false,
+    "selected_reference": "B2",
+    "stage": "REFERENCE_EXACT_ACTIVITY",
+    "status": "PACT_EXECUTION_BLOCKED",
+    "stop_receipt": {
+      "bytes": 1987,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s38417/REF_B2/activity/result.json",
+      "sha256": "2587dae0868ed898faad06af82a2e8308707b36d03f9ac20b1f5faa391752a18"
+    },
+    "terminal": true,
+    "zero_historical_state": true
+  },
+  "schema": "pact_cold_start_final_qualification_v1",
+  "scientific_method_change": false,
+  "stage_receipts": {
+    "atpg_results": null,
+    "cold_start_input": {
+      "bytes": 5628,
+      "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s38417/cold_start_input.json",
+      "sha256": "1594c5c39e77ebfd3c7c2854ea777d13e90a050587cfca2c3d9a0a3be6856d88"
+    },
+    "physical_results": null,
+    "preselected_candidates": null,
+    "reference_frozen": {
+      "bytes": 4736,
+      "path": "repo://results/pact_cold_start_unseen_20261004/references/s38417/reference_frozen.json",
+      "sha256": "027588ba5d722d34765030d6339b95a46b989ab520d492b720070c5f9e151e25"
+    },
+    "search_configuration": null,
+    "search_results": null,
+    "selection_snapshot": null
+  },
+  "status": "PACT_EXECUTION_BLOCKED",
+  "terminal": true
+}

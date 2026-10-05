@@ -1,0 +1,63 @@
+{
+  "CSV_rows": 18,
+  "all_candidate_receipt_order_audits": "PASS",
+  "all_completion_artifact_byte_bindings_match": true,
+  "all_preselected_candidates_retained": true,
+  "canonical": {
+    "bytes": 459660,
+    "path": "repo://results/pact_cold_start_unseen_20261004/canonical/prospective_unseen_canonical.json",
+    "sha256": "6a57df4f5626d175bfd11bb8ea25cdb955084a14c5e0f24601bbe3bab7b8ab5b"
+  },
+  "counts": {
+    "candidates_physically_qualified": 12,
+    "candidates_preselected": 12,
+    "designs_blocked": 4,
+    "designs_improving_E": 4,
+    "designs_improving_H4": 4,
+    "designs_improving_H8": 4,
+    "designs_improving_all_three": 4,
+    "designs_terminal": 8,
+    "designs_with_alternative_mixed_candidate": 3,
+    "designs_with_any_mixed_candidate": 3,
+    "designs_with_any_no_or_negligible_candidate": 0,
+    "designs_with_mixed_or_no_improvement": 1,
+    "designs_with_physically_qualified_candidate": 4,
+    "designs_with_useful_activity_improvement": 4,
+    "initialized_without_historical_state": 6,
+    "searches_completed": 4,
+    "unseen_designs_attempted": 8,
+    "unseen_designs_registered": 8
+  },
+  "created_utc": "2026-10-05T02:42:12.059002+00:00",
+  "figure_provenance": {
+    "bytes": 897,
+    "path": "repo://results/pact_cold_start_unseen_20261004/figures/figure_provenance.json",
+    "sha256": "f85d809685b2f50e505fdac2829751b7dd147cd0dc2537bbdc9423c210321665"
+  },
+  "figure_source_binding": "Immutable sealed canonical dataset",
+  "final_design_receipts": 8,
+  "historical_record_dictionaries_exactly_equal": true,
+  "milestone": "PACT_COLD_START_UNSEEN_DESIGN_CAMPAIGN_COMPLETE",
+  "original_historical_records": 12,
+  "prospective_candidate_rows": 12,
+  "report": {
+    "bytes": 12881,
+    "path": "repo://results/pact_cold_start_unseen_20261004/cold_start_report.md",
+    "sha256": "a83bd307735cf86ec24c44839c18ae8025253ed86b3475d72290006269f3638b"
+  },
+  "s1238_frozen_primary": "CS_C1; PACT_MIXED_TRADEOFF",
+  "schema": "pact_cold_start_final_artifact_verification_v1",
+  "scientific_classification": "PACT_COLD_START_GENERALIZATION_MIXED",
+  "secondary_classifications": [
+    "PACT_COLD_START_MEASUREMENT_SCALABILITY_BLOCKED"
+  ],
+  "status": "PASS",
+  "visual_QA": {
+    "inspected_PNGs": [
+      "exact_activity_tradeoffs.png",
+      "observed_solver_throughput.png"
+    ],
+    "observations": "All12 qualified prospective candidates and12 completed lanes are legible with unclipped labels/captions. Frozen primaries are identified; delta signs match canonical values. Throughput uses categorical designs/log scale without a fit or extrapolation. SVG/PNG outputs retained.",
+    "status": "PASS"
+  }
+}

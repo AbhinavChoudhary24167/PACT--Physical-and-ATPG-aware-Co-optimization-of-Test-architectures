@@ -1,0 +1,232 @@
+{
+  "VCD": {
+    "bytes": 585365,
+    "complete": true
+  },
+  "VCD_generation": {
+    "reason": "VVP performs simulation and $dumpvars emission in the same process; isolated generation time is not observable without changing execution semantics",
+    "shared_stage": "simulate",
+    "wall_seconds": null
+  },
+  "analysis": {
+    "frozen_source_sha256": "b68bbf6d9b02158d69c11f3f40e0722defd507c5de6e8813bb94bb9a2b498a8c",
+    "instrumentation": "AST timer context/decorator insertion only; all original numeric/parser operations retained in original order",
+    "scientific_method_change": false,
+    "stages": {
+      "E_computation_all_data": {
+        "calls": 1,
+        "cpu_seconds": 0.03202481299999993,
+        "process_peak_RSS_KiB": 48184,
+        "wall_seconds": 0.04964921900000263
+      },
+      "E_computation_scan_data": {
+        "calls": 1,
+        "cpu_seconds": 0.024365057000000023,
+        "process_peak_RSS_KiB": 40248,
+        "wall_seconds": 0.04249461000000565
+      },
+      "H4_computation_all_data": {
+        "calls": 1,
+        "cpu_seconds": 0.009507386999999978,
+        "process_peak_RSS_KiB": 48184,
+        "wall_seconds": 0.0300459459999729
+      },
+      "H4_computation_scan_data": {
+        "calls": 1,
+        "cpu_seconds": 0.0071480459999999635,
+        "process_peak_RSS_KiB": 41016,
+        "wall_seconds": 0.027316954000013993
+      },
+      "H8_computation_all_data": {
+        "calls": 1,
+        "cpu_seconds": 0.015596115999999993,
+        "process_peak_RSS_KiB": 48184,
+        "wall_seconds": 0.034151814999972885
+      },
+      "H8_computation_scan_data": {
+        "calls": 1,
+        "cpu_seconds": 0.015490172000000024,
+        "process_peak_RSS_KiB": 42936,
+        "wall_seconds": 0.03429191600002923
+      },
+      "analysis_total": {
+        "calls": 1,
+        "cpu_seconds": 0.7053224090000001,
+        "process_peak_RSS_KiB": 48184,
+        "wall_seconds": 1.182094946999996
+      },
+      "capacitance_attribution": {
+        "calls": 1,
+        "cpu_seconds": 0.01806782200000001,
+        "process_peak_RSS_KiB": 38856,
+        "wall_seconds": 0.04814353699998719
+      },
+      "ff_transition_crosscheck": {
+        "calls": 1,
+        "cpu_seconds": 0.05784620600000001,
+        "process_peak_RSS_KiB": 37520,
+        "wall_seconds": 0.0680960419999792
+      },
+      "spef_parse": {
+        "calls": 1,
+        "cpu_seconds": 0.05848523299999997,
+        "process_peak_RSS_KiB": 38856,
+        "wall_seconds": 0.08421023400001104
+      },
+      "transition_extraction": {
+        "calls": 5965,
+        "wall_seconds": 0.18454032899842332
+      },
+      "vcd_parse": {
+        "cpu_seconds": null,
+        "includes": "streaming text IO, header/event parsing, allocations and timestamp dispatch",
+        "peak_RSS_KiB": null,
+        "resource_attribution": "CPU/RSS shared with vcd_parse_and_transition; do not sum inclusive and exclusive spans",
+        "wall_seconds": 0.14374992900155803
+      },
+      "vcd_parse_and_transition": {
+        "calls": 1,
+        "cpu_seconds": 0.29017607900000003,
+        "process_peak_RSS_KiB": 37520,
+        "wall_seconds": 0.32829025799998135
+      }
+    }
+  },
+  "analysis_failure_localization": null,
+  "launcher_CPU_seconds": 0.18601499999999999,
+  "launcher_peak_RSS_KiB": 25000,
+  "numerical_semantics": "Unchanged frozen parser and metric arithmetic; only timers inserted",
+  "peak_RSS_KiB": 160740,
+  "resources_scope": "CPU sum of launcher and sequential child stages; RSS maximum of per-process lifetime high-water marks; not summed simultaneous tree RSS",
+  "scientific_method_change": false,
+  "stages": {
+    "analyze": {
+      "CPU_seconds": 1.206547,
+      "CPU_system_seconds": 0.21035199999999998,
+      "CPU_user_seconds": 0.9961949999999999,
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cold_start_measure.py",
+        "--analyze-folder",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s953/CS_C2/s953/CS_C2"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "log": {
+        "bytes": 28,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s953/CS_C2/s953/CS_C2/analyze.log",
+        "sha256": "a87540a48257eb891e5b9eaa064c53d8640ae154687a912d7cef30a983636df4"
+      },
+      "major_page_faults": 0,
+      "peak_RSS_KiB": 48184,
+      "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+      "returncode": 0,
+      "timed_out": false,
+      "timestamp_utc": "2026-10-04T18:14:11.145028+00:00",
+      "wall_seconds": 2.567451268999946
+    },
+    "compile": {
+      "CPU_seconds": 0.36909499999999995,
+      "CPU_system_seconds": 0.12038299999999999,
+      "CPU_user_seconds": 0.248712,
+      "command": [
+        "/usr/bin/iverilog",
+        "-g2012",
+        "-DTETRAMAX",
+        "-s",
+        "tb",
+        "-o",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s953/CS_C2/s953/CS_C2/simulation.vvp",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s953/CS_C2/s953/CS_C2/stimulus.v",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s953/CS_C2/s953/CS_C2/routed.v",
+        "/root/pact-deps/FAN_ATPG/techlib/NangateOpenCellLibrary.v"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "log": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s953/CS_C2/s953/CS_C2/compile.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "major_page_faults": 0,
+      "peak_RSS_KiB": 34824,
+      "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+      "returncode": 0,
+      "timed_out": false,
+      "timestamp_utc": "2026-10-04T18:14:07.811346+00:00",
+      "wall_seconds": 0.8454906219999998
+    },
+    "export": {
+      "CPU_seconds": 6.755557,
+      "CPU_system_seconds": 0.45299599999999995,
+      "CPU_user_seconds": 6.302561,
+      "command": [
+        "/usr/bin/openroad",
+        "-python",
+        "-no_init",
+        "-exit",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_export.py",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s953/CS_C2/s953/CS_C2"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "log": {
+        "bytes": 340,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s953/CS_C2/s953/CS_C2/export.log",
+        "sha256": "f197cecda111868c4d649146424692370b2638bbcdef1044955fd5c827022a84"
+      },
+      "major_page_faults": 0,
+      "peak_RSS_KiB": 160740,
+      "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+      "returncode": 0,
+      "timed_out": false,
+      "timestamp_utc": "2026-10-04T18:14:04.971721+00:00",
+      "wall_seconds": 8.265337478999982
+    },
+    "extract": {
+      "CPU_seconds": 1.209393,
+      "CPU_system_seconds": 0.232267,
+      "CPU_user_seconds": 0.9771259999999999,
+      "command": [
+        "/usr/bin/openroad",
+        "-no_init",
+        "-exit",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s953/CS_C2/s953/CS_C2/extract.tcl"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "log": {
+        "bytes": 960,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s953/CS_C2/s953/CS_C2/extract.log",
+        "sha256": "db43a5ba629e4f91fac717b84ee2a4814a5b783ad7c45f6a624f948c238a01a4"
+      },
+      "major_page_faults": 0,
+      "peak_RSS_KiB": 138420,
+      "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+      "returncode": 0,
+      "timed_out": false,
+      "timestamp_utc": "2026-10-04T18:14:06.539492+00:00",
+      "wall_seconds": 1.5040469940000207
+    },
+    "simulate": {
+      "CPU_seconds": 0.358199,
+      "CPU_system_seconds": 0.052676,
+      "CPU_user_seconds": 0.305523,
+      "command": [
+        "/usr/bin/vvp",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s953/CS_C2/s953/CS_C2/simulation.vvp"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "log": {
+        "bytes": 354,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s953/CS_C2/s953/CS_C2/simulate.log",
+        "sha256": "ee48c35368990a1d3078ac5856c0edf6a76de69f93d070213b360459ada5ab72"
+      },
+      "major_page_faults": 0,
+      "peak_RSS_KiB": 25000,
+      "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+      "returncode": 0,
+      "timed_out": false,
+      "timestamp_utc": "2026-10-04T18:14:08.523664+00:00",
+      "wall_seconds": 0.6588174119999621
+    }
+  },
+  "total_CPU_seconds": 10.084805999999999,
+  "total_wall_seconds": 14.733580081000014
+}

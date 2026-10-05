@@ -1,0 +1,74 @@
+{
+  "activity_equivalence": [
+    {
+      "design": "s953",
+      "result": {
+        "bytes": 7719,
+        "path": "repo://results/pact_cpu_scalability_20261005/activity/equivalence/s953/CS_C1/normal/result.json",
+        "sha256": "0b65d8822bfbcaa84dbbf634fbc0030c1b6ef35240175ef480800dfb57fec39d"
+      },
+      "source_manifest": {
+        "bytes": 8905,
+        "path": "repo://results/pact_cpu_scalability_20261005/activity/equivalence/s953/CS_C1/normal/manifest.json",
+        "sha256": "cbc3ff1061c48f906a731660934eee325957d03e55478e7f4e7d16a28ab37cf4"
+      },
+      "status": "PASS"
+    },
+    {
+      "design": "s1196",
+      "result": {
+        "bytes": 7703,
+        "path": "repo://results/pact_cpu_scalability_20261005/activity/equivalence/s1196/CS_C1/normal/result.json",
+        "sha256": "78357742fd79a6933e5eeef648dd0e97e689eff661dffb5f21b6ee3561aa4cb7"
+      },
+      "source_manifest": {
+        "bytes": 8862,
+        "path": "repo://results/pact_cpu_scalability_20261005/activity/equivalence/s1196/CS_C1/normal/manifest.json",
+        "sha256": "f5a7d27ccb723ecf8427bb0b5e809fb3761828b37949aaecd816d266dc294601"
+      },
+      "status": "PASS"
+    },
+    {
+      "design": "s35932",
+      "result": {
+        "bytes": 7780,
+        "path": "repo://results/pact_cpu_scalability_20261005/activity/equivalence/s35932/CS_C1/normal/result.json",
+        "sha256": "ac795fb5f2bbd1b49ffce02027e08f1920dbc0e473c51548d9ef2676067282c1"
+      },
+      "source_manifest": {
+        "bytes": 8929,
+        "path": "repo://results/pact_cpu_scalability_20261005/activity/equivalence/s35932/CS_C1/normal/manifest.json",
+        "sha256": "947258c44e069aa388e0a78f7496935167125548baa775b99ed2ce07c9a5fec3"
+      },
+      "status": "PASS"
+    }
+  ],
+  "classifications": [
+    "PACT_CPU_INCREMENTAL_EVALUATOR_QUALIFIED",
+    "PACT_CPU_SPATIAL_SCALABILITY_ADVANCE",
+    "PACT_CPU_ROLLBACK_SCALABILITY_ADVANCE",
+    "PACT_EXACT_ACTIVITY_BACKEND_EQUIVALENCE_CONFIRMED",
+    "PACT_LARGE_UNSEEN_MEASUREMENT_RECOVERED"
+  ],
+  "continuation_stop_guard": "PASS",
+  "created_utc": "2026-10-05T05:03:20.022361+00:00",
+  "executed_large_wrapper_source_preserved": true,
+  "focused_regressions": {
+    "command": "python -m pytest -q tests/unit/test_cpu_incremental.py tests/unit/test_compact_activity.py tests/unit/test_cpu_gates.py tests/unit/test_candidate_stateful.py tests/unit/test_stage_b.py tests/unit/test_cold_start.py tests/unit/test_physical_effect.py tests/unit/test_cold_start_report.py",
+    "seconds": 28.18,
+    "status": "PASS",
+    "tests": 57
+  },
+  "historical_changes": [],
+  "historical_files_checked": 1772,
+  "maximum_activity_absolute_difference": 0.0,
+  "numeric_activity_summary_and_map_values_checked": 1818,
+  "original_evaluator_reference_sources_and_oracle_copies_unchanged": true,
+  "registered_activity_policy": "abs(candidate-reference) <= 1e-10*max(1,abs(reference))",
+  "scientific_stop": {
+    "bytes": 3969,
+    "path": "repo://results/pact_cpu_scalability_20261005/scientific_stop.json",
+    "sha256": "6cd8c36e1cb4a9287198b3319aa16bf18cd459a3fb9a7105e42f5aa04c174bde"
+  },
+  "status": "PASS"
+}

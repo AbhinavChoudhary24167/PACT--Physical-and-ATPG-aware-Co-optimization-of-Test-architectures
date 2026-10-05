@@ -1,0 +1,194 @@
+{
+  "ceilings": {
+    "diagnostic": 14400,
+    "normal": 7200
+  },
+  "configured_timeout_seconds": 7200,
+  "created_utc": "2026-10-05T03:42:30.046476+00:00",
+  "frozen_simulation_manifest": {
+    "bytes": 2487,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s953/CS_C1/s953/CS_C1/simulation_manifest.json",
+    "sha256": "83d30d09a3ba41c0059e31c1678e5b624bad6230e2a7b2a65935559c44c97154"
+  },
+  "inputs": {
+    "counts.cfg": {
+      "bytes": 2883,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s953/CS_C1/normal/s953/CS_C1/counts.cfg",
+      "sha256": "378d933c8c9c5aff59757a8f022e07b3e74466847d7a7297c271180490e7df71"
+    },
+    "cycles.json": {
+      "bytes": 223793,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s953/CS_C1/normal/s953/CS_C1/cycles.json",
+      "sha256": "233040c642ade1a5c3ad2f259f46a4826bceabb39ecac6775227f753be13c361"
+    },
+    "extracted.spef": {
+      "bytes": 439200,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s953/CS_C1/normal/s953/CS_C1/extracted.spef",
+      "sha256": "0b44927d385f8538a56d1087c35aca34dfdfd35ed1c0ae27da367ed95c14c5ae"
+    },
+    "net_mapping.json": {
+      "bytes": 82630,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s953/CS_C1/normal/s953/CS_C1/net_mapping.json",
+      "sha256": "e76a52b1cc4e8e6c0cf5b4f871fc31b7b0673c321da775c7b522a66fc65784df"
+    },
+    "routed.v": {
+      "bytes": 38351,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s953/CS_C1/normal/s953/CS_C1/routed.v",
+      "sha256": "5e0983554191233456f2f9fee08f3975d9f3b1cf4201a65f17ff3d4fcd79a5e7"
+    },
+    "stimulus.v": {
+      "bytes": 441737,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s953/CS_C1/normal/s953/CS_C1/stimulus.v",
+      "sha256": "5ab93894965073f7641e0558417f94cc3f72b52937407a6e6e3877da48de475c"
+    },
+    "workload.json": {
+      "bytes": 43288,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s953/CS_C1/normal/s953/CS_C1/workload.json",
+      "sha256": "0c584a7e4502b5685a04793202b73089c6908a9cc54f38cd34a9154edaad0e0f"
+    }
+  },
+  "purpose": "equivalence",
+  "regime_ceiling_seconds": 7200,
+  "resource_policy": {
+    "NUMBA_NUM_THREADS": 1,
+    "OMP_NUM_THREADS": 1,
+    "OPENBLAS_NUM_THREADS": 1,
+    "physical_jobs": 0,
+    "simulator_jobs": 1,
+    "workers": 1
+  },
+  "rows": [
+    {
+      "SDC": {
+        "bytes": 4231,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/orfs/results/nangate45/s953/phase0b_s11_B0/3_place.sdc",
+        "sha256": "402d19e95e45f5b678eb58c5693f80abc23426c53d3c5b10d97f916d7486aa9a"
+      },
+      "architecture": {
+        "bytes": 4202,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s953/budget_0.10/architectures/d10c54bd2f7e2410d412f8049b430b85a55555dc55d21407cc829064e82a5a58.json",
+        "sha256": "dd5bf984b901866eb7bdc9afbcb309332d57f4186591f1d61c9139974763c714"
+      },
+      "architecture_sha256": "d10c54bd2f7e2410d412f8049b430b85a55555dc55d21407cc829064e82a5a58",
+      "chain_lengths": [
+        15,
+        14
+      ],
+      "design": "s953",
+      "inputs": {
+        "identity_map": {
+          "bytes": 7349,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_runtime_paths_repaired/s953/ff_identity_map.json",
+          "sha256": "bdc96863d91cfbcfd830cb21a8a54cd4cb2a656ab59487f8a5aacdb3e9789f74"
+        },
+        "patterns": {
+          "bytes": 12022,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s953/source_endpoint_repaired/patterns.pat",
+          "sha256": "7dc4d8c9737312b6d6131c02203bd53f6ea85f4a2d43a9c20a23da24958aa7a0"
+        },
+        "placement": {
+          "bytes": 100776,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s953/source_endpoint_repaired/placed.def",
+          "sha256": "4a678fbd96e653977298615eb9fcfdda894025daecc5afc97a9b420feefc92f9"
+        }
+      },
+      "patterns": 89,
+      "prior_integration": {
+        "bytes": 458,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/atpg/s953/CS_C1/serial_replay.json",
+        "sha256": "65c5e18d25ffb7a4f4b378bc68a831d16fb0da56ef614c75e407a18d87014597"
+      },
+      "qualification": {
+        "bytes": 13521,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s953/CS_C1/route_result.json",
+        "sha256": "a3465b62fb01bdaedc2c8873768fdaa1b9f21416a06513c389706e8b1601a838"
+      },
+      "reference_hash": "ac13bc68f090dd8f6921fee11362f5c63dc32f7376f0acabf1d895f26894e371",
+      "role": "CS_C1",
+      "routed_archive": {
+        "bytes": 204259,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s953/CS_C1/5_2_route.odb.gz",
+        "sha256": "9043da578f950cd449898af0b2d18c73f0080ba2a7d7ea2f29b4868b1623b09a"
+      },
+      "selection": {
+        "bytes": 6792,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/selections/s953/preselected_candidates.json",
+        "sha256": "1fb47d62c31b4411ab332f6d5e5272927516ae6b281fd606806b8809959852b2"
+      },
+      "shift_cycles": 2670,
+      "source_netlist": {
+        "bytes": 33097,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s953/source_endpoint_repaired/compatible.v",
+        "sha256": "bbacb084e2250754b6d559e93ea616e44ec245844a6cc4363242f38e5726d6d6"
+      },
+      "source_placed_database": {
+        "bytes": 637805,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/orfs/results/nangate45/s953/phase0b_s11_B0/3_place.odb",
+        "sha256": "b0ee8134c880536f2eb41ae22b5d1b773c32492e0c4e6524b6012b4a077d6031"
+      },
+      "workload": {
+        "bytes": 43288,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s953/CS_C1/normal/s953/CS_C1/workload.json",
+        "sha256": "0c584a7e4502b5685a04793202b73089c6908a9cc54f38cd34a9154edaad0e0f"
+      }
+    }
+  ],
+  "schema": "pact_cpu_exact_activity_v1",
+  "scientific_policy": "Unchanged frozen circuit, workload, C*N and H4/H8; full cycle counts plus successful functional simulator exit required; partial output excluded",
+  "simulation_cells": {
+    "bytes": 220429,
+    "path": "/root/pact-deps/FAN_ATPG/techlib/NangateOpenCellLibrary.v",
+    "sha256": "8cf1d1a5c0ccfebdb67c39f172e3b2bafc199f77815a3c8d972d95531765d5a2"
+  },
+  "source_manifest": {
+    "bytes": 7670,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s953/CS_C1/manifest.json",
+    "sha256": "9c21e133a14e04e298e8d4f822eb0b9538aa356fedd46aa4b9145119d4e5ee6b"
+  },
+  "source_result": {
+    "bytes": 1618,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s953/CS_C1/s953/CS_C1/result.json",
+    "sha256": "40d120e62b7262c6a24194c79157c41b1e9fecd827d98b8036d07893b6f95f7e"
+  },
+  "sources": {
+    "scripts/pact_cpu_activity.py": {
+      "bytes": 11314,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cpu_activity.py",
+      "sha256": "eb67618863bcf1a98d850cda8ea21374460b434973ab0ca79651ac55f34b5aa7"
+    },
+    "src/pact/activity/compact.py": {
+      "bytes": 10061,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/activity/compact.py",
+      "sha256": "c6f73f61bae40ecda573ca8cb37572475fe62e197bdf109150671527ca1c0ed4"
+    },
+    "src/pact/activity/counts_vpi.cpp": {
+      "bytes": 7034,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/activity/counts_vpi.cpp",
+      "sha256": "9a40394de2d4b8964509c9a6f14c2e247891022c99824939a30ea7427c77565c"
+    },
+    "src/pact/physical_effect.py": {
+      "bytes": 12009,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/physical_effect.py",
+      "sha256": "b68bbf6d9b02158d69c11f3f40e0722defd507c5de6e8813bb94bb9a2b498a8c"
+    }
+  },
+  "stimulus_change": "Only the two VCD emission lines removed; every functional statement retained byte-for-byte",
+  "timeout_regime": "normal",
+  "tools": {
+    "iverilog": {
+      "bytes": 51640,
+      "path": "/usr/bin/iverilog",
+      "sha256": "a6071e4b4a68feafca0c8ee0e6aa275eee9a43a108c62801cfd1eca6eab6d8a3"
+    },
+    "iverilog-vpi": {
+      "bytes": 3876,
+      "path": "/usr/bin/iverilog-vpi",
+      "sha256": "a9e33b714d84f72e8eff1351eeec25c78794d37da49099e4886b73830faa90e1"
+    },
+    "vvp": {
+      "bytes": 1354376,
+      "path": "/usr/bin/vvp",
+      "sha256": "a10bd7d4a0850308ac8c2c98115b6a3084f9be978307610f2a521190c28f4023"
+    }
+  }
+}

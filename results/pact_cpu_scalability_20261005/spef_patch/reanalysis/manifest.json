@@ -1,0 +1,52 @@
+{
+  "complete_trace": {
+    "bytes": 482381871,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/continuation/s38584/REF_B3T/normal/s38584/REF_B3T/activity.counts.gz",
+    "sha256": "9a62be932918fd4b83717a8e312324c41f914553fd5b07f5dfc7ef5e557c6a5d"
+  },
+  "configured_timeout_seconds": 7200,
+  "count_cache_policy": "Read-only old cache; every byte rechecked against complete CRC/footer-validated compressed counts",
+  "created_utc": "2026-10-05T05:28:54.696144+00:00",
+  "design": "s38584",
+  "implementation_evidence": {
+    "bytes": 12170,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/spef_patch/implementation_evidence.json",
+    "sha256": "1af092318f10cd076945320ebaf6a798c93cccb0403ffe93fe1eacc825d03620"
+  },
+  "original_failed_result": {
+    "bytes": 6924,
+    "path": "repo://results/pact_cpu_scalability_20261005/activity/continuation/s38584/REF_B3T/normal/result.json",
+    "sha256": "8c9f18abc0e871bb6b2119c2ab8fc22ade2d73c47d4f24d52190930b87af96df"
+  },
+  "role": "REF_B3T",
+  "simulation_reexecuted": false,
+  "simulation_reused": true,
+  "sources": {
+    "scripts/pact_cpu_activity.py": {
+      "bytes": 12655,
+      "path": "repo://scripts/pact_cpu_activity.py",
+      "sha256": "5ccb58a72e81a376940f1ab5041fa36a2807b1a9167c593c2e9019618af85ca4"
+    },
+    "scripts/pact_spef_reanalyse.py": {
+      "bytes": 5511,
+      "path": "repo://scripts/pact_spef_reanalyse.py",
+      "sha256": "427387cc3961b72bc27356c005c728066ed07dc41deab640b2566b6bc1438dbf"
+    },
+    "src/pact/activity/compact.py": {
+      "bytes": 11707,
+      "path": "repo://src/pact/activity/compact.py",
+      "sha256": "c1c7077965fc78a86e6e2fed469eca35b16bd8d5e0c0ab31ae40b06a83d1272a"
+    },
+    "src/pact/activity/spef_evidence.py": {
+      "bytes": 8200,
+      "path": "repo://src/pact/activity/spef_evidence.py",
+      "sha256": "f315c1ee34831bacad6a403dbed91d1e47194f9cc07d453b2328fd88e685858c"
+    },
+    "src/pact/physical_effect.py": {
+      "bytes": 12009,
+      "path": "repo://src/pact/physical_effect.py",
+      "sha256": "b68bbf6d9b02158d69c11f3f40e0722defd507c5de6e8813bb94bb9a2b498a8c"
+    }
+  },
+  "timeout_regime": "normal"
+}

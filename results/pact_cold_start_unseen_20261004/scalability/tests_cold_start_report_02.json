@@ -1,0 +1,17 @@
+{
+  "combined_test_snapshot_wall_seconds": 2.9674012,
+  "command": "python -m pytest tests/unit/test_cold_start_report.py -q; python scripts/pact_cold_start_report.py --snapshot",
+  "exit_code": 0,
+  "failed": 0,
+  "passed": 11,
+  "platform": "Windows",
+  "pytest_seconds": 0.4,
+  "schema": "pact_cold_start_test_execution_v1",
+  "scientific_execution": false,
+  "scope": "Original interpretation tests plus actual filesystem new-vs-old reference-timeout behavior, explicit independent-design stop, input-does-not-initialize behavior, bound loader-only PASS diagnostics without optimizer execution, measurement-vs-solver failure separation, nonoverlapping evaluator subtotal and correctly labeled full-lane remainder. Snapshot remains active and unsealed.",
+  "sources": {
+    "scripts/pact_cold_start_report.py": "f6ab215f0d4244a0723ea99b798e62dd26986fa38f730e50b897e95ea8476542",
+    "tests/unit/test_cold_start_report.py": "38f165a39b4c8ce388c5304d1f6291e08528c56ff5d470565c62371d26d9f774"
+  },
+  "status": "PASS"
+}

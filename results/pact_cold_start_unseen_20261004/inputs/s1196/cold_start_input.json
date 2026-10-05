@@ -1,0 +1,129 @@
+{
+  "ATPG_pattern_count": 134,
+  "FF_count": 18,
+  "K": 2,
+  "artifacts": {
+    "SDC": {
+      "bytes": 3238,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/orfs/results/nangate45/s1196/phase0b_s11_B0/3_place.sdc",
+      "sha256": "aa59a831c258f31d8733a661cd0aa5b0bb1db6d704d25c43761a61476491deca"
+    },
+    "architecture": {
+      "bytes": 2574,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_runtime_paths_repaired/s1196/B2/generator/canonical.json",
+      "sha256": "63ffbd5c3476575f461ded050660c1c8469015596a24d9ed6be1f3a8e4d83ec0"
+    },
+    "caps": {
+      "bytes": 49817,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/inputs/s1196/net_activity_capacitance.csv",
+      "sha256": "d54201e00f230618604ebb1d108748fd1ce6029e773f6d4e3b99e29c400c2779"
+    },
+    "identity_map": {
+      "bytes": 2565,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_runtime_paths_repaired/s1196/ff_identity_map.json",
+      "sha256": "3dfc50f0c5e9edfa9fdaa970592d9541c6628b4cdd8dfbb11f5f20a99b236f4d"
+    },
+    "mapping": {
+      "bytes": 87912,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/inputs/s1196/net_mapping.json",
+      "sha256": "0e51987401056f9c58037c9dbdb068e778225f668084de613f295b366d8cdbd6"
+    },
+    "patterns": {
+      "bytes": 13018,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s1196/patterns.pat",
+      "sha256": "10a6a7b3209bf61c263210fbd8f8802bf47d3acd0792dbf1be27850272a3afd6"
+    },
+    "placement": {
+      "bytes": 104401,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s1196/placed.def",
+      "sha256": "a1bb423d3e5e89ef29b67f0a513905589b4209db0d57b6a369becc39b9892c0e"
+    },
+    "qualification": {
+      "bytes": 6868,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_runtime_paths_repaired/s1196/B2/physical/route_result.json",
+      "sha256": "d79aa4f31d3532408e59d89a94bfb4be30cae8e090f69416f6e926924d4ed856"
+    },
+    "reference_fault_export": {
+      "bytes": 209856,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_runtime_paths_repaired/s1196/B2/correctness/fan/export.json",
+      "sha256": "7acdbf1911a1e44b8a0576550a43dd2c2fb8289227cc4993c70d81ef79fae439"
+    },
+    "reference_serial": {
+      "bytes": 459,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_runtime_paths_repaired/s1196/B2/correctness/serial_replay.json",
+      "sha256": "0d695bd99962605aeeca2eadcecca801aaf94adee576931c168a7624ec07504e"
+    },
+    "source_netlist": {
+      "bytes": 35162,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s1196/compatible.v",
+      "sha256": "601de4b7b8e7764d737c633285cdbbaf11fd1f49cc0db28cdacca0ab64742af0"
+    },
+    "source_placed_database": {
+      "bytes": 656519,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/orfs/results/nangate45/s1196/phase0b_s11_B0/3_place.odb",
+      "sha256": "d733ffc32f009e28419ccbf53477993b1737d1abb9d79c2a8f5afdccdb45552c"
+    },
+    "topology": {
+      "bytes": 391542,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/inputs/s1196/topology.json",
+      "sha256": "97cf1cbe734497f5c0ec108a3799a7086a947bf2306cbdb240754421eadb43cc"
+    }
+  },
+  "created_utc": "2026-10-04T18:09:54.720141+00:00",
+  "design": "s1196",
+  "fields": {
+    "automatically_generated": [
+      "identity_map",
+      "patterns",
+      "topology"
+    ],
+    "external_reference": [
+      "architecture",
+      "qualification",
+      "reference_fault_export",
+      "reference_serial"
+    ],
+    "optional": [
+      "provenance"
+    ],
+    "physically_derived": [
+      "mapping",
+      "caps",
+      "placement",
+      "source_placed_database",
+      "SDC"
+    ]
+  },
+  "historical_state_required": false,
+  "preparation": {
+    "bytes": 4852,
+    "path": "repo://results/pact_generalization_20261004/physical/s1196/preparation.json",
+    "sha256": "f8b19c7533b9e4411c25328b632c9d98305ab7ac6f41a2ec304d7bbe9f2e23f6"
+  },
+  "provenance": {
+    "caps": {
+      "bytes": 49817,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s1196/s1196/B2/net_activity_capacitance.csv",
+      "sha256": "d54201e00f230618604ebb1d108748fd1ce6029e773f6d4e3b99e29c400c2779"
+    },
+    "mapping": {
+      "bytes": 87912,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_export_gates/s1196/s1196/B2/net_mapping.json",
+      "sha256": "0e51987401056f9c58037c9dbdb068e778225f668084de613f295b366d8cdbd6"
+    },
+    "route_archive": {
+      "bytes": 217195,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_runtime_paths_repaired/s1196/B2/physical/5_2_route.odb.gz",
+      "sha256": "ecfdb8c9b583b33d0436f677cd342a26a640090fd6c7b32a76477c5d4d7527c5"
+    }
+  },
+  "reference": {
+    "bytes": 4681,
+    "path": "repo://results/pact_cold_start_unseen_20261004/references/s1196/reference_frozen.json",
+    "sha256": "c0d3240e3099588fb08ede6dc7c2c121f7771ebd6e4511a29f594194b0a31c8b"
+  },
+  "reference_architecture_hash": "0730cff01ba7157f01194f71d79ac0976c2a9797f6f8df6e497d0f250e6dbd25",
+  "reference_method": "B2",
+  "schema": "pact_cold_start_input_v1",
+  "target_fault_count": 3104
+}

@@ -1,0 +1,82 @@
+{
+  "active_stages": [],
+  "completed": {
+    "E_computation_all_data": {
+      "calls": 1,
+      "cpu_seconds": 0.01462914999999998,
+      "process_peak_RSS_KiB": 47968,
+      "wall_seconds": 0.03224206300001242
+    },
+    "E_computation_scan_data": {
+      "calls": 1,
+      "cpu_seconds": 0.04744484800000004,
+      "process_peak_RSS_KiB": 39904,
+      "wall_seconds": 0.06653064799999697
+    },
+    "H4_computation_all_data": {
+      "calls": 1,
+      "cpu_seconds": 0.007842546999999978,
+      "process_peak_RSS_KiB": 47968,
+      "wall_seconds": 0.02795924900001978
+    },
+    "H4_computation_scan_data": {
+      "calls": 1,
+      "cpu_seconds": 0.006200062999999978,
+      "process_peak_RSS_KiB": 40672,
+      "wall_seconds": 0.025607952000001433
+    },
+    "H8_computation_all_data": {
+      "calls": 1,
+      "cpu_seconds": 0.010436739000000084,
+      "process_peak_RSS_KiB": 47968,
+      "wall_seconds": 0.029815224000003582
+    },
+    "H8_computation_scan_data": {
+      "calls": 1,
+      "cpu_seconds": 0.008649964000000065,
+      "process_peak_RSS_KiB": 42720,
+      "wall_seconds": 0.025885269000013977
+    },
+    "analysis_total": {
+      "calls": 1,
+      "cpu_seconds": 0.6044837239999998,
+      "process_peak_RSS_KiB": 47968,
+      "wall_seconds": 1.0355657030000032
+    },
+    "capacitance_attribution": {
+      "calls": 1,
+      "cpu_seconds": 0.012858882000000071,
+      "process_peak_RSS_KiB": 38548,
+      "wall_seconds": 0.038807240000011234
+    },
+    "ff_transition_crosscheck": {
+      "calls": 1,
+      "cpu_seconds": 0.057089459999999925,
+      "process_peak_RSS_KiB": 37216,
+      "wall_seconds": 0.06395050000000424
+    },
+    "spef_parse": {
+      "calls": 1,
+      "cpu_seconds": 0.02934709499999999,
+      "process_peak_RSS_KiB": 38548,
+      "wall_seconds": 0.04937863300000345
+    },
+    "transition_extraction": {
+      "calls": 5965,
+      "wall_seconds": 0.17159231800056318
+    },
+    "vcd_parse": {
+      "cpu_seconds": null,
+      "includes": "streaming text IO, header/event parsing, allocations and timestamp dispatch",
+      "peak_RSS_KiB": null,
+      "resource_attribution": "CPU/RSS shared with vcd_parse_and_transition; do not sum inclusive and exclusive spans",
+      "wall_seconds": 0.12702851999944187
+    },
+    "vcd_parse_and_transition": {
+      "calls": 1,
+      "cpu_seconds": 0.272051518,
+      "process_peak_RSS_KiB": 37216,
+      "wall_seconds": 0.29862083800000505
+    }
+  }
+}

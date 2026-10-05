@@ -1,0 +1,65 @@
+{
+  "configured_timeout_seconds": 7200,
+  "created_utc": "2026-10-05T05:23:19.180340+00:00",
+  "stages": {
+    "export_evidence": {
+      "CPU_seconds": 7.849130000000001,
+      "CPU_system_seconds": 1.417431,
+      "CPU_user_seconds": 6.431699,
+      "command": [
+        "/usr/bin/openroad",
+        "-python",
+        "-no_init",
+        "-exit",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_spef_evidence_export.py",
+        "--source",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38584/REF_B3T/s38584/REF_B3T",
+        "--inspection-db",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/spef_patch/extracted.odb",
+        "--reproduced-spef",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/spef_patch/reproduced.spef",
+        "--output",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/spef_patch/implementation_evidence.json"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "log": {
+        "bytes": 312,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/spef_patch/export_evidence.log",
+        "sha256": "76706d4644be3ba6568e6d115a3a3d021dc04d95927d6c4b090d4c6176a1f70c"
+      },
+      "major_page_faults": 19,
+      "peak_RSS_KiB": 328908,
+      "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+      "returncode": 0,
+      "timed_out": false,
+      "timestamp_utc": "2026-10-05T05:23:19.148976+00:00",
+      "wall_seconds": 13.298503620999998
+    },
+    "extract_reproducer": {
+      "CPU_seconds": 7.568931,
+      "CPU_system_seconds": 1.3257430000000001,
+      "CPU_user_seconds": 6.243188,
+      "command": [
+        "/usr/bin/openroad",
+        "-no_init",
+        "-exit",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/spef_patch/extract_reproducer.tcl"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "log": {
+        "bytes": 977,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/spef_patch/extract_reproducer.log",
+        "sha256": "d988218f80c94c0db714601d201c03eb29cdd1b37c312970a8d6133de39b16ba"
+      },
+      "major_page_faults": 110,
+      "peak_RSS_KiB": 195616,
+      "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+      "returncode": 0,
+      "timed_out": false,
+      "timestamp_utc": "2026-10-05T05:23:05.812101+00:00",
+      "wall_seconds": 14.519198849
+    }
+  },
+  "status": "PASS",
+  "timeout_regime": "normal"
+}

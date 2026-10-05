@@ -1,0 +1,42 @@
+{
+  "design": "s1196",
+  "error": "'max'",
+  "execution": {
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "-o",
+      "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s1196/s1196/B2/resources.txt",
+      "/root/pact-deps/pact-venv/bin/python",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/physical_effect.py",
+      "run",
+      "--design",
+      "s1196"
+    ],
+    "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+    "exit_code": 0,
+    "stderr": {
+      "bytes": 0,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s1196/execution/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 43,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s1196/execution/stdout.txt",
+      "sha256": "0fb5f86e491f9b12d6f25b2a18d87cb07e604781cada2a49549d3cb51c0d4fa7"
+    },
+    "timed_out": false,
+    "timestamp_utc": "2026-10-04T12:36:18.293145+00:00",
+    "wall_seconds": 9.503294026999981
+  },
+  "failure_class": "PHYSICAL_BACKEND_FAIL",
+  "manifest": {
+    "bytes": 4843,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s1196/manifest.json",
+    "sha256": "a425e159f8ccc924394d3c3bd14aa3fae3fd285a1a23e165c27014a58a4a724b"
+  },
+  "phase": "REFERENCE_MEASUREMENT",
+  "selected_reference": "B2",
+  "status": "FAILED",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_measure.py\", line 74, in run\n    H4=all_data['grids']['4']['cap_peak_per_cycle']['max'],\n       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^\nKeyError: 'max'\n"
+}

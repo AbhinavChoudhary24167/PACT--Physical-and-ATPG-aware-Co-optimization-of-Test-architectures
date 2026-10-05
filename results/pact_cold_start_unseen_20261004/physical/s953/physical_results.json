@@ -1,0 +1,1300 @@
+{
+  "created_utc": "2026-10-04T18:14:20.604110+00:00",
+  "design": "s953",
+  "input": {
+    "bytes": 5530,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/inputs/s953/cold_start_input.json",
+    "sha256": "2bf6ea217240f5c38a0915eade69b74a46a0e12d98f75acb68593318d22d7523"
+  },
+  "records": [
+    {
+      "DRC_errors": 0,
+      "activity_status": "PENDING",
+      "architecture_sha256": "d10c54bd2f7e2410d412f8049b430b85a55555dc55d21407cc829064e82a5a58",
+      "archive": {
+        "bytes": 204259,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s953/CS_C1/5_2_route.odb.gz",
+        "sha256": "9043da578f950cd449898af0b2d18c73f0080ba2a7d7ea2f29b4868b1623b09a"
+      },
+      "candidate": "CS_C1",
+      "created_utc": "2026-10-04T18:11:53.620163+00:00",
+      "design": "s953",
+      "extraction": {
+        "bytes": 439200,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s953/CS_C1/extracted.spef",
+        "sha256": "75031011d63186ac6abc81787b907162d33e67fe1fa5d0bd461152ff9739c5ab"
+      },
+      "extraction_wall_seconds": 1.027033695,
+      "functional_verification": {
+        "execution": {
+          "command": [
+            "/usr/bin/openroad",
+            "-exit",
+            "-python",
+            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_export.py",
+            "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical_gates/s953/CS_C1/s953/CS_C1"
+          ],
+          "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+          "exit_code": 0,
+          "stderr": {
+            "bytes": 0,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s953/CS_C1/functional_export/stderr.txt",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "stdout": {
+            "bytes": 390,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s953/CS_C1/functional_export/stdout.txt",
+            "sha256": "8ca259e21ee91494b1015dad8d1892783e63086ee303f31e676fe3e130ecc5a5"
+          },
+          "timed_out": false,
+          "timestamp_utc": "2026-10-04T18:11:51.467222+00:00",
+          "wall_seconds": 6.850247531999997
+        },
+        "functional": {
+          "FF_placement": "exact",
+          "functional_sinks_and_outputs": 768,
+          "rule": "source identity and inversion parity through buffers/inverters; gate function families unchanged",
+          "source_placed_database": {
+            "bytes": 637805,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/orfs/results/nangate45/s953/phase0b_s11_B0/3_place.odb",
+            "sha256": "b0ee8134c880536f2eb41ae22b5d1b773c32492e0c4e6524b6012b4a077d6031"
+          },
+          "status": "PASS"
+        },
+        "outputs": {
+          "functional_verification.json": {
+            "bytes": 467,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical_gates/s953/CS_C1/s953/CS_C1/functional_verification.json",
+            "sha256": "1381cfd325f6bfd2d7e5fb077c25c8af33ca735d3a18f1ae643506e77102c35d"
+          },
+          "net_mapping.json": {
+            "bytes": 82630,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical_gates/s953/CS_C1/s953/CS_C1/net_mapping.json",
+            "sha256": "e76a52b1cc4e8e6c0cf5b4f871fc31b7b0673c321da775c7b522a66fc65784df"
+          },
+          "topology_verification.json": {
+            "bytes": 7814,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical_gates/s953/CS_C1/s953/CS_C1/topology_verification.json",
+            "sha256": "9ecc8305e8acf61f247e5fc04088da542604e178e1aae2659e3c80862eb8cc74"
+          }
+        }
+      },
+      "gates": {
+        "DRC": "PASS",
+        "FF_inventory": "PASS",
+        "FF_placement": "PASS",
+        "extraction": "PASS",
+        "functional_connections": "PASS",
+        "rewire": "PASS",
+        "routing": "PASS",
+        "timing": "PASS",
+        "topology": "PASS"
+      },
+      "postroute_verification": {
+        "K": 2,
+        "all_chain_inputs_outputs_verified": true,
+        "bounded_scan_path_link_count": 31,
+        "edges": [
+          {
+            "chain": 0,
+            "dest_ff": "U_State_1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 40.77,
+            "source_ff": "U_State_4",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_State_5",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 58.2,
+            "source_ff": "U_State_1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_State_0",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 21.47,
+            "source_ff": "U_State_5",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_State_2",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 59.57,
+            "source_ff": "U_State_0",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_State_3",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 34.62,
+            "source_ff": "U_State_2",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_TxHInHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 36.93,
+            "source_ff": "U_State_3",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_ReWhBufHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 24.46,
+            "source_ff": "U_TxHInHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_TgWhBufHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 13.7,
+            "source_ff": "U_ReWhBufHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_SeFullIHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 6.79,
+            "source_ff": "U_TgWhBufHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_SeFullOHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 25.25,
+            "source_ff": "U_SeFullIHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_LoadOHHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 13.26,
+            "source_ff": "U_SeFullOHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_LoadIHHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 14.55,
+            "source_ff": "U_LoadOHHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_DumpIHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 20.03,
+            "source_ff": "U_LoadIHHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_LdProgHS1",
+            "exact_routed_length_um": 16.05,
+            "exclusive_scan_net": true,
+            "net_length_upper_bound_um": 16.05,
+            "source_ff": "U_DumpIHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_Mode1HS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 6.84,
+            "source_ff": "U_ActRtHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_ActBmHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 9.8,
+            "source_ff": "U_Mode1HS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_NewTrHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 7.19,
+            "source_ff": "U_ActBmHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_Mode0HS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 14.29,
+            "source_ff": "U_NewTrHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_Mode2HS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 6.79,
+            "source_ff": "U_Mode0HS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_ReRtTSHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 6.6,
+            "source_ff": "U_Mode2HS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_ShftIRHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 18.66,
+            "source_ff": "U_ReRtTSHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_NewLineHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 9.45,
+            "source_ff": "U_ShftIRHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_ShftORHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 5.72,
+            "source_ff": "U_NewLineHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_LxHInHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 5.13,
+            "source_ff": "U_ShftORHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_GoBmHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 5.84,
+            "source_ff": "U_LxHInHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_GoRtHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 33.87,
+            "source_ff": "U_GoBmHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_SeOutAvHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 21.86,
+            "source_ff": "U_GoRtHS1",
+            "transparent_buffers": []
+          }
+        ],
+        "exact_internal_ff_scan_only_total_um": null,
+        "exact_scan_only_total_um": null,
+        "exclusive_exact_edge_count": 1,
+        "fixed_port_positions_verified": true,
+        "port_centers_dbu": {
+          "test_si": [
+            79620,
+            18060
+          ],
+          "test_si_1": [
+            79620,
+            53340
+          ],
+          "test_so": [
+            140,
+            39900
+          ],
+          "test_so_1": [
+            140,
+            53900
+          ]
+        },
+        "port_links": [
+          {
+            "chain": 0,
+            "kind": "SI_to_first_FF",
+            "net_length_upper_bound_um": 20.185,
+            "transparent_buffers": [
+              "hold45",
+              "input18",
+              "hold46"
+            ]
+          },
+          {
+            "chain": 0,
+            "kind": "last_FF_to_SO",
+            "net_length_upper_bound_um": 24.47,
+            "transparent_buffers": [
+              "output41"
+            ]
+          },
+          {
+            "chain": 1,
+            "kind": "SI_to_first_FF",
+            "net_length_upper_bound_um": 9.395,
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "kind": "last_FF_to_SO",
+            "net_length_upper_bound_um": 4.73,
+            "transparent_buffers": []
+          }
+        ],
+        "routed_full_scan_path_net_length_upper_bound_um": 596.47,
+        "scan_edges": 27,
+        "scan_ff_count": 29,
+        "status": "PASS"
+      },
+      "reference_hash": "ac13bc68f090dd8f6921fee11362f5c63dc32f7376f0acabf1d895f26894e371",
+      "route_wall_seconds": 51.492732695,
+      "routed_odb_sha256": "1947cc51e4d0142e595750debad571e54ad4881b2f5098f72b401640585d8ba5",
+      "routed_scan_wirelength_um": 596.47,
+      "scientific_method_change": false,
+      "selection": {
+        "bytes": 6792,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/selections/s953/preselected_candidates.json",
+        "sha256": "1fb47d62c31b4411ab332f6d5e5272927516ae6b281fd606806b8809959852b2"
+      },
+      "source_placed_database": {
+        "bytes": 637805,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/orfs/results/nangate45/s953/phase0b_s11_B0/3_place.odb",
+        "sha256": "b0ee8134c880536f2eb41ae22b5d1b773c32492e0c4e6524b6012b4a077d6031"
+      },
+      "status": "PHYSICAL_GATES_PASS",
+      "structured_metrics": {
+        "congestion": null,
+        "detailed_route_drc_errors": 0,
+        "detailed_route_vias": 3277,
+        "global_route_overflow": null,
+        "global_route_wirelength_um": 8797,
+        "hold_tns_ns": 0,
+        "hold_violated_endpoints": 0,
+        "hold_wns_ns": 0.0122369,
+        "layer_utilization": {},
+        "max_cap_violations": 0,
+        "max_fanout_violations": 0,
+        "max_slew_violations": 0,
+        "pdnsim_classification": "NOT_RUN_NO_QUALIFIED_TEST_CURRENT_MODEL",
+        "setup_tns_ns": 0,
+        "setup_violated_endpoints": 0,
+        "setup_wns_ns": 9.34964,
+        "timing_stage": "global_route",
+        "total_detailed_route_wirelength_um": 5642
+      }
+    },
+    {
+      "DRC_errors": 0,
+      "activity_status": "PENDING",
+      "architecture_sha256": "0fb4be8dd27c7461f4346175effd4588caf3c045d8f10c390be22d33b39c5da2",
+      "archive": {
+        "bytes": 203764,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s953/CS_C2/5_2_route.odb.gz",
+        "sha256": "910c0b6caa2a413717d9629f7a71822ac02578008523a06562f54f2b5ea3e9d3"
+      },
+      "candidate": "CS_C2",
+      "created_utc": "2026-10-04T18:13:05.155219+00:00",
+      "design": "s953",
+      "extraction": {
+        "bytes": 435497,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s953/CS_C2/extracted.spef",
+        "sha256": "f3a5e76fb63a0a7093cbf8ba027376a957e783c269fcba7468cc0577cf8a4cc9"
+      },
+      "extraction_wall_seconds": 0.9276800799999876,
+      "functional_verification": {
+        "execution": {
+          "command": [
+            "/usr/bin/openroad",
+            "-exit",
+            "-python",
+            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_export.py",
+            "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical_gates/s953/CS_C2/s953/CS_C2"
+          ],
+          "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+          "exit_code": 0,
+          "stderr": {
+            "bytes": 0,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s953/CS_C2/functional_export/stderr.txt",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "stdout": {
+            "bytes": 390,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s953/CS_C2/functional_export/stdout.txt",
+            "sha256": "8ca259e21ee91494b1015dad8d1892783e63086ee303f31e676fe3e130ecc5a5"
+          },
+          "timed_out": false,
+          "timestamp_utc": "2026-10-04T18:13:03.055768+00:00",
+          "wall_seconds": 6.750010319000012
+        },
+        "functional": {
+          "FF_placement": "exact",
+          "functional_sinks_and_outputs": 768,
+          "rule": "source identity and inversion parity through buffers/inverters; gate function families unchanged",
+          "source_placed_database": {
+            "bytes": 637805,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/orfs/results/nangate45/s953/phase0b_s11_B0/3_place.odb",
+            "sha256": "b0ee8134c880536f2eb41ae22b5d1b773c32492e0c4e6524b6012b4a077d6031"
+          },
+          "status": "PASS"
+        },
+        "outputs": {
+          "functional_verification.json": {
+            "bytes": 467,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical_gates/s953/CS_C2/s953/CS_C2/functional_verification.json",
+            "sha256": "1381cfd325f6bfd2d7e5fb077c25c8af33ca735d3a18f1ae643506e77102c35d"
+          },
+          "net_mapping.json": {
+            "bytes": 82630,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical_gates/s953/CS_C2/s953/CS_C2/net_mapping.json",
+            "sha256": "ba540cd70efd38aff7d3cb93afab62601595335b5b5c8e4087987e190780bf76"
+          },
+          "topology_verification.json": {
+            "bytes": 7818,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical_gates/s953/CS_C2/s953/CS_C2/topology_verification.json",
+            "sha256": "93b1c392f05a577ffce34f4ce969cd9185b93159cc793c11e0251b2642d3f46c"
+          }
+        }
+      },
+      "gates": {
+        "DRC": "PASS",
+        "FF_inventory": "PASS",
+        "FF_placement": "PASS",
+        "extraction": "PASS",
+        "functional_connections": "PASS",
+        "rewire": "PASS",
+        "routing": "PASS",
+        "timing": "PASS",
+        "topology": "PASS"
+      },
+      "postroute_verification": {
+        "K": 2,
+        "all_chain_inputs_outputs_verified": true,
+        "bounded_scan_path_link_count": 31,
+        "edges": [
+          {
+            "chain": 0,
+            "dest_ff": "U_State_1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 42.09,
+            "source_ff": "U_State_4",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_State_5",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 56.87,
+            "source_ff": "U_State_1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_State_0",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 20.41,
+            "source_ff": "U_State_5",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_State_2",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 58.91,
+            "source_ff": "U_State_0",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_State_3",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 35.61,
+            "source_ff": "U_State_2",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_NewLineHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 37.89,
+            "source_ff": "U_State_3",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_ShftORHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 5.72,
+            "source_ff": "U_NewLineHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_ShftIRHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 2.21,
+            "source_ff": "U_ShftORHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_GoBmHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 3.35,
+            "source_ff": "U_ShftIRHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_SeFullOHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 35.22,
+            "source_ff": "U_GoBmHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_SeOutAvHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 11.32,
+            "source_ff": "U_SeFullOHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_SeFullIHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 9.78,
+            "source_ff": "U_SeOutAvHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_TgWhBufHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 13.91,
+            "source_ff": "U_SeFullIHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_ReWhBufHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 15.77,
+            "source_ff": "U_TgWhBufHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_Mode1HS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 6.84,
+            "source_ff": "U_ActRtHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_ActBmHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 9.8,
+            "source_ff": "U_Mode1HS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_NewTrHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 7.47,
+            "source_ff": "U_ActBmHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_Mode0HS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 14.29,
+            "source_ff": "U_NewTrHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_Mode2HS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 6.79,
+            "source_ff": "U_Mode0HS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_ReRtTSHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 6.6,
+            "source_ff": "U_Mode2HS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_LxHInHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 24.07,
+            "source_ff": "U_ReRtTSHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_TxHInHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 8.28,
+            "source_ff": "U_LxHInHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_LdProgHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 21.9,
+            "source_ff": "U_TxHInHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_DumpIHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 12.82,
+            "source_ff": "U_LdProgHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_LoadIHHS1",
+            "exact_routed_length_um": 16.51,
+            "exclusive_scan_net": true,
+            "net_length_upper_bound_um": 16.51,
+            "source_ff": "U_DumpIHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_LoadOHHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 10.26,
+            "source_ff": "U_LoadIHHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_GoRtHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 15.12,
+            "source_ff": "U_LoadOHHS1",
+            "transparent_buffers": []
+          }
+        ],
+        "exact_internal_ff_scan_only_total_um": null,
+        "exact_scan_only_total_um": null,
+        "exclusive_exact_edge_count": 1,
+        "fixed_port_positions_verified": true,
+        "port_centers_dbu": {
+          "test_si": [
+            79620,
+            18060
+          ],
+          "test_si_1": [
+            79620,
+            53340
+          ],
+          "test_so": [
+            140,
+            39900
+          ],
+          "test_so_1": [
+            140,
+            53900
+          ]
+        },
+        "port_links": [
+          {
+            "chain": 0,
+            "kind": "SI_to_first_FF",
+            "net_length_upper_bound_um": 20.185,
+            "transparent_buffers": [
+              "hold45",
+              "input18",
+              "hold46"
+            ]
+          },
+          {
+            "chain": 0,
+            "kind": "last_FF_to_SO",
+            "net_length_upper_bound_um": 20.15,
+            "transparent_buffers": [
+              "output41"
+            ]
+          },
+          {
+            "chain": 1,
+            "kind": "SI_to_first_FF",
+            "net_length_upper_bound_um": 9.395,
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "kind": "last_FF_to_SO",
+            "net_length_upper_bound_um": 24.67,
+            "transparent_buffers": []
+          }
+        ],
+        "routed_full_scan_path_net_length_upper_bound_um": 584.21,
+        "scan_edges": 27,
+        "scan_ff_count": 29,
+        "status": "PASS"
+      },
+      "reference_hash": "ac13bc68f090dd8f6921fee11362f5c63dc32f7376f0acabf1d895f26894e371",
+      "route_wall_seconds": 54.523487886,
+      "routed_odb_sha256": "6a152d7f2f47e41940238f997854e3af4c0ee35f5ee09bea817bc5ec93fb85f0",
+      "routed_scan_wirelength_um": 584.21,
+      "scientific_method_change": false,
+      "selection": {
+        "bytes": 6792,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/selections/s953/preselected_candidates.json",
+        "sha256": "1fb47d62c31b4411ab332f6d5e5272927516ae6b281fd606806b8809959852b2"
+      },
+      "source_placed_database": {
+        "bytes": 637805,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/orfs/results/nangate45/s953/phase0b_s11_B0/3_place.odb",
+        "sha256": "b0ee8134c880536f2eb41ae22b5d1b773c32492e0c4e6524b6012b4a077d6031"
+      },
+      "status": "PHYSICAL_GATES_PASS",
+      "structured_metrics": {
+        "congestion": null,
+        "detailed_route_drc_errors": 0,
+        "detailed_route_vias": 3273,
+        "global_route_overflow": null,
+        "global_route_wirelength_um": 8797,
+        "hold_tns_ns": 0,
+        "hold_violated_endpoints": 0,
+        "hold_wns_ns": 0.0122548,
+        "layer_utilization": {},
+        "max_cap_violations": 0,
+        "max_fanout_violations": 0,
+        "max_slew_violations": 0,
+        "pdnsim_classification": "NOT_RUN_NO_QUALIFIED_TEST_CURRENT_MODEL",
+        "setup_tns_ns": 0,
+        "setup_violated_endpoints": 0,
+        "setup_wns_ns": 9.34926,
+        "timing_stage": "global_route",
+        "total_detailed_route_wirelength_um": 5607
+      }
+    },
+    {
+      "DRC_errors": 0,
+      "activity_status": "PENDING",
+      "architecture_sha256": "74e5474595904e32e215c40b7bdbd29f5f91ebdc5f3f11f0ad6c9c57716aa608",
+      "archive": {
+        "bytes": 204318,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s953/CS_C3/5_2_route.odb.gz",
+        "sha256": "307b2babe1299af94262c98b82b472ce61aa03e98fd5cd7b0ab101c67ae2030c"
+      },
+      "candidate": "CS_C3",
+      "created_utc": "2026-10-04T18:14:17.853234+00:00",
+      "design": "s953",
+      "extraction": {
+        "bytes": 438040,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s953/CS_C3/extracted.spef",
+        "sha256": "e04c3b588cd975a720518279169acfd01c4b1cdb57d071727a4c44714cb08146"
+      },
+      "extraction_wall_seconds": 0.9774131700000339,
+      "functional_verification": {
+        "execution": {
+          "command": [
+            "/usr/bin/openroad",
+            "-exit",
+            "-python",
+            "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_export.py",
+            "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical_gates/s953/CS_C3/s953/CS_C3"
+          ],
+          "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+          "exit_code": 0,
+          "stderr": {
+            "bytes": 0,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s953/CS_C3/functional_export/stderr.txt",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "stdout": {
+            "bytes": 390,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical/s953/CS_C3/functional_export/stdout.txt",
+            "sha256": "8ca259e21ee91494b1015dad8d1892783e63086ee303f31e676fe3e130ecc5a5"
+          },
+          "timed_out": false,
+          "timestamp_utc": "2026-10-04T18:14:15.744962+00:00",
+          "wall_seconds": 7.671374197999967
+        },
+        "functional": {
+          "FF_placement": "exact",
+          "functional_sinks_and_outputs": 768,
+          "rule": "source identity and inversion parity through buffers/inverters; gate function families unchanged",
+          "source_placed_database": {
+            "bytes": 637805,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/orfs/results/nangate45/s953/phase0b_s11_B0/3_place.odb",
+            "sha256": "b0ee8134c880536f2eb41ae22b5d1b773c32492e0c4e6524b6012b4a077d6031"
+          },
+          "status": "PASS"
+        },
+        "outputs": {
+          "functional_verification.json": {
+            "bytes": 467,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical_gates/s953/CS_C3/s953/CS_C3/functional_verification.json",
+            "sha256": "1381cfd325f6bfd2d7e5fb077c25c8af33ca735d3a18f1ae643506e77102c35d"
+          },
+          "net_mapping.json": {
+            "bytes": 82631,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical_gates/s953/CS_C3/s953/CS_C3/net_mapping.json",
+            "sha256": "de6697ed5e0bf8a5283dd151e0f77b2bd531f83a2670625099bad02f6de92b05"
+          },
+          "topology_verification.json": {
+            "bytes": 7821,
+            "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/physical_gates/s953/CS_C3/s953/CS_C3/topology_verification.json",
+            "sha256": "3357bf24cf4e73a4bc5cbc4ecaacb1b461882972d4fbe1c6e7aa5b5a46f128a5"
+          }
+        }
+      },
+      "gates": {
+        "DRC": "PASS",
+        "FF_inventory": "PASS",
+        "FF_placement": "PASS",
+        "extraction": "PASS",
+        "functional_connections": "PASS",
+        "rewire": "PASS",
+        "routing": "PASS",
+        "timing": "PASS",
+        "topology": "PASS"
+      },
+      "postroute_verification": {
+        "K": 2,
+        "all_chain_inputs_outputs_verified": true,
+        "bounded_scan_path_link_count": 31,
+        "edges": [
+          {
+            "chain": 0,
+            "dest_ff": "U_State_0",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 54.97,
+            "source_ff": "U_State_1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_State_5",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 63.51,
+            "source_ff": "U_State_0",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_State_4",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 20.55,
+            "source_ff": "U_State_5",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_State_2",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 46.11,
+            "source_ff": "U_State_4",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_State_3",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 37.19,
+            "source_ff": "U_State_2",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_ReRtTSHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 34.69,
+            "source_ff": "U_State_3",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_ShftORHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 15.06,
+            "source_ff": "U_ReRtTSHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_ShftIRHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 2.21,
+            "source_ff": "U_ShftORHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_TxHInHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 10.35,
+            "source_ff": "U_ShftIRHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_SeFullOHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 3.44,
+            "source_ff": "U_TxHInHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_SeOutAvHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 11.32,
+            "source_ff": "U_SeFullOHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_SeFullIHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 9.78,
+            "source_ff": "U_SeOutAvHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_ReWhBufHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 21.25,
+            "source_ff": "U_SeFullIHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 0,
+            "dest_ff": "U_TgWhBufHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 13.7,
+            "source_ff": "U_ReWhBufHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_ActBmHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 7.03,
+            "source_ff": "U_ActRtHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_Mode1HS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 13.34,
+            "source_ff": "U_ActBmHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_NewTrHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 7.93,
+            "source_ff": "U_Mode1HS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_Mode2HS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 11.42,
+            "source_ff": "U_NewTrHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_Mode0HS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 10.83,
+            "source_ff": "U_Mode2HS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_NewLineHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 14.1,
+            "source_ff": "U_Mode0HS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_LxHInHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 10.66,
+            "source_ff": "U_NewLineHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_GoBmHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 5.84,
+            "source_ff": "U_LxHInHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_LdProgHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 42.36,
+            "source_ff": "U_GoBmHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_DumpIHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 12.54,
+            "source_ff": "U_LdProgHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_LoadIHHS1",
+            "exact_routed_length_um": 16.35,
+            "exclusive_scan_net": true,
+            "net_length_upper_bound_um": 16.35,
+            "source_ff": "U_DumpIHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_GoRtHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 11.61,
+            "source_ff": "U_LoadIHHS1",
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "dest_ff": "U_LoadOHHS1",
+            "exact_routed_length_um": null,
+            "exclusive_scan_net": false,
+            "net_length_upper_bound_um": 17.19,
+            "source_ff": "U_GoRtHS1",
+            "transparent_buffers": []
+          }
+        ],
+        "exact_internal_ff_scan_only_total_um": null,
+        "exact_scan_only_total_um": null,
+        "exclusive_exact_edge_count": 1,
+        "fixed_port_positions_verified": true,
+        "port_centers_dbu": {
+          "test_si": [
+            79620,
+            18060
+          ],
+          "test_si_1": [
+            79620,
+            53340
+          ],
+          "test_so": [
+            140,
+            39900
+          ],
+          "test_so_1": [
+            140,
+            53900
+          ]
+        },
+        "port_links": [
+          {
+            "chain": 0,
+            "kind": "SI_to_first_FF",
+            "net_length_upper_bound_um": 22.705,
+            "transparent_buffers": [
+              "hold45",
+              "input18",
+              "hold46"
+            ]
+          },
+          {
+            "chain": 0,
+            "kind": "last_FF_to_SO",
+            "net_length_upper_bound_um": 20.24,
+            "transparent_buffers": [
+              "output41"
+            ]
+          },
+          {
+            "chain": 1,
+            "kind": "SI_to_first_FF",
+            "net_length_upper_bound_um": 9.395,
+            "transparent_buffers": []
+          },
+          {
+            "chain": 1,
+            "kind": "last_FF_to_SO",
+            "net_length_upper_bound_um": 10.66,
+            "transparent_buffers": []
+          }
+        ],
+        "routed_full_scan_path_net_length_upper_bound_um": 588.33,
+        "scan_edges": 27,
+        "scan_ff_count": 29,
+        "status": "PASS"
+      },
+      "reference_hash": "ac13bc68f090dd8f6921fee11362f5c63dc32f7376f0acabf1d895f26894e371",
+      "route_wall_seconds": 53.31594336500001,
+      "routed_odb_sha256": "03815eeb10340ae390598dca3ac90f82c43a44164877aea40b861785a6a6101c",
+      "routed_scan_wirelength_um": 588.33,
+      "scientific_method_change": false,
+      "selection": {
+        "bytes": 6792,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/selections/s953/preselected_candidates.json",
+        "sha256": "1fb47d62c31b4411ab332f6d5e5272927516ae6b281fd606806b8809959852b2"
+      },
+      "source_placed_database": {
+        "bytes": 637805,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/orfs/results/nangate45/s953/phase0b_s11_B0/3_place.odb",
+        "sha256": "b0ee8134c880536f2eb41ae22b5d1b773c32492e0c4e6524b6012b4a077d6031"
+      },
+      "status": "PHYSICAL_GATES_PASS",
+      "structured_metrics": {
+        "congestion": null,
+        "detailed_route_drc_errors": 0,
+        "detailed_route_vias": 3300,
+        "global_route_overflow": null,
+        "global_route_wirelength_um": 8763,
+        "hold_tns_ns": 0,
+        "hold_violated_endpoints": 0,
+        "hold_wns_ns": 0.0126185,
+        "layer_utilization": {},
+        "max_cap_violations": 0,
+        "max_fanout_violations": 0,
+        "max_slew_violations": 0,
+        "pdnsim_classification": "NOT_RUN_NO_QUALIFIED_TEST_CURRENT_MODEL",
+        "setup_tns_ns": 0,
+        "setup_violated_endpoints": 0,
+        "setup_wns_ns": 9.34958,
+        "timing_stage": "global_route",
+        "total_detailed_route_wirelength_um": 5623
+      }
+    }
+  ],
+  "selection": {
+    "bytes": 6792,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/selections/s953/preselected_candidates.json",
+    "sha256": "1fb47d62c31b4411ab332f6d5e5272927516ae6b281fd606806b8809959852b2"
+  }
+}

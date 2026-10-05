@@ -1,0 +1,113 @@
+{
+  "E_H4_H8_available": false,
+  "FF_crosscheck": {
+    "bytes": 212,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/continuation/s38584/REF_B3T/normal/s38584/REF_B3T/FF_transition_crosscheck.json",
+    "sha256": "dab3f900af0c981147081fb6d2d9f065b7267cccad8a1a79b7b6cbb4fd969647"
+  },
+  "classification_s38417": "PACT_LARGE_UNSEEN_MEASUREMENT_RECOVERED",
+  "classification_s38584": "UNQUALIFIED_MISSING_SWITCHED_NET_SPEF",
+  "cold_search_or_candidate_qualification_launched": false,
+  "complete_counts": {
+    "bytes": 482381871,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/continuation/s38584/REF_B3T/normal/s38584/REF_B3T/activity.counts.gz",
+    "sha256": "9a62be932918fd4b83717a8e312324c41f914553fd5b07f5dfc7ef5e557c6a5d"
+  },
+  "created_utc": "2026-10-05T04:57:42.156686+00:00",
+  "design": "s38584",
+  "failed_analysis": {
+    "bytes": 1005,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/continuation/s38584/REF_B3T/normal/s38584/REF_B3T/analyze.execution.json",
+    "sha256": "32084b9262da770c790848292ba1d36576ddce834a3153a32f9a679464f4b754"
+  },
+  "failure_log": {
+    "bytes": 929,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/continuation/s38584/REF_B3T/normal/s38584/REF_B3T/analyze.log",
+    "sha256": "b302fc07799e0585388eed4d42fbd1b3d965d463e580af24aeb3104ceeb6c504"
+  },
+  "frozen_SPEF": {
+    "bytes": 19799021,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/continuation/s38584/REF_B3T/normal/s38584/REF_B3T/extracted.spef",
+    "sha256": "a6050fd320e732547c38e77878a4fecc7f75e4e6361ec93dfb982e3ed0753911"
+  },
+  "historical_results_modified": false,
+  "missing_SPEF_nets": [
+    {
+      "SPEF_section_present": false,
+      "mapping": {
+        "pin_cap_ff": 0,
+        "scan_data": true,
+        "source": "place655/Z",
+        "xy_um": [
+          57.0,
+          67.2
+        ]
+      },
+      "measured_transitions": 46625,
+      "net": "net654"
+    },
+    {
+      "SPEF_section_present": false,
+      "mapping": {
+        "pin_cap_ff": 0,
+        "scan_data": true,
+        "source": "place656/Z",
+        "xy_um": [
+          168.15,
+          219.8
+        ]
+      },
+      "measured_transitions": 46524,
+      "net": "net655"
+    },
+    {
+      "SPEF_section_present": false,
+      "mapping": {
+        "pin_cap_ff": 0,
+        "scan_data": true,
+        "source": "place715/Z",
+        "xy_um": [
+          113.62,
+          88.2
+        ]
+      },
+      "measured_transitions": 46854,
+      "net": "net714"
+    },
+    {
+      "SPEF_section_present": false,
+      "mapping": {
+        "pin_cap_ff": 0,
+        "scan_data": true,
+        "source": "place720/Z",
+        "xy_um": [
+          76.57,
+          113.4
+        ]
+      },
+      "measured_transitions": 46868,
+      "net": "net719"
+    }
+  ],
+  "missing_capacitances_filled": false,
+  "oracle_source": {
+    "bytes": 12009,
+    "path": "repo://src/pact/physical_effect.py",
+    "sha256": "b68bbf6d9b02158d69c11f3f40e0722defd507c5de6e8813bb94bb9a2b498a8c"
+  },
+  "partial_activity_used": false,
+  "qualified_reference_s38417": {
+    "bytes": 6043,
+    "path": "repo://results/pact_cpu_scalability_20261005/activity/continuation/s38417/REF_B2/normal/result.json",
+    "sha256": "8c3f4f53fbc036a17b68dba2f1e2cd3831355f6eefea6d5cfaddb6763e42f5f3"
+  },
+  "reason": "Frozen reference contains switched nets without extracted SPEF sections; preserved exact analyzer rejects them",
+  "simulation": {
+    "bytes": 1033,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/continuation/s38584/REF_B3T/normal/s38584/REF_B3T/simulate.execution.json",
+    "sha256": "67850b5f55a210abeb18cf5162ac69f625c514b7663374d80162aa5ced2bbc03"
+  },
+  "status": "STOPPED_UNDER_REQUESTED_SCIENTIFIC_POLICY",
+  "unchanged_oracle_check": "if s is None and counts[:,len(caps)].any(): raise ValueError",
+  "unseen_expansion_launched": false
+}

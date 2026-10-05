@@ -1,0 +1,20 @@
+{
+  "admission_rule": "FIFO frozen selection order; route/FAN row must exist and pass before activity; second candidate starts only with at least2GiB MemAvailable; remaining candidate waits for a slot. No activity outcome changes selection, budget, or scheduling rule.",
+  "candidate_order": [
+    "CS_C1",
+    "CS_C2",
+    "CS_C3"
+  ],
+  "concurrency_scope": "Candidate exact measurements may overlap independent external-reference measurement and remaining candidate routes; all recorded runtimes are concurrent campaign observations.",
+  "created_utc": "2026-10-04T19:07:23.125552+00:00",
+  "free_scratch_reserve_GiB": 20,
+  "maximum_concurrent_candidate_exact_measurements": 2,
+  "per_candidate_exact_deadline_seconds": 1800,
+  "scope": "OPERATIONAL_RESOURCE_SCHEDULING_ONLY; no scientific parameter changes",
+  "second_candidate_admission_available_memory_KiB": 2097152,
+  "selection": {
+    "path": "repo://results/pact_cold_start_unseen_20261004/selections/s35932/preselected_candidates.json",
+    "sha256": "ba2a32b97cc8eece56924f9b51562d44509b0e001e2090f6360325e22b842ac6"
+  },
+  "threads_per_process": 1
+}

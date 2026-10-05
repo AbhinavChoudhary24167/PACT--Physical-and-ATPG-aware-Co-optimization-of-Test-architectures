@@ -1,0 +1,255 @@
+{
+  "accepted": 209,
+  "archive_insertions": 49,
+  "archive_size": 2,
+  "attempts": 13551,
+  "baselines": [
+    {
+      "architecture": {
+        "bytes": 4202,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s953/budget_0.10/architectures/ac13bc68f090dd8f6921fee11362f5c63dc32f7376f0acabf1d895f26894e371.json",
+        "sha256": "457d2fdbe76ed3af79af3df7112936377cdaf7fa6e3f486d72601f8e9097280d"
+      },
+      "architecture_sha256": "ac13bc68f090dd8f6921fee11362f5c63dc32f7376f0acabf1d895f26894e371",
+      "chain_sizes": [
+        15,
+        14
+      ],
+      "discovered_attempt": 0,
+      "discovered_evaluation": 0,
+      "discovered_loop_seconds": 0.0,
+      "discovered_utc": "2026-10-04T18:07:26.623627+00:00",
+      "label": "B2",
+      "metrics": {
+        "E_stateful_ff": 230862.69126415832,
+        "H4_stateful_ff": 120.50239031999999,
+        "H8_stateful_ff": 48.79035235,
+        "timing_max_edge_um": 18.770000000000003,
+        "wire_um": 243.64000000000001
+      },
+      "parent": "B2",
+      "parent_architecture_sha256": "ac13bc68f090dd8f6921fee11362f5c63dc32f7376f0acabf1d895f26894e371"
+    }
+  ],
+  "config": {
+    "archive_size": 16,
+    "epsilon": 0.1,
+    "lane_attempts": 150,
+    "max_evaluations": 20000,
+    "neighbors": 16,
+    "seconds": 300,
+    "seed": 11,
+    "segment": 8,
+    "stagnation_attempts": 2000,
+    "weights": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "convergence": [
+    {
+      "accepted": 1,
+      "attempts": 1,
+      "champions": [
+        [
+          246.16,
+          225838.55804949085,
+          48.79035235,
+          17.869999999999997,
+          120.50239031999999
+        ],
+        [
+          243.64000000000001,
+          230862.69126415832,
+          48.79035235,
+          18.770000000000003,
+          120.50239031999999
+        ],
+        [
+          243.64000000000001,
+          230862.69126415832,
+          48.79035235,
+          18.770000000000003,
+          120.50239031999999
+        ],
+        [
+          246.16,
+          225838.55804949085,
+          48.79035235,
+          17.869999999999997,
+          120.50239031999999
+        ]
+      ],
+      "evaluations": 1,
+      "screened_infeasible": 0,
+      "seconds": 0.0050590860000028215
+    },
+    {
+      "accepted": 209,
+      "attempts": 13551,
+      "champions": [
+        [
+          266.3,
+          186551.70996123913,
+          45.67239735,
+          19.96,
+          103.28126106692105
+        ],
+        [
+          267.9599999999999,
+          200134.08081054757,
+          47.58674694999999,
+          19.96,
+          103.28126106692105
+        ],
+        [
+          262.29999999999995,
+          228104.5724268723,
+          45.45654476,
+          23.85,
+          118.27350985028917
+        ],
+        [
+          266.3,
+          186551.70996123913,
+          45.67239735,
+          19.96,
+          103.28126106692105
+        ]
+      ],
+      "evaluations": 2329,
+      "screened_infeasible": 9216,
+      "seconds": 13.803534722999999
+    }
+  ],
+  "evaluations": 2329,
+  "final_stagnation_attempts": 2000,
+  "initial_reference_archive_insertions": 1,
+  "initialization_seconds": 0.014492013000001691,
+  "instrumentation": {
+    "independent_replay_seconds": 0.20599740099999764,
+    "independent_replays": 3,
+    "state_constructions": 92,
+    "state_score_calls": 2421,
+    "state_score_seconds": 0.876323798000179
+  },
+  "model_profile": {
+    "geometry_seconds": 0.4399840070003833,
+    "reduction_seconds": 0.8587172289999643,
+    "rollback_seconds": 2.767321730999896,
+    "scan_waveform_seconds": 1.7699456830000813,
+    "spatial_seconds": 3.1039120460003744,
+    "stateful_propagation_seconds": 1.481990206000063
+  },
+  "reference_label": "B2",
+  "reference_score": [
+    243.64000000000001,
+    230862.69126415832,
+    48.79035235,
+    18.770000000000003,
+    120.50239031999999
+  ],
+  "rejected_exact_moves": 2120,
+  "restarts": 90,
+  "runtime_seconds": 14.065151242000006,
+  "screened_infeasible": 9216,
+  "search_seconds": 13.803533979999997,
+  "selected": [
+    {
+      "architecture": {
+        "bytes": 4202,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s953/budget_0.10/architectures/d10c54bd2f7e2410d412f8049b430b85a55555dc55d21407cc829064e82a5a58.json",
+        "sha256": "dd5bf984b901866eb7bdc9afbcb309332d57f4186591f1d61c9139974763c714"
+      },
+      "architecture_sha256": "d10c54bd2f7e2410d412f8049b430b85a55555dc55d21407cc829064e82a5a58",
+      "chain_sizes": [
+        15,
+        14
+      ],
+      "discovered_attempt": 10698,
+      "discovered_evaluation": 1879,
+      "discovered_loop_seconds": 11.161628237999999,
+      "discovered_utc": "2026-10-04T18:07:37.801050+00:00",
+      "label": "B2:2opt",
+      "metrics": {
+        "E_stateful_ff": 186551.70996123448,
+        "H4_stateful_ff": 103.28126106692105,
+        "H8_stateful_ff": 45.67239735,
+        "timing_max_edge_um": 19.96,
+        "wire_um": 266.3
+      },
+      "new": true,
+      "parent": "B2",
+      "parent_architecture_sha256": "ac13bc68f090dd8f6921fee11362f5c63dc32f7376f0acabf1d895f26894e371",
+      "roles": [
+        "best_E",
+        "balanced"
+      ]
+    },
+    {
+      "architecture": {
+        "bytes": 4202,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s953/budget_0.10/architectures/0fb4be8dd27c7461f4346175effd4588caf3c045d8f10c390be22d33b39c5da2.json",
+        "sha256": "6929e526243f0d378a2403b216a884544fc6d331b78f5fd1e7949b86a04d2d71"
+      },
+      "architecture_sha256": "0fb4be8dd27c7461f4346175effd4588caf3c045d8f10c390be22d33b39c5da2",
+      "chain_sizes": [
+        15,
+        14
+      ],
+      "discovered_attempt": 3809,
+      "discovered_evaluation": 746,
+      "discovered_loop_seconds": 4.077671780999999,
+      "discovered_utc": "2026-10-04T18:07:30.717098+00:00",
+      "label": "B2:relocate",
+      "metrics": {
+        "E_stateful_ff": 200134.08081054775,
+        "H4_stateful_ff": 103.28126106692105,
+        "H8_stateful_ff": 47.58674695,
+        "timing_max_edge_um": 19.96,
+        "wire_um": 267.9599999999999
+      },
+      "new": true,
+      "parent": "B2",
+      "parent_architecture_sha256": "ac13bc68f090dd8f6921fee11362f5c63dc32f7376f0acabf1d895f26894e371",
+      "roles": [
+        "best_H4"
+      ]
+    },
+    {
+      "architecture": {
+        "bytes": 4202,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s953/budget_0.10/architectures/74e5474595904e32e215c40b7bdbd29f5f91ebdc5f3f11f0ad6c9c57716aa608.json",
+        "sha256": "9632c8486bf2ece63ed935f4c641df73c9b20e0cdf94454da40a4cb78eab7421"
+      },
+      "architecture_sha256": "74e5474595904e32e215c40b7bdbd29f5f91ebdc5f3f11f0ad6c9c57716aa608",
+      "chain_sizes": [
+        15,
+        14
+      ],
+      "discovered_attempt": 11178,
+      "discovered_evaluation": 1965,
+      "discovered_loop_seconds": 11.618610265999997,
+      "discovered_utc": "2026-10-04T18:07:38.258033+00:00",
+      "label": "B2:2opt",
+      "metrics": {
+        "E_stateful_ff": 228104.57242686558,
+        "H4_stateful_ff": 118.27350985028916,
+        "H8_stateful_ff": 45.45654476,
+        "timing_max_edge_um": 23.85,
+        "wire_um": 262.29999999999995
+      },
+      "new": true,
+      "parent": "B2",
+      "parent_architecture_sha256": "ac13bc68f090dd8f6921fee11362f5c63dc32f7376f0acabf1d895f26894e371",
+      "roles": [
+        "best_H8"
+      ]
+    }
+  ],
+  "stagnation_termination_events": 1,
+  "termination": "stagnation",
+  "wire_ceiling_um": 268.004,
+  "wire_reference_um": 243.64000000000001
+}

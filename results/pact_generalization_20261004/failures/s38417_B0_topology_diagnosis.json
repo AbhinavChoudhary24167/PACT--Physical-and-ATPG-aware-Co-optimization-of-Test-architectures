@@ -1,0 +1,99 @@
+{
+  "diagnostic_only": true,
+  "frozen_gate_unchanged": true,
+  "chains": [
+    {
+      "chain": 0,
+      "input_net": "test_si",
+      "target_net": "net495",
+      "target_drivers": [
+        {
+          "instance": "hold496",
+          "master": "CLKBUF_X1",
+          "pin": "Z"
+        }
+      ],
+      "solutions": [
+        {
+          "parity": 0,
+          "path": [
+            {
+              "net": "net566",
+              "instance": "hold567",
+              "master": "CLKBUF_X1",
+              "invert": 0
+            },
+            {
+              "net": "net492",
+              "instance": "hold493",
+              "master": "CLKBUF_X1",
+              "invert": 0
+            },
+            {
+              "net": "net567",
+              "instance": "hold568",
+              "master": "CLKBUF_X1",
+              "invert": 0
+            },
+            {
+              "net": "net395",
+              "instance": "hold396",
+              "master": "CLKBUF_X1",
+              "invert": 0
+            },
+            {
+              "net": "net568",
+              "instance": "hold569",
+              "master": "CLKBUF_X1",
+              "invert": 0
+            },
+            {
+              "net": "net493",
+              "instance": "hold494",
+              "master": "CLKBUF_X1",
+              "invert": 0
+            },
+            {
+              "net": "net30",
+              "instance": "input30",
+              "master": "BUF_X1",
+              "invert": 0
+            },
+            {
+              "net": "net494",
+              "instance": "hold495",
+              "master": "CLKBUF_X1",
+              "invert": 0
+            },
+            {
+              "net": "net396",
+              "instance": "hold397",
+              "master": "CLKBUF_X1",
+              "invert": 0
+            },
+            {
+              "net": "net495",
+              "instance": "hold496",
+              "master": "CLKBUF_X1",
+              "invert": 0
+            }
+          ]
+        }
+      ],
+      "visited_net_parity_states": 11
+    },
+    {
+      "chain": 1,
+      "input_net": "phase0c_scan_in_1",
+      "target_net": "phase0c_scan_in_1",
+      "target_drivers": [],
+      "solutions": [
+        {
+          "parity": 0,
+          "path": []
+        }
+      ],
+      "visited_net_parity_states": 1
+    }
+  ]
+}

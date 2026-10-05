@@ -1,0 +1,15 @@
+{
+  "schema": "pact_cold_start_test_execution_v1",
+  "command": "python -m pytest tests/unit/test_cold_start.py -q",
+  "test_source": "tests/unit/test_cold_start.py",
+  "platform": "Windows",
+  "status": "FAILED_TEST_GUARD_FALSE_POSITIVE",
+  "exit_code": 1,
+  "passed": 8,
+  "failed": 1,
+  "pytest_seconds": 3.68,
+  "failed_test": "test_no_historical_p0_archive_or_operational_loader_access",
+  "failure": "The historical-access guard matched historical_p0 in pytest's automatically generated test directory name while the loader opened the design-owned cold_start_input.json. No historical artifact access occurred.",
+  "repair": "Inspect artifact-relative filenames for files in the test package, preserving full-path guards outside that package and operational historical-loader import guards.",
+  "scientific_execution": false
+}

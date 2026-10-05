@@ -1,0 +1,182 @@
+{
+  "CPU_seconds": 3.335679,
+  "E": 97024.45975217,
+  "H4": 42.37399002,
+  "H8": 23.96685706,
+  "architecture_sha256": "7847aca6fdb58559659b8f4a26a16bb143ba96d2887e8d0279355d4f76512bd1",
+  "complete": true,
+  "completed_utc": "2026-10-05T03:43:21.046260+00:00",
+  "configured_timeout_seconds": 7200,
+  "created_utc": "2026-10-05T03:43:13.969604+00:00",
+  "design": "s1196",
+  "equivalence": {
+    "E_H4_H8": "MATCH",
+    "all_scope_statistics_and_spatial_maps": "MATCH",
+    "complete_transition_values": 1288008,
+    "full_VCD": {
+      "bytes": 420655,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s1196/CS_C1/s1196/CS_C1/activity.vcd",
+      "sha256": "8aa3b9214f05acb4dcf0ea5516e47c36a02b6175a40a9ddc832e5827e89e76e9"
+    },
+    "per_source_counts": "EXACT",
+    "policy": {
+      "atol": 1e-10,
+      "rtol": 1e-10
+    },
+    "status": "PASS"
+  },
+  "manifest": {
+    "bytes": 8862,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s1196/CS_C1/normal/manifest.json",
+    "sha256": "f5a7d27ccb723ecf8427bb0b5e809fb3761828b37949aaecd816d266dc294601"
+  },
+  "output_folder": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s1196/CS_C1/normal/s1196/CS_C1",
+  "peak_RSS_KiB": 84608,
+  "purpose": "equivalence",
+  "resource_scope": "Sequential child CPU sum plus launcher; maximum process RSS, not simultaneous sum",
+  "role": "CS_C1",
+  "simulator_seconds": 0.3781600140000023,
+  "stages": {
+    "analyze": {
+      "CPU_seconds": 0.557582,
+      "CPU_system_seconds": 0.193605,
+      "CPU_user_seconds": 0.363977,
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cpu_activity.py",
+        "--analyze-folder",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s1196/CS_C1/normal/s1196/CS_C1"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "log": {
+        "bytes": 29,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s1196/CS_C1/normal/s1196/CS_C1/analyze.log",
+        "sha256": "da7cfacc94e8661173ebadfca5f6dcd900db056e02cde2cc11b204a242e6d518"
+      },
+      "major_page_faults": 2,
+      "peak_RSS_KiB": 47172,
+      "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+      "returncode": 0,
+      "timed_out": false,
+      "timestamp_utc": "2026-10-05T03:43:19.027859+00:00",
+      "wall_seconds": 1.7477982929999882
+    },
+    "build_collector": {
+      "CPU_seconds": 1.33707,
+      "CPU_system_seconds": 0.319247,
+      "CPU_user_seconds": 1.017823,
+      "command": [
+        "/usr/bin/g++",
+        "-O2",
+        "-std=c++11",
+        "-shared",
+        "-fPIC",
+        "-I/usr/include/iverilog",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/activity/counts_vpi.cpp",
+        "-o",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s1196/CS_C1/normal/s1196/CS_C1/counts.vpi",
+        "-lz"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "log": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s1196/CS_C1/normal/s1196/CS_C1/build_collector.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "major_page_faults": 21,
+      "peak_RSS_KiB": 84608,
+      "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+      "returncode": 0,
+      "timed_out": false,
+      "timestamp_utc": "2026-10-05T03:43:15.886880+00:00",
+      "wall_seconds": 1.8708846380000068
+    },
+    "compile": {
+      "CPU_seconds": 0.351327,
+      "CPU_system_seconds": 0.09980599999999999,
+      "CPU_user_seconds": 0.251521,
+      "command": [
+        "/usr/bin/iverilog",
+        "-g2012",
+        "-DTETRAMAX",
+        "-s",
+        "tb",
+        "-o",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s1196/CS_C1/normal/s1196/CS_C1/simulation.vvp",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s1196/CS_C1/normal/s1196/CS_C1/stimulus.v",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s1196/CS_C1/normal/s1196/CS_C1/routed.v",
+        "/root/pact-deps/FAN_ATPG/techlib/NangateOpenCellLibrary.v"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "log": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s1196/CS_C1/normal/s1196/CS_C1/compile.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "major_page_faults": 8,
+      "peak_RSS_KiB": 36968,
+      "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+      "returncode": 0,
+      "timed_out": false,
+      "timestamp_utc": "2026-10-05T03:43:16.742789+00:00",
+      "wall_seconds": 0.7814292559999956
+    },
+    "equivalence": {
+      "CPU_seconds": 0.581215,
+      "CPU_system_seconds": 0.138986,
+      "CPU_user_seconds": 0.442229,
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cpu_activity.py",
+        "--compare-folder",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s1196/CS_C1/normal/s1196/CS_C1",
+        "--source",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s1196/CS_C1/s1196/CS_C1"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "log": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s1196/CS_C1/normal/s1196/CS_C1/equivalence.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "major_page_faults": 0,
+      "peak_RSS_KiB": 47248,
+      "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+      "returncode": 0,
+      "timed_out": false,
+      "timestamp_utc": "2026-10-05T03:43:20.898259+00:00",
+      "wall_seconds": 1.7702504449999878
+    },
+    "simulate": {
+      "CPU_seconds": 0.253643,
+      "CPU_system_seconds": 0.034071,
+      "CPU_user_seconds": 0.219572,
+      "command": [
+        "/usr/bin/vvp",
+        "-M",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s1196/CS_C1/normal/s1196/CS_C1",
+        "-m",
+        "counts",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s1196/CS_C1/normal/s1196/CS_C1/simulation.vvp"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "log": {
+        "bytes": 261,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/equivalence/s1196/CS_C1/normal/s1196/CS_C1/simulate.log",
+        "sha256": "12675d687b5657bae8e7ce6eb1b3a1daea632894e797474c5e95ff3f4e92d05b"
+      },
+      "major_page_faults": 2,
+      "peak_RSS_KiB": 36968,
+      "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+      "returncode": 0,
+      "timed_out": false,
+      "timestamp_utc": "2026-10-05T03:43:17.197040+00:00",
+      "wall_seconds": 0.3781600140000023
+    }
+  },
+  "status": "QUALIFIED",
+  "termination_reason": "complete_functional_replay_and_exact_count_analysis",
+  "timeout_regime": "normal",
+  "trace_bytes": 89626,
+  "wall_seconds": 8.802055510999992
+}

@@ -1,0 +1,125 @@
+{
+  "DRC": 0,
+  "all_method_qualification": {
+    "bytes": 9421,
+    "path": "repo://results/pact_generalization_20261004/physical/reference_export_gates.json",
+    "sha256": "c6581e19cdeb2147686190f751a0abc4989c10fdc98210b612f279d2b469067d"
+  },
+  "all_references": {
+    "bytes": 147754,
+    "path": "repo://results/pact_generalization_20261004/repair_attempts/buffer_traversal_repaired/baselines/s38417_references.json",
+    "sha256": "cd0c8dd290213d291294aea3d62dc8356d28b3e645c8430156f8adf856f0a03f"
+  },
+  "architecture": {
+    "bytes": 205517,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_runtime_paths_repaired/s38417/B2/generator/canonical.json",
+    "sha256": "c853bb0d01abda040e551ba43b8356468ed3149eb88dd2677aec563d9e31c168"
+  },
+  "architecture_hash": "7976c63f510aee3caa8a6b280fad5f65a91669947347f79d7861eb3b56b6f0f0",
+  "cold_start_initial_architecture": true,
+  "correctness": {
+    "export": {
+      "bytes": 6340460,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_buffer_traversal_repaired/s38417/B2/correctness/fan/export.json",
+      "sha256": "204a64af1f3cf5918c6e012b8ad685742a2c8c9db4adbc9a945bfbeca4ba2e52"
+    },
+    "faults": {
+      "bytes": 718,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_buffer_traversal_repaired/s38417/B2/correctness/test_correctness.json",
+      "sha256": "84f1a6120d234d07d8a8f75ec1a9e75fe29925dea49c0cc2655fdbc798a02ff5"
+    },
+    "serial": {
+      "bytes": 465,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_buffer_traversal_repaired/s38417/B2/correctness/serial_replay.json",
+      "sha256": "a821d83f8ea0754efb654446ea508bf08003e242c0651c9cb03832b67745ee9f"
+    },
+    "statistics": {
+      "coverage": 96.0,
+      "detected": 83347,
+      "patterns": 105,
+      "total": 86824
+    }
+  },
+  "created_utc": "2026-10-04T18:10:13.577468+00:00",
+  "design": "s38417",
+  "frozen_utc": "2026-10-04T13:36:43.129337+00:00",
+  "functional_and_FF_placement_qualification": {
+    "bytes": 3930,
+    "path": "repo://results/pact_generalization_20261004/physical/s38417/reference_export_gates/B2/receipt.json",
+    "sha256": "233d7472d28c948d1a8cc9e2d15d0e45c5d8333c7627ae9031f18812d2b95c16"
+  },
+  "method": "B2",
+  "methods": [
+    {
+      "error": null,
+      "failure_class": null,
+      "generator_status": "PASS",
+      "method": "B0",
+      "routed_scan_wirelength_um": 38997.005,
+      "status": "QUALIFIED"
+    },
+    {
+      "error": null,
+      "failure_class": null,
+      "generator_status": "PASS",
+      "method": "B1",
+      "routed_scan_wirelength_um": 39455.145,
+      "status": "QUALIFIED"
+    },
+    {
+      "error": null,
+      "failure_class": null,
+      "generator_status": "PASS",
+      "method": "B2",
+      "routed_scan_wirelength_um": 36842.35,
+      "status": "QUALIFIED"
+    },
+    {
+      "error": null,
+      "failure_class": null,
+      "generator_status": "PASS",
+      "method": "B3T",
+      "routed_scan_wirelength_um": 37696.64,
+      "status": "QUALIFIED"
+    }
+  ],
+  "provenance": {
+    "bytes": 416498,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_buffer_traversal_repaired/s38417/B2/physical/route_result.json",
+    "sha256": "60435b1971952f5744c4578863504a8b84b72d1ef54151caf10a0d0db59f379b"
+  },
+  "qualification": {
+    "bytes": 348,
+    "path": "repo://results/pact_generalization_20261004/repair_attempts/buffer_traversal_repaired/physical/s38417/presearch_qualification.json",
+    "sha256": "714178cde17badf8b806d2ff3edabdbf4be21f2d410713697a25c17fd22a6aef"
+  },
+  "reference_attempt": "buffer_traversal_repaired",
+  "routed_scan_wirelength_um": 36842.35,
+  "selection_receipt": {
+    "bytes": 30382,
+    "path": "repo://results/pact_generalization_20261004/repair_attempts/buffer_traversal_repaired/baselines/s38417_selected.json",
+    "sha256": "e22640e32be07cc2f2f6d2f340d05b52b72e83b16be81c914a06eca23e041a55"
+  },
+  "source_revision": "6fff875551fe13a2aae3a22f871a6ca7f8d5c1cf",
+  "status": "QUALIFIED",
+  "timing": {
+    "congestion": null,
+    "detailed_route_drc_errors": 0,
+    "detailed_route_vias": 92162,
+    "global_route_overflow": null,
+    "global_route_wirelength_um": 290360,
+    "hold_tns_ns": 0,
+    "hold_violated_endpoints": 0,
+    "hold_wns_ns": 0.00316436,
+    "layer_utilization": {},
+    "max_cap_violations": 0,
+    "max_fanout_violations": 0,
+    "max_slew_violations": 0,
+    "pdnsim_classification": "NOT_RUN_NO_QUALIFIED_TEST_CURRENT_MODEL",
+    "setup_tns_ns": 0,
+    "setup_violated_endpoints": 0,
+    "setup_wns_ns": 8.72304,
+    "timing_stage": "global_route",
+    "total_detailed_route_wirelength_um": 187848
+  }
+}

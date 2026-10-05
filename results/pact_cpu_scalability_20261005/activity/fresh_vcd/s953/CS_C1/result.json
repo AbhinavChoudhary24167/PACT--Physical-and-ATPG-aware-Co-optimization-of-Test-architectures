@@ -1,0 +1,103 @@
+{
+  "CPU_seconds": 0.972748,
+  "completion_status": "COMPLETE",
+  "configured_timeout_seconds": 7200,
+  "created_utc": "2026-10-05T03:59:58.593481+00:00",
+  "design": "s953",
+  "full_waveform_declarations_and_event_body_identical": true,
+  "metrics": "Identical complete counts imply the already-checked E/H4/H8 and per-source metrics",
+  "peak_RSS_KiB": 35424,
+  "role": "CS_C1",
+  "simulator_seconds": 0.5216781870000062,
+  "stages": {
+    "compile": {
+      "CPU_seconds": 0.28818699999999997,
+      "CPU_system_seconds": 0.090546,
+      "CPU_user_seconds": 0.19764099999999998,
+      "command": [
+        "/usr/bin/iverilog",
+        "-g2012",
+        "-DTETRAMAX",
+        "-s",
+        "tb",
+        "-o",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/fresh_vcd/s953/CS_C1/s953/CS_C1/simulation.vvp",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/fresh_vcd/s953/CS_C1/s953/CS_C1/stimulus.v",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/fresh_vcd/s953/CS_C1/s953/CS_C1/routed.v",
+        "/root/pact-deps/FAN_ATPG/techlib/NangateOpenCellLibrary.v"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "log": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/fresh_vcd/s953/CS_C1/s953/CS_C1/compile.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "major_page_faults": 0,
+      "peak_RSS_KiB": 35424,
+      "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+      "returncode": 0,
+      "timed_out": false,
+      "timestamp_utc": "2026-10-05T03:59:56.551661+00:00",
+      "wall_seconds": 0.7014565039999994
+    },
+    "simulate": {
+      "CPU_seconds": 0.28720599999999996,
+      "CPU_system_seconds": 0.044496,
+      "CPU_user_seconds": 0.24270999999999998,
+      "command": [
+        "/usr/bin/vvp",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/fresh_vcd/s953/CS_C1/s953/CS_C1/simulation.vvp"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "log": {
+        "bytes": 352,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/fresh_vcd/s953/CS_C1/s953/CS_C1/simulate.log",
+        "sha256": "428899ffb85cb14735ab646c68172a127ee31684c45d46e7578bc7827e69d624"
+      },
+      "major_page_faults": 0,
+      "peak_RSS_KiB": 35424,
+      "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+      "returncode": 0,
+      "timed_out": false,
+      "timestamp_utc": "2026-10-05T03:59:57.144202+00:00",
+      "wall_seconds": 0.5216781870000062
+    },
+    "verify": {
+      "CPU_seconds": 0.280022,
+      "CPU_system_seconds": 0.103393,
+      "CPU_user_seconds": 0.17662899999999998,
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cpu_vcd_witness.py",
+        "--source",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s953/CS_C1/s953/CS_C1",
+        "--verify-folder",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/fresh_vcd/s953/CS_C1/s953/CS_C1"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "log": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/fresh_vcd/s953/CS_C1/s953/CS_C1/verify.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "major_page_faults": 0,
+      "peak_RSS_KiB": 35424,
+      "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+      "returncode": 0,
+      "timed_out": false,
+      "timestamp_utc": "2026-10-05T03:59:58.478157+00:00",
+      "wall_seconds": 1.255247189000002
+    }
+  },
+  "status": "QUALIFIED",
+  "termination_reason": "complete",
+  "timeout_regime": "normal",
+  "trace": {
+    "bytes": 561671,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/fresh_vcd/s953/CS_C1/s953/CS_C1/activity.vcd",
+    "sha256": "0efa4b958753a24179f560b3859caa5f666b66a7b06b5ee8516a1866d7eb9adb"
+  },
+  "trace_bytes": 561671,
+  "transition_equivalence": "EXACT (identical full emitted waveform or complete per-cycle parser comparison)",
+  "wall_seconds": 3.389311311
+}

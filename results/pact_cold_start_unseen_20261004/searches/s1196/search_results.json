@@ -1,0 +1,51 @@
+{
+  "CPU_seconds": 16.921391,
+  "configuration": {
+    "bytes": 3781,
+    "path": "repo://results/pact_cold_start_unseen_20261004/searches/s1196/search_configuration.json",
+    "sha256": "56ef1c249ec3be0efd071f56d17793e54155dafaa84e2fe908dd24619fbfeebb"
+  },
+  "created_utc": "2026-10-04T18:11:26.674539+00:00",
+  "design": "s1196",
+  "initialization": {
+    "bytes": 13227,
+    "path": "repo://results/pact_cold_start_unseen_20261004/searches/s1196/initialization.json",
+    "sha256": "f3bf7b80c33a542588acde1966f11ecb0630433b8ece6a0095876206eec74160"
+  },
+  "input": {
+    "bytes": 5468,
+    "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s1196/cold_start_input.json",
+    "sha256": "64a45cad5052cd7a163c44ae4a7ec7475953ea36c656f7696f09cc4ce4613eb8"
+  },
+  "lanes": [
+    {
+      "epsilon": 0.02,
+      "receipt": {
+        "bytes": 8918,
+        "path": "repo://results/pact_cold_start_unseen_20261004/searches/s1196/budget_0.02/search.json",
+        "sha256": "89cf083fa1819b712a999f9c2be98c36a360298a1b9c6e262377009f030b7b2f"
+      }
+    },
+    {
+      "epsilon": 0.05,
+      "receipt": {
+        "bytes": 7717,
+        "path": "repo://results/pact_cold_start_unseen_20261004/searches/s1196/budget_0.05/search.json",
+        "sha256": "ede6eb8a36f8d3539fae3e89e54dee9bd46f75681bb06420a0034b8b53bc4bb5"
+      }
+    },
+    {
+      "epsilon": 0.1,
+      "receipt": {
+        "bytes": 8874,
+        "path": "repo://results/pact_cold_start_unseen_20261004/searches/s1196/budget_0.10/search.json",
+        "sha256": "0465048d6146770b9308b387093803515fba46960bdc055b74c0108380e48e15"
+      }
+    }
+  ],
+  "model_setup_seconds": 0.48238048000000333,
+  "peak_RSS_KiB": 168816,
+  "status": "SEARCH_COMPLETE",
+  "total_exact_mutation_evaluations": 3603,
+  "wall_seconds": 19.381502728
+}

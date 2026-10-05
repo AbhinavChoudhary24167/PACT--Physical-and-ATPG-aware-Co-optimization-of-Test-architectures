@@ -1,0 +1,71 @@
+{
+  "CPU_seconds": 136.616037,
+  "E": 1783229997.7849805,
+  "H4": 2320.4008376039997,
+  "H8": 796.92240403,
+  "activity_summary": {
+    "bytes": 6579,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/spef_patch/reanalysis/s38584/REF_B3T/activity_summary.json",
+    "sha256": "88ab1bf7b26de87b90dc6b685c4a0cfd8cf6fde9b4f788c871d8764a878a33e9"
+  },
+  "architecture_sha256": "0a1d92a059887ded69b21674089374171237efcd72c1034949bfc6b0a3076852",
+  "complete": true,
+  "configured_timeout_seconds": 7200,
+  "created_utc": "2026-10-05T05:34:18.196765+00:00",
+  "design": "s38584",
+  "manifest": {
+    "bytes": 2184,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/spef_patch/reanalysis/reanalysis_manifest.json",
+    "sha256": "bd6b496aa9e2d5c98f2b2e2a1bfade504260c1cf9d58030c25ece51ca07a39d1"
+  },
+  "metric_definitions_changed": false,
+  "missing_SPEF_diagnostics": {
+    "bytes": 15892,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/spef_patch/reanalysis/s38584/REF_B3T/missing_spef_diagnostics.json",
+    "sha256": "44a0a0f0ae9d869b0a804acff1d302566b06a50b7d6358607f99f74fe7af81c6"
+  },
+  "original_simulator_seconds": 1029.9844753470002,
+  "output_folder": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/spef_patch/reanalysis/s38584/REF_B3T",
+  "peak_RSS_KiB": 3407780,
+  "role": "REF_B3T",
+  "simulation_reused": true,
+  "simulator_seconds": 0.0,
+  "stage": {
+    "CPU_seconds": 136.616037,
+    "CPU_system_seconds": 46.202283,
+    "CPU_user_seconds": 90.413754,
+    "command": [
+      "/root/pact-deps/pact-venv/bin/python",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cpu_activity.py",
+      "--analyze-folder",
+      "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/spef_patch/reanalysis/s38584/REF_B3T",
+      "--spef-evidence",
+      "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/spef_patch/implementation_evidence.json",
+      "--count-cache",
+      "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/continuation/s38584/REF_B3T/normal/s38584/REF_B3T/transitions.u8"
+    ],
+    "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+    "log": {
+      "bytes": 36,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/spef_patch/reanalysis/s38584/REF_B3T/reanalyze.log",
+      "sha256": "679829ceda830d59371f5509b7d329664e4f2476d12fd42f667df80069144d5a"
+    },
+    "major_page_faults": 191070,
+    "peak_RSS_KiB": 3407780,
+    "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+    "returncode": 0,
+    "timed_out": false,
+    "timestamp_utc": "2026-10-05T05:34:17.991926+00:00",
+    "wall_seconds": 321.451901368
+  },
+  "status": "QUALIFIED",
+  "termination_reason": "Complete preserved simulation plus independent FF replay and evidence-qualified capacitances",
+  "timeout_regime": "normal",
+  "trace": {
+    "bytes": 482381871,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/spef_patch/reanalysis/s38584/REF_B3T/activity.counts.gz",
+    "sha256": "9a62be932918fd4b83717a8e312324c41f914553fd5b07f5dfc7ef5e557c6a5d"
+  },
+  "trace_bytes": 482381871,
+  "wall_seconds": 330.957451601
+}

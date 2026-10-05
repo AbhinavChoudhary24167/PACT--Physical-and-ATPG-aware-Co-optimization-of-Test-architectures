@@ -1,0 +1,418 @@
+{
+  "all_existing_extracted_capacitances_reproduced_exactly": true,
+  "architecture": "0a1d92a059887ded69b21674089374171237efcd72c1034949bfc6b0a3076852",
+  "bindings": {
+    "OpenROAD": {
+      "bytes": 89508784,
+      "path": "/usr/bin/openroad",
+      "sha256": "fcd7dcfc37d329bd43a7ede75805319a2e70e6879da11d42b4fd1c2e50e645c3"
+    },
+    "SPEF": {
+      "bytes": 19799021,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38584/REF_B3T/s38584/REF_B3T/extracted.spef",
+      "sha256": "a6050fd320e732547c38e77878a4fecc7f75e4e6361ec93dfb982e3ed0753911"
+    },
+    "architecture": {
+      "bytes": 179828,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_runtime_paths_repaired/s38584/B3T/generator/canonical.json",
+      "sha256": "4b48c091d0138af55177272b4eb5535d105093b19bfc948e38e7fa034e1ff3c9"
+    },
+    "exporter": {
+      "bytes": 7897,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_spef_evidence_export.py",
+      "sha256": "4a179a466c1f26db314865f15eaa8f9eabfb9606371fb49405d640fa4eac3ee5"
+    },
+    "inspection_ODB": {
+      "bytes": 28476808,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/spef_patch/extracted.odb",
+      "sha256": "781d7504164f0ec2ec0d24b06f06bee15f05a02aa34a5279d26916f46150cab0"
+    },
+    "library": {
+      "bytes": 6692032,
+      "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+      "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1"
+    },
+    "logical_netlist": {
+      "bytes": 1441047,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38584/REF_B3T/s38584/REF_B3T/routed.v",
+      "sha256": "2a4b84fde14d6fc958c7105d6f3b482515af6c1e2be3805caa2e5473a44a3481"
+    },
+    "mapping": {
+      "bytes": 2798606,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38584/REF_B3T/s38584/REF_B3T/net_mapping.json",
+      "sha256": "e4ea503b766d3efd66766a91a09cf197af2c38fd23bb6dbaae56ba34a153811a"
+    },
+    "original_ODB": {
+      "bytes": 21673881,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s38584/REF_B3T/s38584/REF_B3T/routed.odb",
+      "sha256": "1c40de337c260841a76221d67a528b5bad70fdce2587cad111f171c2e24b73f5"
+    },
+    "reproduced_SPEF": {
+      "bytes": 19799021,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/spef_patch/reproduced.spef",
+      "sha256": "39e7efbd35195863cc3b105930643798d4d568bd132bf3da9a7f66411fd08126"
+    }
+  },
+  "design": "s38584",
+  "nets": {
+    "net654": {
+      "cap_node_count": 0,
+      "coupling_segment_count": 0,
+      "driver": {
+        "direction": "OUTPUT",
+        "id": "place655/Z",
+        "instance": "place655",
+        "location_um": [
+          57.0,
+          67.2
+        ],
+        "master": "BUF_X1",
+        "pin": "Z",
+        "placement": "PLACED",
+        "scan_pin_relevance": null,
+        "signal": "SIGNAL"
+      },
+      "driver_count": 1,
+      "extractor_expected_omission": true,
+      "global_wire_present": false,
+      "iterms": [
+        {
+          "direction": "OUTPUT",
+          "id": "place655/Z",
+          "instance": "place655",
+          "location_um": [
+            57.0,
+            67.2
+          ],
+          "master": "BUF_X1",
+          "pin": "Z",
+          "placement": "PLACED",
+          "scan_pin_relevance": null,
+          "signal": "SIGNAL"
+        }
+      ],
+      "logical_connection_matches": true,
+      "logical_net_present": true,
+      "net_mapping_matches": true,
+      "odb_net_present": true,
+      "odb_parasitic_available": false,
+      "pin_cap_ff": 0,
+      "pin_cap_known": true,
+      "ports": [],
+      "preserved_geometry_and_terminals": true,
+      "routing_status": "NO_INTERCONNECT_ONE_TERMINAL",
+      "rseg_count": 0,
+      "sink_count": 0,
+      "sinks": [],
+      "special_net": false,
+      "special_wire_count": 0,
+      "spef_name_map_present": true,
+      "terminal_count": 1,
+      "topology_valid": true,
+      "upstream_scan_relationship": [
+        {
+          "direction": "OUTPUT",
+          "id": "place655/Z",
+          "instance": "place655",
+          "location_um": [
+            57.0,
+            67.2
+          ],
+          "master": "BUF_X1",
+          "pin": "Z",
+          "placement": "PLACED",
+          "scan_pin_relevance": null,
+          "signal": "SIGNAL"
+        },
+        {
+          "direction": "OUTPUT",
+          "id": "U_g4927/Q",
+          "instance": "U_g4927",
+          "location_um": [
+            202.92,
+            176.4
+          ],
+          "master": "SDFF_X1",
+          "pin": "Q",
+          "placement": "PLACED",
+          "scan_pin_relevance": "Q",
+          "signal": "SIGNAL"
+        }
+      ],
+      "wire_geometry_present": false,
+      "wire_length_um": 0.0,
+      "wire_present": false,
+      "wire_segments": 0
+    },
+    "net655": {
+      "cap_node_count": 0,
+      "coupling_segment_count": 0,
+      "driver": {
+        "direction": "OUTPUT",
+        "id": "place656/Z",
+        "instance": "place656",
+        "location_um": [
+          168.15,
+          219.8
+        ],
+        "master": "BUF_X1",
+        "pin": "Z",
+        "placement": "PLACED",
+        "scan_pin_relevance": null,
+        "signal": "SIGNAL"
+      },
+      "driver_count": 1,
+      "extractor_expected_omission": true,
+      "global_wire_present": false,
+      "iterms": [
+        {
+          "direction": "OUTPUT",
+          "id": "place656/Z",
+          "instance": "place656",
+          "location_um": [
+            168.15,
+            219.8
+          ],
+          "master": "BUF_X1",
+          "pin": "Z",
+          "placement": "PLACED",
+          "scan_pin_relevance": null,
+          "signal": "SIGNAL"
+        }
+      ],
+      "logical_connection_matches": true,
+      "logical_net_present": true,
+      "net_mapping_matches": true,
+      "odb_net_present": true,
+      "odb_parasitic_available": false,
+      "pin_cap_ff": 0,
+      "pin_cap_known": true,
+      "ports": [],
+      "preserved_geometry_and_terminals": true,
+      "routing_status": "NO_INTERCONNECT_ONE_TERMINAL",
+      "rseg_count": 0,
+      "sink_count": 0,
+      "sinks": [],
+      "special_net": false,
+      "special_wire_count": 0,
+      "spef_name_map_present": true,
+      "terminal_count": 1,
+      "topology_valid": true,
+      "upstream_scan_relationship": [
+        {
+          "direction": "OUTPUT",
+          "id": "place656/Z",
+          "instance": "place656",
+          "location_um": [
+            168.15,
+            219.8
+          ],
+          "master": "BUF_X1",
+          "pin": "Z",
+          "placement": "PLACED",
+          "scan_pin_relevance": null,
+          "signal": "SIGNAL"
+        },
+        {
+          "direction": "OUTPUT",
+          "id": "U_g4899/Q",
+          "instance": "U_g4899",
+          "location_um": [
+            180.69,
+            221.2
+          ],
+          "master": "SDFF_X1",
+          "pin": "Q",
+          "placement": "PLACED",
+          "scan_pin_relevance": "Q",
+          "signal": "SIGNAL"
+        }
+      ],
+      "wire_geometry_present": false,
+      "wire_length_um": 0.0,
+      "wire_present": false,
+      "wire_segments": 0
+    },
+    "net714": {
+      "cap_node_count": 0,
+      "coupling_segment_count": 0,
+      "driver": {
+        "direction": "OUTPUT",
+        "id": "place715/Z",
+        "instance": "place715",
+        "location_um": [
+          113.62,
+          88.2
+        ],
+        "master": "BUF_X1",
+        "pin": "Z",
+        "placement": "PLACED",
+        "scan_pin_relevance": null,
+        "signal": "SIGNAL"
+      },
+      "driver_count": 1,
+      "extractor_expected_omission": true,
+      "global_wire_present": false,
+      "iterms": [
+        {
+          "direction": "OUTPUT",
+          "id": "place715/Z",
+          "instance": "place715",
+          "location_um": [
+            113.62,
+            88.2
+          ],
+          "master": "BUF_X1",
+          "pin": "Z",
+          "placement": "PLACED",
+          "scan_pin_relevance": null,
+          "signal": "SIGNAL"
+        }
+      ],
+      "logical_connection_matches": true,
+      "logical_net_present": true,
+      "net_mapping_matches": true,
+      "odb_net_present": true,
+      "odb_parasitic_available": false,
+      "pin_cap_ff": 0,
+      "pin_cap_known": true,
+      "ports": [],
+      "preserved_geometry_and_terminals": true,
+      "routing_status": "NO_INTERCONNECT_ONE_TERMINAL",
+      "rseg_count": 0,
+      "sink_count": 0,
+      "sinks": [],
+      "special_net": false,
+      "special_wire_count": 0,
+      "spef_name_map_present": true,
+      "terminal_count": 1,
+      "topology_valid": true,
+      "upstream_scan_relationship": [
+        {
+          "direction": "OUTPUT",
+          "id": "place715/Z",
+          "instance": "place715",
+          "location_um": [
+            113.62,
+            88.2
+          ],
+          "master": "BUF_X1",
+          "pin": "Z",
+          "placement": "PLACED",
+          "scan_pin_relevance": null,
+          "signal": "SIGNAL"
+        },
+        {
+          "direction": "OUTPUT",
+          "id": "U_g2610/Q",
+          "instance": "U_g2610",
+          "location_um": [
+            36.1,
+            79.8
+          ],
+          "master": "SDFF_X1",
+          "pin": "Q",
+          "placement": "PLACED",
+          "scan_pin_relevance": "Q",
+          "signal": "SIGNAL"
+        }
+      ],
+      "wire_geometry_present": false,
+      "wire_length_um": 0.0,
+      "wire_present": false,
+      "wire_segments": 0
+    },
+    "net719": {
+      "cap_node_count": 0,
+      "coupling_segment_count": 0,
+      "driver": {
+        "direction": "OUTPUT",
+        "id": "place720/Z",
+        "instance": "place720",
+        "location_um": [
+          76.57,
+          113.4
+        ],
+        "master": "BUF_X1",
+        "pin": "Z",
+        "placement": "PLACED",
+        "scan_pin_relevance": null,
+        "signal": "SIGNAL"
+      },
+      "driver_count": 1,
+      "extractor_expected_omission": true,
+      "global_wire_present": false,
+      "iterms": [
+        {
+          "direction": "OUTPUT",
+          "id": "place720/Z",
+          "instance": "place720",
+          "location_um": [
+            76.57,
+            113.4
+          ],
+          "master": "BUF_X1",
+          "pin": "Z",
+          "placement": "PLACED",
+          "scan_pin_relevance": null,
+          "signal": "SIGNAL"
+        }
+      ],
+      "logical_connection_matches": true,
+      "logical_net_present": true,
+      "net_mapping_matches": true,
+      "odb_net_present": true,
+      "odb_parasitic_available": false,
+      "pin_cap_ff": 0,
+      "pin_cap_known": true,
+      "ports": [],
+      "preserved_geometry_and_terminals": true,
+      "routing_status": "NO_INTERCONNECT_ONE_TERMINAL",
+      "rseg_count": 0,
+      "sink_count": 0,
+      "sinks": [],
+      "special_net": false,
+      "special_wire_count": 0,
+      "spef_name_map_present": true,
+      "terminal_count": 1,
+      "topology_valid": true,
+      "upstream_scan_relationship": [
+        {
+          "direction": "OUTPUT",
+          "id": "place720/Z",
+          "instance": "place720",
+          "location_um": [
+            76.57,
+            113.4
+          ],
+          "master": "BUF_X1",
+          "pin": "Z",
+          "placement": "PLACED",
+          "scan_pin_relevance": null,
+          "signal": "SIGNAL"
+        },
+        {
+          "direction": "OUTPUT",
+          "id": "U_g2185/Q",
+          "instance": "U_g2185",
+          "location_um": [
+            49.97,
+            99.4
+          ],
+          "master": "SDFF_X1",
+          "pin": "Q",
+          "placement": "PLACED",
+          "scan_pin_relevance": "Q",
+          "signal": "SIGNAL"
+        }
+      ],
+      "wire_geometry_present": false,
+      "wire_length_um": 0.0,
+      "wire_present": false,
+      "wire_segments": 0
+    }
+  },
+  "operation": "Read only two ODBs; original inputs unchanged",
+  "schema": "pact_missing_spef_implementation_evidence_v1",
+  "static_or_switched_omission_population": 4
+}

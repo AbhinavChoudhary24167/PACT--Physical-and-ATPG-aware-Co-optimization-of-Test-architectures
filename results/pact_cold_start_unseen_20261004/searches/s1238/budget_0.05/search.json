@@ -1,0 +1,284 @@
+{
+  "accepted": 130,
+  "archive_insertions": 89,
+  "archive_size": 16,
+  "attempts": 7988,
+  "baselines": [
+    {
+      "architecture": {
+        "bytes": 2562,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s1238/budget_0.05/architectures/e8dc57ee4fbfe5edc351f716d2916759a6e97604b904473c1e27cc6d9a346bbc.json",
+        "sha256": "c5a3111af6c39ca0da76d56a5c2b74b72a40d03cb4f72ab9fadc27163f185160"
+      },
+      "architecture_sha256": "e8dc57ee4fbfe5edc351f716d2916759a6e97604b904473c1e27cc6d9a346bbc",
+      "chain_sizes": [
+        9,
+        9
+      ],
+      "discovered_attempt": 0,
+      "discovered_evaluation": 0,
+      "discovered_loop_seconds": 0.0,
+      "discovered_utc": "2026-10-04T18:11:50.819192+00:00",
+      "label": "B3T",
+      "metrics": {
+        "E_stateful_ff": 92422.85607964282,
+        "H4_stateful_ff": 29.94053423,
+        "H8_stateful_ff": 16.451909569999998,
+        "timing_max_edge_um": 51.86,
+        "wire_um": 230.64
+      },
+      "parent": "B3T",
+      "parent_architecture_sha256": "e8dc57ee4fbfe5edc351f716d2916759a6e97604b904473c1e27cc6d9a346bbc"
+    }
+  ],
+  "config": {
+    "archive_size": 16,
+    "epsilon": 0.05,
+    "lane_attempts": 150,
+    "max_evaluations": 20000,
+    "neighbors": 16,
+    "seconds": 300,
+    "seed": 11,
+    "segment": 8,
+    "stagnation_attempts": 2000,
+    "weights": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "convergence": [
+    {
+      "accepted": 0,
+      "attempts": 1,
+      "champions": [
+        [
+          230.64,
+          92422.85607964282,
+          16.451909569999998,
+          51.86,
+          29.94053423
+        ],
+        [
+          230.64,
+          92422.85607964282,
+          16.451909569999998,
+          51.86,
+          29.94053423
+        ],
+        [
+          230.64,
+          92422.85607964282,
+          16.451909569999998,
+          51.86,
+          29.94053423
+        ],
+        [
+          230.64,
+          92422.85607964282,
+          16.451909569999998,
+          51.86,
+          29.94053423
+        ]
+      ],
+      "evaluations": 0,
+      "screened_infeasible": 1,
+      "seconds": 0.00011688699999012897
+    },
+    {
+      "accepted": 130,
+      "attempts": 7988,
+      "champions": [
+        [
+          229.04,
+          68918.04003870035,
+          16.676243014796384,
+          48.760000000000005,
+          29.71688754162092
+        ],
+        [
+          238.14,
+          84515.55229717903,
+          16.85201923284677,
+          42.589999999999996,
+          24.110370704829734
+        ],
+        [
+          232.23999999999995,
+          84116.25629013631,
+          16.002193038190047,
+          39.61,
+          31.65398644365378
+        ],
+        [
+          236.9,
+          78778.72497272937,
+          16.421439570700024,
+          35.040000000000006,
+          24.4526121100501
+        ]
+      ],
+      "evaluations": 1552,
+      "screened_infeasible": 4963,
+      "seconds": 6.64934822699999
+    }
+  ],
+  "evaluations": 1552,
+  "final_stagnation_attempts": 2000,
+  "initial_reference_archive_insertions": 1,
+  "initialization_seconds": 0.017498118000020213,
+  "instrumentation": {
+    "independent_replay_seconds": 0.32307878400004597,
+    "independent_replays": 4,
+    "state_constructions": 55,
+    "state_score_calls": 1607,
+    "state_score_seconds": 0.5894050589997448
+  },
+  "model_profile": {
+    "geometry_seconds": 0.3063311770006578,
+    "reduction_seconds": 0.5773416660001374,
+    "rollback_seconds": 0.8406515790000242,
+    "scan_waveform_seconds": 1.0657938339992086,
+    "spatial_seconds": 0.9631552359999489,
+    "stateful_propagation_seconds": 0.4675848840001322
+  },
+  "reference_label": "B3T",
+  "reference_score": [
+    230.64,
+    92422.85607964282,
+    16.451909569999998,
+    51.86,
+    29.94053423
+  ],
+  "rejected_exact_moves": 1422,
+  "restarts": 53,
+  "runtime_seconds": 7.035233820000002,
+  "screened_infeasible": 4963,
+  "search_seconds": 6.649347094999996,
+  "selected": [
+    {
+      "architecture": {
+        "bytes": 2562,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s1238/budget_0.05/architectures/96f2b41a20c386f8e2862e80e974ba86f05653fffbdcdd9b7c8485acaab5317c.json",
+        "sha256": "734f8c5c0f62447a85aea0a02830fd50916510cdad89c5b507240ee9350412d4"
+      },
+      "architecture_sha256": "96f2b41a20c386f8e2862e80e974ba86f05653fffbdcdd9b7c8485acaab5317c",
+      "chain_sizes": [
+        9,
+        9
+      ],
+      "discovered_attempt": 5541,
+      "discovered_evaluation": 1113,
+      "discovered_loop_seconds": 4.7182612340000105,
+      "discovered_utc": "2026-10-04T18:11:55.556391+00:00",
+      "label": "B3T:swap",
+      "metrics": {
+        "E_stateful_ff": 68918.04003869893,
+        "H4_stateful_ff": 29.716887541620913,
+        "H8_stateful_ff": 16.67624301479638,
+        "timing_max_edge_um": 48.760000000000005,
+        "wire_um": 229.04
+      },
+      "new": true,
+      "parent": "B3T",
+      "parent_architecture_sha256": "e8dc57ee4fbfe5edc351f716d2916759a6e97604b904473c1e27cc6d9a346bbc",
+      "roles": [
+        "best_E"
+      ]
+    },
+    {
+      "architecture": {
+        "bytes": 2562,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s1238/budget_0.05/architectures/921f305e0512f1ab98acceddaba454fd9ce4228c18d0f03a7a840eecd32f1d94.json",
+        "sha256": "58676faf9d7dfbb4b24e49418d91cfa229089dec86964f5f8f8d61c42373762c"
+      },
+      "architecture_sha256": "921f305e0512f1ab98acceddaba454fd9ce4228c18d0f03a7a840eecd32f1d94",
+      "chain_sizes": [
+        9,
+        9
+      ],
+      "discovered_attempt": 1773,
+      "discovered_evaluation": 417,
+      "discovered_loop_seconds": 1.689705688999993,
+      "discovered_utc": "2026-10-04T18:11:52.527835+00:00",
+      "label": "B3T:2opt",
+      "metrics": {
+        "E_stateful_ff": 84515.55229717758,
+        "H4_stateful_ff": 24.110370704829734,
+        "H8_stateful_ff": 16.85201923284677,
+        "timing_max_edge_um": 42.589999999999996,
+        "wire_um": 238.14
+      },
+      "new": true,
+      "parent": "B3T",
+      "parent_architecture_sha256": "e8dc57ee4fbfe5edc351f716d2916759a6e97604b904473c1e27cc6d9a346bbc",
+      "roles": [
+        "best_H4"
+      ]
+    },
+    {
+      "architecture": {
+        "bytes": 2562,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s1238/budget_0.05/architectures/5eff6ea08f77be98e8babdce4b47b0f82e27a48f56ce1be59312b591e05232db.json",
+        "sha256": "ea18fb488ad421e90f757724e33768d9b3aba66e1dd6b833bd829389b05c0f52"
+      },
+      "architecture_sha256": "5eff6ea08f77be98e8babdce4b47b0f82e27a48f56ce1be59312b591e05232db",
+      "chain_sizes": [
+        9,
+        9
+      ],
+      "discovered_attempt": 1048,
+      "discovered_evaluation": 292,
+      "discovered_loop_seconds": 1.154205093999991,
+      "discovered_utc": "2026-10-04T18:11:51.992327+00:00",
+      "label": "B3T:2opt",
+      "metrics": {
+        "E_stateful_ff": 84116.25629013451,
+        "H4_stateful_ff": 31.653986443653785,
+        "H8_stateful_ff": 16.002193038190047,
+        "timing_max_edge_um": 39.61,
+        "wire_um": 232.23999999999995
+      },
+      "new": true,
+      "parent": "B3T",
+      "parent_architecture_sha256": "e8dc57ee4fbfe5edc351f716d2916759a6e97604b904473c1e27cc6d9a346bbc",
+      "roles": [
+        "best_H8"
+      ]
+    },
+    {
+      "architecture": {
+        "bytes": 2562,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s1238/budget_0.05/architectures/6f7cfa05864ad51553c7c6fa460d5933731bdcef9dab8e255b8a0bf572462ace.json",
+        "sha256": "9de9f9b411c52030b1725e7434713c945f5e42cf1c5dc5bb7feeaa29e19ecdbf"
+      },
+      "architecture_sha256": "6f7cfa05864ad51553c7c6fa460d5933731bdcef9dab8e255b8a0bf572462ace",
+      "chain_sizes": [
+        9,
+        9
+      ],
+      "discovered_attempt": 2318,
+      "discovered_evaluation": 518,
+      "discovered_loop_seconds": 2.1620907799999998,
+      "discovered_utc": "2026-10-04T18:11:53.000217+00:00",
+      "label": "B3T:2opt",
+      "metrics": {
+        "E_stateful_ff": 78778.72497272363,
+        "H4_stateful_ff": 24.452612110050097,
+        "H8_stateful_ff": 16.421439570700024,
+        "timing_max_edge_um": 35.040000000000006,
+        "wire_um": 236.9
+      },
+      "new": true,
+      "parent": "B3T",
+      "parent_architecture_sha256": "e8dc57ee4fbfe5edc351f716d2916759a6e97604b904473c1e27cc6d9a346bbc",
+      "roles": [
+        "balanced"
+      ]
+    }
+  ],
+  "stagnation_termination_events": 1,
+  "termination": "stagnation",
+  "wire_ceiling_um": 242.172,
+  "wire_reference_um": 230.64
+}

@@ -1,0 +1,409 @@
+{
+  "P0_selection": "Predicted minimax normalized-regret point from the sealed stateful archive; retained without reselection",
+  "PACT_searches_executed": 0,
+  "classification": "ENGINEERING_SCALABILITY_BLOCKER",
+  "created_utc": "2026-10-04T13:24:36.107836+00:00",
+  "evidence": {
+    "results/pact_oss_benchmark/stage_a/P0_FREEZE.json": {
+      "bytes": 140701,
+      "path": "repo://results/pact_oss_benchmark/stage_a/P0_FREEZE.json",
+      "sha256": "2e0258792497cebf90829f74408e45a405671e18e1c01330d175bc9909bc327a"
+    },
+    "results/pact_oss_benchmark/stage_a/P0_SELECTION.json": {
+      "bytes": 2052,
+      "path": "repo://results/pact_oss_benchmark/stage_a/P0_SELECTION.json",
+      "sha256": "6654dc3e34e06705212ec45b60cd14030bf260e39a523166850f9e3548ba888b"
+    },
+    "results/pact_oss_benchmark/topology_recovery_20261004/stage_a/comparison_policy.json": {
+      "bytes": 789,
+      "path": "repo://results/pact_oss_benchmark/topology_recovery_20261004/stage_a/comparison_policy.json",
+      "sha256": "b934a61694766b342178cda9e1612af6e6ea17aca7984d1d22da271a102a4e0f"
+    },
+    "scripts/pact_candidate_sensitive.py": {
+      "bytes": 8402,
+      "path": "repo://scripts/pact_candidate_sensitive.py",
+      "sha256": "c80c9fc6bf1eaca2bfca4e1fd9e117ac0e9d16388a9ea75a83672d7d5723a98d"
+    },
+    "scripts/pact_candidate_stateful.py": {
+      "bytes": 11836,
+      "path": "repo://scripts/pact_candidate_stateful.py",
+      "sha256": "7970b65bed37c5c8cb33bba8d75bacd175bcf327a361eedc64408788b74e8b45"
+    },
+    "scripts/pact_oss_benchmark.py": {
+      "bytes": 10192,
+      "path": "repo://scripts/pact_oss_benchmark.py",
+      "sha256": "2c915b0e6e90e6cf95b4ef336d95f7e6fd8755f51bcd0473eb3b1452a791aa7a"
+    },
+    "scripts/pact_stage_b.py": {
+      "bytes": 11138,
+      "path": "repo://scripts/pact_stage_b.py",
+      "sha256": "6e0ef7d49b0d826d74f0ef87973af16002d58eada86d2710c1d16a022134d037"
+    },
+    "scripts/pact_v2.py": {
+      "bytes": 12472,
+      "path": "repo://scripts/pact_v2.py",
+      "sha256": "6190c1703d1f9ee856f7f476d263bcf99d67b8978ad35cb07d88e7aef43e5c36"
+    }
+  },
+  "failure_class": "TOOL_BUG",
+  "frozen_starts": "Stage-B starts from measured B2, B3T, and the pre-existing representative P0 endpoint",
+  "historical_precursor_records": [
+    {
+      "design": "s5378",
+      "precursor_stages": [
+        {
+          "config": {
+            "archive_size": 32,
+            "max_evaluations": 20000,
+            "neighbors": 16,
+            "restart_interval": 250,
+            "seconds": 180.0,
+            "seed": 11,
+            "segment": 8,
+            "timing_allowance": 0.1,
+            "wire_allowance": 0.1
+          },
+          "inputs": {
+            "bytes": 3306,
+            "path": "repo://results/pact_v2/s5378/inputs.json",
+            "sha256": "3290c29d5fa6d5c82027bb4628b9857b496df818ddfc3e6844b53cf0a21b9594"
+          },
+          "search": {
+            "bytes": 27481,
+            "path": "repo://results/pact_v2/s5378/search.json",
+            "sha256": "46fcb1a5f0ab912d1bce179d925488d123065986aa7b9492df9194b6ed371ed4"
+          },
+          "selected_architecture_hashes": [
+            "c4eabc41cb50cae503f52eb2deae1101321804849abf1dab0dc8b97e58f90bb5",
+            "b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16",
+            "3b627d8af4f2c34c3bcf71a0822d2b8a612e01fe06e766beda14a95854bd11d9"
+          ],
+          "stage": "pact_v2",
+          "starting_architecture_labels": [
+            "P",
+            "J50",
+            "PACT",
+            "T"
+          ]
+        },
+        {
+          "config": {
+            "archive_size": 32,
+            "max_evaluations": 20000,
+            "neighbors": 16,
+            "restart_interval": 250,
+            "seconds": 180.0,
+            "seed": 11,
+            "segment": 8,
+            "timing_allowance": 0.1,
+            "wire_allowance": 0.1
+          },
+          "inputs": {
+            "bytes": 5995,
+            "path": "repo://results/pact_candidate_sensitive/s5378/inputs.json",
+            "sha256": "4db299d90b6cb1601c9678718fd3069832c88322d133aec81764a6a69d2759c3"
+          },
+          "search": {
+            "bytes": 43807,
+            "path": "repo://results/pact_candidate_sensitive/s5378/search.json",
+            "sha256": "c113106df4dd8474159d6e154964df796e10811567117d45e905fc8fdf572a47"
+          },
+          "selected_architecture_hashes": [
+            "c11dfeee8d449781c780160151a7d1fb97bfdf4d6675e42ee864ffb7f5e7d31c",
+            "b72833ffdd2bea7e2cfdb313767af85f5ab47835b13d56822b42ca6736040808"
+          ],
+          "stage": "pact_candidate_sensitive",
+          "starting_architecture_labels": [
+            "P",
+            "J50",
+            "PACT",
+            "T",
+            "v2_c4eabc41cb50",
+            "v2_b5c4710dcf54",
+            "v2_3b627d8af4f2"
+          ]
+        },
+        {
+          "config": {
+            "archive_size": 32,
+            "max_evaluations": 20000,
+            "neighbors": 16,
+            "restart_interval": 250,
+            "seconds": 180.0,
+            "seed": 11,
+            "segment": 8,
+            "timing_allowance": 0.1,
+            "wire_allowance": 0.1
+          },
+          "inputs": {
+            "bytes": 7056,
+            "path": "repo://results/pact_candidate_stateful/s5378/inputs.json",
+            "sha256": "832f84d433a10f497dff40b64b322468929ce473e92062e5a6ad664161cd1900"
+          },
+          "search": {
+            "bytes": 17514,
+            "path": "repo://results/pact_candidate_stateful/s5378/search.json",
+            "sha256": "9c018b37196e75d221c64dacc260ec18ecfe06d3560ec1b17e045cf27f989d13"
+          },
+          "selected_architecture_hashes": [
+            "42dfdefa69502dd9c3716d9b2d7a0bf79d48be347a1e8786750551db65ff0db9",
+            "b2614a3a06b35038b1a94d9315b9dbd91df65b837a4421f12ec12e6c3c3286ac"
+          ],
+          "stage": "pact_candidate_stateful",
+          "starting_architecture_labels": [
+            "P",
+            "J50",
+            "PACT",
+            "T",
+            "v2_c4eabc41cb50",
+            "v2_b5c4710dcf54",
+            "v2_3b627d8af4f2",
+            "cs_c11dfeee8d44",
+            "cs_b72833ffdd2b"
+          ]
+        }
+      ]
+    },
+    {
+      "design": "s9234",
+      "precursor_stages": [
+        {
+          "config": {
+            "archive_size": 32,
+            "max_evaluations": 20000,
+            "neighbors": 16,
+            "restart_interval": 250,
+            "seconds": 180.0,
+            "seed": 11,
+            "segment": 8,
+            "timing_allowance": 0.1,
+            "wire_allowance": 0.1
+          },
+          "inputs": {
+            "bytes": 3308,
+            "path": "repo://results/pact_v2/s9234/inputs.json",
+            "sha256": "61121531b1500fef118895d48b503c66998e844e2aa1ab993d0e9373dbe7d674"
+          },
+          "search": {
+            "bytes": 29202,
+            "path": "repo://results/pact_v2/s9234/search.json",
+            "sha256": "0b6120da107ab1a7466d913dd9c4c2d508625dcd86d1750ab60be215e4ffa6e1"
+          },
+          "selected_architecture_hashes": [
+            "53bb5b0187583971d057dc111c46dc7030affedc25dbfe294a9455251ddc6fe5",
+            "797aff0b91f6ad122de840678b76b5969b4c0db00dbedfa78d2884fc75a5ddc2",
+            "f4bca5652bda0b57f3cb7fd7b31c0228c96465ab7e142b4fb284814b8dd3a223"
+          ],
+          "stage": "pact_v2",
+          "starting_architecture_labels": [
+            "T",
+            "J50",
+            "PACT",
+            "P"
+          ]
+        },
+        {
+          "config": {
+            "archive_size": 32,
+            "max_evaluations": 20000,
+            "neighbors": 16,
+            "restart_interval": 250,
+            "seconds": 180.0,
+            "seed": 11,
+            "segment": 8,
+            "timing_allowance": 0.1,
+            "wire_allowance": 0.1
+          },
+          "inputs": {
+            "bytes": 5998,
+            "path": "repo://results/pact_candidate_sensitive/s9234/inputs.json",
+            "sha256": "b2a1cea3fb2dc443219a91b202f08d4e847f5a9da4bb0d738c80cb976b58235c"
+          },
+          "search": {
+            "bytes": 44011,
+            "path": "repo://results/pact_candidate_sensitive/s9234/search.json",
+            "sha256": "0befeab259818c7585e194eeb26e65d57dc4b86f87a10b2bfd5c2293e7fb32ea"
+          },
+          "selected_architecture_hashes": [
+            "4d6ff90b2adcf1e133882196914be7899951ae837c00b98734528f8e521b6b40",
+            "1359e456272bfce5d9280041447d8712ee1c32e0e1f9abdf1c7865314d9b4948"
+          ],
+          "stage": "pact_candidate_sensitive",
+          "starting_architecture_labels": [
+            "T",
+            "J50",
+            "PACT",
+            "P",
+            "v2_53bb5b018758",
+            "v2_797aff0b91f6",
+            "v2_f4bca5652bda"
+          ]
+        },
+        {
+          "config": {
+            "archive_size": 32,
+            "max_evaluations": 20000,
+            "neighbors": 16,
+            "restart_interval": 250,
+            "seconds": 180.0,
+            "seed": 11,
+            "segment": 8,
+            "timing_allowance": 0.1,
+            "wire_allowance": 0.1
+          },
+          "inputs": {
+            "bytes": 7056,
+            "path": "repo://results/pact_candidate_stateful/s9234/inputs.json",
+            "sha256": "308760e2cce552141dcbd7a31f9dd2e93ae86a03fad9da4d984b9385cb17b2d1"
+          },
+          "search": {
+            "bytes": 10377,
+            "path": "repo://results/pact_candidate_stateful/s9234/search.json",
+            "sha256": "b988a1d41d964ca899049d2435a50a4a01f508c51166c5f1f9c0d23438c70f31"
+          },
+          "selected_architecture_hashes": [],
+          "stage": "pact_candidate_stateful",
+          "starting_architecture_labels": [
+            "T",
+            "J50",
+            "PACT",
+            "P",
+            "v2_53bb5b018758",
+            "v2_797aff0b91f6",
+            "v2_f4bca5652bda",
+            "cs_4d6ff90b2adc",
+            "cs_1359e456272b"
+          ]
+        }
+      ]
+    },
+    {
+      "design": "s15850",
+      "precursor_stages": [
+        {
+          "config": {
+            "archive_size": 32,
+            "max_evaluations": 20000,
+            "neighbors": 16,
+            "restart_interval": 250,
+            "seconds": 180.0,
+            "seed": 11,
+            "segment": 8,
+            "timing_allowance": 0.1,
+            "wire_allowance": 0.1
+          },
+          "inputs": {
+            "bytes": 3319,
+            "path": "repo://results/pact_v2/s15850/inputs.json",
+            "sha256": "1f4acbedde3931d6d4fbee1deb8a5c29f1acc29dacd1c32b8828a935e565cd2d"
+          },
+          "search": {
+            "bytes": 28540,
+            "path": "repo://results/pact_v2/s15850/search.json",
+            "sha256": "0a611b2f302986b91d565c75cf44b09fe8d775cfe8be68feb25185c5b88b71e7"
+          },
+          "selected_architecture_hashes": [
+            "e14689c97ca5454cd0c46f98a4328713eca058aece7c6a6229b25f6c0fb2075b",
+            "f3e118a35e7ba33881c8d2855e6348525823f33056594a27f11b07b55738b70d",
+            "1c4fe83a6b043e5140b67ab63462da9469202e928720431b0ac0e92210a3eadf"
+          ],
+          "stage": "pact_v2",
+          "starting_architecture_labels": [
+            "P",
+            "J50",
+            "PACT",
+            "T"
+          ]
+        },
+        {
+          "config": {
+            "archive_size": 32,
+            "max_evaluations": 20000,
+            "neighbors": 16,
+            "restart_interval": 250,
+            "seconds": 180.0,
+            "seed": 11,
+            "segment": 8,
+            "timing_allowance": 0.1,
+            "wire_allowance": 0.1
+          },
+          "inputs": {
+            "bytes": 6016,
+            "path": "repo://results/pact_candidate_sensitive/s15850/inputs.json",
+            "sha256": "fc79410337e8e62dbced986ffbb204b08d8f21f609231379ca28c8d35fe5cc8d"
+          },
+          "search": {
+            "bytes": 41715,
+            "path": "repo://results/pact_candidate_sensitive/s15850/search.json",
+            "sha256": "b20edf4b02000fe9503a59afe1cc06dcc036f01093e0512d582fd569ef90d791"
+          },
+          "selected_architecture_hashes": [
+            "630da694339881c078b0fb601a1b9a157c71f493fa59c66751fa6750e5eeb36d",
+            "a3dd757a7e1721db5c67faa44596bb78d690e380a2fa794b2484b8f014fe0db1"
+          ],
+          "stage": "pact_candidate_sensitive",
+          "starting_architecture_labels": [
+            "P",
+            "J50",
+            "PACT",
+            "T",
+            "v2_e14689c97ca5",
+            "v2_f3e118a35e7b",
+            "v2_1c4fe83a6b04"
+          ]
+        },
+        {
+          "config": {
+            "archive_size": 32,
+            "max_evaluations": 20000,
+            "neighbors": 16,
+            "restart_interval": 250,
+            "seconds": 180.0,
+            "seed": 11,
+            "segment": 8,
+            "timing_allowance": 0.1,
+            "wire_allowance": 0.1
+          },
+          "inputs": {
+            "bytes": 7080,
+            "path": "repo://results/pact_candidate_stateful/s15850/inputs.json",
+            "sha256": "24c5d9107f3e59ffd98cb4ee76f5bce1822b274ecb86fef8a1a9ad69016cfbca"
+          },
+          "search": {
+            "bytes": 16194,
+            "path": "repo://results/pact_candidate_stateful/s15850/search.json",
+            "sha256": "b4326dc2dadf0733593b61cbe27125cb871ca84a7fe9ad4a154b8daf8534caad"
+          },
+          "selected_architecture_hashes": [
+            "5d90e5faf9dcfb7f820a641638cc06c83c19ac634534c5aa75c4cedda6f5a38e",
+            "f47e6837c4dacd553187a3ee88d5e8aff729a45b9375e10a8eeac2817177a93e"
+          ],
+          "stage": "pact_candidate_stateful",
+          "starting_architecture_labels": [
+            "P",
+            "J50",
+            "PACT",
+            "T",
+            "v2_e14689c97ca5",
+            "v2_f3e118a35e7b",
+            "v2_1c4fe83a6b04",
+            "cs_630da6943398",
+            "cs_a3dd757a7e17"
+          ]
+        }
+      ]
+    }
+  ],
+  "missing_new_design_contract": [
+    "P/T physical-input role on an unseen circuit",
+    "Earlier working-PACT architecture construction and budget",
+    "Precursor qualification and warm-start propagation through v2 and candidate-sensitive stages",
+    "How the full precursor routing workload fits the requested per-design candidate routing limit"
+  ],
+  "predecessor_dependency": "Stateful starts include candidate-sensitive selections; candidate-sensitive starts include qualified v2 selections; v2 starts include historical P/T, J50, and an earlier working PACT architecture",
+  "preserved_action": "No seed omitted or substituted; no PACT search executed",
+  "requested_resolution": "Reproduce the full frozen precursor pipeline only under a defined unseen-input policy, or stop at the initialization blocker",
+  "schema": "pact_generalization_initialization_audit_v1",
+  "scientific_method_changes": 0,
+  "subtype": "UNSEEN_INPUT_INITIALIZATION"
+}

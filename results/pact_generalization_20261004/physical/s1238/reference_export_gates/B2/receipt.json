@@ -1,0 +1,89 @@
+{
+  "ATPG_executions": 0,
+  "FF_placement": "exact",
+  "PACT_search_executions": 0,
+  "created_utc": "2026-10-04T15:24:19.766665+00:00",
+  "design": "s1238",
+  "execution": {
+    "command": [
+      "/usr/bin/openroad",
+      "-exit",
+      "-python",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_export.py",
+      "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_export_gates/s1238/s1238/B2"
+    ],
+    "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+    "exit_code": 0,
+    "stderr": {
+      "bytes": 0,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_export_gates/s1238/s1238/B2/execution/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 390,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_export_gates/s1238/s1238/B2/execution/stdout.txt",
+      "sha256": "9f02cd4ce8c30c46dbaf03d80c91aecbff472b0c28423767f71e15bd874e0722"
+    },
+    "timed_out": false,
+    "timestamp_utc": "2026-10-04T15:24:25.772245+00:00",
+    "wall_seconds": 5.886611675000012
+  },
+  "functional_sinks_and_outputs": 1029,
+  "inputs": {
+    "architecture": {
+      "bytes": 2562,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_runtime_paths_repaired/s1238/B2/generator/canonical.json",
+      "sha256": "a5a2292b51ea8819368d02ad310d91184a5511aa29140d6e9bc5555084201129"
+    },
+    "design": "s1238",
+    "inputs": {
+      "placement": {
+        "bytes": 110724,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s1238/placed.def",
+        "sha256": "8f86b9af1d46f8349df97e58baa1b4b97af00a68819b8501cc05ac3ac281ac5d"
+      }
+    },
+    "original_qualification": {
+      "bytes": 6870,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_runtime_paths_repaired/s1238/B2/physical/route_result.json",
+      "sha256": "dd8e93ac15d8ae7d6fa20d27bc7884bb6b7dc2969aee0da14087f6d7041939b7"
+    },
+    "role": "B2",
+    "routed_archive": {
+      "bytes": 226370,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/baseline_runtime_paths_repaired/s1238/B2/physical/5_2_route.odb.gz",
+      "sha256": "126e0774448a6ae79a2bd7e7d287b80e775dde461cbc36f8a7b0f669bcfcb74d"
+    },
+    "source_placed_database": {
+      "bytes": 671825,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/orfs/results/nangate45/s1238/phase0b_s11_B0/3_place.odb",
+      "sha256": "d473d3735c408e14042c61caaea57c7824bd908ddfc02d847e7bdcc8eb06f644"
+    }
+  },
+  "manifest": {
+    "bytes": 7508,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_export_gates/s1238/manifest.json",
+    "sha256": "df3ef3a83b732c0ff5ea8951ff02294b4b2e15349fe10a8c283916b4ad4882a3"
+  },
+  "method": "B2",
+  "outputs": {
+    "functional_verification.json": {
+      "bytes": 469,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_export_gates/s1238/s1238/B2/functional_verification.json",
+      "sha256": "e240572c72a104e2100664651396b64dc73bc1969d438f2ba40dba3cede756aa"
+    },
+    "net_mapping.json": {
+      "bytes": 93598,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_export_gates/s1238/s1238/B2/net_mapping.json",
+      "sha256": "12947f3dc0f2625e0ac352708e2406ed76a08e4968235447fc539132524db46b"
+    },
+    "topology_verification.json": {
+      "bytes": 4984,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_export_gates/s1238/s1238/B2/topology_verification.json",
+      "sha256": "bc482e610716a099ece5f63c7bed50be56a629a83f8507ba02aaac297ded4583"
+    }
+  },
+  "routing_executions": 0,
+  "simulation_executions": 0,
+  "status": "PASS"
+}

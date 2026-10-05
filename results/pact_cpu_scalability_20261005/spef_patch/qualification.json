@@ -1,0 +1,56 @@
+{
+  "IS_LEGITIMATE_ZERO_WIRE_CASE": true,
+  "IS_MAPPING_BUG": false,
+  "IS_OPENRCX_BUG": "NO_EVIDENCE; legitimate no-interconnect omission reproduced",
+  "IS_PARSER_BUG": false,
+  "baseline_compact_sha256": "c6f73f61bae40ecda573ca8cb37572475fe62e197bdf109150671527ca1c0ed4",
+  "core_sources": {
+    "src/pact/activity/compact.py": {
+      "bytes": 11707,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/activity/compact.py",
+      "sha256": "c1c7077965fc78a86e6e2fed469eca35b16bd8d5e0c0ab31ae40b06a83d1272a"
+    },
+    "src/pact/activity/counts_vpi.cpp": {
+      "bytes": 7034,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/activity/counts_vpi.cpp",
+      "sha256": "9a40394de2d4b8964509c9a6f14c2e247891022c99824939a30ea7427c77565c"
+    },
+    "src/pact/activity/spef_evidence.py": {
+      "bytes": 8200,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/activity/spef_evidence.py",
+      "sha256": "f315c1ee34831bacad6a403dbed91d1e47194f9cc07d453b2328fd88e685858c"
+    },
+    "src/pact/physical_effect.py": {
+      "bytes": 12009,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/physical_effect.py",
+      "sha256": "b68bbf6d9b02158d69c11f3f40e0722defd507c5de6e8813bb94bb9a2b498a8c"
+    }
+  },
+  "created_utc": "2026-10-05T05:36:11.563395+00:00",
+  "diagnostics": {
+    "bytes": 15892,
+    "path": "repo://results/pact_cpu_scalability_20261005/spef_patch/reanalysis/missing_spef_diagnostics.json",
+    "sha256": "44a0a0f0ae9d869b0a804acff1d302566b06a50b7d6358607f99f74fe7af81c6"
+  },
+  "metric_definitions_changed": false,
+  "normal_path_unchanged": true,
+  "old_scientific_stop": {
+    "bytes": 3969,
+    "path": "repo://results/pact_cpu_scalability_20261005/scientific_stop.json",
+    "sha256": "6cd8c36e1cb4a9287198b3319aa16bf18cd459a3fb9a7105e42f5aa04c174bde"
+  },
+  "requalified_reference": {
+    "bytes": 3261,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cpu_scalability_20261005/spef_patch/reanalysis/result.json",
+    "sha256": "8704affd05773261a1932196cd662e0dc292506e65840284ab59fc92e0badf10"
+  },
+  "root_cause": "Dangling single-driver BUF_X1 output nets; no sinks/ports/wire/vias/global/special geometry or RC objects. Frozen OpenRCX omission independently reproduced. Original analyzer lacked this evidence path.",
+  "status": "PASS",
+  "tests": {
+    "actual_four_net_reproduction": "PASS",
+    "focused_tests": 16,
+    "seconds": 4.89,
+    "status": "PASS",
+    "whole_preserved_trace_and_FF_replay": "PASS"
+  }
+}

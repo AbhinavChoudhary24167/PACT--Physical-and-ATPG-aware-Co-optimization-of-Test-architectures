@@ -1,0 +1,41 @@
+{
+  "design": "s38417",
+  "error": "Command failed: /mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s38417/execution/execution.json",
+  "execution": {
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "-o",
+      "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s38417/s38417/B2/resources.txt",
+      "/root/pact-deps/pact-venv/bin/python",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_measure_driver.py",
+      "--design",
+      "s38417"
+    ],
+    "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+    "exit_code": -15,
+    "stderr": {
+      "bytes": 0,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s38417/execution/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 18,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s38417/execution/stdout.txt",
+      "sha256": "14271d8600e4fcd41ba06213155822f28cd8bc3b99009fdea40461e9747f59ed"
+    },
+    "timed_out": true,
+    "timestamp_utc": "2026-10-04T14:09:22.910240+00:00",
+    "wall_seconds": 1800.0574783200004
+  },
+  "failure_class": "RESOURCE_LIMIT",
+  "manifest": {
+    "bytes": 5560,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s38417/manifest.json",
+    "sha256": "81ae9f0eb6de195b58fb5dddb43cb50e96f676e20ed984b358e51a5f6f7165d2"
+  },
+  "phase": "REFERENCE_MEASUREMENT",
+  "selected_reference": "B2",
+  "status": "FAILED",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_measure.py\", line 72, in run\n    env=dict(os.environ,PACT_PHYSICAL_EFFECT_OUT=str(root))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_infrastructure.py\", line 59, in execute\n    raise RuntimeError('Command failed: ' + str(receipt))\nRuntimeError: Command failed: /mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/reference_measurement/s38417/execution/execution.json\n"
+}

@@ -1,0 +1,124 @@
+{
+  "ATPG_execution": {
+    "command": [
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scratch/FAN_ATPG-report-repair/bin/opt/fan",
+      "-f",
+      "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s1238/atpg.script"
+    ],
+    "cwd": "/root/pact-deps/FAN_ATPG",
+    "exit_code": 0,
+    "stderr": {
+      "bytes": 0,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s1238/atpg_generate/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 3947,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s1238/atpg_generate/stdout.txt",
+      "sha256": "8db9e6c569661f6b8ddfa63af922a791e185ae6170c31d5c6a20ca6ca4e925b8"
+    },
+    "timed_out": false,
+    "timestamp_utc": "2026-10-04T12:07:58.767528+00:00",
+    "wall_seconds": 0.2338970360000019
+  },
+  "ATPG_statistics": {
+    "coverage": 96.36,
+    "detected": 3232,
+    "patterns": 145,
+    "total": 3354
+  },
+  "SDC": {
+    "bytes": 3238,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/orfs/results/nangate45/s1238/phase0b_s11_B0/3_place.sdc",
+    "sha256": "7c070e9d38cdbdb2dd60d67e046c263d84061694cdc6d780b581b96b2c2dc9b4"
+  },
+  "config": {
+    "bytes": 419,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s1238/config.mk",
+    "sha256": "793fea1c805c3c5bfaaa3e0d90fae9021448e87ea2d5f6fb5e9cf2b1a49d974b"
+  },
+  "design": "s1238",
+  "gates": {
+    "ATPG": "PASS",
+    "placement": "PASS",
+    "scan_representation": "PASS",
+    "source_topology": "PASS",
+    "synthesis": "PASS"
+  },
+  "patterns": {
+    "bytes": 14074,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s1238/patterns.pat",
+    "sha256": "7bd98eb1a77a4250df63f69ea90f213c30aa7fe5a9f4e46d092a79a6392bdff7"
+  },
+  "placed_def": {
+    "bytes": 110724,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s1238/placed.def",
+    "sha256": "8f86b9af1d46f8349df97e58baa1b4b97af00a68819b8501cc05ac3ac281ac5d"
+  },
+  "placed_netlist": {
+    "bytes": 41958,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s1238/placed.v",
+    "sha256": "a0811cfa18a5d7cb65a6bf8969084a51a295e6920ffb650979987cad8a654c71"
+  },
+  "placement_execution": {
+    "command": [
+      "make",
+      "DESIGN_CONFIG=/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s1238/config.mk",
+      "WORK_HOME=/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/orfs",
+      "FLOW_VARIANT=generalization_source",
+      "NUM_CORES=2",
+      "OPENROAD_EXE=/usr/bin/openroad",
+      "YOSYS_EXE=/usr/bin/yosys",
+      "place"
+    ],
+    "cwd": "/root/pact-deps/OpenROAD-flow-scripts/flow",
+    "exit_code": 0,
+    "stderr": {
+      "bytes": 1114,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s1238/synthesis_placement/stderr.txt",
+      "sha256": "3fa5dce2dadc0faaa7c15301f90bd9f28ba885366d5a7df6dd220e439ede0366"
+    },
+    "stdout": {
+      "bytes": 45156,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s1238/synthesis_placement/stdout.txt",
+      "sha256": "3076a68e3e7a7d25a5fb7d8a9c4aaf71ce312894a6dc421589250d23999d1f19"
+    },
+    "timed_out": false,
+    "timestamp_utc": "2026-10-04T12:08:32.763493+00:00",
+    "wall_seconds": 33.79640207999999
+  },
+  "seed_execution": {
+    "command": [
+      "/usr/bin/openroad",
+      "-no_init",
+      "-exit",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/tcl/phase0b_seed_placement.tcl"
+    ],
+    "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+    "exit_code": 0,
+    "stderr": {
+      "bytes": 0,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s1238/seed_placement/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 1182,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/inputs/s1238/seed_placement/stdout.txt",
+      "sha256": "af2510a32972b5abb58a823262a0f7a94d1b4fb6ea5247bc7d351a73c7d43445"
+    },
+    "timed_out": false,
+    "timestamp_utc": "2026-10-04T12:08:33.298424+00:00",
+    "wall_seconds": 0.42877857599999913
+  },
+  "source": {
+    "bytes": 37893,
+    "path": "/root/pact-deps/FAN_ATPG/mod_netlist/s1238.v",
+    "sha256": "43f000841ad4ea5b6c1bd76cc88555670f095d7f46a90276c683a80bdf2fc0e5"
+  },
+  "source_placed_database": {
+    "bytes": 671825,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_generalization_20261004/orfs/results/nangate45/s1238/phase0b_s11_B0/3_place.odb",
+    "sha256": "d473d3735c408e14042c61caaea57c7824bd908ddfc02d847e7bdcc8eb06f644"
+  },
+  "status": "PLACEMENT_READY_PENDING_REFERENCES"
+}

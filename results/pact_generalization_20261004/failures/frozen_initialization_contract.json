@@ -1,0 +1,27 @@
+{
+  "PACT_searches_executed": 0,
+  "classification": "ENGINEERING_SCALABILITY_BLOCKER",
+  "created_utc": "2026-10-04T12:42:52.685886+00:00",
+  "dependency_loader": {
+    "bytes": 12472,
+    "path": "repo://scripts/pact_v2.py",
+    "sha256": "6190c1703d1f9ee856f7f476d263bcf99d67b8978ad35cb07d88e7aef43e5c36"
+  },
+  "design": "s1196",
+  "error": "KeyError('s1196')",
+  "evidence": "pact_stage_b.load -> pact_candidate_sensitive.load -> pact_v2.load -> DESIGNS[design]; table has only the historical three designs",
+  "failure_class": "TOOL_BUG",
+  "frozen_loader": {
+    "bytes": 11138,
+    "path": "repo://scripts/pact_stage_b.py",
+    "sha256": "6e0ef7d49b0d826d74f0ef87973af16002d58eada86d2710c1d16a022134d037"
+  },
+  "outstanding_decision": "Define how the full frozen precursor pipeline supplies P0 on unseen designs; no substitute seed or omitted P0 has been authorized",
+  "question": "Reproduce the full frozen P0 pipeline, or stop if P0 initialization cannot be reproduced?",
+  "required_initialization": "Current Stage-B loader consumes qualified B2/B3T orders and a pre-existing balanced P0 endpoint produced through the prior working/v2/candidate-sensitive/stateful experiment chain",
+  "runtime_scalability_measured": false,
+  "schema": "pact_generalization_initialization_blocker_v1",
+  "scientific_method_changes": 0,
+  "subtype": "UNSEEN_INPUT_INITIALIZATION",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_initialization_probe.py\", line 27, in main\n    load('s1196')\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_stage_b.py\", line 54, in load\n    sensitive, _, _, inputs, _ = prior.load(design, ROOT/'results/pact_candidate_sensitive')\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_candidate_sensitive.py\", line 23, in load\n    frozen, starts, _, inputs = backend.load(design)\n                                ^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_v2.py\", line 33, in load\n    role = DESIGNS[design]\n           ~~~~~~~^^^^^^^^\nKeyError: 's1196'\n"
+}
