@@ -1,0 +1,144 @@
+{
+  "schema": "pact_gate09_source_admission_v1",
+  "design": "b14_opt",
+  "created_utc": "2026-10-05T14:45:47.359479+00:00",
+  "status": "PACT_GATE09_SOURCE_ADMISSION_BLOCKED",
+  "protocol": {
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate9_large_scale_unseen_20261005/benchmark_preregistration.json",
+    "sha256": "01b05577c885e878f98466315d8232cd9773d332c61d8c7510ab8870dcb44717",
+    "bytes": 79703
+  },
+  "preflight": {
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/01_capacity_pass/admission.json",
+    "sha256": "923b2fa25ee04bf184b5627f1cdf30dda2f00fe7b7e64a0dfe1018850dfbd8f6",
+    "bytes": 16533
+  },
+  "source_files": {
+    "bench": {
+      "bytes": 166588,
+      "git_blob_sha1": "3ce4ac58852005242b0849cfa3f077b7586a75c7",
+      "path": "D:\\PACT_EXPERIMENTS\\results\\pact_gate9_large_scale_unseen_20261005\\sources\\i99t\\b14\\b14_opt.bench",
+      "sha256": "a5dd6526ba4dcaf71e4acf0ba6c8601bbde751d6373cc0bfffc2de7cb0281dfe",
+      "url": "https://raw.githubusercontent.com/cad-polito-it/I99T/8a2c3b500ee7ff20e7031de92592b737bedc6d8c/i99t/b14/b14_opt.bench"
+    },
+    "blif": {
+      "bytes": 216518,
+      "git_blob_sha1": "fe865dbc277346fb70420fb653793fda9a38cbdb",
+      "path": "D:\\PACT_EXPERIMENTS\\results\\pact_gate9_large_scale_unseen_20261005\\sources\\i99t\\b14\\b14_opt.blif",
+      "sha256": "2ce6a59f46591fb1a52d7321e67e67e6dffbe6fb61257d67bbdda7ff33a9af5c",
+      "url": "https://raw.githubusercontent.com/cad-polito-it/I99T/8a2c3b500ee7ff20e7031de92592b737bedc6d8c/i99t/b14/b14_opt.blif"
+    }
+  },
+  "adapter_source": {
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_source.py",
+    "sha256": "404f9802d031b0415e83c51964c03df866decaa4772b5185d97d13d2900ab10a",
+    "bytes": 11084
+  },
+  "runner_source": {
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_source_probe.py",
+    "sha256": "d81ae8537a4bec77a445de0c52d460ddaeddfdd843d0553d1dae115b36e578e3",
+    "bytes": 13073
+  },
+  "Yosys": {
+    "bytes": 8174408,
+    "path": "/usr/bin/yosys",
+    "sha256": "88c0a12bb814a1a8716b1ae10b482e35d3005ed558e1f5f626b3dc983ea3abd0"
+  },
+  "Liberty": {
+    "bytes": 6692032,
+    "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+    "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1"
+  },
+  "capacity": {
+    "volumes": {
+      "C": {
+        "free_bytes": 20854349824,
+        "minimum_free_bytes": 6442450944,
+        "deficit_bytes": 0,
+        "status": "PASS"
+      },
+      "D": {
+        "free_bytes": 41613512704,
+        "minimum_free_bytes": 26843545600,
+        "deficit_bytes": 0,
+        "status": "PASS"
+      }
+    },
+    "status": "PASS",
+    "per_design_margin": "Pending admitted artifact dimensions; fixed floor is a minimum, not a sufficient per-design budget"
+  },
+  "reference_qualified": false,
+  "PACT_search_started": false,
+  "infrastructure_attempt": "blif_output_aliases",
+  "prior_probe": {
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/source_admission/b14_opt.json",
+    "sha256": "ff1f16709b23104d80de2dece7ce88a9e7395b0fba7f621133cb9add8bea728a",
+    "bytes": 3941
+  },
+  "stages": {
+    "BENCH_BLIF_equivalence": {
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b14_opt/blif_output_aliases/next_state_equivalence/execution.json",
+      "sha256": "ca0c68149438e9e1a72f3ebadc0fe88023bacf51a60fe2cac5e7ea35df6de2ba",
+      "bytes": 1632
+    },
+    "mapping": {
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b14_opt/blif_output_aliases/mapping/execution.json",
+      "sha256": "e3fd44047ce2a3558f35443dca80ecc51d2f01b57e7b1e4733f883f85451b357",
+      "bytes": 1584
+    }
+  },
+  "qualification": {
+    "BENCH_BLIF_next_state_equivalence": "PASS_ALL_PPI_AND_FUNCTIONAL_INPUT_STATES"
+  },
+  "adapter": {
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b14_opt/blif_output_aliases/adapter.json",
+    "sha256": "c9d4bbfda36abaa2e303c1dc23b8cf1f43d28fb2e951a45f2ec498962ad82952",
+    "bytes": 31996
+  },
+  "topology": {
+    "FF_count": 245,
+    "cell_types": [
+      "AND2_X1",
+      "AND3_X1",
+      "AND4_X1",
+      "AOI211_X1",
+      "AOI21_X1",
+      "AOI221_X1",
+      "AOI222_X1",
+      "AOI22_X1",
+      "INV_X1",
+      "MUX2_X1",
+      "NAND2_X1",
+      "NAND3_X1",
+      "NAND4_X1",
+      "NOR2_X1",
+      "NOR3_X1",
+      "NOR4_X1",
+      "OAI211_X1",
+      "OAI21_X1",
+      "OAI221_X1",
+      "OAI222_X1",
+      "OAI22_X1",
+      "OAI33_X1",
+      "OR2_X1",
+      "OR3_X1",
+      "OR4_X1",
+      "SDFF_X1",
+      "XNOR2_X1",
+      "XOR2_X1"
+    ],
+    "scan_eligible": true,
+    "source_chain_count": 1,
+    "intended_chain_count": 2,
+    "source_endpoints": [
+      "test_si",
+      "test_so"
+    ],
+    "clock": "CK positive edge; single domain",
+    "unsupported_cells": [],
+    "macros": []
+  },
+  "error": "Source probe failed: /mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b14_opt/blif_output_aliases/mapped_equivalence/execution.json",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_source_probe.py\", line 197, in probe\n    record['stages']['mapped_equivalence'] = execute_yosys(\n                                             ^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_source_probe.py\", line 64, in execute_yosys\n    raise RuntimeError('Source probe failed: ' + str(folder / 'execution.json'))\nRuntimeError: Source probe failed: /mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b14_opt/blif_output_aliases/mapped_equivalence/execution.json\n",
+  "completed_utc": "2026-10-05T14:48:37.054557+00:00"
+}

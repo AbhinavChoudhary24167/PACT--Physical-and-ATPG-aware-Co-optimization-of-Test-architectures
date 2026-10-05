@@ -1,0 +1,66 @@
+{
+  "schema": "pact_gate09_build_relocation_v1",
+  "created_utc": "2026-10-05T14:17:33.152034+00:00",
+  "source": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/recovery_20261003/build-storage.ext4",
+  "destination": "/mnt/f/PACT_HOST_CACHE/20261005/gate09-build-preserved/build-storage.ext4",
+  "before": {
+    "C": {
+      "total": 199569510400,
+      "used": 178434863104,
+      "free": 21134647296
+    },
+    "D": {
+      "total": 125828067328,
+      "used": 101394423808,
+      "free": 24433643520
+    },
+    "F": {
+      "total": 362531516416,
+      "used": 264104706048,
+      "free": 98426810368
+    }
+  },
+  "classification": "TEMPORARY_BUILD_IMAGE_PRESERVED_BYTE_FOR_BYTE",
+  "loop_devices_before": {
+    "loopdevices": []
+  },
+  "state": "RELOCATION_COMPLETE",
+  "scientific_evidence_deleted": false,
+  "scientific_method_changes": 0,
+  "updated_utc": "2026-10-05T14:40:55.897017+00:00",
+  "alias_probe": {
+    "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/recovery_20261003/.gate09-alias-probe",
+    "target": "/mnt/f/PACT_HOST_CACHE/20261005/gate09-build-preserved/build-storage.ext4",
+    "action": "CREATE_THEN_REMOVE_DISPOSABLE_LINK"
+  },
+  "source_bytes": 17179869184,
+  "source_sha256": "9195b147db69a4c60c0dd1ecc7542517d727d345dc167f02deabb935f9af4e2d",
+  "destination_bytes": 17179869184,
+  "destination_sha256": "9195b147db69a4c60c0dd1ecc7542517d727d345dc167f02deabb935f9af4e2d",
+  "duplicate_removal": {
+    "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/recovery_20261003/build-storage.ext4.gate09-verified-original",
+    "bytes": 17179869184,
+    "reason": "Verified redundant image after relocation; all contents retained at destination"
+  },
+  "after": {
+    "C": {
+      "total": 199569510400,
+      "used": 178641096704,
+      "free": 20928413696
+    },
+    "D": {
+      "total": 125828067328,
+      "used": 84214554624,
+      "free": 41613512704
+    },
+    "F": {
+      "total": 362531516416,
+      "used": 281284575232,
+      "free": 81246941184
+    }
+  },
+  "alias_target": "/mnt/f/PACT_HOST_CACHE/20261005/gate09-build-preserved/build-storage.ext4",
+  "D_recovered_bytes": 17179869184,
+  "D_capacity_floor_bytes": 26843545600,
+  "capacity_pass": true
+}

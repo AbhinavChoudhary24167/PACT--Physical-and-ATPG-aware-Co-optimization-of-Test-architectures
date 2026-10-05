@@ -214,11 +214,87 @@ def probe(design, audit_path, attempt=None):
     return record
 
 
+def complete_mapped_proof(design, prior_path):
+    """Reuse successful source proof/mapping; repair only library-model loading."""
+    prior = admission.read(prior_path)
+    if prior['design'] != design or prior['status'] != 'PACT_GATE09_SOURCE_ADMISSION_BLOCKED':
+        raise ValueError('Preserved failed mapped-proof receipt required')
+    if prior['qualification'].get('BENCH_BLIF_next_state_equivalence') != 'PASS_ALL_PPI_AND_FUNCTIONAL_INPUT_STATES':
+        raise ValueError('Successful source equivalence required')
+    for key in ('protocol', 'preflight', 'adapter', 'adapter_source', 'Yosys', 'Liberty'):
+        if admission.verify(prior[key])['status'] != 'PASS':
+            raise ValueError('Preserved mapped-proof input changed: ' + key)
+    for value in prior['source_files'].values():
+        if admission.verify(value)['status'] != 'PASS':
+            raise ValueError('Source input changed')
+    protocol = admission.read(admission.INTAKE)
+    for value in protocol['frozen_sources'].values():
+        if admission.verify(value)['status'] != 'PASS':
+            raise ValueError('Frozen PACT source changed')
+    for name in ('BENCH_BLIF_equivalence', 'mapping'):
+        if admission.verify(prior['stages'][name])['status'] != 'PASS':
+            raise ValueError('Successful stage receipt changed')
+        stage = admission.read(prior['stages'][name]['path'])
+        if stage['exit_code'] != 0 or stage['timed_out']:
+            raise ValueError('Successful stage required')
+        for key in ('stdout', 'stderr', 'script'):
+            if admission.verify(stage[key])['status'] != 'PASS':
+                raise ValueError('Successful stage evidence changed')
+    folder = Path(prior['adapter']['path']).parent
+    failed = admission.read(folder / 'mapped_equivalence/execution.json')
+    if failed['exit_code'] != 1 or failed['timed_out'] or admission.verify(failed['stderr'])['status'] != 'PASS':
+        raise ValueError('Library frontend diagnostic required')
+    if Path(failed['stderr']['path']).read_text().strip() != 'ERROR: Missing function on output IQ of cell CLKGATETST_X1.':
+        raise ValueError('This repair applies only to the unused library-model frontend error')
+    mapped = admission.read(folder / 'mapped.json')
+    if 'CLKGATETST_X1' in {row['type'] for row in mapped['modules'][design]['cells'].values()}:
+        raise ValueError('Cannot ignore a cell used by the design')
+    record = dict(prior, prior_probe=admission.binding(prior_path),
+                  infrastructure_attempt='unused_library_models',
+                  runner_source=admission.binding(Path(__file__)),
+                  created_utc=datetime.now(timezone.utc).isoformat(),
+                  repair='Yosys documented -ignore_miss_func skips unused cells; hierarchy -check requires every used cell; original library/binary/mapping unchanged',
+                  reused_successful_stages=['BENCH_BLIF_equivalence', 'mapping'],
+                  source_equivalence_reexecutions=0, mapping_reexecutions=0,
+                  mapped_netlist=admission.binding(folder / 'mapped.v'), mapped_json=admission.binding(folder / 'mapped.json'),
+                  proof_inputs={name: admission.binding(folder / name) for name in ('bench_comb.v', 'mapped_comb.v')})
+    record.pop('error', None)
+    record.pop('traceback', None)
+    record['stages'] = dict(prior['stages'])
+    record['qualification'] = dict(prior['qualification'])
+    try:
+        record['stages']['mapped_equivalence'] = execute_yosys(
+            f'read_liberty -ignore_miss_func {LIB}\nread_verilog {folder}/bench_comb.v\nrename gate gold\nread_verilog {folder}/mapped_comb.v\n'
+            'miter -equiv -flatten -make_outputs gold gate miter\nhierarchy -check -top miter\nflatten\nopt_clean\n'
+            'sat -verify -prove trigger 0\n', folder / 'mapped_equivalence_library_models', protocol)
+        record['status'] = 'SOURCE_MAPPED_EQUIVALENCE_QUALIFIED_PENDING_PHYSICAL_ATPG_REFERENCE'
+        record['qualification'].update(mapped_next_state='PASS_ALL_PPI_AND_FUNCTIONAL_INPUT_STATES',
+                                        FF_inventory='PASS', source_scan_topology='PASS',
+                                        placement='NOT_RUN', ATPG='NOT_RUN', reference='NOT_ADMITTED')
+    except Exception as error:
+        record.update(status='PACT_GATE09_SOURCE_ADMISSION_BLOCKED', error=str(error), traceback=traceback.format_exc())
+    record['completed_utc'] = datetime.now(timezone.utc).isoformat()
+    receipt = META / 'source_admission' / (design + '__mapped_library_models.json')
+    with receipt.open('x') as stream:
+        json.dump(record, stream, indent=2)
+        stream.write('\n')
+    print(json.dumps(dict(status=record['status'], design=design, error=record.get('error'), receipt=str(receipt)), indent=2), flush=True)
+    return record
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--design', required=True)
-    parser.add_argument('--audit', type=Path, required=True)
+    parser.add_argument('--audit', type=Path)
     parser.add_argument('--attempt', choices=('blif_output_aliases',))
+    parser.add_argument('--complete-mapped-proof-from', type=Path)
     args = parser.parse_args()
-    result = probe(args.design, args.audit, args.attempt)
+    if args.complete_mapped_proof_from:
+        if args.audit or args.attempt:
+            parser.error('Mapped proof repair takes only its preserved prior receipt')
+        result = complete_mapped_proof(args.design, args.complete_mapped_proof_from)
+    else:
+        if not args.audit:
+            parser.error('--audit required for a source probe')
+        result = probe(args.design, args.audit, args.attempt)
     raise SystemExit(0 if result['status'].startswith('SOURCE_MAPPED') else 2)
