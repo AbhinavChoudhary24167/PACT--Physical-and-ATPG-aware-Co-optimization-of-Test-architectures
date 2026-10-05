@@ -95,7 +95,6 @@ def create(output, ledger_path=None):
     report = dict(schema='pact_gate09_campaign_report_v1', created_utc=datetime.now(timezone.utc).isoformat(),
         summary=summary, rows=rows, design_admission=ledger['records'], cohort=protocol['cohort'],
         ledger=admission.binding(ledger_path), definitions=definitions,
-        upstream_issue=admission.binding(references.BASE_META / 'publication/FAN_upstream_issue.json'),
         design_reports=[r['report'] for r in ledger['records'] if r['status']=='COMPETITIVE_COMPARISON_TERMINAL'],
         observed_base_families=families, independent_family_count=len(families),
         classification_rule='Four-objective relative1e-10 dominance; primary balanced candidate retained; held designs never scored as PACT losses',
@@ -169,10 +168,7 @@ def create(output, ledger_path=None):
         '36,236 full weighted stuck-at targets and 35,688 detected (98.49%). '
         'Coverage is for the frozen mapped-source collapsed-fault universe; post-route inserted buffers do not create new target classes. '
         'Serial recovery and source FAN simulation preserve identities, weights and status. '
-        'The initial upstream connector attempt returned GitHub 403 “Resource not accessible by integration”; its drafts and evidence remain saved. '
-        'A browser submission subsequently published the construction defects as '
-        '[FAN_ATPG issue #5](https://github.com/NTU-LaDS-II/FAN_ATPG/issues/5). '
-        'The submitted body and visible proof are bound by publication/FAN_upstream_issue.json.', '',
+        'Upstream issue creation returned GitHub 403 “Resource not accessible by integration”; drafts and qualified local patches remain saved.', '',
         '## I. Exact activity', '',
         'E is capacitance-weighted settled data-net transitions, not joules. H4/H8 are the per-cycle maximum '
         'source-localized capacitance-weighted bins on 4×4/8×8 grids. OpenRCX ground plus Liberty sink pin capacitance is used; coupling is excluded from the primary proxy. '

@@ -263,10 +263,8 @@ def render(report, path, protocol, meta):
         'Their load-PPI mismatch is a proxy and does not optimize routed exact E directly. '
         'B3T is explicitly OPENROAD_QUALIFIED_PATCHED. All methods use the same qualified FAN generic circuit/reporter repair; '
         'the earlier b14 446-pattern workload was invalidated and preserved; each design uses its corrected common workload. '
-        'Minimal probes, source patches, branch SHAs and failed attempts are retained. The initial connector attempt returned '
-        'GitHub 403 “Resource not accessible by integration”; its evidence remains saved. The construction defects were subsequently '
-        'published and visibly verified as [FAN_ATPG issue #5](https://github.com/NTU-LaDS-II/FAN_ATPG/issues/5), '
-        'with the body and submission proof in publication/FAN_upstream_issue.json.', '',
+        'Minimal probes, source patches, branch SHAs and failed attempts are retained. Upstream issue creation was attempted; '
+        'GitHub returned 403 “Resource not accessible by integration,” so issue drafts remain saved.', '',
         '## E. Fairness', '', json.dumps(report['fairness'], indent=2), '',
         'Common mapped source, FF coordinates, positive-edge CK, SI/SO port policy, K=2, scan enable, '
         'FAN collapsed stuck-at workload, compression/X-fill policy, seed 11, two-thread OpenROAD routing, '

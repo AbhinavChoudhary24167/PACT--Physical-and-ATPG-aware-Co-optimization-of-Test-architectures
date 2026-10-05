@@ -31,6 +31,8 @@ Existing outcome paths are immutable. The initial b15 registration failure occur
 
 The subsequent b15 input-directory collision also occurred before search. The current explicit continuation ledger is `cohort_execution_input_namespaced.json`; its predecessor ledgers remain preserved. The complete production audit is `dependency_probes/input_namespace_production_qualification_v2.json`, which adds the artifact binding list omitted by the preserved first audit record.
 
+The FAN construction defects were published as [upstream issue #5](https://github.com/NTU-LaDS-II/FAN_ATPG/issues/5) after the original connector returned 403. The [submission receipt](../results/pact_gate09_open_source_20261005/publication/FAN_upstream_issue.json) binds the public body and visible screenshot. The original failed attempt and previously qualified reports remain unchanged.
+
 Raw route, extraction, simulation and complete trace evidence stays on the experiment drives. Compact receipts, architectures, selection records, reports and execution-source snapshots are versioned. The storage receipts record verified cache copies, rehashes, duplicate removal and retained original-path aliases.
 
 Scientific execution uses the recorded Linux environment with `PYTHONPATH=.optimizer-deps:src:scripts`. Publication integration is performed after scientific completion; its record distinguishes the sealed execution versions from later repository compatibility changes. Reproduction uses the recorded execution commit and input/tool hashes.
