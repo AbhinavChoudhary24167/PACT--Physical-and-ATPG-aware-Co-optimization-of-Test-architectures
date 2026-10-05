@@ -1,0 +1,72 @@
+{
+  "CPU_seconds": 1149.228004,
+  "candidate": "CS_C2",
+  "complete": true,
+  "configured_timeout_seconds": 7200,
+  "design": "s38417",
+  "measurement": {
+    "bytes": 6418,
+    "path": "repo://results/pact_large_unseen_gate9_20261005/activity/continuation/s38417/CS_C2/normal/result.json",
+    "sha256": "54f2734c854b48a46daf1f95e8afe392e9b910b8c29bcde8bee94e2943c69012"
+  },
+  "peak_RSS_KiB": 2543852,
+  "preparation_stages": {
+    "export": {
+      "CPU_seconds": 11.703913,
+      "CPU_system_seconds": 1.052495,
+      "CPU_user_seconds": 10.651418,
+      "command": [
+        "/usr/bin/openroad",
+        "-python",
+        "-no_init",
+        "-exit",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_export.py",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_large_unseen_gate9_20261005/activity_inputs/s38417/CS_C2/s38417/CS_C2"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "log": {
+        "bytes": 342,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_large_unseen_gate9_20261005/activity_inputs/s38417/CS_C2/s38417/CS_C2/export.log",
+        "sha256": "7893f6ac6c52c3a37bdb37ecd8e8d0e456e91179ecbf23977460ef1a69936f10"
+      },
+      "major_page_faults": 0,
+      "peak_RSS_KiB": 290280,
+      "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+      "returncode": 0,
+      "timed_out": false,
+      "timestamp_utc": "2026-10-05T12:23:45.965917+00:00",
+      "wall_seconds": 16.19766645400159
+    },
+    "extract": {
+      "CPU_seconds": 5.393712000000001,
+      "CPU_system_seconds": 0.9245209999999999,
+      "CPU_user_seconds": 4.469191,
+      "command": [
+        "/usr/bin/openroad",
+        "-no_init",
+        "-exit",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_large_unseen_gate9_20261005/activity_inputs/s38417/CS_C2/s38417/CS_C2/extract.tcl"
+      ],
+      "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+      "log": {
+        "bytes": 975,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_large_unseen_gate9_20261005/activity_inputs/s38417/CS_C2/s38417/CS_C2/extract.log",
+        "sha256": "002acd3972d646b00549bf739ea2d45b53efa946a2633fda1edf6aae32e9c14c"
+      },
+      "major_page_faults": 0,
+      "peak_RSS_KiB": 290280,
+      "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+      "returncode": 0,
+      "timed_out": false,
+      "timestamp_utc": "2026-10-05T12:23:56.469356+00:00",
+      "wall_seconds": 10.446308172999125
+    }
+  },
+  "resource_scope": "Preparation child CPU plus compact workflow; small preparation launcher CPU excluded",
+  "simulator_seconds": 1042.6087793670013,
+  "status": "QUALIFIED",
+  "termination_reason": "complete_functional_replay_and_exact_count_analysis",
+  "timeout_regime": "normal",
+  "trace_bytes": 373722025,
+  "wall_seconds": 1249.512609679001
+}

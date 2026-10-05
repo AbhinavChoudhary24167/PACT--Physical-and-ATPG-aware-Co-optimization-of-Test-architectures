@@ -1,0 +1,67 @@
+{
+  "CPU_seconds": 4122.930443,
+  "PID": 2884,
+  "command": [
+    "/root/pact-deps/pact-venv/bin/python",
+    "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_large_unseen.py",
+    "activity",
+    "--design",
+    "s38584",
+    "--worker"
+  ],
+  "completion_reason": "complete",
+  "configuration_hash": "f50524da9313a117db84491cfcc2ffad211066bbc096818e0cccf9cecdb1b229",
+  "end_utc": "2026-10-05T11:21:42.079008+00:00",
+  "exit_code": 0,
+  "input_hashes": {
+    "architecture_hash": "0a1d92a059887ded69b21674089374171237efcd72c1034949bfc6b0a3076852",
+    "exact_activity": {
+      "bytes": 3261,
+      "path": "repo://results/pact_cpu_scalability_20261005/spef_patch/reanalysis/result.json",
+      "sha256": "8704affd05773261a1932196cd662e0dc292506e65840284ab59fc92e0badf10"
+    },
+    "input": {
+      "bytes": 5619,
+      "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s38584/cold_start_input.json",
+      "sha256": "330c65d9e6b5c349665aa46fc3cc7d350e932f09680a6b1b8881ce46ec221c92"
+    },
+    "method": "B3T"
+  },
+  "kernel_evidence": null,
+  "log": {
+    "bytes": 1009,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_large_unseen_gate9_20261005/workers/s38584/activity.log",
+    "sha256": "ff33a5dc292b8094a713808171adfb3c3cee07d2264d59a8ed14f249738b4d31"
+  },
+  "peak_RSS_KiB": 3435776,
+  "resources": {
+    "Linux_boot_id": "3de58179-15cb-405e-90f5-2222bcd0257c",
+    "PID": 2883,
+    "disks": {
+      "C": {
+        "free": 8380370944,
+        "total": 199569510400
+      },
+      "D": {
+        "free": 24378327040,
+        "total": 125828067328
+      },
+      "F": {
+        "free": 98359701504,
+        "total": 362531516416
+      }
+    },
+    "host_memory": {
+      "MemAvailable": "3529044 kB",
+      "MemTotal": "4010612 kB",
+      "SwapFree": "8319396 kB",
+      "SwapTotal": "8388608 kB"
+    },
+    "observed_utc": "2026-10-05T11:21:42.079978+00:00"
+  },
+  "start_utc": "2026-10-05T09:59:54.084553+00:00",
+  "state": "COMPLETED",
+  "supervisor_PID": 2883,
+  "timed_out": false,
+  "wall_seconds": 4787.352097479001
+}

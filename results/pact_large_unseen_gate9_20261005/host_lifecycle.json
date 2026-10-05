@@ -1,0 +1,843 @@
+{
+  "PID": 9664,
+  "completion_reason": "Both registered designs finished search and candidate qualification flow",
+  "configuration_hash": "f50524da9313a117db84491cfcc2ffad211066bbc096818e0cccf9cecdb1b229",
+  "current": {
+    "Linux_before": {
+      "boot_id": "3de58179-15cb-405e-90f5-2222bcd0257c",
+      "exit_code": 0,
+      "recent_kernel_events": [
+        "[Mon Oct  5 06:54:22 2026] pci 6f1b:00:00.0: BAR 4 [mem 0xc00000000-0xdffffffff 64bit]: assigned",
+        "[Mon Oct  5 06:54:22 2026] pci 6f1b:00:00.0: BAR 0 [mem 0xe00000000-0xe00000fff 64bit]: assigned",
+        "[Mon Oct  5 06:54:22 2026] pci 6f1b:00:00.0: BAR 2 [mem 0xe00001000-0xe00001fff 64bit]: assigned",
+        "[Mon Oct  5 06:54:22 2026] virtio-pci 6f1b:00:00.0: enabling device (0000 -> 0002)",
+        "[Mon Oct  5 06:54:22 2026] virtiofs virtio1: discovered new tag: wslg",
+        "[Mon Oct  5 06:54:22 2026] virtiofs virtio1: Cache len: 0x200000000 @ 0xc00000000",
+        "[Mon Oct  5 06:54:22 2026] scsi 0:0:0:3: Direct-Access     Msft     Virtual Disk     1.0  PQ: 0 ANSI: 5",
+        "[Mon Oct  5 06:54:22 2026] sd 0:0:0:3: Attached scsi generic sg3 type 0",
+        "[Mon Oct  5 06:54:22 2026] sd 0:0:0:3: [sdd] 2147483648 512-byte logical blocks: (1.10 TB/1.00 TiB)",
+        "[Mon Oct  5 06:54:22 2026] sd 0:0:0:3: [sdd] 4096-byte physical blocks",
+        "[Mon Oct  5 06:54:22 2026] sd 0:0:0:3: [sdd] Write Protect is off",
+        "[Mon Oct  5 06:54:22 2026] sd 0:0:0:3: [sdd] Mode Sense: 0f 00 00 00",
+        "[Mon Oct  5 06:54:22 2026] sd 0:0:0:3: [sdd] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA",
+        "[Mon Oct  5 06:54:22 2026] sd 0:0:0:3: [sdd] Attached SCSI disk",
+        "[Mon Oct  5 06:54:22 2026] EXT4-fs (sdd): mounted filesystem 62b1bde0-7faf-421a-8b22-d485b13d147e r/w with ordered data mode. Quota mode: none.",
+        "[Mon Oct  5 06:54:23 2026] WSL (2 - init-systemd(Ubuntu-24.04)) WARNING: /usr/share/zoneinfo/Asia/Calcutta not found. Is the tzdata package installed?",
+        "[Mon Oct  5 06:54:24 2026] misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22",
+        "[Mon Oct  5 06:54:24 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:54:24 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:54:24 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:54:24 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2",
+        "[Mon Oct  5 06:54:24 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:54:24 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:54:24 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:54:24 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2",
+        "[Mon Oct  5 06:54:24 2026] Failed to connect to bus: No such file or directory",
+        "[Mon Oct  5 06:54:24 2026] systemd-journald[46]: Collecting audit messages is disabled.",
+        "[Mon Oct  5 06:54:24 2026] systemd-journald[46]: Received client request to flush runtime journal.",
+        "[Mon Oct  5 06:54:24 2026] systemd-journald[46]: File /var/log/journal/e80df3d020894a7fbb5f76ec710abd0b/system.journal corrupted or uncleanly shut down, renaming and replacing.",
+        "[Mon Oct  5 06:54:24 2026] ACPI: AC: AC Adapter [AC1] (on-line)",
+        "[Mon Oct  5 06:54:24 2026] ACPI: battery: Slot [BAT1] (battery present)",
+        "[Mon Oct  5 06:54:24 2026] kvm_amd: TSC scaling supported",
+        "[Mon Oct  5 06:54:24 2026] kvm_amd: Nested Virtualization enabled",
+        "[Mon Oct  5 06:54:24 2026] kvm_amd: Nested Paging enabled",
+        "[Mon Oct  5 06:54:24 2026] kvm_amd: kvm_amd: Hyper-V enlightened NPT TLB flush enabled",
+        "[Mon Oct  5 06:54:24 2026] kvm_amd: kvm_amd: Hyper-V Direct TLB Flush enabled",
+        "[Mon Oct  5 06:54:24 2026] kvm_amd: Virtual VMLOAD VMSAVE supported",
+        "[Mon Oct  5 06:54:26 2026] Initializing XFRM netlink socket",
+        "[Mon Oct  5 06:54:27 2026] WSL (109) ERROR: CheckConnection: getaddrinfo() failed: -5",
+        "[Mon Oct  5 06:55:00 2026] Exception: ",
+        "[Mon Oct  5 06:55:00 2026] Operation canceled @p9io.cpp:258 (AcceptAsync)",
+        "",
+        "[Mon Oct  5 06:55:00 2026] systemd-journald[46]: Received SIGTERM from PID 1 (systemd-shutdow).",
+        "[Mon Oct  5 06:55:01 2026] EXT4-fs (sdd): unmounting filesystem 62b1bde0-7faf-421a-8b22-d485b13d147e.",
+        "[Mon Oct  5 06:55:09 2026] hv_balloon: Max. dynamic memory size: 4096 MB",
+        "[Mon Oct  5 06:55:17 2026] EXT4-fs (sdd): mounted filesystem 62b1bde0-7faf-421a-8b22-d485b13d147e r/w with ordered data mode. Quota mode: none.",
+        "[Mon Oct  5 06:55:17 2026] misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22",
+        "[Mon Oct  5 06:55:17 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:55:17 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:55:17 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:55:17 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2",
+        "[Mon Oct  5 06:55:17 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:55:17 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:55:17 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:55:17 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2",
+        "[Mon Oct  5 06:55:17 2026] WSL (2 - init-systemd(Ubuntu-24.04)) WARNING: /usr/share/zoneinfo/Asia/Calcutta not found. Is the tzdata package installed?",
+        "[Mon Oct  5 06:55:18 2026] Failed to connect to bus: No such file or directory",
+        "[Mon Oct  5 06:55:18 2026] systemd-journald[46]: Collecting audit messages is disabled.",
+        "[Mon Oct  5 06:55:18 2026] systemd-journald[46]: Received client request to flush runtime journal.",
+        "[Mon Oct  5 06:55:18 2026] systemd-journald[46]: File /var/log/journal/e80df3d020894a7fbb5f76ec710abd0b/system.journal corrupted or uncleanly shut down, renaming and replacing.",
+        "[Mon Oct  5 06:55:48 2026] Exception: ",
+        "[Mon Oct  5 06:55:48 2026] Operation canceled @p9io.cpp:258 (AcceptAsync)",
+        "",
+        "[Mon Oct  5 06:55:49 2026] systemd-journald[46]: Received SIGTERM from PID 1 (systemd-shutdow).",
+        "[Mon Oct  5 06:55:49 2026] EXT4-fs (sdd): unmounting filesystem 62b1bde0-7faf-421a-8b22-d485b13d147e.",
+        "[Mon Oct  5 06:55:53 2026] EXT4-fs (sdd): mounted filesystem 62b1bde0-7faf-421a-8b22-d485b13d147e r/w with ordered data mode. Quota mode: none.",
+        "[Mon Oct  5 06:55:54 2026] misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22",
+        "[Mon Oct  5 06:55:54 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:55:54 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:55:54 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:55:54 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2",
+        "[Mon Oct  5 06:55:54 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:55:54 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:55:54 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22",
+        "[Mon Oct  5 06:55:54 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2",
+        "[Mon Oct  5 06:55:54 2026] WSL (2 - init-systemd(Ubuntu-24.04)) WARNING: /usr/share/zoneinfo/Asia/Calcutta not found. Is the tzdata package installed?",
+        "[Mon Oct  5 06:55:54 2026] Failed to connect to bus: No such file or directory",
+        "[Mon Oct  5 06:55:54 2026] systemd-journald[46]: Collecting audit messages is disabled.",
+        "[Mon Oct  5 06:55:55 2026] systemd-journald[46]: Received client request to flush runtime journal.",
+        "[Mon Oct  5 06:55:55 2026] systemd-journald[46]: File /var/log/journal/e80df3d020894a7fbb5f76ec710abd0b/system.journal corrupted or uncleanly shut down, renaming and replacing."
+      ],
+      "stderr": ""
+    },
+    "Windows_WSL_PID": 16640,
+    "action": "aggregate",
+    "command": [
+      "wsl",
+      "-d",
+      "Ubuntu-24.04",
+      "--",
+      "env",
+      "PYTHONPATH=/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/.optimizer-deps:/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src:/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "OMP_NUM_THREADS=1",
+      "OPENBLAS_NUM_THREADS=1",
+      "NUMBA_NUM_THREADS=1",
+      "/root/pact-deps/pact-venv/bin/python",
+      "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_large_unseen.py",
+      "aggregate",
+      "--design",
+      "s38417"
+    ],
+    "design": "s38417",
+    "start_utc": "2026-10-05T13:05:14.571313+00:00"
+  },
+  "elapsed_stage_seconds": 0.021792399988044053,
+  "end_utc": "2026-10-05T13:05:27.635469+00:00",
+  "exit_code": 0,
+  "host_controller_sha256": "0552ba21d75ea9b5ea764df723332e5a1ef6b5d44d76bd347c98611a244f1545",
+  "input_hashes": {
+    "s38417": {
+      "architecture_hash": "7976c63f510aee3caa8a6b280fad5f65a91669947347f79d7861eb3b56b6f0f0",
+      "exact_activity": {
+        "bytes": 6043,
+        "path": "repo://results/pact_cpu_scalability_20261005/activity/continuation/s38417/REF_B2/normal/result.json",
+        "sha256": "8c3f4f53fbc036a17b68dba2f1e2cd3831355f6eefea6d5cfaddb6763e42f5f3"
+      },
+      "input": {
+        "bytes": 5628,
+        "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s38417/cold_start_input.json",
+        "sha256": "1594c5c39e77ebfd3c7c2854ea777d13e90a050587cfca2c3d9a0a3be6856d88"
+      },
+      "method": "B2"
+    },
+    "s38584": {
+      "architecture_hash": "0a1d92a059887ded69b21674089374171237efcd72c1034949bfc6b0a3076852",
+      "exact_activity": {
+        "bytes": 3261,
+        "path": "repo://results/pact_cpu_scalability_20261005/spef_patch/reanalysis/result.json",
+        "sha256": "8704affd05773261a1932196cd662e0dc292506e65840284ab59fc92e0badf10"
+      },
+      "input": {
+        "bytes": 5619,
+        "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s38584/cold_start_input.json",
+        "sha256": "330c65d9e6b5c349665aa46fc3cc7d350e932f09680a6b1b8881ce46ec221c92"
+      },
+      "method": "B3T"
+    }
+  },
+  "last_observation_utc": "2026-10-05T13:05:14.594089+00:00",
+  "plan": [
+    [
+      "s38584",
+      "search"
+    ],
+    [
+      "s38417",
+      "search"
+    ],
+    [
+      "s38584",
+      "physical"
+    ],
+    [
+      "s38584",
+      "activity"
+    ],
+    [
+      "s38584",
+      "aggregate"
+    ],
+    [
+      "s38417",
+      "physical"
+    ],
+    [
+      "s38417",
+      "activity"
+    ],
+    [
+      "s38417",
+      "aggregate"
+    ]
+  ],
+  "resources": {
+    "PID": 9664,
+    "Windows_uptime_ms": 205985312,
+    "disks": {
+      "C": {
+        "free": 19628867584,
+        "total": 199569510400
+      },
+      "D": {
+        "free": 23260508160,
+        "total": 125828067328
+      },
+      "F": {
+        "free": 98359701504,
+        "total": 362531516416
+      }
+    },
+    "host_memory": {
+      "available_bytes": 1238675456,
+      "total_bytes": 16366567424
+    },
+    "observed_utc": "2026-10-05T13:05:27.635469+00:00"
+  },
+  "stages": [
+    {
+      "Linux_after_failure": null,
+      "Linux_receipt": {
+        "CPU_seconds": 4445.500972,
+        "PID": 602,
+        "command": [
+          "/root/pact-deps/pact-venv/bin/python",
+          "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_large_unseen.py",
+          "search",
+          "--design",
+          "s38584",
+          "--worker"
+        ],
+        "completion_reason": "complete",
+        "configuration_hash": "f50524da9313a117db84491cfcc2ffad211066bbc096818e0cccf9cecdb1b229",
+        "end_utc": "2026-10-05T08:02:13.739352+00:00",
+        "exit_code": 0,
+        "input_hashes": {
+          "architecture_hash": "0a1d92a059887ded69b21674089374171237efcd72c1034949bfc6b0a3076852",
+          "exact_activity": {
+            "bytes": 3261,
+            "path": "repo://results/pact_cpu_scalability_20261005/spef_patch/reanalysis/result.json",
+            "sha256": "8704affd05773261a1932196cd662e0dc292506e65840284ab59fc92e0badf10"
+          },
+          "input": {
+            "bytes": 5619,
+            "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s38584/cold_start_input.json",
+            "sha256": "330c65d9e6b5c349665aa46fc3cc7d350e932f09680a6b1b8881ce46ec221c92"
+          },
+          "method": "B3T"
+        },
+        "kernel_evidence": null,
+        "log": {
+          "bytes": 2451,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_large_unseen_gate9_20261005/workers/s38584/search.log",
+          "sha256": "73d560f03e3bb0659367ffe205d565f6d5c3f25d13e50e04560c1f25a67bec8a"
+        },
+        "peak_RSS_KiB": 2518736,
+        "resources": {
+          "Linux_boot_id": "3de58179-15cb-405e-90f5-2222bcd0257c",
+          "PID": 601,
+          "disks": {
+            "C": {
+              "free": 10671140864,
+              "total": 199569510400
+            },
+            "D": {
+              "free": 27454128128,
+              "total": 125828067328
+            },
+            "F": {
+              "free": 98460364800,
+              "total": 362531516416
+            }
+          },
+          "host_memory": {
+            "MemAvailable": "3458908 kB",
+            "MemTotal": "4010612 kB",
+            "SwapFree": "8388276 kB",
+            "SwapTotal": "8388608 kB"
+          },
+          "observed_utc": "2026-10-05T08:02:13.740584+00:00"
+        },
+        "start_utc": "2026-10-05T06:47:22.533443+00:00",
+        "state": "COMPLETED",
+        "supervisor_PID": 601,
+        "timed_out": false,
+        "wall_seconds": 4398.994562823
+      },
+      "WSL_restart_observed": false,
+      "Windows_WSL_PID": 16004,
+      "action": "search",
+      "completion_reason": "explicit_complete_receipt",
+      "design": "s38584",
+      "end_utc": "2026-10-05T08:02:14.527378+00:00",
+      "exit_code": 0,
+      "start_utc": "2026-10-05T06:47:20.825166+00:00",
+      "wall_seconds": 4493.7024060999975
+    },
+    {
+      "Linux_after_failure": null,
+      "Linux_receipt": {
+        "CPU_seconds": 3938.694222,
+        "PID": 1312,
+        "command": [
+          "/root/pact-deps/pact-venv/bin/python",
+          "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_large_unseen.py",
+          "search",
+          "--design",
+          "s38417",
+          "--worker"
+        ],
+        "completion_reason": "complete",
+        "configuration_hash": "f50524da9313a117db84491cfcc2ffad211066bbc096818e0cccf9cecdb1b229",
+        "end_utc": "2026-10-05T09:08:36.267196+00:00",
+        "exit_code": 0,
+        "input_hashes": {
+          "architecture_hash": "7976c63f510aee3caa8a6b280fad5f65a91669947347f79d7861eb3b56b6f0f0",
+          "exact_activity": {
+            "bytes": 6043,
+            "path": "repo://results/pact_cpu_scalability_20261005/activity/continuation/s38417/REF_B2/normal/result.json",
+            "sha256": "8c3f4f53fbc036a17b68dba2f1e2cd3831355f6eefea6d5cfaddb6763e42f5f3"
+          },
+          "input": {
+            "bytes": 5628,
+            "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s38417/cold_start_input.json",
+            "sha256": "1594c5c39e77ebfd3c7c2854ea777d13e90a050587cfca2c3d9a0a3be6856d88"
+          },
+          "method": "B2"
+        },
+        "kernel_evidence": null,
+        "log": {
+          "bytes": 2721,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_large_unseen_gate9_20261005/workers/s38417/search.log",
+          "sha256": "3e1cdfe80d274476e19ed3b0e23ff8cb1cd9318331885aa046538ab64d754316"
+        },
+        "peak_RSS_KiB": 2271204,
+        "resources": {
+          "Linux_boot_id": "3de58179-15cb-405e-90f5-2222bcd0257c",
+          "PID": 1311,
+          "disks": {
+            "C": {
+              "free": 9858248704,
+              "total": 199569510400
+            },
+            "D": {
+              "free": 27454124032,
+              "total": 125828067328
+            },
+            "F": {
+              "free": 98460364800,
+              "total": 362531516416
+            }
+          },
+          "host_memory": {
+            "MemAvailable": "3449216 kB",
+            "MemTotal": "4010612 kB",
+            "SwapFree": "8388280 kB",
+            "SwapTotal": "8388608 kB"
+          },
+          "observed_utc": "2026-10-05T09:08:36.267371+00:00"
+        },
+        "start_utc": "2026-10-05T08:02:15.882872+00:00",
+        "state": "COMPLETED",
+        "supervisor_PID": 1311,
+        "timed_out": false,
+        "wall_seconds": 3887.3672781369996
+      },
+      "WSL_restart_observed": false,
+      "Windows_WSL_PID": 1932,
+      "action": "search",
+      "completion_reason": "explicit_complete_receipt",
+      "design": "s38417",
+      "end_utc": "2026-10-05T09:08:36.245383+00:00",
+      "exit_code": 0,
+      "start_utc": "2026-10-05T08:02:14.769783+00:00",
+      "wall_seconds": 3981.475678000017
+    },
+    {
+      "Linux_after_failure": null,
+      "Linux_receipt": {
+        "CPU_seconds": 5215.798122,
+        "PID": 1410,
+        "command": [
+          "/root/pact-deps/pact-venv/bin/python",
+          "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_large_unseen.py",
+          "physical",
+          "--design",
+          "s38584",
+          "--worker"
+        ],
+        "completion_reason": "complete",
+        "configuration_hash": "f50524da9313a117db84491cfcc2ffad211066bbc096818e0cccf9cecdb1b229",
+        "end_utc": "2026-10-05T09:59:52.097853+00:00",
+        "exit_code": 0,
+        "input_hashes": {
+          "architecture_hash": "0a1d92a059887ded69b21674089374171237efcd72c1034949bfc6b0a3076852",
+          "exact_activity": {
+            "bytes": 3261,
+            "path": "repo://results/pact_cpu_scalability_20261005/spef_patch/reanalysis/result.json",
+            "sha256": "8704affd05773261a1932196cd662e0dc292506e65840284ab59fc92e0badf10"
+          },
+          "input": {
+            "bytes": 5619,
+            "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s38584/cold_start_input.json",
+            "sha256": "330c65d9e6b5c349665aa46fc3cc7d350e932f09680a6b1b8881ce46ec221c92"
+          },
+          "method": "B3T"
+        },
+        "kernel_evidence": null,
+        "log": {
+          "bytes": 620,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_large_unseen_gate9_20261005/workers/s38584/physical.log",
+          "sha256": "c20a79c4870b24fd8710d92ad85869a979111a396d2778d6f5870fe49b2a045d"
+        },
+        "peak_RSS_KiB": 1329976,
+        "resources": {
+          "Linux_boot_id": "3de58179-15cb-405e-90f5-2222bcd0257c",
+          "PID": 1409,
+          "disks": {
+            "C": {
+              "free": 10107121664,
+              "total": 199569510400
+            },
+            "D": {
+              "free": 26895695872,
+              "total": 125828067328
+            },
+            "F": {
+              "free": 98460364800,
+              "total": 362531516416
+            }
+          },
+          "host_memory": {
+            "MemAvailable": "3389116 kB",
+            "MemTotal": "4010612 kB",
+            "SwapFree": "8388280 kB",
+            "SwapTotal": "8388608 kB"
+          },
+          "observed_utc": "2026-10-05T09:59:52.097881+00:00"
+        },
+        "start_utc": "2026-10-05T09:08:38.174341+00:00",
+        "state": "COMPLETED",
+        "supervisor_PID": 1409,
+        "timed_out": false,
+        "wall_seconds": 3003.6212191689992
+      },
+      "WSL_restart_observed": false,
+      "Windows_WSL_PID": 6248,
+      "action": "physical",
+      "completion_reason": "explicit_complete_receipt",
+      "design": "s38584",
+      "end_utc": "2026-10-05T09:59:52.359933+00:00",
+      "exit_code": 0,
+      "start_utc": "2026-10-05T09:08:36.507490+00:00",
+      "wall_seconds": 3075.8508502999903
+    },
+    {
+      "Linux_after_failure": null,
+      "Linux_receipt": {
+        "CPU_seconds": 4122.930443,
+        "PID": 2884,
+        "command": [
+          "/root/pact-deps/pact-venv/bin/python",
+          "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_large_unseen.py",
+          "activity",
+          "--design",
+          "s38584",
+          "--worker"
+        ],
+        "completion_reason": "complete",
+        "configuration_hash": "f50524da9313a117db84491cfcc2ffad211066bbc096818e0cccf9cecdb1b229",
+        "end_utc": "2026-10-05T11:21:42.079008+00:00",
+        "exit_code": 0,
+        "input_hashes": {
+          "architecture_hash": "0a1d92a059887ded69b21674089374171237efcd72c1034949bfc6b0a3076852",
+          "exact_activity": {
+            "bytes": 3261,
+            "path": "repo://results/pact_cpu_scalability_20261005/spef_patch/reanalysis/result.json",
+            "sha256": "8704affd05773261a1932196cd662e0dc292506e65840284ab59fc92e0badf10"
+          },
+          "input": {
+            "bytes": 5619,
+            "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s38584/cold_start_input.json",
+            "sha256": "330c65d9e6b5c349665aa46fc3cc7d350e932f09680a6b1b8881ce46ec221c92"
+          },
+          "method": "B3T"
+        },
+        "kernel_evidence": null,
+        "log": {
+          "bytes": 1009,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_large_unseen_gate9_20261005/workers/s38584/activity.log",
+          "sha256": "ff33a5dc292b8094a713808171adfb3c3cee07d2264d59a8ed14f249738b4d31"
+        },
+        "peak_RSS_KiB": 3435776,
+        "resources": {
+          "Linux_boot_id": "3de58179-15cb-405e-90f5-2222bcd0257c",
+          "PID": 2883,
+          "disks": {
+            "C": {
+              "free": 8380370944,
+              "total": 199569510400
+            },
+            "D": {
+              "free": 24378327040,
+              "total": 125828067328
+            },
+            "F": {
+              "free": 98359701504,
+              "total": 362531516416
+            }
+          },
+          "host_memory": {
+            "MemAvailable": "3529044 kB",
+            "MemTotal": "4010612 kB",
+            "SwapFree": "8319396 kB",
+            "SwapTotal": "8388608 kB"
+          },
+          "observed_utc": "2026-10-05T11:21:42.079978+00:00"
+        },
+        "start_utc": "2026-10-05T09:59:54.084553+00:00",
+        "state": "COMPLETED",
+        "supervisor_PID": 2883,
+        "timed_out": false,
+        "wall_seconds": 4787.352097479001
+      },
+      "WSL_restart_observed": false,
+      "Windows_WSL_PID": 16532,
+      "action": "activity",
+      "completion_reason": "explicit_complete_receipt",
+      "design": "s38584",
+      "end_utc": "2026-10-05T11:21:43.648089+00:00",
+      "exit_code": 0,
+      "start_utc": "2026-10-05T09:59:52.599756+00:00",
+      "wall_seconds": 4911.048471900023
+    },
+    {
+      "Linux_after_failure": null,
+      "Linux_receipt": {
+        "CPU_seconds": 1.306713,
+        "PID": 3074,
+        "command": [
+          "/root/pact-deps/pact-venv/bin/python",
+          "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_large_unseen.py",
+          "aggregate",
+          "--design",
+          "s38584",
+          "--worker"
+        ],
+        "completion_reason": "complete",
+        "configuration_hash": "f50524da9313a117db84491cfcc2ffad211066bbc096818e0cccf9cecdb1b229",
+        "end_utc": "2026-10-05T11:21:52.905608+00:00",
+        "exit_code": 0,
+        "input_hashes": {
+          "architecture_hash": "0a1d92a059887ded69b21674089374171237efcd72c1034949bfc6b0a3076852",
+          "exact_activity": {
+            "bytes": 3261,
+            "path": "repo://results/pact_cpu_scalability_20261005/spef_patch/reanalysis/result.json",
+            "sha256": "8704affd05773261a1932196cd662e0dc292506e65840284ab59fc92e0badf10"
+          },
+          "input": {
+            "bytes": 5619,
+            "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s38584/cold_start_input.json",
+            "sha256": "330c65d9e6b5c349665aa46fc3cc7d350e932f09680a6b1b8881ce46ec221c92"
+          },
+          "method": "B3T"
+        },
+        "kernel_evidence": null,
+        "log": {
+          "bytes": 70,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_large_unseen_gate9_20261005/workers/s38584/aggregate.log",
+          "sha256": "3e681c7d0550e163463b55491e7a8ba845741519a12fca8faee9716487680c63"
+        },
+        "peak_RSS_KiB": 39896,
+        "resources": {
+          "Linux_boot_id": "3de58179-15cb-405e-90f5-2222bcd0257c",
+          "PID": 3073,
+          "disks": {
+            "C": {
+              "free": 8348180480,
+              "total": 199569510400
+            },
+            "D": {
+              "free": 24378327040,
+              "total": 125828067328
+            },
+            "F": {
+              "free": 98359701504,
+              "total": 362531516416
+            }
+          },
+          "host_memory": {
+            "MemAvailable": "3522456 kB",
+            "MemTotal": "4010612 kB",
+            "SwapFree": "8328308 kB",
+            "SwapTotal": "8388608 kB"
+          },
+          "observed_utc": "2026-10-05T11:21:52.905645+00:00"
+        },
+        "start_utc": "2026-10-05T11:21:46.189497+00:00",
+        "state": "COMPLETED",
+        "supervisor_PID": 3073,
+        "timed_out": false,
+        "wall_seconds": 6.716114261000257
+      },
+      "WSL_restart_observed": false,
+      "Windows_WSL_PID": 30660,
+      "action": "aggregate",
+      "completion_reason": "explicit_complete_receipt",
+      "design": "s38584",
+      "end_utc": "2026-10-05T11:21:52.999904+00:00",
+      "exit_code": 0,
+      "start_utc": "2026-10-05T11:21:43.971630+00:00",
+      "wall_seconds": 9.02882989999489
+    },
+    {
+      "Linux_after_failure": null,
+      "Linux_receipt": {
+        "CPU_seconds": 3856.338256,
+        "PID": 3088,
+        "command": [
+          "/root/pact-deps/pact-venv/bin/python",
+          "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_large_unseen.py",
+          "physical",
+          "--design",
+          "s38417",
+          "--worker"
+        ],
+        "completion_reason": "complete",
+        "configuration_hash": "f50524da9313a117db84491cfcc2ffad211066bbc096818e0cccf9cecdb1b229",
+        "end_utc": "2026-10-05T12:01:28.158789+00:00",
+        "exit_code": 0,
+        "input_hashes": {
+          "architecture_hash": "7976c63f510aee3caa8a6b280fad5f65a91669947347f79d7861eb3b56b6f0f0",
+          "exact_activity": {
+            "bytes": 6043,
+            "path": "repo://results/pact_cpu_scalability_20261005/activity/continuation/s38417/REF_B2/normal/result.json",
+            "sha256": "8c3f4f53fbc036a17b68dba2f1e2cd3831355f6eefea6d5cfaddb6763e42f5f3"
+          },
+          "input": {
+            "bytes": 5628,
+            "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s38417/cold_start_input.json",
+            "sha256": "1594c5c39e77ebfd3c7c2854ea777d13e90a050587cfca2c3d9a0a3be6856d88"
+          },
+          "method": "B2"
+        },
+        "kernel_evidence": null,
+        "log": {
+          "bytes": 616,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_large_unseen_gate9_20261005/workers/s38417/physical.log",
+          "sha256": "6b58fc2a11c7bc47e16dfd65837b2099428f4326e06af87aeecd2ab01d9656c1"
+        },
+        "peak_RSS_KiB": 1282720,
+        "resources": {
+          "Linux_boot_id": "3de58179-15cb-405e-90f5-2222bcd0257c",
+          "PID": 3087,
+          "disks": {
+            "C": {
+              "free": 18786942976,
+              "total": 199569510400
+            },
+            "D": {
+              "free": 23936827392,
+              "total": 125828067328
+            },
+            "F": {
+              "free": 98359701504,
+              "total": 362531516416
+            }
+          },
+          "host_memory": {
+            "MemAvailable": "3463976 kB",
+            "MemTotal": "4010612 kB",
+            "SwapFree": "8328324 kB",
+            "SwapTotal": "8388608 kB"
+          },
+          "observed_utc": "2026-10-05T12:01:28.159209+00:00"
+        },
+        "start_utc": "2026-10-05T11:21:54.864544+00:00",
+        "state": "COMPLETED",
+        "supervisor_PID": 3087,
+        "timed_out": false,
+        "wall_seconds": 2320.778402012
+      },
+      "WSL_restart_observed": false,
+      "Windows_WSL_PID": 21172,
+      "action": "physical",
+      "completion_reason": "explicit_complete_receipt",
+      "design": "s38417",
+      "end_utc": "2026-10-05T12:01:28.909799+00:00",
+      "exit_code": 0,
+      "start_utc": "2026-10-05T11:21:53.238085+00:00",
+      "wall_seconds": 2375.669458599994
+    },
+    {
+      "Linux_after_failure": null,
+      "Linux_receipt": {
+        "CPU_seconds": 3412.553441,
+        "PID": 4529,
+        "command": [
+          "/root/pact-deps/pact-venv/bin/python",
+          "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_large_unseen.py",
+          "activity",
+          "--design",
+          "s38417",
+          "--worker"
+        ],
+        "completion_reason": "complete",
+        "configuration_hash": "f50524da9313a117db84491cfcc2ffad211066bbc096818e0cccf9cecdb1b229",
+        "end_utc": "2026-10-05T13:05:13.492657+00:00",
+        "exit_code": 0,
+        "input_hashes": {
+          "architecture_hash": "7976c63f510aee3caa8a6b280fad5f65a91669947347f79d7861eb3b56b6f0f0",
+          "exact_activity": {
+            "bytes": 6043,
+            "path": "repo://results/pact_cpu_scalability_20261005/activity/continuation/s38417/REF_B2/normal/result.json",
+            "sha256": "8c3f4f53fbc036a17b68dba2f1e2cd3831355f6eefea6d5cfaddb6763e42f5f3"
+          },
+          "input": {
+            "bytes": 5628,
+            "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s38417/cold_start_input.json",
+            "sha256": "1594c5c39e77ebfd3c7c2854ea777d13e90a050587cfca2c3d9a0a3be6856d88"
+          },
+          "method": "B2"
+        },
+        "kernel_evidence": null,
+        "log": {
+          "bytes": 880,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_large_unseen_gate9_20261005/workers/s38417/activity.log",
+          "sha256": "06a9aec8c50fe3a81ee302b5a21a49a2cb12ed9de082b9d183089f999c2af456"
+        },
+        "peak_RSS_KiB": 2552116,
+        "resources": {
+          "Linux_boot_id": "3de58179-15cb-405e-90f5-2222bcd0257c",
+          "PID": 4528,
+          "disks": {
+            "C": {
+              "free": 19630493696,
+              "total": 199569510400
+            },
+            "D": {
+              "free": 23260508160,
+              "total": 125828067328
+            },
+            "F": {
+              "free": 98359701504,
+              "total": 362531516416
+            }
+          },
+          "host_memory": {
+            "MemAvailable": "3524360 kB",
+            "MemTotal": "4010612 kB",
+            "SwapFree": "8328332 kB",
+            "SwapTotal": "8388608 kB"
+          },
+          "observed_utc": "2026-10-05T13:05:13.493897+00:00"
+        },
+        "start_utc": "2026-10-05T12:01:30.688447+00:00",
+        "state": "COMPLETED",
+        "supervisor_PID": 4528,
+        "timed_out": false,
+        "wall_seconds": 3734.6915974410003
+      },
+      "WSL_restart_observed": false,
+      "Windows_WSL_PID": 27260,
+      "action": "activity",
+      "completion_reason": "explicit_complete_receipt",
+      "design": "s38417",
+      "end_utc": "2026-10-05T13:05:14.230671+00:00",
+      "exit_code": 0,
+      "start_utc": "2026-10-05T12:01:29.171421+00:00",
+      "wall_seconds": 3825.0601991000003
+    },
+    {
+      "Linux_after_failure": null,
+      "Linux_receipt": {
+        "CPU_seconds": 1.5234539999999999,
+        "PID": 4679,
+        "command": [
+          "/root/pact-deps/pact-venv/bin/python",
+          "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_large_unseen.py",
+          "aggregate",
+          "--design",
+          "s38417",
+          "--worker"
+        ],
+        "completion_reason": "complete",
+        "configuration_hash": "f50524da9313a117db84491cfcc2ffad211066bbc096818e0cccf9cecdb1b229",
+        "end_utc": "2026-10-05T13:05:26.859789+00:00",
+        "exit_code": 0,
+        "input_hashes": {
+          "architecture_hash": "7976c63f510aee3caa8a6b280fad5f65a91669947347f79d7861eb3b56b6f0f0",
+          "exact_activity": {
+            "bytes": 6043,
+            "path": "repo://results/pact_cpu_scalability_20261005/activity/continuation/s38417/REF_B2/normal/result.json",
+            "sha256": "8c3f4f53fbc036a17b68dba2f1e2cd3831355f6eefea6d5cfaddb6763e42f5f3"
+          },
+          "input": {
+            "bytes": 5628,
+            "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s38417/cold_start_input.json",
+            "sha256": "1594c5c39e77ebfd3c7c2854ea777d13e90a050587cfca2c3d9a0a3be6856d88"
+          },
+          "method": "B2"
+        },
+        "kernel_evidence": null,
+        "log": {
+          "bytes": 70,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_large_unseen_gate9_20261005/workers/s38417/aggregate.log",
+          "sha256": "1070e55691e8ad86d2d2cb78d3cb4a6814bdb2cca5789a62357d217fcb53640c"
+        },
+        "peak_RSS_KiB": 40252,
+        "resources": {
+          "Linux_boot_id": "3de58179-15cb-405e-90f5-2222bcd0257c",
+          "PID": 4678,
+          "disks": {
+            "C": {
+              "free": 19629076480,
+              "total": 199569510400
+            },
+            "D": {
+              "free": 23260508160,
+              "total": 125828067328
+            },
+            "F": {
+              "free": 98359701504,
+              "total": 362531516416
+            }
+          },
+          "host_memory": {
+            "MemAvailable": "3519480 kB",
+            "MemTotal": "4010612 kB",
+            "SwapFree": "8328332 kB",
+            "SwapTotal": "8388608 kB"
+          },
+          "observed_utc": "2026-10-05T13:05:26.859875+00:00"
+        },
+        "start_utc": "2026-10-05T13:05:16.426705+00:00",
+        "state": "COMPLETED",
+        "supervisor_PID": 4678,
+        "timed_out": false,
+        "wall_seconds": 10.433131678000791
+      },
+      "WSL_restart_observed": false,
+      "Windows_WSL_PID": 16640,
+      "action": "aggregate",
+      "completion_reason": "explicit_complete_receipt",
+      "design": "s38417",
+      "end_utc": "2026-10-05T13:05:27.606705+00:00",
+      "exit_code": 0,
+      "start_utc": "2026-10-05T13:05:14.571313+00:00",
+      "wall_seconds": 13.035133099998347
+    }
+  ],
+  "start_utc": "2026-10-05T06:47:15.539255+00:00",
+  "state": "COMPLETED"
+}
