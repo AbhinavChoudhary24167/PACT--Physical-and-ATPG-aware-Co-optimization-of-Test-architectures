@@ -1,0 +1,64 @@
+{
+  "CPU_only": true,
+  "CPU_seconds": 36.881959,
+  "Linux_boot_id": "303996a4-0494-4426-b4c3-40ebb30f562f",
+  "PID": 3271,
+  "action": "route",
+  "capacity": {
+    "per_design_margin": {
+      "dimensions": {
+        "cycles": 208800,
+        "nets": 4672
+      },
+      "fixed_floor_retained": true,
+      "projected_remaining_bytes": 10361554312,
+      "retained_bytes": 69547400,
+      "rule": "20 GiB + max(5 GiB, retained packages + nine projected complete traces + one complete count cache +512 MiB)"
+    },
+    "status": "PASS",
+    "volumes": {
+      "C": {
+        "deficit_bytes": 0,
+        "free_bytes": 18699022336,
+        "minimum_free_bytes": 6442450944,
+        "status": "PASS"
+      },
+      "D": {
+        "deficit_bytes": 0,
+        "free_bytes": 39441432576,
+        "minimum_free_bytes": 31836390792,
+        "status": "PASS"
+      }
+    }
+  },
+  "child_peak_RSS_KiB": 1076348,
+  "children_CPU_seconds": 1054.7811920000001,
+  "code_commit": "81d88ac79b78808a305a491bffc1799990d9c4f2",
+  "completed": true,
+  "completed_utc": "2026-10-05T21:34:36.908412+00:00",
+  "created_utc": "2026-10-05T21:24:11.051205+00:00",
+  "dependency_repair": {
+    "bytes": 17558,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/dependency_repairs/FAN_ATPG/compound_reporter_qualification.json",
+    "sha256": "71bc45f4e54c8928ff50a635d829a8e17b7f18ad6e582f5ae496a93520d06a24"
+  },
+  "design": "b15_opt",
+  "execution_id": null,
+  "harness": {
+    "bytes": 25269,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/execution_sources/3c9880f2f44af40fdc689de34de2eff0f75f07fa34a467108e9ab8a9faa657c9.py",
+    "sha256": "3c9880f2f44af40fdc689de34de2eff0f75f07fa34a467108e9ab8a9faa657c9"
+  },
+  "method": "B5",
+  "peak_RSS_KiB": 114332,
+  "schema": "pact_gate09_campaign_worker_v1",
+  "scientific_method_changes": 0,
+  "source_admission": {
+    "bytes": 5820,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/source_admission/b15_opt.json",
+    "sha256": "784f19d0c57f0f7aed50cfb9cb645993a12cc6a3ba9023cd3005615ae4956587"
+  },
+  "state": "COMPLETED",
+  "status": "PASS",
+  "wall_seconds": 607.4657505320001
+}
