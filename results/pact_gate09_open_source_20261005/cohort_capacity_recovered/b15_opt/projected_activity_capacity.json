@@ -1,0 +1,33 @@
+{
+  "PACT_search_started": false,
+  "before_reference_routing": true,
+  "capacity": {
+    "per_design_margin": {
+      "dimensions": {
+        "cycles": 210656,
+        "nets": 8434
+      },
+      "fixed_floor_retained": true,
+      "projected_remaining_bytes": 18308703017,
+      "retained_bytes": 5105065,
+      "rule": "20 GiB + max(5 GiB, retained packages + nine projected complete traces + one complete count cache +512 MiB)"
+    },
+    "status": "PASS",
+    "volumes": {
+      "C": {
+        "deficit_bytes": 0,
+        "free_bytes": 18887503872,
+        "minimum_free_bytes": 6442450944,
+        "status": "PASS"
+      },
+      "D": {
+        "deficit_bytes": 0,
+        "free_bytes": 40201187328,
+        "minimum_free_bytes": 39783539497,
+        "status": "PASS"
+      }
+    }
+  },
+  "dimension_rule": "Conservative 2*mapped net names; two*(ceil(FF/2)+2) clocks per observed pattern",
+  "status": "PASS"
+}
