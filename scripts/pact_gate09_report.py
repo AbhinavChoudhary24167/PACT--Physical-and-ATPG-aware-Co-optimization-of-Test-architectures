@@ -63,7 +63,8 @@ def row(meta, design, item, family, reference_hash):
     exact_ok = bool(result and result['status'] == 'QUALIFIED' and result['complete'])
     out = dict(gate='GATE09', design=design, design_family=family,
         method='PACT' if role.startswith('CS_C') else role, role=role,
-        implementation_sha=item['source_revision'], architecture_hash=item['architecture_hash'],
+        implementation_sha=admission.digest(ROOT / 'src/pact/scan/phase0c.py') if role=='B0' else item['source_revision'],
+        architecture_hash=item['architecture_hash'],
         reference_hash=reference_hash, seed=11, chain_count=item.get('chain_count', 2),
         ff_count=None, patterns=None, search_runtime_seconds=0., peak_rss_kib=None,
         exact_evaluations=0, exact_final_netlist_replays=int(exact_ok), candidates=1,
@@ -123,8 +124,13 @@ def row(meta, design, item, family, reference_hash):
             lane_epsilon=item['epsilon'], candidates=len(admission.read(meta / f'selections/{design}/preselected_candidates.json')['records']))
     else:
         out['generation_seconds'] = item.get('generation_wall_seconds')
-    out['runtime_seconds'] = (out.get('routing_seconds') or 0)+(out.get('exact_runtime_seconds') or 0)+out['search_runtime_seconds']
-    out['runtime_scope'] = 'route + exact + shared PACT design search when applicable; shared source preparation and ATPG reported separately'
+        if role in ('B1', 'B2', 'B3T'):
+            generation = admission.resolve(item['architecture']['path']).parents[1] / 'generation/execution.json'
+            if generation.exists():
+                out['generation_seconds'] = admission.read(generation)['wall_seconds']
+                out['receipt_paths'].append(str(generation))
+    out['runtime_seconds'] = (out.get('generation_seconds') or 0)+(out.get('routing_seconds') or 0)+(out.get('exact_runtime_seconds') or 0)+out['search_runtime_seconds']
+    out['runtime_scope'] = 'generation when measured + route + exact + shared PACT design search when applicable; shared source preparation and ATPG reported separately'
     return out
 
 
@@ -291,7 +297,7 @@ def render(report, path, protocol, meta):
         values = [r[k] for k in ('routed_scan_wirelength_um', 'delta_routed_WL_percent', 'E', 'delta_E_percent',
             'H4', 'delta_H4_percent', 'H8', 'delta_H8_percent', 'WNS', 'hold_WNS', 'DRC', 'fault_coverage', 'runtime_seconds')]
         lines.append('| '+design+' | '+r['role']+' | '+' | '.join(number(v, 6 if i==9 else 3) for i,v in enumerate(values))+' | '+r['qualification_status']+' |')
-    lines += ['', 'Deltas are relative to the frozen '+report['reference_method']+' reference. Runtime = route + exact + shared design search for PACT rows; '
+    lines += ['', 'Deltas are relative to the frozen '+report['reference_method']+' reference. Runtime includes generation when measured, route, exact, and shared design search for PACT rows; '
         'the PACT search is charged once per design, not once for each candidate. Source preparation/ATPG are shared and reported separately. '
         'Peak RSS is the maximum process, not summed simultaneous memory. Per-stage CPU/wall/RSS receipts remain authoritative.', '',
         'Optional discovery outcomes:', '']
