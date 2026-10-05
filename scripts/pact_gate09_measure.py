@@ -218,6 +218,7 @@ def worker(args):
     atomic_write(state_path, dict(record, state='REGISTERED'), immutable=True)
     atomic_write(result_path.with_name(name + '.registered.json'), dict(record, state='REGISTERED'), immutable=True)
     try:
+        os.environ['PYTHONPATH'] = str(ROOT / 'src') + ':' + str(ROOT / 'scripts')
         _, source, protocol, _, _, _ = references.configure(args.source_admission, args.attempt, args.dependency_repair)
         atomic_write(result_path.with_name(name + '.started.json'), dict(record, state='STARTED'), immutable=True)
         atomic_write(state_path, dict(record, state='STARTED'))
