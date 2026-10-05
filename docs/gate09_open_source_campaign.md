@@ -1,0 +1,32 @@
+# Gate 09 execution and evidence
+
+The primary campaign evaluates frozen PACT on the preregistered b14/b15/b17/b18 cohort, with B0–B5 under a common implementation backend. The two base families are b14 and b15; the related compositions supply scaling evidence.
+
+- [Preregistration and frozen file hashes](../results/pact_gate9_large_scale_unseen_20261005/benchmark_preregistration.json)
+- [Competitive definitions and fixed numerical/runtime configuration](../results/pact_gate09_open_source_20261005/manifests/competitive_method_definitions.json)
+- [Completed b14 comparison, including every alternative and baseline](../results/pact_gate09_open_source_20261005/final/b14_opt/report.md)
+- [Qualified generic FAN repairs and regressions](../results/pact_gate09_open_source_20261005/dependency_repairs/FAN_ATPG/compound_reporter_qualification.json)
+
+## Stages
+
+`pact_gate09_source_admit.py` checks the pinned source, BENCH/BLIF all-state next-state equivalence, mapped all-state equivalence and FF inventory. Its generic library adapter rejects actual use of the known unmodeled library cell.
+
+`pact_gate09_cohort_reference_registered.py` delegates preparation and physical references to the preserved reference harness. The prospective registration adapter binds a prior failed preparation only when one exists. The qualified FAN repair, mapped source, fixed placement policy, clock, seed, endpoints and backend remain common.
+
+`pact_gate09_competitor_measure.py` prepares and measures admitted architectures through the frozen CPU exact evaluator. Full trace completion and every FF-Q/cycle crosscheck are required.
+
+`pact_gate09_campaign.py` freezes definitions, generates one B4 and one B5 architecture, routes registered architectures, builds reference-only PACT input, and runs the fixed search. Each epsilon loop has 900 seconds; the search worker ceiling is 7200 seconds. The sole budget bridge changes the legacy seconds expression and its receipt text to the existing preregistered budget. Exact mutations and independent winner replays are reported separately from final routed-netlist replays.
+
+`pact_gate09_finish_design.py` freezes at most three distinct candidates before routing and exact measurement, then writes a complete per-design comparison. The balanced primary candidate remains primary after qualification. Failed outcomes and alternative candidates remain in the results.
+
+`pact_gate09_report.py` computes four-objective Pareto relationships at relative tolerance 1e-10. Timing, DRC, topology and workload/exact correctness remain qualification gates. Its A–N report includes control and heuristic contrasts without collapsing the comparison into a scalar score.
+
+`pact_gate09_campaign_report.py --ledger PATH --output FRESH_DIRECTORY` consumes the explicitly selected terminal cohort ledger and retains held/deferred designs as unexecuted rows. The original and continuation ledgers remain separately preserved. `pact_gate09_validate.py` performs the final read-only hash, receipt, historical-preservation and tracked-bulk audit.
+
+## Preserving interruptions
+
+Existing outcome paths are immutable. The initial b15 registration failure occurred before ATPG or placement launched. Its dedicated continuation reused the qualified source; the later capacity continuation requires the identical FAN binary/revision, source, patterns, placement and preparation receipt. A changed backend or workload is rejected. Capacity remains 20 GiB scratch plus the registered per-design margin, with the original 25 GiB minimum retained.
+
+Raw route, extraction, simulation and complete trace evidence stays on the experiment drives. Compact receipts, architectures, selection records, reports and execution-source snapshots are versioned. The storage receipts record verified cache copies, rehashes, duplicate removal and retained original-path aliases.
+
+Scientific execution uses the recorded Linux environment with `PYTHONPATH=.optimizer-deps:src:scripts`. Publication integration is performed after scientific completion; its record distinguishes the sealed execution versions from later repository compatibility changes. Reproduction uses the recorded execution commit and input/tool hashes.
