@@ -1,0 +1,1287 @@
+{
+  "claims": {
+    "established": "These design/method measurements and qualification receipts",
+    "hypothesis": "Any explanation of proxy/final differences requires follow-up after this campaign",
+    "not_established": "Universal superiority, joules/power reduction, arbitrary scaling, independent evidence from related compositions",
+    "observed": "b14_opt at primary seed 11 and Nangate45"
+  },
+  "classification": "PACT_ACTIVITY_IMPROVEMENT_ALL_COORDINATES",
+  "created_utc": "2026-10-05T19:54:40.274206+00:00",
+  "design": "b14_opt",
+  "fairness": {
+    "K": 2,
+    "candidate_preselection": "Before final routing and exact; maximum three new PACT architectures",
+    "cycle_note": "Actual chain lengths determine clock count; every method uses the same parallel shift/padding policy and patterns",
+    "equal_fields": [
+      "ff_count",
+      "chain_count",
+      "patterns",
+      "fault_coverage",
+      "fault_target_count",
+      "simulation_cells_hash",
+      "source_placed_database",
+      "source_netlist",
+      "SDC",
+      "timing_stage",
+      "pattern_hash",
+      "placement_hash",
+      "identity_hash",
+      "FF_coordinates"
+    ],
+    "extraction": "Same frozen OpenRCX parameters and Nangate45 RC rules",
+    "fixed_endpoints": "Common index-based canonical port policy; test_si_0/test_si aliases denote identical first-chain endpoint",
+    "measured_cycle_counts": [
+      111438,
+      111438,
+      111438,
+      111438,
+      111438,
+      111438,
+      111438,
+      111438,
+      111438
+    ],
+    "physical_seed": 11,
+    "qualified_rows": 9,
+    "route_backend": "Pinned common /usr/bin/openroad",
+    "status": "PASS"
+  },
+  "frozen_method": {
+    "bytes": 8783,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/manifests/competitive_method_definitions.json",
+    "sha256": "8380cc99b45acf9bc571b214d5ef9edbf883a1af32ea8d3a0b1d1006bc3be9a0"
+  },
+  "no_post_outcome_tuning": true,
+  "no_proprietary_benchmarking": true,
+  "optional_competitors": [
+    {
+      "classification": "NOT_COMPARABLE",
+      "commit_SHA": "5185a55531f144dc1628f82acee842b794789ad5",
+      "executions": 0,
+      "input_adaptation": null,
+      "inspected_urls": [
+        "https://github.com/Rueilian/ScanForge/blob/5185a55531f144dc1628f82acee842b794789ad5/README.md",
+        "https://github.com/Rueilian/ScanForge/blob/5185a55531f144dc1628f82acee842b794789ad5/LICENSE"
+      ],
+      "license": "MIT",
+      "output_adaptation": null,
+      "patches": [],
+      "reason": "The documented active problem changes the scanned FF population through partial-scan exclusion and sequential ATPG. The full-scan analysis reports current-order activity rather than a comparable full-scan ordering optimizer.",
+      "repository_url": "https://github.com/Rueilian/ScanForge"
+    },
+    {
+      "classification": "NOT_ADMITTED_SOURCE_AND_BACKEND_CONTRACT",
+      "commit_SHA": "402396a8d52b9cf25ec39449d77cb6907e95217f",
+      "executions": 0,
+      "input_adaptation": null,
+      "inspected_urls": [
+        "https://github.com/anadipandey/togglestimate/blob/402396a8d52b9cf25ec39449d77cb6907e95217f/README.md",
+        "https://github.com/anadipandey/togglestimate/blob/402396a8d52b9cf25ec39449d77cb6907e95217f/script.tcl"
+      ],
+      "license": "No license detected in API metadata or the three-file tree",
+      "output_adaptation": null,
+      "patches": [],
+      "reason": "Documented primitive-Verilog parser, exhaustive Boolean truth-table enumeration, and single-chain activity-parameter sort. No qualified Nangate full-scan K=2 adapter is available; the source has no explicit license. A faithful port would need separate admission work.",
+      "repository_url": "https://github.com/anadipandey/togglestimate"
+    },
+    {
+      "classification": "NOT_ADMITTED_SOURCE_NOT_LOCATED",
+      "commit_SHA": null,
+      "executions": 0,
+      "license": "Not established",
+      "patches": [],
+      "reason": "The author report describes a simulated-annealing scan-order method and lists C source filenames, but no source repository or runnable source bundle was found in this bounded search.",
+      "repository_url": null,
+      "source_url": "https://cse.iitkgp.ac.in/~anshumant/reports/testing.pdf"
+    },
+    {
+      "classification": "NOT_ADMITTED_SOURCE_NOT_LOCATED",
+      "commit_SHA": null,
+      "executions": 0,
+      "license": "Not established",
+      "patches": [],
+      "reason": "A design report was located; a licensed executable source repository and qualified common-backend adapter were not established.",
+      "repository_url": null,
+      "source_url": "https://www.princeton.edu/~carch/sinha/Report_Manual.pdf"
+    }
+  ],
+  "preselection": {
+    "bytes": 7115,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/selections/b14_opt/preselected_candidates.json",
+    "sha256": "5d4c3ccccabf4666cbf1386ed716a6c9d0afac2181f17edeabad88964661af7f"
+  },
+  "primary_candidate": "CS_C1",
+  "reference_method": "B3T",
+  "rows": [
+    {
+      "CPU_only": true,
+      "DRC": 0,
+      "E": 321614006.5514406,
+      "H4": 1706.7054290799997,
+      "H8": 663.0238428600001,
+      "SDC": {
+        "bytes": 8469,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "02f23f7e4653dbf8687ec7dcdb2c7095184a6b9337cfa90929dba3d4b0464455"
+      },
+      "WNS": 7.61855,
+      "architecture_hash": "cbfa3b96576d49e8d246b50a6a3e7ded09817068f4aaa12a686270d872577fe1",
+      "candidates": 1,
+      "chain_count": 2,
+      "chain_lengths": [
+        123,
+        122
+      ],
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 44735,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/ff_identity_map.json",
+          "sha256": "623d7fa8821f93acbc40e500e0689f141cac4a9606e4fb660f248c8fd497f1f9"
+        },
+        "patterns": {
+          "bytes": 279307,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/patterns.pat",
+          "sha256": "d46e67d6078dc3d129f0009dad47cdd27bd6c845b8ad1e22fe3ab13c960db8aa"
+        },
+        "placement": {
+          "bytes": 596085,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/placed.def",
+          "sha256": "a12676366256122b66ee34ed091fb88a81568b63ec1454edf6ea5efa15f01f46"
+        }
+      },
+      "cycles": 111438,
+      "delta_E_percent": -15.639581067599305,
+      "delta_H4_percent": 3.3806163235411413,
+      "delta_H8_percent": 4.322157002622795,
+      "delta_routed_WL_percent": 8.552407767085635,
+      "design": "b14_opt",
+      "design_family": "b14",
+      "dominated_by": [],
+      "dominates": [],
+      "exact_CPU_seconds": 138.22061,
+      "exact_evaluations": 0,
+      "exact_final_netlist_replays": 1,
+      "exact_manifest": {
+        "bytes": 10238,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B0/manifest.json",
+        "sha256": "d304f5494ce31c17026e9b3f0c5277b56c0885f5681bd6086ccda5e639aad3db"
+      },
+      "exact_runtime_seconds": 166.13678202200003,
+      "exact_trace": {
+        "backend": "icarus_vpi_settled_counts_v1",
+        "bytes": 47974473,
+        "complete": true,
+        "cycles": 111438,
+        "mapped_nets": 3090,
+        "sha256": "38f665266712a0f13cac36d17af6046e4ce0b83ca04e68daa19536099a137cf6",
+        "storage": "gzip uint8 per-net/per-cycle counts"
+      },
+      "exact_workers": 1,
+      "fault_coverage": 98.49,
+      "fault_target_count": 36236,
+      "ff_count": 245,
+      "gate": "GATE09",
+      "generation_seconds": null,
+      "hold_WNS": 0.00060095,
+      "implementation_sha": "e43da79d76d363fe67ae120d5e53a3c2d04a9a2f44549601d8df2daabc05cf3e",
+      "mapped_nets": 3090,
+      "method": "B0",
+      "metric_units": {
+        "E": "capacitance-weighted transition proxy, not joules",
+        "H4": "maximum capacitance-weighted per-cycle bin activity on 4x4 grid",
+        "H8": "maximum capacitance-weighted per-cycle bin activity on 8x8 grid",
+        "WL": "um"
+      },
+      "pareto_status": "NONDOMINATED",
+      "patterns": 453,
+      "peak_rss_kib": 814532,
+      "qualification_status": "QUALIFIED",
+      "receipt_paths": [
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/baselines/b14_opt/B0/architecture.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B0/physical/route_result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B0/correctness/test_correctness.json",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/activity/GATE09_PRIMARY/b14_opt/B0/normal/result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B0/b14_opt/B0/FF_transition_crosscheck.json"
+      ],
+      "reference_hash": "b5ad1f56d2ad0db3f0a029144e5930c3c8a6a1bf70a553e76ef4be0bbb51ab12",
+      "role": "B0",
+      "route_threads": 2,
+      "routed_scan_wirelength_um": 7737.925,
+      "routing_seconds": 485.1666643430001,
+      "runtime_scope": "generation when measured + route + exact + shared PACT design search when applicable; shared source preparation and ATPG reported separately",
+      "runtime_seconds": 651.3034463650001,
+      "search_runtime_seconds": 0.0,
+      "search_threads": 1,
+      "seed": 11,
+      "simulation_cells_hash": "8cf1d1a5c0ccfebdb67c39f172e3b2bafc199f77815a3c8d972d95531765d5a2",
+      "source_netlist": {
+        "bytes": 299255,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/compatible.v",
+        "sha256": "782e4d02e92036ae000179dd79a2a82b45abe5948e7427e4e6ca071d709dc4c4"
+      },
+      "source_placed_database": {
+        "bytes": 1911772,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "21ded26bc80ff7a44859bcdd8daef1d50bcf6678fda2c1eba57d91faed9cc98c"
+      },
+      "termination_reason": "complete_functional_replay_and_exact_count_analysis",
+      "timing_stage": "global_route",
+      "total_routed_WL_um": 66604
+    },
+    {
+      "CPU_only": true,
+      "DRC": 0,
+      "E": 318399272.68171155,
+      "H4": 1739.20289439,
+      "H8": 660.75539138,
+      "SDC": {
+        "bytes": 8469,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "02f23f7e4653dbf8687ec7dcdb2c7095184a6b9337cfa90929dba3d4b0464455"
+      },
+      "WNS": 7.61738,
+      "architecture_hash": "32a8ea1e2c5afe2d9c227d6bf91216f32b14dbc39d40427d52f82eadd909fbf1",
+      "candidates": 1,
+      "chain_count": 2,
+      "chain_lengths": [
+        123,
+        122
+      ],
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 44735,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/ff_identity_map.json",
+          "sha256": "623d7fa8821f93acbc40e500e0689f141cac4a9606e4fb660f248c8fd497f1f9"
+        },
+        "patterns": {
+          "bytes": 279307,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/patterns.pat",
+          "sha256": "d46e67d6078dc3d129f0009dad47cdd27bd6c845b8ad1e22fe3ab13c960db8aa"
+        },
+        "placement": {
+          "bytes": 596085,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/placed.def",
+          "sha256": "a12676366256122b66ee34ed091fb88a81568b63ec1454edf6ea5efa15f01f46"
+        }
+      },
+      "cycles": 111438,
+      "delta_E_percent": -16.48281640711223,
+      "delta_H4_percent": 5.349091923054372,
+      "delta_H8_percent": 3.96523205339534,
+      "delta_routed_WL_percent": 9.041866311462021,
+      "design": "b14_opt",
+      "design_family": "b14",
+      "dominated_by": [],
+      "dominates": [],
+      "exact_CPU_seconds": 156.228216,
+      "exact_evaluations": 0,
+      "exact_final_netlist_replays": 1,
+      "exact_manifest": {
+        "bytes": 10248,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B1/manifest.json",
+        "sha256": "cce3a51b49eb13f8df9c37ea76b208c813798fb5f8dbb43acc846df341718a87"
+      },
+      "exact_runtime_seconds": 185.00365197100018,
+      "exact_trace": {
+        "backend": "icarus_vpi_settled_counts_v1",
+        "bytes": 49375814,
+        "complete": true,
+        "cycles": 111438,
+        "mapped_nets": 3089,
+        "sha256": "c81331141b306bc9550cdd0e19458556408977792ab50838eb06e6a1deffe482",
+        "storage": "gzip uint8 per-net/per-cycle counts"
+      },
+      "exact_workers": 1,
+      "fault_coverage": 98.49,
+      "fault_target_count": 36236,
+      "ff_count": 245,
+      "gate": "GATE09",
+      "generation_seconds": 3.4381885509999393,
+      "hold_WNS": 0.000438483,
+      "implementation_sha": "08f67ee5ecd14db5a42be8c610bbfd1ccf079299",
+      "mapped_nets": 3089,
+      "method": "B1",
+      "metric_units": {
+        "E": "capacitance-weighted transition proxy, not joules",
+        "H4": "maximum capacitance-weighted per-cycle bin activity on 4x4 grid",
+        "H8": "maximum capacitance-weighted per-cycle bin activity on 8x8 grid",
+        "WL": "um"
+      },
+      "pareto_status": "NONDOMINATED",
+      "patterns": 453,
+      "peak_rss_kib": 814216,
+      "qualification_status": "QUALIFIED",
+      "receipt_paths": [
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/baselines/b14_opt/B1/generator/architecture.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B1/physical/route_result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B1/correctness/test_correctness.json",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/activity/GATE09_PRIMARY/b14_opt/B1/normal/result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B1/b14_opt/B1/FF_transition_crosscheck.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/baselines/b14_opt/B1/generation/execution.json"
+      ],
+      "reference_hash": "b5ad1f56d2ad0db3f0a029144e5930c3c8a6a1bf70a553e76ef4be0bbb51ab12",
+      "role": "B1",
+      "route_threads": 2,
+      "routed_scan_wirelength_um": 7772.815,
+      "routing_seconds": 411.51874763499995,
+      "runtime_scope": "generation when measured + route + exact + shared PACT design search when applicable; shared source preparation and ATPG reported separately",
+      "runtime_seconds": 599.9605881570001,
+      "search_runtime_seconds": 0.0,
+      "search_threads": 1,
+      "seed": 11,
+      "simulation_cells_hash": "8cf1d1a5c0ccfebdb67c39f172e3b2bafc199f77815a3c8d972d95531765d5a2",
+      "source_netlist": {
+        "bytes": 299255,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/compatible.v",
+        "sha256": "782e4d02e92036ae000179dd79a2a82b45abe5948e7427e4e6ca071d709dc4c4"
+      },
+      "source_placed_database": {
+        "bytes": 1911772,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "21ded26bc80ff7a44859bcdd8daef1d50bcf6678fda2c1eba57d91faed9cc98c"
+      },
+      "termination_reason": "complete_functional_replay_and_exact_count_analysis",
+      "timing_stage": "global_route",
+      "total_routed_WL_um": 66670
+    },
+    {
+      "CPU_only": true,
+      "DRC": 0,
+      "E": 321673617.47138333,
+      "H4": 1766.9892418099998,
+      "H8": 709.66548339,
+      "SDC": {
+        "bytes": 8469,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "02f23f7e4653dbf8687ec7dcdb2c7095184a6b9337cfa90929dba3d4b0464455"
+      },
+      "WNS": 7.61965,
+      "architecture_hash": "e7937b5785c6993df4c3408903621588702be071ec30f9cf3662917d4951b0d9",
+      "candidates": 1,
+      "chain_count": 2,
+      "chain_lengths": [
+        123,
+        122
+      ],
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 44735,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/ff_identity_map.json",
+          "sha256": "623d7fa8821f93acbc40e500e0689f141cac4a9606e4fb660f248c8fd497f1f9"
+        },
+        "patterns": {
+          "bytes": 279307,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/patterns.pat",
+          "sha256": "d46e67d6078dc3d129f0009dad47cdd27bd6c845b8ad1e22fe3ab13c960db8aa"
+        },
+        "placement": {
+          "bytes": 596085,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/placed.def",
+          "sha256": "a12676366256122b66ee34ed091fb88a81568b63ec1454edf6ea5efa15f01f46"
+        }
+      },
+      "cycles": 111438,
+      "delta_E_percent": -15.623944925898769,
+      "delta_H4_percent": 7.032200016996559,
+      "delta_H8_percent": 11.66089240200414,
+      "delta_routed_WL_percent": 0.08396128942655956,
+      "design": "b14_opt",
+      "design_family": "b14",
+      "dominated_by": [],
+      "dominates": [],
+      "exact_CPU_seconds": 141.022852,
+      "exact_evaluations": 0,
+      "exact_final_netlist_replays": 1,
+      "exact_manifest": {
+        "bytes": 10245,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B2/manifest.json",
+        "sha256": "7c526d74f061ccfd0513cec21a01e2d04a791925e7d3dae60bde1fd6b3c5fe01"
+      },
+      "exact_runtime_seconds": 169.9566112340001,
+      "exact_trace": {
+        "backend": "icarus_vpi_settled_counts_v1",
+        "bytes": 49111188,
+        "complete": true,
+        "cycles": 111438,
+        "mapped_nets": 3090,
+        "sha256": "b9137c09b84073894f38e74a0f6c8b4aa40a9b45a0553e051500f2424c81c760",
+        "storage": "gzip uint8 per-net/per-cycle counts"
+      },
+      "exact_workers": 1,
+      "fault_coverage": 98.49,
+      "fault_target_count": 36236,
+      "ff_count": 245,
+      "gate": "GATE09",
+      "generation_seconds": 5.49599971900011,
+      "hold_WNS": 0.000599049,
+      "implementation_sha": "6fff875551fe13a2aae3a22f871a6ca7f8d5c1cf",
+      "mapped_nets": 3090,
+      "method": "B2",
+      "metric_units": {
+        "E": "capacitance-weighted transition proxy, not joules",
+        "H4": "maximum capacitance-weighted per-cycle bin activity on 4x4 grid",
+        "H8": "maximum capacitance-weighted per-cycle bin activity on 8x8 grid",
+        "WL": "um"
+      },
+      "pareto_status": "NONDOMINATED",
+      "patterns": 453,
+      "peak_rss_kib": 814468,
+      "qualification_status": "QUALIFIED",
+      "receipt_paths": [
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/baselines/b14_opt/B2/generator/canonical.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B2/physical/route_result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B2/correctness/test_correctness.json",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/activity/GATE09_PRIMARY/b14_opt/B2/normal/result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B2/b14_opt/B2/FF_transition_crosscheck.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/baselines/b14_opt/B2/generation/execution.json"
+      ],
+      "reference_hash": "b5ad1f56d2ad0db3f0a029144e5930c3c8a6a1bf70a553e76ef4be0bbb51ab12",
+      "role": "B2",
+      "route_threads": 2,
+      "routed_scan_wirelength_um": 7134.27,
+      "routing_seconds": 339.2037939689999,
+      "runtime_scope": "generation when measured + route + exact + shared PACT design search when applicable; shared source preparation and ATPG reported separately",
+      "runtime_seconds": 514.6564049220001,
+      "search_runtime_seconds": 0.0,
+      "search_threads": 1,
+      "seed": 11,
+      "simulation_cells_hash": "8cf1d1a5c0ccfebdb67c39f172e3b2bafc199f77815a3c8d972d95531765d5a2",
+      "source_netlist": {
+        "bytes": 299255,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/compatible.v",
+        "sha256": "782e4d02e92036ae000179dd79a2a82b45abe5948e7427e4e6ca071d709dc4c4"
+      },
+      "source_placed_database": {
+        "bytes": 1911772,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "21ded26bc80ff7a44859bcdd8daef1d50bcf6678fda2c1eba57d91faed9cc98c"
+      },
+      "termination_reason": "complete_functional_replay_and_exact_count_analysis",
+      "timing_stage": "global_route",
+      "total_routed_WL_um": 66004
+    },
+    {
+      "CPU_only": true,
+      "DRC": 0,
+      "E": 381238038.6697165,
+      "H4": 1650.89500312,
+      "H8": 635.5541928099999,
+      "SDC": {
+        "bytes": 8469,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "02f23f7e4653dbf8687ec7dcdb2c7095184a6b9337cfa90929dba3d4b0464455"
+      },
+      "WNS": 7.61447,
+      "architecture_hash": "b5ad1f56d2ad0db3f0a029144e5930c3c8a6a1bf70a553e76ef4be0bbb51ab12",
+      "candidates": 1,
+      "chain_count": 2,
+      "chain_lengths": [
+        123,
+        122
+      ],
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 44735,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/ff_identity_map.json",
+          "sha256": "623d7fa8821f93acbc40e500e0689f141cac4a9606e4fb660f248c8fd497f1f9"
+        },
+        "patterns": {
+          "bytes": 279307,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/patterns.pat",
+          "sha256": "d46e67d6078dc3d129f0009dad47cdd27bd6c845b8ad1e22fe3ab13c960db8aa"
+        },
+        "placement": {
+          "bytes": 596085,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/placed.def",
+          "sha256": "a12676366256122b66ee34ed091fb88a81568b63ec1454edf6ea5efa15f01f46"
+        }
+      },
+      "cycles": 111438,
+      "delta_E_percent": 0.0,
+      "delta_H4_percent": 0.0,
+      "delta_H8_percent": 0.0,
+      "delta_routed_WL_percent": 0.0,
+      "design": "b14_opt",
+      "design_family": "b14",
+      "dominated_by": [],
+      "dominates": [],
+      "exact_CPU_seconds": 163.618767,
+      "exact_evaluations": 0,
+      "exact_final_netlist_replays": 1,
+      "exact_manifest": {
+        "bytes": 10270,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/manifest.json",
+        "sha256": "b6e356d63d61d8401f07df7dc0714051a1aa4a23e84ac7d4041b22190b711f4a"
+      },
+      "exact_runtime_seconds": 193.742602187,
+      "exact_trace": {
+        "backend": "icarus_vpi_settled_counts_v1",
+        "bytes": 56176651,
+        "complete": true,
+        "cycles": 111438,
+        "mapped_nets": 3090,
+        "sha256": "0b3e9b0bdd971b2afba0e47b26846740030300098cca89020836347ebaf7d379",
+        "storage": "gzip uint8 per-net/per-cycle counts"
+      },
+      "exact_workers": 1,
+      "fault_coverage": 98.49,
+      "fault_target_count": 36236,
+      "ff_count": 245,
+      "gate": "GATE09",
+      "generation_seconds": 9.563201738999851,
+      "hold_WNS": 0.000424383,
+      "implementation_sha": "5c3751171685d507939ee7064a67feec786e5219",
+      "mapped_nets": 3090,
+      "method": "B3T",
+      "metric_units": {
+        "E": "capacitance-weighted transition proxy, not joules",
+        "H4": "maximum capacitance-weighted per-cycle bin activity on 4x4 grid",
+        "H8": "maximum capacitance-weighted per-cycle bin activity on 8x8 grid",
+        "WL": "um"
+      },
+      "pareto_status": "NONDOMINATED",
+      "patterns": 453,
+      "peak_rss_kib": 814424,
+      "qualification_status": "QUALIFIED",
+      "receipt_paths": [
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/baselines/b14_opt/B3T/generator/canonical.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B3T/physical/route_result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B3T/correctness/test_correctness.json",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/activity/GATE09_PRIMARY/b14_opt/B3T/normal/result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/FF_transition_crosscheck.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/baselines/b14_opt/B3T/generation/execution.json"
+      ],
+      "reference_hash": "b5ad1f56d2ad0db3f0a029144e5930c3c8a6a1bf70a553e76ef4be0bbb51ab12",
+      "role": "B3T",
+      "route_threads": 2,
+      "routed_scan_wirelength_um": 7128.285,
+      "routing_seconds": 359.71559611099997,
+      "runtime_scope": "generation when measured + route + exact + shared PACT design search when applicable; shared source preparation and ATPG reported separately",
+      "runtime_seconds": 563.0214000369998,
+      "search_runtime_seconds": 0.0,
+      "search_threads": 1,
+      "seed": 11,
+      "simulation_cells_hash": "8cf1d1a5c0ccfebdb67c39f172e3b2bafc199f77815a3c8d972d95531765d5a2",
+      "source_netlist": {
+        "bytes": 299255,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/compatible.v",
+        "sha256": "782e4d02e92036ae000179dd79a2a82b45abe5948e7427e4e6ca071d709dc4c4"
+      },
+      "source_placed_database": {
+        "bytes": 1911772,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "21ded26bc80ff7a44859bcdd8daef1d50bcf6678fda2c1eba57d91faed9cc98c"
+      },
+      "termination_reason": "complete_functional_replay_and_exact_count_analysis",
+      "timing_stage": "global_route",
+      "total_routed_WL_um": 65969
+    },
+    {
+      "CPU_only": true,
+      "DRC": 0,
+      "E": 317798825.64038575,
+      "H4": 1772.47757856,
+      "H8": 682.4241149500001,
+      "SDC": {
+        "bytes": 8469,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "02f23f7e4653dbf8687ec7dcdb2c7095184a6b9337cfa90929dba3d4b0464455"
+      },
+      "WNS": 7.61808,
+      "architecture_hash": "1f7b74a489420c733fa8321630f4e9abdb87a855540057f1771ddb6b6500d94c",
+      "candidates": 1,
+      "chain_count": 2,
+      "chain_lengths": [
+        123,
+        122
+      ],
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 44735,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/ff_identity_map.json",
+          "sha256": "623d7fa8821f93acbc40e500e0689f141cac4a9606e4fb660f248c8fd497f1f9"
+        },
+        "patterns": {
+          "bytes": 279307,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/patterns.pat",
+          "sha256": "d46e67d6078dc3d129f0009dad47cdd27bd6c845b8ad1e22fe3ab13c960db8aa"
+        },
+        "placement": {
+          "bytes": 596085,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/placed.def",
+          "sha256": "a12676366256122b66ee34ed091fb88a81568b63ec1454edf6ea5efa15f01f46"
+        }
+      },
+      "cycles": 111438,
+      "delta_E_percent": -16.640315654412163,
+      "delta_H4_percent": 7.364646159218058,
+      "delta_H8_percent": 7.374653911537021,
+      "delta_routed_WL_percent": 148.88118250041907,
+      "design": "b14_opt",
+      "design_family": "b14",
+      "dominated_by": [
+        "B5"
+      ],
+      "dominates": [],
+      "exact_CPU_seconds": 126.283845,
+      "exact_evaluations": 0,
+      "exact_final_netlist_replays": 1,
+      "exact_manifest": {
+        "bytes": 10229,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B4/manifest.json",
+        "sha256": "df159991b20e96f63635c26114f9857ea80c72dc091eae292f4c3fb7ffe59eb1"
+      },
+      "exact_runtime_seconds": 154.710374408,
+      "exact_trace": {
+        "backend": "icarus_vpi_settled_counts_v1",
+        "bytes": 49672533,
+        "complete": true,
+        "cycles": 111438,
+        "mapped_nets": 3090,
+        "sha256": "b623409b5f1579bdaae0222ac0ecdae65919c396cd1a35d5f1726a06695a3286",
+        "storage": "gzip uint8 per-net/per-cycle counts"
+      },
+      "exact_workers": 1,
+      "fault_coverage": 98.49,
+      "fault_target_count": 36236,
+      "ff_count": 245,
+      "gate": "GATE09",
+      "generation_seconds": 3.6713920699999676,
+      "hold_WNS": 0.000210665,
+      "implementation_sha": "e43da79d76d363fe67ae120d5e53a3c2d04a9a2f44549601d8df2daabc05cf3e",
+      "mapped_nets": 3090,
+      "method": "B4",
+      "metric_units": {
+        "E": "capacitance-weighted transition proxy, not joules",
+        "H4": "maximum capacitance-weighted per-cycle bin activity on 4x4 grid",
+        "H8": "maximum capacitance-weighted per-cycle bin activity on 8x8 grid",
+        "WL": "um"
+      },
+      "pareto_status": "DOMINATED",
+      "patterns": 453,
+      "peak_rss_kib": 814464,
+      "qualification_status": "QUALIFIED",
+      "receipt_paths": [
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B4/architecture.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B4/physical/route_result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B4/correctness/test_correctness.json",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/activity/GATE09_PRIMARY/b14_opt/B4/normal/result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B4/b14_opt/B4/FF_transition_crosscheck.json"
+      ],
+      "reference_hash": "b5ad1f56d2ad0db3f0a029144e5930c3c8a6a1bf70a553e76ef4be0bbb51ab12",
+      "role": "B4",
+      "route_threads": 2,
+      "routed_scan_wirelength_um": 17740.96,
+      "routing_seconds": 344.176278225,
+      "runtime_scope": "generation when measured + route + exact + shared PACT design search when applicable; shared source preparation and ATPG reported separately",
+      "runtime_seconds": 502.55804470299995,
+      "search_runtime_seconds": 0.0,
+      "search_threads": 1,
+      "seed": 11,
+      "simulation_cells_hash": "8cf1d1a5c0ccfebdb67c39f172e3b2bafc199f77815a3c8d972d95531765d5a2",
+      "source_netlist": {
+        "bytes": 299255,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/compatible.v",
+        "sha256": "782e4d02e92036ae000179dd79a2a82b45abe5948e7427e4e6ca071d709dc4c4"
+      },
+      "source_placed_database": {
+        "bytes": 1911772,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "21ded26bc80ff7a44859bcdd8daef1d50bcf6678fda2c1eba57d91faed9cc98c"
+      },
+      "termination_reason": "complete_functional_replay_and_exact_count_analysis",
+      "timing_stage": "global_route",
+      "total_routed_WL_um": 76663
+    },
+    {
+      "CPU_only": true,
+      "DRC": 0,
+      "E": 304124378.7812191,
+      "H4": 1739.819802954,
+      "H8": 680.6068412740001,
+      "SDC": {
+        "bytes": 8469,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "02f23f7e4653dbf8687ec7dcdb2c7095184a6b9337cfa90929dba3d4b0464455"
+      },
+      "WNS": 7.61781,
+      "architecture_hash": "7ca4aaec5ae6074e96425e58997d976d63577971b01816ff7bd95f3c7f300816",
+      "candidates": 1,
+      "chain_count": 2,
+      "chain_lengths": [
+        123,
+        122
+      ],
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 44735,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/ff_identity_map.json",
+          "sha256": "623d7fa8821f93acbc40e500e0689f141cac4a9606e4fb660f248c8fd497f1f9"
+        },
+        "patterns": {
+          "bytes": 279307,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/patterns.pat",
+          "sha256": "d46e67d6078dc3d129f0009dad47cdd27bd6c845b8ad1e22fe3ab13c960db8aa"
+        },
+        "placement": {
+          "bytes": 596085,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/placed.def",
+          "sha256": "a12676366256122b66ee34ed091fb88a81568b63ec1454edf6ea5efa15f01f46"
+        }
+      },
+      "cycles": 111438,
+      "delta_E_percent": -20.227168348042092,
+      "delta_H4_percent": 5.386460051423159,
+      "delta_H8_percent": 7.088718629139579,
+      "delta_routed_WL_percent": 16.743368145353333,
+      "design": "b14_opt",
+      "design_family": "b14",
+      "dominated_by": [],
+      "dominates": [
+        "B4"
+      ],
+      "exact_CPU_seconds": 130.939214,
+      "exact_evaluations": 0,
+      "exact_final_netlist_replays": 1,
+      "exact_manifest": {
+        "bytes": 10229,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B5/manifest.json",
+        "sha256": "b146428766ca1e35cfeb8b8feb725390bf6a1851b5c8d98dc3dbf1b6bb618ad0"
+      },
+      "exact_runtime_seconds": 159.46521875500002,
+      "exact_trace": {
+        "backend": "icarus_vpi_settled_counts_v1",
+        "bytes": 48882872,
+        "complete": true,
+        "cycles": 111438,
+        "mapped_nets": 3090,
+        "sha256": "d6b5593fb4cdd8f420e1b902639c455ee3af6e0a0c04158ae4a18d0ebd05daa2",
+        "storage": "gzip uint8 per-net/per-cycle counts"
+      },
+      "exact_workers": 1,
+      "fault_coverage": 98.49,
+      "fault_target_count": 36236,
+      "ff_count": 245,
+      "gate": "GATE09",
+      "generation_seconds": 3.300458566999964,
+      "hold_WNS": 0.000456205,
+      "implementation_sha": "e43da79d76d363fe67ae120d5e53a3c2d04a9a2f44549601d8df2daabc05cf3e",
+      "mapped_nets": 3090,
+      "method": "B5",
+      "metric_units": {
+        "E": "capacitance-weighted transition proxy, not joules",
+        "H4": "maximum capacitance-weighted per-cycle bin activity on 4x4 grid",
+        "H8": "maximum capacitance-weighted per-cycle bin activity on 8x8 grid",
+        "WL": "um"
+      },
+      "pareto_status": "NONDOMINATED",
+      "patterns": 453,
+      "peak_rss_kib": 814272,
+      "qualification_status": "QUALIFIED",
+      "receipt_paths": [
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B5/architecture.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B5/physical/route_result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B5/correctness/test_correctness.json",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/activity/GATE09_PRIMARY/b14_opt/B5/normal/result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B5/b14_opt/B5/FF_transition_crosscheck.json"
+      ],
+      "reference_hash": "b5ad1f56d2ad0db3f0a029144e5930c3c8a6a1bf70a553e76ef4be0bbb51ab12",
+      "role": "B5",
+      "route_threads": 2,
+      "routed_scan_wirelength_um": 8321.8,
+      "routing_seconds": 460.59321248899994,
+      "runtime_scope": "generation when measured + route + exact + shared PACT design search when applicable; shared source preparation and ATPG reported separately",
+      "runtime_seconds": 623.3588898109999,
+      "search_runtime_seconds": 0.0,
+      "search_threads": 1,
+      "seed": 11,
+      "simulation_cells_hash": "8cf1d1a5c0ccfebdb67c39f172e3b2bafc199f77815a3c8d972d95531765d5a2",
+      "source_netlist": {
+        "bytes": 299255,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/compatible.v",
+        "sha256": "782e4d02e92036ae000179dd79a2a82b45abe5948e7427e4e6ca071d709dc4c4"
+      },
+      "source_placed_database": {
+        "bytes": 1911772,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "21ded26bc80ff7a44859bcdd8daef1d50bcf6678fda2c1eba57d91faed9cc98c"
+      },
+      "termination_reason": "complete_functional_replay_and_exact_count_analysis",
+      "timing_stage": "global_route",
+      "total_routed_WL_um": 67162
+    },
+    {
+      "CPU_only": true,
+      "DRC": 0,
+      "E": 379875624.2417319,
+      "H4": 1622.7002847199997,
+      "H8": 599.40624718,
+      "SDC": {
+        "bytes": 8469,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "02f23f7e4653dbf8687ec7dcdb2c7095184a6b9337cfa90929dba3d4b0464455"
+      },
+      "WNS": 7.61423,
+      "architecture_hash": "31b6356ec7a8d2cc12a6f4478b142bac4a71f10f9e49f3a8a35c24f15807755a",
+      "candidates": 3,
+      "chain_count": 2,
+      "chain_lengths": [
+        123,
+        122
+      ],
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 44735,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/ff_identity_map.json",
+          "sha256": "623d7fa8821f93acbc40e500e0689f141cac4a9606e4fb660f248c8fd497f1f9"
+        },
+        "patterns": {
+          "bytes": 279307,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/patterns.pat",
+          "sha256": "d46e67d6078dc3d129f0009dad47cdd27bd6c845b8ad1e22fe3ab13c960db8aa"
+        },
+        "placement": {
+          "bytes": 596085,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/placed.def",
+          "sha256": "a12676366256122b66ee34ed091fb88a81568b63ec1454edf6ea5efa15f01f46"
+        }
+      },
+      "cycles": 111438,
+      "delta_E_percent": -0.3573658160498816,
+      "delta_H4_percent": -1.707844432669281,
+      "delta_H8_percent": -5.687626018196434,
+      "delta_routed_WL_percent": 0.04369915063722196,
+      "design": "b14_opt",
+      "design_family": "b14",
+      "dominated_by": [],
+      "dominates": [],
+      "exact_CPU_seconds": 131.28307299999997,
+      "exact_evaluations": 10512,
+      "exact_final_netlist_replays": 1,
+      "exact_manifest": {
+        "bytes": 10399,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C1/manifest.json",
+        "sha256": "3c1a2c42e84bd3bf6e0b0b604f75535d2e8a037b22455aee617b5371fc1aa695"
+      },
+      "exact_runtime_seconds": 159.07843276899985,
+      "exact_trace": {
+        "backend": "icarus_vpi_settled_counts_v1",
+        "bytes": 56272306,
+        "complete": true,
+        "cycles": 111438,
+        "mapped_nets": 3091,
+        "sha256": "36942c8d15a4ef625d459d75fa169d9638c0350932728ee5500d1a6dedab7377",
+        "storage": "gzip uint8 per-net/per-cycle counts"
+      },
+      "exact_workers": 1,
+      "fault_coverage": 98.49,
+      "fault_target_count": 36236,
+      "ff_count": 245,
+      "gate": "GATE09",
+      "hold_WNS": 0.000759365,
+      "implementation_sha": "71b059d9d1a00735d79b6a428693eaba549a5f33",
+      "lane_epsilon": 0.02,
+      "mapped_nets": 3091,
+      "method": "PACT",
+      "metric_units": {
+        "E": "capacitance-weighted transition proxy, not joules",
+        "H4": "maximum capacitance-weighted per-cycle bin activity on 4x4 grid",
+        "H8": "maximum capacitance-weighted per-cycle bin activity on 8x8 grid",
+        "WL": "um"
+      },
+      "pareto_status": "NONDOMINATED",
+      "patterns": 453,
+      "peak_rss_kib": 814396,
+      "qualification_status": "QUALIFIED",
+      "receipt_paths": [
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/searches/b14_opt/budget_0.02/architectures/31b6356ec7a8d2cc12a6f4478b142bac4a71f10f9e49f3a8a35c24f15807755a.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/CS_C1/physical/route_result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/CS_C1/correctness/test_correctness.json",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/activity/GATE09_PRIMARY/b14_opt/CS_C1/normal/result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C1/b14_opt/CS_C1/FF_transition_crosscheck.json"
+      ],
+      "reference_hash": "b5ad1f56d2ad0db3f0a029144e5930c3c8a6a1bf70a553e76ef4be0bbb51ab12",
+      "role": "CS_C1",
+      "route_roles": [
+        "balanced"
+      ],
+      "route_threads": 2,
+      "routed_scan_wirelength_um": 7131.4,
+      "routing_seconds": 317.4909312769996,
+      "runtime_scope": "generation when measured + route + exact + shared PACT design search when applicable; shared source preparation and ATPG reported separately",
+      "runtime_seconds": 3646.114037950999,
+      "search_CPU_seconds": 3233.805439,
+      "search_estimates": {
+        "E_stateful_ff": 71890134.82570177,
+        "H4_stateful_ff": 453.0118404995273,
+        "H8_stateful_ff": 174.74970305103986,
+        "timing_max_edge_um": 134.81,
+        "wire_um": 1967.9550000000004
+      },
+      "search_peak_rss_kib": 605532,
+      "search_runtime_seconds": 3169.5446739049994,
+      "search_threads": 1,
+      "seed": 11,
+      "simulation_cells_hash": "8cf1d1a5c0ccfebdb67c39f172e3b2bafc199f77815a3c8d972d95531765d5a2",
+      "source_netlist": {
+        "bytes": 299255,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/compatible.v",
+        "sha256": "782e4d02e92036ae000179dd79a2a82b45abe5948e7427e4e6ca071d709dc4c4"
+      },
+      "source_placed_database": {
+        "bytes": 1911772,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "21ded26bc80ff7a44859bcdd8daef1d50bcf6678fda2c1eba57d91faed9cc98c"
+      },
+      "termination_reason": "complete_functional_replay_and_exact_count_analysis",
+      "timing_stage": "global_route",
+      "total_routed_WL_um": 65933
+    },
+    {
+      "CPU_only": true,
+      "DRC": 0,
+      "E": 374669100.9981443,
+      "H4": 1677.87858605,
+      "H8": 666.37223331,
+      "SDC": {
+        "bytes": 8469,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "02f23f7e4653dbf8687ec7dcdb2c7095184a6b9337cfa90929dba3d4b0464455"
+      },
+      "WNS": 7.62143,
+      "architecture_hash": "1da2591d075a8ce024e9beaeae5bd2cf8b4939d4f680aebb56ca30003bcadb7b",
+      "candidates": 3,
+      "chain_count": 2,
+      "chain_lengths": [
+        123,
+        122
+      ],
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 44735,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/ff_identity_map.json",
+          "sha256": "623d7fa8821f93acbc40e500e0689f141cac4a9606e4fb660f248c8fd497f1f9"
+        },
+        "patterns": {
+          "bytes": 279307,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/patterns.pat",
+          "sha256": "d46e67d6078dc3d129f0009dad47cdd27bd6c845b8ad1e22fe3ab13c960db8aa"
+        },
+        "placement": {
+          "bytes": 596085,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/placed.def",
+          "sha256": "a12676366256122b66ee34ed091fb88a81568b63ec1454edf6ea5efa15f01f46"
+        }
+      },
+      "cycles": 111438,
+      "delta_E_percent": -1.723054104069377,
+      "delta_H4_percent": 1.634482076631416,
+      "delta_H8_percent": 4.849002783498779,
+      "delta_routed_WL_percent": 0.9072308416400388,
+      "design": "b14_opt",
+      "design_family": "b14",
+      "dominated_by": [],
+      "dominates": [],
+      "exact_CPU_seconds": 143.34789700000002,
+      "exact_evaluations": 10512,
+      "exact_final_netlist_replays": 1,
+      "exact_manifest": {
+        "bytes": 10399,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C2/manifest.json",
+        "sha256": "bb05fad5e08b6ecd7013ea9c864a2956959b7d0c1f7dc139a7762f2e319d0559"
+      },
+      "exact_runtime_seconds": 171.45286540800043,
+      "exact_trace": {
+        "backend": "icarus_vpi_settled_counts_v1",
+        "bytes": 55884710,
+        "complete": true,
+        "cycles": 111438,
+        "mapped_nets": 3090,
+        "sha256": "52e0c2136ea1ff471fee864c81be68d55992223211217b24527171c6cc044e75",
+        "storage": "gzip uint8 per-net/per-cycle counts"
+      },
+      "exact_workers": 1,
+      "fault_coverage": 98.49,
+      "fault_target_count": 36236,
+      "ff_count": 245,
+      "gate": "GATE09",
+      "hold_WNS": 0.00060095,
+      "implementation_sha": "71b059d9d1a00735d79b6a428693eaba549a5f33",
+      "lane_epsilon": 0.05,
+      "mapped_nets": 3090,
+      "method": "PACT",
+      "metric_units": {
+        "E": "capacitance-weighted transition proxy, not joules",
+        "H4": "maximum capacitance-weighted per-cycle bin activity on 4x4 grid",
+        "H8": "maximum capacitance-weighted per-cycle bin activity on 8x8 grid",
+        "WL": "um"
+      },
+      "pareto_status": "NONDOMINATED",
+      "patterns": 453,
+      "peak_rss_kib": 814380,
+      "qualification_status": "QUALIFIED",
+      "receipt_paths": [
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/searches/b14_opt/budget_0.05/architectures/1da2591d075a8ce024e9beaeae5bd2cf8b4939d4f680aebb56ca30003bcadb7b.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/CS_C2/physical/route_result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/CS_C2/correctness/test_correctness.json",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/activity/GATE09_PRIMARY/b14_opt/CS_C2/normal/result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C2/b14_opt/CS_C2/FF_transition_crosscheck.json"
+      ],
+      "reference_hash": "b5ad1f56d2ad0db3f0a029144e5930c3c8a6a1bf70a553e76ef4be0bbb51ab12",
+      "role": "CS_C2",
+      "route_roles": [
+        "best_E"
+      ],
+      "route_threads": 2,
+      "routed_scan_wirelength_um": 7192.955,
+      "routing_seconds": 323.6205867389999,
+      "runtime_scope": "generation when measured + route + exact + shared PACT design search when applicable; shared source preparation and ATPG reported separately",
+      "runtime_seconds": 3664.6181260519998,
+      "search_CPU_seconds": 3233.805439,
+      "search_estimates": {
+        "E_stateful_ff": 70431327.28633769,
+        "H4_stateful_ff": 455.2966964280804,
+        "H8_stateful_ff": 178.23639091641436,
+        "timing_max_edge_um": 129.66,
+        "wire_um": 2026.155
+      },
+      "search_peak_rss_kib": 605532,
+      "search_runtime_seconds": 3169.5446739049994,
+      "search_threads": 1,
+      "seed": 11,
+      "simulation_cells_hash": "8cf1d1a5c0ccfebdb67c39f172e3b2bafc199f77815a3c8d972d95531765d5a2",
+      "source_netlist": {
+        "bytes": 299255,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/compatible.v",
+        "sha256": "782e4d02e92036ae000179dd79a2a82b45abe5948e7427e4e6ca071d709dc4c4"
+      },
+      "source_placed_database": {
+        "bytes": 1911772,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "21ded26bc80ff7a44859bcdd8daef1d50bcf6678fda2c1eba57d91faed9cc98c"
+      },
+      "termination_reason": "complete_functional_replay_and_exact_count_analysis",
+      "timing_stage": "global_route",
+      "total_routed_WL_um": 65994
+    },
+    {
+      "CPU_only": true,
+      "DRC": 0,
+      "E": 380193530.1621147,
+      "H4": 1622.9468320699998,
+      "H8": 599.1224722300001,
+      "SDC": {
+        "bytes": 8469,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "02f23f7e4653dbf8687ec7dcdb2c7095184a6b9337cfa90929dba3d4b0464455"
+      },
+      "WNS": 7.61353,
+      "architecture_hash": "43917a830d99692bf83e451f33a595d384c0d35af3d2900f6b861699c3601a20",
+      "candidates": 3,
+      "chain_count": 2,
+      "chain_lengths": [
+        123,
+        122
+      ],
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 44735,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/ff_identity_map.json",
+          "sha256": "623d7fa8821f93acbc40e500e0689f141cac4a9606e4fb660f248c8fd497f1f9"
+        },
+        "patterns": {
+          "bytes": 279307,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/patterns.pat",
+          "sha256": "d46e67d6078dc3d129f0009dad47cdd27bd6c845b8ad1e22fe3ab13c960db8aa"
+        },
+        "placement": {
+          "bytes": 596085,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/placed.def",
+          "sha256": "a12676366256122b66ee34ed091fb88a81568b63ec1454edf6ea5efa15f01f46"
+        }
+      },
+      "cycles": 111438,
+      "delta_E_percent": -0.27397804039871465,
+      "delta_H4_percent": -1.692910269713177,
+      "delta_H8_percent": -5.732276018654348,
+      "delta_routed_WL_percent": 0.06698665948401406,
+      "design": "b14_opt",
+      "design_family": "b14",
+      "dominated_by": [],
+      "dominates": [],
+      "exact_CPU_seconds": 155.875,
+      "exact_evaluations": 10512,
+      "exact_final_netlist_replays": 1,
+      "exact_manifest": {
+        "bytes": 10399,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C3/manifest.json",
+        "sha256": "9546727bb95f35534fe4bceab906a69b905880598dd4b3c19e0229684a384e96"
+      },
+      "exact_runtime_seconds": 184.36842195400004,
+      "exact_trace": {
+        "backend": "icarus_vpi_settled_counts_v1",
+        "bytes": 56305136,
+        "complete": true,
+        "cycles": 111438,
+        "mapped_nets": 3091,
+        "sha256": "8ef30cf3333c8a46c35f1d8a18751aa7840983a9761075cb509e8a9abe4fae80",
+        "storage": "gzip uint8 per-net/per-cycle counts"
+      },
+      "exact_workers": 1,
+      "fault_coverage": 98.49,
+      "fault_target_count": 36236,
+      "ff_count": 245,
+      "gate": "GATE09",
+      "hold_WNS": 0.000759365,
+      "implementation_sha": "71b059d9d1a00735d79b6a428693eaba549a5f33",
+      "lane_epsilon": 0.02,
+      "mapped_nets": 3091,
+      "method": "PACT",
+      "metric_units": {
+        "E": "capacitance-weighted transition proxy, not joules",
+        "H4": "maximum capacitance-weighted per-cycle bin activity on 4x4 grid",
+        "H8": "maximum capacitance-weighted per-cycle bin activity on 8x8 grid",
+        "WL": "um"
+      },
+      "pareto_status": "NONDOMINATED",
+      "patterns": 453,
+      "peak_rss_kib": 814396,
+      "qualification_status": "QUALIFIED",
+      "receipt_paths": [
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/searches/b14_opt/budget_0.02/architectures/43917a830d99692bf83e451f33a595d384c0d35af3d2900f6b861699c3601a20.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/CS_C3/physical/route_result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/CS_C3/correctness/test_correctness.json",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/activity/GATE09_PRIMARY/b14_opt/CS_C3/normal/result.json",
+        "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C3/b14_opt/CS_C3/FF_transition_crosscheck.json"
+      ],
+      "reference_hash": "b5ad1f56d2ad0db3f0a029144e5930c3c8a6a1bf70a553e76ef4be0bbb51ab12",
+      "role": "CS_C3",
+      "route_roles": [
+        "best_H4"
+      ],
+      "route_threads": 2,
+      "routed_scan_wirelength_um": 7133.06,
+      "routing_seconds": 327.3019011509996,
+      "runtime_scope": "generation when measured + route + exact + shared PACT design search when applicable; shared source preparation and ATPG reported separately",
+      "runtime_seconds": 3681.214997009999,
+      "search_CPU_seconds": 3233.805439,
+      "search_estimates": {
+        "E_stateful_ff": 72011378.14412029,
+        "H4_stateful_ff": 453.0118404995273,
+        "H8_stateful_ff": 174.74970305103986,
+        "timing_max_edge_um": 134.81,
+        "wire_um": 1970.7150000000001
+      },
+      "search_peak_rss_kib": 605532,
+      "search_runtime_seconds": 3169.5446739049994,
+      "search_threads": 1,
+      "seed": 11,
+      "simulation_cells_hash": "8cf1d1a5c0ccfebdb67c39f172e3b2bafc199f77815a3c8d972d95531765d5a2",
+      "source_netlist": {
+        "bytes": 299255,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/compatible.v",
+        "sha256": "782e4d02e92036ae000179dd79a2a82b45abe5948e7427e4e6ca071d709dc4c4"
+      },
+      "source_placed_database": {
+        "bytes": 1911772,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "21ded26bc80ff7a44859bcdd8daef1d50bcf6678fda2c1eba57d91faed9cc98c"
+      },
+      "termination_reason": "complete_functional_replay_and_exact_count_analysis",
+      "timing_stage": "global_route",
+      "total_routed_WL_um": 66011
+    }
+  ],
+  "schema": "pact_gate09_comparison_v1",
+  "source_preparation": {
+    "bytes": 6473,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/physical/b14_opt/preparation.json",
+    "sha256": "d4e2c190987e7a1b19ba1f82aca9b158526066fc5d4aab77ddd59444a2fd8cb0"
+  },
+  "summary": {
+    "ATPG_QUALIFIED": [
+      "B0",
+      "B1",
+      "B2",
+      "B3T",
+      "B4",
+      "B5",
+      "CS_C1",
+      "CS_C2",
+      "CS_C3"
+    ],
+    "B14_REFERENCE_STATUS": "QUALIFIED",
+    "BASELINES_IMPLEMENTED": [
+      "B0",
+      "B1",
+      "B2",
+      "B3T",
+      "B4",
+      "B5"
+    ],
+    "BASELINES_QUALIFIED": [
+      "B0",
+      "B1",
+      "B2",
+      "B3T",
+      "B4",
+      "B5"
+    ],
+    "CAPACITY_GATE": "PASS_AT_EACH_HEAVY_STAGE",
+    "COMMON_BACKEND_QUALIFIED": true,
+    "COMPETITIVE_CLASSIFICATION": "PACT_GATE09_COMPETITIVE_COMPARISON_COMPLETE",
+    "COMPETITIVE_RESULTS": "PACT_ACTIVITY_IMPROVEMENT_ALL_COORDINATES",
+    "EXACT_ACTIVITY_QUALIFIED": [
+      "B0",
+      "B1",
+      "B2",
+      "B3T",
+      "B4",
+      "B5",
+      "CS_C1",
+      "CS_C2",
+      "CS_C3"
+    ],
+    "FAN_ATPG_SHA": "4c253bfa613e5827f17c42a5fce8be7bea779e1e",
+    "GATE09_STATUS": "PACT_GATE09_COMPETITIVE_COMPARISON_COMPLETE",
+    "GENERALIZATION_CLASSIFICATION": "ONE_UNSEEN_BASE_FAMILY_MEASURED; no universal confirmation",
+    "MERGED": false,
+    "MERGED_SHA": null,
+    "MUTUALLY_NONDOMINATED": [
+      "B0",
+      "B1",
+      "B2",
+      "B3T",
+      "B4",
+      "B5"
+    ],
+    "NEXT_ACTION": "Continue fixed cohort in preregistered order if capacity/runtime admission permits",
+    "OPENROAD_SHA": "08f67ee5ecd14db5a42be8c610bbfd1ccf079299",
+    "ORFS_SHA": "5e8b1450d19263f797a27c4f371b9dd19f32a3aa",
+    "PACT_CANDIDATES_FROZEN": [
+      "CS_C1",
+      "CS_C2",
+      "CS_C3"
+    ],
+    "PACT_DOMINATED_BY": [],
+    "PACT_DOMINATES": [],
+    "PACT_FROZEN": true,
+    "PACT_SEARCH_STATUS": "SEARCH_COMPLETE",
+    "PACT_SHA": "71b059d9d1a00735d79b6a428693eaba549a5f33",
+    "PARETO_RESULTS": {
+      "B0": "NONDOMINATED",
+      "B1": "NONDOMINATED",
+      "B2": "NONDOMINATED",
+      "B3T": "NONDOMINATED",
+      "B4": "DOMINATED",
+      "B5": "NONDOMINATED",
+      "CS_C1": "NONDOMINATED",
+      "CS_C2": "NONDOMINATED",
+      "CS_C3": "NONDOMINATED"
+    },
+    "PR_NUMBER": null,
+    "PR_URL": null,
+    "SCIENTIFIC_BLOCKERS": [],
+    "WORKTREE_CLEAN": null
+  }
+}
