@@ -266,8 +266,7 @@ def render(report, path, protocol, meta):
         'Minimal probes, source patches, branch SHAs and failed attempts are retained. The initial connector attempt returned '
         'GitHub 403 “Resource not accessible by integration”; its evidence remains saved. The construction defects were subsequently '
         'published and visibly verified as [FAN_ATPG issue #5](https://github.com/NTU-LaDS-II/FAN_ATPG/issues/5), '
-        'with the body and submission proof in publication/FAN_upstream_issue.json. The separate fault-identity reporting defect is '
-        '[FAN_ATPG issue #6](https://github.com/NTU-LaDS-II/FAN_ATPG/issues/6), bound by publication/FAN_reporter_upstream_issue.json.', '',
+        'with the body and submission proof in publication/FAN_upstream_issue.json.', '',
         '## E. Fairness', '', json.dumps(report['fairness'], indent=2), '',
         'Common mapped source, FF coordinates, positive-edge CK, SI/SO port policy, K=2, scan enable, '
         'FAN collapsed stuck-at workload, compression/X-fill policy, seed 11, two-thread OpenROAD routing, '

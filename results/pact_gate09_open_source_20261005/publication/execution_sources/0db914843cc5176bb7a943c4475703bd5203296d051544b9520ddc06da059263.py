@@ -96,7 +96,6 @@ def create(output, ledger_path=None):
         summary=summary, rows=rows, design_admission=ledger['records'], cohort=protocol['cohort'],
         ledger=admission.binding(ledger_path), definitions=definitions,
         upstream_issue=admission.binding(references.BASE_META / 'publication/FAN_upstream_issue.json'),
-        upstream_reporter_issue=admission.binding(references.BASE_META / 'publication/FAN_reporter_upstream_issue.json'),
         design_reports=[r['report'] for r in ledger['records'] if r['status']=='COMPETITIVE_COMPARISON_TERMINAL'],
         observed_base_families=families, independent_family_count=len(families),
         classification_rule='Four-objective relative1e-10 dominance; primary balanced candidate retained; held designs never scored as PACT losses',
@@ -173,9 +172,7 @@ def create(output, ledger_path=None):
         'The initial upstream connector attempt returned GitHub 403 “Resource not accessible by integration”; its drafts and evidence remain saved. '
         'A browser submission subsequently published the construction defects as '
         '[FAN_ATPG issue #5](https://github.com/NTU-LaDS-II/FAN_ATPG/issues/5). '
-        'The submitted body and visible proof are bound by publication/FAN_upstream_issue.json. '
-        'The separate reporting defect is [FAN_ATPG issue #6](https://github.com/NTU-LaDS-II/FAN_ATPG/issues/6), '
-        'with its own body and proof bound by publication/FAN_reporter_upstream_issue.json.', '',
+        'The submitted body and visible proof are bound by publication/FAN_upstream_issue.json.', '',
         '## I. Exact activity', '',
         'E is capacitance-weighted settled data-net transitions, not joules. H4/H8 are the per-cycle maximum '
         'source-localized capacitance-weighted bins on 4×4/8×8 grids. OpenRCX ground plus Liberty sink pin capacitance is used; coupling is excluded from the primary proxy. '
