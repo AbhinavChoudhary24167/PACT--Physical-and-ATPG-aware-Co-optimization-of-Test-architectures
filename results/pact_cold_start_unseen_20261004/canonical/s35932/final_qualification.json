@@ -1,0 +1,623 @@
+{
+  "all_preselected_candidates_retained": true,
+  "candidate_count": 3,
+  "created_utc": "2026-10-05T02:39:46.323965+00:00",
+  "design": "s35932",
+  "outcome": {
+    "ATPG_pattern_count": 21,
+    "FF_count": 1728,
+    "activity_improvements": {
+      "E": true,
+      "H4": true,
+      "H8": true
+    },
+    "all_three_improved": true,
+    "alternative_mixed_tradeoff": false,
+    "any_candidate_mixed_tradeoff": false,
+    "any_candidate_no_or_negligible_benefit": false,
+    "attempted": true,
+    "candidates": [
+      {
+        "ATPG_pattern_count": 21,
+        "DRC": 0,
+        "E": 262015361.4929765,
+        "FAN_reported_coverage": 87.58,
+        "FF_count": 1728,
+        "H4": 1795.2251260100002,
+        "H8": 562.1349074,
+        "WNS": 8.4148,
+        "activity_relations": {
+          "E": "improved",
+          "H4": "improved",
+          "H8": "improved"
+        },
+        "activity_status": "QUALIFIED",
+        "architecture_hash": "2739f4664d6c7da006dacd050cbfe77830cd56f01fae38bf1fb8ef8fcac507b0",
+        "atpg_gates_status": "PASS",
+        "candidate": "CS_C1",
+        "candidate_discovery": {
+          "discovered_attempt": 249,
+          "discovered_evaluation": 181,
+          "discovered_loop_seconds": 621.0536691269999,
+          "discovered_utc": "2026-10-04T18:57:58.418747+00:00"
+        },
+        "delta_E_percent": -0.14102031861900066,
+        "delta_H4_percent": -1.6360896990337381,
+        "delta_H8_percent": -2.6872976065594134,
+        "delta_routed_WL_percent": 2.103374843116357,
+        "design": "s35932",
+        "detected_faults": 87594,
+        "epsilon": 0.1,
+        "fault_coverage": 87.57823591753484,
+        "fault_identity_scope": "Complete collapsed FAN SAF target classes and equivalence multiplicities; uncollapsed members not enumerated",
+        "hold_WNS": 1.08247e-05,
+        "metric_scope": "all_data; ground+pin C*N; H4/H8 source-localized bins/cycle; scan WL connected scan-net upper bound",
+        "parent_reference_hash": "3b60b7163d13734732ef119aabfcd1096713b44ece0a400a57df219a37379fd3",
+        "physical_gates_status": "PASS",
+        "predicted_metrics": {
+          "E_stateful_ff": 161675977.2764728,
+          "H4_stateful_ff": 1161.154446488812,
+          "H8_stateful_ff": 401.860785819169,
+          "timing_max_edge_um": 171.57999999999998,
+          "wire_um": 13297.29
+        },
+        "preselected_primary": true,
+        "provenance": {
+          "ATPG": {
+            "bytes": 2135,
+            "path": "repo://results/pact_cold_start_unseen_20261004/atpg/s35932/CS_C1/atpg_result.json",
+            "sha256": "6c383e5b9364ae8362078073e2153a4d990ce89f181bd019c722a7dc80f21d86"
+          },
+          "architecture": {
+            "bytes": 225020,
+            "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s35932/budget_0.10/architectures/2739f4664d6c7da006dacd050cbfe77830cd56f01fae38bf1fb8ef8fcac507b0.json",
+            "sha256": "9c429137982139ce7e15e73cfd0e261e7121bff999b56df4c3d6415b7248b631"
+          },
+          "exact_activity": {
+            "bytes": 1640,
+            "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C1/activity/result.json",
+            "sha256": "29eb51b2d915f208c96c411394f86f9413c2590e94fc8496b93145770ab13bd8"
+          },
+          "physical": {
+            "bytes": 451653,
+            "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C1/route_result.json",
+            "sha256": "b1f2672f0d9a8b68df684bce2ecbc39e2b620b1679e134dd761c3ba6411d0993"
+          },
+          "search": {
+            "bytes": 30799,
+            "path": "repo://results/pact_cold_start_unseen_20261004/searches/s35932/budget_0.10/search.json",
+            "sha256": "f765b18e7a6034d34d5944cf3b010d22dc981f87013faaebbc523d63669931f3"
+          },
+          "selection": {
+            "bytes": 6802,
+            "path": "repo://results/pact_cold_start_unseen_20261004/selections/s35932/preselected_candidates.json",
+            "sha256": "ba2a32b97cc8eece56924f9b51562d44509b0e001e2090f6360325e22b842ac6"
+          }
+        },
+        "qualification_status": "QUALIFIED",
+        "receipt_order_audit": {
+          "aggregate_receipt_timestamps": "Physical/ATPG aggregate created_utc summarizes completed stages; per-candidate completions establish gate order, while bound selection_snapshot and rewire execution interval establish preselection before implementation",
+          "physical_execution_start_proof": {
+            "architecture": {
+              "bytes": 225020,
+              "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s35932/budget_0.10/architectures/2739f4664d6c7da006dacd050cbfe77830cd56f01fae38bf1fb8ef8fcac507b0.json",
+              "sha256": "9c429137982139ce7e15e73cfd0e261e7121bff999b56df4c3d6415b7248b631"
+            },
+            "execution_completed_utc": "2026-10-04T19:04:52.384148+00:00",
+            "execution_start_derived_utc": "2026-10-04T19:04:48.149353+00:00",
+            "rewire_execution": {
+              "bytes": 1356,
+              "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C1/rewire/execution.json",
+              "sha256": "e39e2f55785b2b5f9caf031cfcda735d0e6f6eb659a4062cee0c49e28b15cb06"
+            },
+            "selection_snapshot": {
+              "bytes": 5470,
+              "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/selection_snapshot.json",
+              "sha256": "0777fa87a7ed17013a5a529eaebc21a98d1dc8b89fb14b7fe9086b5dab5d54a5"
+            },
+            "start_time_basis": "Reconstructed execution-interval start: immutable completion timestamp minus measured wall_seconds; not a separately recorded process-launch timestamp",
+            "wall_seconds": 4.234794754999712
+          },
+          "preselection_before_physical_implementation": true,
+          "receipts": {
+            "atpg_results": {
+              "bytes": 2135,
+              "path": "repo://results/pact_cold_start_unseen_20261004/atpg/s35932/CS_C1/atpg_result.json",
+              "sha256": "6c383e5b9364ae8362078073e2153a4d990ce89f181bd019c722a7dc80f21d86"
+            },
+            "cold_start_input": {
+              "bytes": 5552,
+              "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s35932/cold_start_input.json",
+              "sha256": "a6960da6ab021c7ede1b1948ec852450df8a979e2b3658c25fdd41a1864642d7"
+            },
+            "physical_results": {
+              "bytes": 451653,
+              "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C1/route_result.json",
+              "sha256": "b1f2672f0d9a8b68df684bce2ecbc39e2b620b1679e134dd761c3ba6411d0993"
+            },
+            "preselected_candidates": {
+              "bytes": 6802,
+              "path": "repo://results/pact_cold_start_unseen_20261004/selections/s35932/preselected_candidates.json",
+              "sha256": "ba2a32b97cc8eece56924f9b51562d44509b0e001e2090f6360325e22b842ac6"
+            },
+            "reference_frozen": {
+              "bytes": 4768,
+              "path": "repo://results/pact_cold_start_unseen_20261004/references/s35932/reference_frozen.json",
+              "sha256": "94b18c8eae411462fa0666b94d8fbee46465b0625d4aada4cb3255488aa2c5d8"
+            },
+            "rewire_execution": {
+              "bytes": 1356,
+              "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C1/rewire/execution.json",
+              "sha256": "e39e2f55785b2b5f9caf031cfcda735d0e6f6eb659a4062cee0c49e28b15cb06"
+            },
+            "search_configuration": {
+              "bytes": 3783,
+              "path": "repo://results/pact_cold_start_unseen_20261004/searches/s35932/search_configuration.json",
+              "sha256": "4205ce331fa822035b8ab201941256a63b6cd79f999b81dde6d399fc65536768"
+            },
+            "search_results": {
+              "bytes": 1818,
+              "path": "repo://results/pact_cold_start_unseen_20261004/searches/s35932/search_results.json",
+              "sha256": "de8805f4323c73871ec98079b561f9e589f736d12315a2bb61ac927b0ae35c4b"
+            },
+            "selection_snapshot": {
+              "bytes": 5470,
+              "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/selection_snapshot.json",
+              "sha256": "0777fa87a7ed17013a5a529eaebc21a98d1dc8b89fb14b7fe9086b5dab5d54a5"
+            }
+          },
+          "status": "PASS",
+          "timestamps": {
+            "atpg_results": "2026-10-04T19:17:15.670767+00:00",
+            "cold_start_input": "2026-10-04T18:10:13.452421+00:00",
+            "physical_results": "2026-10-04T19:16:45.521433+00:00",
+            "preselected_candidates": "2026-10-04T19:03:34.381899+00:00",
+            "reference_frozen": "2026-10-04T18:10:01.982622+00:00",
+            "rewire_execution_completed": "2026-10-04T19:04:52.384148+00:00",
+            "rewire_execution_start_derived": "2026-10-04T19:04:48.149353+00:00",
+            "search_configuration": "2026-10-04T18:14:11.615676+00:00",
+            "search_results": "2026-10-04T19:03:34.222384+00:00",
+            "selection_snapshot": "2026-10-04T19:04:47.668945+00:00"
+          }
+        },
+        "record_kind": "PROSPECTIVE_PACT_CANDIDATE",
+        "reference": "B2",
+        "route_roles": [
+          "balanced"
+        ],
+        "routed_scan_wirelength_um": 47941.2,
+        "search_runtime_seconds": 2908.539542158,
+        "seed": 11,
+        "selection_order": 1,
+        "status": "PACT_STRONG_IMPROVEMENT",
+        "target_faults": 100018,
+        "uncollapsed_member_identity_equivalence": "NOT_ENUMERATED"
+      },
+      {
+        "ATPG_pattern_count": 21,
+        "DRC": 0,
+        "E": 260681038.28455126,
+        "FAN_reported_coverage": 87.58,
+        "FF_count": 1728,
+        "H4": 1790.1091619699998,
+        "H8": 562.58068198,
+        "WNS": 8.41509,
+        "activity_relations": {
+          "E": "improved",
+          "H4": "improved",
+          "H8": "improved"
+        },
+        "activity_status": "QUALIFIED",
+        "architecture_hash": "11a96ff3c00041b5496d0d7cfa0fcf87c1bb363ede0a5391009805af488c7ed0",
+        "atpg_gates_status": "PASS",
+        "candidate": "CS_C2",
+        "candidate_discovery": {
+          "discovered_attempt": 149,
+          "discovered_evaluation": 114,
+          "discovered_loop_seconds": 382.638999884,
+          "discovered_utc": "2026-10-04T18:53:55.432765+00:00"
+        },
+        "delta_E_percent": -0.6495559762205172,
+        "delta_H4_percent": -1.9164034160392585,
+        "delta_H8_percent": -2.610128356852537,
+        "delta_routed_WL_percent": 1.2908704105479396,
+        "design": "s35932",
+        "detected_faults": 87594,
+        "epsilon": 0.1,
+        "fault_coverage": 87.57823591753484,
+        "fault_identity_scope": "Complete collapsed FAN SAF target classes and equivalence multiplicities; uncollapsed members not enumerated",
+        "hold_WNS": 1.08247e-05,
+        "metric_scope": "all_data; ground+pin C*N; H4/H8 source-localized bins/cycle; scan WL connected scan-net upper bound",
+        "parent_reference_hash": "3b60b7163d13734732ef119aabfcd1096713b44ece0a400a57df219a37379fd3",
+        "physical_gates_status": "PASS",
+        "predicted_metrics": {
+          "E_stateful_ff": 160759924.72747898,
+          "H4_stateful_ff": 1202.2201135636515,
+          "H8_stateful_ff": 416.57728105128484,
+          "timing_max_edge_um": 51.09,
+          "wire_um": 13021.35
+        },
+        "preselected_primary": false,
+        "provenance": {
+          "ATPG": {
+            "bytes": 2135,
+            "path": "repo://results/pact_cold_start_unseen_20261004/atpg/s35932/CS_C2/atpg_result.json",
+            "sha256": "abcd19da87688c1e4730be99a4509715a47c70b527e241558a204bba5e98e14b"
+          },
+          "architecture": {
+            "bytes": 225020,
+            "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s35932/budget_0.10/architectures/11a96ff3c00041b5496d0d7cfa0fcf87c1bb363ede0a5391009805af488c7ed0.json",
+            "sha256": "56f53b7a8cd14287b22e3180076593cce876c362d008cd8ecfb02e47135fbe5b"
+          },
+          "exact_activity": {
+            "bytes": 1649,
+            "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C2/activity/result.json",
+            "sha256": "dbe808af594f7233b99cad3ee071bfb169013c054f4ce526c8380fd02c5c5495"
+          },
+          "physical": {
+            "bytes": 451630,
+            "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C2/route_result.json",
+            "sha256": "d25bddca9670f08792a601c583129162a7decd8a03437eab2a5f7cc2b33e5413"
+          },
+          "search": {
+            "bytes": 30799,
+            "path": "repo://results/pact_cold_start_unseen_20261004/searches/s35932/budget_0.10/search.json",
+            "sha256": "f765b18e7a6034d34d5944cf3b010d22dc981f87013faaebbc523d63669931f3"
+          },
+          "selection": {
+            "bytes": 6802,
+            "path": "repo://results/pact_cold_start_unseen_20261004/selections/s35932/preselected_candidates.json",
+            "sha256": "ba2a32b97cc8eece56924f9b51562d44509b0e001e2090f6360325e22b842ac6"
+          }
+        },
+        "qualification_status": "QUALIFIED",
+        "receipt_order_audit": {
+          "aggregate_receipt_timestamps": "Physical/ATPG aggregate created_utc summarizes completed stages; per-candidate completions establish gate order, while bound selection_snapshot and rewire execution interval establish preselection before implementation",
+          "physical_execution_start_proof": {
+            "architecture": {
+              "bytes": 225020,
+              "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s35932/budget_0.10/architectures/11a96ff3c00041b5496d0d7cfa0fcf87c1bb363ede0a5391009805af488c7ed0.json",
+              "sha256": "56f53b7a8cd14287b22e3180076593cce876c362d008cd8ecfb02e47135fbe5b"
+            },
+            "execution_completed_utc": "2026-10-04T19:17:22.439250+00:00",
+            "execution_start_derived_utc": "2026-10-04T19:17:18.802229+00:00",
+            "rewire_execution": {
+              "bytes": 1357,
+              "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C2/rewire/execution.json",
+              "sha256": "7e2b6791d8d96047df9e8105fd74ad67fcbccbe553fbf4a45c6edb742f85abaa"
+            },
+            "selection_snapshot": {
+              "bytes": 5470,
+              "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/selection_snapshot.json",
+              "sha256": "0777fa87a7ed17013a5a529eaebc21a98d1dc8b89fb14b7fe9086b5dab5d54a5"
+            },
+            "start_time_basis": "Reconstructed execution-interval start: immutable completion timestamp minus measured wall_seconds; not a separately recorded process-launch timestamp",
+            "wall_seconds": 3.6370207740001206
+          },
+          "preselection_before_physical_implementation": true,
+          "receipts": {
+            "atpg_results": {
+              "bytes": 2135,
+              "path": "repo://results/pact_cold_start_unseen_20261004/atpg/s35932/CS_C2/atpg_result.json",
+              "sha256": "abcd19da87688c1e4730be99a4509715a47c70b527e241558a204bba5e98e14b"
+            },
+            "cold_start_input": {
+              "bytes": 5552,
+              "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s35932/cold_start_input.json",
+              "sha256": "a6960da6ab021c7ede1b1948ec852450df8a979e2b3658c25fdd41a1864642d7"
+            },
+            "physical_results": {
+              "bytes": 451630,
+              "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C2/route_result.json",
+              "sha256": "d25bddca9670f08792a601c583129162a7decd8a03437eab2a5f7cc2b33e5413"
+            },
+            "preselected_candidates": {
+              "bytes": 6802,
+              "path": "repo://results/pact_cold_start_unseen_20261004/selections/s35932/preselected_candidates.json",
+              "sha256": "ba2a32b97cc8eece56924f9b51562d44509b0e001e2090f6360325e22b842ac6"
+            },
+            "reference_frozen": {
+              "bytes": 4768,
+              "path": "repo://results/pact_cold_start_unseen_20261004/references/s35932/reference_frozen.json",
+              "sha256": "94b18c8eae411462fa0666b94d8fbee46465b0625d4aada4cb3255488aa2c5d8"
+            },
+            "rewire_execution": {
+              "bytes": 1357,
+              "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C2/rewire/execution.json",
+              "sha256": "7e2b6791d8d96047df9e8105fd74ad67fcbccbe553fbf4a45c6edb742f85abaa"
+            },
+            "search_configuration": {
+              "bytes": 3783,
+              "path": "repo://results/pact_cold_start_unseen_20261004/searches/s35932/search_configuration.json",
+              "sha256": "4205ce331fa822035b8ab201941256a63b6cd79f999b81dde6d399fc65536768"
+            },
+            "search_results": {
+              "bytes": 1818,
+              "path": "repo://results/pact_cold_start_unseen_20261004/searches/s35932/search_results.json",
+              "sha256": "de8805f4323c73871ec98079b561f9e589f736d12315a2bb61ac927b0ae35c4b"
+            },
+            "selection_snapshot": {
+              "bytes": 5470,
+              "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/selection_snapshot.json",
+              "sha256": "0777fa87a7ed17013a5a529eaebc21a98d1dc8b89fb14b7fe9086b5dab5d54a5"
+            }
+          },
+          "status": "PASS",
+          "timestamps": {
+            "atpg_results": "2026-10-04T19:29:38.052125+00:00",
+            "cold_start_input": "2026-10-04T18:10:13.452421+00:00",
+            "physical_results": "2026-10-04T19:29:06.685234+00:00",
+            "preselected_candidates": "2026-10-04T19:03:34.381899+00:00",
+            "reference_frozen": "2026-10-04T18:10:01.982622+00:00",
+            "rewire_execution_completed": "2026-10-04T19:17:22.439250+00:00",
+            "rewire_execution_start_derived": "2026-10-04T19:17:18.802229+00:00",
+            "search_configuration": "2026-10-04T18:14:11.615676+00:00",
+            "search_results": "2026-10-04T19:03:34.222384+00:00",
+            "selection_snapshot": "2026-10-04T19:04:47.668945+00:00"
+          }
+        },
+        "record_kind": "PROSPECTIVE_PACT_CANDIDATE",
+        "reference": "B2",
+        "route_roles": [
+          "best_E"
+        ],
+        "routed_scan_wirelength_um": 47559.7,
+        "search_runtime_seconds": 2908.539542158,
+        "seed": 11,
+        "selection_order": 2,
+        "status": "PACT_STRONG_IMPROVEMENT",
+        "target_faults": 100018,
+        "uncollapsed_member_identity_equivalence": "NOT_ENUMERATED"
+      },
+      {
+        "ATPG_pattern_count": 21,
+        "DRC": 0,
+        "E": 261639931.65970486,
+        "FAN_reported_coverage": 87.58,
+        "FF_count": 1728,
+        "H4": 1800.0317664400006,
+        "H8": 562.80230917,
+        "WNS": 8.4146,
+        "activity_relations": {
+          "E": "improved",
+          "H4": "improved",
+          "H8": "improved"
+        },
+        "activity_status": "QUALIFIED",
+        "architecture_hash": "f3ad90a574f428850c4764fec5ff8cef1f7066697f7a232588443804f875862f",
+        "atpg_gates_status": "PASS",
+        "candidate": "CS_C3",
+        "candidate_discovery": {
+          "discovered_attempt": 266,
+          "discovered_evaluation": 150,
+          "discovered_loop_seconds": 516.6941781749999,
+          "discovered_utc": "2026-10-04T18:39:50.491787+00:00"
+        },
+        "delta_E_percent": -0.28410368548282827,
+        "delta_H4_percent": -1.3727244301014796,
+        "delta_H8_percent": -2.5717618713366086,
+        "delta_routed_WL_percent": 0.9593302663332137,
+        "design": "s35932",
+        "detected_faults": 87594,
+        "epsilon": 0.05,
+        "fault_coverage": 87.57823591753484,
+        "fault_identity_scope": "Complete collapsed FAN SAF target classes and equivalence multiplicities; uncollapsed members not enumerated",
+        "hold_WNS": 1.08247e-05,
+        "metric_scope": "all_data; ground+pin C*N; H4/H8 source-localized bins/cycle; scan WL connected scan-net upper bound",
+        "parent_reference_hash": "3b60b7163d13734732ef119aabfcd1096713b44ece0a400a57df219a37379fd3",
+        "physical_gates_status": "PASS",
+        "predicted_metrics": {
+          "E_stateful_ff": 161531783.23679033,
+          "H4_stateful_ff": 1159.4384965560594,
+          "H8_stateful_ff": 413.87394377038,
+          "timing_max_edge_um": 51.09,
+          "wire_um": 12728.689999999999
+        },
+        "preselected_primary": false,
+        "provenance": {
+          "ATPG": {
+            "bytes": 2135,
+            "path": "repo://results/pact_cold_start_unseen_20261004/atpg/s35932/CS_C3/atpg_result.json",
+            "sha256": "777d801f8d1f1a8bbe40b9049ef2719a8eb5ad391cf4a8b7898fc14d40c91fc9"
+          },
+          "architecture": {
+            "bytes": 225020,
+            "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s35932/budget_0.05/architectures/f3ad90a574f428850c4764fec5ff8cef1f7066697f7a232588443804f875862f.json",
+            "sha256": "9d4013c22ab583251a91f0ee2639e59ee3a70c3998ca26f4c5c47647a8354c79"
+          },
+          "exact_activity": {
+            "bytes": 1638,
+            "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/result.json",
+            "sha256": "92d9be0b502443dae0a6fb71d48812467e3356635f6c1175becc65cba73f76c0"
+          },
+          "physical": {
+            "bytes": 451640,
+            "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/route_result.json",
+            "sha256": "d149e06677de11b8e5cce98aaff68df541cc135693dfee26e1469041673f7cff"
+          },
+          "search": {
+            "bytes": 30574,
+            "path": "repo://results/pact_cold_start_unseen_20261004/searches/s35932/budget_0.05/search.json",
+            "sha256": "a89596238b529b12dccd1c5d7227a7c8d468817778da9ae4134108b68f1a372f"
+          },
+          "selection": {
+            "bytes": 6802,
+            "path": "repo://results/pact_cold_start_unseen_20261004/selections/s35932/preselected_candidates.json",
+            "sha256": "ba2a32b97cc8eece56924f9b51562d44509b0e001e2090f6360325e22b842ac6"
+          }
+        },
+        "qualification_status": "QUALIFIED",
+        "receipt_order_audit": {
+          "aggregate_receipt_timestamps": "Physical/ATPG aggregate created_utc summarizes completed stages; per-candidate completions establish gate order, while bound selection_snapshot and rewire execution interval establish preselection before implementation",
+          "physical_execution_start_proof": {
+            "architecture": {
+              "bytes": 225020,
+              "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s35932/budget_0.05/architectures/f3ad90a574f428850c4764fec5ff8cef1f7066697f7a232588443804f875862f.json",
+              "sha256": "9d4013c22ab583251a91f0ee2639e59ee3a70c3998ca26f4c5c47647a8354c79"
+            },
+            "execution_completed_utc": "2026-10-04T19:29:44.409672+00:00",
+            "execution_start_derived_utc": "2026-10-04T19:29:40.627258+00:00",
+            "rewire_execution": {
+              "bytes": 1357,
+              "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/rewire/execution.json",
+              "sha256": "c9fc2a1a68de992b6c2acd9bc5c4f4560169ed2427a9db47f9ae06dc806c146d"
+            },
+            "selection_snapshot": {
+              "bytes": 5470,
+              "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/selection_snapshot.json",
+              "sha256": "0777fa87a7ed17013a5a529eaebc21a98d1dc8b89fb14b7fe9086b5dab5d54a5"
+            },
+            "start_time_basis": "Reconstructed execution-interval start: immutable completion timestamp minus measured wall_seconds; not a separately recorded process-launch timestamp",
+            "wall_seconds": 3.7824138799996945
+          },
+          "preselection_before_physical_implementation": true,
+          "receipts": {
+            "atpg_results": {
+              "bytes": 2135,
+              "path": "repo://results/pact_cold_start_unseen_20261004/atpg/s35932/CS_C3/atpg_result.json",
+              "sha256": "777d801f8d1f1a8bbe40b9049ef2719a8eb5ad391cf4a8b7898fc14d40c91fc9"
+            },
+            "cold_start_input": {
+              "bytes": 5552,
+              "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s35932/cold_start_input.json",
+              "sha256": "a6960da6ab021c7ede1b1948ec852450df8a979e2b3658c25fdd41a1864642d7"
+            },
+            "physical_results": {
+              "bytes": 451640,
+              "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/route_result.json",
+              "sha256": "d149e06677de11b8e5cce98aaff68df541cc135693dfee26e1469041673f7cff"
+            },
+            "preselected_candidates": {
+              "bytes": 6802,
+              "path": "repo://results/pact_cold_start_unseen_20261004/selections/s35932/preselected_candidates.json",
+              "sha256": "ba2a32b97cc8eece56924f9b51562d44509b0e001e2090f6360325e22b842ac6"
+            },
+            "reference_frozen": {
+              "bytes": 4768,
+              "path": "repo://results/pact_cold_start_unseen_20261004/references/s35932/reference_frozen.json",
+              "sha256": "94b18c8eae411462fa0666b94d8fbee46465b0625d4aada4cb3255488aa2c5d8"
+            },
+            "rewire_execution": {
+              "bytes": 1357,
+              "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/rewire/execution.json",
+              "sha256": "c9fc2a1a68de992b6c2acd9bc5c4f4560169ed2427a9db47f9ae06dc806c146d"
+            },
+            "search_configuration": {
+              "bytes": 3783,
+              "path": "repo://results/pact_cold_start_unseen_20261004/searches/s35932/search_configuration.json",
+              "sha256": "4205ce331fa822035b8ab201941256a63b6cd79f999b81dde6d399fc65536768"
+            },
+            "search_results": {
+              "bytes": 1818,
+              "path": "repo://results/pact_cold_start_unseen_20261004/searches/s35932/search_results.json",
+              "sha256": "de8805f4323c73871ec98079b561f9e589f736d12315a2bb61ac927b0ae35c4b"
+            },
+            "selection_snapshot": {
+              "bytes": 5470,
+              "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/selection_snapshot.json",
+              "sha256": "0777fa87a7ed17013a5a529eaebc21a98d1dc8b89fb14b7fe9086b5dab5d54a5"
+            }
+          },
+          "status": "PASS",
+          "timestamps": {
+            "atpg_results": "2026-10-04T19:41:55.455867+00:00",
+            "cold_start_input": "2026-10-04T18:10:13.452421+00:00",
+            "physical_results": "2026-10-04T19:41:23.753107+00:00",
+            "preselected_candidates": "2026-10-04T19:03:34.381899+00:00",
+            "reference_frozen": "2026-10-04T18:10:01.982622+00:00",
+            "rewire_execution_completed": "2026-10-04T19:29:44.409672+00:00",
+            "rewire_execution_start_derived": "2026-10-04T19:29:40.627258+00:00",
+            "search_configuration": "2026-10-04T18:14:11.615676+00:00",
+            "search_results": "2026-10-04T19:03:34.222384+00:00",
+            "selection_snapshot": "2026-10-04T19:04:47.668945+00:00"
+          }
+        },
+        "record_kind": "PROSPECTIVE_PACT_CANDIDATE",
+        "reference": "B2",
+        "route_roles": [
+          "best_H4"
+        ],
+        "routed_scan_wirelength_um": 47404.03,
+        "search_runtime_seconds": 2908.539542158,
+        "seed": 11,
+        "selection_order": 3,
+        "status": "PACT_STRONG_IMPROVEMENT",
+        "target_faults": 100018,
+        "uncollapsed_member_identity_equivalence": "NOT_ENUMERATED"
+      }
+    ],
+    "conclusion_scope": "PRESELECTED_BALANCED_PRIMARY; all retained alternatives remain in scientific counts",
+    "design": "s35932",
+    "eligible": true,
+    "initialization_receipt": {
+      "bytes": 414826,
+      "path": "repo://results/pact_cold_start_unseen_20261004/searches/s35932/initialization.json",
+      "sha256": "52423946eb97870f15c5e1f662161b388374ba416796b1cf50b02af071a580c4"
+    },
+    "initialization_scope": "PRODUCTION_SEARCH_INITIALIZATION",
+    "initialized": true,
+    "preselected_candidates": [
+      "CS_C1",
+      "CS_C2",
+      "CS_C3"
+    ],
+    "primary_candidate": "CS_C1",
+    "primary_scientific_category": "PACT_STRONG_IMPROVEMENT",
+    "qualified_candidates": [
+      "CS_C1",
+      "CS_C2",
+      "CS_C3"
+    ],
+    "search_completed": true,
+    "selected_reference": "B2",
+    "status": "PACT_STRONG_IMPROVEMENT",
+    "terminal": true,
+    "zero_historical_state": true
+  },
+  "schema": "pact_cold_start_final_qualification_v1",
+  "scientific_method_change": false,
+  "stage_receipts": {
+    "atpg_results": {
+      "bytes": 7585,
+      "path": "repo://results/pact_cold_start_unseen_20261004/atpg/s35932/atpg_results.json",
+      "sha256": "2928c79653ff31aad056a04ea5b28eb9b9dac617d8ada8a86f80fd14b73e58e8"
+    },
+    "cold_start_input": {
+      "bytes": 5552,
+      "path": "repo://results/pact_cold_start_unseen_20261004/inputs/s35932/cold_start_input.json",
+      "sha256": "a6960da6ab021c7ede1b1948ec852450df8a979e2b3658c25fdd41a1864642d7"
+    },
+    "physical_results": {
+      "bytes": 1544263,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/physical_results.json",
+      "sha256": "9841e9b000e73b4fbfbb3080651ba00c1dbd904d7cbe2c377914b0c2b398e40f"
+    },
+    "preselected_candidates": {
+      "bytes": 6802,
+      "path": "repo://results/pact_cold_start_unseen_20261004/selections/s35932/preselected_candidates.json",
+      "sha256": "ba2a32b97cc8eece56924f9b51562d44509b0e001e2090f6360325e22b842ac6"
+    },
+    "reference_frozen": {
+      "bytes": 4768,
+      "path": "repo://results/pact_cold_start_unseen_20261004/references/s35932/reference_frozen.json",
+      "sha256": "94b18c8eae411462fa0666b94d8fbee46465b0625d4aada4cb3255488aa2c5d8"
+    },
+    "search_configuration": {
+      "bytes": 3783,
+      "path": "repo://results/pact_cold_start_unseen_20261004/searches/s35932/search_configuration.json",
+      "sha256": "4205ce331fa822035b8ab201941256a63b6cd79f999b81dde6d399fc65536768"
+    },
+    "search_results": {
+      "bytes": 1818,
+      "path": "repo://results/pact_cold_start_unseen_20261004/searches/s35932/search_results.json",
+      "sha256": "de8805f4323c73871ec98079b561f9e589f736d12315a2bb61ac927b0ae35c4b"
+    },
+    "selection_snapshot": {
+      "bytes": 5470,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/selection_snapshot.json",
+      "sha256": "0777fa87a7ed17013a5a529eaebc21a98d1dc8b89fb14b7fe9086b5dab5d54a5"
+    }
+  },
+  "status": "PACT_STRONG_IMPROVEMENT",
+  "terminal": true
+}

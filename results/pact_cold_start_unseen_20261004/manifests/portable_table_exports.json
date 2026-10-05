@@ -1,0 +1,101 @@
+{
+  "created_utc": "2026-10-05T02:45:05.153473+00:00",
+  "exports": [
+    {
+      "exact_cell_strings_preserved": true,
+      "fields": [
+        "design",
+        "reference",
+        "candidate",
+        "architecture_hash",
+        "record_kind",
+        "routed_scan_wirelength_um",
+        "E",
+        "H4",
+        "H8",
+        "delta_routed_WL_percent",
+        "delta_E_percent",
+        "delta_H4_percent",
+        "delta_H8_percent",
+        "WNS",
+        "hold_WNS",
+        "DRC",
+        "fault_coverage",
+        "search_runtime_seconds",
+        "qualification_status",
+        "status"
+      ],
+      "line_ending": "LF",
+      "portable_export": {
+        "bytes": 5526,
+        "path": "repo://results/pact_cold_start_unseen_20261004/canonical/prospective_unseen_results_portable.csv",
+        "sha256": "e0dc462237f84142afeddd0d3943f6e5a7a03be0e89e1e20a402cb8575072946"
+      },
+      "row_count": 18,
+      "source": {
+        "bytes": 5564,
+        "path": "repo://results/pact_cold_start_unseen_20261004/canonical/prospective_unseen_results.csv",
+        "sha256": "3ec5fdbbe70cf76b48401f71f502df424c3906d0820a3a0932c40d03816611af"
+      }
+    },
+    {
+      "exact_cell_strings_preserved": true,
+      "fields": [
+        "design",
+        "FF_count",
+        "ATPG_pattern_count",
+        "target_fault_count",
+        "epsilon",
+        "seed",
+        "status",
+        "registered_loop_seconds",
+        "model_setup_seconds",
+        "lane_initialization_seconds",
+        "search_loop_seconds",
+        "lane_total_seconds",
+        "solver_worker_wall_seconds",
+        "solver_worker_CPU_seconds",
+        "solver_worker_peak_RSS_KiB",
+        "exact_mutation_evaluations",
+        "exact_state_score_calls",
+        "independent_replays",
+        "exact_mutation_evaluations_per_second",
+        "attempts",
+        "screened_infeasible",
+        "accepted_moves",
+        "rejected_exact_moves",
+        "archive_insertions",
+        "initial_reference_archive_insertions",
+        "archive_size",
+        "restarts",
+        "final_stagnation_attempts",
+        "stagnation_termination_events",
+        "termination",
+        "state_score_seconds",
+        "independent_replay_seconds",
+        "evaluator_measured_component_seconds",
+        "lane_unattributed_seconds",
+        "solver_overhead_seconds",
+        "timing_scope",
+        "source_receipt"
+      ],
+      "line_ending": "LF",
+      "portable_export": {
+        "bytes": 7113,
+        "path": "repo://results/pact_cold_start_unseen_20261004/scalability/solver_scalability_portable.csv",
+        "sha256": "2dc288eb4c1adce7d239d9fc4203c1e350ce72e764f68dca59589671860da6b4"
+      },
+      "row_count": 12,
+      "source": {
+        "bytes": 7139,
+        "path": "repo://results/pact_cold_start_unseen_20261004/scalability/solver_scalability.csv",
+        "sha256": "21355a4ec18b0d5cab0d182c4b379d9cff82a527087924c14ad21b0fd1717ef2"
+      }
+    }
+  ],
+  "original_sealed_tables_unmodified": true,
+  "reason": "The sealed Windows CSV writer expanded its CSV CRLF terminator into CR CR LF. Original sealed bytes and their completion bindings are retained. These supplementary tables use explicit LF and preserve every parsed field/value exactly, providing clean cross-platform and spreadsheet import.",
+  "schema": "pact_cold_start_portable_table_exports_v1",
+  "scope": "Portable UTF-8 CSV derivatives; no numerical computation or scientific execution",
+  "status": "PASS"
+}

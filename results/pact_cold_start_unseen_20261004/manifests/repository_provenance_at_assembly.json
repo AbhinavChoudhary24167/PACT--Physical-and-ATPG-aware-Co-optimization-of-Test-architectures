@@ -1,0 +1,75 @@
+{
+  "all_preselected_candidates_retained": 12,
+  "all_registered_design_units_terminal": 8,
+  "blocked_checkpoint_SHA": "d4f255caddf5658b12f0450bb94bed9af0e682d6",
+  "branch": "experiment/cold-start-unseen-pact-20261004",
+  "campaign_starting_SHA": "d4f255caddf5658b12f0450bb94bed9af0e682d6",
+  "created_utc": "2026-10-05T02:39:14.452901+00:00",
+  "ending_checkpoint_ref": "refs/tags/pact-cold-start-unseen-campaign-20261004",
+  "ending_checkpoint_scope": "The named local tag resolves to the final commit containing sealed reports, figures and these provenance records. Assembly SHA precedes generated reporting artifacts and is not claimed to be the ending commit.",
+  "experimental_dataset_and_source_SHA_at_report_assembly": "3c6f4d22164a46f1c22a5267c33ae8cb27bf39af",
+  "figure_generator": {
+    "bytes": 5464,
+    "path": "repo://scripts/pact_cold_start_figures.py",
+    "sha256": "b0b5bebe6c1f74cf248093e7c024205dfe4fed76b8480d9ee67535b20f706b60"
+  },
+  "framework_contract": {
+    "bytes": 6247,
+    "path": "repo://docs/pact_cold_start.md",
+    "sha256": "407f67412e5736609404c40711b3610ecf6ed9e379eb2276b57c4161edc08455"
+  },
+  "loader_source": {
+    "bytes": 6086,
+    "path": "repo://src/pact/optimizer/cold_start.py",
+    "sha256": "682940b9a6bfc0a79e49d6b1555774671e8eb21854b14f55402a6c7a3aed6407"
+  },
+  "new_commits_before_assembly": [
+    "3c6f4d22164a46f1c22a5267c33ae8cb27bf39af Complete exact qualification of every preselected cold-start candidate",
+    "21d3b702f0cc0330afa6f3a8a4a89b853843b842 Record large cold-start search and strengthen prospective execution audit",
+    "42f21ea90cb9c0c401efe114a3a3b13363aa6fe5 Add audited cold-start diagnostics and prospective reporting",
+    "440c15596fa2213ecd5240cdaa3d58ab9e46ea42 Record qualified prospective small-design cold-start candidates",
+    "d203378f32d08471b8a575f4354aedaef6fa0952 repair: read the frozen scoring closure in discovery statistics and retain initial failed attempt",
+    "ea9432cfd9afb88b8ab09d1f3648ab14526aa41e experiment: add artifact-driven external-reference cold start without historical search state"
+  ],
+  "no_external_publication_performed": true,
+  "qualified_historical_SHA": "9cc69bc077171c34d7aa1e45711489ff4bfed969",
+  "report_source": {
+    "bytes": 61276,
+    "path": "repo://scripts/pact_cold_start_report.py",
+    "sha256": "12ffea09cc9c3636248395a8c67e66017a9eba5c89ef5e81753b9830fdbc7d1a"
+  },
+  "schema": "pact_cold_start_repository_provenance_v1",
+  "scientific_method_changes": 0,
+  "terminal_snapshot": {
+    "bytes": 458833,
+    "path": "repo://results/pact_cold_start_unseen_20261004/logs/progress_snapshot.json",
+    "sha256": "e16faa6ff18ae2cd3c1ee526cfc243769c3b1b29cb3769d3c56b863bd9bc604a"
+  },
+  "validation_receipts": [
+    {
+      "bytes": 1989,
+      "path": "repo://results/pact_cold_start_unseen_20261004/scalability/tests_cold_start_attempt_03.json",
+      "sha256": "2c4499a3ee646a98f172c24aeb0b782baf77e070b2aa54f0a37f08e7a6ea03fe"
+    },
+    {
+      "bytes": 478,
+      "path": "repo://results/pact_cold_start_unseen_20261004/scalability/measurement_validation/tests.json",
+      "sha256": "37bac7e2d924d8b0076763597a367b0f15323b3e5b152032f5e010a0008839e8"
+    },
+    {
+      "bytes": 17917,
+      "path": "repo://results/pact_cold_start_unseen_20261004/scalability/tests_cold_start_report_04.json",
+      "sha256": "9da5935b2b338638dbe7217a9d9102e3d8d16b676993aea93d6a722599a6de71"
+    },
+    {
+      "bytes": 449,
+      "path": "repo://results/pact_cold_start_unseen_20261004/scalability/intermediate_frozen_core_readonly_audit.json",
+      "sha256": "14117b5fb4f3c219e53d0e920f49d051f30f852e95a325741e185270db00fbc3"
+    },
+    {
+      "bytes": 6495,
+      "path": "repo://results/pact_cold_start_unseen_20261004/scalability/s35932_CS_C3_terminal_reconciliation.json",
+      "sha256": "5ca832d6a9ffb786cb2c52124c25027e8c78ad74b5fafbd80ac29d5ce65bd8cd"
+    }
+  ]
+}

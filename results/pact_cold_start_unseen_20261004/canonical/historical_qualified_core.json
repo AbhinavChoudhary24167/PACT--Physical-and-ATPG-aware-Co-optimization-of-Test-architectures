@@ -1,0 +1,1740 @@
+{
+  "executed_qualification_sources": {
+    "pact_end_to_end.py": "ea433cf3c30acc3871af5118d84fd746e6ba96337dd2944d721fc8b587e40740",
+    "qualification.py": "6ecc898e90b8f5b610000c3458577ade59d091cb9daba914d19d0ac2b2aa3117"
+  },
+  "identity_limit": "Complete identity equality is established for frozen FAN collapsed target classes and their weights; individual uncollapsed equivalence-class members are not enumerated",
+  "optimizer_unchanged": true,
+  "physical_results_reused": true,
+  "primary_candidates": {
+    "s15850": "s15850_C1",
+    "s5378": "s5378_C1",
+    "s9234": "s9234_C1"
+  },
+  "primary_selection_reason": "Existing pre-route balanced C1 representative for every design; no post-measurement re-ranking. All other retained selections remain reported.",
+  "qualification_source_sha": "de833ef018703d26dd1e6e1fd1e4a103dc8dc41e",
+  "records": [
+    {
+      "ATPG_pattern_count": 117,
+      "DRC_count": 0,
+      "E": 19523343.21176149,
+      "FAN_reported_coverage": 96.04,
+      "FF_count": 179,
+      "H4": 446.2310466800001,
+      "H8": 187.25777279000002,
+      "TNS": 0,
+      "WNS": 9.08788,
+      "architecture_hash": "524e797e930947d722d25f683b74606ed558ee8aee242fe36392eb6c5a583ea5",
+      "candidate": "B2",
+      "chain_count": 2,
+      "chain_lengths": [
+        90,
+        89
+      ],
+      "deltas_percent": {
+        "E": 0.0,
+        "H4": 0.0,
+        "H8": 0.0,
+        "routed_scan_wirelength_um": 0.0
+      },
+      "design": "s5378",
+      "detected_collapsed_classes": 7652,
+      "detected_faults": 11354,
+      "extraction_status": "PASS",
+      "fault_coverage": 96.04127897140924,
+      "fault_identity_scope": "Complete collapsed SAF target classes plus equivalence multiplicities on the same original functional circuit/library; uncollapsed member identities are not enumerated",
+      "gates": {
+        "ATPG": "PASS",
+        "DRC": "PASS",
+        "EXTRACTION": "PASS",
+        "FAULT_COVERAGE": "PASS",
+        "FAULT_IDENTITY": "PASS",
+        "ROUTE": "PASS",
+        "SCAN_TOPOLOGY": "PASS",
+        "SERIAL_REPLAY": "PASS",
+        "TIMING": "PASS"
+      },
+      "hold_TNS": 0,
+      "hold_WNS": 0.00271735,
+      "method": "B2",
+      "metric_scope": "all_data; ground+pin C*N; H4/H8 source-localized bins/cycle; scan WL is connected scan-net upper bound",
+      "pattern_count": 117,
+      "physical_runtime_seconds": 171.85822158000008,
+      "physical_seed": 11,
+      "provenance": {
+        "architecture": {
+          "bytes": 23699,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/architectures/s5378_B2.json",
+          "sha256": "e81ca451c422ee74ee682c70b626584493252df249f4c91c706621079551a3ce"
+        },
+        "complete_fault_export": {
+          "bytes": 842314,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/B2/fan/export.json",
+          "sha256": "96d32717dc6cf861406e2b9b5f4a08d7405693168e1271232066edaf9c6ce916"
+        },
+        "faults": {
+          "bytes": 719,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/B2/test_correctness.json",
+          "sha256": "832abd721a2448f672d9e2bb633499220b4a8fff0785ef02f2a3610cd68af7f3"
+        },
+        "physical": {
+          "bytes": 65137,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/B2/physical_proof.json",
+          "sha256": "614fb787d5048634546831d3a6b6ec32a5e29a4fe463c6738e5a4278a2073075"
+        },
+        "recovered_patterns": {
+          "bytes": 58051,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/B2/patterns_recovered.pat",
+          "sha256": "62dd3c3c14911c1e5d7822b409c3479e0987d04a7e576f6631eea57278dc3b69"
+        },
+        "serial": {
+          "bytes": 462,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/B2/serial_replay.json",
+          "sha256": "35b3b9a6d7e33de4b4637e79e8404e0dbd853599d557c2181143fdb5cd10a579"
+        }
+      },
+      "qualification_status": "QUALIFIED",
+      "routed_scan_wirelength_um": 4882.83,
+      "runtime": {
+        "fan_seconds": 0.2260631940000053,
+        "physical_and_search_reused": true,
+        "physical_seconds": 171.85822158000008,
+        "search_seconds": null
+      },
+      "scan_HPWL_um": 1323.0099999999998,
+      "search_seed": null,
+      "source_commit": "6fff875551fe13a2aae3a22f871a6ca7f8d5c1cf",
+      "target_faults": 11822,
+      "timing_stage": "global_route",
+      "total_routed_wirelength_um": 26439,
+      "uncollapsed_member_identity_equivalence": "NOT_ENUMERATED",
+      "undetected_faults": 468
+    },
+    {
+      "ATPG_pattern_count": 117,
+      "DRC_count": 0,
+      "E": 18913553.093274705,
+      "FAN_reported_coverage": 96.04,
+      "FF_count": 179,
+      "H4": 404.20548257,
+      "H8": 166.60605607,
+      "TNS": 0,
+      "WNS": 9.08575,
+      "architecture_hash": "324d51827be16ef9569b469b9612e1be85ef0c3b002e8935760457bb5ff41447",
+      "candidate": "s5378_C1",
+      "candidates_evaluated": 1238,
+      "chain_count": 2,
+      "chain_lengths": [
+        90,
+        89
+      ],
+      "deltas_percent": {
+        "E": -3.1233898409337324,
+        "H4": -9.417893358759798,
+        "H8": -11.028496394197674,
+        "routed_scan_wirelength_um": 0.3368947925690646
+      },
+      "design": "s5378",
+      "detected_collapsed_classes": 7652,
+      "detected_faults": 11354,
+      "epsilon": 0.02,
+      "extraction_status": "PASS",
+      "fault_coverage": 96.04127897140924,
+      "fault_identity_scope": "Complete collapsed SAF target classes plus equivalence multiplicities on the same original functional circuit/library; uncollapsed member identities are not enumerated",
+      "gates": {
+        "ATPG": "PASS",
+        "DRC": "PASS",
+        "EXTRACTION": "PASS",
+        "FAULT_COVERAGE": "PASS",
+        "FAULT_IDENTITY": "PASS",
+        "ROUTE": "PASS",
+        "SCAN_TOPOLOGY": "PASS",
+        "SERIAL_REPLAY": "PASS",
+        "TIMING": "PASS"
+      },
+      "hold_TNS": 0,
+      "hold_WNS": 0.00273321,
+      "method": "PACT",
+      "metric_scope": "all_data; ground+pin C*N; H4/H8 source-localized bins/cycle; scan WL is connected scan-net upper bound",
+      "parent_architecture_hash": "524e797e930947d722d25f683b74606ed558ee8aee242fe36392eb6c5a583ea5",
+      "pattern_count": 117,
+      "physical_runtime_seconds": 161.6932719490003,
+      "physical_seed": 11,
+      "predicted_metrics": {
+        "E_stateful_ff": 15824700.276003648,
+        "H4_stateful_ff": 357.5082456123822,
+        "H8_stateful_ff": 152.8439378123932,
+        "timing_max_edge_um": 31.02,
+        "wire_um": 1349.3899999999999
+      },
+      "provenance": {
+        "architecture": {
+          "bytes": 23699,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/architectures/s5378_s5378_C1.json",
+          "sha256": "3c7de8ffb5839243c8765fa3c92a3a91881481b842d6122f055162c8c2e8b228"
+        },
+        "complete_fault_export": {
+          "bytes": 842314,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/s5378_C1/fan/export.json",
+          "sha256": "96d32717dc6cf861406e2b9b5f4a08d7405693168e1271232066edaf9c6ce916"
+        },
+        "faults": {
+          "bytes": 719,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/s5378_C1/test_correctness.json",
+          "sha256": "832abd721a2448f672d9e2bb633499220b4a8fff0785ef02f2a3610cd68af7f3"
+        },
+        "physical": {
+          "bytes": 65165,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/s5378_C1/physical_proof.json",
+          "sha256": "1457ce32237765ed23f89b0f66f029ed0753ca73ca58d5ebe871d2186a10957e"
+        },
+        "recovered_patterns": {
+          "bytes": 58051,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/s5378_C1/patterns_recovered.pat",
+          "sha256": "62dd3c3c14911c1e5d7822b409c3479e0987d04a7e576f6631eea57278dc3b69"
+        },
+        "serial": {
+          "bytes": 462,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/s5378_C1/serial_replay.json",
+          "sha256": "35b3b9a6d7e33de4b4637e79e8404e0dbd853599d557c2181143fdb5cd10a579"
+        }
+      },
+      "qualification_status": "QUALIFIED",
+      "reference_architecture_hash": "524e797e930947d722d25f683b74606ed558ee8aee242fe36392eb6c5a583ea5",
+      "routed_scan_wirelength_um": 4899.28,
+      "runtime": {
+        "fan_seconds": 0.22239650200000938,
+        "physical_and_search_reused": true,
+        "physical_seconds": 161.6932719490003,
+        "search_seconds": 281.68535059100003
+      },
+      "scan_HPWL_um": 1349.3899999999999,
+      "search_runtime_seconds": 281.68535059100003,
+      "search_seed": 11,
+      "selection_reason": [
+        "balanced"
+      ],
+      "solver_config": {
+        "archive_size": 16,
+        "epsilon": 0.02,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "solver_origin": "B2:2opt",
+      "source_commit": "ec45f67889c72ece13b5f541d39243ccccab0c54",
+      "target_faults": 11822,
+      "timing_stage": "global_route",
+      "total_routed_wirelength_um": 26368,
+      "uncollapsed_member_identity_equivalence": "NOT_ENUMERATED",
+      "undetected_faults": 468
+    },
+    {
+      "ATPG_pattern_count": 117,
+      "DRC_count": 0,
+      "E": 18218623.502973676,
+      "FAN_reported_coverage": 96.04,
+      "FF_count": 179,
+      "H4": 409.56072158999996,
+      "H8": 174.38007253,
+      "TNS": 0,
+      "WNS": 9.08663,
+      "architecture_hash": "c3e6aad1be7c50362e5ffde9e4330debbb36a5624038f3963b2bde9981462646",
+      "candidate": "s5378_C2",
+      "candidates_evaluated": 1090,
+      "chain_count": 2,
+      "chain_lengths": [
+        90,
+        89
+      ],
+      "deltas_percent": {
+        "E": -6.682870319064049,
+        "H4": -8.217788825504346,
+        "H8": -6.876991041884118,
+        "routed_scan_wirelength_um": 5.667922086167243
+      },
+      "design": "s5378",
+      "detected_collapsed_classes": 7652,
+      "detected_faults": 11354,
+      "epsilon": 0.1,
+      "extraction_status": "PASS",
+      "fault_coverage": 96.04127897140924,
+      "fault_identity_scope": "Complete collapsed SAF target classes plus equivalence multiplicities on the same original functional circuit/library; uncollapsed member identities are not enumerated",
+      "gates": {
+        "ATPG": "PASS",
+        "DRC": "PASS",
+        "EXTRACTION": "PASS",
+        "FAULT_COVERAGE": "PASS",
+        "FAULT_IDENTITY": "PASS",
+        "ROUTE": "PASS",
+        "SCAN_TOPOLOGY": "PASS",
+        "SERIAL_REPLAY": "PASS",
+        "TIMING": "PASS"
+      },
+      "hold_TNS": 0,
+      "hold_WNS": 0.0027288,
+      "method": "PACT",
+      "metric_scope": "all_data; ground+pin C*N; H4/H8 source-localized bins/cycle; scan WL is connected scan-net upper bound",
+      "parent_architecture_hash": "b5c4710dcf54de1707ac603e6f5ede702976052b399c80e0b007719cb9cf3f16",
+      "pattern_count": 117,
+      "physical_runtime_seconds": 112.83733133700025,
+      "physical_seed": 11,
+      "predicted_metrics": {
+        "E_stateful_ff": 15173926.020698449,
+        "H4_stateful_ff": 365.45919496464717,
+        "H8_stateful_ff": 162.99723932,
+        "timing_max_edge_um": 88.745,
+        "wire_um": 1454.15
+      },
+      "provenance": {
+        "architecture": {
+          "bytes": 23699,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/architectures/s5378_s5378_C2.json",
+          "sha256": "2d2607739342a9392728da9887726b9c4c7b52d57e5c8c8fa1c06e3de8acb935"
+        },
+        "complete_fault_export": {
+          "bytes": 842314,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/s5378_C2/fan/export.json",
+          "sha256": "96d32717dc6cf861406e2b9b5f4a08d7405693168e1271232066edaf9c6ce916"
+        },
+        "faults": {
+          "bytes": 719,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/s5378_C2/test_correctness.json",
+          "sha256": "832abd721a2448f672d9e2bb633499220b4a8fff0785ef02f2a3610cd68af7f3"
+        },
+        "physical": {
+          "bytes": 65143,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/s5378_C2/physical_proof.json",
+          "sha256": "d50043a4c06215d32c26ffdee68e31aec76a8c4245a2cf34a2ed92961cae1539"
+        },
+        "recovered_patterns": {
+          "bytes": 58051,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/s5378_C2/patterns_recovered.pat",
+          "sha256": "62dd3c3c14911c1e5d7822b409c3479e0987d04a7e576f6631eea57278dc3b69"
+        },
+        "serial": {
+          "bytes": 462,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/s5378_C2/serial_replay.json",
+          "sha256": "35b3b9a6d7e33de4b4637e79e8404e0dbd853599d557c2181143fdb5cd10a579"
+        }
+      },
+      "qualification_status": "QUALIFIED",
+      "reference_architecture_hash": "524e797e930947d722d25f683b74606ed558ee8aee242fe36392eb6c5a583ea5",
+      "routed_scan_wirelength_um": 5159.585,
+      "runtime": {
+        "fan_seconds": 0.21408550300000684,
+        "physical_and_search_reused": true,
+        "physical_seconds": 112.83733133700025,
+        "search_seconds": 306.26766545499993
+      },
+      "scan_HPWL_um": 1454.15,
+      "search_runtime_seconds": 306.26766545499993,
+      "search_seed": 11,
+      "selection_reason": [
+        "best_E"
+      ],
+      "solver_config": {
+        "archive_size": 16,
+        "epsilon": 0.1,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "solver_origin": "P0:2opt",
+      "source_commit": "e5c9fb48f2e314fe0fb43267a8a93ef7283b86d4",
+      "target_faults": 11822,
+      "timing_stage": "global_route",
+      "total_routed_wirelength_um": 26657,
+      "uncollapsed_member_identity_equivalence": "NOT_ENUMERATED",
+      "undetected_faults": 468
+    },
+    {
+      "ATPG_pattern_count": 117,
+      "DRC_count": 0,
+      "E": 19218672.61615374,
+      "FAN_reported_coverage": 96.04,
+      "FF_count": 179,
+      "H4": 383.08508187,
+      "H8": 183.61354787,
+      "TNS": 0,
+      "WNS": 9.08726,
+      "architecture_hash": "d26a6f910be70d1ce7e8e5affbc6105c72cc510e045d32f3e0ef5fdaaaadf0a4",
+      "candidate": "s5378_C3",
+      "candidates_evaluated": 1090,
+      "chain_count": 2,
+      "chain_lengths": [
+        90,
+        89
+      ],
+      "deltas_percent": {
+        "E": -1.5605452012143473,
+        "H4": -14.15095728542688,
+        "H8": -1.9461007496264782,
+        "routed_scan_wirelength_um": 3.9348082976470744
+      },
+      "design": "s5378",
+      "detected_collapsed_classes": 7652,
+      "detected_faults": 11354,
+      "epsilon": 0.1,
+      "extraction_status": "PASS",
+      "fault_coverage": 96.04127897140924,
+      "fault_identity_scope": "Complete collapsed SAF target classes plus equivalence multiplicities on the same original functional circuit/library; uncollapsed member identities are not enumerated",
+      "gates": {
+        "ATPG": "PASS",
+        "DRC": "PASS",
+        "EXTRACTION": "PASS",
+        "FAULT_COVERAGE": "PASS",
+        "FAULT_IDENTITY": "PASS",
+        "ROUTE": "PASS",
+        "SCAN_TOPOLOGY": "PASS",
+        "SERIAL_REPLAY": "PASS",
+        "TIMING": "PASS"
+      },
+      "hold_TNS": 0,
+      "hold_WNS": 0.00272932,
+      "method": "PACT",
+      "metric_scope": "all_data; ground+pin C*N; H4/H8 source-localized bins/cycle; scan WL is connected scan-net upper bound",
+      "parent_architecture_hash": "c3c411e9b14ee9237bc0fe7710a314a3363d697c02b047510d35d40f149aa94a",
+      "pattern_count": 117,
+      "physical_runtime_seconds": 125.13804346100005,
+      "physical_seed": 11,
+      "predicted_metrics": {
+        "E_stateful_ff": 16186140.526746517,
+        "H4_stateful_ff": 341.50293579451045,
+        "H8_stateful_ff": 171.82384901242864,
+        "timing_max_edge_um": 98.685,
+        "wire_um": 1444.69
+      },
+      "provenance": {
+        "architecture": {
+          "bytes": 23699,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/architectures/s5378_s5378_C3.json",
+          "sha256": "b3f8b93f7d3b2b049daa220e00975264fe6ce4d9626d5f0725ca8fc0a15a7341"
+        },
+        "complete_fault_export": {
+          "bytes": 842314,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/s5378_C3/fan/export.json",
+          "sha256": "96d32717dc6cf861406e2b9b5f4a08d7405693168e1271232066edaf9c6ce916"
+        },
+        "faults": {
+          "bytes": 719,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/s5378_C3/test_correctness.json",
+          "sha256": "832abd721a2448f672d9e2bb633499220b4a8fff0785ef02f2a3610cd68af7f3"
+        },
+        "physical": {
+          "bytes": 65141,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/s5378_C3/physical_proof.json",
+          "sha256": "db80d5dfb1435a410d2abf8b391703943a0e9799fbf24234fd2b7ae9d13a6d52"
+        },
+        "recovered_patterns": {
+          "bytes": 58051,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/s5378_C3/patterns_recovered.pat",
+          "sha256": "62dd3c3c14911c1e5d7822b409c3479e0987d04a7e576f6631eea57278dc3b69"
+        },
+        "serial": {
+          "bytes": 462,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s5378/s5378_C3/serial_replay.json",
+          "sha256": "35b3b9a6d7e33de4b4637e79e8404e0dbd853599d557c2181143fdb5cd10a579"
+        }
+      },
+      "qualification_status": "QUALIFIED",
+      "reference_architecture_hash": "524e797e930947d722d25f683b74606ed558ee8aee242fe36392eb6c5a583ea5",
+      "routed_scan_wirelength_um": 5074.96,
+      "runtime": {
+        "fan_seconds": 0.2141207740000084,
+        "physical_and_search_reused": true,
+        "physical_seconds": 125.13804346100005,
+        "search_seconds": 306.26766545499993
+      },
+      "scan_HPWL_um": 1444.69,
+      "search_runtime_seconds": 306.26766545499993,
+      "search_seed": 11,
+      "selection_reason": [
+        "best_H4"
+      ],
+      "solver_config": {
+        "archive_size": 16,
+        "epsilon": 0.1,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "solver_origin": "B3T:2opt",
+      "source_commit": "e5c9fb48f2e314fe0fb43267a8a93ef7283b86d4",
+      "target_faults": 11822,
+      "timing_stage": "global_route",
+      "total_routed_wirelength_um": 26572,
+      "uncollapsed_member_identity_equivalence": "NOT_ENUMERATED",
+      "undetected_faults": 468
+    },
+    {
+      "ATPG_pattern_count": 156,
+      "DRC_count": 0,
+      "E": 39816702.11106148,
+      "FAN_reported_coverage": 94.14,
+      "FF_count": 211,
+      "H4": 537.13613894,
+      "H8": 195.57764211999998,
+      "TNS": 0,
+      "WNS": 8.74941,
+      "architecture_hash": "6dc4fc866614764a2fb72fc0825790ee736f9ac7e7124edc7addf6757d0733ad",
+      "candidate": "B3T",
+      "chain_count": 2,
+      "chain_lengths": [
+        105,
+        106
+      ],
+      "deltas_percent": {
+        "E": 0.0,
+        "H4": 0.0,
+        "H8": 0.0,
+        "routed_scan_wirelength_um": 0.0
+      },
+      "design": "s9234",
+      "detected_collapsed_classes": 10674,
+      "detected_faults": 15511,
+      "extraction_status": "PASS",
+      "fault_coverage": 94.14299587278465,
+      "fault_identity_scope": "Complete collapsed SAF target classes plus equivalence multiplicities on the same original functional circuit/library; uncollapsed member identities are not enumerated",
+      "gates": {
+        "ATPG": "PASS",
+        "DRC": "PASS",
+        "EXTRACTION": "PASS",
+        "FAULT_COVERAGE": "PASS",
+        "FAULT_IDENTITY": "PASS",
+        "ROUTE": "PASS",
+        "SCAN_TOPOLOGY": "PASS",
+        "SERIAL_REPLAY": "PASS",
+        "TIMING": "PASS"
+      },
+      "hold_TNS": 0,
+      "hold_WNS": 0.000701092,
+      "method": "B3T",
+      "metric_scope": "all_data; ground+pin C*N; H4/H8 source-localized bins/cycle; scan WL is connected scan-net upper bound",
+      "pattern_count": 156,
+      "physical_runtime_seconds": 180.35816312000009,
+      "physical_seed": 11,
+      "provenance": {
+        "architecture": {
+          "bytes": 26270,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/architectures/s9234_B3T.json",
+          "sha256": "a78eee7337da3de2e63c0ccaa7db421b8e4530c03dfd09dee985e33262179797"
+        },
+        "complete_fault_export": {
+          "bytes": 1169941,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/B3T/fan/export.json",
+          "sha256": "ab0f5feae91e036f9c657c64e2385f2bede70b761482b8bfc22e96cd4073bace"
+        },
+        "faults": {
+          "bytes": 720,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/B3T/test_correctness.json",
+          "sha256": "9de6b68381c8fc8fbf20e3de34c86d1c70cc092e9c0c3b9f66bc09aebcf9ecaf"
+        },
+        "physical": {
+          "bytes": 73059,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/B3T/physical_proof.json",
+          "sha256": "8352d3eb42d10011954082c7b96d705722a73d6043affb88b6953db92b1712d1"
+        },
+        "recovered_patterns": {
+          "bytes": 84294,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/B3T/patterns_recovered.pat",
+          "sha256": "c82fa6bcc9ab7511a134ea01567761931820c2bb99b5411fe0c1cff79b775d16"
+        },
+        "serial": {
+          "bytes": 462,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/B3T/serial_replay.json",
+          "sha256": "a2f6a99b8e140c5967aae512cfa023c7b8c4dd05a6171a1a6dc86b138a61e6f3"
+        }
+      },
+      "qualification_status": "QUALIFIED",
+      "routed_scan_wirelength_um": 10505.275,
+      "runtime": {
+        "fan_seconds": 0.28540049800000133,
+        "physical_and_search_reused": true,
+        "physical_seconds": 180.35816312000009,
+        "search_seconds": null
+      },
+      "scan_HPWL_um": 1732.865,
+      "search_seed": null,
+      "source_commit": "5c3751171685d507939ee7064a67feec786e5219",
+      "target_faults": 16476,
+      "timing_stage": "global_route",
+      "total_routed_wirelength_um": 37175,
+      "uncollapsed_member_identity_equivalence": "NOT_ENUMERATED",
+      "undetected_faults": 965
+    },
+    {
+      "ATPG_pattern_count": 156,
+      "DRC_count": 0,
+      "E": 38556259.5670017,
+      "FAN_reported_coverage": 94.14,
+      "FF_count": 211,
+      "H4": 463.14321620000004,
+      "H8": 191.87925199,
+      "TNS": 0,
+      "WNS": 8.75119,
+      "architecture_hash": "c721d269b22efd3a006d896160512c8bd1ed5abe3a0b382ab0725fdfa409d3b4",
+      "candidate": "s9234_C1",
+      "candidates_evaluated": 521,
+      "chain_count": 2,
+      "chain_lengths": [
+        106,
+        105
+      ],
+      "deltas_percent": {
+        "E": -3.1656126128778994,
+        "H4": -13.775450463269845,
+        "H8": -1.891008650022874,
+        "routed_scan_wirelength_um": 1.816420798122853
+      },
+      "design": "s9234",
+      "detected_collapsed_classes": 10674,
+      "detected_faults": 15511,
+      "epsilon": 0.1,
+      "extraction_status": "PASS",
+      "fault_coverage": 94.14299587278465,
+      "fault_identity_scope": "Complete collapsed SAF target classes plus equivalence multiplicities on the same original functional circuit/library; uncollapsed member identities are not enumerated",
+      "gates": {
+        "ATPG": "PASS",
+        "DRC": "PASS",
+        "EXTRACTION": "PASS",
+        "FAULT_COVERAGE": "PASS",
+        "FAULT_IDENTITY": "PASS",
+        "ROUTE": "PASS",
+        "SCAN_TOPOLOGY": "PASS",
+        "SERIAL_REPLAY": "PASS",
+        "TIMING": "PASS"
+      },
+      "hold_TNS": 0,
+      "hold_WNS": 0.00072084,
+      "method": "PACT",
+      "metric_scope": "all_data; ground+pin C*N; H4/H8 source-localized bins/cycle; scan WL is connected scan-net upper bound",
+      "parent_architecture_hash": "797aff0b91f6ad122de840678b76b5969b4c0db00dbedfa78d2884fc75a5ddc2",
+      "pattern_count": 156,
+      "physical_runtime_seconds": 159.61808790199984,
+      "physical_seed": 11,
+      "predicted_metrics": {
+        "E_stateful_ff": 28339147.9735782,
+        "H4_stateful_ff": 398.4935021802935,
+        "H8_stateful_ff": 168.87310628163604,
+        "timing_max_edge_um": 87.755,
+        "wire_um": 1894.7849999999999
+      },
+      "provenance": {
+        "architecture": {
+          "bytes": 26270,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/architectures/s9234_s9234_C1.json",
+          "sha256": "6a1395d0c7d8cfabf819bd2bf2a9f4c7f9667005efc0742644efe5de479dd513"
+        },
+        "complete_fault_export": {
+          "bytes": 1169941,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/s9234_C1/fan/export.json",
+          "sha256": "ab0f5feae91e036f9c657c64e2385f2bede70b761482b8bfc22e96cd4073bace"
+        },
+        "faults": {
+          "bytes": 720,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/s9234_C1/test_correctness.json",
+          "sha256": "9de6b68381c8fc8fbf20e3de34c86d1c70cc092e9c0c3b9f66bc09aebcf9ecaf"
+        },
+        "physical": {
+          "bytes": 73046,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/s9234_C1/physical_proof.json",
+          "sha256": "8cc835e3f3c0fcfdc3456a873e5ebd9ecbfc27ec856ff25e5fb56e5422b160c4"
+        },
+        "recovered_patterns": {
+          "bytes": 84294,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/s9234_C1/patterns_recovered.pat",
+          "sha256": "c82fa6bcc9ab7511a134ea01567761931820c2bb99b5411fe0c1cff79b775d16"
+        },
+        "serial": {
+          "bytes": 462,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/s9234_C1/serial_replay.json",
+          "sha256": "a2f6a99b8e140c5967aae512cfa023c7b8c4dd05a6171a1a6dc86b138a61e6f3"
+        }
+      },
+      "qualification_status": "QUALIFIED",
+      "reference_architecture_hash": "6dc4fc866614764a2fb72fc0825790ee736f9ac7e7124edc7addf6757d0733ad",
+      "routed_scan_wirelength_um": 10696.095,
+      "runtime": {
+        "fan_seconds": 0.30977069800000834,
+        "physical_and_search_reused": true,
+        "physical_seconds": 159.61808790199984,
+        "search_seconds": 310.48733949000007
+      },
+      "scan_HPWL_um": 1894.7849999999999,
+      "search_runtime_seconds": 310.48733949000007,
+      "search_seed": 11,
+      "selection_reason": [
+        "balanced"
+      ],
+      "solver_config": {
+        "archive_size": 16,
+        "epsilon": 0.1,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "solver_origin": "P0:swap",
+      "source_commit": "e5c9fb48f2e314fe0fb43267a8a93ef7283b86d4",
+      "target_faults": 16476,
+      "timing_stage": "global_route",
+      "total_routed_wirelength_um": 37376,
+      "uncollapsed_member_identity_equivalence": "NOT_ENUMERATED",
+      "undetected_faults": 965
+    },
+    {
+      "ATPG_pattern_count": 156,
+      "DRC_count": 0,
+      "E": 38153295.4760098,
+      "FAN_reported_coverage": 94.14,
+      "FF_count": 211,
+      "H4": 507.83278949,
+      "H8": 192.35797083,
+      "TNS": 0,
+      "WNS": 8.74961,
+      "architecture_hash": "b352c15c739e7e0801117efbf47abd203bef10ae85f404ce41e4b3764a630151",
+      "candidate": "s9234_C2",
+      "candidates_evaluated": 521,
+      "chain_count": 2,
+      "chain_lengths": [
+        106,
+        105
+      ],
+      "deltas_percent": {
+        "E": -4.177660496371372,
+        "H4": -5.455479035134014,
+        "H8": -1.6462368883783274,
+        "routed_scan_wirelength_um": 1.3199083317666505
+      },
+      "design": "s9234",
+      "detected_collapsed_classes": 10674,
+      "detected_faults": 15511,
+      "epsilon": 0.1,
+      "extraction_status": "PASS",
+      "fault_coverage": 94.14299587278465,
+      "fault_identity_scope": "Complete collapsed SAF target classes plus equivalence multiplicities on the same original functional circuit/library; uncollapsed member identities are not enumerated",
+      "gates": {
+        "ATPG": "PASS",
+        "DRC": "PASS",
+        "EXTRACTION": "PASS",
+        "FAULT_COVERAGE": "PASS",
+        "FAULT_IDENTITY": "PASS",
+        "ROUTE": "PASS",
+        "SCAN_TOPOLOGY": "PASS",
+        "SERIAL_REPLAY": "PASS",
+        "TIMING": "PASS"
+      },
+      "hold_TNS": 0,
+      "hold_WNS": 0.000690004,
+      "method": "PACT",
+      "metric_scope": "all_data; ground+pin C*N; H4/H8 source-localized bins/cycle; scan WL is connected scan-net upper bound",
+      "parent_architecture_hash": "797aff0b91f6ad122de840678b76b5969b4c0db00dbedfa78d2884fc75a5ddc2",
+      "pattern_count": 156,
+      "physical_runtime_seconds": 186.10642962800011,
+      "physical_seed": 11,
+      "predicted_metrics": {
+        "E_stateful_ff": 28054141.152010985,
+        "H4_stateful_ff": 440.97944652296485,
+        "H8_stateful_ff": 175.27370563420155,
+        "timing_max_edge_um": 87.755,
+        "wire_um": 1876.005
+      },
+      "provenance": {
+        "architecture": {
+          "bytes": 26270,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/architectures/s9234_s9234_C2.json",
+          "sha256": "969e930af515b39a14cdfa106485f5a1d0600bed4d1d352f49be8108e2b9241f"
+        },
+        "complete_fault_export": {
+          "bytes": 1169941,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/s9234_C2/fan/export.json",
+          "sha256": "ab0f5feae91e036f9c657c64e2385f2bede70b761482b8bfc22e96cd4073bace"
+        },
+        "faults": {
+          "bytes": 720,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/s9234_C2/test_correctness.json",
+          "sha256": "9de6b68381c8fc8fbf20e3de34c86d1c70cc092e9c0c3b9f66bc09aebcf9ecaf"
+        },
+        "physical": {
+          "bytes": 73049,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/s9234_C2/physical_proof.json",
+          "sha256": "e42c366eda4952c1825e37a8701476234b4de1f4941d4ed7c4d393172f968a92"
+        },
+        "recovered_patterns": {
+          "bytes": 84294,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/s9234_C2/patterns_recovered.pat",
+          "sha256": "c82fa6bcc9ab7511a134ea01567761931820c2bb99b5411fe0c1cff79b775d16"
+        },
+        "serial": {
+          "bytes": 462,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/s9234_C2/serial_replay.json",
+          "sha256": "a2f6a99b8e140c5967aae512cfa023c7b8c4dd05a6171a1a6dc86b138a61e6f3"
+        }
+      },
+      "qualification_status": "QUALIFIED",
+      "reference_architecture_hash": "6dc4fc866614764a2fb72fc0825790ee736f9ac7e7124edc7addf6757d0733ad",
+      "routed_scan_wirelength_um": 10643.935,
+      "runtime": {
+        "fan_seconds": 0.2955002759999843,
+        "physical_and_search_reused": true,
+        "physical_seconds": 186.10642962800011,
+        "search_seconds": 310.48733949000007
+      },
+      "scan_HPWL_um": 1876.005,
+      "search_runtime_seconds": 310.48733949000007,
+      "search_seed": 11,
+      "selection_reason": [
+        "best_E"
+      ],
+      "solver_config": {
+        "archive_size": 16,
+        "epsilon": 0.1,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "solver_origin": "P0:relocate",
+      "source_commit": "e5c9fb48f2e314fe0fb43267a8a93ef7283b86d4",
+      "target_faults": 16476,
+      "timing_stage": "global_route",
+      "total_routed_wirelength_um": 37278,
+      "uncollapsed_member_identity_equivalence": "NOT_ENUMERATED",
+      "undetected_faults": 965
+    },
+    {
+      "ATPG_pattern_count": 156,
+      "DRC_count": 0,
+      "E": 38762209.81992033,
+      "FAN_reported_coverage": 94.14,
+      "FF_count": 211,
+      "H4": 485.46609390000003,
+      "H8": 190.51087882000004,
+      "TNS": 0,
+      "WNS": 8.74898,
+      "architecture_hash": "5469958fa1dd34af96480cbb7b950e421b1afda62ae36d5db3ef3fc3c77b0d8b",
+      "candidate": "s9234_C3",
+      "candidates_evaluated": 521,
+      "chain_count": 2,
+      "chain_lengths": [
+        106,
+        105
+      ],
+      "deltas_percent": {
+        "E": -2.648366728615137,
+        "H4": -9.619543593169356,
+        "H8": -2.5906659089852124,
+        "routed_scan_wirelength_um": 1.4156697468652668
+      },
+      "design": "s9234",
+      "detected_collapsed_classes": 10674,
+      "detected_faults": 15511,
+      "epsilon": 0.1,
+      "extraction_status": "PASS",
+      "fault_coverage": 94.14299587278465,
+      "fault_identity_scope": "Complete collapsed SAF target classes plus equivalence multiplicities on the same original functional circuit/library; uncollapsed member identities are not enumerated",
+      "gates": {
+        "ATPG": "PASS",
+        "DRC": "PASS",
+        "EXTRACTION": "PASS",
+        "FAULT_COVERAGE": "PASS",
+        "FAULT_IDENTITY": "PASS",
+        "ROUTE": "PASS",
+        "SCAN_TOPOLOGY": "PASS",
+        "SERIAL_REPLAY": "PASS",
+        "TIMING": "PASS"
+      },
+      "hold_TNS": 0,
+      "hold_WNS": 0.000760211,
+      "method": "PACT",
+      "metric_scope": "all_data; ground+pin C*N; H4/H8 source-localized bins/cycle; scan WL is connected scan-net upper bound",
+      "parent_architecture_hash": "797aff0b91f6ad122de840678b76b5969b4c0db00dbedfa78d2884fc75a5ddc2",
+      "pattern_count": 156,
+      "physical_runtime_seconds": 155.40140809800005,
+      "physical_seed": 11,
+      "predicted_metrics": {
+        "E_stateful_ff": 28473788.062945202,
+        "H4_stateful_ff": 394.48797299721144,
+        "H8_stateful_ff": 174.5389263505937,
+        "timing_max_edge_um": 87.755,
+        "wire_um": 1896.505
+      },
+      "provenance": {
+        "architecture": {
+          "bytes": 26270,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/architectures/s9234_s9234_C3.json",
+          "sha256": "14fbdda6e793ec756fd25b49721adf60a8120982a6fa4f4197c41ffae8429bdc"
+        },
+        "complete_fault_export": {
+          "bytes": 1169941,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/s9234_C3/fan/export.json",
+          "sha256": "ab0f5feae91e036f9c657c64e2385f2bede70b761482b8bfc22e96cd4073bace"
+        },
+        "faults": {
+          "bytes": 720,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/s9234_C3/test_correctness.json",
+          "sha256": "9de6b68381c8fc8fbf20e3de34c86d1c70cc092e9c0c3b9f66bc09aebcf9ecaf"
+        },
+        "physical": {
+          "bytes": 73044,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/s9234_C3/physical_proof.json",
+          "sha256": "9e0f5efb38a30b658e9c63a8a7319f71105b6778a30e732b8db594adc15c795c"
+        },
+        "recovered_patterns": {
+          "bytes": 84294,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/s9234_C3/patterns_recovered.pat",
+          "sha256": "c82fa6bcc9ab7511a134ea01567761931820c2bb99b5411fe0c1cff79b775d16"
+        },
+        "serial": {
+          "bytes": 462,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s9234/s9234_C3/serial_replay.json",
+          "sha256": "a2f6a99b8e140c5967aae512cfa023c7b8c4dd05a6171a1a6dc86b138a61e6f3"
+        }
+      },
+      "qualification_status": "QUALIFIED",
+      "reference_architecture_hash": "6dc4fc866614764a2fb72fc0825790ee736f9ac7e7124edc7addf6757d0733ad",
+      "routed_scan_wirelength_um": 10653.995,
+      "runtime": {
+        "fan_seconds": 0.3048605759999816,
+        "physical_and_search_reused": true,
+        "physical_seconds": 155.40140809800005,
+        "search_seconds": 310.48733949000007
+      },
+      "scan_HPWL_um": 1896.505,
+      "search_runtime_seconds": 310.48733949000007,
+      "search_seed": 11,
+      "selection_reason": [
+        "best_H4"
+      ],
+      "solver_config": {
+        "archive_size": 16,
+        "epsilon": 0.1,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "solver_origin": "P0:cross_chain_swap",
+      "source_commit": "e5c9fb48f2e314fe0fb43267a8a93ef7283b86d4",
+      "target_faults": 16476,
+      "timing_stage": "global_route",
+      "total_routed_wirelength_um": 37370,
+      "uncollapsed_member_identity_equivalence": "NOT_ENUMERATED",
+      "undetected_faults": 965
+    },
+    {
+      "ATPG_pattern_count": 133,
+      "DRC_count": 0,
+      "E": 158251697.84627193,
+      "FAN_reported_coverage": 94.62,
+      "FF_count": 534,
+      "H4": 680.2419272999998,
+      "H8": 279.57367940999995,
+      "TNS": 0,
+      "WNS": 8.13162,
+      "architecture_hash": "c081f811b1806ae67132a1b56f1eddc0e4defdbba44fd87c7cbb0ce1d15bb4b8",
+      "candidate": "B2",
+      "chain_count": 2,
+      "chain_lengths": [
+        267,
+        267
+      ],
+      "deltas_percent": {
+        "E": 0.0,
+        "H4": 0.0,
+        "H8": 0.0,
+        "routed_scan_wirelength_um": 0.0
+      },
+      "design": "s15850",
+      "detected_collapsed_classes": 21020,
+      "detected_faults": 29763,
+      "extraction_status": "PASS",
+      "fault_coverage": 94.61787894201424,
+      "fault_identity_scope": "Complete collapsed SAF target classes plus equivalence multiplicities on the same original functional circuit/library; uncollapsed member identities are not enumerated",
+      "gates": {
+        "ATPG": "PASS",
+        "DRC": "PASS",
+        "EXTRACTION": "PASS",
+        "FAULT_COVERAGE": "PASS",
+        "FAULT_IDENTITY": "PASS",
+        "ROUTE": "PASS",
+        "SCAN_TOPOLOGY": "PASS",
+        "SERIAL_REPLAY": "PASS",
+        "TIMING": "PASS"
+      },
+      "hold_TNS": 0,
+      "hold_WNS": 0.00124688,
+      "method": "B2",
+      "metric_scope": "all_data; ground+pin C*N; H4/H8 source-localized bins/cycle; scan WL is connected scan-net upper bound",
+      "pattern_count": 133,
+      "physical_runtime_seconds": 255.19266034399993,
+      "physical_seed": 11,
+      "provenance": {
+        "architecture": {
+          "bytes": 66760,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/architectures/s15850_B2.json",
+          "sha256": "28ea9a30f12fbea68b651d63ba0ac00dd9cac20e0a664900e60ea8b570de3fe1"
+        },
+        "complete_fault_export": {
+          "bytes": 2299012,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/B2/fan/export.json",
+          "sha256": "acc49b5746f300c92010162fc3f41098b0f4c8ebde0cc93086e04ee888b4752f"
+        },
+        "faults": {
+          "bytes": 720,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/B2/test_correctness.json",
+          "sha256": "8948cb6e5aa7bbe4318b2a013cf3be79c5ce3bfa3930728de0cde691b9c94608"
+        },
+        "physical": {
+          "bytes": 166598,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/B2/physical_proof.json",
+          "sha256": "dea9451eb7b6f9e211b8878bd8deb68194ada6a9ec3cb821837a7035fc290a88"
+        },
+        "recovered_patterns": {
+          "bytes": 181672,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/B2/patterns_recovered.pat",
+          "sha256": "8b4e10f536463fbbafa41d6dfacee4fd51d4ff3dc4d94356b1c0019dea0c4747"
+        },
+        "serial": {
+          "bytes": 462,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/B2/serial_replay.json",
+          "sha256": "ae1ac2ab18b197a6700ad00c3827ffd1d2e37fceb7a0987b1438b94ba2d89e99"
+        }
+      },
+      "qualification_status": "QUALIFIED",
+      "routed_scan_wirelength_um": 23958.435,
+      "runtime": {
+        "fan_seconds": 0.6939120639999885,
+        "physical_and_search_reused": true,
+        "physical_seconds": 255.19266034399993,
+        "search_seconds": null
+      },
+      "scan_HPWL_um": 3738.49,
+      "search_seed": null,
+      "source_commit": "6fff875551fe13a2aae3a22f871a6ca7f8d5c1cf",
+      "target_faults": 31456,
+      "timing_stage": "global_route",
+      "total_routed_wirelength_um": 79879,
+      "uncollapsed_member_identity_equivalence": "NOT_ENUMERATED",
+      "undetected_faults": 1693
+    },
+    {
+      "ATPG_pattern_count": 133,
+      "DRC_count": 0,
+      "E": 158127855.19631428,
+      "FAN_reported_coverage": 94.62,
+      "FF_count": 534,
+      "H4": 699.96964788,
+      "H8": 276.18001142,
+      "TNS": 0,
+      "WNS": 8.13166,
+      "architecture_hash": "0bc902b4158da046e5041444023d402cb6cfe0b5b717c32e5a41a020a940b7fb",
+      "candidate": "s15850_C1",
+      "candidates_evaluated": 148,
+      "chain_count": 2,
+      "chain_lengths": [
+        267,
+        267
+      ],
+      "deltas_percent": {
+        "E": -0.07825675910154706,
+        "H4": 2.90010359377626,
+        "H8": -1.213872492275303,
+        "routed_scan_wirelength_um": 1.0445381762205885
+      },
+      "design": "s15850",
+      "detected_collapsed_classes": 21020,
+      "detected_faults": 29763,
+      "epsilon": 0.1,
+      "extraction_status": "PASS",
+      "fault_coverage": 94.61787894201424,
+      "fault_identity_scope": "Complete collapsed SAF target classes plus equivalence multiplicities on the same original functional circuit/library; uncollapsed member identities are not enumerated",
+      "gates": {
+        "ATPG": "PASS",
+        "DRC": "PASS",
+        "EXTRACTION": "PASS",
+        "FAULT_COVERAGE": "PASS",
+        "FAULT_IDENTITY": "PASS",
+        "ROUTE": "PASS",
+        "SCAN_TOPOLOGY": "PASS",
+        "SERIAL_REPLAY": "PASS",
+        "TIMING": "PASS"
+      },
+      "hold_TNS": 0,
+      "hold_WNS": 0.000913047,
+      "method": "PACT",
+      "metric_scope": "all_data; ground+pin C*N; H4/H8 source-localized bins/cycle; scan WL is connected scan-net upper bound",
+      "parent_architecture_hash": "c081f811b1806ae67132a1b56f1eddc0e4defdbba44fd87c7cbb0ce1d15bb4b8",
+      "pattern_count": 133,
+      "physical_runtime_seconds": 257.5225325289998,
+      "physical_seed": 11,
+      "predicted_metrics": {
+        "E_stateful_ff": 110915632.98653498,
+        "H4_stateful_ff": 519.0409478330548,
+        "H8_stateful_ff": 221.23861447835424,
+        "timing_max_edge_um": 66.4,
+        "wire_um": 4111.17
+      },
+      "provenance": {
+        "architecture": {
+          "bytes": 66760,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/architectures/s15850_s15850_C1.json",
+          "sha256": "b5039f03559234db5debc60f64e8f4e490a7bc91390d89a17069fa415635deaf"
+        },
+        "complete_fault_export": {
+          "bytes": 2299012,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/s15850_C1/fan/export.json",
+          "sha256": "acc49b5746f300c92010162fc3f41098b0f4c8ebde0cc93086e04ee888b4752f"
+        },
+        "faults": {
+          "bytes": 720,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/s15850_C1/test_correctness.json",
+          "sha256": "8948cb6e5aa7bbe4318b2a013cf3be79c5ce3bfa3930728de0cde691b9c94608"
+        },
+        "physical": {
+          "bytes": 166626,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/s15850_C1/physical_proof.json",
+          "sha256": "deef1a5dd6722faf38cbae7dee3ea0fee4992fcad12fe12e743a733a60b02367"
+        },
+        "recovered_patterns": {
+          "bytes": 181672,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/s15850_C1/patterns_recovered.pat",
+          "sha256": "8b4e10f536463fbbafa41d6dfacee4fd51d4ff3dc4d94356b1c0019dea0c4747"
+        },
+        "serial": {
+          "bytes": 462,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/s15850_C1/serial_replay.json",
+          "sha256": "ae1ac2ab18b197a6700ad00c3827ffd1d2e37fceb7a0987b1438b94ba2d89e99"
+        }
+      },
+      "qualification_status": "QUALIFIED",
+      "reference_architecture_hash": "c081f811b1806ae67132a1b56f1eddc0e4defdbba44fd87c7cbb0ce1d15bb4b8",
+      "routed_scan_wirelength_um": 24208.69,
+      "runtime": {
+        "fan_seconds": 0.6394159379999849,
+        "physical_and_search_reused": true,
+        "physical_seconds": 257.5225325289998,
+        "search_seconds": 339.88222563399995
+      },
+      "scan_HPWL_um": 4111.17,
+      "search_runtime_seconds": 339.88222563399995,
+      "search_seed": 11,
+      "selection_reason": [
+        "balanced"
+      ],
+      "solver_config": {
+        "archive_size": 16,
+        "epsilon": 0.1,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "solver_origin": "B2:2opt",
+      "source_commit": "6a19f1cd39a673e6cc7546e5a95ef57c0c13615c",
+      "target_faults": 31456,
+      "timing_stage": "global_route",
+      "total_routed_wirelength_um": 80115,
+      "uncollapsed_member_identity_equivalence": "NOT_ENUMERATED",
+      "undetected_faults": 1693
+    },
+    {
+      "ATPG_pattern_count": 133,
+      "DRC_count": 0,
+      "E": 157217009.2264669,
+      "FAN_reported_coverage": 94.62,
+      "FF_count": 534,
+      "H4": 653.2513381499999,
+      "H8": 278.59896137,
+      "TNS": 0,
+      "WNS": 8.1318,
+      "architecture_hash": "dc20927bd9ee88b3406b9edd35b8d39712774d4321d2e5eaacf9b1b082c03d47",
+      "candidate": "s15850_C2",
+      "candidates_evaluated": 148,
+      "chain_count": 2,
+      "chain_lengths": [
+        267,
+        267
+      ],
+      "deltas_percent": {
+        "E": -0.653824656472346,
+        "H4": -3.967792643586421,
+        "H8": -0.34864442248532246,
+        "routed_scan_wirelength_um": 1.0500685875350246
+      },
+      "design": "s15850",
+      "detected_collapsed_classes": 21020,
+      "detected_faults": 29763,
+      "epsilon": 0.1,
+      "extraction_status": "PASS",
+      "fault_coverage": 94.61787894201424,
+      "fault_identity_scope": "Complete collapsed SAF target classes plus equivalence multiplicities on the same original functional circuit/library; uncollapsed member identities are not enumerated",
+      "gates": {
+        "ATPG": "PASS",
+        "DRC": "PASS",
+        "EXTRACTION": "PASS",
+        "FAULT_COVERAGE": "PASS",
+        "FAULT_IDENTITY": "PASS",
+        "ROUTE": "PASS",
+        "SCAN_TOPOLOGY": "PASS",
+        "SERIAL_REPLAY": "PASS",
+        "TIMING": "PASS"
+      },
+      "hold_TNS": 0,
+      "hold_WNS": 0.00123894,
+      "method": "PACT",
+      "metric_scope": "all_data; ground+pin C*N; H4/H8 source-localized bins/cycle; scan WL is connected scan-net upper bound",
+      "parent_architecture_hash": "c081f811b1806ae67132a1b56f1eddc0e4defdbba44fd87c7cbb0ce1d15bb4b8",
+      "pattern_count": 133,
+      "physical_runtime_seconds": 272.2914157690002,
+      "physical_seed": 11,
+      "predicted_metrics": {
+        "E_stateful_ff": 110267166.61950766,
+        "H4_stateful_ff": 572.9125407499874,
+        "H8_stateful_ff": 225.68583076276565,
+        "timing_max_edge_um": 66.4,
+        "wire_um": 4109.089999999999
+      },
+      "provenance": {
+        "architecture": {
+          "bytes": 66760,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/architectures/s15850_s15850_C2.json",
+          "sha256": "446e501bd6f51db03bb4d22606c534c45471e01ab7574a1a8d26d784430e63aa"
+        },
+        "complete_fault_export": {
+          "bytes": 2299012,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/s15850_C2/fan/export.json",
+          "sha256": "acc49b5746f300c92010162fc3f41098b0f4c8ebde0cc93086e04ee888b4752f"
+        },
+        "faults": {
+          "bytes": 720,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/s15850_C2/test_correctness.json",
+          "sha256": "8948cb6e5aa7bbe4318b2a013cf3be79c5ce3bfa3930728de0cde691b9c94608"
+        },
+        "physical": {
+          "bytes": 166626,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/s15850_C2/physical_proof.json",
+          "sha256": "0724adc2fae8c703afc9602380dfe5f2928d5b93bc9df39274ee515fb0cb6ea9"
+        },
+        "recovered_patterns": {
+          "bytes": 181672,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/s15850_C2/patterns_recovered.pat",
+          "sha256": "8b4e10f536463fbbafa41d6dfacee4fd51d4ff3dc4d94356b1c0019dea0c4747"
+        },
+        "serial": {
+          "bytes": 462,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/s15850_C2/serial_replay.json",
+          "sha256": "ae1ac2ab18b197a6700ad00c3827ffd1d2e37fceb7a0987b1438b94ba2d89e99"
+        }
+      },
+      "qualification_status": "QUALIFIED",
+      "reference_architecture_hash": "c081f811b1806ae67132a1b56f1eddc0e4defdbba44fd87c7cbb0ce1d15bb4b8",
+      "routed_scan_wirelength_um": 24210.015,
+      "runtime": {
+        "fan_seconds": 0.6859504710000124,
+        "physical_and_search_reused": true,
+        "physical_seconds": 272.2914157690002,
+        "search_seconds": 339.88222563399995
+      },
+      "scan_HPWL_um": 4109.089999999999,
+      "search_runtime_seconds": 339.88222563399995,
+      "search_seed": 11,
+      "selection_reason": [
+        "best_E"
+      ],
+      "solver_config": {
+        "archive_size": 16,
+        "epsilon": 0.1,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "solver_origin": "B2:relocate",
+      "source_commit": "6a19f1cd39a673e6cc7546e5a95ef57c0c13615c",
+      "target_faults": 31456,
+      "timing_stage": "global_route",
+      "total_routed_wirelength_um": 80073,
+      "uncollapsed_member_identity_equivalence": "NOT_ENUMERATED",
+      "undetected_faults": 1693
+    },
+    {
+      "ATPG_pattern_count": 133,
+      "DRC_count": 0,
+      "E": 158202517.69272432,
+      "FAN_reported_coverage": 94.62,
+      "FF_count": 534,
+      "H4": 700.5529383,
+      "H8": 278.08832312,
+      "TNS": 0,
+      "WNS": 8.13186,
+      "architecture_hash": "26bb61691c1c4412cccb9d9fe49911ed1a258b72f0f3ae5829d42fd7bffdb3d1",
+      "candidate": "s15850_C3",
+      "candidates_evaluated": 148,
+      "chain_count": 2,
+      "chain_lengths": [
+        267,
+        267
+      ],
+      "deltas_percent": {
+        "E": -0.031077172767768335,
+        "H4": 2.9858510898642,
+        "H8": -0.5312933224381533,
+        "routed_scan_wirelength_um": 0.9723506564598194
+      },
+      "design": "s15850",
+      "detected_collapsed_classes": 21020,
+      "detected_faults": 29763,
+      "epsilon": 0.1,
+      "extraction_status": "PASS",
+      "fault_coverage": 94.61787894201424,
+      "fault_identity_scope": "Complete collapsed SAF target classes plus equivalence multiplicities on the same original functional circuit/library; uncollapsed member identities are not enumerated",
+      "gates": {
+        "ATPG": "PASS",
+        "DRC": "PASS",
+        "EXTRACTION": "PASS",
+        "FAULT_COVERAGE": "PASS",
+        "FAULT_IDENTITY": "PASS",
+        "ROUTE": "PASS",
+        "SCAN_TOPOLOGY": "PASS",
+        "SERIAL_REPLAY": "PASS",
+        "TIMING": "PASS"
+      },
+      "hold_TNS": 0,
+      "hold_WNS": 0.000858286,
+      "method": "PACT",
+      "metric_scope": "all_data; ground+pin C*N; H4/H8 source-localized bins/cycle; scan WL is connected scan-net upper bound",
+      "parent_architecture_hash": "c081f811b1806ae67132a1b56f1eddc0e4defdbba44fd87c7cbb0ce1d15bb4b8",
+      "pattern_count": 133,
+      "physical_runtime_seconds": 259.1762155209999,
+      "physical_seed": 11,
+      "predicted_metrics": {
+        "E_stateful_ff": 111002066.22694011,
+        "H4_stateful_ff": 519.0409478330548,
+        "H8_stateful_ff": 221.23861447835424,
+        "timing_max_edge_um": 66.4,
+        "wire_um": 4108.889999999999
+      },
+      "provenance": {
+        "architecture": {
+          "bytes": 66760,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/architectures/s15850_s15850_C3.json",
+          "sha256": "7a9dc4ced9ec760fe60c98861e9b2355180f6b9c82f608ab3709607dd1f453e0"
+        },
+        "complete_fault_export": {
+          "bytes": 2299012,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/s15850_C3/fan/export.json",
+          "sha256": "acc49b5746f300c92010162fc3f41098b0f4c8ebde0cc93086e04ee888b4752f"
+        },
+        "faults": {
+          "bytes": 720,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/s15850_C3/test_correctness.json",
+          "sha256": "8948cb6e5aa7bbe4318b2a013cf3be79c5ce3bfa3930728de0cde691b9c94608"
+        },
+        "physical": {
+          "bytes": 166647,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/s15850_C3/physical_proof.json",
+          "sha256": "50938899521f5e8b7fed27fe38606fc2a22ca6c9d291cbdd0eb5f23f28aa483f"
+        },
+        "recovered_patterns": {
+          "bytes": 181672,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/s15850_C3/patterns_recovered.pat",
+          "sha256": "8b4e10f536463fbbafa41d6dfacee4fd51d4ff3dc4d94356b1c0019dea0c4747"
+        },
+        "serial": {
+          "bytes": 462,
+          "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_end_to_end_20261004/correctness/s15850/s15850_C3/serial_replay.json",
+          "sha256": "ae1ac2ab18b197a6700ad00c3827ffd1d2e37fceb7a0987b1438b94ba2d89e99"
+        }
+      },
+      "qualification_status": "QUALIFIED",
+      "reference_architecture_hash": "c081f811b1806ae67132a1b56f1eddc0e4defdbba44fd87c7cbb0ce1d15bb4b8",
+      "routed_scan_wirelength_um": 24191.395,
+      "runtime": {
+        "fan_seconds": 0.6966371139999978,
+        "physical_and_search_reused": true,
+        "physical_seconds": 259.1762155209999,
+        "search_seconds": 339.88222563399995
+      },
+      "scan_HPWL_um": 4108.889999999999,
+      "search_runtime_seconds": 339.88222563399995,
+      "search_seed": 11,
+      "selection_reason": [
+        "best_H4"
+      ],
+      "solver_config": {
+        "archive_size": 16,
+        "epsilon": 0.1,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "solver_origin": "B2:relocate",
+      "source_commit": "6a19f1cd39a673e6cc7546e5a95ef57c0c13615c",
+      "target_faults": 31456,
+      "timing_stage": "global_route",
+      "total_routed_wirelength_um": 80120,
+      "uncollapsed_member_identity_equivalence": "NOT_ENUMERATED",
+      "undetected_faults": 1693
+    }
+  ],
+  "remaining_blockers": [],
+  "schema": "pact_end_to_end_results_v1",
+  "searches": [
+    {
+      "config": {
+        "archive_size": 16,
+        "epsilon": 0.02,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "design": "s5378",
+      "evaluations": 1238,
+      "receipt": {
+        "bytes": 18025,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/stage_b_20261004/s5378/budget_0.02/search.json",
+        "sha256": "9170d6a0dfe368b15d2a782c9409950bf94c2c6b47eb7d316cfbcfeb767de148"
+      },
+      "reference": "B2",
+      "runtime_seconds": 281.68535059100003,
+      "search_seconds": 273.898785382,
+      "source_commit": "ec45f67889c72ece13b5f541d39243ccccab0c54",
+      "termination": "stagnation"
+    },
+    {
+      "config": {
+        "archive_size": 16,
+        "epsilon": 0.05,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "design": "s5378",
+      "evaluations": 510,
+      "receipt": {
+        "bytes": 14970,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/stage_b_20261004/s5378/budget_0.05/search.json",
+        "sha256": "139555c96fa4d612acac7377991d74ec0fcca7d71d041a5c2120691e4bfe949a"
+      },
+      "reference": "B2",
+      "runtime_seconds": 159.211091904,
+      "search_seconds": 152.95419931299995,
+      "source_commit": "ec45f67889c72ece13b5f541d39243ccccab0c54",
+      "termination": "stagnation"
+    },
+    {
+      "config": {
+        "archive_size": 16,
+        "epsilon": 0.1,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "design": "s5378",
+      "evaluations": 1090,
+      "receipt": {
+        "bytes": 17897,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/stage_b_20261004/s5378/budget_0.10/search.json",
+        "sha256": "560413331423a017a60b647691632d2899aa50fb1459d5f0bf2e9f180167b13d"
+      },
+      "reference": "B2",
+      "runtime_seconds": 306.26766545499993,
+      "search_seconds": 300.14553795000006,
+      "source_commit": "e5c9fb48f2e314fe0fb43267a8a93ef7283b86d4",
+      "termination": "wall_clock"
+    },
+    {
+      "config": {
+        "archive_size": 16,
+        "epsilon": 0.02,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "design": "s9234",
+      "evaluations": 528,
+      "receipt": {
+        "bytes": 17414,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/stage_b_20261004/s9234/budget_0.02/search.json",
+        "sha256": "be099f0d0ad331758dda2ead6832a383ab7dfe4271a1d48235b31bbc0a3bad0a"
+      },
+      "reference": "B3T",
+      "runtime_seconds": 310.001007887,
+      "search_seconds": 300.170898903,
+      "source_commit": "ec45f67889c72ece13b5f541d39243ccccab0c54",
+      "termination": "wall_clock"
+    },
+    {
+      "config": {
+        "archive_size": 16,
+        "epsilon": 0.05,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "design": "s9234",
+      "evaluations": 568,
+      "receipt": {
+        "bytes": 18411,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/stage_b_20261004/s9234/budget_0.05/search.json",
+        "sha256": "ffa81667157488ce845c69ef0633490a738047cb7deecbc883668afef1a9eed3"
+      },
+      "reference": "B3T",
+      "runtime_seconds": 310.9789204399999,
+      "search_seconds": 300.608999444,
+      "source_commit": "e5c9fb48f2e314fe0fb43267a8a93ef7283b86d4",
+      "termination": "wall_clock"
+    },
+    {
+      "config": {
+        "archive_size": 16,
+        "epsilon": 0.1,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "design": "s9234",
+      "evaluations": 521,
+      "receipt": {
+        "bytes": 18160,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/stage_b_20261004/s9234/budget_0.10/search.json",
+        "sha256": "7b9a58d49ef188bd3f283e14b361d41c6cd26c068cb7c4bcdb85befbf62879a3"
+      },
+      "reference": "B3T",
+      "runtime_seconds": 310.48733949000007,
+      "search_seconds": 300.02944768399993,
+      "source_commit": "e5c9fb48f2e314fe0fb43267a8a93ef7283b86d4",
+      "termination": "wall_clock"
+    },
+    {
+      "config": {
+        "archive_size": 16,
+        "epsilon": 0.02,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "design": "s15850",
+      "evaluations": 118,
+      "receipt": {
+        "bytes": 18082,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/stage_b_20261004/s15850/budget_0.02/search.json",
+        "sha256": "77819cf876d5eb2e5cd5e82d70ac81d09987cd939e19c89b710f26da558f0352"
+      },
+      "reference": "B2",
+      "runtime_seconds": 347.724538371,
+      "search_seconds": 302.28404063899984,
+      "source_commit": "e5c9fb48f2e314fe0fb43267a8a93ef7283b86d4",
+      "termination": "wall_clock"
+    },
+    {
+      "config": {
+        "archive_size": 16,
+        "epsilon": 0.05,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "design": "s15850",
+      "evaluations": 148,
+      "receipt": {
+        "bytes": 18128,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/stage_b_20261004/s15850/budget_0.05/search.json",
+        "sha256": "6e7fba1365ff64a9a13921bfadb4bb6b2c74e09a84ee702f2e9e812af514655d"
+      },
+      "reference": "B2",
+      "runtime_seconds": 340.5546973769999,
+      "search_seconds": 301.2718690869999,
+      "source_commit": "6a19f1cd39a673e6cc7546e5a95ef57c0c13615c",
+      "termination": "wall_clock"
+    },
+    {
+      "config": {
+        "archive_size": 16,
+        "epsilon": 0.1,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 300.0,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "design": "s15850",
+      "evaluations": 148,
+      "receipt": {
+        "bytes": 18083,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/stage_b_20261004/s15850/budget_0.10/search.json",
+        "sha256": "d0e7411950249ded0e48765f55f42ba211e28075c08c0c82a0c9b8eaf94494a5"
+      },
+      "reference": "B2",
+      "runtime_seconds": 339.88222563399995,
+      "search_seconds": 302.241285438,
+      "source_commit": "6a19f1cd39a673e6cc7546e5a95ef57c0c13615c",
+      "termination": "wall_clock"
+    }
+  ],
+  "starting_sha": "de833ef018703d26dd1e6e1fd1e4a103dc8dc41e",
+  "status": "PACT_END_TO_END_SOLUTION_QUALIFIED",
+  "upstream_implementation_repair": {
+    "branch": "fix/report-fault-scan-identities",
+    "commit": "05ac6173535418711b60ee22df391da7a4a82252",
+    "qualification_sha256": "9833a66561c5fd247c5f219ed0b0a73881626cb8d7670d2b1d6e33ed8ba6a867",
+    "source_commit": "26b2b36c0e9db11a4b6d9e759df6e44357121f39"
+  }
+}
