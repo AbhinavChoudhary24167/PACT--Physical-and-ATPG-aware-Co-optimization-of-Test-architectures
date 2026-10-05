@@ -1,0 +1,99 @@
+{
+  "DRC": 0,
+  "FF_count": 245,
+  "algorithm_family": "A",
+  "architecture": {
+    "bytes": 32931,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B4/architecture.json",
+    "sha256": "75107100d70261a9691a310ee32cebc332d338604f9ab51e87a674c26412bda0"
+  },
+  "architecture_candidates_generated": 1,
+  "architecture_hash": "1f7b74a489420c733fa8321630f4e9abdb87a855540057f1771ddb6b6500d94c",
+  "candidate_routes_before_selection": 0,
+  "chain_count": 2,
+  "chain_lengths": [
+    123,
+    122
+  ],
+  "correctness": {
+    "export": {
+      "bytes": 2609201,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B4/correctness/fan/export.json",
+      "sha256": "c59de9f2ef99f3bcd273ca4c8876834afd9d2abb9b36474574339b204d9e2937"
+    },
+    "faults": {
+      "bytes": 720,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B4/correctness/test_correctness.json",
+      "sha256": "7d398e028af901375a46b3deb8919c220d1abbd87e9280a070d4435339c63deb"
+    },
+    "serial": {
+      "bytes": 465,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B4/correctness/serial_replay.json",
+      "sha256": "389d0185ebc3def093602dcf7d28c3ac12506ea8f740fe89d24e86ee52f78248"
+    },
+    "statistics": {
+      "coverage": 98.49,
+      "detected": 35688,
+      "patterns": 453,
+      "total": 36236
+    }
+  },
+  "definitions": {
+    "bytes": 8783,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/manifests/competitive_method_definitions.json",
+    "sha256": "8380cc99b45acf9bc571b214d5ef9edbf883a1af32ea8d3a0b1d1006bc3be9a0"
+  },
+  "design": "b14_opt",
+  "frozen_utc": "2026-10-05T17:59:25.859796+00:00",
+  "generation_wall_seconds": 3.6713920699999676,
+  "generator_status": "PASS",
+  "identity_map": {
+    "bytes": 44735,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/ff_identity_map.json",
+    "sha256": "623d7fa8821f93acbc40e500e0689f141cac4a9606e4fb660f248c8fd497f1f9"
+  },
+  "method": "B4",
+  "patterns": {
+    "bytes": 279307,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/patterns.pat",
+    "sha256": "d46e67d6078dc3d129f0009dad47cdd27bd6c845b8ad1e22fe3ab13c960db8aa"
+  },
+  "preselection": {
+    "bytes": 4305,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt_heuristics_preselected.json",
+    "sha256": "05b7002912105f3478b81ffe7896e60a49cc73a013abf7eb8ab8b49045578518"
+  },
+  "provenance": {
+    "bytes": 66705,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B4/physical/route_result.json",
+    "sha256": "b12e5d2786acda02b669c1566b50f216cb70cba23c509f9280ef3c49830765ce"
+  },
+  "routed_scan_wirelength_um": 17740.96,
+  "source": {
+    "bytes": 8563,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/scan/phase0c.py",
+    "sha256": "e43da79d76d363fe67ae120d5e53a3c2d04a9a2f44549601d8df2daabc05cf3e"
+  },
+  "source_revision": "e43da79d76d363fe67ae120d5e53a3c2d04a9a2f44549601d8df2daabc05cf3e",
+  "status": "QUALIFIED",
+  "timing": {
+    "congestion": null,
+    "detailed_route_drc_errors": 0,
+    "detailed_route_vias": 30381,
+    "global_route_overflow": null,
+    "global_route_wirelength_um": 107832,
+    "hold_tns_ns": 0,
+    "hold_violated_endpoints": 0,
+    "hold_wns_ns": 0.000210665,
+    "layer_utilization": {},
+    "max_cap_violations": 0,
+    "max_fanout_violations": 0,
+    "max_slew_violations": 0,
+    "pdnsim_classification": "NOT_RUN_NO_QUALIFIED_TEST_CURRENT_MODEL",
+    "setup_tns_ns": 0,
+    "setup_violated_endpoints": 0,
+    "setup_wns_ns": 7.61808,
+    "timing_stage": "global_route",
+    "total_detailed_route_wirelength_um": 76663
+  }
+}
