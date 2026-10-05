@@ -1,0 +1,173 @@
+{
+  "candidate_routes_before_selection": 0,
+  "cold_start_input": {
+    "bytes": 5534,
+    "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/cold_start_input.json",
+    "sha256": "fca19a839b925728438937ddd20aafbcbeb7a1e43c8404a18fe6de1be580750c"
+  },
+  "created_utc": "2026-10-05T23:18:31.510829+00:00",
+  "design": "b15_opt",
+  "primary_candidate": "CS_C1",
+  "records": [
+    {
+      "architecture": {
+        "bytes": 60269,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/searches/b15_opt/budget_0.10/architectures/eb79b4b3d6192940bbd55c1dcadaa8f5985c8a8919befb892276e6ada5095593.json",
+        "sha256": "a25d1685eedd0372b23546fdf5190c16f1e62eed18f0522c5fddbc8cb9436e0b"
+      },
+      "architecture_hash": "eb79b4b3d6192940bbd55c1dcadaa8f5985c8a8919befb892276e6ada5095593",
+      "architecture_sha256": "eb79b4b3d6192940bbd55c1dcadaa8f5985c8a8919befb892276e6ada5095593",
+      "candidate": "CS_C1",
+      "chain_sizes": [
+        225,
+        224
+      ],
+      "discovered_attempt": 3224,
+      "discovered_evaluation": 798,
+      "discovered_loop_seconds": 717.2247395670001,
+      "discovered_utc": "2026-10-05T23:09:53.190528+00:00",
+      "epsilon": 0.1,
+      "label": "B2:relocate",
+      "metrics": {
+        "E_stateful_ff": 395932356.04494524,
+        "H4_stateful_ff": 710.0868671599999,
+        "H8_stateful_ff": 437.5944110000001,
+        "timing_max_edge_um": 65.02,
+        "wire_um": 3867.13
+      },
+      "new": true,
+      "normalized": [
+        0.9845638621876595,
+        0.9578931072409667,
+        0.998963632077979
+      ],
+      "parent": "B2",
+      "parent_architecture_sha256": "1916a36599fbd447fb631bbd33a57a0e7b630958749f69f6d1b87d16b6387452",
+      "parent_reference_hash": "1916a36599fbd447fb631bbd33a57a0e7b630958749f69f6d1b87d16b6387452",
+      "role": "balanced",
+      "roles": [
+        "balanced"
+      ],
+      "route_roles": [
+        "balanced"
+      ],
+      "search_receipt": {
+        "bytes": 31599,
+        "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/searches/b15_opt/budget_0.10/search.json",
+        "sha256": "b99d3bcaf141ee4ddc2421a441fe67660cde8f7169c864fbfb213ffead87e5ee"
+      },
+      "seed": 11,
+      "selection_order": 1,
+      "selection_reason": "Unchanged Stage-B pre-route role champion; cross-epsilon role order and exact hash deduplication"
+    },
+    {
+      "architecture": {
+        "bytes": 60269,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/searches/b15_opt/budget_0.10/architectures/c0c781c2053b55d8afda586c00c5562021cbe6134c18d4376a5ed706aa86da49.json",
+        "sha256": "37379f41c0e2ccff4c2381843de8e79460b014e77da113d6aaf9205bccf76ee8"
+      },
+      "architecture_hash": "c0c781c2053b55d8afda586c00c5562021cbe6134c18d4376a5ed706aa86da49",
+      "architecture_sha256": "c0c781c2053b55d8afda586c00c5562021cbe6134c18d4376a5ed706aa86da49",
+      "candidate": "CS_C2",
+      "chain_sizes": [
+        225,
+        224
+      ],
+      "discovered_attempt": 93,
+      "discovered_evaluation": 59,
+      "discovered_loop_seconds": 35.062726913000006,
+      "discovered_utc": "2026-10-05T22:58:12.010759+00:00",
+      "epsilon": 0.1,
+      "label": "B2:2opt",
+      "metrics": {
+        "E_stateful_ff": 395115759.35394377,
+        "H4_stateful_ff": 723.5000779499999,
+        "H8_stateful_ff": 439.5973460000001,
+        "timing_max_edge_um": 65.02,
+        "wire_um": 3867.5300000000007
+      },
+      "new": true,
+      "normalized": [
+        0.9825332335217597,
+        0.9759872626970428,
+        1.003536037876864
+      ],
+      "parent": "B2",
+      "parent_architecture_sha256": "1916a36599fbd447fb631bbd33a57a0e7b630958749f69f6d1b87d16b6387452",
+      "parent_reference_hash": "1916a36599fbd447fb631bbd33a57a0e7b630958749f69f6d1b87d16b6387452",
+      "role": "best_E",
+      "roles": [
+        "best_E"
+      ],
+      "route_roles": [
+        "best_E"
+      ],
+      "search_receipt": {
+        "bytes": 31599,
+        "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/searches/b15_opt/budget_0.10/search.json",
+        "sha256": "b99d3bcaf141ee4ddc2421a441fe67660cde8f7169c864fbfb213ffead87e5ee"
+      },
+      "seed": 11,
+      "selection_order": 2,
+      "selection_reason": "Unchanged Stage-B pre-route role champion; cross-epsilon role order and exact hash deduplication"
+    },
+    {
+      "architecture": {
+        "bytes": 60269,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/searches/b15_opt/budget_0.10/architectures/c7e1e9d0a8e05907e62e265ec3f42ea13c7936e388e8278ec73eeea01f17795c.json",
+        "sha256": "a743333ff08eca5f1c551b9833e4caed9ad00332c55fe46051d45ff8dd1e96b0"
+      },
+      "architecture_hash": "c7e1e9d0a8e05907e62e265ec3f42ea13c7936e388e8278ec73eeea01f17795c",
+      "architecture_sha256": "c7e1e9d0a8e05907e62e265ec3f42ea13c7936e388e8278ec73eeea01f17795c",
+      "candidate": "CS_C3",
+      "chain_sizes": [
+        225,
+        224
+      ],
+      "discovered_attempt": 2694,
+      "discovered_evaluation": 637,
+      "discovered_loop_seconds": 572.430286674,
+      "discovered_utc": "2026-10-05T23:07:24.798633+00:00",
+      "epsilon": 0.1,
+      "label": "B2:relocate",
+      "metrics": {
+        "E_stateful_ff": 397351831.35713077,
+        "H4_stateful_ff": 709.91263036,
+        "H8_stateful_ff": 437.5944110000001,
+        "timing_max_edge_um": 65.02,
+        "wire_um": 3867.13
+      },
+      "new": true,
+      "normalized": [
+        0.9880936674038988,
+        0.957658065251787,
+        0.998963632077979
+      ],
+      "parent": "B2",
+      "parent_architecture_sha256": "1916a36599fbd447fb631bbd33a57a0e7b630958749f69f6d1b87d16b6387452",
+      "parent_reference_hash": "1916a36599fbd447fb631bbd33a57a0e7b630958749f69f6d1b87d16b6387452",
+      "role": "best_H4",
+      "roles": [
+        "best_H4"
+      ],
+      "route_roles": [
+        "best_H4"
+      ],
+      "search_receipt": {
+        "bytes": 31599,
+        "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/searches/b15_opt/budget_0.10/search.json",
+        "sha256": "b99d3bcaf141ee4ddc2421a441fe67660cde8f7169c864fbfb213ffead87e5ee"
+      },
+      "seed": 11,
+      "selection_order": 3,
+      "selection_reason": "Unchanged Stage-B pre-route role champion; cross-epsilon role order and exact hash deduplication"
+    }
+  ],
+  "reference_hash": "1916a36599fbd447fb631bbd33a57a0e7b630958749f69f6d1b87d16b6387452",
+  "search_results": {
+    "bytes": 2104,
+    "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/searches/b15_opt/search_results.json",
+    "sha256": "84e43925d8d8aaa0f699956bdb4e08b2722ad0e5d119c5ee48b97fae80a2c151"
+  },
+  "selection_seconds": 0.0764885220000906
+}
