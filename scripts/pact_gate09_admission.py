@@ -196,11 +196,41 @@ def audit(output):
     return record
 
 
+def refresh_capacity(previous_path, output):
+    """Refresh resources without repeating the historical evidence byte audit."""
+    output = Path(output)
+    if output.exists():
+        raise ValueError('Fresh audit directory required; preserve existing receipts')
+    previous = read(previous_path)
+    if previous['provenance_status'] != 'PASS' or verify(previous['protocol'])['status'] != 'PASS':
+        raise ValueError('Unchanged protocol and passing prior provenance required')
+    protocol = read(INTAKE)
+    observed = {}
+    for drive in ('C', 'D', 'F'):
+        path = drive + ':/' if os.name == 'nt' else '/mnt/' + drive.lower()
+        if Path(path).exists():
+            observed[drive] = dict(zip(('total', 'used', 'free'), shutil.disk_usage(path)))
+    cap = capacity(protocol['resource_policy'], observed)
+    record = dict(schema='pact_gate09_capacity_refresh_v1', created_utc=datetime.now(timezone.utc).isoformat(),
+                  status=cap['status'] if cap['status'] != 'PASS' else 'PACT_GATE09_REFERENCE_ADMISSION_PENDING',
+                  protocol=previous['protocol'], provenance_reference=binding(previous_path), provenance_status='PASS',
+                  capacity=cap, resource_snapshot=observed, backend=previous['backend'], heavy_launch_allowed=False,
+                  reference_qualified=False, scientific_campaigns_reexecuted=0,
+                  guard='Source probe rechecks all frozen sources, pinned source inputs, mapping binary and Liberty before heavy execution')
+    output.mkdir(parents=True)
+    with (output / 'admission.json').open('x', encoding='utf-8', newline='\n') as stream:
+        json.dump(record, stream, indent=2, sort_keys=True)
+        stream.write('\n')
+    print(json.dumps(dict(status=record['status'], capacity=cap, audit_path=str(output / 'admission.json')), indent=2), flush=True)
+    return record
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--refresh-capacity-from', type=Path)
     args = parser.parse_args()
-    result = audit(args.output)
+    result = refresh_capacity(args.refresh_capacity_from, args.output) if args.refresh_capacity_from else audit(args.output)
     raise SystemExit(0 if result['provenance_status'] == 'PASS' and result['capacity']['status'] == 'PASS' else 2)
 
 

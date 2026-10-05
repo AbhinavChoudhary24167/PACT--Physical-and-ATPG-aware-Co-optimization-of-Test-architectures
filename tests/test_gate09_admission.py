@@ -1,5 +1,6 @@
 """Gate-09 admission rejects relaxed storage floors and corrupt frozen bytes."""
 import importlib.util
+import json
 from pathlib import Path
 import pytest
 
@@ -33,3 +34,12 @@ def test_frozen_file_mismatch_and_missing_evidence(tmp_path):
 def test_receipt_overwrite_is_rejected_before_any_audit(tmp_path):
     with pytest.raises(ValueError, match='Fresh audit directory'):
         admission.audit(tmp_path)
+
+
+def test_capacity_refresh_cannot_upgrade_failed_provenance(tmp_path):
+    prior = tmp_path / 'prior.json'
+    prior.write_text(json.dumps(dict(provenance_status='PACT_GATE09_BLOCKED_PROVENANCE')))
+    output = tmp_path / 'new'
+    with pytest.raises(ValueError, match='passing prior provenance'):
+        admission.refresh_capacity(prior, output)
+    assert not output.exists()
