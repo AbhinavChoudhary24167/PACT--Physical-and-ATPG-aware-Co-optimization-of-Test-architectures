@@ -1,6 +1,6 @@
 {
   "architecture_selection": "Frozen pre-route balanced primary, E, H4, H8 roles with exact hash deduplication; at most three; no post-route reselection",
-  "assembled_utc": "2026-10-04T19:55:17.108007+00:00",
+  "assembled_utc": "2026-10-05T02:36:21.593605+00:00",
   "campaign": {
     "bytes": 45624,
     "path": "repo://results/pact_cold_start_unseen_20261004/manifests/campaign_preregistration.json",
@@ -8,14 +8,14 @@
   },
   "comparison_tolerance": "1e-10*max(1,abs(reference)); exact downstream measurements only",
   "counts": {
-    "candidates_physically_qualified": 11,
+    "candidates_physically_qualified": 12,
     "candidates_preselected": 12,
     "designs_blocked": 4,
     "designs_improving_E": 4,
     "designs_improving_H4": 4,
     "designs_improving_H8": 4,
     "designs_improving_all_three": 4,
-    "designs_terminal": 7,
+    "designs_terminal": 8,
     "designs_with_alternative_mixed_candidate": 3,
     "designs_with_any_mixed_candidate": 3,
     "designs_with_any_no_or_negligible_candidate": 0,
@@ -2177,14 +2177,18 @@
         {
           "ATPG_pattern_count": 21,
           "DRC": 0,
-          "E": null,
+          "E": 261639931.65970486,
           "FAN_reported_coverage": 87.58,
           "FF_count": 1728,
-          "H4": null,
-          "H8": null,
+          "H4": 1800.0317664400006,
+          "H8": 562.80230917,
           "WNS": 8.4146,
-          "activity_relations": {},
-          "activity_status": "PENDING",
+          "activity_relations": {
+            "E": "improved",
+            "H4": "improved",
+            "H8": "improved"
+          },
+          "activity_status": "QUALIFIED",
           "architecture_hash": "f3ad90a574f428850c4764fec5ff8cef1f7066697f7a232588443804f875862f",
           "atpg_gates_status": "PASS",
           "candidate": "CS_C3",
@@ -2194,9 +2198,9 @@
             "discovered_loop_seconds": 516.6941781749999,
             "discovered_utc": "2026-10-04T18:39:50.491787+00:00"
           },
-          "delta_E_percent": null,
-          "delta_H4_percent": null,
-          "delta_H8_percent": null,
+          "delta_E_percent": -0.28410368548282827,
+          "delta_H4_percent": -1.3727244301014796,
+          "delta_H8_percent": -2.5717618713366086,
           "delta_routed_WL_percent": 0.9593302663332137,
           "design": "s35932",
           "detected_faults": 87594,
@@ -2226,7 +2230,11 @@
               "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s35932/budget_0.05/architectures/f3ad90a574f428850c4764fec5ff8cef1f7066697f7a232588443804f875862f.json",
               "sha256": "9d4013c22ab583251a91f0ee2639e59ee3a70c3998ca26f4c5c47647a8354c79"
             },
-            "exact_activity": null,
+            "exact_activity": {
+              "bytes": 1638,
+              "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/result.json",
+              "sha256": "92d9be0b502443dae0a6fb71d48812467e3356635f6c1175becc65cba73f76c0"
+            },
             "physical": {
               "bytes": 451640,
               "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/route_result.json",
@@ -2243,7 +2251,7 @@
               "sha256": "ba2a32b97cc8eece56924f9b51562d44509b0e001e2090f6360325e22b842ac6"
             }
           },
-          "qualification_status": "PENDING",
+          "qualification_status": "QUALIFIED",
           "receipt_order_audit": {
             "aggregate_receipt_timestamps": "Physical/ATPG aggregate created_utc summarizes completed stages; per-candidate completions establish gate order, while bound selection_snapshot and rewire execution interval establish preselection before implementation",
             "physical_execution_start_proof": {
@@ -2338,7 +2346,7 @@
           "search_runtime_seconds": 2908.539542158,
           "seed": 11,
           "selection_order": 3,
-          "status": "PENDING",
+          "status": "PACT_STRONG_IMPROVEMENT",
           "target_faults": 100018,
           "uncollapsed_member_identity_equivalence": "NOT_ENUMERATED"
         }
@@ -2362,12 +2370,13 @@
       "primary_scientific_category": "PACT_STRONG_IMPROVEMENT",
       "qualified_candidates": [
         "CS_C1",
-        "CS_C2"
+        "CS_C2",
+        "CS_C3"
       ],
       "search_completed": true,
       "selected_reference": "B2",
       "status": "PACT_STRONG_IMPROVEMENT",
-      "terminal": false,
+      "terminal": true,
       "zero_historical_state": true
     },
     {
@@ -5349,6 +5358,126 @@
       "transition_extraction": {
         "calls": 72722,
         "wall_seconds": 277.0156728559368
+      }
+    },
+    {
+      "CPU_seconds": 809.589049,
+      "E_computation": {
+        "calls": 1,
+        "cpu_seconds": 9.168928624999978,
+        "process_peak_RSS_KiB": 1278052,
+        "wall_seconds": 8.985885482999947
+      },
+      "H4_computation": {
+        "calls": 1,
+        "cpu_seconds": 1.591723065999986,
+        "process_peak_RSS_KiB": 1278052,
+        "wall_seconds": 1.5849005770005533
+      },
+      "H8_computation": {
+        "calls": 1,
+        "cpu_seconds": 1.304682980999985,
+        "process_peak_RSS_KiB": 1278052,
+        "wall_seconds": 1.3011498539999593
+      },
+      "VCD": {
+        "bytes": 589592476,
+        "complete": true
+      },
+      "VCD_generation": {
+        "reason": "VVP performs simulation and $dumpvars emission in the same process; isolated generation time is not observable without changing execution semantics",
+        "shared_stage": "simulate",
+        "wall_seconds": null
+      },
+      "VCD_parse": {
+        "cpu_seconds": null,
+        "includes": "streaming text IO, header/event parsing, allocations and timestamp dispatch",
+        "peak_RSS_KiB": null,
+        "resource_attribution": "CPU/RSS shared with vcd_parse_and_transition; do not sum inclusive and exclusive spans",
+        "wall_seconds": 126.92687421801111
+      },
+      "VCD_parse_and_transition": {
+        "calls": 1,
+        "cpu_seconds": 343.56831833399997,
+        "process_peak_RSS_KiB": 577256,
+        "wall_seconds": 373.70681806599987
+      },
+      "candidate": "CS_C3",
+      "compile": {
+        "CPU_seconds": 6.7330570000000005,
+        "CPU_system_seconds": 2.64484,
+        "CPU_user_seconds": 4.088217,
+        "command": [
+          "/usr/bin/iverilog",
+          "-g2012",
+          "-DTETRAMAX",
+          "-s",
+          "tb",
+          "-o",
+          "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s35932/CS_C3/s35932/CS_C3/simulation.vvp",
+          "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s35932/CS_C3/s35932/CS_C3/stimulus.v",
+          "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s35932/CS_C3/s35932/CS_C3/routed.v",
+          "/root/pact-deps/FAN_ATPG/techlib/NangateOpenCellLibrary.v"
+        ],
+        "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+        "log": {
+          "bytes": 0,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s35932/CS_C3/s35932/CS_C3/compile.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "major_page_faults": 0,
+        "peak_RSS_KiB": 402404,
+        "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+        "returncode": 0,
+        "timed_out": false,
+        "timestamp_utc": "2026-10-04T19:44:27.386951+00:00",
+        "wall_seconds": 12.712824852999802
+      },
+      "design": "s35932",
+      "error": null,
+      "failure_class": null,
+      "fixed_deadline_seconds": 1800,
+      "instrumentation": {
+        "bytes": 9160,
+        "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/instrumentation.json",
+        "sha256": "5956572b4dcdc58ad1804d0feb8c86b133f6f0060c8445f7dc57fddfcfe367b7"
+      },
+      "peak_RSS_KiB": 1278052,
+      "result": {
+        "bytes": 1638,
+        "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/result.json",
+        "sha256": "92d9be0b502443dae0a6fb71d48812467e3356635f6c1175becc65cba73f76c0"
+      },
+      "scope": "PHYSICAL_MEASUREMENT_ONLY; exact all_data metrics; inclusive/exclusive parser spans not additive",
+      "simulation": {
+        "CPU_seconds": 344.049263,
+        "CPU_system_seconds": 14.908963,
+        "CPU_user_seconds": 329.1403,
+        "command": [
+          "/usr/bin/vvp",
+          "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s35932/CS_C3/s35932/CS_C3/simulation.vvp"
+        ],
+        "cwd": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT",
+        "log": {
+          "bytes": 365,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cold_start_unseen_20261004/activity/s35932/CS_C3/s35932/CS_C3/simulate.log",
+          "sha256": "b61207514d5f8c466116cf966a14020a1b67df5a7551d4ef151c8644f37e8abb"
+        },
+        "major_page_faults": 0,
+        "peak_RSS_KiB": 95796,
+        "resources_scope": "wait4 child and child-waited descendants; RSS is maximum, not a summed tree value",
+        "returncode": 0,
+        "timed_out": false,
+        "timestamp_utc": "2026-10-04T19:52:04.045128+00:00",
+        "wall_seconds": 447.18013995399997
+      },
+      "status": "QUALIFIED",
+      "terminal_diagnosis": null,
+      "terminal_diagnosis_receipt": null,
+      "total_wall_seconds": 960.825684339,
+      "transition_extraction": {
+        "calls": 72722,
+        "wall_seconds": 246.77994384798876
       }
     },
     {
@@ -8343,14 +8472,18 @@
     {
       "ATPG_pattern_count": 21,
       "DRC": 0,
-      "E": null,
+      "E": 261639931.65970486,
       "FAN_reported_coverage": 87.58,
       "FF_count": 1728,
-      "H4": null,
-      "H8": null,
+      "H4": 1800.0317664400006,
+      "H8": 562.80230917,
       "WNS": 8.4146,
-      "activity_relations": {},
-      "activity_status": "PENDING",
+      "activity_relations": {
+        "E": "improved",
+        "H4": "improved",
+        "H8": "improved"
+      },
+      "activity_status": "QUALIFIED",
       "architecture_hash": "f3ad90a574f428850c4764fec5ff8cef1f7066697f7a232588443804f875862f",
       "atpg_gates_status": "PASS",
       "candidate": "CS_C3",
@@ -8360,9 +8493,9 @@
         "discovered_loop_seconds": 516.6941781749999,
         "discovered_utc": "2026-10-04T18:39:50.491787+00:00"
       },
-      "delta_E_percent": null,
-      "delta_H4_percent": null,
-      "delta_H8_percent": null,
+      "delta_E_percent": -0.28410368548282827,
+      "delta_H4_percent": -1.3727244301014796,
+      "delta_H8_percent": -2.5717618713366086,
       "delta_routed_WL_percent": 0.9593302663332137,
       "design": "s35932",
       "detected_faults": 87594,
@@ -8392,7 +8525,11 @@
           "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cold_start_unseen_20261004/searches/s35932/budget_0.05/architectures/f3ad90a574f428850c4764fec5ff8cef1f7066697f7a232588443804f875862f.json",
           "sha256": "9d4013c22ab583251a91f0ee2639e59ee3a70c3998ca26f4c5c47647a8354c79"
         },
-        "exact_activity": null,
+        "exact_activity": {
+          "bytes": 1638,
+          "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/result.json",
+          "sha256": "92d9be0b502443dae0a6fb71d48812467e3356635f6c1175becc65cba73f76c0"
+        },
         "physical": {
           "bytes": 451640,
           "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/route_result.json",
@@ -8409,7 +8546,7 @@
           "sha256": "ba2a32b97cc8eece56924f9b51562d44509b0e001e2090f6360325e22b842ac6"
         }
       },
-      "qualification_status": "PENDING",
+      "qualification_status": "QUALIFIED",
       "receipt_order_audit": {
         "aggregate_receipt_timestamps": "Physical/ATPG aggregate created_utc summarizes completed stages; per-candidate completions establish gate order, while bound selection_snapshot and rewire execution interval establish preselection before implementation",
         "physical_execution_start_proof": {
@@ -8504,7 +8641,7 @@
       "search_runtime_seconds": 2908.539542158,
       "seed": 11,
       "selection_order": 3,
-      "status": "PENDING",
+      "status": "PACT_STRONG_IMPROVEMENT",
       "target_faults": 100018,
       "uncollapsed_member_identity_equivalence": "NOT_ENUMERATED"
     },
@@ -8672,7 +8809,7 @@
     }
   ],
   "repository_branch": "experiment/cold-start-unseen-pact-20261004",
-  "repository_sha_at_assembly": "42f21ea90cb9c0c401efe114a3a3b13363aa6fe5",
+  "repository_sha_at_assembly": "21d3b702f0cc0330afa6f3a8a4a89b853843b842",
   "schema": "pact_cold_start_canonical_v1",
   "secondary_classifications": [],
   "solver_scalability": [

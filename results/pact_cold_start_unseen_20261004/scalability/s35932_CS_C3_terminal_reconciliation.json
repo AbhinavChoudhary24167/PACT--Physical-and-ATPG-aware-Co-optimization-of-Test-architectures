@@ -1,0 +1,152 @@
+{
+  "FF_transitions": "PASS",
+  "VCD_complete": true,
+  "all_compact_terminal_json_copies_match_heavy": true,
+  "candidate": "CS_C3",
+  "cleanup_observation": {
+    "campaign_processes_observed": 0,
+    "command": "wsl -d Ubuntu-24.04 --exec /bin/ps -eo pid,ppid,etimes,comm,args",
+    "scope": "Current process snapshot after WSL restart; not retrospective CPU/runtime evidence"
+  },
+  "compact_json_count": 15,
+  "completed_child_stages": [
+    {
+      "receipt": {
+        "bytes": 975,
+        "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/export.execution.json",
+        "sha256": "7255479b1ad1d9c6a6323966d6a948998f4645016f80b09e7cf3ef47c331e1b9"
+      },
+      "returncode": 0,
+      "stage": "export",
+      "timed_out": false
+    },
+    {
+      "receipt": {
+        "bytes": 889,
+        "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/extract.execution.json",
+        "sha256": "7c59e679f61ad1a1f5280c5e2e57d5bb3bd78ac68858366f2c66184c7c3ebb62"
+      },
+      "returncode": 0,
+      "stage": "extract",
+      "timed_out": false
+    },
+    {
+      "receipt": {
+        "bytes": 1220,
+        "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/compile.execution.json",
+        "sha256": "3e43bc2dd0da7e324e300ca48fdc0f4e619522a7df1750c268d2ef3de6ed1740"
+      },
+      "returncode": 0,
+      "stage": "compile",
+      "timed_out": false
+    },
+    {
+      "receipt": {
+        "bytes": 852,
+        "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/simulate.execution.json",
+        "sha256": "ace313162232b03a0e1a2e33f1531c3bb4d8cb98f679771f3013a22249bdfca0"
+      },
+      "returncode": 0,
+      "stage": "simulate",
+      "timed_out": false
+    },
+    {
+      "receipt": {
+        "bytes": 975,
+        "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/analyze.execution.json",
+        "sha256": "b97547223e61f7132847f6b716686ab0fdf2a8873346691e214f26d1b806c062"
+      },
+      "returncode": 0,
+      "stage": "analyze",
+      "timed_out": false
+    }
+  ],
+  "created_utc": "2026-10-05T02:37:55.812824+00:00",
+  "design": "s35932",
+  "files": [
+    {
+      "bytes": 6072,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/activity_summary.json",
+      "sha256": "94a8add185f071f54b4158709f6edbab1b1d34b782a0b70f0ed4000a2d48bb7b"
+    },
+    {
+      "bytes": 2658,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/analysis_instrumentation.json",
+      "sha256": "9af25e284cfa24750f3aa8a4506706e5705394f6642e79fcb310a2b96b03173c"
+    },
+    {
+      "bytes": 2419,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/analysis_live.json",
+      "sha256": "94f3a75650d6ac6d83cee7327dec405174a4b9fcb7bb459ea962ba47eeeab0e5"
+    },
+    {
+      "bytes": 975,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/analyze.execution.json",
+      "sha256": "b97547223e61f7132847f6b716686ab0fdf2a8873346691e214f26d1b806c062"
+    },
+    {
+      "bytes": 1220,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/compile.execution.json",
+      "sha256": "3e43bc2dd0da7e324e300ca48fdc0f4e619522a7df1750c268d2ef3de6ed1740"
+    },
+    {
+      "bytes": 975,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/export.execution.json",
+      "sha256": "7255479b1ad1d9c6a6323966d6a948998f4645016f80b09e7cf3ef47c331e1b9"
+    },
+    {
+      "bytes": 889,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/extract.execution.json",
+      "sha256": "7c59e679f61ad1a1f5280c5e2e57d5bb3bd78ac68858366f2c66184c7c3ebb62"
+    },
+    {
+      "bytes": 188,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/FF_transition_crosscheck.json",
+      "sha256": "5cb3d27db2cb74c40756475088bb480abdcffd99576b67006b5cb2ae2d006d96"
+    },
+    {
+      "bytes": 472,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/functional_verification.json",
+      "sha256": "60bf4fe9e4657ae00128be0b008396da6eac8ef9ba01080ff899ab351b60dd8e"
+    },
+    {
+      "bytes": 9160,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/instrumentation.json",
+      "sha256": "5956572b4dcdc58ad1804d0feb8c86b133f6f0060c8445f7dc57fddfcfe367b7"
+    },
+    {
+      "bytes": 1638,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/result.json",
+      "sha256": "92d9be0b502443dae0a6fb71d48812467e3356635f6c1175becc65cba73f76c0"
+    },
+    {
+      "bytes": 852,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/simulate.execution.json",
+      "sha256": "ace313162232b03a0e1a2e33f1531c3bb4d8cb98f679771f3013a22249bdfca0"
+    },
+    {
+      "bytes": 2531,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/simulation_manifest.json",
+      "sha256": "26ee8150e9cc1d9808a6159d3d1ba6c59cb99705307fce3ba080ba22f2c000c9"
+    },
+    {
+      "bytes": 7571,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/spatial_bins.json",
+      "sha256": "4fbcc282566d0ca0c2de6b1e3862918c44d5ee3471691b4df3abad446bf78c2c"
+    },
+    {
+      "bytes": 415273,
+      "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/topology_verification.json",
+      "sha256": "a9dff30c29cd2a43b1c13d1c9057117c588453033ed1ab10854b07548422c544"
+    }
+  ],
+  "schema": "pact_cold_start_terminal_reconciliation_v1",
+  "scope": "Read-only terminal artifact reconciliation after conversation resumed; no rerun",
+  "status": "PASS",
+  "terminal_result": {
+    "bytes": 1638,
+    "path": "repo://results/pact_cold_start_unseen_20261004/physical/s35932/CS_C3/activity/result.json",
+    "sha256": "92d9be0b502443dae0a6fb71d48812467e3356635f6c1175becc65cba73f76c0"
+  },
+  "worker_session_status": "Original exec session no longer available; five immutable child receipts and terminal result establish completed exact qualification"
+}

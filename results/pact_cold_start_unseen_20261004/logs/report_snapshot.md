@@ -1,6 +1,6 @@
 Cold-start unseen designs attempted: 8
 Cold-start searches completed: 4
-PACT candidates physically qualified: 11
+PACT candidates physically qualified: 12
 Designs with useful activity improvement: 4
 Designs with mixed/no improvement: 1
 Designs blocked by infrastructure/scalability: 4
@@ -24,7 +24,7 @@ PROSPECTIVE UNSEEN COLD-START RESULTS
 | s1238 | B3T | CS_C3 | -1.945 | -9.129 | -9.225 | 1.065 | 9.076 | 0 | 96.363 | 27.412 | PACT_MIXED_TRADEOFF |
 | s35932 | B2 | CS_C1 | 2.103 | -0.141 | -1.636 | -2.687 | 8.415 | 0 | 87.578 | 2908.540 | PACT_STRONG_IMPROVEMENT |
 | s35932 | B2 | CS_C2 | 1.291 | -0.650 | -1.916 | -2.610 | 8.415 | 0 | 87.578 | 2908.540 | PACT_STRONG_IMPROVEMENT |
-| s35932 | B2 | CS_C3 | 0.959 | N/A | N/A | N/A | 8.415 | 0 | 87.578 | 2908.540 | PENDING |
+| s35932 | B2 | CS_C3 | 0.959 | -0.284 | -1.373 | -2.572 | 8.415 | 0 | 87.578 | 2908.540 | PACT_STRONG_IMPROVEMENT |
 
 Negative percentages are improvements. N/A means unavailable exact data. Search estimates are kept in JSON and never substituted for measured activity. Physically qualified means route/topology/function/placement/timing/DRC, FAN identities/weights, and complete VCD FF transitions all passed.
 Useful activity improvement counts any exact E/H4/H8 gain above the fixed tolerance among retained candidates. It does not erase another metric regression or routed-wire increase. The design status follows its preselected balanced primary. All alternatives contribute to explicitly named any-candidate counts.
@@ -36,7 +36,7 @@ Useful activity improvement counts any exact E/H4/H8 gain above the fixed tolera
 | s953 | 29 | 89 | B2 | True | True | 3 | 3 | PACT_STRONG_IMPROVEMENT | N/A |
 | s1196 | 18 | 134 | B2 | True | True | 3 | 3 | PACT_STRONG_IMPROVEMENT | N/A |
 | s1238 | 18 | 145 | B3T | True | True | 3 | 3 | PACT_MIXED_TRADEOFF | N/A |
-| s35932 | 1728 | 21 | B2 | True | True | 3 | 2 | PACT_STRONG_IMPROVEMENT | N/A |
+| s35932 | 1728 | 21 | B2 | True | True | 3 | 3 | PACT_STRONG_IMPROVEMENT | N/A |
 | s38417 | 1636 | 105 | B2 | True | False | 0 | 0 | PACT_EXECUTION_BLOCKED | New independent REF_B2 exact-activity measurement failed (RESOURCE_LIMIT) at the fixed 1800-second deadline; complete VCD and exact E/H4/H8 are unavailable; only this design stops independently |
 | s38584 | 1426 | 133 | B3T | True | False | 0 | 0 | PACT_EXECUTION_BLOCKED | New independent REF_B3T exact-activity measurement failed (RESOURCE_LIMIT) at the fixed 1800-second deadline; complete VCD and exact E/H4/H8 are unavailable; only this design stops independently |
 
