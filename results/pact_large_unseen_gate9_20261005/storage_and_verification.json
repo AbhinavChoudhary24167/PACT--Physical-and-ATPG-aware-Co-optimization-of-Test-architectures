@@ -1,0 +1,160 @@
+{
+  "WSL_swap": "F:/green-ecc-iscas-sustainability-temp/wsl-swap/swap.vhdx",
+  "WSL_virtual_disk": {
+    "logical_bytes": 91174731776,
+    "path": "F:/green-ecc-iscas-sustainability-temp/wsl-relocated/Ubuntu-24.04/ext4.vhdx"
+  },
+  "capacity_budget": {
+    "C_minimum_bytes": 6442450944,
+    "D_additional_margin_bytes": 5368709120,
+    "D_initial_minimum_bytes": 26843545600,
+    "D_workflow_scratch_requirement_bytes": 21474836480
+  },
+  "cleanup_receipts": {
+    "count_cache_cleanup.json": {
+      "AfterFree": 27454132224,
+      "BeforeFree": 25121013760,
+      "BytesRemoved": 2333115960,
+      "CompleteTraceAndAllScientificReceiptsPreserved": true,
+      "CreatedUTC": "2026-10-05T06:33:59.0133202Z",
+      "Path": "D:\\PACT_EXPERIMENTS\\results\\pact_cpu_scalability_20261005\\continuation\\s38417\\REF_B2\\normal\\s38417\\REF_B2\\transitions.u8",
+      "Proof": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\campaign-control\\count_cache_reconstruction_proof.json"
+    },
+    "count_cache_reconstruction_proof.json": {
+      "action": "Read-only verification; deletion is a separate approved native operation",
+      "activity_metrics_recomputed": false,
+      "cache": {
+        "bytes": 2333115960,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_cpu_scalability_20261005/continuation/s38417/REF_B2/normal/s38417/REF_B2/transitions.u8",
+        "sha256": "488f1116ba6fb9d8dafc8d3d217c44c1007004e3ebf6060db77993a25db5ea37"
+      },
+      "complete_trace": {
+        "backend": "icarus_vpi_settled_counts_v1",
+        "bytes": 374107061,
+        "complete": true,
+        "cycles": 171780,
+        "mapped_nets": 13582,
+        "sha256": "f58e8cec71f74ecffade3a14a557e384c1798abe086211dcabb67a968a524b8c",
+        "storage": "gzip uint8 per-net/per-cycle counts"
+      },
+      "counts_byte_for_byte_equal_to_complete_crc_footer_validated_stream": true,
+      "created_utc": "2026-10-05T06:30:23.348253+00:00",
+      "qualified_receipt": {
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_cpu_scalability_20261005/activity/continuation/s38417/REF_B2/normal/result.json",
+        "sha256": "8c3f4f53fbc036a17b68dba2f1e2cd3831355f6eefea6d5cfaddb6763e42f5f3"
+      },
+      "simulation_reexecuted": false,
+      "status": "VERIFIED_RECONSTRUCTIBLE"
+    },
+    "host_cache_cleanup.json": {
+      "After": [
+        {
+          "Free": 7428325376,
+          "Name": "C"
+        },
+        {
+          "Free": 25121013760,
+          "Name": "D"
+        },
+        {
+          "Free": 107083890688,
+          "Name": "F"
+        }
+      ],
+      "Before": [
+        {
+          "Free": 1016836096,
+          "Name": "C"
+        },
+        {
+          "Free": 25121013760,
+          "Name": "D"
+        },
+        {
+          "Free": 107083890688,
+          "Name": "F"
+        }
+      ],
+      "CreatedUTC": "2026-10-05T06:31:41.5073384Z",
+      "Inventory": "storage_before.json; storage_user_caches.json",
+      "ScientificEvidenceTouched": false,
+      "Targets": [
+        {
+          "BytesRemoved": 1196169716.0,
+          "Classification": "Stale runtime installer download/extraction; installed codex-primary-runtime is retained",
+          "FilesRemoved": 20079,
+          "Path": "C:\\Users\\Abhinav\\.cache\\codex-runtimes\\codex-runtime-install-RP37N7",
+          "State": "REMOVED"
+        },
+        {
+          "BytesRemoved": 423811311.0,
+          "Classification": "Reconstructible downloaded pip HTTP/wheel cache; installed packages are retained",
+          "FilesRemoved": 631,
+          "Path": "C:\\Users\\Abhinav\\AppData\\Local\\pip\\cache",
+          "State": "REMOVED"
+        },
+        {
+          "BytesRemoved": 4741442336.0,
+          "Classification": "Downloaded/extracted updater packages; installed drivers and applications are retained",
+          "FilesRemoved": 1279,
+          "Path": "C:\\ProgramData\\NVIDIA Corporation\\NVIDIA App\\UpdateFramework\\ota-artifacts",
+          "State": "REMOVED"
+        }
+      ]
+    }
+  },
+  "evidence_preserved": true,
+  "files_relocated": [],
+  "inventory_paths": [
+    "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\campaign-control\\storage_before.json",
+    "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\campaign-control\\storage_c_root.json",
+    "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\campaign-control\\storage_user_caches.json"
+  ],
+  "orchestration_tests": {
+    "Linux": {
+      "seconds": 3.83,
+      "status": "PASS",
+      "tests": 8
+    },
+    "Windows": {
+      "seconds": 0.59,
+      "status": "PASS",
+      "tests": 4
+    }
+  },
+  "storage_after": {
+    "PID": 5508,
+    "Windows_uptime_ms": 183251250,
+    "disks": {
+      "C": {
+        "free": 7508942848,
+        "total": 199569510400
+      },
+      "D": {
+        "free": 27454132224,
+        "total": 125828067328
+      },
+      "F": {
+        "free": 107083890688,
+        "total": 362531516416
+      }
+    },
+    "host_memory": {
+      "available_bytes": 3280162816,
+      "total_bytes": 16366567424
+    },
+    "observed_utc": "2026-10-05T06:46:33.561173+00:00"
+  },
+  "storage_before": {
+    "C:/": {
+      "free": 1099124736,
+      "total": 199569510400,
+      "used": 198470385664
+    },
+    "D:/": {
+      "free": 25123098624,
+      "total": 125828067328,
+      "used": 100704968704
+    }
+  }
+}
