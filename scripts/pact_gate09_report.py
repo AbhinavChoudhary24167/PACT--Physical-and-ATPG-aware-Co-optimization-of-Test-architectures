@@ -309,6 +309,21 @@ def render(report, path, protocol, meta):
         '| Method | Pareto state | Dominated by | Dominates |', '|---|---|---|---|']
     for r in rows:
         lines.append('| '+r['role']+' | '+r['pareto_status']+' | '+', '.join(r['dominated_by'])+' | '+', '.join(r['dominates'])+' |')
+    lines += ['', 'Measured baseline contrasts (destination relative to source):', '',
+        '| Source → destination | ΔScan WL % | ΔE % | ΔH4 % | ΔH8 % |',
+        '|---|---:|---:|---:|---:|']
+    by_role = {r['role']:r for r in rows}
+    pairs = [('B0', method) for method in ('B1','B2','B3T','B4','B5')]
+    if report['primary_candidate']:
+        pairs += [(method, report['primary_candidate']) for method in ('B3T','B4','B5')]
+    for source, destination in pairs:
+        before, after = by_role[source], by_role[destination]
+        values = [100*(after[k]/before[k]-1) if before['qualification_status']=='QUALIFIED'
+                  and after['qualification_status']=='QUALIFIED' and before[k] else None for k in COSTS]
+        lines.append('| '+source+' → '+destination+' | '+' | '.join(number(v) for v in values)+' |')
+    lines += ['', 'These contrasts quantify physical-only ordering, the activity-only heuristic, the simple hybrid, '
+        'and the preselected primary PACT result. A negative activity delta with positive wire delta is a trade-off. '
+        'The four-objective dominance audit above determines superiority; these columns do not establish a causal mechanism.', '']
     lines += ['', '## L. Generalization', '',
         'Established: these fully qualified measurements on this unseen design. Observed: the recorded primary seed and Nangate45 behavior. '
         'Hypothesis: any explanation of proxy-to-final differences needs a later study. Not established: universal superiority, '
