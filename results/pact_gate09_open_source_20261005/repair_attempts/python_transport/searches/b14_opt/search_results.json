@@ -1,0 +1,51 @@
+{
+  "CPU_seconds": 3233.805439,
+  "configuration": {
+    "bytes": 4257,
+    "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/python_transport/searches/b14_opt/search_configuration.json",
+    "sha256": "94a892348e23a098dd84d5bd9becdec0dc18b2bc54d5ac0a8f12b7b799d901da"
+  },
+  "created_utc": "2026-10-05T19:26:32.454906+00:00",
+  "design": "b14_opt",
+  "initialization": {
+    "bytes": 138489,
+    "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/python_transport/searches/b14_opt/initialization.json",
+    "sha256": "54c99d305ed0b58f6c88b3f119c70b6d9e79b86b923d126b5219d635c2c26dfe"
+  },
+  "input": {
+    "bytes": 5345,
+    "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/python_transport/inputs/b14_opt/cold_start_input.json",
+    "sha256": "e6f8e9ebeb2c0d2f68a36ac64f9c36637bbceed3c9856164a6ecbf04bd5f9afd"
+  },
+  "lanes": [
+    {
+      "epsilon": 0.02,
+      "receipt": {
+        "bytes": 32325,
+        "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/python_transport/searches/b14_opt/budget_0.02/search.json",
+        "sha256": "1e9312c36495c0ac26ce6243658d8fbb0e0a12a9317bc30513d421289336ace4"
+      }
+    },
+    {
+      "epsilon": 0.05,
+      "receipt": {
+        "bytes": 30823,
+        "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/python_transport/searches/b14_opt/budget_0.05/search.json",
+        "sha256": "741e22976bb7a1ffdc12aef743461ee9452b76ff6846ce751cd83a532d3d88d7"
+      }
+    },
+    {
+      "epsilon": 0.1,
+      "receipt": {
+        "bytes": 31920,
+        "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/python_transport/searches/b14_opt/budget_0.10/search.json",
+        "sha256": "05a3872396a799437f004f3b69fc99e2f5d3e693ec5e4a8481a35fdd2a7d3321"
+      }
+    }
+  ],
+  "model_setup_seconds": 1.8701068349996604,
+  "peak_RSS_KiB": 605532,
+  "status": "SEARCH_COMPLETE",
+  "total_exact_mutation_evaluations": 10512,
+  "wall_seconds": 3169.5446739049994
+}
