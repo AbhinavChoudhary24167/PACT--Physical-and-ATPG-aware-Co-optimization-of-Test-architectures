@@ -19,6 +19,8 @@ The primary campaign evaluates frozen PACT on the preregistered b14/b15/b17/b18 
 
 `pact_gate09_finish_design.py` freezes at most three distinct candidates before routing and exact measurement, then writes a complete per-design comparison. The balanced primary candidate remains primary after qualification. Failed outcomes and alternative candidates remain in the results.
 
+`pact_gate09_input_recovery.py` separates prospective cold input into a fresh `PACT_primary` child beneath the source-preparation directory. It rejects existing primary-input/search artifacts, preserves the original failed receipt and runs the original complete input validation before search. Its continuation reuses all completed b15 baseline results and retains the fixed cohort order.
+
 `pact_gate09_report.py` computes four-objective Pareto relationships at relative tolerance 1e-10. Timing, DRC, topology and workload/exact correctness remain qualification gates. Its A–N report includes control and heuristic contrasts without collapsing the comparison into a scalar score.
 
 `pact_gate09_campaign_report.py --ledger PATH --output FRESH_DIRECTORY` consumes the explicitly selected terminal cohort ledger and retains held/deferred designs as unexecuted rows. The original and continuation ledgers remain separately preserved. `pact_gate09_validate.py` performs the final read-only hash, receipt, historical-preservation and tracked-bulk audit.
@@ -26,6 +28,8 @@ The primary campaign evaluates frozen PACT on the preregistered b14/b15/b17/b18 
 ## Preserving interruptions
 
 Existing outcome paths are immutable. The initial b15 registration failure occurred before ATPG or placement launched. Its dedicated continuation reused the qualified source; the later capacity continuation requires the identical FAN binary/revision, source, patterns, placement and preparation receipt. A changed backend or workload is rejected. Capacity remains 20 GiB scratch plus the registered per-design margin, with the original 25 GiB minimum retained.
+
+The subsequent b15 input-directory collision also occurred before search. The current explicit continuation ledger is `cohort_execution_input_namespaced.json`; its predecessor ledgers remain preserved. The complete production audit is `dependency_probes/input_namespace_production_qualification_v2.json`, which adds the artifact binding list omitted by the preserved first audit record.
 
 Raw route, extraction, simulation and complete trace evidence stays on the experiment drives. Compact receipts, architectures, selection records, reports and execution-source snapshots are versioned. The storage receipts record verified cache copies, rehashes, duplicate removal and retained original-path aliases.
 

@@ -117,11 +117,7 @@ def create(output, ledger_path=None):
         'rehashing each copy, removing only its verified duplicate and retaining a byte-identical D-path symlink. '
         'All deletion/relocation receipts remain in the campaign. Qualified uncompressed count caches were removed only after gzip evidence and crosschecks passed. '
         'The prospective source-registration adapter binds a failed predecessor only when one exists; its first failed launch performed no scientific work. '
-        'Both b15 continuations reused the admitted source; the capacity continuation also reused identical qualified patterns and placement without repeating ATPG or placement. '
-        'The later cold-input directory collision stopped before any search: source preparation and prospective input had shared a directory. '
-        'A qualified adapter allocates a fresh PACT_primary child and retains the original complete input validation. '
-        'All six b15 baseline results and original preparation bytes were preserved; no baseline or PACT search was repeated. '
-        'The failed launch, focused controls and complete production audit remain recorded separately.', '',
+        'Both b15 continuations reused the admitted source; the capacity continuation also reused identical qualified patterns and placement without repeating ATPG or placement.', '',
         '| Design | Base/composition family | Source FFs | Admission/comparison outcome |', '|---|---|---:|---|']
     for entry in protocol['cohort']:
         state = next(r for r in ledger['records'] if r['design']==entry['design'])
