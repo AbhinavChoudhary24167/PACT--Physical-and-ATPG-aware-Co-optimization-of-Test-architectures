@@ -10,6 +10,11 @@ import subprocess
 from gate10a_audit import ROOT, SELECTION, digest, resolve
 
 
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
 def validate(preregistered_commit, output):
     if output.exists():
         raise ValueError("Preserve existing full-count validation receipt")
@@ -27,14 +32,14 @@ def validate(preregistered_commit, output):
         receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
         count = receipt["complete_count_validation"]
         count_input = next(record for record in receipt["input_verifications"] if record["expected"]["path"] == row["count_trace"]["path"])
-        assert receipt["status"] == "PASS" and receipt["preregistered_commit"] == preregistered_commit
-        assert receipt["architecture_sha256"] == row["architecture_sha256"]
-        assert count["status"] == "PASS" and count["complete"] and count["gzip_crc"] == "PASS"
-        assert (count["cycles"], count["mapped_nets"]) == (row["cycles"], row["mapped_nets"])
-        assert receipt["FF_Q_population"] == row["ff_count"]
-        assert count_input["expected"] == row["count_trace"] and count_input["status"] == "PASS"
-        assert all(item["status"] == "PASS" for item in receipt["input_verifications"])
-        assert all(item["status"] == "PASS" for item in receipt["aggregate_integrity"].values())
+        require(receipt["status"] == "PASS" and receipt["preregistered_commit"] == preregistered_commit, "Export receipt qualification/commit mismatch")
+        require(receipt["architecture_sha256"] == row["architecture_sha256"], "Export architecture identity mismatch")
+        require(count["status"] == "PASS" and count["complete"] and count["gzip_crc"] == "PASS", "Export count completeness failure")
+        require((count["cycles"], count["mapped_nets"]) == (row["cycles"], row["mapped_nets"]), "Export count dimensions mismatch")
+        require(receipt["FF_Q_population"] == row["ff_count"], "Export FF population mismatch")
+        require(count_input["expected"] == row["count_trace"] and count_input["status"] == "PASS", "Export count identity mismatch")
+        require(all(item["status"] == "PASS" for item in receipt["input_verifications"]), "Export input qualification failure")
+        require(all(item["status"] == "PASS" for item in receipt["aggregate_integrity"].values()), "Export aggregate qualification failure")
         output_csv = receipt["output"]
         if digest(resolve(output_csv["path"])) != {key: output_csv[key] for key in ("sha256", "bytes")}:
             raise ValueError("Derived activity CSV bytes changed")

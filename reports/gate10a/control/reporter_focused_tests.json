@@ -1,0 +1,57 @@
+{
+  "schema": "pact_gate10a_reporter_synthetic_validation_v1",
+  "status": "PASS",
+  "started_utc": "2026-10-06T03:51:50.428295+00:00",
+  "completed_utc": "2026-10-06T03:51:53.064937+00:00",
+  "wall_seconds": 2.6410000000032596,
+  "command": [
+    "D:\\Python\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_gate10a_report.py",
+    "tests/test_gate10a_spatial.py",
+    "tests/test_gate10a_decision.py"
+  ],
+  "exit_code": 0,
+  "test_sources": [
+    {
+      "path": "repo://tests/test_gate10a_report.py",
+      "bytes": 13348,
+      "sha256": "6119e3b5e5b8003b45b95079b249b7f1f5a942141b33bcacbf9e0c2725a6fb6b"
+    },
+    {
+      "path": "repo://tests/test_gate10a_spatial.py",
+      "bytes": 14223,
+      "sha256": "70b66437beda974072d2a6c0be5daafba330c444e5e850f1455d479659110558"
+    },
+    {
+      "path": "repo://tests/test_gate10a_decision.py",
+      "bytes": 7012,
+      "sha256": "edbaa7dfd9cfb6b593d3d2c21c3c2e1aca73f66a4096fd2f9bbb5781097c03f3"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "repo://scripts/gate10a_report.py",
+      "bytes": 54109,
+      "sha256": "85c97fcca2948ee0590951870cbbbcebb17329e3b5729c2a6ae3460f8f8d8b45"
+    },
+    {
+      "path": "repo://src/pact/gate10a_spatial.py",
+      "bytes": 26577,
+      "sha256": "f66ceb89acb2e5a91d57b288a46a401a55dc6ab060d5f7a1d39c33b363a6eb12"
+    },
+    {
+      "path": "repo://src/pact/gate10a_decision.py",
+      "bytes": 10904,
+      "sha256": "e71c8a20a75c4ef72042683fb2587bd1b7d786e8bb89d1c30d13c838f2f9bad3"
+    }
+  ],
+  "output": {
+    "path": "repo://reports/gate10a/control/reporter_focused_tests.log",
+    "bytes": 101,
+    "sha256": "5b93c326f31c71c53a8955898e809375cf74c05de3f12a802d559c50d4f850e3"
+  },
+  "scope": "Synthetic controls only; no architecture power/IR outcomes"
+}
