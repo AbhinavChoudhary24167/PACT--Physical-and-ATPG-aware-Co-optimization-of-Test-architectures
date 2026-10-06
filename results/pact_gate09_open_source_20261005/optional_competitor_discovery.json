@@ -1,0 +1,83 @@
+{
+  "schema": "pact_gate09_optional_competitor_discovery_v1",
+  "acquired_date": "2026-10-05",
+  "outcome_visibility": {
+    "PACT_search_started": false,
+    "competitor_final_measurements_read": false
+  },
+  "searches": [
+    "github scan chain ordering low power activity optimization open source",
+    "github scan chain reordering TSP ATPG open source",
+    "open source scan-chain ordering academic implementation physical activity",
+    "LPSCADER source code GitHub",
+    "numtran.c scan chain source",
+    "scan chain reordering github.com TSP"
+  ],
+  "local_search": {
+    "roots": [
+      "docs",
+      "scripts"
+    ],
+    "terms": [
+      "ScanForge",
+      "B6",
+      "LPSCADER",
+      "numtran"
+    ],
+    "matching_prior_integration_files": []
+  },
+  "status": "NO_ADDITIONAL_DIRECT_COMPETITOR_ADMITTED",
+  "projects": [
+    {
+      "repository_url": "https://github.com/Rueilian/ScanForge",
+      "commit_SHA": "5185a55531f144dc1628f82acee842b794789ad5",
+      "license": "MIT",
+      "inspected_urls": [
+        "https://github.com/Rueilian/ScanForge/blob/5185a55531f144dc1628f82acee842b794789ad5/README.md",
+        "https://github.com/Rueilian/ScanForge/blob/5185a55531f144dc1628f82acee842b794789ad5/LICENSE"
+      ],
+      "classification": "NOT_COMPARABLE",
+      "reason": "The documented active problem changes the scanned FF population through partial-scan exclusion and sequential ATPG. The full-scan analysis reports current-order activity rather than a comparable full-scan ordering optimizer.",
+      "executions": 0,
+      "patches": [],
+      "input_adaptation": null,
+      "output_adaptation": null
+    },
+    {
+      "repository_url": "https://github.com/anadipandey/togglestimate",
+      "commit_SHA": "402396a8d52b9cf25ec39449d77cb6907e95217f",
+      "license": "No license detected in API metadata or the three-file tree",
+      "inspected_urls": [
+        "https://github.com/anadipandey/togglestimate/blob/402396a8d52b9cf25ec39449d77cb6907e95217f/README.md",
+        "https://github.com/anadipandey/togglestimate/blob/402396a8d52b9cf25ec39449d77cb6907e95217f/script.tcl"
+      ],
+      "classification": "NOT_ADMITTED_SOURCE_AND_BACKEND_CONTRACT",
+      "reason": "Documented primitive-Verilog parser, exhaustive Boolean truth-table enumeration, and single-chain activity-parameter sort. No qualified Nangate full-scan K=2 adapter is available; the source has no explicit license. A faithful port would need separate admission work.",
+      "executions": 0,
+      "patches": [],
+      "input_adaptation": null,
+      "output_adaptation": null
+    },
+    {
+      "source_url": "https://cse.iitkgp.ac.in/~anshumant/reports/testing.pdf",
+      "repository_url": null,
+      "commit_SHA": null,
+      "license": "Not established",
+      "classification": "NOT_ADMITTED_SOURCE_NOT_LOCATED",
+      "reason": "The author report describes a simulated-annealing scan-order method and lists C source filenames, but no source repository or runnable source bundle was found in this bounded search.",
+      "executions": 0,
+      "patches": []
+    },
+    {
+      "source_url": "https://www.princeton.edu/~carch/sinha/Report_Manual.pdf",
+      "repository_url": null,
+      "commit_SHA": null,
+      "license": "Not established",
+      "classification": "NOT_ADMITTED_SOURCE_NOT_LOCATED",
+      "reason": "A design report was located; a licensed executable source repository and qualified common-backend adapter were not established.",
+      "executions": 0,
+      "patches": []
+    }
+  ],
+  "scope": "Optional B6 only; B0-B5 definitions and frozen PACT remain unchanged. No claim that no other open implementation exists."
+}

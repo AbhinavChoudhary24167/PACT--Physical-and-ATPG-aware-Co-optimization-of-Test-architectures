@@ -1,0 +1,159 @@
+{
+  "schema": "pact_gate09_source_admission_v1",
+  "design": "b17_opt",
+  "created_utc": "2026-10-06T00:08:43.532687+00:00",
+  "status": "SOURCE_MAPPED_EQUIVALENCE_QUALIFIED_PENDING_PHYSICAL_ATPG_REFERENCE",
+  "protocol": {
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate9_large_scale_unseen_20261005/benchmark_preregistration.json",
+    "sha256": "01b05577c885e878f98466315d8232cd9773d332c61d8c7510ab8870dcb44717",
+    "bytes": 79703
+  },
+  "preflight": {
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/cohort_input_namespaced/b17_opt/capacity/admission.json",
+    "sha256": "dfec357c4d41c3f5d743363804995d58c12c53f4a33de048a9997db2327585c1",
+    "bytes": 16535
+  },
+  "source_files": {
+    "bench": {
+      "bytes": 851167,
+      "git_blob_sha1": "f304dc1d9183eea50ad8c2cf1b43a2e13cc02b99",
+      "path": "D:\\PACT_EXPERIMENTS\\results\\pact_gate9_large_scale_unseen_20261005\\sources\\i99t\\b17\\b17_opt.bench",
+      "sha256": "7bc5ffae5c52f9c0e57821fad866158f865dfb7ce3b91f630b9cacbe01f1a16c",
+      "url": "https://raw.githubusercontent.com/cad-polito-it/I99T/8a2c3b500ee7ff20e7031de92592b737bedc6d8c/i99t/b17/b17_opt.bench"
+    },
+    "blif": {
+      "bytes": 1065754,
+      "git_blob_sha1": "ec2f3baed411dba93aabb72ed215368d7c762a1f",
+      "path": "D:\\PACT_EXPERIMENTS\\results\\pact_gate9_large_scale_unseen_20261005\\sources\\i99t\\b17\\b17_opt.blif",
+      "sha256": "557eb31cb1ca7d7b8d72ef938ba0cbbbdc7a5c0de5358da6bb675112dd933441",
+      "url": "https://raw.githubusercontent.com/cad-polito-it/I99T/8a2c3b500ee7ff20e7031de92592b737bedc6d8c/i99t/b17/b17_opt.blif"
+    }
+  },
+  "adapter_source": {
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_source.py",
+    "sha256": "404f9802d031b0415e83c51964c03df866decaa4772b5185d97d13d2900ab10a",
+    "bytes": 11084
+  },
+  "runner_source": {
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_source_admit.py",
+    "sha256": "59f5c5a809a65e910605e083cde6765f3f132a9c33e0246046dcfb6675169206",
+    "bytes": 3332
+  },
+  "Yosys": {
+    "bytes": 8174408,
+    "path": "/usr/bin/yosys",
+    "sha256": "88c0a12bb814a1a8716b1ae10b482e35d3005ed558e1f5f626b3dc983ea3abd0"
+  },
+  "Liberty": {
+    "bytes": 6692032,
+    "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+    "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1"
+  },
+  "capacity": {
+    "volumes": {
+      "C": {
+        "free_bytes": 18977054720,
+        "minimum_free_bytes": 6442450944,
+        "deficit_bytes": 0,
+        "status": "PASS"
+      },
+      "D": {
+        "free_bytes": 35747160064,
+        "minimum_free_bytes": 26843545600,
+        "deficit_bytes": 0,
+        "status": "PASS"
+      }
+    },
+    "status": "PASS",
+    "per_design_margin": "Pending admitted artifact dimensions; fixed floor is a minimum, not a sufficient per-design budget"
+  },
+  "reference_qualified": false,
+  "PACT_search_started": false,
+  "infrastructure_attempt": null,
+  "prior_probe": null,
+  "stages": {
+    "BENCH_BLIF_equivalence": {
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b17_opt/next_state_equivalence/execution.json",
+      "sha256": "30c1a4010e22716b36a13ebd16bf71705d18f649440dab5d3836b4c62ceffec0",
+      "bytes": 1557
+    },
+    "mapping": {
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b17_opt/mapping/execution.json",
+      "sha256": "0f41837562116ebd0fc1709939ac67484948a3f4ddbc2f45f34258a94288b204",
+      "bytes": 1505
+    },
+    "mapped_equivalence": {
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b17_opt/mapped_equivalence/execution.json",
+      "sha256": "f80adb6a8db7b3373a671f50d6af33d4ec8a4737537fe0e741ace096a1a14101",
+      "bytes": 1549
+    }
+  },
+  "qualification": {
+    "BENCH_BLIF_next_state_equivalence": "PASS_ALL_PPI_AND_FUNCTIONAL_INPUT_STATES",
+    "mapped_next_state": "PASS_ALL_PPI_AND_FUNCTIONAL_INPUT_STATES",
+    "FF_inventory": "PASS",
+    "source_scan_topology": "PASS",
+    "placement": "NOT_RUN",
+    "ATPG": "NOT_RUN",
+    "reference": "NOT_ADMITTED"
+  },
+  "adapter": {
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b17_opt/adapter.json",
+    "sha256": "52441de88f44c55467108c2e3409135dc8475caaa0aee2fc29b8386d0e53c84c",
+    "bytes": 162791
+  },
+  "topology": {
+    "FF_count": 1414,
+    "cell_types": [
+      "AND2_X1",
+      "AND3_X1",
+      "AND4_X1",
+      "AOI211_X1",
+      "AOI21_X1",
+      "AOI221_X1",
+      "AOI222_X1",
+      "AOI22_X1",
+      "INV_X1",
+      "MUX2_X1",
+      "NAND2_X1",
+      "NAND3_X1",
+      "NAND4_X1",
+      "NOR2_X1",
+      "NOR3_X1",
+      "NOR4_X1",
+      "OAI211_X1",
+      "OAI21_X1",
+      "OAI221_X1",
+      "OAI222_X1",
+      "OAI22_X1",
+      "OAI33_X1",
+      "OR2_X1",
+      "OR3_X1",
+      "OR4_X1",
+      "SDFF_X1",
+      "XNOR2_X1",
+      "XOR2_X1"
+    ],
+    "scan_eligible": true,
+    "source_chain_count": 1,
+    "intended_chain_count": 2,
+    "source_endpoints": [
+      "test_si",
+      "test_so"
+    ],
+    "clock": "CK positive edge; single domain",
+    "unsupported_cells": [],
+    "macros": []
+  },
+  "mapped_netlist": {
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b17_opt/mapped.v",
+    "sha256": "0adcb060e111b9a1199c28e6f466d5385c551bf694b9ee0118a551eb0b5fa9f9",
+    "bytes": 1640290
+  },
+  "mapped_json": {
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b17_opt/mapped.json",
+    "sha256": "b72cb6824614c3be3b3b738815f13f7c4341147c787cac5bd77989b379277c72",
+    "bytes": 9407979
+  },
+  "completed_utc": "2026-10-06T00:21:35.432924+00:00"
+}

@@ -1,0 +1,222 @@
+{
+  "Gate09_preparation": {
+    "bytes": 9701,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/measurements/b15_opt/B5/preparation.json",
+    "sha256": "169b9b6a3fa51f2b505c0dad0345967e8c1bd5b054583f06793b0591c720561b"
+  },
+  "capacity": {
+    "per_design_margin": {
+      "dimensions": {
+        "cycles": 208800,
+        "nets": 4669
+      },
+      "fixed_floor_retained": true,
+      "projected_remaining_bytes": 10355362708,
+      "retained_bytes": 69619796,
+      "rule": "20 GiB + max(5 GiB, retained packages + nine projected complete traces + one complete count cache +512 MiB)"
+    },
+    "status": "PASS",
+    "volumes": {
+      "C": {
+        "deficit_bytes": 0,
+        "free_bytes": 19146317824,
+        "minimum_free_bytes": 6442450944,
+        "status": "PASS"
+      },
+      "D": {
+        "deficit_bytes": 0,
+        "free_bytes": 37581729792,
+        "minimum_free_bytes": 31830199188,
+        "status": "PASS"
+      }
+    }
+  },
+  "ceilings": {
+    "diagnostic": 14400,
+    "normal": 7200
+  },
+  "configured_timeout_seconds": 7200,
+  "created_utc": "2026-10-05T22:02:08.083313+00:00",
+  "frozen_simulation_manifest": {
+    "bytes": 3286,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/measurement_preparation/b15_opt/B5/b15_opt/B5/simulation_manifest.json",
+    "sha256": "ae1af3609ebd3c3c3f6160105ce2fea150b0df282a471c263cbbb2d7176d1343"
+  },
+  "inputs": {
+    "counts.cfg": {
+      "bytes": 37005,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5/counts.cfg",
+      "sha256": "bb9b156877070e789178cb6fd4478d5109640d35c634f4c5562defe989d839d3"
+    },
+    "cycles.json": {
+      "bytes": 18321413,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5/cycles.json",
+      "sha256": "7d6324d28c62c1f9c165b78864c9112b96cfe0c05cb119ccf172f39d2724ef9b"
+    },
+    "extracted.spef": {
+      "bytes": 7779274,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5/extracted.spef",
+      "sha256": "270b71b4b7387219a884b32dc5ec61eb4f3f6530c0dfe941bf1f34e29a9b1f59"
+    },
+    "net_mapping.json": {
+      "bytes": 775396,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5/net_mapping.json",
+      "sha256": "7401082e7074f6c32033a12bf6dab500d432b6beb0b917c8b9d7237cc3744f7b"
+    },
+    "routed.v": {
+      "bytes": 505980,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5/routed.v",
+      "sha256": "ab6e34f6a9dfae874b23a5b12bf8375b8d7e916eeb5d6483cea5a2aedf26f890"
+    },
+    "stimulus.v": {
+      "bytes": 32587985,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5/stimulus.v",
+      "sha256": "ff2ed2e7bc266bdce4b9d1fbcecf9d8b4c0330b12f59e04179b9c352bfaea74b"
+    },
+    "workload.json": {
+      "bytes": 1036601,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5/workload.json",
+      "sha256": "dda62513dc2067f46dd7210d515a4e9581fa6eb8ae8bf0397f750614efb138cd"
+    }
+  },
+  "purpose": "GATE09_PRIMARY",
+  "regime_ceiling_seconds": 7200,
+  "resource_policy": {
+    "NUMBA_NUM_THREADS": 1,
+    "OMP_NUM_THREADS": 1,
+    "OPENBLAS_NUM_THREADS": 1,
+    "physical_jobs": 0,
+    "simulator_jobs": 1,
+    "workers": 1
+  },
+  "rows": [
+    {
+      "SDC": {
+        "bytes": 10285,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "f401061c2f34b7689dfa8cb86e08d877ad444103fe6d897be619d635f52857e6"
+      },
+      "architecture": {
+        "bytes": 60269,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/B5/architecture.json",
+        "sha256": "6e62754c7d15198a92bbf69ea372b22c8bde47fa3d2bc0d441647fb6a92c2d02"
+      },
+      "architecture_sha256": "0ea76840b4d50da7c08a469e5957b058fa158811fe8219c53ec275f5ed33c663",
+      "chain_lengths": [
+        225,
+        224
+      ],
+      "design": "b15_opt",
+      "inputs": {
+        "identity_map": {
+          "bytes": 80505,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/ff_identity_map.json",
+          "sha256": "8c5e4137826e4a0e3e2fd035d92e10713e36e8ac76d1b942362cefc920dccec1"
+        },
+        "patterns": {
+          "bytes": 487355,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/patterns.pat",
+          "sha256": "89b3b47b37131976501265aa72b96de79504ac12ed1cf95887aec6c16e387002"
+        },
+        "placement": {
+          "bytes": 921071,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/placed.def",
+          "sha256": "ef180416e080e2cf7b60d57431d990cf695f1f8750c7da92625584d5e7d68f10"
+        }
+      },
+      "patterns": 464,
+      "prior_integration": {
+        "bytes": 720,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/B5/correctness/test_correctness.json",
+        "sha256": "c7e19f59fee73bcf0463d945de161308a11a9d8d8730a80e45cbbac2931649a7"
+      },
+      "qualification": {
+        "bytes": 120070,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/B5/physical/route_result.json",
+        "sha256": "74a483c4d4f1b058070317af35e7df3c914a2a499adc984d3473ab5f7bb5b321"
+      },
+      "role": "B5",
+      "routed_archive": {
+        "bytes": 1633579,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/B5/physical/5_2_route.odb.gz",
+        "sha256": "d5d4deecc193d24e82ac1895adc577415eb19d7df61ebff3576c24fa7f738354"
+      },
+      "shift_cycles": 208800,
+      "source_netlist": {
+        "bytes": 497703,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/compatible.v",
+        "sha256": "3a1f3e6dfcfa3e7e457fa6c3b9e7baffa8a651ce6e43641efc82a59a9c8de536"
+      },
+      "source_placed_database": {
+        "bytes": 2719149,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "bf91895d023be9e935d4948e9ca76f40d7bef722d5c863b09479a1141e41ae67"
+      },
+      "workload": {
+        "bytes": 1036601,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5/workload.json",
+        "sha256": "dda62513dc2067f46dd7210d515a4e9581fa6eb8ae8bf0397f750614efb138cd"
+      }
+    }
+  ],
+  "schema": "pact_cpu_exact_activity_v1",
+  "scientific_policy": "Qualified frozen C*N, H4/H8 and exact complete functional/FF replay",
+  "simulation_cells": {
+    "bytes": 220429,
+    "path": "/root/pact-deps/FAN_ATPG/techlib/NangateOpenCellLibrary.v",
+    "sha256": "8cf1d1a5c0ccfebdb67c39f172e3b2bafc199f77815a3c8d972d95531765d5a2"
+  },
+  "source_manifest": {
+    "bytes": 7720,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/measurement_preparation/b15_opt/B5/manifest.json",
+    "sha256": "533f28f30658f2acfdb9b8e2197cbdf8240e1f689d95aec97f70978cfb0d30fe"
+  },
+  "source_result": null,
+  "source_result_reason": "Prospective unseen reference; no historical exact result reused",
+  "sources": {
+    "scripts/pact_cpu_activity.py": {
+      "bytes": 12655,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_cpu_activity.py",
+      "sha256": "5ccb58a72e81a376940f1ab5041fa36a2807b1a9167c593c2e9019618af85ca4"
+    },
+    "scripts/pact_gate09_measure.py": {
+      "bytes": 15944,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_measure.py",
+      "sha256": "33f213b1bf74716baa4fab7ce5b72a585daca776ea877070c0ca9f87b0417647"
+    },
+    "src/pact/activity/compact.py": {
+      "bytes": 11707,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/activity/compact.py",
+      "sha256": "c1c7077965fc78a86e6e2fed469eca35b16bd8d5e0c0ab31ae40b06a83d1272a"
+    },
+    "src/pact/activity/counts_vpi.cpp": {
+      "bytes": 7034,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/activity/counts_vpi.cpp",
+      "sha256": "9a40394de2d4b8964509c9a6f14c2e247891022c99824939a30ea7427c77565c"
+    },
+    "src/pact/physical_effect.py": {
+      "bytes": 12009,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/physical_effect.py",
+      "sha256": "b68bbf6d9b02158d69c11f3f40e0722defd507c5de6e8813bb94bb9a2b498a8c"
+    }
+  },
+  "stimulus_change": "Only the two VCD emission lines removed; all functional statements retained",
+  "timeout_regime": "normal",
+  "tools": {
+    "iverilog": {
+      "bytes": 51640,
+      "path": "/usr/bin/iverilog",
+      "sha256": "a6071e4b4a68feafca0c8ee0e6aa275eee9a43a108c62801cfd1eca6eab6d8a3"
+    },
+    "iverilog-vpi": {
+      "bytes": 3876,
+      "path": "/usr/bin/iverilog-vpi",
+      "sha256": "a9e33b714d84f72e8eff1351eeec25c78794d37da49099e4886b73830faa90e1"
+    },
+    "vvp": {
+      "bytes": 1354376,
+      "path": "/usr/bin/vvp",
+      "sha256": "a10bd7d4a0850308ac8c2c98115b6a3084f9be978307610f2a521190c28f4023"
+    }
+  }
+}

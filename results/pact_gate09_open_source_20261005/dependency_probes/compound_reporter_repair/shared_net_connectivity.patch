@@ -1,0 +1,16 @@
+diff --git a/pkg/core/src/circuit.cpp b/pkg/core/src/circuit.cpp
+index 1200dcc..92d1a70 100644
+--- a/pkg/core/src/circuit.cpp
++++ b/pkg/core/src/circuit.cpp
+@@ -408,6 +408,11 @@ void Circuit::createCircuitPmt(const int &gateID, const Cell *const cell,
+ 					}
+ 				}
+ 			}
++			else
++			{
++				// A different receiver on this net is not a driving fanin.
++				continue;
++			}
+ 			circuitGates_[gateID].faninVector_.push_back(faninID);
+ 			++circuitGates_[gateID].numFI_;
+ 			circuitGates_[faninID].fanoutVector_.push_back(gateID);

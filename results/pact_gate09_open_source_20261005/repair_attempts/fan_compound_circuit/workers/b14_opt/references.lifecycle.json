@@ -1,0 +1,85 @@
+{
+  "B2_binary": {
+    "bytes": 134420744,
+    "path": "/mnt/pact-oss-recovery/B2_openroad_10176/build/bin/openroad",
+    "sha256": "601da32f4493cd9587b53812385af4ec9ed08f1c3f5e9def9c6a7e4897b25087"
+  },
+  "B3T_binary": {
+    "bytes": 131448696,
+    "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/immutable_binaries/5c3751171685d507939ee7064a67feec786e5219/openroad",
+    "sha256": "93124fbe0514e05268ec8ad8ac30f09d38cb80ab79e11258bb5d70a5d9db020f"
+  },
+  "CPU_seconds": 1.7492299999999998,
+  "PACT_search_started": false,
+  "PID": 504,
+  "action": "references",
+  "capacity": {
+    "per_design_margin": "Pending admitted artifact dimensions; fixed floor is a minimum, not a sufficient per-design budget",
+    "status": "PASS",
+    "volumes": {
+      "C": {
+        "deficit_bytes": 0,
+        "free_bytes": 19848060928,
+        "minimum_free_bytes": 6442450944,
+        "status": "PASS"
+      },
+      "D": {
+        "deficit_bytes": 0,
+        "free_bytes": 41536024576,
+        "minimum_free_bytes": 26843545600,
+        "status": "PASS"
+      }
+    }
+  },
+  "child_peak_RSS_KiB": 140292,
+  "children_CPU_seconds": 2.347004,
+  "common_FAN_backend": {
+    "bytes": 871192,
+    "path": "/root/pact-deps/FAN_ATPG-gate09-crash-repair/bin/opt/fan",
+    "sha256": "7899c442849a0a4f15f48ace159adea62883aee7a5b3846896e0ad9d0c753418"
+  },
+  "completed_utc": "2026-10-05T15:48:28.785353+00:00",
+  "completion_receipt": {
+    "bytes": 4321,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_circuit/workers/b14_opt/references.json",
+    "sha256": "d7a88bde823ebc31c519df5713e31856ccc4f9deedb94f61094142cbb3089d46"
+  },
+  "created_utc": "2026-10-05T15:48:20.556700+00:00",
+  "dependency_repair": {
+    "bytes": 8725,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/dependency_repairs/FAN_ATPG/qualification.json",
+    "sha256": "f4b327274418e0b8aaf364ce3e06c80292d3badf9818a54af34822fd7357728d"
+  },
+  "design": "b14_opt",
+  "error": "Unresolved fault site: (AOI21_X1)",
+  "harness": {
+    "bytes": 11920,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_reference.py",
+    "sha256": "dad542010df2012bb8f0fd6bbd4dc264cbf250389f5bc59b6242f28b71fcf398"
+  },
+  "peak_RSS_KiB": 31044,
+  "qualified_repair_source_SHA": "458c6889887811ce20c2970969a264c9acf5a9dd",
+  "reference_mount": {
+    "command": [
+      "findmnt",
+      "-J",
+      "/mnt/pact-oss-recovery"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "{\n   \"filesystems\": [\n      {\n         \"target\": \"/mnt/pact-oss-recovery\",\n         \"source\": \"/dev/loop0\",\n         \"fstype\": \"ext4\",\n         \"options\": \"ro,relatime\"\n      }\n   ]\n}"
+  },
+  "repair_attempt": "fan_compound_circuit",
+  "schema": "pact_gate09_reference_worker_v1",
+  "scientific_method_changes": 0,
+  "source_admission": {
+    "bytes": 7087,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/source_admission/b14_opt__mapped_library_models.json",
+    "sha256": "4357549cb9ee68cb0e9149fc0274783c584dc57661976a1917153a2754436ade"
+  },
+  "source_and_destination_adaptation_only": true,
+  "state": "FAILED",
+  "status": "PACT_GATE09_REFERENCE_ADMISSION_BLOCKED",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_reference.py\", line 176, in run\n    physical.references(design)\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_physical.py\", line 181, in references\n    original=simulate(REPAIRED,FAN/'techlib/mod_nangate45.mdt',source,patterns,folder/'original_workload')\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_reference.py\", line 103, in guarded_simulate\n    return original_simulate(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/integration/qualification.py\", line 100, in simulate\n    export = parse_export(run.stdout) if details else dict(statistics=parse_statistics(run.stdout))\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src/pact/integration/qualification.py\", line 31, in parse_export\n    raise ValueError('Unresolved fault site: '+identity)\nValueError: Unresolved fault site: (AOI21_X1)\n",
+  "wall_seconds": 13.088353395
+}

@@ -1,0 +1,76 @@
+{
+  "CPU_seconds": 57.98701,
+  "binary": {
+    "bytes": 871192,
+    "path": "/root/pact-deps/FAN_ATPG-gate09-crash-repair/bin/opt/fan",
+    "sha256": "7899c442849a0a4f15f48ace159adea62883aee7a5b3846896e0ad9d0c753418"
+  },
+  "capacity": {
+    "per_design_margin": "Pending admitted artifact dimensions; fixed floor is a minimum, not a sufficient per-design budget",
+    "status": "PASS",
+    "volumes": {
+      "C": {
+        "deficit_bytes": 0,
+        "free_bytes": 20147310592,
+        "minimum_free_bytes": 6442450944,
+        "status": "PASS"
+      },
+      "D": {
+        "deficit_bytes": 0,
+        "free_bytes": 41562116096,
+        "minimum_free_bytes": 26843545600,
+        "status": "PASS"
+      }
+    }
+  },
+  "command": [
+    "make",
+    "-j1",
+    "install",
+    "MODE=opt"
+  ],
+  "cwd": "/root/pact-deps/FAN_ATPG-gate09-crash-repair",
+  "exit_code": 0,
+  "harness": {
+    "bytes": 2112,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scratch/gate09_fan_build.py",
+    "sha256": "d15302398840f29933cc09d07a461aba24b7c4dade3f4931bd5271c28d78d735"
+  },
+  "peak_RSS_KiB": 202392,
+  "source_SHA": {
+    "command": [
+      "git",
+      "-C",
+      "/root/pact-deps/FAN_ATPG-gate09-crash-repair",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "458c6889887811ce20c2970969a264c9acf5a9dd"
+  },
+  "stderr": {
+    "bytes": 6364,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/combined_repair_optimized_build/stderr.txt",
+    "sha256": "bc0475cf4bc114f067d10cfe730fc1a82e692e75c762c74ea7fe1c9542f07c30"
+  },
+  "stdout": {
+    "bytes": 3167,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/combined_repair_optimized_build/stdout.txt",
+    "sha256": "aeea18d7c3c15cd8185dd17f56e54879d35ca1d3a69e3cfe26ffdac0c4be4e06"
+  },
+  "tracked_diff": {
+    "command": [
+      "git",
+      "-C",
+      "/root/pact-deps/FAN_ATPG-gate09-crash-repair",
+      "diff",
+      "--",
+      "pkg"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": ""
+  },
+  "wall_seconds": 60.135432847999994
+}

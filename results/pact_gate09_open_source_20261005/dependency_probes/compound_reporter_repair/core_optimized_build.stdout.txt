@@ -1,0 +1,24 @@
+  PKG   common (opt)
+  PKG   interface (opt)
+  PKG   core (opt)
+  CHECK interface
+  PKG   interface (opt)
+    DEP   circuit.d
+    CXX   circuit.cpp
+    AR    libcore.a
+    INS   libcore.a
+  PKG   fan (opt)
+  CHECK common
+  PKG   common (opt)
+  CHECK interface
+  PKG   interface (opt)
+  CHECK core
+  PKG   core (opt)
+  CHECK interface
+  PKG   interface (opt)
+    DEP   atpg_cmd.d
+    CXX   atpg_cmd.cpp
+    AR    libfan.a
+    INS   libfan.a
+    LD    fan
+    INS   fan

@@ -1,0 +1,51 @@
+{
+  "CPU_seconds": 4440.636236,
+  "configuration": {
+    "bytes": 4220,
+    "path": "repo://results/pact_large_unseen_gate9_20261005/searches/s38584/search_configuration.json",
+    "sha256": "a3b1dbb57728e918b19d0c04c143cbf1f41c4abed9edb5c6a608cea2014be745"
+  },
+  "created_utc": "2026-10-05T08:02:12.197633+00:00",
+  "design": "s38584",
+  "initialization": {
+    "bytes": 446129,
+    "path": "repo://results/pact_large_unseen_gate9_20261005/searches/s38584/initialization.json",
+    "sha256": "7e8b8ad91f7443228ebe80a8be8bf0cba9c7011d4680ce099e363205a9e583ab"
+  },
+  "input": {
+    "bytes": 5619,
+    "path": "repo://results/pact_large_unseen_gate9_20261005/inputs/s38584/cold_start_input.json",
+    "sha256": "330c65d9e6b5c349665aa46fc3cc7d350e932f09680a6b1b8881ce46ec221c92"
+  },
+  "lanes": [
+    {
+      "epsilon": 0.02,
+      "receipt": {
+        "bytes": 22696,
+        "path": "repo://results/pact_large_unseen_gate9_20261005/searches/s38584/budget_0.02/search.json",
+        "sha256": "a6ec9abb3ec1512b339494c816ef6f72eae656fd248a5873309bd1174486eb7a"
+      }
+    },
+    {
+      "epsilon": 0.05,
+      "receipt": {
+        "bytes": 25414,
+        "path": "repo://results/pact_large_unseen_gate9_20261005/searches/s38584/budget_0.05/search.json",
+        "sha256": "85d3bfbfb590f324e0bf4de4a67af77fa2a4fe879d781af082ae7b88f026b21c"
+      }
+    },
+    {
+      "epsilon": 0.1,
+      "receipt": {
+        "bytes": 26770,
+        "path": "repo://results/pact_large_unseen_gate9_20261005/searches/s38584/budget_0.10/search.json",
+        "sha256": "6f216e6722374bfbe4c697a4d0a65c0249312fffec58cd76c909e9df912f7feb"
+      }
+    }
+  ],
+  "model_setup_seconds": 22.731715570000006,
+  "peak_RSS_KiB": 2518736,
+  "status": "SEARCH_COMPLETE",
+  "total_exact_mutation_evaluations": 803,
+  "wall_seconds": 4368.113923559
+}

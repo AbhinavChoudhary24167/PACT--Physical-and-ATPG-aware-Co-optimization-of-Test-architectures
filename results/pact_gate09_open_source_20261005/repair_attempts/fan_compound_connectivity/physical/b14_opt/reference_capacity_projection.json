@@ -1,0 +1,31 @@
+{
+  "FF_count": 245,
+  "design": "b14_opt",
+  "dimension_status": "Conservative projection before routed net maps; actual dimensions required before exact activity",
+  "patterns": 453,
+  "per_design_margin": {
+    "dimensions": {
+      "cycles": 113250,
+      "nets": 5606
+    },
+    "fixed_floor_retained": true,
+    "projected_remaining_bytes": 6889039818,
+    "retained_bytes": 3373906,
+    "rule": "20 GiB + max(5 GiB, retained packages + nine projected complete traces + one complete count cache +512 MiB)"
+  },
+  "status": "PASS",
+  "volumes": {
+    "C": {
+      "deficit_bytes": 0,
+      "free_bytes": 20464906240,
+      "minimum_free_bytes": 6442450944,
+      "status": "PASS"
+    },
+    "D": {
+      "deficit_bytes": 0,
+      "free_bytes": 41490944000,
+      "minimum_free_bytes": 28363876298,
+      "status": "PASS"
+    }
+  }
+}

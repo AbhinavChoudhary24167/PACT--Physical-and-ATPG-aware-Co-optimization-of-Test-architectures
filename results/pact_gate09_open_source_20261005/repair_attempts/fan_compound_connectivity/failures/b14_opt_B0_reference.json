@@ -1,0 +1,10 @@
+{
+  "design": "b14_opt",
+  "error": "Command failed: /mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/baselines/b14_opt/B0/physical/topology/execution.json",
+  "failure_class": "PHYSICAL_BACKEND_FAIL",
+  "generator_status": "PASS",
+  "method": "B0",
+  "source_revision": "supplied_source",
+  "status": "FAILED",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_physical.py\", line 199, in references\n    report=route(design,method,archpath,preparation)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_physical.py\", line 118, in route\n    execute(['/usr/bin/openroad','-python','-no_init','-exit',ROOT/'scripts/pact_generalization_routed.py',\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_reference.py\", line 153, in guarded_execute\n    return original_execute(command, folder, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_infrastructure.py\", line 59, in execute\n    raise RuntimeError('Command failed: ' + str(receipt))\nRuntimeError: Command failed: /mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/baselines/b14_opt/B0/physical/topology/execution.json\n"
+}

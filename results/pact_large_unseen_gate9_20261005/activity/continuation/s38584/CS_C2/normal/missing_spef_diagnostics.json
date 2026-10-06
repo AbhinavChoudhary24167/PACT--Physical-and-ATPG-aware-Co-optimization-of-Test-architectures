@@ -1,0 +1,521 @@
+{
+  "architecture": "753c21e90945c9f4bce16deff70d680e197f43997cd24a86f0637820e365021e",
+  "counters": {
+    "spef_complete_switched_nets": 16029,
+    "spef_extraction_error_nets": 0,
+    "spef_mapping_error_nets": 0,
+    "spef_unresolved_nets": 0,
+    "spef_zero_wire_fallback_nets": 4
+  },
+  "design": "s38584",
+  "evidence": {
+    "bytes": 12325,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_large_unseen_gate9_20261005/activity_inputs/s38584/CS_C2/s38584/CS_C2/implementation_evidence.json",
+    "sha256": "48c85303b4bfd9d9ca2e333495f9982629888a8220fb8a036b6570356c749350"
+  },
+  "invariant": "Missing SPEF data is not zero capacitance; only bound positive no-interconnect proof permits wire zero",
+  "records": [
+    {
+      "architecture": "753c21e90945c9f4bce16deff70d680e197f43997cd24a86f0637820e365021e",
+      "classification": "SPEF_ZERO_WIRE_FALLBACK",
+      "design": "s38584",
+      "driver": {
+        "direction": "OUTPUT",
+        "id": "place655/Z",
+        "instance": "place655",
+        "location_um": [
+          57.0,
+          67.2
+        ],
+        "master": "BUF_X1",
+        "pin": "Z",
+        "placement": "PLACED",
+        "scan_pin_relevance": null,
+        "signal": "SIGNAL"
+      },
+      "effective_capacitance": 0,
+      "extracted_capacitance_source": "Bound ODB/Liberty plus frozen-extractor no-interconnect reproducer",
+      "fallback_used": true,
+      "implementation_evidence": {
+        "cap_node_count": 0,
+        "coupling_segment_count": 0,
+        "driver": {
+          "direction": "OUTPUT",
+          "id": "place655/Z",
+          "instance": "place655",
+          "location_um": [
+            57.0,
+            67.2
+          ],
+          "master": "BUF_X1",
+          "pin": "Z",
+          "placement": "PLACED",
+          "scan_pin_relevance": null,
+          "signal": "SIGNAL"
+        },
+        "driver_count": 1,
+        "extractor_expected_omission": true,
+        "global_wire_present": false,
+        "iterms": [
+          {
+            "direction": "OUTPUT",
+            "id": "place655/Z",
+            "instance": "place655",
+            "location_um": [
+              57.0,
+              67.2
+            ],
+            "master": "BUF_X1",
+            "pin": "Z",
+            "placement": "PLACED",
+            "scan_pin_relevance": null,
+            "signal": "SIGNAL"
+          }
+        ],
+        "logical_connection_matches": true,
+        "logical_net_present": true,
+        "net_mapping_matches": true,
+        "odb_net_present": true,
+        "odb_parasitic_available": false,
+        "pin_cap_ff": 0,
+        "pin_cap_known": true,
+        "ports": [],
+        "preserved_geometry_and_terminals": true,
+        "routing_status": "NO_INTERCONNECT_ONE_TERMINAL",
+        "rseg_count": 0,
+        "sink_count": 0,
+        "sinks": [],
+        "special_net": false,
+        "special_wire_count": 0,
+        "spef_name_map_present": true,
+        "terminal_count": 1,
+        "topology_valid": true,
+        "upstream_scan_relationship": [
+          {
+            "direction": "OUTPUT",
+            "id": "place655/Z",
+            "instance": "place655",
+            "location_um": [
+              57.0,
+              67.2
+            ],
+            "master": "BUF_X1",
+            "pin": "Z",
+            "placement": "PLACED",
+            "scan_pin_relevance": null,
+            "signal": "SIGNAL"
+          },
+          {
+            "direction": "OUTPUT",
+            "id": "U_g4927/Q",
+            "instance": "U_g4927",
+            "location_um": [
+              202.92,
+              176.4
+            ],
+            "master": "SDFF_X1",
+            "pin": "Q",
+            "placement": "PLACED",
+            "scan_pin_relevance": "Q",
+            "signal": "SIGNAL"
+          }
+        ],
+        "wire_geometry_present": false,
+        "wire_length_um": 0.0,
+        "wire_present": false,
+        "wire_segments": 0
+      },
+      "net": "net654",
+      "odb_net_present": true,
+      "pin_capacitance": 0,
+      "qualification_status": "PASS",
+      "reason": "One exact driver, no sinks/ports, no wire/via/special/global geometry, no RC objects; same frozen OpenRCX omission reproduced",
+      "routed_geometry_present": false,
+      "routing_status": "NO_INTERCONNECT_ONE_TERMINAL",
+      "sink_count": 0,
+      "sink_pin_capacitance": 0,
+      "spef_d_net_present": false,
+      "spef_name_map_present": true,
+      "wire_capacitance": 0.0,
+      "wire_geometry_present": false,
+      "wire_length": 0.0
+    },
+    {
+      "architecture": "753c21e90945c9f4bce16deff70d680e197f43997cd24a86f0637820e365021e",
+      "classification": "SPEF_ZERO_WIRE_FALLBACK",
+      "design": "s38584",
+      "driver": {
+        "direction": "OUTPUT",
+        "id": "place656/Z",
+        "instance": "place656",
+        "location_um": [
+          168.15,
+          219.8
+        ],
+        "master": "BUF_X1",
+        "pin": "Z",
+        "placement": "PLACED",
+        "scan_pin_relevance": null,
+        "signal": "SIGNAL"
+      },
+      "effective_capacitance": 0,
+      "extracted_capacitance_source": "Bound ODB/Liberty plus frozen-extractor no-interconnect reproducer",
+      "fallback_used": true,
+      "implementation_evidence": {
+        "cap_node_count": 0,
+        "coupling_segment_count": 0,
+        "driver": {
+          "direction": "OUTPUT",
+          "id": "place656/Z",
+          "instance": "place656",
+          "location_um": [
+            168.15,
+            219.8
+          ],
+          "master": "BUF_X1",
+          "pin": "Z",
+          "placement": "PLACED",
+          "scan_pin_relevance": null,
+          "signal": "SIGNAL"
+        },
+        "driver_count": 1,
+        "extractor_expected_omission": true,
+        "global_wire_present": false,
+        "iterms": [
+          {
+            "direction": "OUTPUT",
+            "id": "place656/Z",
+            "instance": "place656",
+            "location_um": [
+              168.15,
+              219.8
+            ],
+            "master": "BUF_X1",
+            "pin": "Z",
+            "placement": "PLACED",
+            "scan_pin_relevance": null,
+            "signal": "SIGNAL"
+          }
+        ],
+        "logical_connection_matches": true,
+        "logical_net_present": true,
+        "net_mapping_matches": true,
+        "odb_net_present": true,
+        "odb_parasitic_available": false,
+        "pin_cap_ff": 0,
+        "pin_cap_known": true,
+        "ports": [],
+        "preserved_geometry_and_terminals": true,
+        "routing_status": "NO_INTERCONNECT_ONE_TERMINAL",
+        "rseg_count": 0,
+        "sink_count": 0,
+        "sinks": [],
+        "special_net": false,
+        "special_wire_count": 0,
+        "spef_name_map_present": true,
+        "terminal_count": 1,
+        "topology_valid": true,
+        "upstream_scan_relationship": [
+          {
+            "direction": "OUTPUT",
+            "id": "place656/Z",
+            "instance": "place656",
+            "location_um": [
+              168.15,
+              219.8
+            ],
+            "master": "BUF_X1",
+            "pin": "Z",
+            "placement": "PLACED",
+            "scan_pin_relevance": null,
+            "signal": "SIGNAL"
+          },
+          {
+            "direction": "OUTPUT",
+            "id": "U_g4899/Q",
+            "instance": "U_g4899",
+            "location_um": [
+              180.69,
+              221.2
+            ],
+            "master": "SDFF_X1",
+            "pin": "Q",
+            "placement": "PLACED",
+            "scan_pin_relevance": "Q",
+            "signal": "SIGNAL"
+          }
+        ],
+        "wire_geometry_present": false,
+        "wire_length_um": 0.0,
+        "wire_present": false,
+        "wire_segments": 0
+      },
+      "net": "net655",
+      "odb_net_present": true,
+      "pin_capacitance": 0,
+      "qualification_status": "PASS",
+      "reason": "One exact driver, no sinks/ports, no wire/via/special/global geometry, no RC objects; same frozen OpenRCX omission reproduced",
+      "routed_geometry_present": false,
+      "routing_status": "NO_INTERCONNECT_ONE_TERMINAL",
+      "sink_count": 0,
+      "sink_pin_capacitance": 0,
+      "spef_d_net_present": false,
+      "spef_name_map_present": true,
+      "wire_capacitance": 0.0,
+      "wire_geometry_present": false,
+      "wire_length": 0.0
+    },
+    {
+      "architecture": "753c21e90945c9f4bce16deff70d680e197f43997cd24a86f0637820e365021e",
+      "classification": "SPEF_ZERO_WIRE_FALLBACK",
+      "design": "s38584",
+      "driver": {
+        "direction": "OUTPUT",
+        "id": "place715/Z",
+        "instance": "place715",
+        "location_um": [
+          113.62,
+          88.2
+        ],
+        "master": "BUF_X1",
+        "pin": "Z",
+        "placement": "PLACED",
+        "scan_pin_relevance": null,
+        "signal": "SIGNAL"
+      },
+      "effective_capacitance": 0,
+      "extracted_capacitance_source": "Bound ODB/Liberty plus frozen-extractor no-interconnect reproducer",
+      "fallback_used": true,
+      "implementation_evidence": {
+        "cap_node_count": 0,
+        "coupling_segment_count": 0,
+        "driver": {
+          "direction": "OUTPUT",
+          "id": "place715/Z",
+          "instance": "place715",
+          "location_um": [
+            113.62,
+            88.2
+          ],
+          "master": "BUF_X1",
+          "pin": "Z",
+          "placement": "PLACED",
+          "scan_pin_relevance": null,
+          "signal": "SIGNAL"
+        },
+        "driver_count": 1,
+        "extractor_expected_omission": true,
+        "global_wire_present": false,
+        "iterms": [
+          {
+            "direction": "OUTPUT",
+            "id": "place715/Z",
+            "instance": "place715",
+            "location_um": [
+              113.62,
+              88.2
+            ],
+            "master": "BUF_X1",
+            "pin": "Z",
+            "placement": "PLACED",
+            "scan_pin_relevance": null,
+            "signal": "SIGNAL"
+          }
+        ],
+        "logical_connection_matches": true,
+        "logical_net_present": true,
+        "net_mapping_matches": true,
+        "odb_net_present": true,
+        "odb_parasitic_available": false,
+        "pin_cap_ff": 0,
+        "pin_cap_known": true,
+        "ports": [],
+        "preserved_geometry_and_terminals": true,
+        "routing_status": "NO_INTERCONNECT_ONE_TERMINAL",
+        "rseg_count": 0,
+        "sink_count": 0,
+        "sinks": [],
+        "special_net": false,
+        "special_wire_count": 0,
+        "spef_name_map_present": true,
+        "terminal_count": 1,
+        "topology_valid": true,
+        "upstream_scan_relationship": [
+          {
+            "direction": "OUTPUT",
+            "id": "place715/Z",
+            "instance": "place715",
+            "location_um": [
+              113.62,
+              88.2
+            ],
+            "master": "BUF_X1",
+            "pin": "Z",
+            "placement": "PLACED",
+            "scan_pin_relevance": null,
+            "signal": "SIGNAL"
+          },
+          {
+            "direction": "OUTPUT",
+            "id": "U_g2610/Q",
+            "instance": "U_g2610",
+            "location_um": [
+              36.1,
+              79.8
+            ],
+            "master": "SDFF_X1",
+            "pin": "Q",
+            "placement": "PLACED",
+            "scan_pin_relevance": "Q",
+            "signal": "SIGNAL"
+          }
+        ],
+        "wire_geometry_present": false,
+        "wire_length_um": 0.0,
+        "wire_present": false,
+        "wire_segments": 0
+      },
+      "net": "net714",
+      "odb_net_present": true,
+      "pin_capacitance": 0,
+      "qualification_status": "PASS",
+      "reason": "One exact driver, no sinks/ports, no wire/via/special/global geometry, no RC objects; same frozen OpenRCX omission reproduced",
+      "routed_geometry_present": false,
+      "routing_status": "NO_INTERCONNECT_ONE_TERMINAL",
+      "sink_count": 0,
+      "sink_pin_capacitance": 0,
+      "spef_d_net_present": false,
+      "spef_name_map_present": true,
+      "wire_capacitance": 0.0,
+      "wire_geometry_present": false,
+      "wire_length": 0.0
+    },
+    {
+      "architecture": "753c21e90945c9f4bce16deff70d680e197f43997cd24a86f0637820e365021e",
+      "classification": "SPEF_ZERO_WIRE_FALLBACK",
+      "design": "s38584",
+      "driver": {
+        "direction": "OUTPUT",
+        "id": "place720/Z",
+        "instance": "place720",
+        "location_um": [
+          76.57,
+          113.4
+        ],
+        "master": "BUF_X1",
+        "pin": "Z",
+        "placement": "PLACED",
+        "scan_pin_relevance": null,
+        "signal": "SIGNAL"
+      },
+      "effective_capacitance": 0,
+      "extracted_capacitance_source": "Bound ODB/Liberty plus frozen-extractor no-interconnect reproducer",
+      "fallback_used": true,
+      "implementation_evidence": {
+        "cap_node_count": 0,
+        "coupling_segment_count": 0,
+        "driver": {
+          "direction": "OUTPUT",
+          "id": "place720/Z",
+          "instance": "place720",
+          "location_um": [
+            76.57,
+            113.4
+          ],
+          "master": "BUF_X1",
+          "pin": "Z",
+          "placement": "PLACED",
+          "scan_pin_relevance": null,
+          "signal": "SIGNAL"
+        },
+        "driver_count": 1,
+        "extractor_expected_omission": true,
+        "global_wire_present": false,
+        "iterms": [
+          {
+            "direction": "OUTPUT",
+            "id": "place720/Z",
+            "instance": "place720",
+            "location_um": [
+              76.57,
+              113.4
+            ],
+            "master": "BUF_X1",
+            "pin": "Z",
+            "placement": "PLACED",
+            "scan_pin_relevance": null,
+            "signal": "SIGNAL"
+          }
+        ],
+        "logical_connection_matches": true,
+        "logical_net_present": true,
+        "net_mapping_matches": true,
+        "odb_net_present": true,
+        "odb_parasitic_available": false,
+        "pin_cap_ff": 0,
+        "pin_cap_known": true,
+        "ports": [],
+        "preserved_geometry_and_terminals": true,
+        "routing_status": "NO_INTERCONNECT_ONE_TERMINAL",
+        "rseg_count": 0,
+        "sink_count": 0,
+        "sinks": [],
+        "special_net": false,
+        "special_wire_count": 0,
+        "spef_name_map_present": true,
+        "terminal_count": 1,
+        "topology_valid": true,
+        "upstream_scan_relationship": [
+          {
+            "direction": "OUTPUT",
+            "id": "place720/Z",
+            "instance": "place720",
+            "location_um": [
+              76.57,
+              113.4
+            ],
+            "master": "BUF_X1",
+            "pin": "Z",
+            "placement": "PLACED",
+            "scan_pin_relevance": null,
+            "signal": "SIGNAL"
+          },
+          {
+            "direction": "OUTPUT",
+            "id": "U_g2185/Q",
+            "instance": "U_g2185",
+            "location_um": [
+              49.97,
+              99.4
+            ],
+            "master": "SDFF_X1",
+            "pin": "Q",
+            "placement": "PLACED",
+            "scan_pin_relevance": "Q",
+            "signal": "SIGNAL"
+          }
+        ],
+        "wire_geometry_present": false,
+        "wire_length_um": 0.0,
+        "wire_present": false,
+        "wire_segments": 0
+      },
+      "net": "net719",
+      "odb_net_present": true,
+      "pin_capacitance": 0,
+      "qualification_status": "PASS",
+      "reason": "One exact driver, no sinks/ports, no wire/via/special/global geometry, no RC objects; same frozen OpenRCX omission reproduced",
+      "routed_geometry_present": false,
+      "routing_status": "NO_INTERCONNECT_ONE_TERMINAL",
+      "sink_count": 0,
+      "sink_pin_capacitance": 0,
+      "spef_d_net_present": false,
+      "spef_name_map_present": true,
+      "wire_capacitance": 0.0,
+      "wire_geometry_present": false,
+      "wire_length": 0.0
+    }
+  ],
+  "schema": "pact_missing_spef_diagnostics_v1",
+  "status": "PASS"
+}

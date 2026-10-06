@@ -1,0 +1,363 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Null means pending, not zero. Every measurement must be bound to completed stage receipts; E/H4/H8 require complete qualified activity. Reference search quantities are null with missing_reason. Runtime/RSS units and denominators explicit.",
+  "properties": {
+    "ATPG_qualification": {
+      "description": "ATPG_qualification",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "DRC_errors": {
+      "description": "errors",
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "E": {
+      "description": "registered capacitance-weighted transition proxy",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "FF_count": {
+      "description": "flip flops",
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "H4": {
+      "description": "registered H4 proxy",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "H8": {
+      "description": "registered H8 proxy",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "WNS_ns": {
+      "description": "ns",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "activity_qualification": {
+      "description": "activity_qualification",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "activity_trace_bytes": {
+      "description": "complete compressed count stream bytes",
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "analysis_runtime_seconds": {
+      "description": "s",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "architecture_SHA256": {
+      "description": "architecture_SHA256",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "candidate": {
+      "description": "candidate",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "candidate_qualification_rate": {
+      "description": "fraction",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "configuration_SHA256": {
+      "description": "configuration_SHA256",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "delta_E_percent": {
+      "description": "%",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "delta_H4_percent": {
+      "description": "%",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "delta_H8_percent": {
+      "description": "%",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "delta_WL_percent": {
+      "description": "%",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "design": {
+      "description": "design",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "detected_fault_multiplicity": {
+      "description": "faults",
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "end_to_end_success_rate": {
+      "description": "fraction",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "fault_coverage_percent": {
+      "description": "%",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "final_qualification": {
+      "description": "final_qualification",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "gate_count": {
+      "description": "mapped cells",
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "hold_WNS_ns": {
+      "description": "ns",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "mapped_activity_nets": {
+      "description": "nets",
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "missing_reason": {
+      "description": "missing_reason",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "mutation_loop_seconds": {
+      "description": "s",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "mutations_per_second": {
+      "description": "exact evaluations / mutation loop s",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "patterns": {
+      "description": "FAN patterns",
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "peak_RSS_KiB": {
+      "description": "KiB",
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "physical_qualification": {
+      "description": "physical_qualification",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "receipt_SHA256": {
+      "description": "receipt_SHA256",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "receipt_path": {
+      "description": "receipt_path",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reference": {
+      "description": "reference",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "role": {
+      "description": "role",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "routed_scan_WL_um": {
+      "description": "um",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "scan_chains": {
+      "description": "chains",
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "search_evaluations": {
+      "description": "exact evaluations",
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "search_runtime_seconds": {
+      "description": "whole worker s",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "shift_cycles": {
+      "description": "measured cycles",
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "simulation_runtime_seconds": {
+      "description": "s",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "source_SHA256": {
+      "description": "source_SHA256",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "target_fault_multiplicity": {
+      "description": "faults",
+      "type": [
+        "integer",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "design",
+    "reference",
+    "candidate",
+    "role",
+    "source_SHA256",
+    "architecture_SHA256",
+    "configuration_SHA256",
+    "gate_count",
+    "FF_count",
+    "scan_chains",
+    "patterns",
+    "shift_cycles",
+    "mapped_activity_nets",
+    "search_evaluations",
+    "mutation_loop_seconds",
+    "mutations_per_second",
+    "search_runtime_seconds",
+    "peak_RSS_KiB",
+    "simulation_runtime_seconds",
+    "analysis_runtime_seconds",
+    "activity_trace_bytes",
+    "routed_scan_WL_um",
+    "delta_WL_percent",
+    "WNS_ns",
+    "hold_WNS_ns",
+    "DRC_errors",
+    "fault_coverage_percent",
+    "target_fault_multiplicity",
+    "detected_fault_multiplicity",
+    "E",
+    "delta_E_percent",
+    "H4",
+    "delta_H4_percent",
+    "H8",
+    "delta_H8_percent",
+    "physical_qualification",
+    "ATPG_qualification",
+    "activity_qualification",
+    "final_qualification",
+    "candidate_qualification_rate",
+    "end_to_end_success_rate",
+    "missing_reason",
+    "receipt_path",
+    "receipt_SHA256"
+  ],
+  "title": "Gate 9 measured comparison row",
+  "type": "object"
+}

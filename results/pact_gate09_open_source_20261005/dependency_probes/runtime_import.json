@@ -1,0 +1,63 @@
+{
+  "ATPG_generations": 0,
+  "PACT_method_changes": 0,
+  "competitor_algorithm_changes": 0,
+  "records": [
+    {
+      "PYTHONPATH": null,
+      "binary": {
+        "bytes": 89508784,
+        "path": "/usr/bin/openroad",
+        "sha256": "fcd7dcfc37d329bd43a7ede75805319a2e70e6879da11d42b4fd1c2e50e645c3"
+      },
+      "exit_code": 1,
+      "label": "without_path",
+      "script": {
+        "bytes": 224,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/runtime_import/import.py",
+        "sha256": "8558b0cbf1d81c35e31bba3c18268bc3c74ed30dbe7ad56281b1454f6ab43d82"
+      },
+      "stderr": {
+        "bytes": 233,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/runtime_import/without_path.stderr.txt",
+        "sha256": "68e90b5a506ce6af9a5a3236978ff175ecd3a30985eb51c11bdf7c080c305b88"
+      },
+      "stdout": {
+        "bytes": 266,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/runtime_import/without_path.stdout.txt",
+        "sha256": "06491733c98c0c9ca4ee3e8b42270be7825bbe51fe0b49ac3a05136dd1503b3b"
+      },
+      "wall_seconds": 1.2341507480000473
+    },
+    {
+      "PYTHONPATH": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/src:/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts",
+      "binary": {
+        "bytes": 89508784,
+        "path": "/usr/bin/openroad",
+        "sha256": "fcd7dcfc37d329bd43a7ede75805319a2e70e6879da11d42b4fd1c2e50e645c3"
+      },
+      "exit_code": 0,
+      "label": "with_registered_path",
+      "script": {
+        "bytes": 224,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/runtime_import/import.py",
+        "sha256": "8558b0cbf1d81c35e31bba3c18268bc3c74ed30dbe7ad56281b1454f6ab43d82"
+      },
+      "stderr": {
+        "bytes": 0,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/runtime_import/with_registered_path.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 371,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/runtime_import/with_registered_path.stdout.txt",
+        "sha256": "74ffebfd2b3f62fa58df04cf82c70cd9463694352ae16d33086f5105e6a41c8e"
+      },
+      "wall_seconds": 0.9151616090000516
+    }
+  ],
+  "routing_executions": 0,
+  "scope": "Set explicit source and script module roots for child OpenROAD Python launches",
+  "source_changes": 0,
+  "status": "QUALIFIED_GENERIC_RUNTIME_MODULE_PATH_REPAIR"
+}

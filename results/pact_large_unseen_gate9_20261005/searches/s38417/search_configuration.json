@@ -1,0 +1,130 @@
+{
+  "K": 2,
+  "configurations": [
+    {
+      "archive_size": 16,
+      "epsilon": 0.02,
+      "lane_attempts": 150,
+      "max_evaluations": 20000,
+      "neighbors": 16,
+      "seconds": 900,
+      "seed": 11,
+      "segment": 8,
+      "stagnation_attempts": 2000,
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "archive_size": 16,
+      "epsilon": 0.05,
+      "lane_attempts": 150,
+      "max_evaluations": 20000,
+      "neighbors": 16,
+      "seconds": 900,
+      "seed": 11,
+      "segment": 8,
+      "stagnation_attempts": 2000,
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "archive_size": 16,
+      "epsilon": 0.1,
+      "lane_attempts": 150,
+      "max_evaluations": 20000,
+      "neighbors": 16,
+      "seconds": 900,
+      "seed": 11,
+      "segment": 8,
+      "stagnation_attempts": 2000,
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "created_utc": "2026-10-05T08:02:36.058083+00:00",
+  "design": "s38417",
+  "initialization": "external reference only",
+  "input": {
+    "bytes": 5628,
+    "path": "repo://results/pact_large_unseen_gate9_20261005/inputs/s38417/cold_start_input.json",
+    "sha256": "1594c5c39e77ebfd3c7c2854ea777d13e90a050587cfca2c3d9a0a3be6856d88"
+  },
+  "runtime_policy": "300*max(1,ceil(FF/600)) seconds per unchanged mutation loop",
+  "seed": 11,
+  "sources": {
+    "scripts/pact_cold_start.py": {
+      "bytes": 17969,
+      "path": "repo://scripts/pact_cold_start.py",
+      "sha256": "90a3c019fbb0b0e03aa50a470c29a4896cdb434b09d74dc4aac8d534dd5fbb3a"
+    },
+    "scripts/pact_cold_start_export.py": {
+      "bytes": 703,
+      "path": "repo://scripts/pact_cold_start_export.py",
+      "sha256": "83f59d026c328a3e106202dc45bcf0f03e1a778fe1baee7e15e133b68a11f2c4"
+    },
+    "src/pact/optimizer/candidate_physical.py": {
+      "bytes": 9410,
+      "path": "repo://src/pact/optimizer/candidate_physical.py",
+      "sha256": "85c6705d290b3d374c5f68fde6fb469725d590151d8ec508dd6037058d2fb4a8"
+    },
+    "src/pact/optimizer/candidate_sensitive.py": {
+      "bytes": 11132,
+      "path": "repo://src/pact/optimizer/candidate_sensitive.py",
+      "sha256": "9cf1a8e67f650bc71848813b39d35b9701f8844f0ac503b0b86edc46289cb834"
+    },
+    "src/pact/optimizer/candidate_stateful.py": {
+      "bytes": 19808,
+      "path": "repo://src/pact/optimizer/candidate_stateful.py",
+      "sha256": "6b31d6eb4e97f4325e5d46456d1ad96eedd7b604be71b7c16ae39bc08a334303"
+    },
+    "src/pact/optimizer/cold_start.py": {
+      "bytes": 6086,
+      "path": "repo://src/pact/optimizer/cold_start.py",
+      "sha256": "682940b9a6bfc0a79e49d6b1555774671e8eb21854b14f55402a6c7a3aed6407"
+    },
+    "src/pact/optimizer/cpu_incremental.py": {
+      "bytes": 8965,
+      "path": "repo://src/pact/optimizer/cpu_incremental.py",
+      "sha256": "5d1431a3e653933dc83e0bb46dd5b01273c672b6ddfc371dec683077ac2c6608"
+    },
+    "src/pact/optimizer/cpu_reference.py": {
+      "bytes": 1564,
+      "path": "repo://src/pact/optimizer/cpu_reference.py",
+      "sha256": "8ab596be0dd35796e3f8646f0e2ba907a9b0d3b2ff18a2049dedae256c520ca4"
+    },
+    "src/pact/optimizer/implementation_v2.py": {
+      "bytes": 15702,
+      "path": "repo://src/pact/optimizer/implementation_v2.py",
+      "sha256": "c4aa23d475c460b8cdfff6bf496a77ee2a8c03b0ae82c885acd623e03005b32e"
+    },
+    "src/pact/optimizer/search.py": {
+      "bytes": 14929,
+      "path": "repo://src/pact/optimizer/search.py",
+      "sha256": "5031897a140358c2fbff794377c6756202536a02767718c7f454ed9d85029d5f"
+    },
+    "src/pact/optimizer/stage_b.py": {
+      "bytes": 7655,
+      "path": "repo://src/pact/optimizer/stage_b.py",
+      "sha256": "f9d06b860c8baa6d37e5a3a6a482a64fba64928bc1aaa9673d51531aab325712"
+    },
+    "src/pact/optimizer/stage_b_inputs.py": {
+      "bytes": 2183,
+      "path": "repo://src/pact/optimizer/stage_b_inputs.py",
+      "sha256": "c346da8d052264d6ce224163f9c34743cb5f35a6e4af4eb0779f3752e8a9c874"
+    },
+    "src/pact/optimizer/stateful_geometry.py": {
+      "bytes": 6671,
+      "path": "repo://src/pact/optimizer/stateful_geometry.py",
+      "sha256": "380c2f461cea2c045e882d298541a8d4df1d8dc277cbb85e07461cec10bee459"
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "created_utc": "2026-10-06T00:21:46.534828+00:00",
+  "dependency_repair": {
+    "bytes": 17558,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/dependency_repairs/FAN_ATPG/compound_reporter_qualification.json",
+    "sha256": "71bc45f4e54c8928ff50a635d829a8e17b7f18ad6e582f5ae496a93520d06a24"
+  },
+  "design_order": [
+    "b14_opt",
+    "b15_opt",
+    "b17_opt",
+    "b18_opt"
+  ],
+  "designs": [
+    {
+      "ATPG_pattern_count": null,
+      "FF_count": 1414,
+      "PACT_search_started": false,
+      "compatibility": "PENDING_TECHNOLOGY_MAPPING_AND_REFERENCE_QUALIFICATION",
+      "design": "b17_opt",
+      "eligible": false,
+      "family": "b15",
+      "gate_count_semantics": "Syntactic sequential BENCH assignments, including DFFs; unmapped and not an admitted technology-mapped count",
+      "independence_role": "composition scaling stress",
+      "reference": null,
+      "reference_activity": null,
+      "reference_architecture": null,
+      "source_FF_count": 1414,
+      "source_admission": {
+        "bytes": 162791,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b17_opt/adapter.json",
+        "sha256": "52441de88f44c55467108c2e3409135dc8475caaa0aee2fc29b8386d0e53c84c"
+      },
+      "source_cell_histogram": {
+        "AND": 2649,
+        "DFF": 1414,
+        "NAND": 17239,
+        "NOR": 179,
+        "NOT": 1628,
+        "OR": 1062
+      },
+      "source_commit": "8a2c3b500ee7ff20e7031de92592b737bedc6d8c",
+      "source_file": {
+        "bytes": 1640290,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b17_opt/mapped.v",
+        "sha256": "0adcb060e111b9a1199c28e6f466d5385c551bf694b9ee0118a551eb0b5fa9f9"
+      },
+      "source_files": {
+        "bench": {
+          "bytes": 851167,
+          "git_blob_sha1": "f304dc1d9183eea50ad8c2cf1b43a2e13cc02b99",
+          "path": "D:\\PACT_EXPERIMENTS\\results\\pact_gate9_large_scale_unseen_20261005\\sources\\i99t\\b17\\b17_opt.bench",
+          "sha256": "7bc5ffae5c52f9c0e57821fad866158f865dfb7ce3b91f630b9cacbe01f1a16c",
+          "url": "https://raw.githubusercontent.com/cad-polito-it/I99T/8a2c3b500ee7ff20e7031de92592b737bedc6d8c/i99t/b17/b17_opt.bench"
+        },
+        "blif": {
+          "bytes": 1065754,
+          "git_blob_sha1": "ec2f3baed411dba93aabb72ed215368d7c762a1f",
+          "path": "D:\\PACT_EXPERIMENTS\\results\\pact_gate9_large_scale_unseen_20261005\\sources\\i99t\\b17\\b17_opt.blif",
+          "sha256": "557eb31cb1ca7d7b8d72ef938ba0cbbbdc7a5c0de5358da6bb675112dd933441",
+          "url": "https://raw.githubusercontent.com/cad-polito-it/I99T/8a2c3b500ee7ff20e7031de92592b737bedc6d8c/i99t/b17/b17_opt.blif"
+        }
+      },
+      "source_gate_assignments": 24171,
+      "source_primary_inputs": 37,
+      "source_primary_outputs": 97
+    }
+  ],
+  "fixed_method": {
+    "K": 2,
+    "candidate_selection": "Existing balanced/best_E/best_H4/best_H8 role order, exact hash deduplication, maximum three before routing",
+    "configuration_hash": "f50524da9313a117db84491cfcc2ffad211066bbc096818e0cccf9cecdb1b229",
+    "configurations": [
+      {
+        "archive_size": 16,
+        "epsilon": 0.02,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 900,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "archive_size": 16,
+        "epsilon": 0.05,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 900,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "archive_size": 16,
+        "epsilon": 0.1,
+        "lane_attempts": 150,
+        "max_evaluations": 20000,
+        "neighbors": 16,
+        "seconds": 900,
+        "seed": 11,
+        "segment": 8,
+        "stagnation_attempts": 2000,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "epsilons": [
+      0.02,
+      0.05,
+      0.1
+    ],
+    "maximum_candidates_per_design": 3,
+    "mutation_loop_seconds": 900,
+    "objectives": "Existing E/H4/H8 definitions, equal weights, operators and acceptance rules unchanged",
+    "physical_parameters": "Existing frozen Nangate45 backend, clock/constraints, utilization, routing/DRC and timing-stage definitions; no per-design rescue",
+    "reference_rule": "Existing minimum qualified routed scan cost among permitted B0/B1/B2/B3T, frozen before PACT search; ties follow existing deterministic ordering",
+    "search_worker_ceiling_seconds": 7200,
+    "seed": 11,
+    "workload": "Existing frozen FAN collapsed-fault workload and exact settled-count activity definitions; preserve fault-class multiplicities, identity signatures and FF-Q replay"
+  },
+  "gate": "GATE09",
+  "harness": {
+    "bytes": 16283,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_reference.py",
+    "sha256": "3d2220b04dc33def9f726e43c4195fd675cbb27ee0d4ee6fa257472f2eaf7169"
+  },
+  "original_failed_preparation": null,
+  "original_protocol": {
+    "bytes": 79703,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate9_large_scale_unseen_20261005/benchmark_preregistration.json",
+    "sha256": "01b05577c885e878f98466315d8232cd9773d332c61d8c7510ab8870dcb44717"
+  },
+  "other_designs": "Remain in immutable prospective cohort; no outcome-dependent substitution",
+  "physical_parameters": {
+    "CORE_UTILIZATION": 35,
+    "PLACE_DENSITY_LB_ADDON": 0.2,
+    "TNS_END_PERCENT": 100,
+    "clock_period_ns": 10.0,
+    "physical_seed": 11,
+    "route_threads": 2
+  },
+  "reference_rule": "Existing minimum qualified routed scan cost among permitted B0/B1/B2/B3T, frozen before PACT search; ties follow existing deterministic ordering",
+  "schema": "pact_gate09_reference_preparation_v1",
+  "scientific_method_changes": 0
+}

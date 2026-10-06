@@ -1,0 +1,96 @@
+{
+  "B2_binary": {
+    "bytes": 134420744,
+    "path": "/mnt/pact-oss-recovery/B2_openroad_10176/build/bin/openroad",
+    "sha256": "601da32f4493cd9587b53812385af4ec9ed08f1c3f5e9def9c6a7e4897b25087"
+  },
+  "B3T_binary": {
+    "bytes": 131448696,
+    "path": "/mnt/d/PACT_EXPERIMENTS/tmp/pact_oss_20261003/topology_recovery_20261004/immutable_binaries/5c3751171685d507939ee7064a67feec786e5219/openroad",
+    "sha256": "93124fbe0514e05268ec8ad8ac30f09d38cb80ab79e11258bb5d70a5d9db020f"
+  },
+  "CPU_seconds": 5.1241520000000005,
+  "PACT_search_started": false,
+  "PID": 501,
+  "action": "references",
+  "capacity": {
+    "per_design_margin": {
+      "additional_bytes": {
+        "C": 67108864,
+        "D": 536870912
+      },
+      "exact_activity_margin": "Must be recalculated from the actual pattern/cycle/net dimensions before activity jobs",
+      "measured_source_bytes": 2352701,
+      "rule": "C +64 MiB; D +max(512 MiB,128*(mapped netlist bytes + mapped JSON bytes))",
+      "stage": "ATPG_AND_PHYSICAL_REFERENCE_PREPARATION"
+    },
+    "status": "PASS",
+    "volumes": {
+      "C": {
+        "deficit_bytes": 0,
+        "free_bytes": 20471439360,
+        "minimum_free_bytes": 6509559808,
+        "status": "PASS"
+      },
+      "D": {
+        "deficit_bytes": 0,
+        "free_bytes": 41503264768,
+        "minimum_free_bytes": 27380416512,
+        "status": "PASS"
+      }
+    }
+  },
+  "child_peak_RSS_KiB": 1326956,
+  "children_CPU_seconds": 2908.795774,
+  "common_FAN_backend": {
+    "bytes": 871192,
+    "path": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/bin/opt/fan",
+    "sha256": "b554618c945f68dcf242f0baa9542b52bbfc8f8b2abb72378009bdec3b62433e"
+  },
+  "completed_utc": "2026-10-05T16:57:08.460715+00:00",
+  "created_utc": "2026-10-05T16:29:14.955539+00:00",
+  "dependency_repair": {
+    "bytes": 17558,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/dependency_repairs/FAN_ATPG/compound_reporter_qualification.json",
+    "sha256": "71bc45f4e54c8928ff50a635d829a8e17b7f18ad6e582f5ae496a93520d06a24"
+  },
+  "design": "b14_opt",
+  "harness": {
+    "bytes": 16283,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_reference.py",
+    "sha256": "3d2220b04dc33def9f726e43c4195fd675cbb27ee0d4ee6fa257472f2eaf7169"
+  },
+  "peak_RSS_KiB": 50628,
+  "qualified_repair_source_SHA": "4c253bfa613e5827f17c42a5fce8be7bea779e1e",
+  "receipt": {
+    "bytes": 166,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/physical/b14_opt/presearch_qualification.json",
+    "sha256": "9c0072c689ae79e8719fa2c2b571ba23700394ef13257e9ed7145a4da5784254"
+  },
+  "records": {
+    "bytes": 6347,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/baselines/b14_opt_references.json",
+    "sha256": "31aed53110fd1ef10a6c510f62630bf7801f675204d8495142374b93545deb3d"
+  },
+  "reference_mount": {
+    "command": [
+      "findmnt",
+      "-J",
+      "/mnt/pact-oss-recovery"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "{\n   \"filesystems\": [\n      {\n         \"target\": \"/mnt/pact-oss-recovery\",\n         \"source\": \"/dev/loop0\",\n         \"fstype\": \"ext4\",\n         \"options\": \"ro,relatime\"\n      }\n   ]\n}"
+  },
+  "repair_attempt": "fan_compound_connectivity",
+  "schema": "pact_gate09_reference_worker_v1",
+  "scientific_method_changes": 0,
+  "source_admission": {
+    "bytes": 7087,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/source_admission/b14_opt__mapped_library_models.json",
+    "sha256": "4357549cb9ee68cb0e9149fc0274783c584dc57661976a1917153a2754436ade"
+  },
+  "source_and_destination_adaptation_only": true,
+  "status": "PACT_EXECUTION_BLOCKED",
+  "wall_seconds": 1640.0088495159998
+}

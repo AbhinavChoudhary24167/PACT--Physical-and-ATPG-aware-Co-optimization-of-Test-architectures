@@ -1,0 +1,125 @@
+#  ==========================================================================
+#
+#                                   FAN ATPG
+#
+#                Copyright(c) Laboratory of Dependable Systems,
+#                Graduate Institute of Electronics Engineering,
+#                          National Taiwan University
+#                             All Rights Reserved.
+#
+#  ==========================================================================
+#
+#  Kernel:   Linux
+#  Platform: x86_64
+#  Memory:   3916.61 MB
+#
+/minimal.script 1> read_lib /root/pact-deps/FAN_ATPG-gate09-crash-repair/techlib/mod_nangate45.mdt
+#  Reading technology library ...
+#  Finished reading library `/root/pact-deps/FAN_ATPG-gate09-crash-repair/techlib/mod_nangate45.mdt'    0.00608 s    9.37109 MB
+/minimal.script 2> read_netlist /mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/minimal.v
+#  Reading netlist ...
+#  Finished reading netlist `/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/minimal.v'    0.00417 s    9.37109 MB
+/minimal.script 3> build_circuit --frame 1
+#  Building circuit ...
+#  Finished building circuit    0.000356 s    9.37109 MB
+/minimal.script 4> set_fault_type saf
+#  fault type set to stuck-at fault
+/minimal.script 5> add_fault -a
+#  Building fault list ...
+#  Finished building fault list    2.8e-05 s    9.37109 MB
+/minimal.script 6> set_static_compression on
+#  static compression set to on
+/minimal.script 7> set_dynamic_compression on
+#  dynamic compression set to on
+/minimal.script 8> set_X-Fill on
+#  X-Fill set to on
+/minimal.script 9> run_atpg
+#  Performing pattern generation ...
+#  Finished pattern generation    0.000106 s    9.67969 MB
+/minimal.script 10> write_pattern /mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/minimal.pat
+#  Writing pattern to `/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/dependency_probes/fan/compound_reporter_repair/minimal.pat' ...
+/minimal.script 11> report_statistics
+#                 Statistics Report
+#  Circuit name                        compound_scan
+#  Fault model                                   SAF
+#  Pattern type                                BASIC
+#  -------------------------------------------------
+#  Fault classes                             #faults
+#  ----------------------------  -------------------
+#    FU (full)                                    52
+#    FU (collapsed)                               44
+#    --------------------------  -------------------
+#    UD (undetected)                               2
+#    PT (possibly testable)                        0
+#    AU (atpg untestable)                          0
+#    RE (redundant)                                0
+#    AB (atpg abort)                               0
+#    TI (tied)                                     0
+#    --------------------------  -------------------
+#    DT (detected)                                50
+#  -------------------------------------------------
+#  Coverage                               percentage
+#    --------------------------  -------------------
+#    test coverage                            96.15%
+#    fault coverage                           96.15%
+#    atpg effectiveness                       96.15%
+#  -------------------------------------------------
+#  #Patterns                                       5
+#  -------------------------------------------------
+#  ATPG runtime                           0.000106 s
+#  -------------------------------------------------
+/minimal.script 12> report_fault
+#  fault information
+#    fault type:       stuck-at fault
+#    number of faults: 44
+#    type    code    pin (cell)
+#    ----    ----    ----------------------------------
+#    SA0      DT     a (primary input) [equivalent=1]
+#    SA1      DT     a (primary input) [equivalent=1]
+#    SA0      DT     b (primary input) [equivalent=1]
+#    SA1      DT     b (primary input) [equivalent=1]
+#    SA0      DT     c (primary input) [equivalent=1]
+#    SA1      DT     c (primary input) [equivalent=1]
+#    SA0      DT     e (primary input) [equivalent=1]
+#    SA1      DT     e (primary input) [equivalent=1]
+#    SA0      DT     U_FF/Q (SDFF_X1) [equivalent=1]
+#    SA1      DT     U_FF/Q (SDFF_X1) [equivalent=1]
+#    SA0      DT     U_FF/CK (SDFF_X1) [equivalent=1]
+#    SA1      DT     U_FF/CK (SDFF_X1) [equivalent=1]
+#    SA0      DT     U_FF/SE (SDFF_X1) [equivalent=1]
+#    SA1      DT     U_FF/SE (SDFF_X1) [equivalent=1]
+#    SA0      DT     U_FF/SI (SDFF_X1) [equivalent=1]
+#    SA1      DT     U_FF/SI (SDFF_X1) [equivalent=1]
+#    SA0      UD     U_FF/QN (SDFF_X1) [equivalent=1]
+#    SA1      UD     U_FF/QN (SDFF_X1) [equivalent=1]
+#    SA1      DT     U_COMPOUND/C1 (AOI211_X1) [equivalent=1]
+#    SA1      DT     U_COMPOUND/C2 (AOI211_X1) [equivalent=1]
+#    SA0      DT     (AOI211_X1) [equivalent=3]
+#    SA1      DT     (AOI211_X1) [equivalent=1]
+#    SA0      DT     (AOI211_X1) [equivalent=1]
+#    SA0      DT     U_COMPOUND/B (AOI211_X1) [equivalent=1]
+#    SA0      DT     (AOI211_X1) [equivalent=1]
+#    SA1      DT     (AOI211_X1) [equivalent=3]
+#    SA0      DT     (AOI211_X1) [equivalent=1]
+#    SA0      DT     U_COMPOUND/A (AOI211_X1) [equivalent=1]
+#    SA0      DT     (AOI211_X1) [equivalent=1]
+#    SA1      DT     (AOI211_X1) [equivalent=3]
+#    SA0      DT     U_COMPOUND/ZN (AOI211_X1) [equivalent=2]
+#    SA1      DT     U_COMPOUND/ZN (AOI211_X1) [equivalent=2]
+#    SA0      DT     y (primary output) [equivalent=1]
+#    SA1      DT     y (primary output) [equivalent=1]
+#    SA0      DT     U_FF/D (SDFF_X1) [equivalent=1]
+#    SA1      DT     U_FF/D (SDFF_X1) [equivalent=1]
+#    SA0      DT     CK [equivalent=1]
+#    SA1      DT     CK [equivalent=1]
+#    SA0      DT     test_si [equivalent=1]
+#    SA1      DT     test_si [equivalent=1]
+#    SA0      DT     test_so [equivalent=1]
+#    SA1      DT     test_so [equivalent=1]
+#    SA0      DT     test_se [equivalent=1]
+#    SA1      DT     test_se [equivalent=1]
+
+/minimal.script 13> exit
+#  Goodbye
+#  Runtime        real 0.03136 s        user 0 s        sys 0.009301 s
+#  Memory         peak 9.68 MB

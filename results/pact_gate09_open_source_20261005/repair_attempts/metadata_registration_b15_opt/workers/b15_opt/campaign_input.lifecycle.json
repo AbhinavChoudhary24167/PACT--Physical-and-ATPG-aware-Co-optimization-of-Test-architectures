@@ -1,0 +1,39 @@
+{
+  "CPU_only": true,
+  "CPU_seconds": 1.9889359999999998,
+  "Linux_boot_id": "303996a4-0494-4426-b4c3-40ebb30f562f",
+  "PID": 3874,
+  "action": "input",
+  "child_peak_RSS_KiB": 21264,
+  "children_CPU_seconds": 0.010329,
+  "code_commit": "7010117991b03a27a13107b8d427eafc031801df",
+  "completed": false,
+  "completed_utc": "2026-10-05T22:07:43.445452+00:00",
+  "created_utc": "2026-10-05T22:07:32.319035+00:00",
+  "dependency_repair": {
+    "bytes": 17558,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/dependency_repairs/FAN_ATPG/compound_reporter_qualification.json",
+    "sha256": "71bc45f4e54c8928ff50a635d829a8e17b7f18ad6e582f5ae496a93520d06a24"
+  },
+  "design": "b15_opt",
+  "error": "Preserve prospective PACT input",
+  "execution_id": null,
+  "harness": {
+    "bytes": 25269,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/execution_sources/3c9880f2f44af40fdc689de34de2eff0f75f07fa34a467108e9ab8a9faa657c9.py",
+    "sha256": "3c9880f2f44af40fdc689de34de2eff0f75f07fa34a467108e9ab8a9faa657c9"
+  },
+  "method": null,
+  "peak_RSS_KiB": 116300,
+  "schema": "pact_gate09_campaign_worker_v1",
+  "scientific_method_changes": 0,
+  "source_admission": {
+    "bytes": 5820,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/source_admission/b15_opt.json",
+    "sha256": "784f19d0c57f0f7aed50cfb9cb645993a12cc6a3ba9023cd3005615ae4956587"
+  },
+  "state": "FAILED",
+  "status": "PACT_GATE09_CAMPAIGN_STAGE_BLOCKED",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_campaign.py\", line 345, in worker\n    prepare_input(meta, raw, design, physical)\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_campaign.py\", line 204, in prepare_input\n    raise ValueError('Preserve prospective PACT input')\nValueError: Preserve prospective PACT input\n",
+  "wall_seconds": 10.273154231999797
+}

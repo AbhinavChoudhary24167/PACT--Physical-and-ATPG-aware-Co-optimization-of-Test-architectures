@@ -1,0 +1,33 @@
+{
+  "exit_code": -15,
+  "scientific_campaigns_reexecuted": 0,
+  "frozen_timeout_seconds": 900,
+  "placement_started": false,
+  "execution": {
+    "sha256": "d260e68a95eaa580a84f35e2bfd61f8bee6f54bb664adf3087187032cc8fa39b",
+    "bytes": 977,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b17_opt/inputs/b17_opt/atpg_generate/execution.json"
+  },
+  "wall_seconds": 900.047326040999,
+  "admission_outcome": "ATPG_RUNTIME_TIMEOUT",
+  "status": "PASS",
+  "PACT_search_started": false,
+  "capacity": {
+    "sha256": "dfec357c4d41c3f5d743363804995d58c12c53f4a33de048a9997db2327585c1",
+    "bytes": 16535,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/cohort_input_namespaced/b17_opt/capacity/admission.json"
+  },
+  "preparation": {
+    "sha256": "4844602c79c2e3120ff9a606ceca093ac183341d447784cb559e6ca0fff8b548",
+    "bytes": 1574,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b17_opt/physical/b17_opt/preparation.json"
+  },
+  "schema": "pact_gate09_admission_diagnosis_v1",
+  "explanation": "b17_opt passed source/mapped equivalence and capacity admission, but FAN_ATPG timed out at 900.047326 seconds (frozen limit 900; termination -15). Placement, reference routing and PACT search never started. Empty buffered stdout/stderr do not establish a source defect or crash. b18_opt remained deferred under the fixed-order stop rule. No budget extension or rerun was performed.",
+  "design": "b17_opt",
+  "source_admission": {
+    "sha256": "ddeafe314c5f5a6eeb45e4b4fb9db8156ffc838dac1323df89300f13203eca2d",
+    "bytes": 5841,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/source_admission/b17_opt.json"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "pact_gate09_preparation_invalidation_v1",
+  "design": "b14_opt",
+  "preserved_attempt": "fan_compound_circuit",
+  "preserved_stage_status": "PLACEMENT_READY_PENDING_REFERENCES",
+  "scientific_workload_status": "INVALIDATED_BY_CONFIRMED_FAN_COMPOUND_SHARED_NET_CONSTRUCTION_DEFECT",
+  "cause": "MUX primitive input nets sharing receiver pins produced extra fanins and a failing exhaustive truth table in an independent two-cell fixture",
+  "saved_patterns": 446,
+  "saved_patterns_use": "Diagnostic fixed-input reporter comparison only; excluded from primary scientific measurement",
+  "repair_qualification": "compound_reporter_qualification.json",
+  "new_qualified_FAN_SHA": "4c253bfa613e5827f17c42a5fce8be7bea779e1e",
+  "new_attempt": "fan_compound_connectivity",
+  "required_action": "Regenerate ATPG and complete source/reference preparation under the qualified corrected backend",
+  "PACT_search_executions": 0,
+  "historical_campaign_reruns": 0,
+  "historical_impact": "Existing s38417/s38584 source cell-type audit shows simple primitives only; no compound shared-net trigger; historical results preserved"
+}

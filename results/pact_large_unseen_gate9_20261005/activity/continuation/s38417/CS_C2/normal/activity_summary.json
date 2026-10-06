@@ -1,0 +1,208 @@
+{
+  "activity_trace": {
+    "backend": "icarus_vpi_settled_counts_v1",
+    "bytes": 373722025,
+    "complete": true,
+    "cycles": 171780,
+    "mapped_nets": 13582,
+    "sha256": "94f25a2e9a599571d4e8dcb12c6cafe654c1d13bafccd10cdbe2d6a75cb4b47c",
+    "storage": "gzip uint8 per-net/per-cycle counts"
+  },
+  "capacitance": "OpenRCX ground + Liberty sink pin fF; coupling retained separately, excluded from primary proxy",
+  "missing_static_caps": [],
+  "mode": "A",
+  "patterns": 105,
+  "scopes": {
+    "all_data": {
+      "cap_weighted_ff_transitions": {
+        "maximum": 18076.835448208,
+        "mean": 8072.1492269516,
+        "p95": 14994.782750225995,
+        "p99": 16013.68436707392,
+        "total": 1386633794.205746
+      },
+      "grids": {
+        "4": {
+          "cap_peak_per_cycle": {
+            "maximum": 2043.3329116600003,
+            "mean": 1260.1981676227147,
+            "p95": 1675.3538143864998,
+            "p99": 1778.719850039999,
+            "total": 216476841.23422992
+          },
+          "max_cap_bin": 6,
+          "max_cap_cycle": 151315,
+          "max_transition_bin": 14,
+          "max_transition_cycle": 67518,
+          "peak_per_cycle": {
+            "maximum": 587.0,
+            "mean": 375.0025905227617,
+            "p95": 480.0,
+            "p99": 508.0,
+            "total": 64417945.0
+          },
+          "percentile_population": "per-cycle maximum over spatial bins"
+        },
+        "8": {
+          "cap_peak_per_cycle": {
+            "maximum": 805.4052965999999,
+            "mean": 451.7159790540719,
+            "p95": 598.2601955074999,
+            "p99": 661.1497567927996,
+            "total": 77595770.88190848
+          },
+          "max_cap_bin": 14,
+          "max_cap_cycle": 28292,
+          "max_transition_bin": 53,
+          "max_transition_cycle": 68003,
+          "peak_per_cycle": {
+            "maximum": 218.0,
+            "mean": 131.6362207474677,
+            "p95": 173.0,
+            "p99": 188.0,
+            "total": 22612470.0
+          },
+          "percentile_population": "per-cycle maximum over spatial bins"
+        }
+      },
+      "nets": 13582,
+      "phases": {
+        "load": {
+          "cap_weighted": {
+            "maximum": 18076.835448208,
+            "mean": 8723.856065163653,
+            "p95": 15223.50737236155,
+            "p99": 16196.578319283512,
+            "total": 749291997.4369061
+          },
+          "transitions": {
+            "maximum": 5456.0,
+            "mean": 2691.2315286994994,
+            "p95": 4691.0,
+            "p99": 4967.0,
+            "total": 231149876.0
+          }
+        },
+        "unload": {
+          "cap_weighted": {
+            "maximum": 17440.508265279997,
+            "mean": 7420.4423887395515,
+            "p95": 14732.1739917325,
+            "p99": 15761.0196506907,
+            "total": 637341796.7688401
+          },
+          "transitions": {
+            "maximum": 5294.0,
+            "mean": 2324.111770869717,
+            "p95": 4555.0,
+            "p99": 4836.110000000001,
+            "total": 199617960.0
+          }
+        }
+      },
+      "transitions": {
+        "maximum": 5456.0,
+        "mean": 2507.6716497846082,
+        "p95": 4627.0,
+        "p99": 4915.0,
+        "total": 430767836.0
+      }
+    },
+    "scan_data": {
+      "cap_weighted_ff_transitions": {
+        "maximum": 8391.487027349,
+        "mean": 3651.6152497608464,
+        "p95": 6976.247395463449,
+        "p99": 7488.849693957199,
+        "total": 627274467.6039182
+      },
+      "grids": {
+        "4": {
+          "cap_peak_per_cycle": {
+            "maximum": 1164.84622524,
+            "mean": 632.1655101319577,
+            "p95": 917.9074362175,
+            "p99": 990.00146588229,
+            "total": 108593391.3304677
+          },
+          "max_cap_bin": 2,
+          "max_cap_cycle": 131404,
+          "max_transition_bin": 2,
+          "max_transition_cycle": 134624,
+          "peak_per_cycle": {
+            "maximum": 220.0,
+            "mean": 132.50025032017697,
+            "p95": 177.0,
+            "p99": 188.0,
+            "total": 22760893.0
+          },
+          "percentile_population": "per-cycle maximum over spatial bins"
+        },
+        "8": {
+          "cap_peak_per_cycle": {
+            "maximum": 493.4330399500001,
+            "mean": 236.57259957220708,
+            "p95": 342.08965640850005,
+            "p99": 382.7833727759999,
+            "total": 40638441.15451373
+          },
+          "max_cap_bin": 29,
+          "max_cap_cycle": 38085,
+          "max_transition_bin": 33,
+          "max_transition_cycle": 76545,
+          "peak_per_cycle": {
+            "maximum": 83.0,
+            "mean": 49.31834905111189,
+            "p95": 64.0,
+            "p99": 69.0,
+            "total": 8471906.0
+          },
+          "percentile_population": "per-cycle maximum over spatial bins"
+        }
+      },
+      "nets": 3476,
+      "phases": {
+        "load": {
+          "cap_weighted": {
+            "maximum": 8391.487027349,
+            "mean": 3910.8781800513057,
+            "p95": 7121.8285741810505,
+            "p99": 7596.569739049402,
+            "total": 335905326.88460666
+          },
+          "transitions": {
+            "maximum": 1830.0,
+            "mean": 862.3897194085458,
+            "p95": 1601.0,
+            "p99": 1698.0,
+            "total": 74070653.0
+          }
+        },
+        "unload": {
+          "cap_weighted": {
+            "maximum": 8340.80564655,
+            "mean": 3392.352319470386,
+            "p95": 6774.3871987930015,
+            "p99": 7307.6403088101015,
+            "total": 291369140.7193115
+          },
+          "transitions": {
+            "maximum": 1770.0,
+            "mean": 800.5767376877401,
+            "p95": 1548.0,
+            "p99": 1643.0,
+            "total": 68761536.0
+          }
+        }
+      },
+      "transitions": {
+        "maximum": 1830.0,
+        "mean": 831.483228548143,
+        "p95": 1577.0,
+        "p99": 1677.0,
+        "total": 142832189.0
+      }
+    }
+  },
+  "shift_cycles": 171780
+}
