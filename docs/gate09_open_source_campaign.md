@@ -5,7 +5,14 @@ The primary campaign evaluates frozen PACT on the preregistered b14/b15/b17/b18 
 - [Preregistration and frozen file hashes](../results/pact_gate9_large_scale_unseen_20261005/benchmark_preregistration.json)
 - [Competitive definitions and fixed numerical/runtime configuration](../results/pact_gate09_open_source_20261005/manifests/competitive_method_definitions.json)
 - [Completed b14 comparison, including every alternative and baseline](../results/pact_gate09_open_source_20261005/final/b14_opt/report.md)
+- [Completed b15 comparison, including all mixed tradeoffs](../results/pact_gate09_open_source_20261005/final/b15_opt/report.md)
+- [Terminal campaign A–N report and complete cohort table](../results/pact_gate09_open_source_20261005/final/campaign/report.md)
+- [Focused tests and final read-only qualification](../results/pact_gate09_open_source_20261005/publication/final_qualification/qualification.json)
 - [Qualified generic FAN repairs and regressions](../results/pact_gate09_open_source_20261005/dependency_repairs/FAN_ATPG/compound_reporter_qualification.json)
+
+The scientific cohort is terminal: b14 and b15 each qualified all six baselines and three preselected PACT candidates. Neither primary dominates or is dominated by any baseline across routed scan WL, E, H4 and H8. b14 improves all three activity coordinates versus B3T with +0.044% scan WL; b15 trades +1.336% scan WL and +2.618% H4 for −1.267% E and −1.683% H8 versus B2. The competitive classification is `PACT_GATE09_MIXED_GENERALIZATION`; generalization remains admission-limited.
+
+b17 passed source/mapped equivalence and capacity admission but ATPG timed out at the frozen 900-second limit. Placement and PACT search never started. b18 was deferred by the fixed-order stop policy; it is not a source failure or PACT loss. The [precise admission diagnosis](../results/pact_gate09_open_source_20261005/admission_diagnostics/b17_opt.json) binds the source, capacity, preparation and timeout evidence. This primary campaign was not extended or rerun.
 
 ## Stages
 

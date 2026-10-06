@@ -1,0 +1,130 @@
+{
+  "created_utc": "2026-10-06T02:26:03.599771+00:00",
+  "driver": {
+    "bytes": 2122,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/publication/final_qualification_driver.py",
+    "sha256": "780f43fade6e9387132e1d75c013a3638be899f9cb109bc4c028f81e80d081ab"
+  },
+  "schema": "pact_gate09_terminal_qualification_v1",
+  "scientific_campaigns_reexecuted": 0,
+  "sources": {
+    "pact_gate09_campaign_report.py": {
+      "bytes": 19886,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_campaign_report.py",
+      "sha256": "08f26ba85b3a01515391b484dff1c941560687d7481d84bb43cee2717118f747"
+    },
+    "pact_gate09_report.py": {
+      "bytes": 26815,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_report.py",
+      "sha256": "48a27bff9654bf8eb7e0d7ef7de389c8b2a7f4d56993dc9aa6b5b9f5b61dd5cb"
+    },
+    "pact_gate09_validate.py": {
+      "bytes": 5819,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_validate.py",
+      "sha256": "bf394ca05239c15b3dfc2e8dab557cdacd060bba9a64afaebbb903a6e629c27c"
+    }
+  },
+  "stages": [
+    {
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_admission.py",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_campaign.py",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_cohort_registration.py",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_input_recovery.py",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_measure.py",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_reference.py",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_report.py",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_route_recovery.py",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_source.py",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_source_admit.py",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_validate.py"
+      ],
+      "exit_code": 0,
+      "output": {
+        "bytes": 100,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/publication/final_qualification/focused_tests.log",
+        "sha256": "d755d58f71d7aa5bb6d28aa69acd5bca8cbac5aa76abb8a731b8da85b54ad65f"
+      },
+      "wall_seconds": 15.963179920000002
+    },
+    {
+      "command": [
+        "/root/pact-deps/pact-venv/bin/python",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_validate.py",
+        "--directory",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005",
+        "--output",
+        "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/publication/final_qualification/readonly_audit.json"
+      ],
+      "exit_code": 0,
+      "output": {
+        "bytes": 2307,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/publication/final_qualification/readonly_audit.log",
+        "sha256": "1e173bf3a78f6bd2d80d4d3578591fb4a90fe672e667ee862b8176f568ddc00a"
+      },
+      "wall_seconds": 173.183227012
+    }
+  ],
+  "status": "PASS",
+  "tests": {
+    "tests/test_gate09_admission.py": {
+      "bytes": 2020,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_admission.py",
+      "sha256": "dcd80595b5ed28a387a416da63e4ce891f310d712bc556c4122d898f9c3b59c1"
+    },
+    "tests/test_gate09_campaign.py": {
+      "bytes": 1583,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_campaign.py",
+      "sha256": "84359b4300305d2c0f51ff66f9bae5790b9221878cd57f4a863434f1197744cc"
+    },
+    "tests/test_gate09_cohort_registration.py": {
+      "bytes": 3821,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_cohort_registration.py",
+      "sha256": "aad3855a5aa925d280f7099a4cf52185655a50181c31406d506937b8863021aa"
+    },
+    "tests/test_gate09_input_recovery.py": {
+      "bytes": 1737,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_input_recovery.py",
+      "sha256": "526dbdca46dddaeeecbbda9b9093193e4e70c9c5db7e2504feba0442e41c81ee"
+    },
+    "tests/test_gate09_measure.py": {
+      "bytes": 1265,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_measure.py",
+      "sha256": "750870b1ac3ad202fbb1af6f1a790b3568daad888f4f97ed4b241933c9332861"
+    },
+    "tests/test_gate09_reference.py": {
+      "bytes": 2860,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_reference.py",
+      "sha256": "9a5635a8a0a96df7a9c9fcdd896e01265f84da57d1b6423592cdd45a5b2366c7"
+    },
+    "tests/test_gate09_report.py": {
+      "bytes": 2251,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_report.py",
+      "sha256": "1e3d36d833f2582048bc82491ce03c4713e9e54bc4d735d1a792a5a210ab335f"
+    },
+    "tests/test_gate09_route_recovery.py": {
+      "bytes": 1279,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_route_recovery.py",
+      "sha256": "abdcc296bc9e7e19ea9fbde68789618b08e33307d8be09302e0403efc8c759c9"
+    },
+    "tests/test_gate09_source.py": {
+      "bytes": 2455,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_source.py",
+      "sha256": "e10b60e87f2b2b81c8c8e572fb8db5b6a7a86bfb30838d43b3dde5385737f737"
+    },
+    "tests/test_gate09_source_admit.py": {
+      "bytes": 454,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_source_admit.py",
+      "sha256": "1d097dcfcae7416070c581a6d1bfbcc335e7f19e61e1c6dea815ac870dfc8e11"
+    },
+    "tests/test_gate09_validate.py": {
+      "bytes": 1177,
+      "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/tests/test_gate09_validate.py",
+      "sha256": "c8803a12ffabf72ea593e5b06b53b254f876ed4086b7ae3b3cf9a646fcd0d227"
+    }
+  }
+}
