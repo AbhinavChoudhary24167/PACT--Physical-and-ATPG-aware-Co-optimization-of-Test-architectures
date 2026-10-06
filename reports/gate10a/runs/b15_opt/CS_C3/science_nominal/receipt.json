@@ -1,0 +1,430 @@
+{
+  "schema": "pact_gate10a_architecture_run_v1",
+  "status": "QUALIFIED",
+  "started_utc": "2026-10-06T03:54:29.581680+00:00",
+  "design": "b15_opt",
+  "architecture": "CS_C3",
+  "architecture_sha256": "c7e1e9d0a8e05907e62e265ec3f42ea13c7936e388e8278ec73eeea01f17795c",
+  "label": "science_nominal",
+  "nonclock_density_scale": 1.0,
+  "preregistered_commit": "b9869834a3479a57f256c83fa74a4617faab4af2",
+  "protocol": {
+    "path": "reports/gate10a/protocol.json",
+    "bytes": 2128,
+    "sha256": "8daee9660d95b2904053ebe6b3bdabe024d22d4388bb6f57ea6b23424c4291d4"
+  },
+  "selection": {
+    "path": "reports/gate10a/selected_architectures.json",
+    "bytes": 67710,
+    "sha256": "3299e85c55dc4de0f69d8663cb49a77abdabfaff9d7ffac2f021c3c474bc7e20"
+  },
+  "tool_provenance": {
+    "path": "reports/gate10a/tool_provenance.json",
+    "bytes": 10479,
+    "sha256": "acb5d3797f7f4537cf6dce3b8d86ac1e41e37e67e8c532f15c8027469a5063d7"
+  },
+  "scientific_stages_reexecuted": {
+    "ATPG": 0,
+    "PACT_search": 0,
+    "placement": 0,
+    "routing": 0,
+    "extraction": 0,
+    "replay": 0
+  },
+  "resource_admission": {
+    "host_available_memory_bytes": 1375916032,
+    "wsl_available_memory_bytes": 3492552704,
+    "output_disk_free_bytes": 17146494976,
+    "linux_disk_free_bytes": 938056658944
+  },
+  "PG_normalization_audit": {
+    "path": "reports/gate10a/control/pg_connectivity_normalization.json",
+    "bytes": 1198758,
+    "sha256": "7e1adbd7df5c551edad5cd746095cfd81c62fdf92af0cfcb1475c9eb8708ad02"
+  },
+  "input_verifications": [
+    {
+      "expected": {
+        "bytes": 1628696,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/CS_C3/physical/5_2_route.odb.gz",
+        "sha256": "29fb4a95976b49e1c16aa151f10f9fcf2947410ac7be0ae8c2697389ad94a7f3"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/CS_C3/physical/5_2_route.odb.gz",
+        "bytes": 1628696,
+        "sha256": "29fb4a95976b49e1c16aa151f10f9fcf2947410ac7be0ae8c2697389ad94a7f3"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 10285,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "f401061c2f34b7689dfa8cb86e08d877ad444103fe6d897be619d635f52857e6"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.sdc",
+        "bytes": 10285,
+        "sha256": "f401061c2f34b7689dfa8cb86e08d877ad444103fe6d897be619d635f52857e6"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 2719149,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "bf91895d023be9e935d4948e9ca76f40d7bef722d5c863b09479a1141e41ae67"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.odb",
+        "bytes": 2719149,
+        "sha256": "bf91895d023be9e935d4948e9ca76f40d7bef722d5c863b09479a1141e41ae67"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/activity.counts.gz",
+        "bytes": 123656799,
+        "sha256": "9500804177bba5a18eb80c984ec58e3fcec48cd06ef65fb8fea462597cb872c9"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/activity.counts.gz",
+        "bytes": 123656799,
+        "sha256": "9500804177bba5a18eb80c984ec58e3fcec48cd06ef65fb8fea462597cb872c9"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 37026,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/counts.cfg",
+        "sha256": "ea822eaa85bf6afb09956c60dd5916035f30d762f42fcd2b949d7baf9d0aa2dd"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/counts.cfg",
+        "bytes": 37026,
+        "sha256": "ea822eaa85bf6afb09956c60dd5916035f30d762f42fcd2b949d7baf9d0aa2dd"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 18321413,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/cycles.json",
+        "sha256": "7d6324d28c62c1f9c165b78864c9112b96cfe0c05cb119ccf172f39d2724ef9b"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/cycles.json",
+        "bytes": 18321413,
+        "sha256": "7d6324d28c62c1f9c165b78864c9112b96cfe0c05cb119ccf172f39d2724ef9b"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 7745927,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/extracted.spef",
+        "sha256": "1e9120d5a2e2a838dd38878743fc58ef69c632de0a2566b69fc61e459bc1e205"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/extracted.spef",
+        "bytes": 7745927,
+        "sha256": "1e9120d5a2e2a838dd38878743fc58ef69c632de0a2566b69fc61e459bc1e205"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 775878,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/net_mapping.json",
+        "sha256": "6c7583c12b0df2ce07fcebe1a2a0645b5b38670b01056b29353086459f27289f"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/net_mapping.json",
+        "bytes": 775878,
+        "sha256": "6c7583c12b0df2ce07fcebe1a2a0645b5b38670b01056b29353086459f27289f"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 506169,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/routed.v",
+        "sha256": "dca7b459036d10dc698fabc6b9745835af1e75f2fef29c5027648d60d7643b2f"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/routed.v",
+        "bytes": 506169,
+        "sha256": "dca7b459036d10dc698fabc6b9745835af1e75f2fef29c5027648d60d7643b2f"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 32587985,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/stimulus.v",
+        "sha256": "eb0cc79ae77cd53360e9d153cc3065561921e352144f617c3ce2307664d439d2"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/stimulus.v",
+        "bytes": 32587985,
+        "sha256": "eb0cc79ae77cd53360e9d153cc3065561921e352144f617c3ce2307664d439d2"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 1036601,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/workload.json",
+        "sha256": "e3b7c0e9ff9bb0b2e01a69a72eec8bb1831b3d79a564b69e767dee159b8cf132"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/workload.json",
+        "bytes": 1036601,
+        "sha256": "e3b7c0e9ff9bb0b2e01a69a72eec8bb1831b3d79a564b69e767dee159b8cf132"
+      },
+      "status": "PASS"
+    }
+  ],
+  "activity_export": {
+    "path": "reports/gate10a/inputs/b15_opt/CS_C3/activity_export_receipt.json",
+    "bytes": 5860,
+    "sha256": "c7012342f19e0923da0bfdec9fb06c1bf7e80cec71e915fc2cbb578a4bfdc108"
+  },
+  "derived_activity_csv": {
+    "path": "reports/gate10a/inputs/b15_opt/CS_C3/net_activity_capacitance.csv",
+    "bytes": 474899,
+    "sha256": "efcaf9401c67affde33b8949be0e2a196bc7dff11ad7555a263d5d87202fee6e"
+  },
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/gate10a/runs/b15_opt/CS_C3/science_nominal/resources.txt",
+    "/usr/bin/openroad",
+    "-no_init",
+    "-exit",
+    "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/gate10a/runs/b15_opt/CS_C3/science_nominal/measurement_source.tcl"
+  ],
+  "environment_overrides": {
+    "GATE10A_LIBERTY": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+    "GATE10A_ODB": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/CS_C3/physical/5_2_route.odb.gz",
+    "GATE10A_SDC": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.sdc",
+    "GATE10A_SPEF": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/extracted.spef",
+    "GATE10A_SET_RC": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl",
+    "GATE10A_ACTIVITY_TCL": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/gate10a/runs/b15_opt/CS_C3/science_nominal/activity.tcl",
+    "GATE10A_OUTPUT": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/gate10a/runs/b15_opt/CS_C3/science_nominal",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "execution_source_snapshots": [
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/runner_source.py",
+      "bytes": 23034,
+      "sha256": "ab5f1bd05ada7ebb2d6bb59360890e336f8007cbc540915c24b731ffb5811025"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/measurement_source.tcl",
+      "bytes": 7973,
+      "sha256": "6e52289621fd01d2a50a85c0dc3a410e4705e654e3a4fc945859f9735b480924"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/activity.tcl",
+      "bytes": 323815,
+      "sha256": "093c70ddb0e2daa3c678b0d8523a1e964625f3e3e7724b59513b86b91d661203"
+    }
+  ],
+  "wall_seconds": 8.394120175000012,
+  "returncode": 0,
+  "runtime": {
+    "CPU_user_seconds": 6.27,
+    "CPU_system_seconds": 0.69,
+    "peak_RSS_bytes": 236544000.0
+  },
+  "result": {
+    "power": {
+      "internal_w": 0.0005004505687568272,
+      "switching_w": 0.0003953113426003444,
+      "leakage_w": 0.00015749151760857671,
+      "total_w": 0.0010532534289657484,
+      "dynamic_w": 0.0008957619113571715
+    },
+    "ir": {
+      "worst_drop_v": 0.001132000000000133,
+      "mean_drop_v": 0.0005887371620206288,
+      "p50_drop_v": 0.0005800000000000249,
+      "p95_drop_v": 0.000879500000000033,
+      "p99_drop_v": 0.0010120000000000129,
+      "raw_terminal_worst_drop_v": 0.001132000000000133,
+      "powered_instances": 4771,
+      "voltage_rows": 5024,
+      "primary_population": "one worst terminal per nonphysical Liberty-powered instance",
+      "fraction_over_0.01_supply": 0.0,
+      "fraction_over_0.03_supply": 0.0,
+      "fraction_over_0.05_supply": 0.0
+    },
+    "current": {
+      "peak_segment_current_a": 0.0001448,
+      "p50_segment_current_a": 1.566e-08,
+      "p95_segment_current_a": 6.204e-06,
+      "p99_segment_current_a": 1.37e-05,
+      "segments": 21010,
+      "current_density_status": "NOT_AVAILABLE_NO_QUALIFIED_CROSS_SECTION"
+    },
+    "pdn_geometry_sha256": "0c2a33cdc5a8ee89225abec6d6e3cce4c606e06837a9ab8eb5a295afec80ee4b",
+    "sources_sha256": "170daee7b5a5b6e653ca9e187e899f992cf34aa5b658c77443180df3fbd3c074",
+    "bounds_um": [
+      0.0,
+      0.0,
+      144.155,
+      144.155
+    ],
+    "annotation": {
+      "unmeasured_nonclock_nets": 0
+    },
+    "native_power_report_json_structure": "dict",
+    "native_power_integrity": {
+      "status": "PASS",
+      "json_unit": "W",
+      "runtime_UI_units": {
+        "watts_per_UI_unit": 9.999999717180685e-10,
+        "UI_units_per_watt": 1000000028.2819322
+      },
+      "float32_unit_roundoff": 5.960464477539063e-08,
+      "population_n": 5024,
+      "gamma_n": 0.00029954343475199904,
+      "checks": {
+        "internal_w": {
+          "native_si_w": 0.0005004506674595,
+          "instance_fsum_w": 0.0005004505687568272,
+          "absolute_difference_w": 9.870267287954287e-11,
+          "float32_reduction_bound_w": 1.4990668228901146e-07
+        },
+        "switching_w": {
+          "native_si_w": 0.0003953108971473,
+          "instance_fsum_w": 0.0003953113426003444,
+          "absolute_difference_w": 4.454530444053355e-10,
+          "float32_reduction_bound_w": 1.184129173589314e-07
+        },
+        "leakage_w": {
+          "native_si_w": 0.0001574916968821,
+          "instance_fsum_w": 0.00015749151760857671,
+          "absolute_difference_w": 1.7927352327249887e-10,
+          "float32_reduction_bound_w": 4.7175550128778006e-08
+        },
+        "total_w": {
+          "native_si_w": 0.001053253188729,
+          "instance_fsum_w": 0.0010532534289657484,
+          "absolute_difference_w": 2.4023674846315735e-10,
+          "float32_reduction_bound_w": 3.154951497767209e-07
+        }
+      }
+    },
+    "parser_coordinate_connectivity_integrity": "PASS"
+  },
+  "completed_utc": "2026-10-06T03:54:46.148804+00:00",
+  "outputs": [
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/activity.tcl",
+      "bytes": 323815,
+      "sha256": "093c70ddb0e2daa3c678b0d8523a1e964625f3e3e7724b59513b86b91d661203"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/activity_annotation.txt",
+      "bytes": 8001,
+      "sha256": "847c89dc4639a7418910d1a93ef9f8fa34b5894dee63c617fae7c355f0926d74"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/annotated_pins.tsv",
+      "bytes": 1063467,
+      "sha256": "e8e74d5ebac65422581326370b8f8045561ceceb4737f0a8288efcc7ff826c67"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/instance_drop.csv",
+      "bytes": 345014,
+      "sha256": "05a7be492330cac69716711d1c705a2198a3ba31dfd1b6c19431f5e31e5ac9f7"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/instance_power.csv",
+      "bytes": 701191,
+      "sha256": "edfe73310c1ff6e0517fb0948670413bc94cafaa44f2ff34e71f7cfdc1356715"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/instance_voltage.csv",
+      "bytes": 226727,
+      "sha256": "2275614e4d76c09f14fbd13852cde34e9e4e65677d256302f7d7325356181fe5"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/measurement_source.tcl",
+      "bytes": 7973,
+      "sha256": "6e52289621fd01d2a50a85c0dc3a410e4705e654e3a4fc945859f9735b480924"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/native_power_units.json",
+      "bytes": 87,
+      "sha256": "cb89ea40ab1144fbc2f71ee89382d3142488cdbb913fb34eed4e2154fbbc3c2f"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/openroad.log",
+      "bytes": 1292,
+      "sha256": "07bc7b4b189fe846997895b5b1e4a74d18079b71f4246f90aeb7fd5ccb3b86cf"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/pdn_geometry.tsv",
+      "bytes": 62047,
+      "sha256": "63704d94f515665edddb896d1f9cce1882ca35f30baffdc9a8e36346024e40c7"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/pdn_geometry_canonical.tsv",
+      "bytes": 62047,
+      "sha256": "0c2a33cdc5a8ee89225abec6d6e3cce4c606e06837a9ab8eb5a295afec80ee4b"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/power_report.json",
+      "bytes": 962,
+      "sha256": "d2e4c1f54ae0914c59119634557f3e9233ad6bbb4583be2339e845a0e37fada7"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/power_report.txt",
+      "bytes": 1098,
+      "sha256": "c93a8fefa6e7b8d092067d1dcb4f4dc5943931ac4f8cdf8381941617d6cc9094"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/resources.txt",
+      "bytes": 879,
+      "sha256": "d1bf5dc8b16ea38e4d6ab5af992dc75e500d3160c9b564e73c19ea3f9c8d1f4a"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/runner_source.py",
+      "bytes": 23034,
+      "sha256": "ab5f1bd05ada7ebb2d6bb59360890e336f8007cbc540915c24b731ffb5811025"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/segment_current.csv",
+      "bytes": 1195656,
+      "sha256": "1127f16c25e8d793b23e51da3c135d3a3463338bc2c423f790291e286031064f"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/segment_current_normalized.csv",
+      "bytes": 851316,
+      "sha256": "d8b88610001398f4a5625df02a47cb12f32b3e92d24c87079734256d9d56b38c"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/sources.csv",
+      "bytes": 550,
+      "sha256": "170daee7b5a5b6e653ca9e187e899f992cf34aa5b658c77443180df3fbd3c074"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/started.json",
+      "bytes": 1085,
+      "sha256": "60bcd6484dd95d66989a5e543fa738c75725931e60c8584c1736de5e42a96a9d"
+    },
+    {
+      "path": "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/unannotated_nets.tsv",
+      "bytes": 47,
+      "sha256": "3ded17989c3021555006e598777915dbeece092fcacca9484147bd21e7663be7"
+    }
+  ],
+  "disk_bytes": 4876288
+}

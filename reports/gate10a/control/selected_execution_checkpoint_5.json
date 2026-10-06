@@ -1,0 +1,149 @@
+{
+  "schema": "pact_gate10a_selected_execution_v1",
+  "status": "STARTED",
+  "started_utc": "2026-10-06T03:53:00.827547+00:00",
+  "smoke": {
+    "path": "reports/gate10a/control/smoke_qualification.json",
+    "bytes": 3898,
+    "sha256": "10c78e35f3c1d2de314e93d654f0daff3c4e215baf09e29a35e63f9c6494b624"
+  },
+  "source": {
+    "path": "scripts/gate10a_execute_selected.py",
+    "bytes": 3495,
+    "sha256": "b7d9b636e9c7aaa471f7fad5cd5289c2afc5a8a35d78d4357e0d77d3c40f5c59"
+  },
+  "threads_per_job": 1,
+  "maximum_concurrent_EDA_jobs": 1,
+  "reference_b14_B3T_reused": {
+    "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/receipt.json",
+    "bytes": 18765,
+    "sha256": "3ab4015bef8bd20a3e87227077d01aa84249233991e09de9cf83aec062fdefbf"
+  },
+  "records": [
+    {
+      "design": "b14_opt",
+      "architecture": "CS_C1",
+      "command": [
+        "/usr/bin/python3",
+        "scripts/gate10a_run.py",
+        "--design",
+        "b14_opt",
+        "--architecture",
+        "CS_C1",
+        "--label",
+        "science_nominal",
+        "--preregistered-commit",
+        "b9869834a3479a57f256c83fa74a4617faab4af2"
+      ],
+      "returncode": 0,
+      "wall_seconds": 12.456492176000012,
+      "stdout": "{\"status\": \"QUALIFIED\", \"receipt\": \"reports/gate10a/runs/b14_opt/CS_C1/science_nominal/receipt.json\", \"error\": null}\n",
+      "receipt": {
+        "path": "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/receipt.json",
+        "bytes": 18688,
+        "sha256": "14904e596510136ea36a563db61affaab83493a932a47743394e1bc052dd9b11"
+      },
+      "status": "QUALIFIED"
+    },
+    {
+      "design": "b14_opt",
+      "architecture": "CS_C3",
+      "command": [
+        "/usr/bin/python3",
+        "scripts/gate10a_run.py",
+        "--design",
+        "b14_opt",
+        "--architecture",
+        "CS_C3",
+        "--label",
+        "science_nominal",
+        "--preregistered-commit",
+        "b9869834a3479a57f256c83fa74a4617faab4af2"
+      ],
+      "returncode": 0,
+      "wall_seconds": 11.826346242999989,
+      "stdout": "{\"status\": \"QUALIFIED\", \"receipt\": \"reports/gate10a/runs/b14_opt/CS_C3/science_nominal/receipt.json\", \"error\": null}\n",
+      "receipt": {
+        "path": "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/receipt.json",
+        "bytes": 18683,
+        "sha256": "4eabfff7665579e46f0e37cd1893ef98b8916d519045a118d18fbb491a7c342c"
+      },
+      "status": "QUALIFIED"
+    },
+    {
+      "design": "b14_opt",
+      "architecture": "B5",
+      "command": [
+        "/usr/bin/python3",
+        "scripts/gate10a_run.py",
+        "--design",
+        "b14_opt",
+        "--architecture",
+        "B5",
+        "--label",
+        "science_nominal",
+        "--preregistered-commit",
+        "b9869834a3479a57f256c83fa74a4617faab4af2"
+      ],
+      "returncode": 0,
+      "wall_seconds": 11.036937902000005,
+      "stdout": "{\"status\": \"QUALIFIED\", \"receipt\": \"reports/gate10a/runs/b14_opt/B5/science_nominal/receipt.json\", \"error\": null}\n",
+      "receipt": {
+        "path": "reports/gate10a/runs/b14_opt/B5/science_nominal/receipt.json",
+        "bytes": 18497,
+        "sha256": "fb29685c17f924d3c3a7e4e8804cdf1c6b980c8e0c15ecd7ab313af436a48429"
+      },
+      "status": "QUALIFIED"
+    },
+    {
+      "design": "b15_opt",
+      "architecture": "B2",
+      "command": [
+        "/usr/bin/python3",
+        "scripts/gate10a_run.py",
+        "--design",
+        "b15_opt",
+        "--architecture",
+        "B2",
+        "--label",
+        "science_nominal",
+        "--preregistered-commit",
+        "b9869834a3479a57f256c83fa74a4617faab4af2"
+      ],
+      "returncode": 0,
+      "wall_seconds": 17.02401774399999,
+      "stdout": "{\"status\": \"QUALIFIED\", \"receipt\": \"reports/gate10a/runs/b15_opt/B2/science_nominal/receipt.json\", \"error\": null}\n",
+      "receipt": {
+        "path": "reports/gate10a/runs/b15_opt/B2/science_nominal/receipt.json",
+        "bytes": 18792,
+        "sha256": "15b347b5ba4d2c72e8a526e4d39aeeb7b4561a528916ca0834022e9d7c102845"
+      },
+      "status": "QUALIFIED"
+    },
+    {
+      "design": "b15_opt",
+      "architecture": "CS_C1",
+      "command": [
+        "/usr/bin/python3",
+        "scripts/gate10a_run.py",
+        "--design",
+        "b15_opt",
+        "--architecture",
+        "CS_C1",
+        "--label",
+        "science_nominal",
+        "--preregistered-commit",
+        "b9869834a3479a57f256c83fa74a4617faab4af2"
+      ],
+      "returncode": 0,
+      "wall_seconds": 17.257528530000002,
+      "stdout": "{\"status\": \"QUALIFIED\", \"receipt\": \"reports/gate10a/runs/b15_opt/CS_C1/science_nominal/receipt.json\", \"error\": null}\n",
+      "receipt": {
+        "path": "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/receipt.json",
+        "bytes": 18996,
+        "sha256": "6c5e932c0b279245f25bb64f48fe13520155dd723acf586df978fd9c4129a393"
+      },
+      "status": "QUALIFIED"
+    }
+  ]
+}
