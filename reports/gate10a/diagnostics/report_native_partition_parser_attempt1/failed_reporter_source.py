@@ -112,27 +112,16 @@ def _close(actual, expected, label):
         raise ValueError("Independent raw-CSV aggregate differs: " + label)
 
 
-def supported_power_partitions(native, totals, population_n):
+def supported_power_partitions(native, totals):
     """Keep the supported native OpenSTA Clock category in SI watts.
 
     Category semantics are those of report_power; this is not a new instance
     classifier and is distinct from clock/nonclock *activity* annotation.
     """
-    if type(population_n) is not int or not 0 < population_n < 2**24:
-        raise ValueError("Valid native float32 reduction population required")
-    u = 2**-24
-    gamma = population_n * u / (1 - population_n * u)
-    result = dict(native_float32_population_n=population_n, native_float32_gamma_n=gamma)
+    result = {}
     for component in ("internal", "switching", "leakage", "total"):
         field = component + "_w"
-        native_total = number(native["Total"][component], "native total " + component)
-        difference = native_total - totals[field]
-        bound = gamma * abs(totals[field])
-        if abs(difference) > bound + 1e-15:
-            raise ValueError("Native design/instance float32 reduction bound exceeded: " + field)
-        result["native_" + field] = native_total
-        result["native_vs_instance_" + component + "_difference_w"] = difference
-        result["native_" + component + "_float32_reduction_bound_w"] = bound
+        _close(number(native["Total"][component], "native total " + component), totals[field], "native design " + field)
         clock = number(native["Clock"][component], "native clock " + component)
         nonclock = totals[field] - clock
         if nonclock < 0:
@@ -443,11 +432,10 @@ def qualified_record(selected, receipt_path, receipt, protocol, prereg):
     if any(receipt["derived_activity_csv"][field] != export["output"][field] for field in ("sha256", "bytes")):
         raise ValueError("Run activity CSV differs from qualified export")
     activity_rows = read_csv(csv_path)
-    power_rows = read_csv(paths["instance_power.csv"])
-    summary = summarize_raw(power_rows, read_csv(paths["instance_voltage.csv"]),
+    summary = summarize_raw(read_csv(paths["instance_power.csv"]), read_csv(paths["instance_voltage.csv"]),
                             read_csv(paths["segment_current.csv"]), activity_rows, export, protocol, receipt["result"])
     native_path = verify(outputs["power_report.json"])
-    summary["power"].update(supported_power_partitions(read_json(native_path), summary["power"], len(power_rows)))
+    summary["power"].update(supported_power_partitions(read_json(native_path), summary["power"]))
     summary["power_partition_definition"] = "native OpenSTA report_power Clock category; nonclock is design total minus Clock; SI W"
     if binding(paths["sources.csv"])["sha256"] != receipt["result"]["sources_sha256"]:
         raise ValueError("Source geometry hash differs from run result")
@@ -584,7 +572,6 @@ def report_text(summary, comparisons, provenance, diagnostic):
              "## H. FAN_ATPG status / repair status", "", "Qualified Gate 09 patterns were reused; FAN_ATPG was not executed. The qualified existing repair identity is `4c253bfa613e5827f17c42a5fce8be7bea779e1e`.", "",
              "## I. Power results", "", "Power values are estimates under the fixed-duty model, in watts. Blank entries are unavailable evidence.", "",
              "The CSV also retains the supported native OpenSTA Clock-category internal/switching/leakage/total watts and nonclock complements (design total minus Clock). These native library/timing categories are separate from clock versus nonclock activity annotations; the entire design power remains the PDNSim load.", "",
-             "Primary design power uses a high-accuracy sum of exported per-instance components. Native JSON aggregate differences are retained and checked against the population-derived binary32 gamma_n reduction bound already qualified by the runner; this parser bound is separate from scientific materiality and reproducibility thresholds.", "",
              "| Design | Architecture | Status | Dynamic mW | Switching mW | Internal mW | Leakage mW |", "|---|---|---|---:|---:|---:|---:|"]
     for row in summary["architectures"]:
         power = row.get("power", {}) if row["status"] == "QUALIFIED" else {}
@@ -618,8 +605,7 @@ def report_text(summary, comparisons, provenance, diagnostic):
               "## P. Go/no-go recommendation", "", f"**SHOULD PACT DEVELOPMENT CONTINUE? {verdict['recommendation']}.**", "",
               "Evidence: the tables above and bound raw records. Interpretation: the fixed materiality and correspondence rules determine the classification; smaller effects remain reported. Recommendation: " + verdict["rationale"], "",
               "## Q. Upstream issues/PRs", "", "No new upstream contribution is asserted by this report. Failed implementation attempts are retained separately from scientific architecture results; any separately qualified repair/PR is listed by the publication receipt.", "",
-              "## R. Complete provenance", "", f"Scientific power runs use OpenSTA embedded in OpenROAD `{provenance['tools']['openroad']['version']}`, binary SHA-256 `{provenance['tools']['openroad']['sha256']}`, declared embedded OpenSTA revision `{provenance['installed_declared_opensta_revision']}`. Separately inventoried `/usr/bin/sta` reports `{provenance['tools']['sta']['version']}` and is not the scientific power engine.",
-              provenance["source_limitation"],
+              "## R. Complete provenance", "", f"OpenROAD `{provenance['tools']['openroad']['version']}`, binary SHA-256 `{provenance['tools']['openroad']['sha256']}`; OpenSTA `{provenance['tools']['sta']['version']}`.",
               "Protocol, selected inputs, tool/Liberty hashes, smoke controls, per-attempt commands/environment/resources, raw output bindings and derived vector receipts are retained in the Gate 10A evidence tree. `runtime_resources.csv` includes failed/held/control attempts as well as scientific runs.", "",
               "## S. Next action", "", next_action(verdict["recommendation"])]
     if diagnostic:

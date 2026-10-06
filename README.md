@@ -28,11 +28,14 @@ The [synthetic example](examples/synthetic/README.md) needs no physical-design t
 | Stage A measured | 19/19 selected records qualified; 27/30 indexed architectures qualified using the common Nangate45 backend |
 | Stage B measured | Nine qualified routed selections across s5378, s9234 and s15850; all pass their routed wire budgets |
 | End to end qualified | Frozen B2/B3T/B2 references and all nine Stage-B orders pass physical, serial and FAN collapsed-fault-class identity gates |
-| In progress | Reliable full-network hotspot prediction, uncollapsed fault-member identity enumeration and broader scaling |
+| Gate 10A measured | Nine frozen b14/b15 architectures qualified for activity-derived power and static VDD IR; no registered material PI benefit |
+| Unresolved | Reliable full-network hotspot prediction, uncollapsed fault-member identity enumeration and broader scaling |
 
-These claims come from the [Stage-A completion receipt](results/pact_oss_benchmark/topology_recovery_20261004/completion.json) and [Stage-B measured report](results/pact_stage_b/REPORT.md). Several predicted hotspot gains fail to transfer physically, and some selections remain dominated by the original comparison front. [Research status](docs/research_status.md) explains the scope and negative outcomes. The research program remains in progress.
+These claims come from the [Stage-A completion receipt](results/pact_oss_benchmark/topology_recovery_20261004/completion.json), [Stage-B measured report](results/pact_stage_b/REPORT.md) and [Gate 10A report](reports/gate10a/report.md). Several predicted hotspot gains fail to transfer physically, and some selections remain dominated by the original comparison front. [Research status](docs/research_status.md) explains the scope and negative outcomes.
 
-The current milestone is `PACT_END_TO_END_SOLUTION_QUALIFIED`; see the [canonical comparison](results/pact_end_to_end_20261004/REPORT.md) and [correctness-gate scope](docs/end_to_end_qualification.md). It reuses qualified physical runs and preserves every selected outcome.
+The earlier milestone is `PACT_END_TO_END_SOLUTION_QUALIFIED`; see the [canonical comparison](results/pact_end_to_end_20261004/REPORT.md) and [correctness-gate scope](docs/end_to_end_qualification.md). It reuses qualified physical runs and preserves every selected outcome.
+
+Gate 10A answers the OpenROAD maintainer's question: “What is the practical impact of the 2.4% reduction? Does this translate in IR-drop or thermal hotspot improvement?” Its classification is **`PACT_GATE10A_NO_MATERIAL_PHYSICAL_IMPACT`**, with a **FREEZE** recommendation for PACT algorithm development under the tested basis. The frozen primary candidates reduce worst static IR by 3 µV on b14 and 8 µV on b15, below the preregistered 100 µV absolute threshold. Mean regional activity corresponds strongly with static IR on b14 but fails the registered cross-design criterion on b15. These fixed-duty, ideal-supply static estimates establish no transient droop benefit. **THERMAL_IMPACT_NOT_EVALUATED**. Gate 09 remains the immutable published parent; no search, ATPG, routing or replay was repeated. [Complete comparisons and decision](reports/gate10a/machine_summary.json) retain the smaller effects and B5 controls without promoting a candidate.
 
 ## Workflow
 

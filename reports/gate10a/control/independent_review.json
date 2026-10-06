@@ -1,0 +1,1098 @@
+{
+  "schema": "pact_gate10a_independent_review_v1",
+  "status": "PASS",
+  "created_utc": "2026-10-06T04:06:27.4648707+00:00",
+  "reviewed_head": "0dffa853a7e8b4e7d4faa2f765822a0168f8e200",
+  "scope": "Independent read-only review of frozen-input preservation, common PG import normalization, count activity ingestion, SI/native power parsing, coordinate and solver completeness, spatial aggregation/statistics, outcome-independent run selection, conservative classification, final tables and draft response. No scientific artifact, source implementation or historical commit was edited by this reviewer.",
+  "preregistered_commit": "b9869834a3479a57f256c83fa74a4617faab4af2",
+  "published_parent": "53ebab37fd76970d7c5e676b0caec13c7c16296e",
+  "classification": "PACT_GATE10A_NO_MATERIAL_PHYSICAL_IMPACT",
+  "recommendation": "FREEZE",
+  "open_findings": [],
+  "independent_result_checks": {
+    "status": "PASS",
+    "failures": [],
+    "qualified_architectures": 9,
+    "comparison_checks": [
+      {
+        "design": "b14_opt",
+        "candidate": "CS_C1",
+        "comparison_role": "primary",
+        "voltage_benefit": false,
+        "material_pi_benefit": false,
+        "material_adverse_drop": false,
+        "modest_cost": true,
+        "worst_drop_change_v": -0.0000029999999999752447,
+        "p99_drop_change_v": -9.999999999398511e-9
+      },
+      {
+        "design": "b14_opt",
+        "candidate": "CS_C3",
+        "comparison_role": "secondary",
+        "voltage_benefit": false,
+        "material_pi_benefit": false,
+        "material_adverse_drop": false,
+        "modest_cost": true,
+        "worst_drop_change_v": -0.0000029999999999752447,
+        "p99_drop_change_v": -0.0000010099999999970376
+      },
+      {
+        "design": "b14_opt",
+        "candidate": "B5",
+        "comparison_role": "control",
+        "voltage_benefit": false,
+        "material_pi_benefit": false,
+        "material_adverse_drop": false,
+        "modest_cost": false,
+        "worst_drop_change_v": -0.00009100000000006325,
+        "p99_drop_change_v": -0.0000860000000000305
+      },
+      {
+        "design": "b15_opt",
+        "candidate": "CS_C1",
+        "comparison_role": "primary",
+        "voltage_benefit": false,
+        "material_pi_benefit": false,
+        "material_adverse_drop": false,
+        "modest_cost": true,
+        "worst_drop_change_v": -0.000008000000000008,
+        "p99_drop_change_v": -0.000009999999999843467
+      },
+      {
+        "design": "b15_opt",
+        "candidate": "CS_C2",
+        "comparison_role": "secondary",
+        "voltage_benefit": false,
+        "material_pi_benefit": false,
+        "material_adverse_drop": false,
+        "modest_cost": true,
+        "worst_drop_change_v": -0.000007000000000090267,
+        "p99_drop_change_v": -0.000009999999999843467
+      },
+      {
+        "design": "b15_opt",
+        "candidate": "CS_C3",
+        "comparison_role": "secondary",
+        "voltage_benefit": false,
+        "material_pi_benefit": false,
+        "material_adverse_drop": false,
+        "modest_cost": true,
+        "worst_drop_change_v": -0.000005000000000032756,
+        "p99_drop_change_v": -0.000008000000000008
+      },
+      {
+        "design": "b15_opt",
+        "candidate": "B5",
+        "comparison_role": "control",
+        "voltage_benefit": false,
+        "material_pi_benefit": false,
+        "material_adverse_drop": false,
+        "modest_cost": false,
+        "worst_drop_change_v": -0.00009500000000017828,
+        "p99_drop_change_v": -0.00011533999999998614
+      }
+    ],
+    "primary_spatial_checks": [
+      {
+        "design": "b14_opt",
+        "method": "B3T",
+        "resolution": 4,
+        "occupied_bins": 16,
+        "pearson_r": 0.8516481318003778,
+        "spearman_rho": 0.9086902343725689,
+        "criterion_pass": true
+      },
+      {
+        "design": "b14_opt",
+        "method": "B3T",
+        "resolution": 8,
+        "occupied_bins": 61,
+        "pearson_r": 0.7527961436925297,
+        "spearman_rho": 0.8552615958251977,
+        "criterion_pass": true
+      },
+      {
+        "design": "b14_opt",
+        "method": "CS_C1",
+        "resolution": 4,
+        "occupied_bins": 16,
+        "pearson_r": 0.8494804481462215,
+        "spearman_rho": 0.9094925199546271,
+        "criterion_pass": true
+      },
+      {
+        "design": "b14_opt",
+        "method": "CS_C1",
+        "resolution": 8,
+        "occupied_bins": 61,
+        "pearson_r": 0.7522737272348726,
+        "spearman_rho": 0.855737578533198,
+        "criterion_pass": true
+      },
+      {
+        "design": "b15_opt",
+        "method": "B2",
+        "resolution": 4,
+        "occupied_bins": 16,
+        "pearson_r": 0.3132294422255686,
+        "spearman_rho": 0.2088235294117647,
+        "criterion_pass": false
+      },
+      {
+        "design": "b15_opt",
+        "method": "B2",
+        "resolution": 8,
+        "occupied_bins": 60,
+        "pearson_r": 0.28788016280715606,
+        "spearman_rho": 0.42672557535647215,
+        "criterion_pass": false
+      },
+      {
+        "design": "b15_opt",
+        "method": "CS_C1",
+        "resolution": 4,
+        "occupied_bins": 16,
+        "pearson_r": 0.3135179896704405,
+        "spearman_rho": 0.2088235294117647,
+        "criterion_pass": false
+      },
+      {
+        "design": "b15_opt",
+        "method": "CS_C1",
+        "resolution": 8,
+        "occupied_bins": 60,
+        "pearson_r": 0.28868481681694025,
+        "spearman_rho": 0.41962821973380754,
+        "criterion_pass": false
+      }
+    ],
+    "spatial_correspondence": false,
+    "classification": "PACT_GATE10A_NO_MATERIAL_PHYSICAL_IMPACT",
+    "recommendation": "FREEZE"
+  },
+  "independent_check_shell": "PowerShell",
+  "independent_check_command": "$summary=Get-Content -LiteralPath reports\\gate10a\\machine_summary.json -Raw | ConvertFrom-Json\n$protocol=Get-Content -LiteralPath reports\\gate10a\\protocol.json -Raw | ConvertFrom-Json\n$failures=@()\n$material=@()\n$lookup=@{}\nforeach($row in $summary.architectures){$lookup[$row.design+'/'+$row.architecture]=$row}\nforeach($row in $summary.comparisons){\n  $c=$lookup[$row.design+'/'+$row.candidate]; $r=$lookup[$row.design+'/'+$row.reference]\n  foreach($spec in @(@('worst_drop_v','worst'),@('p99_drop_v','p99'))){\n    $observed=[double]$c.ir.($spec[0])-[double]$r.ir.($spec[0]); $relative=$observed/[double]$r.ir.($spec[0])\n    if([Math]::Abs($observed-[double]$row.('delta_'+$spec[1]+'_ir_v')) -gt 1e-15 -or [Math]::Abs($relative-[double]$row.('delta_'+$spec[1]+'_ir_fraction')) -gt 1e-12){$failures += 'voltage_delta:'+ $row.design+'/'+$row.candidate}\n  }\n  $voltage=($row.delta_worst_ir_v -le -$protocol.material_absolute_drop_reduction_v -and $row.delta_worst_ir_fraction -le -$protocol.material_relative_reduction -and $row.delta_p99_ir_v -le -$protocol.material_absolute_drop_reduction_v -and $row.delta_p99_ir_fraction -le -$protocol.material_relative_reduction)\n  $dynamic=($row.delta_dynamic_power_fraction -le $protocol.maximum_dynamic_or_peak_segment_current_regression)\n  $current=($row.delta_peak_segment_current_fraction -le $protocol.maximum_dynamic_or_peak_segment_current_regression)\n  $benefit=$voltage -and $dynamic -and $current\n  $adverse=($row.delta_worst_ir_v -ge $protocol.material_absolute_drop_reduction_v -and $row.delta_worst_ir_fraction -ge $protocol.material_relative_reduction -and $row.delta_p99_ir_v -ge $protocol.material_absolute_drop_reduction_v -and $row.delta_p99_ir_fraction -ge $protocol.material_relative_reduction)\n  $cost=($row.delta_routed_scan_wire_fraction -le $protocol.modest_scan_wire_increase)\n  if($benefit -ne $row.materiality.material_pi_benefit -or $adverse -ne $row.materiality.material_adverse_drop -or $cost -ne $row.materiality.modest_scan_wire_cost){$failures += 'threshold_assessment:'+ $row.design+'/'+$row.candidate}\n  $material += [PSCustomObject]@{design=$row.design;candidate=$row.candidate;comparison_role=$row.comparison_role;voltage_benefit=$voltage;material_pi_benefit=$benefit;material_adverse_drop=$adverse;modest_cost=$cost;worst_drop_change_v=$row.delta_worst_ir_v;p99_drop_change_v=$row.delta_p99_ir_v}\n}\nfunction Get-Ranks([double[]]$values){\n  $ranks=[double[]]::new($values.Count)\n  $order=@(0..($values.Count-1) | Sort-Object { $values[$_] })\n  $first=0\n  while($first -lt $order.Count){$last=$first+1;while($last -lt $order.Count -and $values[$order[$last]] -eq $values[$order[$first]]){$last++};$rank=($first+1+$last)/2.0;for($i=$first;$i -lt $last;$i++){$ranks[$order[$i]]=$rank};$first=$last}\n  return ,$ranks\n}\nfunction Get-Pearson([double[]]$left,[double[]]$right){\n  $mx=($left | Measure-Object -Average).Average; $my=($right | Measure-Object -Average).Average\n  $cov=0.0; $xx=0.0; $yy=0.0\n  for($i=0;$i -lt $left.Count;$i++){ $dx=$left[$i]-$mx; $dy=$right[$i]-$my; $cov+=$dx*$dy; $xx+=$dx*$dx; $yy+=$dy*$dy }\n  return $cov/[Math]::Sqrt($xx*$yy)\n}\n$spatial=@()\nforeach($design in @('b14_opt','b15_opt')){\n  $reference=if($design -eq 'b14_opt'){'B3T'}else{'B2'}\n  foreach($method in @($reference,'CS_C1')){\n    $row=$lookup[$design+'/'+$method]; $path=$row.spatial_vectors.path.Substring(7)\n    $vectors=Get-Content -LiteralPath $path -Raw | ConvertFrom-Json\n    foreach($resolution in @(4,8)){\n      $grid=$vectors.grids.([string]$resolution); $domain=@($grid.domain.bin_ids)\n      $x=[double[]]@($domain | ForEach-Object { $grid.activity.values[$_] })\n      $y=[double[]]@($domain | ForEach-Object { $grid.static_vdd_drop.values[$_] })\n      $rho=Get-Pearson (Get-Ranks $x) (Get-Ranks $y); $pearson=Get-Pearson $x $y\n      $reported=$grid.activity_vs_static_ir.primary\n      if([Math]::Abs($rho-$reported.spearman_rho) -gt 1e-12 -or [Math]::Abs($pearson-$reported.pearson_r) -gt 1e-12){$failures += 'spatial_statistic:'+ $design+'/'+$method+'/'+$resolution}\n      $spatial += [PSCustomObject]@{design=$design;method=$method;resolution=$resolution;occupied_bins=$domain.Count;pearson_r=$pearson;spearman_rho=$rho;criterion_pass=($rho -ge $protocol.spatial_proxy_min_spearman)}\n    }\n  }\n}\n$correspondence=(@($spatial | Where-Object criterion_pass -eq $false).Count -eq 0)\n$pact=@($material | Where-Object comparison_role -ne 'control')\n$primaries=@($pact | Where-Object comparison_role -eq 'primary')\nif(@($primaries | Where-Object { -not ($_.material_pi_benefit -and $_.modest_cost) }).Count -eq 0){$expected='PACT_GATE10A_PHYSICAL_IMPACT_SUPPORTED';$recommendation='CONTINUE'}\nelseif(@($pact | Where-Object material_pi_benefit -eq $true).Count -gt 0){$expected='PACT_GATE10A_PARTIAL_PHYSICAL_IMPACT';$recommendation=if(@($primaries | Where-Object { $_.material_pi_benefit -and $_.modest_cost }).Count -gt 0 -and @($primaries | Where-Object material_adverse_drop -eq $true).Count -eq 0){'CONTINUE'}else{'PIVOT'}}\nelseif($correspondence){$expected='PACT_GATE10A_PROXY_CORRELATION_ONLY';$recommendation='PIVOT'}\nelse{$expected='PACT_GATE10A_NO_MATERIAL_PHYSICAL_IMPACT';$recommendation='FREEZE'}\nif($expected -ne $summary.decision.classification -or $recommendation -ne $summary.decision.recommendation){$failures += 'campaign_decision'}\nif($summary.qualification_errors.Count -ne 0 -or @($summary.architectures | Where-Object status -ne 'QUALIFIED').Count -gt 0){$failures += 'incomplete_final_evidence'}\nforeach($design in @('b14_opt','b15_opt')){ $rows=@($summary.architectures | Where-Object design -eq $design);if(@($rows.pdn_geometry_sha256 | Select-Object -Unique).Count -ne 1 -or @($rows.sources_sha256 | Select-Object -Unique).Count -ne 1){$failures += 'common_physical_basis:'+ $design} }\n[PSCustomObject]@{status=if($failures.Count -eq 0){'PASS'}else{'FAIL'};failures=$failures;qualified_architectures=$summary.architectures.Count;comparison_checks=$material;primary_spatial_checks=$spatial;spatial_correspondence=$correspondence;classification=$expected;recommendation=$recommendation} | ConvertTo-Json -Depth 7",
+  "final_generation_binding_check": {
+    "generation_outputs": 9,
+    "binding_mismatches": [],
+    "reporter_sha256": "045163341bd8dddbe902c6dc7e44ce15b43d7867f06cf5b1a2f3b1be9e601956",
+    "current_reporter_sha256": "045163341bd8dddbe902c6dc7e44ce15b43d7867f06cf5b1a2f3b1be9e601956"
+  },
+  "test_evidence": {
+    "status": "PASS",
+    "relevant_linux_tests_passed": 115,
+    "wall_seconds_reported": 13.26,
+    "bound_test_sources": 17,
+    "current_test_source_mismatches": [],
+    "receipt": "repo://reports/gate10a/control/repository_tests_reviewed.json",
+    "description": "Saved relevant Gate10A/Gate09/receipt tests and direct negative parser tests pass. Current bound test bytes match. Reviewed runner and measurement source exactly match shared-qualified snapshots; reporter bytes match final generation receipt."
+  },
+  "resolved_findings": [
+    {
+      "id": "IR01",
+      "finding": "Unconnected supply terminals on late inserted buffers prevented complete powered-cell processing.",
+      "resolution": "All nine inputs received only exact-name VDD/VSS PG assignments in memory. Before/after COMPONENTS, NETS, PINS, VIAS and PG shapes/vias remain identical; original routed ODBs are not written. Common repair and audit are disclosed."
+    },
+    {
+      "id": "IR02",
+      "finding": "Zero global activity overrode measured pin counts; provisional smoke4 had zero nonclock switching.",
+      "resolution": "Global override removed while explicit input defaults and complete net annotation remain. Provisional attempts4/5 preserved and excluded. Final common controls require positive nonclock response, linear density doubling, fixed clock and reproducible per-record outputs."
+    },
+    {
+      "id": "IR03",
+      "finding": "Initial runner only decoded native JSON without numeric SI integrity or complete geometry bounds checks.",
+      "resolution": "Final runner rejects incomplete/duplicate populations, negative/nonfinite values, out-of-die instance/terminal/segment/source coordinates and solver errors; native category/instance/log SI closure uses a population-derived binary32 bound. Direct negative tests cover key failures."
+    },
+    {
+      "id": "IR04",
+      "finding": "Preregistered secondary peak-cycle maps and explicit machine research question were initially missing.",
+      "resolution": "Final reporter reconstructs per-bin peaks from bound compact counts and checks their maxima against frozen H4/H8. Mean and peak statistics are separately identified. Exact external question, locations and diagnostic current overlaps are retained; no secondary/current statistic enters classification."
+    },
+    {
+      "id": "IR05",
+      "finding": "Early run selection could prefer legacy locally qualified but scientifically inadmissible attempts.",
+      "resolution": "Final selector uses earliest admissible nominal record with the shared-qualified runner/Tcl fingerprint and explicit invalidation bindings; all four controls and selected outputs are hash-verified."
+    },
+    {
+      "id": "IR06",
+      "finding": "Native Clock-partition reporter applied an excessively tight double-precision aggregate equality test to float32 native design sums.",
+      "resolution": "Known instance-population gamma_n bound now qualifies native comparisons and retains signed discrepancies/bounds. Original failed generation, all nine output hashes and reporter source are archived with exact preservation mappings. Regression accepts an in-bound discrepancy and rejects an out-of-bound discrepancy."
+    },
+    {
+      "id": "IR07",
+      "finding": "Earlier final test receipt no longer matched an updated reporter test source.",
+      "resolution": "Earlier test receipts preserved; uniquely named reviewed Linux validation passes 115 tests and all 17 current test source hashes match."
+    }
+  ],
+  "scientific_findings": [
+    "All nine selected architecture records are QUALIFIED with no unresolved qualification errors.",
+    "All seven candidate/control comparisons independently reproduce the fixed materiality assessments. None meets both worst and p99 absolute/relative improvement thresholds; both B5 controls also have more than 2% scan-wire cost.",
+    "All eight co-primary/reference Pearson and average-tie-rank Spearman values independently agree with complete stored vectors to 1e-12. The b14 criterion passes but all four b15 rank records fail; complete cross-design correspondence is unmet.",
+    "The independently reconstructed classification is PACT_GATE10A_NO_MATERIAL_PHYSICAL_IMPACT with FREEZE recommendation, matching machine records.",
+    "Per-design source/PDN geometry hashes are common. Tracked published Gate09 paths and existing algorithm sources remain unchanged; all reported reexecuted search/ATPG/placement/routing/extraction/replay counts are zero.",
+    "Missing observations and mathematically undefined/constant vectors are unavailable rather than zero; primary occupied domains exclude unoccupied die bins. Both correlations and fixed IoU are retained without favorable-statistic selection."
+  ],
+  "limitations": [
+    "The recommendation applies to this registered activity-derived static model and two related benchmark designs. It is not general proof that every possible physical implementation lacks benefit.",
+    "Fixed 0.5 duty and settled counts lack measured occupancy and physical glitches. Activity-to-power correspondence is partly model-coupled.",
+    "No transient droop, thermal hotspot, ground-bounce, package or signoff validation was performed. Segment current is not current density; qualified metal cross-section is unavailable.",
+    "Native voltage export is about 1 µV resolution; currents have roughly four significant digits. Interpolated percentile changes below that voltage resolution do not resolve internal solver differences.",
+    "Installed OpenROAD binary identity is hash-bound, but embedded source linkage was not independently rebuilt. Current upstream source only corroborates ABI behavior; direct runtime component casts and native SI closure supply additional evidence.",
+    "Figure source was reviewed for signed deltas and common scales, and figure output bindings are included. Visual figure QA and publication authorization are separate root-agent checks; this review does not authorize remote publication."
+  ],
+  "tested_and_reviewed_source_bindings": [
+    {
+      "path": "repo://scripts/gate10a_run.py",
+      "bytes": 23034,
+      "sha256": "ab5f1bd05ada7ebb2d6bb59360890e336f8007cbc540915c24b731ffb5811025"
+    },
+    {
+      "path": "repo://scripts/tcl/gate10a_measure.tcl",
+      "bytes": 7973,
+      "sha256": "6e52289621fd01d2a50a85c0dc3a410e4705e654e3a4fc945859f9735b480924"
+    },
+    {
+      "path": "repo://scripts/gate10a_qualify_smoke.py",
+      "bytes": 7543,
+      "sha256": "f5db650a5982f1382054e164ec303e16ce25f6a26e6917d30c3cd1f174643148"
+    },
+    {
+      "path": "repo://scripts/gate10a_report.py",
+      "bytes": 57899,
+      "sha256": "045163341bd8dddbe902c6dc7e44ce15b43d7867f06cf5b1a2f3b1be9e601956"
+    },
+    {
+      "path": "repo://scripts/gate10a_pg_audit.py",
+      "bytes": 5979,
+      "sha256": "a1266165c32d24db0cbc7100f9e7f58c2f508da12a553994ab7669a1f4aa3fa7"
+    },
+    {
+      "path": "repo://scripts/tcl/gate10a_pg_connection_audit.tcl",
+      "bytes": 1737,
+      "sha256": "5dc4d836c2b390375ddea94f2ecfb3cd9e9c2ddc9e66b8cbedc41fbe039b1883"
+    },
+    {
+      "path": "repo://scripts/gate10a_export_activity.py",
+      "bytes": 11024,
+      "sha256": "344cc59a50cd806711bb9626973b27413ff389764496eaeecb9fe76658bfb176"
+    },
+    {
+      "path": "repo://scripts/gate10a_validate_activity_exports.py",
+      "bytes": 4675,
+      "sha256": "884e6cadcea037f9ab2974027e86caa3fee4688e4ed613bfbf5de07db36d35b1"
+    },
+    {
+      "path": "repo://src/pact/gate10a_spatial.py",
+      "bytes": 26577,
+      "sha256": "f66ceb89acb2e5a91d57b288a46a401a55dc6ab060d5f7a1d39c33b363a6eb12"
+    },
+    {
+      "path": "repo://src/pact/gate10a_decision.py",
+      "bytes": 10904,
+      "sha256": "e71c8a20a75c4ef72042683fb2587bd1b7d786e8bb89d1c30d13c838f2f9bad3"
+    },
+    {
+      "path": "repo://tests/test_gate10a_runner_parser.py",
+      "bytes": 4781,
+      "sha256": "2a7a1b949c54a2de1aef41e5fbf22a01bc589d343166e51314d53b0cc742c609"
+    },
+    {
+      "path": "repo://tests/test_gate10a_report.py",
+      "bytes": 15290,
+      "sha256": "48dad71d605dbc077ef72f4f05dd39dc98fc1b4fee5257d05f93458690a41818"
+    },
+    {
+      "path": "repo://tests/test_gate10a_spatial.py",
+      "bytes": 14223,
+      "sha256": "70b66437beda974072d2a6c0be5daafba330c444e5e850f1455d479659110558"
+    },
+    {
+      "path": "repo://tests/test_gate10a_decision.py",
+      "bytes": 7012,
+      "sha256": "edbaa7dfd9cfb6b593d3d2c21c3c2e1aca73f66a4096fd2f9bbb5781097c03f3"
+    },
+    {
+      "path": "repo://tests/test_gate10a_activity_export.py",
+      "bytes": 1957,
+      "sha256": "26bf258522a48fe6f5010345da4e6cd4f8ebcd533c4cf48157b073c443bdbdcd"
+    }
+  ],
+  "result_artifact_bindings": [
+    {
+      "path": "repo://reports/gate10a/preregistration.md",
+      "bytes": 12756,
+      "sha256": "bf81c67c77b051d1dd5faa0d4dffc0566f1b94d5612184f30019c06235f88924"
+    },
+    {
+      "path": "repo://reports/gate10a/methodology.md",
+      "bytes": 2263,
+      "sha256": "f118f343023d0799e1606c65380a27b3947d2b0700a0515a4f8b622d4663995b"
+    },
+    {
+      "path": "repo://reports/gate10a/protocol.json",
+      "bytes": 2128,
+      "sha256": "8daee9660d95b2904053ebe6b3bdabe024d22d4388bb6f57ea6b23424c4291d4"
+    },
+    {
+      "path": "repo://reports/gate10a/selected_architectures.json",
+      "bytes": 67710,
+      "sha256": "3299e85c55dc4de0f69d8663cb49a77abdabfaff9d7ffac2f021c3c474bc7e20"
+    },
+    {
+      "path": "repo://reports/gate10a/artifact_reuse_manifest.json",
+      "bytes": 325014,
+      "sha256": "565f53aae0f00fe170dd43e8c427165f7ac1b7d318fd8186665a08d65ba4c873"
+    },
+    {
+      "path": "repo://reports/gate10a/tool_provenance.json",
+      "bytes": 10479,
+      "sha256": "acb5d3797f7f4537cf6dce3b8d86ac1e41e37e67e8c532f15c8027469a5063d7"
+    },
+    {
+      "path": "repo://reports/gate10a/power_results.csv",
+      "bytes": 6368,
+      "sha256": "3123b2180b60e3b35d6923734e3eee3fc48d31845cd82ecf4135360424abcb51"
+    },
+    {
+      "path": "repo://reports/gate10a/ir_results.csv",
+      "bytes": 9391,
+      "sha256": "83818b37da7f6680ca82e052c1dcc95c3bc95c8263f83f04931486a21c2468a7"
+    },
+    {
+      "path": "repo://reports/gate10a/spatial_correlations.csv",
+      "bytes": 122016,
+      "sha256": "fc502aab01cad0d882b998c979d83783c7008dff943245e914c7b5d64f39b272"
+    },
+    {
+      "path": "repo://reports/gate10a/runtime_resources.csv",
+      "bytes": 29780,
+      "sha256": "e1871f277138a03b0e0dcf9ef70e44c4253dca07728a40adba46f35bda7f823f"
+    },
+    {
+      "path": "repo://reports/gate10a/final_comparison.csv",
+      "bytes": 6471,
+      "sha256": "dda2cac86c3d12bbdeb7108b0b35490860c318bb8ed0eeb2b3313067683cc5a6"
+    },
+    {
+      "path": "repo://reports/gate10a/machine_summary.json",
+      "bytes": 331311,
+      "sha256": "ebc129d86127bd70336d511ca92a636a1e42ce563dd21cca6bfe000e2ff3e59f"
+    },
+    {
+      "path": "repo://reports/gate10a/decision.json",
+      "bytes": 7056,
+      "sha256": "625f57e5298d9000fb6a52eb77aa9a679f3d7c6ceeb584b5ce57268df5c94bc0"
+    },
+    {
+      "path": "repo://reports/gate10a/report.md",
+      "bytes": 15329,
+      "sha256": "5769f48d91551968b4fd078fa6010e899867badb421fb51ede9e1f4db46576fd"
+    },
+    {
+      "path": "repo://publication/openroad_discussion_gate10a_reply.md",
+      "bytes": 1144,
+      "sha256": "39bd6b3e94a07101f715907233ffdce328d0d396d804d9bad82f9c510330f0e2"
+    },
+    {
+      "path": "repo://reports/gate10a/control/scientific_run_selection.json",
+      "bytes": 10311,
+      "sha256": "1e1c89132ef322a3591690f764c0b6bebe1c9a0f843fbacedd9caf3b2198679f"
+    },
+    {
+      "path": "repo://reports/gate10a/control/smoke_qualification.json",
+      "bytes": 3898,
+      "sha256": "10c78e35f3c1d2de314e93d654f0daff3c4e215baf09e29a35e63f9c6494b624"
+    },
+    {
+      "path": "repo://reports/gate10a/control/pg_connectivity_normalization.json",
+      "bytes": 1198758,
+      "sha256": "7e1adbd7df5c551edad5cd746095cfd81c62fdf92af0cfcb1475c9eb8708ad02"
+    },
+    {
+      "path": "repo://reports/gate10a/control/full_count_validation.json",
+      "bytes": 19293,
+      "sha256": "872f61a6c395884f47ef5fa33f6fbd965bc0f47660e6cacc0efaa882f8a34cfe"
+    },
+    {
+      "path": "repo://reports/gate10a/control/repository_tests_reviewed.json",
+      "bytes": 4059,
+      "sha256": "2128097d1a78ab1a62f67077d1f6383b58daa802b31ac039cc3c91f907949f29"
+    },
+    {
+      "path": "repo://reports/gate10a/control/repository_tests_reviewed.log",
+      "bytes": 181,
+      "sha256": "49e4370ef14e8fff563afa5f5ce3bf970c05e48ced2608a032e5fa1f05c5e20e"
+    },
+    {
+      "path": "repo://reports/gate10a/control/independent_numeric_support.json",
+      "bytes": 2688,
+      "sha256": "7d7f85808b34f39913a2753331405260c8bdc2d8630b75bbcd875984662e9bb3"
+    },
+    {
+      "path": "repo://reports/gate10a/diagnostics/report_native_partition_parser_attempt1/diagnostic_seal.json",
+      "bytes": 5237,
+      "sha256": "6c140696af203c3f53e665ae13182411106bcfb8dc5620da36f1c37454722839"
+    },
+    {
+      "path": "repo://reports/gate10a/control/report_generation_547d76f6745bad34.json",
+      "bytes": 3073,
+      "sha256": "08d667b58633d3abf8f6bf3c3630fd7ca42df6deec5ca79836ef181060cd02e6"
+    },
+    {
+      "path": "repo://reports/gate10a/control/report_generation_567e1cb73c7f53e3.json",
+      "bytes": 3067,
+      "sha256": "f3cde25d4ecf048622806e7daec2089e6bd70e13786b7eab34671ae615e13a35"
+    },
+    {
+      "path": "repo://reports/gate10a/control/architecture_receipt_hash_audit.json",
+      "bytes": 4856,
+      "sha256": "58a9758663af37982e8ebccb925e824895fbff77a9ce613f4dc704f08c2bbdb9"
+    },
+    {
+      "path": "repo://reports/gate10a/control/interpretation_clarifications.json",
+      "bytes": 1076,
+      "sha256": "23266dc7eaabd075308689a9a1d90d4597429cb829464d232580b1c9b93a46a9"
+    },
+    {
+      "path": "repo://reports/gate10a/control/preregistration_commit.json",
+      "bytes": 1573,
+      "sha256": "76001ee39cbf798a055e8508254e170e56a1fe48f25ce4ffcf8bc41598fbd68e"
+    },
+    {
+      "path": "repo://reports/gate10a/control/smoke_attempt4_invalidation.json",
+      "bytes": 809,
+      "sha256": "252ec13b327d67e82f8b63cb9d0c7595ee111d43a4e35aebcfa0634401727b82"
+    },
+    {
+      "path": "repo://reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/receipt.json",
+      "bytes": 18765,
+      "sha256": "3ab4015bef8bd20a3e87227077d01aa84249233991e09de9cf83aec062fdefbf"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b14_opt/B3T/smoke_nominal_attempt6/spatial_vectors.json",
+      "bytes": 198615,
+      "sha256": "8777d07b8e392636486de7d697eebaabc909c5add7bbef29bb08fc2482dc44e4"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b14_opt/B3T/smoke_nominal_attempt6/derivation_receipt_045163341bd8dddb.json",
+      "bytes": 2982,
+      "sha256": "20229952bbd70ee5ff724b18cf4e172cb8a9ff33d602148be55d19a05bc7416c"
+    },
+    {
+      "path": "repo://reports/gate10a/runs/b14_opt/CS_C1/science_nominal/receipt.json",
+      "bytes": 18688,
+      "sha256": "14904e596510136ea36a563db61affaab83493a932a47743394e1bc052dd9b11"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b14_opt/CS_C1/science_nominal/spatial_vectors.json",
+      "bytes": 198403,
+      "sha256": "2a73de24425589961dc05220ecc15293a9344ffc52533a1ced513a2b0837a7f0"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b14_opt/CS_C1/science_nominal/derivation_receipt.json",
+      "bytes": 2950,
+      "sha256": "c77243b645852550cfa0a084c589ba3bf0287b886f92d7a019e71f9b9c0d8679"
+    },
+    {
+      "path": "repo://reports/gate10a/runs/b14_opt/CS_C3/science_nominal/receipt.json",
+      "bytes": 18683,
+      "sha256": "4eabfff7665579e46f0e37cd1893ef98b8916d519045a118d18fbb491a7c342c"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b14_opt/CS_C3/science_nominal/spatial_vectors.json",
+      "bytes": 198652,
+      "sha256": "ab0d39cfbb3ca2f50ba0bd02496cfaae7fb88d46a559827d4fe03c2e82baccf8"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b14_opt/CS_C3/science_nominal/derivation_receipt.json",
+      "bytes": 2950,
+      "sha256": "44d5429496a7d016e6d80415eca163995d7673ab1ed9e4a11550d4b61c9a5775"
+    },
+    {
+      "path": "repo://reports/gate10a/runs/b14_opt/B5/science_nominal/receipt.json",
+      "bytes": 18497,
+      "sha256": "fb29685c17f924d3c3a7e4e8804cdf1c6b980c8e0c15ecd7ab313af436a48429"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b14_opt/B5/science_nominal/spatial_vectors.json",
+      "bytes": 198401,
+      "sha256": "fa3de3059e48be3ef76afcef7e61577e59dc66151830852e32448e3b832a8313"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b14_opt/B5/science_nominal/derivation_receipt.json",
+      "bytes": 2914,
+      "sha256": "2230b37337bd9c5dee239171c275c84ccb3efe2022e6f50d4e00b6331d447a00"
+    },
+    {
+      "path": "repo://reports/gate10a/runs/b15_opt/B2/science_nominal/receipt.json",
+      "bytes": 18792,
+      "sha256": "15b347b5ba4d2c72e8a526e4d39aeeb7b4561a528916ca0834022e9d7c102845"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b15_opt/B2/science_nominal/spatial_vectors.json",
+      "bytes": 201929,
+      "sha256": "d6f96e360707d0f6edc34811e74db2d90412899486b274c497376eeaa5f19c0c"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b15_opt/B2/science_nominal/derivation_receipt.json",
+      "bytes": 2929,
+      "sha256": "6fe6b6dec4d48c713293bf5fc7d33c85d47d3b47c697ad4959427246710c8f0f"
+    },
+    {
+      "path": "repo://reports/gate10a/runs/b15_opt/CS_C1/science_nominal/receipt.json",
+      "bytes": 18996,
+      "sha256": "6c5e932c0b279245f25bb64f48fe13520155dd723acf586df978fd9c4129a393"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b15_opt/CS_C1/science_nominal/spatial_vectors.json",
+      "bytes": 201899,
+      "sha256": "23049bd96bf26554c08682e747408d1dfcdc49b0b08f74433545c9d6ac7d4b5f"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b15_opt/CS_C1/science_nominal/derivation_receipt.json",
+      "bytes": 2965,
+      "sha256": "71319d987d7234f109c584700375c85bd85dea0ab3e39f0c4573718cd63283d3"
+    },
+    {
+      "path": "repo://reports/gate10a/runs/b15_opt/CS_C2/science_nominal/receipt.json",
+      "bytes": 18981,
+      "sha256": "f0170546e0dbfd144d1746f938bbb4ceff45cd959bea876fa5bd3674cca78e1c"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b15_opt/CS_C2/science_nominal/spatial_vectors.json",
+      "bytes": 201840,
+      "sha256": "31544a61ae035d2fe2bd51a20b3e1814d28a2b00b4da564512b1151baa856c1b"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b15_opt/CS_C2/science_nominal/derivation_receipt.json",
+      "bytes": 2965,
+      "sha256": "56acd17d4a2382ffd1ee236b26d476d83cd229ca1e4bc878fef6de8f710b5a94"
+    },
+    {
+      "path": "repo://reports/gate10a/runs/b15_opt/CS_C3/science_nominal/receipt.json",
+      "bytes": 18975,
+      "sha256": "2e1037d54d5a302ecbe33c136fb90d60ef2872c8f7df35c9f82d100c8c30a837"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b15_opt/CS_C3/science_nominal/spatial_vectors.json",
+      "bytes": 201864,
+      "sha256": "d2ce24b73136f1e9b322ec313a0e758fb6256ebefcf293c36505f4766241b161"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b15_opt/CS_C3/science_nominal/derivation_receipt.json",
+      "bytes": 2965,
+      "sha256": "ff7f446c096c2677c9c0cff7b4638305561e0e4e116fabc64cea1719ca881dd3"
+    },
+    {
+      "path": "repo://reports/gate10a/runs/b15_opt/B5/science_nominal/receipt.json",
+      "bytes": 18806,
+      "sha256": "967dfbce9d241dfb29607c53342ce6550cc595f54b36732856a2e147adb8b71a"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b15_opt/B5/science_nominal/spatial_vectors.json",
+      "bytes": 201924,
+      "sha256": "2fef7ce1c61acbec30630f21ec95fdd9d78244ef80e01fead091637e2202f023"
+    },
+    {
+      "path": "repo://reports/gate10a/derived/b15_opt/B5/science_nominal/derivation_receipt.json",
+      "bytes": 2929,
+      "sha256": "3c1856b47a4d5c22cb547c1d52f41d5ca5d15f0f96ec70b7abaf68d0d3a64f76"
+    },
+    {
+      "path": "repo://reports/gate10a/control/figure_derivation.json",
+      "bytes": 2464,
+      "sha256": "10ae3e5592153b1476f2ccebebc0c8d92f85042f1e5e5070e2c77deb47c1e922"
+    },
+    {
+      "path": "repo://reports/gate10a/figures/activity_and_physical_response.png",
+      "bytes": 105733,
+      "sha256": "43d43ca1932e00cd031d80748a2a188c5152b07d8d600c02904c61091566c622"
+    },
+    {
+      "path": "repo://reports/gate10a/figures/activity_and_physical_response.pdf",
+      "bytes": 21835,
+      "sha256": "72f812a94137c0a3a2bf4401c1fe6f0d90e1b85d87e40a58a7f9bca612f54903"
+    },
+    {
+      "path": "repo://reports/gate10a/figures/primary_spatial_maps.png",
+      "bytes": 297842,
+      "sha256": "35cc9cd1d137e9d5d5f9db31d6480dc229cd10d519baa53f604e11efc9ef574b"
+    },
+    {
+      "path": "repo://reports/gate10a/figures/primary_spatial_maps.pdf",
+      "bytes": 63841,
+      "sha256": "d5a124fea27dc8c646425414bc7216fe0c9db95e666ae1e12ae71d11298f12db"
+    }
+  ],
+  "preservation_checks": {
+    "Gate09_or_existing_algorithm_changed_paths": [],
+    "tracked_diff_paths": [
+      ".gitattributes",
+      ".gitignore",
+      "README.md",
+      "docs/research_status.md",
+      "reports/gate10a/artifact_reuse_manifest.json",
+      "reports/gate10a/capability_probe.log",
+      "reports/gate10a/control/architecture_receipt_hash_audit.json",
+      "reports/gate10a/control/delegated_tool_hashes.json",
+      "reports/gate10a/control/exporter_focused_tests.json",
+      "reports/gate10a/control/exporter_focused_tests.log",
+      "reports/gate10a/control/external_question_verification.json",
+      "reports/gate10a/control/full_count_validation.json",
+      "reports/gate10a/control/independent_numeric_support.json",
+      "reports/gate10a/control/interpretation_clarifications.json",
+      "reports/gate10a/control/pg_audit/b14_opt/B3T/after_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b14_opt/B3T/after_pg_terms.tsv",
+      "reports/gate10a/control/pg_audit/b14_opt/B3T/audit.log",
+      "reports/gate10a/control/pg_audit/b14_opt/B3T/before_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b14_opt/B3T/before_pg_terms.tsv",
+      "reports/gate10a/control/pg_audit/b14_opt/B5/after_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b14_opt/B5/after_pg_terms.tsv",
+      "reports/gate10a/control/pg_audit/b14_opt/B5/audit.log",
+      "reports/gate10a/control/pg_audit/b14_opt/B5/before_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b14_opt/B5/before_pg_terms.tsv",
+      "reports/gate10a/control/pg_audit/b14_opt/CS_C1/after_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b14_opt/CS_C1/after_pg_terms.tsv",
+      "reports/gate10a/control/pg_audit/b14_opt/CS_C1/audit.log",
+      "reports/gate10a/control/pg_audit/b14_opt/CS_C1/before_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b14_opt/CS_C1/before_pg_terms.tsv",
+      "reports/gate10a/control/pg_audit/b14_opt/CS_C3/after_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b14_opt/CS_C3/after_pg_terms.tsv",
+      "reports/gate10a/control/pg_audit/b14_opt/CS_C3/audit.log",
+      "reports/gate10a/control/pg_audit/b14_opt/CS_C3/before_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b14_opt/CS_C3/before_pg_terms.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/B2/after_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/B2/after_pg_terms.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/B2/audit.log",
+      "reports/gate10a/control/pg_audit/b15_opt/B2/before_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/B2/before_pg_terms.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/B5/after_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/B5/after_pg_terms.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/B5/audit.log",
+      "reports/gate10a/control/pg_audit/b15_opt/B5/before_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/B5/before_pg_terms.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/CS_C1/after_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/CS_C1/after_pg_terms.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/CS_C1/audit.log",
+      "reports/gate10a/control/pg_audit/b15_opt/CS_C1/before_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/CS_C1/before_pg_terms.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/CS_C2/after_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/CS_C2/after_pg_terms.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/CS_C2/audit.log",
+      "reports/gate10a/control/pg_audit/b15_opt/CS_C2/before_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/CS_C2/before_pg_terms.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/CS_C3/after_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/CS_C3/after_pg_terms.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/CS_C3/audit.log",
+      "reports/gate10a/control/pg_audit/b15_opt/CS_C3/before_pg_shapes.tsv",
+      "reports/gate10a/control/pg_audit/b15_opt/CS_C3/before_pg_terms.tsv",
+      "reports/gate10a/control/pg_connectivity_normalization.json",
+      "reports/gate10a/control/preflight.json",
+      "reports/gate10a/control/preregistration_commit.json",
+      "reports/gate10a/control/published_parent_receipt.json",
+      "reports/gate10a/control/reporter_focused_tests.json",
+      "reports/gate10a/control/reporter_focused_tests.log",
+      "reports/gate10a/control/repository_tests.json",
+      "reports/gate10a/control/repository_tests.log",
+      "reports/gate10a/control/repository_tests_final.json",
+      "reports/gate10a/control/repository_tests_final.log",
+      "reports/gate10a/control/repository_tests_linux.json",
+      "reports/gate10a/control/repository_tests_linux.log",
+      "reports/gate10a/control/repository_tests_sealed.log",
+      "reports/gate10a/control/scientific_run_selection.json",
+      "reports/gate10a/control/selected_architecture_execution.json",
+      "reports/gate10a/control/selected_execution_checkpoint_1.json",
+      "reports/gate10a/control/selected_execution_checkpoint_2.json",
+      "reports/gate10a/control/selected_execution_checkpoint_3.json",
+      "reports/gate10a/control/selected_execution_checkpoint_4.json",
+      "reports/gate10a/control/selected_execution_checkpoint_5.json",
+      "reports/gate10a/control/selected_execution_checkpoint_6.json",
+      "reports/gate10a/control/selected_execution_checkpoint_7.json",
+      "reports/gate10a/control/selected_execution_checkpoint_8.json",
+      "reports/gate10a/control/smoke_attempt4_invalidation.json",
+      "reports/gate10a/control/smoke_qualification.json",
+      "reports/gate10a/inputs/b14_opt/B3T/activity_export_receipt.json",
+      "reports/gate10a/inputs/b14_opt/B3T/net_activity_capacitance.csv",
+      "reports/gate10a/inputs/b14_opt/B5/activity_export_receipt.json",
+      "reports/gate10a/inputs/b14_opt/B5/net_activity_capacitance.csv",
+      "reports/gate10a/inputs/b14_opt/CS_C1/activity_export_receipt.json",
+      "reports/gate10a/inputs/b14_opt/CS_C1/net_activity_capacitance.csv",
+      "reports/gate10a/inputs/b14_opt/CS_C3/activity_export_receipt.json",
+      "reports/gate10a/inputs/b14_opt/CS_C3/net_activity_capacitance.csv",
+      "reports/gate10a/inputs/b15_opt/B2/activity_export_receipt.json",
+      "reports/gate10a/inputs/b15_opt/B2/net_activity_capacitance.csv",
+      "reports/gate10a/inputs/b15_opt/B5/activity_export_receipt.json",
+      "reports/gate10a/inputs/b15_opt/B5/net_activity_capacitance.csv",
+      "reports/gate10a/inputs/b15_opt/CS_C1/activity_export_receipt.json",
+      "reports/gate10a/inputs/b15_opt/CS_C1/net_activity_capacitance.csv",
+      "reports/gate10a/inputs/b15_opt/CS_C2/activity_export_receipt.json",
+      "reports/gate10a/inputs/b15_opt/CS_C2/net_activity_capacitance.csv",
+      "reports/gate10a/inputs/b15_opt/CS_C3/activity_export_receipt.json",
+      "reports/gate10a/inputs/b15_opt/CS_C3/net_activity_capacitance.csv",
+      "reports/gate10a/methodology.md",
+      "reports/gate10a/pdn_inventory_b14_opt.log",
+      "reports/gate10a/pdn_inventory_b15_opt.log",
+      "reports/gate10a/preregistration.md",
+      "reports/gate10a/protocol.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/activity.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/activity_annotation.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/annotated_pins.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/instance_drop.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/instance_power.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/instance_voltage.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/measurement_source.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/native_power_units.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/openroad.log",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/pdn_geometry.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/pdn_geometry_canonical.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/power_report.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/power_report.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/receipt.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/resources.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/runner_source.py",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/segment_current.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/segment_current_normalized.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/sources.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/started.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density0/unannotated_nets.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/activity.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/activity_annotation.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/annotated_pins.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/instance_drop.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/instance_power.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/instance_voltage.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/measurement_source.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/native_power_units.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/openroad.log",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/pdn_geometry.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/pdn_geometry_canonical.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/power_report.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/power_report.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/receipt.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/resources.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/runner_source.py",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/segment_current.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/segment_current_normalized.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/sources.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/started.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_density2/unannotated_nets.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt1/activity.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt1/measurement_source.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt1/openroad.log",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt1/receipt.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt1/resources.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt1/runner_source.py",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt1/started.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt2/activity.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt2/annotated_pins.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt2/measurement_source.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt2/openroad.log",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt2/receipt.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt2/resources.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt2/runner_source.py",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt2/started.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt3/activity.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt3/activity_annotation.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt3/annotated_pins.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt3/instance_power.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt3/measurement_source.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt3/openroad.log",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt3/pdn_geometry.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt3/receipt.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt3/resources.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt3/runner_source.py",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt3/sources.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt3/started.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt3/unannotated_nets.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/activity.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/activity_annotation.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/annotated_pins.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/instance_drop.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/instance_power.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/instance_voltage.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/measurement_source.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/native_power_units.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/openroad.log",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/pdn_geometry.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/pdn_geometry_canonical.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/power_report.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/power_report.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/receipt.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/resources.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/runner_source.py",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/segment_current.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/segment_current_normalized.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/sources.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/started.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/unannotated_nets.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/activity.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/activity_annotation.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/annotated_pins.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/instance_drop.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/instance_power.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/instance_voltage.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/measurement_source.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/native_power_units.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/openroad.log",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/pdn_geometry.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/pdn_geometry_canonical.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/power_report.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/power_report.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/receipt.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/resources.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/runner_source.py",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/segment_current.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/segment_current_normalized.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/sources.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/started.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt5/unannotated_nets.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/activity.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/activity_annotation.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/annotated_pins.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/instance_drop.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/instance_power.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/instance_voltage.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/measurement_source.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/native_power_units.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/openroad.log",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/pdn_geometry.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/pdn_geometry_canonical.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/power_report.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/power_report.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/receipt.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/resources.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/runner_source.py",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/segment_current.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/segment_current_normalized.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/sources.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/started.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/unannotated_nets.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/activity.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/activity_annotation.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/annotated_pins.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/instance_drop.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/instance_power.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/instance_voltage.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/measurement_source.tcl",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/native_power_units.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/openroad.log",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/pdn_geometry.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/pdn_geometry_canonical.tsv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/power_report.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/power_report.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/receipt.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/resources.txt",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/runner_source.py",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/segment_current.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/segment_current_normalized.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/sources.csv",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/started.json",
+      "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_repeat1/unannotated_nets.tsv",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/activity.tcl",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/activity_annotation.txt",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/annotated_pins.tsv",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/instance_drop.csv",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/instance_power.csv",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/instance_voltage.csv",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/measurement_source.tcl",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/native_power_units.json",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/openroad.log",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/pdn_geometry.tsv",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/pdn_geometry_canonical.tsv",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/power_report.json",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/power_report.txt",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/receipt.json",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/resources.txt",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/runner_source.py",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/segment_current.csv",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/segment_current_normalized.csv",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/sources.csv",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/started.json",
+      "reports/gate10a/runs/b14_opt/B5/science_nominal/unannotated_nets.tsv",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/activity.tcl",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/activity_annotation.txt",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/annotated_pins.tsv",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/instance_drop.csv",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/instance_power.csv",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/instance_voltage.csv",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/measurement_source.tcl",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/native_power_units.json",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/openroad.log",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/pdn_geometry.tsv",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/pdn_geometry_canonical.tsv",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/power_report.json",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/power_report.txt",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/receipt.json",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/resources.txt",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/runner_source.py",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/segment_current.csv",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/segment_current_normalized.csv",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/sources.csv",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/started.json",
+      "reports/gate10a/runs/b14_opt/CS_C1/science_nominal/unannotated_nets.tsv",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/activity.tcl",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/activity_annotation.txt",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/annotated_pins.tsv",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/instance_drop.csv",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/instance_power.csv",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/instance_voltage.csv",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/measurement_source.tcl",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/native_power_units.json",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/openroad.log",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/pdn_geometry.tsv",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/pdn_geometry_canonical.tsv",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/power_report.json",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/power_report.txt",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/receipt.json",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/resources.txt",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/runner_source.py",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/segment_current.csv",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/segment_current_normalized.csv",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/sources.csv",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/started.json",
+      "reports/gate10a/runs/b14_opt/CS_C3/science_nominal/unannotated_nets.tsv",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/activity.tcl",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/activity_annotation.txt",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/annotated_pins.tsv",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/instance_drop.csv",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/instance_power.csv",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/instance_voltage.csv",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/measurement_source.tcl",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/native_power_units.json",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/openroad.log",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/pdn_geometry.tsv",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/pdn_geometry_canonical.tsv",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/power_report.json",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/power_report.txt",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/receipt.json",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/resources.txt",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/runner_source.py",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/segment_current.csv",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/segment_current_normalized.csv",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/sources.csv",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/started.json",
+      "reports/gate10a/runs/b15_opt/B2/science_nominal/unannotated_nets.tsv",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/activity.tcl",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/activity_annotation.txt",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/annotated_pins.tsv",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/instance_drop.csv",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/instance_power.csv",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/instance_voltage.csv",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/measurement_source.tcl",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/native_power_units.json",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/openroad.log",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/pdn_geometry.tsv",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/pdn_geometry_canonical.tsv",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/power_report.json",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/power_report.txt",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/receipt.json",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/resources.txt",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/runner_source.py",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/segment_current.csv",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/segment_current_normalized.csv",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/sources.csv",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/started.json",
+      "reports/gate10a/runs/b15_opt/B5/science_nominal/unannotated_nets.tsv",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/activity.tcl",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/activity_annotation.txt",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/annotated_pins.tsv",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/instance_drop.csv",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/instance_power.csv",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/instance_voltage.csv",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/measurement_source.tcl",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/native_power_units.json",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/openroad.log",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/pdn_geometry.tsv",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/pdn_geometry_canonical.tsv",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/power_report.json",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/power_report.txt",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/receipt.json",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/resources.txt",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/runner_source.py",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/segment_current.csv",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/segment_current_normalized.csv",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/sources.csv",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/started.json",
+      "reports/gate10a/runs/b15_opt/CS_C1/science_nominal/unannotated_nets.tsv",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/activity.tcl",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/activity_annotation.txt",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/annotated_pins.tsv",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/instance_drop.csv",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/instance_power.csv",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/instance_voltage.csv",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/measurement_source.tcl",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/native_power_units.json",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/openroad.log",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/pdn_geometry.tsv",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/pdn_geometry_canonical.tsv",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/power_report.json",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/power_report.txt",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/receipt.json",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/resources.txt",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/runner_source.py",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/segment_current.csv",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/segment_current_normalized.csv",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/sources.csv",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/started.json",
+      "reports/gate10a/runs/b15_opt/CS_C2/science_nominal/unannotated_nets.tsv",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/activity.tcl",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/activity_annotation.txt",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/annotated_pins.tsv",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/instance_drop.csv",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/instance_power.csv",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/instance_voltage.csv",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/measurement_source.tcl",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/native_power_units.json",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/openroad.log",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/pdn_geometry.tsv",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/pdn_geometry_canonical.tsv",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/power_report.json",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/power_report.txt",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/receipt.json",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/resources.txt",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/runner_source.py",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/segment_current.csv",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/segment_current_normalized.csv",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/sources.csv",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/started.json",
+      "reports/gate10a/runs/b15_opt/CS_C3/science_nominal/unannotated_nets.tsv",
+      "reports/gate10a/selected_architectures.json",
+      "reports/gate10a/source_OpenROAD-flow-scripts.log",
+      "reports/gate10a/source_OpenROAD.log",
+      "reports/gate10a/supply_connection_inventory_b14_opt.log",
+      "reports/gate10a/tool_provenance.json",
+      "reports/gate10a/version_openroad.log",
+      "reports/gate10a/version_sta.log",
+      "scripts/gate10a_audit.py",
+      "scripts/gate10a_control.py",
+      "scripts/gate10a_execute_selected.py",
+      "scripts/gate10a_export_activity.py",
+      "scripts/gate10a_pg_audit.py",
+      "scripts/gate10a_qualify_smoke.py",
+      "scripts/gate10a_report.py",
+      "scripts/gate10a_run.py",
+      "scripts/gate10a_select_runs.py",
+      "scripts/gate10a_tool_audit.py",
+      "scripts/gate10a_validate.py",
+      "scripts/gate10a_validate_activity_exports.py",
+      "scripts/gate10a_verify_delegated_tools.py",
+      "scripts/tcl/gate10a_capability_probe.tcl",
+      "scripts/tcl/gate10a_measure.tcl",
+      "scripts/tcl/gate10a_pdn_inventory.tcl",
+      "scripts/tcl/gate10a_pg_connection_audit.tcl",
+      "scripts/tcl/gate10a_runtime_format_probe.tcl",
+      "scripts/tcl/gate10a_supply_probe.tcl",
+      "src/pact/gate10a_decision.py",
+      "src/pact/gate10a_spatial.py",
+      "tests/test_gate10a_activity_export.py",
+      "tests/test_gate10a_decision.py",
+      "tests/test_gate10a_report.py",
+      "tests/test_gate10a_runner_parser.py",
+      "tests/test_gate10a_spatial.py"
+    ],
+    "failed_report_archive_outputs_checked": 9,
+    "failed_report_archive_hash_mismatches": [],
+    "failed_reporter_archive_source_sha256": "1a3df93c9ef444892f9c2a676548fe752d801def524b9760d16e011daa8bffea"
+  }
+}
+

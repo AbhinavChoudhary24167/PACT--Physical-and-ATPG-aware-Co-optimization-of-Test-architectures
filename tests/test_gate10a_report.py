@@ -234,6 +234,34 @@ def test_zero_denominator_is_unavailable_not_imputed():
     assert report.relative_delta(0.9, 1) == pytest.approx(-0.1)
 
 
+def test_native_clock_partition_uses_si_design_total_without_reclassifying_instances():
+    totals = dict(internal_w=0.006, switching_w=0.0012, leakage_w=0.00003, total_w=0.00723)
+    native = dict(Total={name.removesuffix("_w"): value for name, value in totals.items()},
+                  Clock=dict(internal=0.001, switching=0.0002, leakage=0.00001, total=0.00121))
+    parts = report.supported_power_partitions(native, totals, 3296)
+    assert parts["clock_dynamic_w"] == pytest.approx(0.0012)
+    assert parts["nonclock_dynamic_w"] == pytest.approx(0.006)
+    assert parts["clock_total_w"] + parts["nonclock_total_w"] == pytest.approx(0.00723)
+    native["Total"]["switching"] = 1.2  # wrong mW-to-W ingestion
+    with pytest.raises(ValueError, match="reduction bound exceeded: switching_w"):
+        report.supported_power_partitions(native, totals, 3296)
+
+
+def test_native_partition_crosscheck_uses_population_derived_float32_bound_not_receipt_equality_tolerance():
+    totals = dict(internal_w=0.00034314212965486904, switching_w=0.00032126379332140576,
+                  leakage_w=0.00010009437912650299, total_w=0.0007645003021027778)
+    native = dict(Total={name.removesuffix("_w"): value for name, value in totals.items()},
+                  Clock=dict(internal=0.00005, switching=0.00006, leakage=0.000002, total=0.000112))
+    gamma = 3296 * 2**-24 / (1 - 3296 * 2**-24)
+    native["Total"]["internal"] += 0.5 * gamma * totals["internal_w"]
+    parts = report.supported_power_partitions(native, totals, 3296)
+    assert parts["native_float32_gamma_n"] == pytest.approx(gamma)
+    assert parts["native_vs_instance_internal_difference_w"] == pytest.approx(0.5 * gamma * totals["internal_w"])
+    native["Total"]["internal"] = totals["internal_w"] + 2 * gamma * totals["internal_w"]
+    with pytest.raises(ValueError, match="reduction bound exceeded: internal_w"):
+        report.supported_power_partitions(native, totals, 3296)
+
+
 def test_immutable_derived_records_allow_identical_replay_and_reject_changed_bytes(tmp_path):
     path = tmp_path / "evidence.json"
     report.write_json(path, dict(status="PASS"), immutable=True)

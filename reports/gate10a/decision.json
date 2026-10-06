@@ -1,0 +1,213 @@
+{
+  "classification": "PACT_GATE10A_NO_MATERIAL_PHYSICAL_IMPACT",
+  "comparisons": [
+    {
+      "candidate": "CS_C1",
+      "current_guardrail_pass": true,
+      "deltas": {
+        "delta_dynamic_power_fraction": -0.0023205692581695944,
+        "delta_p99_ir_fraction": -1.3742870884899696e-05,
+        "delta_p99_ir_v": -9.999999999398511e-09,
+        "delta_peak_segment_current_fraction": -0.0034482758620689325,
+        "delta_routed_scan_wire_fraction": 0.0004369915063721192,
+        "delta_worst_ir_fraction": -0.0040160642569946866,
+        "delta_worst_ir_v": -2.9999999999752447e-06
+      },
+      "design": "b14_opt",
+      "dynamic_guardrail_pass": true,
+      "material_adverse_drop": false,
+      "material_pi_benefit": false,
+      "missing_fields": [],
+      "modest_scan_wire_cost": true,
+      "reason": null,
+      "reference": "B3T",
+      "status": "AVAILABLE",
+      "voltage_benefit": false
+    },
+    {
+      "candidate": "CS_C3",
+      "current_guardrail_pass": true,
+      "deltas": {
+        "delta_dynamic_power_fraction": -0.0015141514735528708,
+        "delta_p99_ir_fraction": -0.0013880299594542865,
+        "delta_p99_ir_v": -1.0099999999970376e-06,
+        "delta_peak_segment_current_fraction": -0.002586206896551787,
+        "delta_routed_scan_wire_fraction": 0.0006698665948402099,
+        "delta_worst_ir_fraction": -0.0040160642569946866,
+        "delta_worst_ir_v": -2.9999999999752447e-06
+      },
+      "design": "b14_opt",
+      "dynamic_guardrail_pass": true,
+      "material_adverse_drop": false,
+      "material_pi_benefit": false,
+      "missing_fields": [],
+      "modest_scan_wire_cost": true,
+      "reason": null,
+      "reference": "B3T",
+      "status": "AVAILABLE",
+      "voltage_benefit": false
+    },
+    {
+      "candidate": "CS_C1",
+      "current_guardrail_pass": true,
+      "deltas": {
+        "delta_dynamic_power_fraction": -0.008225616008004921,
+        "delta_p99_ir_fraction": -0.009803921568473787,
+        "delta_p99_ir_v": -9.999999999843467e-06,
+        "delta_peak_segment_current_fraction": -0.008922443376801493,
+        "delta_routed_scan_wire_fraction": 0.013361765316364007,
+        "delta_worst_ir_fraction": -0.0070360598065143665,
+        "delta_worst_ir_v": -8.000000000008e-06
+      },
+      "design": "b15_opt",
+      "dynamic_guardrail_pass": true,
+      "material_adverse_drop": false,
+      "material_pi_benefit": false,
+      "missing_fields": [],
+      "modest_scan_wire_cost": true,
+      "reason": null,
+      "reference": "B2",
+      "status": "AVAILABLE",
+      "voltage_benefit": false
+    },
+    {
+      "candidate": "CS_C2",
+      "current_guardrail_pass": true,
+      "deltas": {
+        "delta_dynamic_power_fraction": -0.007347967095168122,
+        "delta_p99_ir_fraction": -0.009803921568473787,
+        "delta_p99_ir_v": -9.999999999843467e-06,
+        "delta_peak_segment_current_fraction": -0.007549759780370623,
+        "delta_routed_scan_wire_fraction": 0.00896203940632448,
+        "delta_worst_ir_fraction": -0.006156552330773305,
+        "delta_worst_ir_v": -7.000000000090267e-06
+      },
+      "design": "b15_opt",
+      "dynamic_guardrail_pass": true,
+      "material_adverse_drop": false,
+      "material_pi_benefit": false,
+      "missing_fields": [],
+      "modest_scan_wire_cost": true,
+      "reason": null,
+      "reference": "B2",
+      "status": "AVAILABLE",
+      "voltage_benefit": false
+    },
+    {
+      "candidate": "CS_C3",
+      "current_guardrail_pass": true,
+      "deltas": {
+        "delta_dynamic_power_fraction": -0.0061151878914687,
+        "delta_p99_ir_fraction": -0.007843137254909644,
+        "delta_p99_ir_v": -8.000000000008e-06,
+        "delta_peak_segment_current_fraction": -0.006177076183939567,
+        "delta_routed_scan_wire_fraction": 0.012491344495917166,
+        "delta_worst_ir_fraction": -0.004397537379095891,
+        "delta_worst_ir_v": -5.000000000032756e-06
+      },
+      "design": "b15_opt",
+      "dynamic_guardrail_pass": true,
+      "material_adverse_drop": false,
+      "material_pi_benefit": false,
+      "missing_fields": [],
+      "modest_scan_wire_cost": true,
+      "reason": null,
+      "reference": "B2",
+      "status": "AVAILABLE",
+      "voltage_benefit": false
+    }
+  ],
+  "evidence_complete": true,
+  "incomplete_records": [],
+  "rationale": "Complete admissible evidence meets neither the material PI benefit nor spatial correspondence criterion.",
+  "recommendation": "FREEZE",
+  "spatial_correspondence": {
+    "complete": true,
+    "criterion": "reference and CS_C1 in both designs at both grids; each primary IR Spearman >=0.5",
+    "incomplete_records": [],
+    "passes": false,
+    "records": [
+      {
+        "criterion_pass": true,
+        "design": "b14_opt",
+        "evaluated": true,
+        "method": "B3T",
+        "reason": null,
+        "resolution": 4,
+        "spearman_rho": 0.9086902343725689
+      },
+      {
+        "criterion_pass": true,
+        "design": "b14_opt",
+        "evaluated": true,
+        "method": "B3T",
+        "reason": null,
+        "resolution": 8,
+        "spearman_rho": 0.8552615958251978
+      },
+      {
+        "criterion_pass": true,
+        "design": "b14_opt",
+        "evaluated": true,
+        "method": "CS_C1",
+        "reason": null,
+        "resolution": 4,
+        "spearman_rho": 0.9094925199546271
+      },
+      {
+        "criterion_pass": true,
+        "design": "b14_opt",
+        "evaluated": true,
+        "method": "CS_C1",
+        "reason": null,
+        "resolution": 8,
+        "spearman_rho": 0.855737578533198
+      },
+      {
+        "criterion_pass": false,
+        "design": "b15_opt",
+        "evaluated": true,
+        "method": "B2",
+        "reason": null,
+        "resolution": 4,
+        "spearman_rho": 0.2088235294117647
+      },
+      {
+        "criterion_pass": false,
+        "design": "b15_opt",
+        "evaluated": true,
+        "method": "B2",
+        "reason": null,
+        "resolution": 8,
+        "spearman_rho": 0.4267255753564723
+      },
+      {
+        "criterion_pass": false,
+        "design": "b15_opt",
+        "evaluated": true,
+        "method": "CS_C1",
+        "reason": null,
+        "resolution": 4,
+        "spearman_rho": 0.2088235294117647
+      },
+      {
+        "criterion_pass": false,
+        "design": "b15_opt",
+        "evaluated": true,
+        "method": "CS_C1",
+        "reason": null,
+        "resolution": 8,
+        "spearman_rho": 0.41962821973380765
+      }
+    ],
+    "required_records": 8
+  },
+  "temporal_limit": "activity-derived averaged power and static VDD IR; no transient or thermal validation",
+  "thresholds": {
+    "absolute_drop_reduction_v": 0.0001,
+    "maximum_dynamic_or_peak_current_regression": 0.01,
+    "minimum_spatial_spearman": 0.5,
+    "modest_scan_wire_increase": 0.02,
+    "relative_drop_reduction": 0.01
+  }
+}

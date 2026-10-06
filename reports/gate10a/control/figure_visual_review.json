@@ -1,0 +1,29 @@
+{
+  "checks": [
+    "Titles, axes, units and caption text readable without clipping",
+    "Signed reductions and B5 control labels agree with comparison CSV",
+    "Common color scales within each design pair; original lower-left coordinate orientation",
+    "Empty bins explicitly masked; peak activity and mean activity distinguished from static VDD drop"
+  ],
+  "figure_derivation": {
+    "bytes": 2464,
+    "path": "reports/gate10a/control/figure_derivation.json",
+    "sha256": "10ae3e5592153b1476f2ccebebc0c8d92f85042f1e5e5070e2c77deb47c1e922"
+  },
+  "method": "Both generated PNGs visually inspected through the image viewer; PDF files share the same Matplotlib render.",
+  "reviewed_images": [
+    {
+      "bytes": 105733,
+      "path": "reports/gate10a/figures/activity_and_physical_response.png",
+      "sha256": "43d43ca1932e00cd031d80748a2a188c5152b07d8d600c02904c61091566c622"
+    },
+    {
+      "bytes": 297842,
+      "path": "reports/gate10a/figures/primary_spatial_maps.png",
+      "sha256": "35cc9cd1d137e9d5d5f9db31d6480dc229cd10d519baa53f604e11efc9ef574b"
+    }
+  ],
+  "reviewed_utc": "2026-10-06T04:06:58.405981+00:00",
+  "schema": "pact_gate10a_figure_visual_review_v1",
+  "status": "PASS"
+}
