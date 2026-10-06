@@ -1,0 +1,18 @@
+{
+  "schema": "pact_gate10a_prescience_interpretation_clarification_v1",
+  "preregistration_commit": "b9869834a3479a57f256c83fa74a4617faab4af2",
+  "scientific_power_or_ir_outcomes_observed": false,
+  "clarifications": [
+    {
+      "registered_text": "primary/reference mean-activity versus IR Spearman is >=0.5 at BOTH grids in BOTH designs (all four records)",
+      "meaning": "Four architecture records: b14 B3T and CS_C1; b15 B2 and CS_C1. Each has both4x4 and8x8 statistics. All eight Spearman results must meet the criterion.",
+      "reason": "Fix record-count ambiguity before measurements; conservative interpretation preserves both primary and reference rather than selecting one."
+    },
+    {
+      "registered_control": "non-clock density multipliers0 and2; clock remains fixed",
+      "implementation_check": "switching_w(2)-switching_w(0) =2*(switching_w(1)-switching_w(0)) within registered tolerances",
+      "reason": "Fixed clock contribution cancels algebraically. Clock is never doubled."
+    }
+  ],
+  "created_utc": "2026-10-06T03:32:51.900966+00:00"
+}

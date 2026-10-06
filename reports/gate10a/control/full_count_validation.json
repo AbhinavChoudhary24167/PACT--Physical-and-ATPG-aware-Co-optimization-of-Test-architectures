@@ -1,0 +1,477 @@
+{
+  "schema": "pact_gate10a_complete_count_validation_v1",
+  "status": "PASS",
+  "created_utc": "2026-10-06T03:34:17.982858+00:00",
+  "preregistered_commit": "b9869834a3479a57f256c83fa74a4617faab4af2",
+  "parent_published_commit": "53ebab37fd76970d7c5e676b0caec13c7c16296e",
+  "frozen_selection": {
+    "path": "repo://reports/gate10a/selected_architectures.json",
+    "sha256": "3299e85c55dc4de0f69d8663cb49a77abdabfaff9d7ffac2f021c3c474bc7e20",
+    "bytes": 67710
+  },
+  "architectures_validated": 9,
+  "counts_payloads_read_again": 0,
+  "method": "Bind completed bounded-stream exporter receipts and rehash derived CSVs; each exporter checked frozen raw hash before its sole complete payload read",
+  "scientific_stages_reexecuted": 0,
+  "records": [
+    {
+      "design": "b14_opt",
+      "architecture": "B3T",
+      "status": "PASS",
+      "receipt": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b14_opt\\B3T\\activity_export_receipt.json",
+        "sha256": "5f278f34d138708fc2057d7582f5bcf814bc644dab18d26c763fb3190e93b4d4",
+        "bytes": 5770
+      },
+      "frozen_count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/activity.counts.gz",
+        "bytes": 56176651,
+        "sha256": "0b3e9b0bdd971b2afba0e47b26846740030300098cca89020836347ebaf7d379"
+      },
+      "complete_count_validation": {
+        "status": "PASS",
+        "format": "PACTCN01",
+        "complete": true,
+        "gzip_crc": "PASS",
+        "cycles": 111438,
+        "mapped_nets": 3090,
+        "payload_bytes": 344343420,
+        "maximum_count_rows_in_memory": 512,
+        "logic_high_occupancy_available": false
+      },
+      "expected_FF_population": 245,
+      "observed_FF_Q_population": 245,
+      "aggregate_integrity": {
+        "all_data": {
+          "status": "PASS",
+          "transition_sum": 73422428,
+          "cap_weighted_sum": 381238038.6697164,
+          "frozen_cap_weighted_sum": 381238038.6697165,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        },
+        "scan_data": {
+          "status": "PASS",
+          "transition_sum": 9189214,
+          "cap_weighted_sum": 59417281.75316543,
+          "frozen_cap_weighted_sum": 59417281.75316543,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        }
+      },
+      "regenerated_CSV": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b14_opt\\B3T\\net_activity_capacitance.csv",
+        "sha256": "2875aced18df962ce6c2b6f49b0bc271951fd37012c3385075ad15b718b6c7d2",
+        "bytes": 312871
+      }
+    },
+    {
+      "design": "b14_opt",
+      "architecture": "CS_C1",
+      "status": "PASS",
+      "receipt": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b14_opt\\CS_C1\\activity_export_receipt.json",
+        "sha256": "d99d7026c3126ebf3cb5e3e2a409b29d39db5db23738f2f971d2c9f1ab820dbd",
+        "bytes": 5786
+      },
+      "frozen_count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C1/b14_opt/CS_C1/activity.counts.gz",
+        "bytes": 56272306,
+        "sha256": "36942c8d15a4ef625d459d75fa169d9638c0350932728ee5500d1a6dedab7377"
+      },
+      "complete_count_validation": {
+        "status": "PASS",
+        "format": "PACTCN01",
+        "complete": true,
+        "gzip_crc": "PASS",
+        "cycles": 111438,
+        "mapped_nets": 3091,
+        "payload_bytes": 344454858,
+        "maximum_count_rows_in_memory": 512,
+        "logic_high_occupancy_available": false
+      },
+      "expected_FF_population": 245,
+      "observed_FF_Q_population": 245,
+      "aggregate_integrity": {
+        "all_data": {
+          "status": "PASS",
+          "transition_sum": 73221563,
+          "cap_weighted_sum": 379875624.2417318,
+          "frozen_cap_weighted_sum": 379875624.2417319,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        },
+        "scan_data": {
+          "status": "PASS",
+          "transition_sum": 9087943,
+          "cap_weighted_sum": 58757644.925796,
+          "frozen_cap_weighted_sum": 58757644.925796,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        }
+      },
+      "regenerated_CSV": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b14_opt\\CS_C1\\net_activity_capacitance.csv",
+        "sha256": "ab9a45d1fefff7abaa537e8e5c66e26e7a46e486d6ef4da813e286c99c5fce23",
+        "bytes": 312947
+      }
+    },
+    {
+      "design": "b14_opt",
+      "architecture": "CS_C3",
+      "status": "PASS",
+      "receipt": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b14_opt\\CS_C3\\activity_export_receipt.json",
+        "sha256": "2eefee9e83fc3093f01aacb16686250389343ba0e864eb5c75d7c1f87b5f2a5c",
+        "bytes": 5790
+      },
+      "frozen_count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C3/b14_opt/CS_C3/activity.counts.gz",
+        "bytes": 56305136,
+        "sha256": "8ef30cf3333c8a46c35f1d8a18751aa7840983a9761075cb509e8a9abe4fae80"
+      },
+      "complete_count_validation": {
+        "status": "PASS",
+        "format": "PACTCN01",
+        "complete": true,
+        "gzip_crc": "PASS",
+        "cycles": 111438,
+        "mapped_nets": 3091,
+        "payload_bytes": 344454858,
+        "maximum_count_rows_in_memory": 512,
+        "logic_high_occupancy_available": false
+      },
+      "expected_FF_population": 245,
+      "observed_FF_Q_population": 245,
+      "aggregate_integrity": {
+        "all_data": {
+          "status": "PASS",
+          "transition_sum": 73310251,
+          "cap_weighted_sum": 380193530.1621147,
+          "frozen_cap_weighted_sum": 380193530.1621147,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        },
+        "scan_data": {
+          "status": "PASS",
+          "transition_sum": 9103321,
+          "cap_weighted_sum": 58847309.13710302,
+          "frozen_cap_weighted_sum": 58847309.13710302,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        }
+      },
+      "regenerated_CSV": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b14_opt\\CS_C3\\net_activity_capacitance.csv",
+        "sha256": "09aca433693efc1b7989c27ca17a743787f3d5116e0969ef58fab2d91741837f",
+        "bytes": 312572
+      }
+    },
+    {
+      "design": "b14_opt",
+      "architecture": "B5",
+      "status": "PASS",
+      "receipt": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b14_opt\\B5\\activity_export_receipt.json",
+        "sha256": "ed656a6ce4c6eacae8abfcfd4154e84931378666dfb055f5737988a5f920da8d",
+        "bytes": 5759
+      },
+      "frozen_count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B5/b14_opt/B5/activity.counts.gz",
+        "bytes": 48882872,
+        "sha256": "d6b5593fb4cdd8f420e1b902639c455ee3af6e0a0c04158ae4a18d0ebd05daa2"
+      },
+      "complete_count_validation": {
+        "status": "PASS",
+        "format": "PACTCN01",
+        "complete": true,
+        "gzip_crc": "PASS",
+        "cycles": 111438,
+        "mapped_nets": 3090,
+        "payload_bytes": 344343420,
+        "maximum_count_rows_in_memory": 512,
+        "logic_high_occupancy_available": false
+      },
+      "expected_FF_population": 245,
+      "observed_FF_Q_population": 245,
+      "aggregate_integrity": {
+        "all_data": {
+          "status": "PASS",
+          "transition_sum": 58941540,
+          "cap_weighted_sum": 304124378.7812191,
+          "frozen_cap_weighted_sum": 304124378.7812191,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        },
+        "scan_data": {
+          "status": "PASS",
+          "transition_sum": 7478168,
+          "cap_weighted_sum": 49593157.33501274,
+          "frozen_cap_weighted_sum": 49593157.335012734,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        }
+      },
+      "regenerated_CSV": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b14_opt\\B5\\net_activity_capacitance.csv",
+        "sha256": "a3f5269e854cd30d26e2de32ab3826fcb5baf529fedc0c13247b624ea9330a2e",
+        "bytes": 311961
+      }
+    },
+    {
+      "design": "b15_opt",
+      "architecture": "B2",
+      "status": "PASS",
+      "receipt": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b15_opt\\B2\\activity_export_receipt.json",
+        "sha256": "9b1351a3cb0c180e4c49e0ad3268ff66765813c03fcc0aa5270cf62964062199",
+        "bytes": 5829
+      },
+      "frozen_count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B2/b15_opt/B2/activity.counts.gz",
+        "bytes": 123941096,
+        "sha256": "c41576dab1cc2efe8bd59ac4feb785781e3602b41a106dc1fc34ea0d3c9d8d82"
+      },
+      "complete_count_validation": {
+        "status": "PASS",
+        "format": "PACTCN01",
+        "complete": true,
+        "gzip_crc": "PASS",
+        "cycles": 208800,
+        "mapped_nets": 4672,
+        "payload_bytes": 975513600,
+        "maximum_count_rows_in_memory": 512,
+        "logic_high_occupancy_available": false
+      },
+      "expected_FF_population": 449,
+      "observed_FF_Q_population": 449,
+      "aggregate_integrity": {
+        "all_data": {
+          "status": "PASS",
+          "transition_sum": 141064234,
+          "cap_weighted_sum": 762723552.4952053,
+          "frozen_cap_weighted_sum": 762723552.4952054,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        },
+        "scan_data": {
+          "status": "PASS",
+          "transition_sum": 31704945,
+          "cap_weighted_sum": 304593716.8397252,
+          "frozen_cap_weighted_sum": 304593716.8397252,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        }
+      },
+      "regenerated_CSV": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b15_opt\\B2\\net_activity_capacitance.csv",
+        "sha256": "10bd0e297399ad62a0758d9b261b3abd741e6074465ad2f2f4fbedb00b2a38f8",
+        "bytes": 475728
+      }
+    },
+    {
+      "design": "b15_opt",
+      "architecture": "CS_C1",
+      "status": "PASS",
+      "receipt": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b15_opt\\CS_C1\\activity_export_receipt.json",
+        "sha256": "e9c78ce19392331053139eec1a062de636172ac423b5ab63ab00cac2263d9de0",
+        "bytes": 5858
+      },
+      "frozen_count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C1/b15_opt/CS_C1/activity.counts.gz",
+        "bytes": 123535549,
+        "sha256": "434bebb71ddab0e3d5081d60f6f365129f8dcd2146d039d9098ef002aff0e849"
+      },
+      "complete_count_validation": {
+        "status": "PASS",
+        "format": "PACTCN01",
+        "complete": true,
+        "gzip_crc": "PASS",
+        "cycles": 208800,
+        "mapped_nets": 4672,
+        "payload_bytes": 975513600,
+        "maximum_count_rows_in_memory": 512,
+        "logic_high_occupancy_available": false
+      },
+      "expected_FF_population": 449,
+      "observed_FF_Q_population": 449,
+      "aggregate_integrity": {
+        "all_data": {
+          "status": "PASS",
+          "transition_sum": 138967476,
+          "cap_weighted_sum": 753061810.7734708,
+          "frozen_cap_weighted_sum": 753061810.7734706,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        },
+        "scan_data": {
+          "status": "PASS",
+          "transition_sum": 30968063,
+          "cap_weighted_sum": 299024279.296909,
+          "frozen_cap_weighted_sum": 299024279.296909,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        }
+      },
+      "regenerated_CSV": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b15_opt\\CS_C1\\net_activity_capacitance.csv",
+        "sha256": "d596e799fa19907d212fd6eef38fc1dc0105352b676b673668eea0178ffea18b",
+        "bytes": 475684
+      }
+    },
+    {
+      "design": "b15_opt",
+      "architecture": "CS_C2",
+      "status": "PASS",
+      "receipt": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b15_opt\\CS_C2\\activity_export_receipt.json",
+        "sha256": "6e0a4e51496c783f194e216f5ee520ad1f98f3dfbaab9d547373f267aaf0adda",
+        "bytes": 5860
+      },
+      "frozen_count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C2/b15_opt/CS_C2/activity.counts.gz",
+        "bytes": 123747059,
+        "sha256": "5853850d689be1384831acc639b8cd55aa782bedb7f907cd07979ce35aa6640d"
+      },
+      "complete_count_validation": {
+        "status": "PASS",
+        "format": "PACTCN01",
+        "complete": true,
+        "gzip_crc": "PASS",
+        "cycles": 208800,
+        "mapped_nets": 4672,
+        "payload_bytes": 975513600,
+        "maximum_count_rows_in_memory": 512,
+        "logic_high_occupancy_available": false
+      },
+      "expected_FF_population": 449,
+      "observed_FF_Q_population": 449,
+      "aggregate_integrity": {
+        "all_data": {
+          "status": "PASS",
+          "transition_sum": 139047618,
+          "cap_weighted_sum": 752304978.5414532,
+          "frozen_cap_weighted_sum": 752304978.5414534,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        },
+        "scan_data": {
+          "status": "PASS",
+          "transition_sum": 30930213,
+          "cap_weighted_sum": 298027112.4869864,
+          "frozen_cap_weighted_sum": 298027112.4869864,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        }
+      },
+      "regenerated_CSV": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b15_opt\\CS_C2\\net_activity_capacitance.csv",
+        "sha256": "8a3cb896c6f4351ec372de79c0a92cb74f189cd5a7e2863e8f140add8cb2c686",
+        "bytes": 475064
+      }
+    },
+    {
+      "design": "b15_opt",
+      "architecture": "CS_C3",
+      "status": "PASS",
+      "receipt": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b15_opt\\CS_C3\\activity_export_receipt.json",
+        "sha256": "c7012342f19e0923da0bfdec9fb06c1bf7e80cec71e915fc2cbb578a4bfdc108",
+        "bytes": 5860
+      },
+      "frozen_count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/activity.counts.gz",
+        "bytes": 123656799,
+        "sha256": "9500804177bba5a18eb80c984ec58e3fcec48cd06ef65fb8fea462597cb872c9"
+      },
+      "complete_count_validation": {
+        "status": "PASS",
+        "format": "PACTCN01",
+        "complete": true,
+        "gzip_crc": "PASS",
+        "cycles": 208800,
+        "mapped_nets": 4672,
+        "payload_bytes": 975513600,
+        "maximum_count_rows_in_memory": 512,
+        "logic_high_occupancy_available": false
+      },
+      "expected_FF_population": 449,
+      "observed_FF_Q_population": 449,
+      "aggregate_integrity": {
+        "all_data": {
+          "status": "PASS",
+          "transition_sum": 139418764,
+          "cap_weighted_sum": 755008752.6838192,
+          "frozen_cap_weighted_sum": 755008752.683819,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        },
+        "scan_data": {
+          "status": "PASS",
+          "transition_sum": 31121803,
+          "cap_weighted_sum": 300132728.68676126,
+          "frozen_cap_weighted_sum": 300132728.68676126,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        }
+      },
+      "regenerated_CSV": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b15_opt\\CS_C3\\net_activity_capacitance.csv",
+        "sha256": "efcaf9401c67affde33b8949be0e2a196bc7dff11ad7555a263d5d87202fee6e",
+        "bytes": 474899
+      }
+    },
+    {
+      "design": "b15_opt",
+      "architecture": "B5",
+      "status": "PASS",
+      "receipt": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b15_opt\\B5\\activity_export_receipt.json",
+        "sha256": "5a97935b8e3399299b505c31f7cd67316579568c6ada371dfd33363551a581a6",
+        "bytes": 5830
+      },
+      "frozen_count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5/activity.counts.gz",
+        "bytes": 114949787,
+        "sha256": "11a7291f0ddc89df1d0d00256b5d9ccf4a601a6415ab83ebf7859b07c99f1812"
+      },
+      "complete_count_validation": {
+        "status": "PASS",
+        "format": "PACTCN01",
+        "complete": true,
+        "gzip_crc": "PASS",
+        "cycles": 208800,
+        "mapped_nets": 4669,
+        "payload_bytes": 974887200,
+        "maximum_count_rows_in_memory": 512,
+        "logic_high_occupancy_available": false
+      },
+      "expected_FF_population": 449,
+      "observed_FF_Q_population": 449,
+      "aggregate_integrity": {
+        "all_data": {
+          "status": "PASS",
+          "transition_sum": 110973429,
+          "cap_weighted_sum": 610729605.6231519,
+          "frozen_cap_weighted_sum": 610729605.623152,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        },
+        "scan_data": {
+          "status": "PASS",
+          "transition_sum": 21064148,
+          "cap_weighted_sum": 212580432.45435408,
+          "frozen_cap_weighted_sum": 212580432.4543541,
+          "cap_weighted_relative_tolerance": 1e-12,
+          "cap_weighted_absolute_tolerance": 1e-07
+        }
+      },
+      "regenerated_CSV": {
+        "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b15_opt\\B5\\net_activity_capacitance.csv",
+        "sha256": "1a3d1b940c97ad67dd3a6fe433d488fd6c2f99daa5c26aedef393fdc1ca1d44b",
+        "bytes": 476142
+      }
+    }
+  ]
+}

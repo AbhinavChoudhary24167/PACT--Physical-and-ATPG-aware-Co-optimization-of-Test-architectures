@@ -155,6 +155,9 @@ class Audit:
 
 
 def run(parent, output_dir, check_payload):
+    for name in ("selected_architectures.json", "artifact_reuse_manifest.json"):
+        if (output_dir / name).exists():
+            raise ValueError("Preserve existing audit/selection; use a new --output-dir: " + str(output_dir / name))
     audit = Audit(parent)
     publication = []
     pubfiles = subprocess.check_output(["git", "ls-tree", "-r", "--name-only", parent,

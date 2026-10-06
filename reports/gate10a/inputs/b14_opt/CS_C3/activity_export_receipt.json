@@ -1,0 +1,156 @@
+{
+  "schema": "pact_gate10a_frozen_activity_export_v1",
+  "status": "PASS",
+  "started_utc": "2026-10-06T03:32:54.637083+00:00",
+  "completed_utc": "2026-10-06T03:32:57.317609+00:00",
+  "preregistered_commit": "b9869834a3479a57f256c83fa74a4617faab4af2",
+  "parent_published_commit": "53ebab37fd76970d7c5e676b0caec13c7c16296e",
+  "selection_binding": {
+    "path": "repo://reports/gate10a/selected_architectures.json",
+    "bytes": 67710,
+    "sha256": "3299e85c55dc4de0f69d8663cb49a77abdabfaff9d7ffac2f021c3c474bc7e20"
+  },
+  "design": "b14_opt",
+  "architecture": "CS_C3",
+  "architecture_sha256": "43917a830d99692bf83e451f33a595d384c0d35af3d2900f6b861699c3601a20",
+  "FF_Q_population": 245,
+  "input_verifications": [
+    {
+      "expected": {
+        "path": "repo://src/pact/analysis/phase2b_reference.py",
+        "bytes": 2057,
+        "sha256": "cafeab351fd02136db54dbcf52a8015a4923530d6fcf76d13ae4ca305d39bc53"
+      },
+      "observed": {
+        "sha256": "cafeab351fd02136db54dbcf52a8015a4923530d6fcf76d13ae4ca305d39bc53",
+        "bytes": 2057
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C3/b14_opt/CS_C3/activity.counts.gz",
+        "bytes": 56305136,
+        "sha256": "8ef30cf3333c8a46c35f1d8a18751aa7840983a9761075cb509e8a9abe4fae80"
+      },
+      "observed": {
+        "sha256": "8ef30cf3333c8a46c35f1d8a18751aa7840983a9761075cb509e8a9abe4fae80",
+        "bytes": 56305136
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 511470,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C3/b14_opt/CS_C3/net_mapping.json",
+        "sha256": "be23fb2e8c82fbf1f704b8f76bdf1170878d540625dadd38d3ef1009a9fc9f0c"
+      },
+      "observed": {
+        "sha256": "be23fb2e8c82fbf1f704b8f76bdf1170878d540625dadd38d3ef1009a9fc9f0c",
+        "bytes": 511470
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 4576348,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C3/b14_opt/CS_C3/extracted.spef",
+        "sha256": "46ed04f79f67fdb4e077216991a441257ad0c48d65e7b198561ef2b6f003139f"
+      },
+      "observed": {
+        "sha256": "46ed04f79f67fdb4e077216991a441257ad0c48d65e7b198561ef2b6f003139f",
+        "bytes": 4576348
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/python_transport/activity/GATE09_PRIMARY/b14_opt/CS_C3/normal/result.json",
+        "bytes": 6577,
+        "sha256": "40460f79ab28d57d033519b2dc9dac355003da13a82fe6cc2345e3661147288a"
+      },
+      "observed": {
+        "sha256": "40460f79ab28d57d033519b2dc9dac355003da13a82fe6cc2345e3661147288a",
+        "bytes": 6577
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/python_transport/activity/GATE09_PRIMARY/b14_opt/CS_C3/normal/activity_summary.json",
+        "bytes": 6016,
+        "sha256": "2a575d3adda5295ff3f2f656fd75c162da94fe4c085057e19458c5e3ee384f84"
+      },
+      "observed": {
+        "sha256": "2a575d3adda5295ff3f2f656fd75c162da94fe4c085057e19458c5e3ee384f84",
+        "bytes": 6016
+      },
+      "status": "PASS"
+    }
+  ],
+  "complete_count_validation": {
+    "status": "PASS",
+    "format": "PACTCN01",
+    "complete": true,
+    "gzip_crc": "PASS",
+    "cycles": 111438,
+    "mapped_nets": 3091,
+    "payload_bytes": 344454858,
+    "maximum_count_rows_in_memory": 512,
+    "logic_high_occupancy_available": false
+  },
+  "aggregate_integrity": {
+    "all_data": {
+      "status": "PASS",
+      "transition_sum": 73310251,
+      "cap_weighted_sum": 380193530.1621147,
+      "frozen_cap_weighted_sum": 380193530.1621147,
+      "cap_weighted_relative_tolerance": 1e-12,
+      "cap_weighted_absolute_tolerance": 1e-07
+    },
+    "scan_data": {
+      "status": "PASS",
+      "transition_sum": 9103321,
+      "cap_weighted_sum": 58847309.13710302,
+      "frozen_cap_weighted_sum": 58847309.13710302,
+      "cap_weighted_relative_tolerance": 1e-12,
+      "cap_weighted_absolute_tolerance": 1e-07
+    }
+  },
+  "bounds_um": [
+    0.0,
+    0.0,
+    114.59,
+    114.59
+  ],
+  "source_attribution": "whole net capacitance at source cell origin; external input at port center; source-localized proxy",
+  "scan_cycles": 111438,
+  "capacitance": "OpenRCX ground + Liberty sink pin fF; coupling excluded from frozen primary proxy",
+  "output": {
+    "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\reports\\gate10a\\inputs\\b14_opt\\CS_C3\\net_activity_capacitance.csv",
+    "sha256": "09aca433693efc1b7989c27ca17a743787f3d5116e0969ef58fab2d91741837f",
+    "bytes": 312572
+  },
+  "runtime": {
+    "wall_seconds": 2.6973717999935616,
+    "CPU_seconds": 2.515625,
+    "peak_RSS_bytes": null,
+    "peak_RSS_reason": "Exporter uses bounded count chunks; native process RSS recorded by campaign runner where available"
+  },
+  "tools": {
+    "python": "3.12.5",
+    "numpy": "2.1.3"
+  },
+  "exporter_source": {
+    "path": "C:\\Users\\Abhinav\\OneDrive\\Desktop\\PACT\\PACT\\scripts\\gate10a_export_activity.py",
+    "sha256": "344cc59a50cd806711bb9626973b27413ff389764496eaeecb9fe76658bfb176",
+    "bytes": 11024
+  },
+  "command": [
+    "scripts/gate10a_export_activity.py",
+    "--preregistered-commit",
+    "b9869834a3479a57f256c83fa74a4617faab4af2"
+  ],
+  "scientific_stages_reexecuted": 0,
+  "activity_values": "Existing frozen settled transition counts; no new replay or logic-duty inference"
+}

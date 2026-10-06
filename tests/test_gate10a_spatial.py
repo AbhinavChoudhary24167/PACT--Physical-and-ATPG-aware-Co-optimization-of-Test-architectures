@@ -1,5 +1,9 @@
 """Synthetic controls only; never inspect architecture power/IR outcomes."""
 import math
+import gzip
+import struct
+import hashlib
+import json
 
 import pytest
 
@@ -210,3 +214,67 @@ def test_ir_terminal_adapter_uses_source_origin_not_terminal_position():
     rows[0]["Voltage"] = "1.2"
     with pytest.raises(ValueError, match="exceeds registered supply"):
         spatial.ir_terminal_points(rows, instances, supply_voltage_v=1.1)
+
+
+def _compact(path, names, cycles, *, footer=b"PACTDONE"):
+    with gzip.open(path, "wb") as stream:
+        stream.write(b"PACTCN01" + struct.pack("<II", len(names), len(cycles)))
+        for name in names:
+            encoded = name.encode()
+            stream.write(struct.pack("<I", len(encoded)) + encoded)
+        stream.write(bytes(value for cycle in cycles for value in cycle))
+        stream.write(footer)
+
+
+def test_compact_stream_reduction_validates_complete_footer_net_order_and_dimensions(tmp_path):
+    path = tmp_path / "counts.gz"
+    cycles = [[255, 1], [2, 3]] * 300
+    _compact(path, ["a", "b"], cycles)
+    totals = spatial.compact_net_totals(path, ["a", "b"], len(cycles))
+    assert list(totals) == [257 * 300, 4 * 300]  # exceeds uint8 and spans chunk boundary
+    with pytest.raises(ValueError, match="net mapping differs"):
+        spatial.compact_net_totals(path, ["a", "c"], len(cycles))
+    with pytest.raises(ValueError, match="dimensions differ"):
+        spatial.compact_net_totals(path, ["a", "b"], len(cycles) - 1)
+    _compact(path, ["a", "b"], cycles, footer=b"PARTDONE")
+    with pytest.raises(ValueError, match="completion footer"):
+        spatial.compact_net_totals(path, ["a", "b"], len(cycles))
+    _compact(path, ["a", "b"], cycles, footer=b"PACTDONEextra")
+    with pytest.raises(ValueError, match="trailing"):
+        spatial.compact_net_totals(path, ["a", "b"], len(cycles))
+
+
+def test_primitive_row_reconstruction_excludes_coupling_but_validates_static_pin_cap():
+    mapping = dict(bounds_um=BOUNDS, nets={
+        "a": dict(source="u/Q", xy_um=[1, 2], pin_cap_ff=2, scan_data=True),
+        "b": dict(source="u/Z", xy_um=[3, 4], pin_cap_ff=1, scan_data=False)})
+    caps = {"a": dict(ground_ff=3, coupling_ff=100)}
+    rows = spatial.net_rows_from_totals([4, 0], ["a", "b"], mapping, caps)
+    assert rows[0]["ground_pin_ff"] == 5
+    assert rows[0]["incident_coupling_ff"] == 100
+    assert rows[1]["ground_pin_ff"] is None
+    with pytest.raises(ValueError, match="Switched net missing SPEF"):
+        spatial.net_rows_from_totals([4, 1], ["a", "b"], mapping, caps)
+    mapping["nets"]["b"]["pin_cap_ff"] = None
+    with pytest.raises(ValueError, match="Invalid mapped Liberty"):
+        spatial.net_rows_from_totals([4, 0], ["a", "b"], mapping, caps)
+
+
+def test_derivation_checks_bound_primitives_and_spef_before_rebuilding_csv(tmp_path):
+    path = tmp_path / "counts.gz"
+    _compact(path, ["a"], [[1], [3]])
+    mapping = tmp_path / "mapping.json"
+    mapping.write_text(json.dumps(dict(bounds_um=BOUNDS, nets={
+        "a": dict(source="u/Q", xy_um=[1, 2], pin_cap_ff=2, scan_data=True)})))
+    spef = tmp_path / "input.spef"
+    spef.write_text('*SPEF "IEEE 1481-1998"\n*C_UNIT 1 FF\n*NAME_MAP\n*1 a\n'
+                    '*D_NET *1 3\n*CAP\n1 *1:1 3\n*END\n')
+    expected = {key: dict(sha256=hashlib.sha256(p.read_bytes()).hexdigest(), bytes=p.stat().st_size)
+                for key, p in (("counts", path), ("mapping", mapping), ("SPEF", spef))}
+    rows, receipt = spatial.derive_net_rows(path, mapping, spef, 2, expected_bindings=expected)
+    assert rows[0]["ground_pin_ff"] == 5
+    assert receipt["total_cap_ff_transitions"] == 20
+    assert receipt["ff_q_source_nets"] == 1
+    mapping.write_text(mapping.read_text() + " ")
+    with pytest.raises(ValueError, match="Frozen primitive binding changed"):
+        spatial.derive_net_rows(path, mapping, spef, 2, expected_bindings=expected)

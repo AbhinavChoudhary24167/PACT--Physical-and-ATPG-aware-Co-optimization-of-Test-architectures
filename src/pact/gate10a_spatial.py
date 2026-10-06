@@ -12,6 +12,10 @@ from __future__ import annotations
 
 import math
 import json
+import gzip
+import hashlib
+from pathlib import Path
+import struct
 from collections.abc import Iterable, Mapping, Sequence
 
 import numpy as np
@@ -117,6 +121,126 @@ def regional_activity(net_rows: Iterable[Mapping], bounds_um: Sequence[float],
                 scope="all_data; clocks and PG excluded by frozen net inventory",
                 attribution="whole-net ground-plus-pin capacitance at source cell origin or input port center",
                 temporal_population="all measured load and unload shift cycles; setup/capture excluded")
+
+
+def compact_net_totals(counts_path, names: Sequence[str], shift_cycles: int) -> np.ndarray:
+    """Validate and reduce frozen PACTCN01 counts in at most 512-cycle chunks.
+
+    No simulation, count mutation, uncompressed trace, or cycles JSON is needed.
+    Names and the cycle count must already come from qualified frozen bindings.
+    The complete footer and gzip integrity are checked before totals are usable.
+    """
+    names = list(names)
+    if not names or names != sorted(set(names)) or any(not isinstance(name, str) or not name for name in names):
+        raise ValueError("Sorted unique complete net names required")
+    if type(shift_cycles) is not int or not 1 <= shift_cycles <= 2**32 - 1:
+        raise ValueError("Valid complete compact cycle count required")
+    totals = np.zeros(len(names), np.uint64)
+    with gzip.open(counts_path, "rb") as stream:
+        def exact(size):
+            data = stream.read(size)
+            if len(data) != size:
+                raise ValueError("Incomplete compact activity output")
+            return data
+        if exact(8) != b"PACTCN01":
+            raise ValueError("Unsupported compact activity format")
+        width, cycles = struct.unpack("<II", exact(8))
+        if width != len(names) or cycles != shift_cycles:
+            raise ValueError("Compact activity dimensions differ from frozen workload")
+        for expected in names:
+            length = struct.unpack("<I", exact(4))[0]
+            # A corrupted length cannot trigger an unbounded allocation/read.
+            if length != len(expected.encode("utf-8")) or exact(length).decode("utf-8") != expected:
+                raise ValueError("Compact activity net mapping differs")
+        for first in range(0, cycles, 512):
+            count = min(512, cycles - first)
+            block = np.frombuffer(exact(count * width), np.uint8).reshape(count, width)
+            totals += block.sum(axis=0, dtype=np.uint64)
+        if exact(8) != b"PACTDONE" or stream.read(1):
+            raise ValueError("Missing completion footer or trailing activity output")
+    return totals
+
+
+def net_rows_from_totals(totals: Sequence[int], names: Sequence[str], mapping: Mapping,
+                         extracted_caps: Mapping) -> list[dict]:
+    """Rebuild the frozen activity net CSV from qualified primitive evidence.
+
+    ``extracted_caps`` is frozen ``parse_spef`` output, optionally processed by
+    a separately qualified missing-SPEF resolver. No missing switched-net wire
+    capacitance is assumed to be zero. All mapped pin loads are checked even
+    when a net has no transitions. Coupling is retained but excluded from C×N.
+    """
+    if list(names) != sorted(mapping["nets"]) or len(totals) != len(names):
+        raise ValueError("Complete count/map net identity required")
+    grid = grid_metadata(mapping["bounds_um"], 4)
+    rows = []
+    for name, total in zip(names, totals, strict=True):
+        transitions = _number(total, "net transition count")
+        if not transitions.is_integer():
+            raise ValueError("Integer net transition count required")
+        info = mapping["nets"][name]
+        if not isinstance(info["source"], str) or not info["source"]:
+            raise ValueError("Missing mapped source identity")
+        if type(info["scan_data"]) is not bool or len(info["xy_um"]) != 2:
+            raise ValueError("Invalid frozen net mapping")
+        x, y = [_number(value, "source coordinate um", nonnegative=False) for value in info["xy_um"]]
+        _bin(dict(x_um=x, y_um=y), grid)
+        pin = _number(info["pin_cap_ff"], "mapped Liberty sink pin capacitance")
+        extracted = extracted_caps.get(name)
+        if extracted is None and transitions:
+            raise ValueError("Switched net missing SPEF: " + name)
+        ground = None if extracted is None else _number(extracted["ground_ff"], "SPEF ground capacitance")
+        coupling = None if extracted is None else _number(extracted["coupling_ff"], "SPEF coupling capacitance")
+        cap = None if ground is None else ground + pin
+        if cap is not None and not math.isfinite(cap):
+            raise ValueError("Nonfinite ground-plus-pin capacitance")
+        rows.append(dict(net=name, source=info["source"], x_um=x, y_um=y,
+                         scope_scan_data=info["scan_data"], transitions=int(transitions),
+                         ground_ff=ground, incident_coupling_ff=coupling, pin_ff=pin, ground_pin_ff=cap,
+                         cap_status=("MISSING_STATIC_NET_EXCLUDED" if extracted is None
+                                     else extracted.get("classification", "EXTRACTED"))))
+    return rows
+
+
+def _checked_binding(path, expected: Mapping) -> dict:
+    path = Path(path)
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    actual = dict(path=str(path.resolve()), sha256=digest.hexdigest(), bytes=path.stat().st_size)
+    if actual["sha256"] != expected["sha256"] or actual["bytes"] != expected["bytes"]:
+        raise ValueError("Frozen primitive binding changed: " + str(path))
+    return actual
+
+
+def derive_net_rows(counts_path, mapping_path, spef_path, shift_cycles: int,
+                    *, expected_bindings: Mapping) -> tuple[list[dict], dict]:
+    """Re-derive CSV rows only after all three frozen hashes/sizes match.
+
+    Expected binding keys are counts,mapping,SPEF. A switched missing-SPEF
+    exception must use the separately qualified primitives above; this direct
+    convenience route intentionally has no undocumented capacitance fallback.
+    Caller writes the new CSV and its immutable derivation receipt.
+    """
+    from pact.analysis.phase2b_reference import parse_spef
+
+    bindings = {key: _checked_binding(path, expected_bindings[key])
+                for key, path in (("counts", counts_path), ("mapping", mapping_path), ("SPEF", spef_path))}
+    mapping = json.loads(Path(mapping_path).read_text())
+    names = sorted(mapping["nets"])
+    totals = compact_net_totals(counts_path, names, shift_cycles)
+    rows = net_rows_from_totals(totals, names, mapping, parse_spef(Path(spef_path).read_text()))
+    weighted = math.fsum(row["transitions"] * row["ground_pin_ff"] for row in rows if row["ground_pin_ff"] is not None)
+    if not math.isfinite(weighted):
+        raise ValueError("Nonfinite reconstructed C times transitions")
+    return rows, dict(status="PASS", primitive_bindings=bindings, shift_cycles=shift_cycles,
+                      mapped_nets=len(names), ff_q_source_nets=sum(row["source"].endswith("/Q") for row in rows),
+                      total_transitions=sum(row["transitions"] for row in rows),
+                      total_cap_ff_transitions=weighted,
+                      missing_static_caps=[row["net"] for row in rows if row["ground_pin_ff"] is None],
+                      reduction="uint64 per-net sums; 512-cycle chunks; complete PACTDONE footer",
+                      capacitance="frozen SPEF ground plus mapped Liberty sink pins; coupling excluded")
 
 
 def powered_domain(instance_rows: Iterable[Mapping], bounds_um: Sequence[float], resolution: int) -> dict:
