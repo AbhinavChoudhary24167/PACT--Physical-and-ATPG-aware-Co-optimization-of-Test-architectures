@@ -12,7 +12,7 @@ from pact_generalization_infrastructure import external_binding,REPAIRED
 from pact_cold_start_measure import execute_stage,validate_row,LIB,RULES,CELLS
 from pact_cpu_gates import require_continuation_allowed
 from pact_cpu_continue_search import OUT,RUN
-ACTIVITY_OUT=ROOT/'results/pact_cpu_scalability_20261005/activity/continuation'
+ACTIVITY_OUT=OUT/'activity/continuation'
 
 
 def frozen_tools():

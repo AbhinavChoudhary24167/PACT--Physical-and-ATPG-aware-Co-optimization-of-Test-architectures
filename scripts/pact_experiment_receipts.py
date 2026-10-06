@@ -42,11 +42,10 @@ def atomic_write(path, data, immutable=False):
             os.unlink(temporary)
 
 
-def resources():
+def resources(disk_paths=None):
     record = dict(observed_utc=now(), PID=os.getpid(), disks={})
-    for label, path in (('C', 'C:/' if os.name == 'nt' else '/mnt/c'),
-                        ('D', 'D:/' if os.name == 'nt' else '/mnt/d'),
-                        ('F', 'F:/' if os.name == 'nt' else '/mnt/f')):
+    paths = {'workspace': Path.cwd()} if disk_paths is None else disk_paths
+    for label, path in paths.items():
         if Path(path).exists():
             usage = shutil.disk_usage(path)
             record['disks'][label] = dict(total=usage.total, free=usage.free)
@@ -76,8 +75,9 @@ class LaneReceipts:
     """Completion requires a complete search receipt, never worker disappearance."""
     terminal = {'COMPLETED', 'FAILED', 'INTERRUPTED'}
 
-    def __init__(self, root, inputs):
+    def __init__(self, root, inputs, disk_paths=None):
         self.root, self.inputs = Path(root), inputs
+        self.disk_paths = disk_paths
         self.active = None
 
     def transition(self, epsilon, state, **fields):
@@ -88,7 +88,7 @@ class LaneReceipts:
         if state == 'COMPLETED' and not fields.get('completion_receipt'):
             raise ValueError('Completion requires a bound complete search receipt')
         record = dict(previous, **self.inputs, **fields, state=state, epsilon=epsilon,
-                      updated_utc=now(), resources=resources())
+                      updated_utc=now(), resources=resources(self.disk_paths))
         record.setdefault('registered_utc', record['updated_utc'])
         record.setdefault('exit_code', None)
         record.setdefault('end_utc', None)

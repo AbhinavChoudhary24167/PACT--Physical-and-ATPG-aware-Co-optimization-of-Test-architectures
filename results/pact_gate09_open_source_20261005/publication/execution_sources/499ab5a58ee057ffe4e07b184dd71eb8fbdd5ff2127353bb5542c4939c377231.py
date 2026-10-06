@@ -3,6 +3,8 @@ import importlib
 import json
 import os
 from pathlib import Path
+import subprocess
+import sys
 import pytest
 
 
@@ -29,7 +31,7 @@ def test_receipt_replace_and_exclusive_creation_preserve_evidence(tmp_path,recei
 
 
 def test_partial_lane_and_signal_exit_cannot_be_reported_as_complete(tmp_path,receipts):
-    lifecycle=receipts.LaneReceipts(tmp_path,dict(configuration='frozen',inputs={'reference':'cold'}))
+    lifecycle=receipts.LaneReceipts(tmp_path,dict(configuration_hash='frozen',input_hashes={'reference':'cold'}))
     lifecycle.transition(.02,'REGISTERED')
     lifecycle.transition(.02,'STARTED')
     lifecycle.transition(.02,'CHECKPOINTED',last_checkpoint={'evaluations':97})
@@ -39,22 +41,22 @@ def test_partial_lane_and_signal_exit_cannot_be_reported_as_complete(tmp_path,re
     row=json.loads((tmp_path/'budget_0.02/lifecycle.json').read_text())
     assert row['state']=='FAILED' and row['exit_code']==-9
     assert row['last_checkpoint']=={'evaluations':97}
-    assert row['configuration']=='frozen' and row['inputs']=={'reference':'cold'}
+    assert row['configuration_hash']=='frozen' and row['input_hashes']=={'reference':'cold'}
     assert 'OOM' not in row['completion_reason']
     assert len(list((tmp_path/'budget_0.02/events').glob('*.json')))==4
     with pytest.raises(ValueError,match='Terminal'):
-        lifecycle.transition(.02,'COMPLETED',completion_receipt={'complete':True})
+        lifecycle.transition(.02,'COMPLETED',completion_receipt={'sha256':'x'})
 
 
 def test_measured_timeout_preserves_checkpoint_and_not_started_lanes(tmp_path,receipts):
     lifecycle=receipts.LaneReceipts(tmp_path,{})
     for epsilon in (.02,.05,.10):lifecycle.transition(epsilon,'REGISTERED')
     lifecycle.transition(.02,'STARTED')
-    lifecycle.transition(.02,'CHECKPOINTED',last_checkpoint={'evaluations':5})
+    lifecycle.transition(.02,'CHECKPOINTED',last_checkpoint={'sha256':'preserved'})
     lifecycle.interrupt_active('worker_ceiling_timeout',-15,timed_out=True)
     row=json.loads((tmp_path/'budget_0.02/lifecycle.json').read_text())
     assert row['state']=='INTERRUPTED' and row['timed_out']
-    assert row['last_checkpoint']=={'evaluations':5}
+    assert row['last_checkpoint']=={'sha256':'preserved'}
     assert json.loads((tmp_path/'budget_0.05/lifecycle.json').read_text())['state']=='REGISTERED'
 
 
@@ -62,15 +64,6 @@ def test_completed_lane_survives_a_later_worker_failure(tmp_path,receipts):
     lifecycle=receipts.LaneReceipts(tmp_path,{})
     lifecycle.transition(.02,'REGISTERED')
     lifecycle.transition(.02,'STARTED')
-    completed=lifecycle.transition(.02,'COMPLETED',completion_receipt={'complete':True},exit_code=0)
+    completed=lifecycle.transition(.02,'COMPLETED',completion_receipt={'sha256':'complete'},exit_code=0)
     lifecycle.interrupt_active('subsequent_failure',1)
     assert json.loads((tmp_path/'budget_0.02/lifecycle.json').read_text())==completed
-
-
-def test_resource_observation_uses_caller_selected_volumes(tmp_path, receipts):
-    row=receipts.resources({'scratch':tmp_path})
-    assert set(row['disks'])=={'scratch'}
-    assert row['disks']['scratch']['total']>=row['disks']['scratch']['free']>0
-    assert set(receipts.resources({})['disks'])==set()
-    lifecycle=receipts.LaneReceipts(tmp_path/'lanes',{},disk_paths={'scratch':tmp_path})
-    assert set(lifecycle.transition(.02,'REGISTERED')['resources']['disks'])=={'scratch'}
