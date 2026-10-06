@@ -1,0 +1,110 @@
+{
+  "DRC": 0,
+  "architecture": {
+    "bytes": 60269,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/searches/b15_opt/budget_0.10/architectures/c7e1e9d0a8e05907e62e265ec3f42ea13c7936e388e8278ec73eeea01f17795c.json",
+    "sha256": "a743333ff08eca5f1c551b9833e4caed9ad00332c55fe46051d45ff8dd1e96b0"
+  },
+  "architecture_hash": "c7e1e9d0a8e05907e62e265ec3f42ea13c7936e388e8278ec73eeea01f17795c",
+  "architecture_sha256": "c7e1e9d0a8e05907e62e265ec3f42ea13c7936e388e8278ec73eeea01f17795c",
+  "candidate": "CS_C3",
+  "chain_sizes": [
+    225,
+    224
+  ],
+  "correctness": {
+    "export": {
+      "bytes": 4173506,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/CS_C3/correctness/fan/export.json",
+      "sha256": "8bb009e752d0c6dc286fc77ef96093ceb397bc9732a47b233db1a6e8eaf7bc86"
+    },
+    "faults": {
+      "bytes": 720,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/CS_C3/correctness/test_correctness.json",
+      "sha256": "c7e19f59fee73bcf0463d945de161308a11a9d8d8730a80e45cbbac2931649a7"
+    },
+    "serial": {
+      "bytes": 465,
+      "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/CS_C3/correctness/serial_replay.json",
+      "sha256": "54a8f1d742cfed6526fd79bccf28aa1c2640747a981b805c48655f131d154f90"
+    },
+    "statistics": {
+      "coverage": 96.75,
+      "detected": 55935,
+      "patterns": 464,
+      "total": 57814
+    }
+  },
+  "discovered_attempt": 2694,
+  "discovered_evaluation": 637,
+  "discovered_loop_seconds": 572.430286674,
+  "discovered_utc": "2026-10-05T23:07:24.798633+00:00",
+  "epsilon": 0.1,
+  "generator_status": "PASS",
+  "label": "B2:relocate",
+  "method": "CS_C3",
+  "metrics": {
+    "E_stateful_ff": 397351831.35713077,
+    "H4_stateful_ff": 709.91263036,
+    "H8_stateful_ff": 437.5944110000001,
+    "timing_max_edge_um": 65.02,
+    "wire_um": 3867.13
+  },
+  "new": true,
+  "normalized": [
+    0.9880936674038988,
+    0.957658065251787,
+    0.998963632077979
+  ],
+  "parent": "B2",
+  "parent_architecture_sha256": "1916a36599fbd447fb631bbd33a57a0e7b630958749f69f6d1b87d16b6387452",
+  "parent_reference_hash": "1916a36599fbd447fb631bbd33a57a0e7b630958749f69f6d1b87d16b6387452",
+  "preselection": {
+    "bytes": 7161,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/selections/b15_opt/preselected_candidates.json",
+    "sha256": "3610525925f19d22468118ab89bfd3c4cdbb78620de6d03caf5cf4992eb40e53"
+  },
+  "provenance": {
+    "bytes": 120113,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/CS_C3/physical/route_result.json",
+    "sha256": "40a46bceb493ada51dd470fa1f6c28e5a028f2cabd4470ee262eaaee82e13fde"
+  },
+  "role": "best_H4",
+  "roles": [
+    "best_H4"
+  ],
+  "route_roles": [
+    "best_H4"
+  ],
+  "routed_scan_wirelength_um": 21048.475,
+  "search_receipt": {
+    "bytes": 31599,
+    "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/searches/b15_opt/budget_0.10/search.json",
+    "sha256": "b99d3bcaf141ee4ddc2421a441fe67660cde8f7169c864fbfb213ffead87e5ee"
+  },
+  "seed": 11,
+  "selection_order": 3,
+  "selection_reason": "Unchanged Stage-B pre-route role champion; cross-epsilon role order and exact hash deduplication",
+  "source_revision": "71b059d9d1a00735d79b6a428693eaba549a5f33",
+  "status": "QUALIFIED",
+  "timing": {
+    "congestion": null,
+    "detailed_route_drc_errors": 0,
+    "detailed_route_vias": 48655,
+    "global_route_overflow": null,
+    "global_route_wirelength_um": 160403,
+    "hold_tns_ns": 0,
+    "hold_violated_endpoints": 0,
+    "hold_wns_ns": 0.000626305,
+    "layer_utilization": {},
+    "max_cap_violations": 0,
+    "max_fanout_violations": 0,
+    "max_slew_violations": 0,
+    "pdnsim_classification": "NOT_RUN_NO_QUALIFIED_TEST_CURRENT_MODEL",
+    "setup_tns_ns": 0,
+    "setup_violated_endpoints": 0,
+    "setup_wns_ns": 7.50563,
+    "timing_stage": "global_route",
+    "total_detailed_route_wirelength_um": 110651
+  }
+}
