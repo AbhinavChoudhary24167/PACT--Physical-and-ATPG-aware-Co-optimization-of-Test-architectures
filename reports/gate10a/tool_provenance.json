@@ -1,0 +1,193 @@
+{
+  "schema": "pact_gate10a_tool_provenance_v1",
+  "created_utc": "2026-10-06T03:29:21.130321+00:00",
+  "audit_kind": "READ_ONLY_NO_SCIENTIFIC_EXECUTION",
+  "tools": {
+    "openroad": {
+      "path": "/usr/bin/openroad",
+      "sha256": "fcd7dcfc37d329bd43a7ede75805319a2e70e6879da11d42b4fd1c2e50e645c3",
+      "version": "26Q2-1164-g08f67ee5ec"
+    },
+    "sta": {
+      "path": "/usr/bin/sta",
+      "sha256": "35c1f0b1efeee0757d7b33fe15322ed2580b7c21616e3266f29808d5dbcb266e",
+      "version": "3.1.0"
+    },
+    "OpenROAD_source": {
+      "path": "/root/pact-deps/OpenROAD",
+      "commit": "dc5eee77c45dba8e5ace2fc89c38c6d9a4ed6e0f"
+    },
+    "OpenROAD-flow-scripts_source": {
+      "path": "/root/pact-deps/OpenROAD-flow-scripts",
+      "commit": "5e8b1450d19263f797a27c4f371b9dd19f32a3aa"
+    }
+  },
+  "platform_inputs": {
+    "lib/NangateOpenCellLibrary_typical.lib": {
+      "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+      "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1"
+    },
+    "setRC.tcl": {
+      "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl",
+      "sha256": "521df813bf4da9d7400df33e3f680c9a328cc720830dbfca1188083741503fa5"
+    },
+    "grid_strategy-M1-M4-M7.tcl": {
+      "path": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/grid_strategy-M1-M4-M7.tcl",
+      "sha256": "13f6979391f4e5373b6e0b9e9df6f8f07f69787e970e13e5d170f830b83006db"
+    }
+  },
+  "gate09_expected_openroad_binary_sha256": "fcd7dcfc37d329bd43a7ede75805319a2e70e6879da11d42b4fd1c2e50e645c3",
+  "gate09_openroad_binary_identity_matches": true,
+  "installed_openroad_revision": "08f67ee5ecd14db5a42be8c610bbfd1ccf079299",
+  "installed_declared_opensta_revision": "76c4d6df3537ccce331b5caa812196c3330ba7c4",
+  "source_limitation": "Local OpenROAD checkout is a different revision; OpenSTA submodule is not populated. Runtime embedded Tcl procedure/help is authoritative; local C++ sources are supporting inspection only. Binary linkage has not been rebuilt independently.",
+  "capability_probe_complete": true,
+  "frozen_pdn_inventories": {
+    "b14_opt": {
+      "input_path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B3T/physical/5_2_route.odb.gz",
+      "input_sha256": "9114838298d70a2b0e6f7211e13369e121b8b65def75477436f782db2fb656fa",
+      "structural_inventory": "OpenROAD 26Q2-1164-g08f67ee5ec \nFeatures included (+) or not (-): +GPU +GUI +Python\nThis program is licensed under the BSD-3 license. See the LICENSE file for details.\nComponents of this program may be licensed under more restrictive licenses which must be honored.\nGATE10A_PDN_BLOCK b14_opt DBU 2000 INSTS 3296\nGATE10A_PDN_DIE 0 0 229180 229180\nGATE10A_PDN_TOP_SHAPE VDD 2280 215400 226860 218200\nGATE10A_PDN_TOP_SHAPE VDD 2280 155400 226860 158200\nGATE10A_PDN_TOP_SHAPE VDD 2280 95400 226860 98200\nGATE10A_PDN_TOP_SHAPE VDD 2280 35400 226860 38200\nGATE10A_PDN_NET VDD POWER SWIRES 1 SHAPES 310 VIAS 264 ITERM 2927 BTERM 1 LAYERS metal7 4 metal4 2 metal1 40\nGATE10A_PDN_TOP_SHAPE VSS 2280 185400 226860 188200\nGATE10A_PDN_TOP_SHAPE VSS 2280 125400 226860 128200\nGATE10A_PDN_TOP_SHAPE VSS 2280 65400 226860 68200\nGATE10A_PDN_TOP_SHAPE VSS 2280 5400 226860 8200\nGATE10A_PDN_NET VSS GROUND SWIRES 1 SHAPES 317 VIAS 270 ITERM 2927 BTERM 1 LAYERS metal7 4 metal4 2 metal1 41\nGATE10A_PDN_INVENTORY_COMPLETE\n",
+      "scientific_analysis": false
+    },
+    "b15_opt": {
+      "input_path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/B2/physical/5_2_route.odb.gz",
+      "input_sha256": "bf0be4017462aa6f5784861a86014553435bd9ceca087e196aff23d9383d8d07",
+      "structural_inventory": "OpenROAD 26Q2-1164-g08f67ee5ec \nFeatures included (+) or not (-): +GPU +GUI +Python\nThis program is licensed under the BSD-3 license. See the LICENSE file for details.\nComponents of this program may be licensed under more restrictive licenses which must be honored.\nGATE10A_PDN_BLOCK b15_opt DBU 2000 INSTS 5024\nGATE10A_PDN_DIE 0 0 288310 288310\nGATE10A_PDN_TOP_SHAPE VDD 2280 275400 286140 278200\nGATE10A_PDN_TOP_SHAPE VDD 2280 215400 286140 218200\nGATE10A_PDN_TOP_SHAPE VDD 2280 155400 286140 158200\nGATE10A_PDN_TOP_SHAPE VDD 2280 95400 286140 98200\nGATE10A_PDN_TOP_SHAPE VDD 2280 35400 286140 38200\nGATE10A_PDN_NET VDD POWER SWIRES 1 SHAPES 394 VIAS 336 ITERM 4430 BTERM 1 LAYERS metal7 5 metal4 2 metal1 51\nGATE10A_PDN_TOP_SHAPE VSS 2280 245400 286140 248200\nGATE10A_PDN_TOP_SHAPE VSS 2280 185400 286140 188200\nGATE10A_PDN_TOP_SHAPE VSS 2280 125400 286140 128200\nGATE10A_PDN_TOP_SHAPE VSS 2280 65400 286140 68200\nGATE10A_PDN_TOP_SHAPE VSS 2280 5400 286140 8200\nGATE10A_PDN_NET VSS GROUND SWIRES 1 SHAPES 563 VIAS 504 ITERM 4430 BTERM 1 LAYERS metal7 5 metal4 3 metal1 51\nGATE10A_PDN_INVENTORY_COMPLETE\n",
+      "scientific_analysis": false
+    }
+  },
+  "method_defaults": {
+    "liberty": "NangateOpenCellLibrary_typical.lib",
+    "voltage_v": 1.1,
+    "scan_period_ns": 10,
+    "measured_density_per_ns": "sum(uint8_settled_transitions)/(shift_cycles*10)",
+    "set_power_activity_semantics": "-density is transitions per library UI time unit; runtime divides by time_ui_sta(1). Library unit=1ns.",
+    "activity_syntax": "set_power_activity -pins <instance/pin_collection> -density <transitions/ns> -duty 0.5",
+    "clock": "create_clock -name gate10a_scan -period 10 -waveform {0 5} <frozen_clock_port>; propagated clock activity 2 transitions per cycle",
+    "nonclock_duty": 0.5,
+    "scan_enable_duty": 1.0,
+    "pdn": "REUSE_FROZEN_M1_M4_M7_SPECIAL_WIRES; no synthesis or route changes",
+    "source_model": "Explicit ideal VDD sources two per top-layer VDD stripe, endpoint centers inset half stripe width, square size=stripe width, voltage=1.1V; same per-design source and PDN geometry hashes across architectures",
+    "source_file_columns": [
+      "x_um",
+      "y_um",
+      "square_size_um",
+      "voltage_v"
+    ],
+    "pdnsim_external_resistance_ohm": 0.0,
+    "primary_net": "VDD",
+    "ir_syntax": "analyze_power_grid -net VDD -vsrc <sources.csv> -voltage_file <instance_voltage.csv> -enable_em -em_outfile <segment_current.csv> -error_file <errors.txt>",
+    "voltage_output": "Instance,Terminal,Layer,X location,Y location,Voltage (um,V); instance-terminal samples",
+    "current_output": "Node0 Layer,Node0 X location,Node0 Y location,Node1 Layer,Node1 X location,Node1 Y location,Current (um,A); segment current, not physical current density",
+    "interpretation": "Liberty-characterized activity-derived mean cell power and static VDD resistive solve, not transient droop or thermal evaluation"
+  },
+  "logs": [
+    {
+      "name": "capability_probe",
+      "argv": [
+        "/usr/bin/openroad",
+        "-no_init",
+        "-exit",
+        "scripts/tcl/gate10a_capability_probe.tcl"
+      ],
+      "environment_overrides": {},
+      "started_utc": "2026-10-06T03:29:18.925388+00:00",
+      "wall_seconds": 0.7156595739999716,
+      "returncode": 0,
+      "log": "reports/gate10a/capability_probe.log",
+      "log_sha256": "b02c0c52c244a80711ec54b94f066e5266228870c98c0a9e381c683981ffe56e"
+    },
+    {
+      "name": "pdn_inventory_b14_opt",
+      "argv": [
+        "/usr/bin/openroad",
+        "-no_init",
+        "-exit",
+        "scripts/tcl/gate10a_pdn_inventory.tcl"
+      ],
+      "environment_overrides": {
+        "GATE10A_ODB": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B3T/physical/5_2_route.odb.gz"
+      },
+      "started_utc": "2026-10-06T03:29:19.651240+00:00",
+      "wall_seconds": 0.5026088170000094,
+      "returncode": 0,
+      "log": "reports/gate10a/pdn_inventory_b14_opt.log",
+      "log_sha256": "fd6bb1626e72c3e63b598c6b6bfc88f86f9086cab827f2bf551aba2768124c69"
+    },
+    {
+      "name": "pdn_inventory_b15_opt",
+      "argv": [
+        "/usr/bin/openroad",
+        "-no_init",
+        "-exit",
+        "scripts/tcl/gate10a_pdn_inventory.tcl"
+      ],
+      "environment_overrides": {
+        "GATE10A_ODB": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/B2/physical/5_2_route.odb.gz"
+      },
+      "started_utc": "2026-10-06T03:29:20.184183+00:00",
+      "wall_seconds": 0.6674613420000242,
+      "returncode": 0,
+      "log": "reports/gate10a/pdn_inventory_b15_opt.log",
+      "log_sha256": "b05bc59e58c701499cb7378cec73b526d3b77574d72b8a39b1da1db7a0eb4f4f"
+    },
+    {
+      "name": "version_openroad",
+      "argv": [
+        "/usr/bin/openroad",
+        "-version"
+      ],
+      "environment_overrides": {},
+      "started_utc": "2026-10-06T03:29:20.976356+00:00",
+      "wall_seconds": 0.056375071999980264,
+      "returncode": 0,
+      "log": "reports/gate10a/version_openroad.log",
+      "log_sha256": "a7935a6c7db7007d3860c380d9ae971cdb03d52eff93656bd2aa2a9a37e1e15d"
+    },
+    {
+      "name": "version_sta",
+      "argv": [
+        "/usr/bin/sta",
+        "-version"
+      ],
+      "environment_overrides": {},
+      "started_utc": "2026-10-06T03:29:21.051062+00:00",
+      "wall_seconds": 0.010353439999960301,
+      "returncode": 0,
+      "log": "reports/gate10a/version_sta.log",
+      "log_sha256": "b2f44d3b6e29f8b1b73ea4735f006affc4d198e1fd9c7d50e736159b1ef636c6"
+    },
+    {
+      "name": "source_OpenROAD",
+      "argv": [
+        "git",
+        "-C",
+        "/root/pact-deps/OpenROAD",
+        "rev-parse",
+        "HEAD"
+      ],
+      "environment_overrides": {},
+      "started_utc": "2026-10-06T03:29:21.068146+00:00",
+      "wall_seconds": 0.016096453999978166,
+      "returncode": 0,
+      "log": "reports/gate10a/source_OpenROAD.log",
+      "log_sha256": "ff486430bc8950401267fdec23ed2639d0f23ac9c33599630d24c13a1a0860f8"
+    },
+    {
+      "name": "source_OpenROAD-flow-scripts",
+      "argv": [
+        "git",
+        "-C",
+        "/root/pact-deps/OpenROAD-flow-scripts",
+        "rev-parse",
+        "HEAD"
+      ],
+      "environment_overrides": {},
+      "started_utc": "2026-10-06T03:29:21.091401+00:00",
+      "wall_seconds": 0.015649848999998994,
+      "returncode": 0,
+      "log": "reports/gate10a/source_OpenROAD-flow-scripts.log",
+      "log_sha256": "52d230e512465a6d4846a104a86a163eb259e09fcc769405661086116dfda4cf"
+    }
+  ]
+}

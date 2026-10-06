@@ -1,0 +1,1265 @@
+{
+  "schema": "pact_gate10a_selected_architectures_v1",
+  "campaign": "PACT_GATE10A_PRACTICAL_IMPACT_VALIDATION",
+  "parent_published_commit": "53ebab37fd76970d7c5e676b0caec13c7c16296e",
+  "selection_basis": "User required frozen Gate09 set; no Gate10A outcomes considered",
+  "selection": {
+    "b14_opt": [
+      "B3T",
+      "CS_C1",
+      "CS_C3",
+      "B5"
+    ],
+    "b15_opt": [
+      "B2",
+      "CS_C1",
+      "CS_C2",
+      "CS_C3",
+      "B5"
+    ]
+  },
+  "architectures": [
+    {
+      "design": "b14_opt",
+      "architecture": "B3T",
+      "architecture_sha256": "b5ad1f56d2ad0db3f0a029144e5930c3c8a6a1bf70a553e76ef4be0bbb51ab12",
+      "frozen_comparison": "repo://results/pact_gate09_open_source_20261005/final/b14_opt/comparison.json",
+      "frozen_result": {
+        "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/python_transport/activity/GATE09_PRIMARY/b14_opt/B3T/normal/result.json",
+        "bytes": 6523,
+        "sha256": "e342803c24f65d292e4c506771cc039fa2b0693e103debd22cef16b16ad186df"
+      },
+      "source_reference": "B3T",
+      "primary_candidate": "CS_C1",
+      "ff_count": 245,
+      "patterns": 453,
+      "cycles": 111438,
+      "mapped_nets": 3090,
+      "qualification_status": "QUALIFIED",
+      "frozen_metrics": {
+        "E": 381238038.6697165,
+        "H4": 1650.89500312,
+        "H8": 635.5541928099999,
+        "routed_scan_wirelength_um": 7128.285,
+        "WNS": 7.61447,
+        "hold_WNS": 0.000424383,
+        "DRC": 0
+      },
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 44735,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/ff_identity_map.json",
+          "sha256": "623d7fa8821f93acbc40e500e0689f141cac4a9606e4fb660f248c8fd497f1f9"
+        },
+        "patterns": {
+          "bytes": 279307,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/patterns.pat",
+          "sha256": "d46e67d6078dc3d129f0009dad47cdd27bd6c845b8ad1e22fe3ab13c960db8aa"
+        },
+        "placement": {
+          "bytes": 596085,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/placed.def",
+          "sha256": "a12676366256122b66ee34ed091fb88a81568b63ec1454edf6ea5efa15f01f46"
+        }
+      },
+      "SDC": {
+        "bytes": 8469,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "02f23f7e4653dbf8687ec7dcdb2c7095184a6b9337cfa90929dba3d4b0464455"
+      },
+      "source_netlist": {
+        "bytes": 299255,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/compatible.v",
+        "sha256": "782e4d02e92036ae000179dd79a2a82b45abe5948e7427e4e6ca071d709dc4c4"
+      },
+      "source_placed_database": {
+        "bytes": 1911772,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "21ded26bc80ff7a44859bcdd8daef1d50bcf6678fda2c1eba57d91faed9cc98c"
+      },
+      "exact_manifest": {
+        "bytes": 10270,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/manifest.json",
+        "sha256": "b6e356d63d61d8401f07df7dc0714051a1aa4a23e84ac7d4041b22190b711f4a"
+      },
+      "exact_folder": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T",
+      "routed_archive": {
+        "bytes": 1047137,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B3T/physical/5_2_route.odb.gz",
+        "sha256": "9114838298d70a2b0e6f7211e13369e121b8b65def75477436f782db2fb656fa"
+      },
+      "exact_inputs": {
+        "counts.cfg": {
+          "bytes": 22635,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/counts.cfg",
+          "sha256": "3cbadbe9cce9f7e96dfcdceddbf0b23beb56702781ca21de335fb82598d5b330"
+        },
+        "cycles.json": {
+          "bytes": 9680647,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/cycles.json",
+          "sha256": "67159ccf7d1cfc8b7803fa048b2825f6c34f00547529ce12845d48ee700d0f80"
+        },
+        "extracted.spef": {
+          "bytes": 4563733,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/extracted.spef",
+          "sha256": "d30cd20b41e3a11956eab33fbf43c74f111264f2c5284bb0f063f9ac35db8e1d"
+        },
+        "net_mapping.json": {
+          "bytes": 511311,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/net_mapping.json",
+          "sha256": "8efc0f445072c5ea1039793c44b9ef41b4074afe670bf0043c87beed77708435"
+        },
+        "routed.v": {
+          "bytes": 302828,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/routed.v",
+          "sha256": "6c3a464ecaaf46589bfcb4e9df9726822f2a391559e132e22b7c3dd3cad02096"
+        },
+        "stimulus.v": {
+          "bytes": 17485490,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/stimulus.v",
+          "sha256": "e9f85fa646475789ed143c0223e40eadb639b8cfc3fbe5cdded64b6130a07d82"
+        },
+        "workload.json": {
+          "bytes": 633319,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/workload.json",
+          "sha256": "8f5372db25c6eab897a3af09a8343153825598b469c445ce39bacac4fd6cd9b5"
+        }
+      },
+      "count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/activity.counts.gz",
+        "bytes": 56176651,
+        "sha256": "0b3e9b0bdd971b2afba0e47b26846740030300098cca89020836347ebaf7d379"
+      },
+      "count_structure": {
+        "status": "NOT_CHECKED"
+      },
+      "FF_crosscheck": {
+        "status": "PASS",
+        "FF_cycle_values_checked": 27302310,
+        "cycles": 111438,
+        "scope": "Every physical FF Q against independent simultaneous chain replay; compact simulator counts are measurement source"
+      },
+      "FF_Q_population": 245,
+      "bounds_um": [
+        0.0,
+        0.0,
+        114.59,
+        114.59
+      ],
+      "attribution": "whole net capacitance at source cell origin; external input at port center; source-localized proxy",
+      "VCD_available": false,
+      "VCD_reason": "Only the two VCD emission lines removed; all functional statements retained",
+      "logic_high_occupancy_available": false,
+      "unsealed_derived_files": [
+        "net_activity_capacitance.csv",
+        "spatial_bins.json",
+        "per_cycle.csv"
+      ],
+      "derived_file_policy": "Regenerate deterministically from frozen hash-verified counts/mapping/SPEF; current bytes alone are not frozen provenance"
+    },
+    {
+      "design": "b14_opt",
+      "architecture": "CS_C1",
+      "architecture_sha256": "31b6356ec7a8d2cc12a6f4478b142bac4a71f10f9e49f3a8a35c24f15807755a",
+      "frozen_comparison": "repo://results/pact_gate09_open_source_20261005/final/b14_opt/comparison.json",
+      "frozen_result": {
+        "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/python_transport/activity/GATE09_PRIMARY/b14_opt/CS_C1/normal/result.json",
+        "bytes": 6562,
+        "sha256": "47adc871c713a68615ff2dc664bbbf17591e056b70b674ed149c1bfd06f2ec61"
+      },
+      "source_reference": "B3T",
+      "primary_candidate": "CS_C1",
+      "ff_count": 245,
+      "patterns": 453,
+      "cycles": 111438,
+      "mapped_nets": 3091,
+      "qualification_status": "QUALIFIED",
+      "frozen_metrics": {
+        "E": 379875624.2417319,
+        "H4": 1622.7002847199997,
+        "H8": 599.40624718,
+        "routed_scan_wirelength_um": 7131.4,
+        "WNS": 7.61423,
+        "hold_WNS": 0.000759365,
+        "DRC": 0
+      },
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 44735,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/ff_identity_map.json",
+          "sha256": "623d7fa8821f93acbc40e500e0689f141cac4a9606e4fb660f248c8fd497f1f9"
+        },
+        "patterns": {
+          "bytes": 279307,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/patterns.pat",
+          "sha256": "d46e67d6078dc3d129f0009dad47cdd27bd6c845b8ad1e22fe3ab13c960db8aa"
+        },
+        "placement": {
+          "bytes": 596085,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/placed.def",
+          "sha256": "a12676366256122b66ee34ed091fb88a81568b63ec1454edf6ea5efa15f01f46"
+        }
+      },
+      "SDC": {
+        "bytes": 8469,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "02f23f7e4653dbf8687ec7dcdb2c7095184a6b9337cfa90929dba3d4b0464455"
+      },
+      "source_netlist": {
+        "bytes": 299255,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/compatible.v",
+        "sha256": "782e4d02e92036ae000179dd79a2a82b45abe5948e7427e4e6ca071d709dc4c4"
+      },
+      "source_placed_database": {
+        "bytes": 1911772,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "21ded26bc80ff7a44859bcdd8daef1d50bcf6678fda2c1eba57d91faed9cc98c"
+      },
+      "exact_manifest": {
+        "bytes": 10399,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C1/manifest.json",
+        "sha256": "3c1a2c42e84bd3bf6e0b0b604f75535d2e8a037b22455aee617b5371fc1aa695"
+      },
+      "exact_folder": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C1/b14_opt/CS_C1",
+      "routed_archive": {
+        "bytes": 1046421,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/CS_C1/physical/5_2_route.odb.gz",
+        "sha256": "7a13a7c48dbae6da517a82c4c77552c48815c9037f46970a0ccd51813b42f912"
+      },
+      "exact_inputs": {
+        "counts.cfg": {
+          "bytes": 22642,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C1/b14_opt/CS_C1/counts.cfg",
+          "sha256": "d4182ce4ec5ea538b9979838139a609495c21c7d3dc6f4b34351e9e20cc695dc"
+        },
+        "cycles.json": {
+          "bytes": 9680647,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C1/b14_opt/CS_C1/cycles.json",
+          "sha256": "67159ccf7d1cfc8b7803fa048b2825f6c34f00547529ce12845d48ee700d0f80"
+        },
+        "extracted.spef": {
+          "bytes": 4564912,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C1/b14_opt/CS_C1/extracted.spef",
+          "sha256": "7eddc37780b2399cbc7d2c22659ed0c007aca9f05845e38951f0fe9cef6a7fda"
+        },
+        "net_mapping.json": {
+          "bytes": 511470,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C1/b14_opt/CS_C1/net_mapping.json",
+          "sha256": "be23fb2e8c82fbf1f704b8f76bdf1170878d540625dadd38d3ef1009a9fc9f0c"
+        },
+        "routed.v": {
+          "bytes": 302891,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C1/b14_opt/CS_C1/routed.v",
+          "sha256": "3218c5377646daf42220bd72439e364f95af4eefd5bb5e7c0f9d6c546c69cc1b"
+        },
+        "stimulus.v": {
+          "bytes": 17485490,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C1/b14_opt/CS_C1/stimulus.v",
+          "sha256": "b91afd1a5d153703dec5308214d67fd47c93733d8580293b509192488c87b0e1"
+        },
+        "workload.json": {
+          "bytes": 633319,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C1/b14_opt/CS_C1/workload.json",
+          "sha256": "d656e552617e5993045fb87119f0429a280f3a8a4efe3a629b117208d2484a28"
+        }
+      },
+      "count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C1/b14_opt/CS_C1/activity.counts.gz",
+        "bytes": 56272306,
+        "sha256": "36942c8d15a4ef625d459d75fa169d9638c0350932728ee5500d1a6dedab7377"
+      },
+      "count_structure": {
+        "status": "NOT_CHECKED"
+      },
+      "FF_crosscheck": {
+        "status": "PASS",
+        "FF_cycle_values_checked": 27302310,
+        "cycles": 111438,
+        "scope": "Every physical FF Q against independent simultaneous chain replay; compact simulator counts are measurement source"
+      },
+      "FF_Q_population": 245,
+      "bounds_um": [
+        0.0,
+        0.0,
+        114.59,
+        114.59
+      ],
+      "attribution": "whole net capacitance at source cell origin; external input at port center; source-localized proxy",
+      "VCD_available": false,
+      "VCD_reason": "Only the two VCD emission lines removed; all functional statements retained",
+      "logic_high_occupancy_available": false,
+      "unsealed_derived_files": [
+        "net_activity_capacitance.csv",
+        "spatial_bins.json",
+        "per_cycle.csv"
+      ],
+      "derived_file_policy": "Regenerate deterministically from frozen hash-verified counts/mapping/SPEF; current bytes alone are not frozen provenance"
+    },
+    {
+      "design": "b14_opt",
+      "architecture": "CS_C3",
+      "architecture_sha256": "43917a830d99692bf83e451f33a595d384c0d35af3d2900f6b861699c3601a20",
+      "frozen_comparison": "repo://results/pact_gate09_open_source_20261005/final/b14_opt/comparison.json",
+      "frozen_result": {
+        "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/python_transport/activity/GATE09_PRIMARY/b14_opt/CS_C3/normal/result.json",
+        "bytes": 6577,
+        "sha256": "40460f79ab28d57d033519b2dc9dac355003da13a82fe6cc2345e3661147288a"
+      },
+      "source_reference": "B3T",
+      "primary_candidate": "CS_C1",
+      "ff_count": 245,
+      "patterns": 453,
+      "cycles": 111438,
+      "mapped_nets": 3091,
+      "qualification_status": "QUALIFIED",
+      "frozen_metrics": {
+        "E": 380193530.1621147,
+        "H4": 1622.9468320699998,
+        "H8": 599.1224722300001,
+        "routed_scan_wirelength_um": 7133.06,
+        "WNS": 7.61353,
+        "hold_WNS": 0.000759365,
+        "DRC": 0
+      },
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 44735,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/ff_identity_map.json",
+          "sha256": "623d7fa8821f93acbc40e500e0689f141cac4a9606e4fb660f248c8fd497f1f9"
+        },
+        "patterns": {
+          "bytes": 279307,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/patterns.pat",
+          "sha256": "d46e67d6078dc3d129f0009dad47cdd27bd6c845b8ad1e22fe3ab13c960db8aa"
+        },
+        "placement": {
+          "bytes": 596085,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/placed.def",
+          "sha256": "a12676366256122b66ee34ed091fb88a81568b63ec1454edf6ea5efa15f01f46"
+        }
+      },
+      "SDC": {
+        "bytes": 8469,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "02f23f7e4653dbf8687ec7dcdb2c7095184a6b9337cfa90929dba3d4b0464455"
+      },
+      "source_netlist": {
+        "bytes": 299255,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/compatible.v",
+        "sha256": "782e4d02e92036ae000179dd79a2a82b45abe5948e7427e4e6ca071d709dc4c4"
+      },
+      "source_placed_database": {
+        "bytes": 1911772,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "21ded26bc80ff7a44859bcdd8daef1d50bcf6678fda2c1eba57d91faed9cc98c"
+      },
+      "exact_manifest": {
+        "bytes": 10399,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C3/manifest.json",
+        "sha256": "9546727bb95f35534fe4bceab906a69b905880598dd4b3c19e0229684a384e96"
+      },
+      "exact_folder": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C3/b14_opt/CS_C3",
+      "routed_archive": {
+        "bytes": 1046515,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/CS_C3/physical/5_2_route.odb.gz",
+        "sha256": "3b1c35ce09e6befc88679b14d118d6b969fa350cc3b8f6f433035d71e76bec57"
+      },
+      "exact_inputs": {
+        "counts.cfg": {
+          "bytes": 22642,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C3/b14_opt/CS_C3/counts.cfg",
+          "sha256": "d4182ce4ec5ea538b9979838139a609495c21c7d3dc6f4b34351e9e20cc695dc"
+        },
+        "cycles.json": {
+          "bytes": 9680647,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C3/b14_opt/CS_C3/cycles.json",
+          "sha256": "67159ccf7d1cfc8b7803fa048b2825f6c34f00547529ce12845d48ee700d0f80"
+        },
+        "extracted.spef": {
+          "bytes": 4576348,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C3/b14_opt/CS_C3/extracted.spef",
+          "sha256": "46ed04f79f67fdb4e077216991a441257ad0c48d65e7b198561ef2b6f003139f"
+        },
+        "net_mapping.json": {
+          "bytes": 511470,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C3/b14_opt/CS_C3/net_mapping.json",
+          "sha256": "be23fb2e8c82fbf1f704b8f76bdf1170878d540625dadd38d3ef1009a9fc9f0c"
+        },
+        "routed.v": {
+          "bytes": 302891,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C3/b14_opt/CS_C3/routed.v",
+          "sha256": "aff40f669babe04e39bbf0fb343b46d4640ba7f2eaf7d27aafee246fab4510ba"
+        },
+        "stimulus.v": {
+          "bytes": 17485490,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C3/b14_opt/CS_C3/stimulus.v",
+          "sha256": "0fa413fa981e2782302fd47cac6ce8fea337466b899e10c86522d97e2b010e32"
+        },
+        "workload.json": {
+          "bytes": 633319,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C3/b14_opt/CS_C3/workload.json",
+          "sha256": "076a9111bc6e8aa096223f004b5dd61f01105e0990d73d7acc2a947d41911912"
+        }
+      },
+      "count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/CS_C3/b14_opt/CS_C3/activity.counts.gz",
+        "bytes": 56305136,
+        "sha256": "8ef30cf3333c8a46c35f1d8a18751aa7840983a9761075cb509e8a9abe4fae80"
+      },
+      "count_structure": {
+        "status": "NOT_CHECKED"
+      },
+      "FF_crosscheck": {
+        "status": "PASS",
+        "FF_cycle_values_checked": 27302310,
+        "cycles": 111438,
+        "scope": "Every physical FF Q against independent simultaneous chain replay; compact simulator counts are measurement source"
+      },
+      "FF_Q_population": 245,
+      "bounds_um": [
+        0.0,
+        0.0,
+        114.59,
+        114.59
+      ],
+      "attribution": "whole net capacitance at source cell origin; external input at port center; source-localized proxy",
+      "VCD_available": false,
+      "VCD_reason": "Only the two VCD emission lines removed; all functional statements retained",
+      "logic_high_occupancy_available": false,
+      "unsealed_derived_files": [
+        "net_activity_capacitance.csv",
+        "spatial_bins.json",
+        "per_cycle.csv"
+      ],
+      "derived_file_policy": "Regenerate deterministically from frozen hash-verified counts/mapping/SPEF; current bytes alone are not frozen provenance"
+    },
+    {
+      "design": "b14_opt",
+      "architecture": "B5",
+      "architecture_sha256": "7ca4aaec5ae6074e96425e58997d976d63577971b01816ff7bd95f3c7f300816",
+      "frozen_comparison": "repo://results/pact_gate09_open_source_20261005/final/b14_opt/comparison.json",
+      "frozen_result": {
+        "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/python_transport/activity/GATE09_PRIMARY/b14_opt/B5/normal/result.json",
+        "bytes": 6478,
+        "sha256": "8fd2f637d55b50569b75b0dbd93218b8f72bc62264ecc059e04149d3cdfc57b4"
+      },
+      "source_reference": "B3T",
+      "primary_candidate": "CS_C1",
+      "ff_count": 245,
+      "patterns": 453,
+      "cycles": 111438,
+      "mapped_nets": 3090,
+      "qualification_status": "QUALIFIED",
+      "frozen_metrics": {
+        "E": 304124378.7812191,
+        "H4": 1739.819802954,
+        "H8": 680.6068412740001,
+        "routed_scan_wirelength_um": 8321.8,
+        "WNS": 7.61781,
+        "hold_WNS": 0.000456205,
+        "DRC": 0
+      },
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 44735,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/ff_identity_map.json",
+          "sha256": "623d7fa8821f93acbc40e500e0689f141cac4a9606e4fb660f248c8fd497f1f9"
+        },
+        "patterns": {
+          "bytes": 279307,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/patterns.pat",
+          "sha256": "d46e67d6078dc3d129f0009dad47cdd27bd6c845b8ad1e22fe3ab13c960db8aa"
+        },
+        "placement": {
+          "bytes": 596085,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/placed.def",
+          "sha256": "a12676366256122b66ee34ed091fb88a81568b63ec1454edf6ea5efa15f01f46"
+        }
+      },
+      "SDC": {
+        "bytes": 8469,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "02f23f7e4653dbf8687ec7dcdb2c7095184a6b9337cfa90929dba3d4b0464455"
+      },
+      "source_netlist": {
+        "bytes": 299255,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/inputs/b14_opt/compatible.v",
+        "sha256": "782e4d02e92036ae000179dd79a2a82b45abe5948e7427e4e6ca071d709dc4c4"
+      },
+      "source_placed_database": {
+        "bytes": 1911772,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "21ded26bc80ff7a44859bcdd8daef1d50bcf6678fda2c1eba57d91faed9cc98c"
+      },
+      "exact_manifest": {
+        "bytes": 10229,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B5/manifest.json",
+        "sha256": "b146428766ca1e35cfeb8b8feb725390bf6a1851b5c8d98dc3dbf1b6bb618ad0"
+      },
+      "exact_folder": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B5/b14_opt/B5",
+      "routed_archive": {
+        "bytes": 1050931,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B5/physical/5_2_route.odb.gz",
+        "sha256": "3897bf46e7b64bc2f8eb282449e2a876c0a5718ab1a98d5ecce4e84f422b48c7"
+      },
+      "exact_inputs": {
+        "counts.cfg": {
+          "bytes": 22635,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B5/b14_opt/B5/counts.cfg",
+          "sha256": "3cbadbe9cce9f7e96dfcdceddbf0b23beb56702781ca21de335fb82598d5b330"
+        },
+        "cycles.json": {
+          "bytes": 9680647,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B5/b14_opt/B5/cycles.json",
+          "sha256": "67159ccf7d1cfc8b7803fa048b2825f6c34f00547529ce12845d48ee700d0f80"
+        },
+        "extracted.spef": {
+          "bytes": 4610947,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B5/b14_opt/B5/extracted.spef",
+          "sha256": "1856d2bb1085e1a90b2d234b3f1339b50a2a29adae85d18b507c7ff7f86c0bbd"
+        },
+        "net_mapping.json": {
+          "bytes": 511315,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B5/b14_opt/B5/net_mapping.json",
+          "sha256": "12a51683c37eb6f3f2b25b2d0013ca7d94b9a995e7b55c4304fc7bc4731d77c6"
+        },
+        "routed.v": {
+          "bytes": 302828,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B5/b14_opt/B5/routed.v",
+          "sha256": "caad0f974817a2ccef9b083041b821cc32722a0a5b08e19824b04563df5294a4"
+        },
+        "stimulus.v": {
+          "bytes": 17485490,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B5/b14_opt/B5/stimulus.v",
+          "sha256": "77e9b584509ebd4b1a4e6434d174a28ade22dfc27be89572f25bfe73b2030fd6"
+        },
+        "workload.json": {
+          "bytes": 633319,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B5/b14_opt/B5/workload.json",
+          "sha256": "a830abc7917bc304cf78d5af208574121200b52cb1e40f4b40034ddb4c5424b1"
+        }
+      },
+      "count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B5/b14_opt/B5/activity.counts.gz",
+        "bytes": 48882872,
+        "sha256": "d6b5593fb4cdd8f420e1b902639c455ee3af6e0a0c04158ae4a18d0ebd05daa2"
+      },
+      "count_structure": {
+        "status": "NOT_CHECKED"
+      },
+      "FF_crosscheck": {
+        "status": "PASS",
+        "FF_cycle_values_checked": 27302310,
+        "cycles": 111438,
+        "scope": "Every physical FF Q against independent simultaneous chain replay; compact simulator counts are measurement source"
+      },
+      "FF_Q_population": 245,
+      "bounds_um": [
+        0.0,
+        0.0,
+        114.59,
+        114.59
+      ],
+      "attribution": "whole net capacitance at source cell origin; external input at port center; source-localized proxy",
+      "VCD_available": false,
+      "VCD_reason": "Only the two VCD emission lines removed; all functional statements retained",
+      "logic_high_occupancy_available": false,
+      "unsealed_derived_files": [
+        "net_activity_capacitance.csv",
+        "spatial_bins.json",
+        "per_cycle.csv"
+      ],
+      "derived_file_policy": "Regenerate deterministically from frozen hash-verified counts/mapping/SPEF; current bytes alone are not frozen provenance"
+    },
+    {
+      "design": "b15_opt",
+      "architecture": "B2",
+      "architecture_sha256": "1916a36599fbd447fb631bbd33a57a0e7b630958749f69f6d1b87d16b6387452",
+      "frozen_comparison": "repo://results/pact_gate09_open_source_20261005/final/b15_opt/comparison.json",
+      "frozen_result": {
+        "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/activity/GATE09_PRIMARY/b15_opt/B2/normal/result.json",
+        "bytes": 6664,
+        "sha256": "5f25be47f64a15217cbbaa001fe54a7d820a69c629a80fa7cea4163341ef5afb"
+      },
+      "source_reference": "B2",
+      "primary_candidate": "CS_C1",
+      "ff_count": 449,
+      "patterns": 464,
+      "cycles": 208800,
+      "mapped_nets": 4672,
+      "qualification_status": "QUALIFIED",
+      "frozen_metrics": {
+        "E": 762723552.4952054,
+        "H4": 1610.960223,
+        "H8": 724.46072297,
+        "routed_scan_wirelength_um": 20788.795,
+        "WNS": 7.50478,
+        "hold_WNS": 9.57567e-07,
+        "DRC": 0
+      },
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 80505,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/ff_identity_map.json",
+          "sha256": "8c5e4137826e4a0e3e2fd035d92e10713e36e8ac76d1b942362cefc920dccec1"
+        },
+        "patterns": {
+          "bytes": 487355,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/patterns.pat",
+          "sha256": "89b3b47b37131976501265aa72b96de79504ac12ed1cf95887aec6c16e387002"
+        },
+        "placement": {
+          "bytes": 921071,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/placed.def",
+          "sha256": "ef180416e080e2cf7b60d57431d990cf695f1f8750c7da92625584d5e7d68f10"
+        }
+      },
+      "SDC": {
+        "bytes": 10285,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "f401061c2f34b7689dfa8cb86e08d877ad444103fe6d897be619d635f52857e6"
+      },
+      "source_netlist": {
+        "bytes": 497703,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/compatible.v",
+        "sha256": "3a1f3e6dfcfa3e7e457fa6c3b9e7baffa8a651ce6e43641efc82a59a9c8de536"
+      },
+      "source_placed_database": {
+        "bytes": 2719149,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "bf91895d023be9e935d4948e9ca76f40d7bef722d5c863b09479a1141e41ae67"
+      },
+      "exact_manifest": {
+        "bytes": 10469,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B2/manifest.json",
+        "sha256": "e15446fbdbebc63aef1f797eea79532be129b8ba0d30b7f88bb1c75756a63890"
+      },
+      "exact_folder": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B2/b15_opt/B2",
+      "routed_archive": {
+        "bytes": 1628427,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/B2/physical/5_2_route.odb.gz",
+        "sha256": "bf0be4017462aa6f5784861a86014553435bd9ceca087e196aff23d9383d8d07"
+      },
+      "exact_inputs": {
+        "counts.cfg": {
+          "bytes": 37026,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B2/b15_opt/B2/counts.cfg",
+          "sha256": "ea822eaa85bf6afb09956c60dd5916035f30d762f42fcd2b949d7baf9d0aa2dd"
+        },
+        "cycles.json": {
+          "bytes": 18321413,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B2/b15_opt/B2/cycles.json",
+          "sha256": "7d6324d28c62c1f9c165b78864c9112b96cfe0c05cb119ccf172f39d2724ef9b"
+        },
+        "extracted.spef": {
+          "bytes": 7735531,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B2/b15_opt/B2/extracted.spef",
+          "sha256": "add63d4af5bb7f34e6ed134e471f482d36d1318c76710bbaf54a0cbaf422f9d7"
+        },
+        "net_mapping.json": {
+          "bytes": 775850,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B2/b15_opt/B2/net_mapping.json",
+          "sha256": "efebd8056df271a6e98c2ed02720468fc397cbc4f999683ec5f8bd8f2a078104"
+        },
+        "routed.v": {
+          "bytes": 506169,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B2/b15_opt/B2/routed.v",
+          "sha256": "be29fb6203f844c15d3af14a46bd6e9e647b502ea500c563ba01f3769301ca1e"
+        },
+        "stimulus.v": {
+          "bytes": 32587985,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B2/b15_opt/B2/stimulus.v",
+          "sha256": "1538050f7357ea56a875de4f0cfc37a9213d0c54eb2be8737be4f246dd3a3fce"
+        },
+        "workload.json": {
+          "bytes": 1036601,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B2/b15_opt/B2/workload.json",
+          "sha256": "a37ee0c5801a35435c0a0ba6f0db72ef521a28bdd95a9905cd7e616825849ce9"
+        }
+      },
+      "count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B2/b15_opt/B2/activity.counts.gz",
+        "bytes": 123941096,
+        "sha256": "c41576dab1cc2efe8bd59ac4feb785781e3602b41a106dc1fc34ea0d3c9d8d82"
+      },
+      "count_structure": {
+        "status": "NOT_CHECKED"
+      },
+      "FF_crosscheck": {
+        "status": "PASS",
+        "FF_cycle_values_checked": 93751200,
+        "cycles": 208800,
+        "scope": "Every physical FF Q against independent simultaneous chain replay; compact simulator counts are measurement source"
+      },
+      "FF_Q_population": 449,
+      "bounds_um": [
+        0.0,
+        0.0,
+        144.155,
+        144.155
+      ],
+      "attribution": "whole net capacitance at source cell origin; external input at port center; source-localized proxy",
+      "VCD_available": false,
+      "VCD_reason": "Only the two VCD emission lines removed; all functional statements retained",
+      "logic_high_occupancy_available": false,
+      "unsealed_derived_files": [
+        "net_activity_capacitance.csv",
+        "spatial_bins.json",
+        "per_cycle.csv"
+      ],
+      "derived_file_policy": "Regenerate deterministically from frozen hash-verified counts/mapping/SPEF; current bytes alone are not frozen provenance"
+    },
+    {
+      "design": "b15_opt",
+      "architecture": "CS_C1",
+      "architecture_sha256": "eb79b4b3d6192940bbd55c1dcadaa8f5985c8a8919befb892276e6ada5095593",
+      "frozen_comparison": "repo://results/pact_gate09_open_source_20261005/final/b15_opt/comparison.json",
+      "frozen_result": {
+        "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/activity/GATE09_PRIMARY/b15_opt/CS_C1/normal/result.json",
+        "bytes": 6743,
+        "sha256": "c116976416d530cdb90545e5e0c8ff8853c758e17d6a4e221946b8fafea367ce"
+      },
+      "source_reference": "B2",
+      "primary_candidate": "CS_C1",
+      "ff_count": 449,
+      "patterns": 464,
+      "cycles": 208800,
+      "mapped_nets": 4672,
+      "qualification_status": "QUALIFIED",
+      "frozen_metrics": {
+        "E": 753061810.7734706,
+        "H4": 1653.14241231,
+        "H8": 712.26981783,
+        "routed_scan_wirelength_um": 21066.57,
+        "WNS": 7.50547,
+        "hold_WNS": 0.000626305,
+        "DRC": 0
+      },
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 80505,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/ff_identity_map.json",
+          "sha256": "8c5e4137826e4a0e3e2fd035d92e10713e36e8ac76d1b942362cefc920dccec1"
+        },
+        "patterns": {
+          "bytes": 487355,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/patterns.pat",
+          "sha256": "89b3b47b37131976501265aa72b96de79504ac12ed1cf95887aec6c16e387002"
+        },
+        "placement": {
+          "bytes": 921071,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/placed.def",
+          "sha256": "ef180416e080e2cf7b60d57431d990cf695f1f8750c7da92625584d5e7d68f10"
+        }
+      },
+      "SDC": {
+        "bytes": 10285,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "f401061c2f34b7689dfa8cb86e08d877ad444103fe6d897be619d635f52857e6"
+      },
+      "source_netlist": {
+        "bytes": 497703,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/compatible.v",
+        "sha256": "3a1f3e6dfcfa3e7e457fa6c3b9e7baffa8a651ce6e43641efc82a59a9c8de536"
+      },
+      "source_placed_database": {
+        "bytes": 2719149,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "bf91895d023be9e935d4948e9ca76f40d7bef722d5c863b09479a1141e41ae67"
+      },
+      "exact_manifest": {
+        "bytes": 10632,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C1/manifest.json",
+        "sha256": "d08d8d26e6d573525dc1787d2941f45df47b868dfb6e256d598c69ee94cedf04"
+      },
+      "exact_folder": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C1/b15_opt/CS_C1",
+      "routed_archive": {
+        "bytes": 1628533,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/CS_C1/physical/5_2_route.odb.gz",
+        "sha256": "83a655b9aedfcf3e7bc5ceb0c5a32de7d7e4f4be21d065ffb049998d8af294f5"
+      },
+      "exact_inputs": {
+        "counts.cfg": {
+          "bytes": 37026,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C1/b15_opt/CS_C1/counts.cfg",
+          "sha256": "ea822eaa85bf6afb09956c60dd5916035f30d762f42fcd2b949d7baf9d0aa2dd"
+        },
+        "cycles.json": {
+          "bytes": 18321413,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C1/b15_opt/CS_C1/cycles.json",
+          "sha256": "7d6324d28c62c1f9c165b78864c9112b96cfe0c05cb119ccf172f39d2724ef9b"
+        },
+        "extracted.spef": {
+          "bytes": 7738234,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C1/b15_opt/CS_C1/extracted.spef",
+          "sha256": "7b8f218c39342d7566bd8ec7b2385bf619fc4c5d092f2a7c60292882a9a8825f"
+        },
+        "net_mapping.json": {
+          "bytes": 775878,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C1/b15_opt/CS_C1/net_mapping.json",
+          "sha256": "6c7583c12b0df2ce07fcebe1a2a0645b5b38670b01056b29353086459f27289f"
+        },
+        "routed.v": {
+          "bytes": 506169,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C1/b15_opt/CS_C1/routed.v",
+          "sha256": "9710a4b1fcf4a0e710eee1caaa86b0750d095df946c3dec2ce7526f8ddc3203b"
+        },
+        "stimulus.v": {
+          "bytes": 32587985,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C1/b15_opt/CS_C1/stimulus.v",
+          "sha256": "227cd9d1be40dab87caa143097abff251d062c55f5e02c5cfb43ac1db0c845e1"
+        },
+        "workload.json": {
+          "bytes": 1036601,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C1/b15_opt/CS_C1/workload.json",
+          "sha256": "1d1bfd0aa3e601d4a64f8910373140f620c93b43a7f1c22a2a7f5bfb57ab80e5"
+        }
+      },
+      "count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C1/b15_opt/CS_C1/activity.counts.gz",
+        "bytes": 123535549,
+        "sha256": "434bebb71ddab0e3d5081d60f6f365129f8dcd2146d039d9098ef002aff0e849"
+      },
+      "count_structure": {
+        "status": "NOT_CHECKED"
+      },
+      "FF_crosscheck": {
+        "status": "PASS",
+        "FF_cycle_values_checked": 93751200,
+        "cycles": 208800,
+        "scope": "Every physical FF Q against independent simultaneous chain replay; compact simulator counts are measurement source"
+      },
+      "FF_Q_population": 449,
+      "bounds_um": [
+        0.0,
+        0.0,
+        144.155,
+        144.155
+      ],
+      "attribution": "whole net capacitance at source cell origin; external input at port center; source-localized proxy",
+      "VCD_available": false,
+      "VCD_reason": "Only the two VCD emission lines removed; all functional statements retained",
+      "logic_high_occupancy_available": false,
+      "unsealed_derived_files": [
+        "net_activity_capacitance.csv",
+        "spatial_bins.json",
+        "per_cycle.csv"
+      ],
+      "derived_file_policy": "Regenerate deterministically from frozen hash-verified counts/mapping/SPEF; current bytes alone are not frozen provenance"
+    },
+    {
+      "design": "b15_opt",
+      "architecture": "CS_C2",
+      "architecture_sha256": "c0c781c2053b55d8afda586c00c5562021cbe6134c18d4376a5ed706aa86da49",
+      "frozen_comparison": "repo://results/pact_gate09_open_source_20261005/final/b15_opt/comparison.json",
+      "frozen_result": {
+        "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/activity/GATE09_PRIMARY/b15_opt/CS_C2/normal/result.json",
+        "bytes": 6738,
+        "sha256": "33d3bb1676faf438269eaca2766f7d54e3bdded94a32ede4f01ce242549e2903"
+      },
+      "source_reference": "B2",
+      "primary_candidate": "CS_C1",
+      "ff_count": 449,
+      "patterns": 464,
+      "cycles": 208800,
+      "mapped_nets": 4672,
+      "qualification_status": "QUALIFIED",
+      "frozen_metrics": {
+        "E": 752304978.5414534,
+        "H4": 1584.50398223,
+        "H8": 754.5349577600001,
+        "routed_scan_wirelength_um": 20975.105,
+        "WNS": 7.50407,
+        "hold_WNS": 0.000680206,
+        "DRC": 0
+      },
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 80505,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/ff_identity_map.json",
+          "sha256": "8c5e4137826e4a0e3e2fd035d92e10713e36e8ac76d1b942362cefc920dccec1"
+        },
+        "patterns": {
+          "bytes": 487355,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/patterns.pat",
+          "sha256": "89b3b47b37131976501265aa72b96de79504ac12ed1cf95887aec6c16e387002"
+        },
+        "placement": {
+          "bytes": 921071,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/placed.def",
+          "sha256": "ef180416e080e2cf7b60d57431d990cf695f1f8750c7da92625584d5e7d68f10"
+        }
+      },
+      "SDC": {
+        "bytes": 10285,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "f401061c2f34b7689dfa8cb86e08d877ad444103fe6d897be619d635f52857e6"
+      },
+      "source_netlist": {
+        "bytes": 497703,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/compatible.v",
+        "sha256": "3a1f3e6dfcfa3e7e457fa6c3b9e7baffa8a651ce6e43641efc82a59a9c8de536"
+      },
+      "source_placed_database": {
+        "bytes": 2719149,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "bf91895d023be9e935d4948e9ca76f40d7bef722d5c863b09479a1141e41ae67"
+      },
+      "exact_manifest": {
+        "bytes": 10632,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C2/manifest.json",
+        "sha256": "cbdd9a07b2cf31935ff799706021737be49c93bb1ffb746fe92cde64384c0153"
+      },
+      "exact_folder": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C2/b15_opt/CS_C2",
+      "routed_archive": {
+        "bytes": 1626380,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/CS_C2/physical/5_2_route.odb.gz",
+        "sha256": "63347d6b512cfacb6b8708f5bad1c753b1d6a3128fea24454fdea90b462e74b9"
+      },
+      "exact_inputs": {
+        "counts.cfg": {
+          "bytes": 37026,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C2/b15_opt/CS_C2/counts.cfg",
+          "sha256": "ea822eaa85bf6afb09956c60dd5916035f30d762f42fcd2b949d7baf9d0aa2dd"
+        },
+        "cycles.json": {
+          "bytes": 18321413,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C2/b15_opt/CS_C2/cycles.json",
+          "sha256": "7d6324d28c62c1f9c165b78864c9112b96cfe0c05cb119ccf172f39d2724ef9b"
+        },
+        "extracted.spef": {
+          "bytes": 7705034,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C2/b15_opt/CS_C2/extracted.spef",
+          "sha256": "2e9a6d86f4c50a20a60ff90c5bf067aa2104bca90c10b85614b93e25895a16f1"
+        },
+        "net_mapping.json": {
+          "bytes": 775850,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C2/b15_opt/CS_C2/net_mapping.json",
+          "sha256": "efebd8056df271a6e98c2ed02720468fc397cbc4f999683ec5f8bd8f2a078104"
+        },
+        "routed.v": {
+          "bytes": 506169,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C2/b15_opt/CS_C2/routed.v",
+          "sha256": "d9b2ae0ed8937d0fc3fd2df56d6b911864c5485284effaf4160f405c25c2aa2f"
+        },
+        "stimulus.v": {
+          "bytes": 32587985,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C2/b15_opt/CS_C2/stimulus.v",
+          "sha256": "78cd9799df72804c8c2f16c2a8ebbe3e3c19329a4d4599d91d25808df272ff4c"
+        },
+        "workload.json": {
+          "bytes": 1036601,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C2/b15_opt/CS_C2/workload.json",
+          "sha256": "e7c7991feb9e495992f4557e6cf653db9f8daa4fe5576609c9c3beab5dd8147d"
+        }
+      },
+      "count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C2/b15_opt/CS_C2/activity.counts.gz",
+        "bytes": 123747059,
+        "sha256": "5853850d689be1384831acc639b8cd55aa782bedb7f907cd07979ce35aa6640d"
+      },
+      "count_structure": {
+        "status": "NOT_CHECKED"
+      },
+      "FF_crosscheck": {
+        "status": "PASS",
+        "FF_cycle_values_checked": 93751200,
+        "cycles": 208800,
+        "scope": "Every physical FF Q against independent simultaneous chain replay; compact simulator counts are measurement source"
+      },
+      "FF_Q_population": 449,
+      "bounds_um": [
+        0.0,
+        0.0,
+        144.155,
+        144.155
+      ],
+      "attribution": "whole net capacitance at source cell origin; external input at port center; source-localized proxy",
+      "VCD_available": false,
+      "VCD_reason": "Only the two VCD emission lines removed; all functional statements retained",
+      "logic_high_occupancy_available": false,
+      "unsealed_derived_files": [
+        "net_activity_capacitance.csv",
+        "spatial_bins.json",
+        "per_cycle.csv"
+      ],
+      "derived_file_policy": "Regenerate deterministically from frozen hash-verified counts/mapping/SPEF; current bytes alone are not frozen provenance"
+    },
+    {
+      "design": "b15_opt",
+      "architecture": "CS_C3",
+      "architecture_sha256": "c7e1e9d0a8e05907e62e265ec3f42ea13c7936e388e8278ec73eeea01f17795c",
+      "frozen_comparison": "repo://results/pact_gate09_open_source_20261005/final/b15_opt/comparison.json",
+      "frozen_result": {
+        "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/activity/GATE09_PRIMARY/b15_opt/CS_C3/normal/result.json",
+        "bytes": 6718,
+        "sha256": "d890686d4f7c2c84ad2040df9cddb0badc0987e4c6ad7bd43bf0c63ff535aa60"
+      },
+      "source_reference": "B2",
+      "primary_candidate": "CS_C1",
+      "ff_count": 449,
+      "patterns": 464,
+      "cycles": 208800,
+      "mapped_nets": 4672,
+      "qualification_status": "QUALIFIED",
+      "frozen_metrics": {
+        "E": 755008752.683819,
+        "H4": 1653.04701548,
+        "H8": 714.74965174,
+        "routed_scan_wirelength_um": 21048.475,
+        "WNS": 7.50563,
+        "hold_WNS": 0.000626305,
+        "DRC": 0
+      },
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 80505,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/ff_identity_map.json",
+          "sha256": "8c5e4137826e4a0e3e2fd035d92e10713e36e8ac76d1b942362cefc920dccec1"
+        },
+        "patterns": {
+          "bytes": 487355,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/patterns.pat",
+          "sha256": "89b3b47b37131976501265aa72b96de79504ac12ed1cf95887aec6c16e387002"
+        },
+        "placement": {
+          "bytes": 921071,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/placed.def",
+          "sha256": "ef180416e080e2cf7b60d57431d990cf695f1f8750c7da92625584d5e7d68f10"
+        }
+      },
+      "SDC": {
+        "bytes": 10285,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "f401061c2f34b7689dfa8cb86e08d877ad444103fe6d897be619d635f52857e6"
+      },
+      "source_netlist": {
+        "bytes": 497703,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/compatible.v",
+        "sha256": "3a1f3e6dfcfa3e7e457fa6c3b9e7baffa8a651ce6e43641efc82a59a9c8de536"
+      },
+      "source_placed_database": {
+        "bytes": 2719149,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "bf91895d023be9e935d4948e9ca76f40d7bef722d5c863b09479a1141e41ae67"
+      },
+      "exact_manifest": {
+        "bytes": 10632,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/manifest.json",
+        "sha256": "bf9a5ee0b5fcda3866c9a57e320a4231b0f5ec51ba264c6de4b1b95048ad9533"
+      },
+      "exact_folder": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3",
+      "routed_archive": {
+        "bytes": 1628696,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/CS_C3/physical/5_2_route.odb.gz",
+        "sha256": "29fb4a95976b49e1c16aa151f10f9fcf2947410ac7be0ae8c2697389ad94a7f3"
+      },
+      "exact_inputs": {
+        "counts.cfg": {
+          "bytes": 37026,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/counts.cfg",
+          "sha256": "ea822eaa85bf6afb09956c60dd5916035f30d762f42fcd2b949d7baf9d0aa2dd"
+        },
+        "cycles.json": {
+          "bytes": 18321413,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/cycles.json",
+          "sha256": "7d6324d28c62c1f9c165b78864c9112b96cfe0c05cb119ccf172f39d2724ef9b"
+        },
+        "extracted.spef": {
+          "bytes": 7745927,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/extracted.spef",
+          "sha256": "1e9120d5a2e2a838dd38878743fc58ef69c632de0a2566b69fc61e459bc1e205"
+        },
+        "net_mapping.json": {
+          "bytes": 775878,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/net_mapping.json",
+          "sha256": "6c7583c12b0df2ce07fcebe1a2a0645b5b38670b01056b29353086459f27289f"
+        },
+        "routed.v": {
+          "bytes": 506169,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/routed.v",
+          "sha256": "dca7b459036d10dc698fabc6b9745835af1e75f2fef29c5027648d60d7643b2f"
+        },
+        "stimulus.v": {
+          "bytes": 32587985,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/stimulus.v",
+          "sha256": "eb0cc79ae77cd53360e9d153cc3065561921e352144f617c3ce2307664d439d2"
+        },
+        "workload.json": {
+          "bytes": 1036601,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/workload.json",
+          "sha256": "e3b7c0e9ff9bb0b2e01a69a72eec8bb1831b3d79a564b69e767dee159b8cf132"
+        }
+      },
+      "count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/CS_C3/b15_opt/CS_C3/activity.counts.gz",
+        "bytes": 123656799,
+        "sha256": "9500804177bba5a18eb80c984ec58e3fcec48cd06ef65fb8fea462597cb872c9"
+      },
+      "count_structure": {
+        "status": "NOT_CHECKED"
+      },
+      "FF_crosscheck": {
+        "status": "PASS",
+        "FF_cycle_values_checked": 93751200,
+        "cycles": 208800,
+        "scope": "Every physical FF Q against independent simultaneous chain replay; compact simulator counts are measurement source"
+      },
+      "FF_Q_population": 449,
+      "bounds_um": [
+        0.0,
+        0.0,
+        144.155,
+        144.155
+      ],
+      "attribution": "whole net capacitance at source cell origin; external input at port center; source-localized proxy",
+      "VCD_available": false,
+      "VCD_reason": "Only the two VCD emission lines removed; all functional statements retained",
+      "logic_high_occupancy_available": false,
+      "unsealed_derived_files": [
+        "net_activity_capacitance.csv",
+        "spatial_bins.json",
+        "per_cycle.csv"
+      ],
+      "derived_file_policy": "Regenerate deterministically from frozen hash-verified counts/mapping/SPEF; current bytes alone are not frozen provenance"
+    },
+    {
+      "design": "b15_opt",
+      "architecture": "B5",
+      "architecture_sha256": "0ea76840b4d50da7c08a469e5957b058fa158811fe8219c53ec275f5ed33c663",
+      "frozen_comparison": "repo://results/pact_gate09_open_source_20261005/final/b15_opt/comparison.json",
+      "frozen_result": {
+        "path": "repo://results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/activity/GATE09_PRIMARY/b15_opt/B5/normal/result.json",
+        "bytes": 6659,
+        "sha256": "db7f25f32e29e8e0b1cd77523a26da4edb6942ad23bcd5fe0df8f977f0fe6990"
+      },
+      "source_reference": "B2",
+      "primary_candidate": "CS_C1",
+      "ff_count": 449,
+      "patterns": 464,
+      "cycles": 208800,
+      "mapped_nets": 4669,
+      "qualification_status": "QUALIFIED",
+      "frozen_metrics": {
+        "E": 610729605.623152,
+        "H4": 1496.33902374,
+        "H8": 720.43783468,
+        "routed_scan_wirelength_um": 23782.035,
+        "WNS": 7.49667,
+        "hold_WNS": 0.00134179,
+        "DRC": 0
+      },
+      "common_inputs": {
+        "identity_map": {
+          "bytes": 80505,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/ff_identity_map.json",
+          "sha256": "8c5e4137826e4a0e3e2fd035d92e10713e36e8ac76d1b942362cefc920dccec1"
+        },
+        "patterns": {
+          "bytes": 487355,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/patterns.pat",
+          "sha256": "89b3b47b37131976501265aa72b96de79504ac12ed1cf95887aec6c16e387002"
+        },
+        "placement": {
+          "bytes": 921071,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/placed.def",
+          "sha256": "ef180416e080e2cf7b60d57431d990cf695f1f8750c7da92625584d5e7d68f10"
+        }
+      },
+      "SDC": {
+        "bytes": 10285,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "f401061c2f34b7689dfa8cb86e08d877ad444103fe6d897be619d635f52857e6"
+      },
+      "source_netlist": {
+        "bytes": 497703,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/inputs/b15_opt/compatible.v",
+        "sha256": "3a1f3e6dfcfa3e7e457fa6c3b9e7baffa8a651ce6e43641efc82a59a9c8de536"
+      },
+      "source_placed_database": {
+        "bytes": 2719149,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/orfs/results/nangate45/b15_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "bf91895d023be9e935d4948e9ca76f40d7bef722d5c863b09479a1141e41ae67"
+      },
+      "exact_manifest": {
+        "bytes": 10462,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/manifest.json",
+        "sha256": "9ab85b1c2364d6706f2675ec9fff38d99a0fb406ddbd6a59d4701006964c2d50"
+      },
+      "exact_folder": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5",
+      "routed_archive": {
+        "bytes": 1633579,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/baselines/b15_opt/B5/physical/5_2_route.odb.gz",
+        "sha256": "d5d4deecc193d24e82ac1895adc577415eb19d7df61ebff3576c24fa7f738354"
+      },
+      "exact_inputs": {
+        "counts.cfg": {
+          "bytes": 37005,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5/counts.cfg",
+          "sha256": "bb9b156877070e789178cb6fd4478d5109640d35c634f4c5562defe989d839d3"
+        },
+        "cycles.json": {
+          "bytes": 18321413,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5/cycles.json",
+          "sha256": "7d6324d28c62c1f9c165b78864c9112b96cfe0c05cb119ccf172f39d2724ef9b"
+        },
+        "extracted.spef": {
+          "bytes": 7779274,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5/extracted.spef",
+          "sha256": "270b71b4b7387219a884b32dc5ec61eb4f3f6530c0dfe941bf1f34e29a9b1f59"
+        },
+        "net_mapping.json": {
+          "bytes": 775396,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5/net_mapping.json",
+          "sha256": "7401082e7074f6c32033a12bf6dab500d432b6beb0b917c8b9d7237cc3744f7b"
+        },
+        "routed.v": {
+          "bytes": 505980,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5/routed.v",
+          "sha256": "ab6e34f6a9dfae874b23a5b12bf8375b8d7e916eeb5d6483cea5a2aedf26f890"
+        },
+        "stimulus.v": {
+          "bytes": 32587985,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5/stimulus.v",
+          "sha256": "ff2ed2e7bc266bdce4b9d1fbcecf9d8b4c0330b12f59e04179b9c352bfaea74b"
+        },
+        "workload.json": {
+          "bytes": 1036601,
+          "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5/workload.json",
+          "sha256": "dda62513dc2067f46dd7210d515a4e9581fa6eb8ae8bf0397f750614efb138cd"
+        }
+      },
+      "count_trace": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/exact_activity/b15_opt/B5/b15_opt/B5/activity.counts.gz",
+        "bytes": 114949787,
+        "sha256": "11a7291f0ddc89df1d0d00256b5d9ccf4a601a6415ab83ebf7859b07c99f1812"
+      },
+      "count_structure": {
+        "status": "NOT_CHECKED"
+      },
+      "FF_crosscheck": {
+        "status": "PASS",
+        "FF_cycle_values_checked": 93751200,
+        "cycles": 208800,
+        "scope": "Every physical FF Q against independent simultaneous chain replay; compact simulator counts are measurement source"
+      },
+      "FF_Q_population": 449,
+      "bounds_um": [
+        0.0,
+        0.0,
+        144.155,
+        144.155
+      ],
+      "attribution": "whole net capacitance at source cell origin; external input at port center; source-localized proxy",
+      "VCD_available": false,
+      "VCD_reason": "Only the two VCD emission lines removed; all functional statements retained",
+      "logic_high_occupancy_available": false,
+      "unsealed_derived_files": [
+        "net_activity_capacitance.csv",
+        "spatial_bins.json",
+        "per_cycle.csv"
+      ],
+      "derived_file_policy": "Regenerate deterministically from frozen hash-verified counts/mapping/SPEF; current bytes alone are not frozen provenance"
+    }
+  ]
+}
