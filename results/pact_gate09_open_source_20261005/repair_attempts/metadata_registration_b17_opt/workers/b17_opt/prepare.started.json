@@ -1,0 +1,61 @@
+{
+  "Linux_boot_id": "122407be-a4ed-4e22-b524-397b7a884345",
+  "PACT_search_started": false,
+  "PID": 2251,
+  "action": "prepare",
+  "capacity": {
+    "per_design_margin": {
+      "additional_bytes": {
+        "C": 67108864,
+        "D": 1414178432
+      },
+      "exact_activity_margin": "Must be recalculated from the actual pattern/cycle/net dimensions before activity jobs",
+      "measured_source_bytes": 11048269,
+      "rule": "C +64 MiB; D +max(512 MiB,128*(mapped netlist bytes + mapped JSON bytes))",
+      "stage": "ATPG_AND_PHYSICAL_REFERENCE_PREPARATION"
+    },
+    "status": "PASS",
+    "volumes": {
+      "C": {
+        "deficit_bytes": 0,
+        "free_bytes": 18894512128,
+        "minimum_free_bytes": 6509559808,
+        "status": "PASS"
+      },
+      "D": {
+        "deficit_bytes": 0,
+        "free_bytes": 35730239488,
+        "minimum_free_bytes": 28257724032,
+        "status": "PASS"
+      }
+    }
+  },
+  "common_FAN_backend": {
+    "bytes": 871192,
+    "path": "/root/pact-deps/FAN_ATPG-gate09-reporter-repair/bin/opt/fan",
+    "sha256": "b554618c945f68dcf242f0baa9542b52bbfc8f8b2abb72378009bdec3b62433e"
+  },
+  "created_utc": "2026-10-06T00:21:46.372673+00:00",
+  "dependency_repair": {
+    "bytes": 17558,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/dependency_repairs/FAN_ATPG/compound_reporter_qualification.json",
+    "sha256": "71bc45f4e54c8928ff50a635d829a8e17b7f18ad6e582f5ae496a93520d06a24"
+  },
+  "design": "b17_opt",
+  "harness": {
+    "bytes": 16283,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_reference.py",
+    "sha256": "3d2220b04dc33def9f726e43c4195fd675cbb27ee0d4ee6fa257472f2eaf7169"
+  },
+  "qualified_repair_source_SHA": "4c253bfa613e5827f17c42a5fce8be7bea779e1e",
+  "repair_attempt": "metadata_registration_b17_opt",
+  "schema": "pact_gate09_reference_worker_v1",
+  "scientific_method_changes": 0,
+  "source_admission": {
+    "bytes": 5841,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/source_admission/b17_opt.json",
+    "sha256": "ddeafe314c5f5a6eeb45e4b4fb9db8156ffc838dac1323df89300f13203eca2d"
+  },
+  "source_and_destination_adaptation_only": true,
+  "state": "STARTED"
+}

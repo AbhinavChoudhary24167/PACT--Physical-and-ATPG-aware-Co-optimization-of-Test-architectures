@@ -56,10 +56,11 @@ def create(output, ledger_path=None):
     dominates = {r['design']:r['summary']['PACT_DOMINATES'] for r in reports}
     mutual = {r['design']:r['summary']['MUTUALLY_NONDOMINATED'] for r in reports}
     holds = [r for r in ledger['records'] if r['status']!='COMPETITIVE_COMPARISON_TERMINAL']
+    diagnostics = sorted((references.BASE_META / 'admission_diagnostics').glob('*.json'))
     families = sorted({r['design_family'] for r in rows if r['design'] in ('b14_opt','b15_opt')})
     status, generalization = classify_campaign(reports, holds, families)
     if holds:
-        next_action = 'Resolve the documented source/reference/resource admission hold, then test further unseen base-family designs with the same frozen method and controls; keep any new campaign separate.'
+        next_action = 'Resolve the documented source/reference/runtime/resource admission hold in a separately preregistered study, then test further unseen base-family designs with the frozen method and common controls. Do not extend or rerun this primary campaign.'
     elif any(dominated_by.values()):
         next_action = 'Study the observed baseline dominance after freezing this result set; any method changes belong to POST_GATE09_METHOD_DEVELOPMENT and need a new independent evaluation.'
     else:
@@ -95,6 +96,7 @@ def create(output, ledger_path=None):
     report = dict(schema='pact_gate09_campaign_report_v1', created_utc=datetime.now(timezone.utc).isoformat(),
         summary=summary, rows=rows, design_admission=ledger['records'], cohort=protocol['cohort'],
         ledger=admission.binding(ledger_path), definitions=definitions,
+        admission_diagnostics=[admission.binding(path) for path in diagnostics],
         upstream_issue=admission.binding(references.BASE_META / 'publication/FAN_upstream_issue.json'),
         upstream_reporter_issue=admission.binding(references.BASE_META / 'publication/FAN_reporter_upstream_issue.json'),
         design_reports=[r['report'] for r in ledger['records'] if r['status']=='COMPETITIVE_COMPARISON_TERMINAL'],
@@ -130,7 +132,7 @@ def create(output, ledger_path=None):
         text.append(f"| {entry['design']} | {entry['family']} ({entry['independence_role']}) | {entry['source_FF_count']} | {state['status']} |")
     text += ['', 'Sources: cad-polito-it/I99T commit 8a2c3b500ee7ff20e7031de92592b737bedc6d8c, EUPL-1.2. '
         'BENCH/BLIF and mapped all-state next-state equivalence precede ATPG/placement/reference admission. '
-        'A first source/reference/resource hold stops the fixed cohort order; deferred rows make no source-compatibility claim.', '',
+        'A first source/reference/runtime/resource hold stops the fixed cohort order; deferred rows make no source-compatibility claim.', '',
         '## C. Frozen methodology', '',
         'K=2; primary seed 11; ε=0.02/0.05/0.10; 900 seconds per mutation loop; 7200-second search worker ceiling. '
         '20,000 maximum evaluations, stagnation 2000, lane attempts 150, neighbors 16, segment 8, archive 16, equal normalized E/H4/H8 weights. '
@@ -206,6 +208,7 @@ def create(output, ledger_path=None):
         'ground-plus-pin proxy excluding coupling, depth-3 search approximation, HPWL constraint without a routed-WL guarantee, '
         'bounded B6 search, and every source/reference/resource admission hold listed below.', '']
     text += ['- '+r['design']+': '+r['status']+'. '+r['reason'] for r in holds]
+    text += ['- '+admission.read(path)['explanation'] for path in diagnostics]
     text += ['', '## N. Next scientific step', '', next_action, '', 'Per-design evidence:', '']
     for record in ledger['records']:
         if record['status']=='COMPETITIVE_COMPARISON_TERMINAL':

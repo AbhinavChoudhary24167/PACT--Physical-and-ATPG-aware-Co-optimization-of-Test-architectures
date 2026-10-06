@@ -1,0 +1,81 @@
+{
+  "Linux_boot_id": "122407be-a4ed-4e22-b524-397b7a884345",
+  "PID": 503,
+  "admission_hold_design": "b17_opt",
+  "completed_utc": "2026-10-06T00:37:14.103779+00:00",
+  "correction": "Fresh child directory for prospective input; all source/reference/baseline results reused without replay",
+  "created_utc": "2026-10-05T22:15:26.685557+00:00",
+  "current_design": "b17_opt",
+  "dependency_repair": {
+    "bytes": 17558,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/dependency_repairs/FAN_ATPG/compound_reporter_qualification.json",
+    "sha256": "71bc45f4e54c8928ff50a635d829a8e17b7f18ad6e582f5ae496a93520d06a24"
+  },
+  "design_order": [
+    "b14_opt",
+    "b15_opt",
+    "b17_opt",
+    "b18_opt"
+  ],
+  "previous_execution": {
+    "bytes": 4304,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/cohort_execution_capacity_recovered.json",
+    "sha256": "50b3791c872b7d13c8dccd7e3582416ff7ed6aab7f9236bfe0eb0a130e8265d1"
+  },
+  "prior_input_failure": {
+    "bytes": 2076,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b15_opt/workers/b15_opt/campaign_input.json",
+    "sha256": "1f19b795aaf9b410df1ad741f9bf80bea47d039c2561993cc288870f10d0d1f7"
+  },
+  "protocol": {
+    "bytes": 79703,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate9_large_scale_unseen_20261005/benchmark_preregistration.json",
+    "sha256": "01b05577c885e878f98466315d8232cd9773d332c61d8c7510ab8870dcb44717"
+  },
+  "records": [
+    {
+      "completion": {
+        "bytes": 1018,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/completion/b14_opt.json",
+        "sha256": "87b20bf6b540e693dd8dcf5afd1fda7d10fed12f1e3bbe356066ca25fd47baee"
+      },
+      "design": "b14_opt",
+      "report": {
+        "bytes": 61554,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/final/b14_opt/comparison.json",
+        "sha256": "3328085e460f0dbc82e79fd80f8b47761d801b7929e986a1b9c4d32621d045df"
+      },
+      "status": "COMPETITIVE_COMPARISON_TERMINAL"
+    },
+    {
+      "classification": "PACT_ACTIVITY_MIXED",
+      "design": "b15_opt",
+      "report": {
+        "bytes": 62444,
+        "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/final/b15_opt/comparison.json",
+        "sha256": "809930cc020d0aeff496037a115e9c1ffd52faeee2c8fb1089da09628a9987c1"
+      },
+      "status": "COMPETITIVE_COMPARISON_TERMINAL"
+    },
+    {
+      "design": "b17_opt",
+      "reason": "Frozen 900s ATPG / common preparation gate did not qualify",
+      "receipt": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b17_opt/workers/b17_opt/prepare.json",
+      "status": "ATPG_OR_PLACEMENT_ADMISSION_HOLD"
+    },
+    {
+      "design": "b18_opt",
+      "reason": "Fixed-order cohort stopped at b17_opt; no claim of source incompatibility or PACT failure",
+      "status": "DEFERRED_PRIOR_ADMISSION_HOLD"
+    }
+  ],
+  "schema": "pact_gate09_fixed_cohort_execution_v1",
+  "scientific_method_changes": 0,
+  "source": {
+    "bytes": 10238,
+    "path": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_input_recovery.py",
+    "sha256": "6ffff24cce7b0d178959c3cf24c0ce18099b6ecb3247400dddf29c49d53837ec"
+  },
+  "state": "COHORT_TERMINAL",
+  "stop_policy": "First source, reference or resource admission hold; never stop or change order because of PACT activity outcomes"
+}

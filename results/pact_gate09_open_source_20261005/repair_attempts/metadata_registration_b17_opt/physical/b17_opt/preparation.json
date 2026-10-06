@@ -1,0 +1,15 @@
+{
+  "design": "b17_opt",
+  "error": "Command failed: /mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b17_opt/inputs/b17_opt/atpg_generate/execution.json",
+  "failure_class": "ATPG_FAIL",
+  "gates": {
+    "source_topology": "PASS"
+  },
+  "source": {
+    "bytes": 1640290,
+    "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/sources/b17_opt/mapped.v",
+    "sha256": "0adcb060e111b9a1199c28e6f466d5385c551bf694b9ee0118a551eb0b5fa9f9"
+  },
+  "status": "PACT_EXECUTION_BLOCKED",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_infrastructure.py\", line 142, in prepare\n    record['ATPG_execution']=execute([REPAIRED,'-f',folder/'atpg.script'],folder/'atpg_generate',FAN,900)\n                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_gate09_reference.py\", line 153, in guarded_execute\n    return original_execute(command, folder, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/scripts/pact_generalization_infrastructure.py\", line 59, in execute\n    raise RuntimeError('Command failed: ' + str(receipt))\nRuntimeError: Command failed: /mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/metadata_registration_b17_opt/inputs/b17_opt/atpg_generate/execution.json\n"
+}
