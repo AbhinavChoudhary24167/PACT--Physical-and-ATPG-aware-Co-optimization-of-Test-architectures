@@ -1,10 +1,12 @@
 # Post-merge large unseen campaign
 
-The qualified implementation is merged through PR #3 at
-`084db2f9e164b7757597fec1eec73d9c4049a9a4`. New work uses
+The historical qualified implementation merged through PR #3 at
+`084db2f9e164b7757597fec1eec73d9c4049a9a4`. That campaign used
 `development/large-unseen-gate9-20261005`, compact receipts in
 `results/pact_large_unseen_gate9_20261005/`, and raw artifacts in the matching
-`D:\PACT_EXPERIMENTS\results\` namespace.
+configured `PACT_EXPERIMENT_ROOT/results/` namespace. Its original host paths
+remain in immutable execution receipts; current status is in
+[research status](research_status.md).
 
 `pact_large_unseen.py register` binds the merged parent, executable sources,
 tools, frozen reference inputs and original configuration. Searches retain

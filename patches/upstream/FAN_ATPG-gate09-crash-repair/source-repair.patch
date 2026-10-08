@@ -1,0 +1,402 @@
+diff --git a/pkg/core/src/circuit.cpp b/pkg/core/src/circuit.cpp
+index 5690b7a..1200dcc 100644
+--- a/pkg/core/src/circuit.cpp
++++ b/pkg/core/src/circuit.cpp
+@@ -323,9 +323,15 @@ void Circuit::createCircuitComb()
+ 			createCircuitPmt(combGateID, cellInTop, pmt);
+ 		}
+ 	}
+-	if ((int)top->getNCell() > 0)
++	// A library cell can contain several primitives with different levels.
++	// Keep PO/PPO after every driver, including primitives in earlier cells.
++	circuitLvl_ = 2;
++	for (int i = 0; i < numPI_ + numPPI_ + numComb_; ++i)
+ 	{
+-		circuitLvl_ = circuitGates_[cellIndexToGateIndex_[top->getNCell() - 1]].numLevel_ + 2;
++		if (circuitGates_[i].numLevel_ + 2 > circuitLvl_)
++		{
++			circuitLvl_ = circuitGates_[i].numLevel_ + 2;
++		}
+ 	}
+ }
+ 
+@@ -473,15 +479,15 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,
+ 			circuitGates_[gateID].gateType_ = Gate::MUX;
+ 			break;
+ 		case Pmt::AND:
+-			if (cell->getNPort() == 3)
++			if (pmt->getNPort() == 3)
+ 			{
+ 				circuitGates_[gateID].gateType_ = Gate::AND2;
+ 			}
+-			else if (cell->getNPort() == 4)
++			else if (pmt->getNPort() == 4)
+ 			{
+ 				circuitGates_[gateID].gateType_ = Gate::AND3;
+ 			}
+-			else if (cell->getNPort() == 5)
++			else if (pmt->getNPort() == 5)
+ 			{
+ 				circuitGates_[gateID].gateType_ = Gate::AND4;
+ 			}
+@@ -491,15 +497,15 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,
+ 			}
+ 			break;
+ 		case Pmt::NAND:
+-			if (cell->getNPort() == 3)
++			if (pmt->getNPort() == 3)
+ 			{
+ 				circuitGates_[gateID].gateType_ = Gate::NAND2;
+ 			}
+-			else if (cell->getNPort() == 4)
++			else if (pmt->getNPort() == 4)
+ 			{
+ 				circuitGates_[gateID].gateType_ = Gate::NAND3;
+ 			}
+-			else if (cell->getNPort() == 5)
++			else if (pmt->getNPort() == 5)
+ 			{
+ 				circuitGates_[gateID].gateType_ = Gate::NAND4;
+ 			}
+@@ -509,15 +515,15 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,
+ 			}
+ 			break;
+ 		case Pmt::OR:
+-			if (cell->getNPort() == 3)
++			if (pmt->getNPort() == 3)
+ 			{
+ 				circuitGates_[gateID].gateType_ = Gate::OR2;
+ 			}
+-			else if (cell->getNPort() == 4)
++			else if (pmt->getNPort() == 4)
+ 			{
+ 				circuitGates_[gateID].gateType_ = Gate::OR3;
+ 			}
+-			else if (cell->getNPort() == 5)
++			else if (pmt->getNPort() == 5)
+ 			{
+ 				circuitGates_[gateID].gateType_ = Gate::OR4;
+ 			}
+@@ -527,15 +533,15 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,
+ 			}
+ 			break;
+ 		case Pmt::NOR:
+-			if (cell->getNPort() == 3)
++			if (pmt->getNPort() == 3)
+ 			{
+ 				circuitGates_[gateID].gateType_ = Gate::NOR2;
+ 			}
+-			else if (cell->getNPort() == 4)
++			else if (pmt->getNPort() == 4)
+ 			{
+ 				circuitGates_[gateID].gateType_ = Gate::NOR3;
+ 			}
+-			else if (cell->getNPort() == 5)
++			else if (pmt->getNPort() == 5)
+ 			{
+ 				circuitGates_[gateID].gateType_ = Gate::NOR4;
+ 			}
+@@ -545,11 +551,11 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,
+ 			}
+ 			break;
+ 		case Pmt::XOR:
+-			if (cell->getNPort() == 3)
++			if (pmt->getNPort() == 3)
+ 			{
+ 				circuitGates_[gateID].gateType_ = Gate::XOR2;
+ 			}
+-			else if (cell->getNPort() == 4)
++			else if (pmt->getNPort() == 4)
+ 			{
+ 				circuitGates_[gateID].gateType_ = Gate::XOR3;
+ 			}
+@@ -559,11 +565,11 @@ void Circuit::determineGateType(const int &gateID, const Cell *const cell,
+ 			}
+ 			break;
+ 		case Pmt::XNOR:
+-			if (cell->getNPort() == 3)
++			if (pmt->getNPort() == 3)
+ 			{
+ 				circuitGates_[gateID].gateType_ = Gate::XNOR2;
+ 			}
+-			else if (cell->getNPort() == 4)
++			else if (pmt->getNPort() == 4)
+ 			{
+ 				circuitGates_[gateID].gateType_ = Gate::XNOR3;
+ 			}
+diff --git a/pkg/fan/src/atpg_cmd.cpp b/pkg/fan/src/atpg_cmd.cpp
+index 9745eed..48ac467 100644
+--- a/pkg/fan/src/atpg_cmd.cpp
++++ b/pkg/fan/src/atpg_cmd.cpp
+@@ -498,7 +498,7 @@ bool ReportFaultCmd::exec(const std::vector<std::string> &argv)
+ 	FaultPtrListIter it = fanMgr_->fListExtract->faultsInCircuit_.begin();
+ 	for (; it != fanMgr_->fListExtract->faultsInCircuit_.end(); ++it)
+ 	{
+-		if (!stateSet || (*it)->faultState_ != state)
++		if (stateSet && (*it)->faultState_ != state)
+ 		{
+ 			continue;
+ 		}
+@@ -545,9 +545,9 @@ bool ReportFaultCmd::exec(const std::vector<std::string> &argv)
+ 				std::cout << " AB     ";
+ 				break;
+ 		}
+-		int cid = fanMgr_->cir->circuitGates_[(*it)->gateID_].cellId_;
++		int cid = (*it)->gateID_ < 0 ? -1 : fanMgr_->cir->circuitGates_[(*it)->gateID_].cellId_;
+ 		int pid = (*it)->faultyLine_;
+-		int pmtid = fanMgr_->cir->circuitGates_[(*it)->gateID_].primitiveId_;
++		int pmtid = (*it)->gateID_ < 0 ? -1 : fanMgr_->cir->circuitGates_[(*it)->gateID_].primitiveId_;
+ 		if ((*it)->gateID_ == -1)
+ 		{ // CK
+ 			std::cout << "CK";
+@@ -600,6 +600,14 @@ bool ReportFaultCmd::exec(const std::vector<std::string> &argv)
+ 					std::cout << c->name_ << "/QN ";
+ 				}
+ 			}
++			else if (fanMgr_->cir->circuitGates_[(*it)->gateID_].gateType_ == Gate::PPI)
++			{ // PPI represents the functional Q port, not library primitive zero.
++				std::cout << c->name_ << "/Q ";
++			}
++			else if (fanMgr_->cir->circuitGates_[(*it)->gateID_].gateType_ == Gate::PPO)
++			{ // PPO represents the functional D port in Circuit::createCircuitPPO.
++				std::cout << c->name_ << "/D ";
++			}
+ 			else if (pid == 0)
+ 			{ // output
+ 				if (!strcmp(libc->name_, "SDFFXL"))
+@@ -678,7 +686,7 @@ bool ReportFaultCmd::exec(const std::vector<std::string> &argv)
+ 			}
+ 			std::cout << "(" << libc->name_ << ")";
+ 		}
+-		std::cout << "\n";
++		std::cout << " [equivalent=" << (*it)->equivalent_ << "]\n";
+ 	}
+ 	std::cout << "\n";
+ 
+diff --git a/tests/compound_circuit_README.md b/tests/compound_circuit_README.md
+new file mode 100755
+index 0000000..c7bd2f7
+--- /dev/null
++++ b/tests/compound_circuit_README.md
+@@ -0,0 +1,32 @@
++# Compound-cell circuit construction regression
++
++An AOI211_X1 and one SDFF_X1 are sufficient to reproduce an ATPG event-queue
++heap-buffer-overflow at upstream commit 26b2b36c0e9db11a4b6d9e759df6e44357121f39.
++The supplied Nangate MDT model expands AOI211 into four primitives. The circuit
++level calculation uses the first primitive of the last cell rather than the
++deepest gate, placing PO/PPO before some drivers and allocating too few levels.
++The same construction routine selects primitive gate arity using the enclosing
++cell's port count. This labels two-input AND/OR primitives as four-input gates
++and causes incorrect logic simulation.
++
++The repair computes the circuit level over all constructed PI/PPI/combinational
++gates and selects AND/NAND/OR/NOR/XOR/XNOR arity from each primitive's port count.
++It does not change ATPG search, fault extraction, simulation algorithms,
++compression policy, or library models.
++
++The focused regression checks that every fanout follows its driver and fits
++within allocated levels, verifies AOI211 primitive types, exhaustively checks
++the 16 Boolean input combinations in both FF states, and runs ATPG on the small
++fixture. A simple one-primitive scan fixture continues to pass independently.
++
++```sh
++make -j1 install MODE=opt
++python3 tests/run_compound_circuit.py
++
++make -j1 install MODE=dbg CFLAGS='-Wall -g -O1 -fsanitize=address,undefined -fno-omit-frame-pointer'
++python3 tests/run_compound_circuit.py --mode dbg
++```
++
++On the unmodified source, the depth, arity, and truth checks each fail. The
++sanitizer reports an overflow in Atpg::pushGateFanoutsToEventStack during
++identifyGateDominator. All four checks pass with the repair.
+diff --git a/tests/compound_circuit_test.cpp b/tests/compound_circuit_test.cpp
+new file mode 100755
+index 0000000..df434a9
+--- /dev/null
++++ b/tests/compound_circuit_test.cpp
+@@ -0,0 +1,81 @@
++#include <cstdlib>
++#include <cstring>
++#include <iostream>
++#include "interface/techlib_builder.h"
++#include "interface/netlist_builder.h"
++#include "core/circuit.h"
++#include "core/simulator.h"
++
++using namespace IntfNs;
++using namespace CoreNs;
++
++static int failure(const char *message) {
++    std::cerr << message << "\n";
++    return 1;
++}
++
++int main(int argc, char **argv) {
++    if (argc != 4) return failure("usage: compound_circuit_test LIB NETLIST depth|arity|truth");
++    Techlib library;
++    MdtLibBuilder libraryBuilder(&library);
++    if (!libraryBuilder.read(argv[1])) return failure("library read failed");
++    Netlist netlist;
++    netlist.setTechlib(&library);
++    VlogNlBuilder builder(&netlist);
++    if (!builder.read(argv[2]) || !netlist.check()) return failure("netlist read failed");
++    Circuit circuit;
++    if (!circuit.buildCircuit(&netlist)) return failure("circuit build failed");
++    if (circuit.numPI_ != 4 || circuit.numPPI_ != 1 || circuit.numPO_ != 1)
++        return failure("fixture population changed");
++
++    if (!std::strcmp(argv[3], "depth")) {
++        for (const Gate &gate : circuit.circuitGates_) {
++            if (gate.numLevel_ < 0 || gate.numLevel_ >= circuit.totalLvl_)
++                return failure("gate lies outside the allocated circuit levels");
++            for (int fanout : gate.fanoutVector_)
++                if (circuit.circuitGates_[fanout].numLevel_ <= gate.numLevel_)
++                    return failure("fanout level does not follow its driver");
++        }
++    } else if (!std::strcmp(argv[3], "arity")) {
++        int and2 = 0, or2 = 0, inv = 0;
++        for (const Gate &gate : circuit.circuitGates_) {
++            if (gate.gateType_ == Gate::PI || gate.gateType_ == Gate::PPI ||
++                gate.gateType_ == Gate::PO || gate.gateType_ == Gate::PPO) continue;
++            if (gate.gateType_ == Gate::AND2 && gate.numFI_ == 2) ++and2;
++            else if (gate.gateType_ == Gate::OR2 && gate.numFI_ == 2) ++or2;
++            else if (gate.gateType_ == Gate::INV && gate.numFI_ == 1) ++inv;
++            else return failure("compound-cell primitive type does not match its own inputs");
++        }
++        if (and2 != 1 || or2 != 2 || inv != 1)
++            return failure("AOI211 primitive population changed");
++    } else if (!std::strcmp(argv[3], "truth")) {
++        Simulator simulator(&circuit);
++        for (int word = 0; word < 32; ++word) {
++            for (Gate &gate : circuit.circuitGates_) {
++                if (gate.gateType_ != Gate::PI && gate.gateType_ != Gate::PPI) continue;
++                int bit = 4;
++                if (gate.gateType_ == Gate::PI) {
++                    const char *name = netlist.getTop()->getPort(gate.cellId_)->name_;
++                    const char *names[] = {"a", "b", "c", "e"};
++                    for (bit = 0; bit < 4 && std::strcmp(name, names[bit]); ++bit) {}
++                    if (bit == 4) return failure("unexpected functional input");
++                }
++                const bool value = (word >> bit) & 1;
++                gate.goodSimLow_ = value ? PARA_L : PARA_H;
++                gate.goodSimHigh_ = value ? PARA_H : PARA_L;
++            }
++            simulator.goodSim();
++            const bool a = word & 1, b = word & 2, c = word & 4, e = word & 8;
++            const bool nextState = !(a || b || (c && e));
++            for (const Gate &gate : circuit.circuitGates_) {
++                if (gate.gateType_ != Gate::PO && gate.gateType_ != Gate::PPO) continue;
++                const bool expected = gate.gateType_ == Gate::PO ? bool(word & 16) : nextState;
++                if (gate.goodSimLow_ != (expected ? PARA_L : PARA_H) ||
++                    gate.goodSimHigh_ != (expected ? PARA_H : PARA_L))
++                    return failure("FAN truth table disagrees with AOI211/Q semantics");
++            }
++        }
++    } else return failure("unknown test mode");
++    std::cout << argv[3] << " PASS\n";
++    return 0;
++}
+diff --git a/tests/compound_scan.v b/tests/compound_scan.v
+new file mode 100755
+index 0000000..3ad41c8
+--- /dev/null
++++ b/tests/compound_scan.v
+@@ -0,0 +1,8 @@
++module compound_scan(CK, test_si, test_se, a, b, c, e, y, test_so);
++input CK, test_si, test_se, a, b, c, e;
++output y, test_so;
++wire d;
++AOI211_X1 U_COMPOUND (.A(a), .B(b), .C1(c), .C2(e), .ZN(d));
++SDFF_X1 U_FF (.CK(CK), .D(d), .Q(y), .SE(test_se), .SI(test_si));
++assign test_so = y;
++endmodule
+diff --git a/tests/report_fault_scan.py b/tests/report_fault_scan.py
+new file mode 100644
+index 0000000..c75fb73
+--- /dev/null
++++ b/tests/report_fault_scan.py
+@@ -0,0 +1,41 @@
++#!/usr/bin/env python3
++"""Reporter regression: full universe, selected state and weighted statistics.
++
++Usage: python3 tests/report_fault_scan.py FAN LIB NETLIST PATTERNS
++Uses existing patterns and single-frame stuck-at simulation, never run_atpg.
++"""
++import collections
++from pathlib import Path
++import re
++import subprocess
++import sys
++import tempfile
++
++fan,lib,netlist,patterns=map(lambda p:Path(p).resolve(),sys.argv[1:])
++with tempfile.TemporaryDirectory(prefix='fan-report-regression-') as temporary:
++    outputs=[]
++    for command in ('report_fault','report_fault -s DT'):
++        script=Path(temporary)/'replay.script'
++        script.write_text('\n'.join((f'read_lib {lib}',f'read_netlist {netlist}',
++            'build_circuit --frame 1',f'read_pattern {patterns}',
++            'set_fault_type saf','add_fault -a','run_fault_sim','report_statistics',command,'exit'))+'\n')
++        run=subprocess.run([str(fan),'-f',str(script)],capture_output=True,text=True,check=True)
++        assert '**ERROR' not in run.stdout+run.stderr
++        records=re.findall(r'^#\s+(SA[01])\s+(UD|DT|PT|AU|TI|RE|AB)\s+(.+?)\s+\[equivalent=(\d+)\]\s*$',run.stdout,re.M)
++        identities=[(kind,site) for kind,_,site,_ in records]
++        assert len(set(identities))==len(identities), 'duplicate identity'
++        assert all(not site.startswith('(') for _,site in identities), 'unresolved scan site'
++        sums=collections.Counter()
++        for _,state,_,weight in records:
++            assert int(weight)>0
++            sums[state]+=int(weight)
++        dt=int(re.search(r'DT \(detected\)\s+(\d+)',run.stdout)[1])
++        assert sums['DT']==dt
++        if command=='report_fault':
++            assert len(records)==int(re.search(r'FU \(collapsed\)\s+(\d+)',run.stdout)[1])
++            assert sum(sums.values())==int(re.search(r'FU \(full\)\s+(\d+)',run.stdout)[1])
++        else:
++            assert set(sums)=={'DT'}
++        outputs.append({(kind,site,int(weight)) for kind,state,site,weight in records if state=='DT'})
++    assert outputs[0]==outputs[1], 'state-filtered detected identities differ'
++print('PASS complete and filtered fault identities with unchanged weighted counts')
+diff --git a/tests/run_compound_circuit.py b/tests/run_compound_circuit.py
+new file mode 100755
+index 0000000..24e342d
+--- /dev/null
++++ b/tests/run_compound_circuit.py
+@@ -0,0 +1,35 @@
++#!/usr/bin/env python3
++"""Run compound-cell circuit regressions after `make install MODE=opt`."""
++import argparse
++import os
++from pathlib import Path
++import subprocess
++import tempfile
++
++root = Path(__file__).resolve().parents[1]
++parser = argparse.ArgumentParser(description=__doc__)
++parser.add_argument('--mode', choices=('opt', 'dbg'), default='opt')
++args = parser.parse_args()
++environment = dict(os.environ, ASAN_OPTIONS='detect_leaks=0:halt_on_error=1')
++with tempfile.TemporaryDirectory(prefix='fan-compound-regression-') as directory:
++    binary = str(Path(directory) / 'compound_circuit_test')
++    command = ['g++', '-std=c++11', '-g', '-O1' if args.mode == 'dbg' else '-O3',
++               '-I' + str(root / 'include'), str(root / 'tests/compound_circuit_test.cpp'),
++               '-L' + str(root / 'lib' / args.mode), '-lcore', '-linterface', '-lcommon', '-o', binary]
++    if args.mode == 'dbg':
++        command.extend(['-fsanitize=address,undefined', '-fno-omit-frame-pointer'])
++    subprocess.run(command, check=True)
++    for test in ('depth', 'arity', 'truth'):
++        subprocess.run([binary, str(root / 'techlib/mod_nangate45.mdt'),
++                        str(root / 'tests/compound_scan.v'), test], env=environment, check=True)
++    script = Path(directory) / 'atpg.script'
++    script.write_text(f'read_lib {root}/techlib/mod_nangate45.mdt\n'
++                      f'read_netlist {root}/tests/compound_scan.v\n'
++                      'build_circuit --frame 1\nset_fault_type saf\nadd_fault --all\n'
++                      'set_static_compression on\nset_dynamic_compression on\nset_X-Fill on\n'
++                      'run_atpg\nreport_statistics\nexit\n')
++    completed = subprocess.run([str(root / 'bin' / args.mode / 'fan'), '-f', str(script)],
++                               env=environment, capture_output=True, text=True, timeout=30, check=True)
++    if '**ERROR' in completed.stdout + completed.stderr or 'Finished pattern generation' not in completed.stdout:
++        raise AssertionError(completed.stdout + completed.stderr)
++    print('compound-cell ATPG PASS')

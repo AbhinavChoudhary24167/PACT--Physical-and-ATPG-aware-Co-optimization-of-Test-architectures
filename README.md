@@ -1,12 +1,60 @@
-# PACT
+# PACT — Physical and ATPG-aware Co-optimization of Test Architectures
 
-**Physical and ATPG-aware Co-optimization of Test Architectures.** PACT constructs legal scan orders and searches physical cost and switching activity using stored ATPG workloads. It combines an exact incremental scan solver, bounded stateful logic evaluation and OpenROAD physical qualification.
+PACT searches legal scan-chain architectures using placed flip-flop geometry and stored ATPG load/response workloads, then checks selected orders through independent replay and physical implementation. Conventional logical ordering can place successive scan flip-flops far apart; shortening those connections also redistributes switching on shared functional nets. PACT keeps scan wire, total switching and spatial activity peaks separate, preserves test/topology constraints and measures whether predicted improvements survive routing and extraction.
 
-Short scan wire need not mean low switching hotspots. PACT preserves flip-flop membership, chain capacities, clock domains and serial load/unload behavior while keeping physical cost, total activity and local peaks separate. Predicted gains are checked against implemented measurements.
+**Current conclusion:** frozen designs show mixed wire/activity tradeoffs. The latest power-integrity validation found **no registered material static IR-drop benefit**; thermal impact was not evaluated. Algorithm development is frozen under that tested basis. See [negative results](docs/experiments/negative_results.md) and [complete Gate 10A evidence](reports/gate10a/report.md).
 
-## Quick start
+## Motivation and flow
 
-Python 3.11+ supports the numerical workflows on Windows and Linux. Run from the repository root:
+ATPG defines the shifted workload. Placement determines distances and shared-net loads. A legal permutation can improve a predictor while changing routed capacitance and the location of the decisive activity peak. Logical correctness, proxy gains, implemented gains and practical physical impact therefore need separate checks.
+
+```mermaid
+flowchart TD
+    A[RTL or mapped netlist] --> B[Scan insertion and architecture]
+    B --> C[Stored FAN_ATPG workload and FF identity map]
+    B --> D[Placement and physical state]
+    C --> E[Candidate-sensitive physical and activity evaluation]
+    D --> E
+    E --> F[Constrained multi-objective search]
+    F --> G[Selected legal scan order]
+    G --> H[Scan-only rewire and independent serial replay]
+    H --> I[Route and extraction]
+    I --> J[Topology, timing, DRC, wire and activity qualification]
+    J --> K[Frozen activity-derived power and static IR validation]
+```
+
+The numerical CLI is the maintained M3/M5 solver. Candidate-stateful and registered benchmark campaigns use their own scripts/frozen inputs. [Architecture](docs/architecture/overview.md) explains those interfaces.
+
+## Metrics
+
+| Quantity | Definition |
+|---|---|
+| `K` | Scan-chain count; FF membership, capacities, clock domains and fixed endpoints constrain legal orders |
+| Scan HPWL / `W_proxy` | Port-inclusive Manhattan scan-wire predictor |
+| Routed scan WL | Connected scan-path net-length upper bound, including functional branches on shared nets |
+| `E` | Sum of ground-plus-pin capacitance times data transitions, in fF·transitions |
+| `H4`, `H8` | Maximum cycle/bin activity on source-localized 4×4 and 8×8 grids |
+| `epsilon` | Relative wire allowance: `W_proxy ≤ (1 + epsilon) × W_proxy(reference)` |
+| Timing / DRC | Recorded timing availability/slack and detailed-route violations used as qualification gates |
+
+[Objective definitions](docs/methodology/objectives.md) distinguish schedules, prediction and measured metrics. Switching proxies alone do not measure watts, temperature or transient droop.
+
+## Scientific status
+
+| Evidence | Demonstrated scope |
+|---|---|
+| Numerical contracts | Exact incremental/reference equality, rollback, legal topology and independent serial replay |
+| Stage A | 19/19 selected records and 27/30 indexed architectures qualified on the common backend |
+| Stage B | Nine routed selections across s5378, s9234 and s15850 passed registered wire budgets; some proxy gains did not transfer |
+| End-to-end gate | Frozen references and nine selected orders passed physical, serial and collapsed FAN fault-class identity/weight checks |
+| Gate 09 | Mixed b14/b15 tradeoffs; b17 ATPG timed out at its fixed limit; b18 was deferred |
+| Gate 10A | Nine frozen architectures qualified; primary worst-static-drop gains of 3 µV and 8 µV missed the registered material threshold |
+
+These are saved measurements. [Canonical reproduction](docs/reproduction/canonical_results.md) links the exact tables, protocols and receipts. Limits include bounded logic coverage, candidate capacitance error, restricted workloads/placements, individual uncollapsed fault members not enumerated and transient/thermal effects not qualified. No learned model is implemented.
+
+## Installation and quick start
+
+Python 3.11+ is required. From a fresh checkout:
 
 ```sh
 python -m venv .venv
@@ -15,74 +63,34 @@ python -m venv .venv
 python -m pip install -e '.[optimizer,dev]'
 pact-optimize --synthetic 64 --chains 2 --time-budget 1 --output scratch/example
 pact validate-scan --architecture scratch/example/optimized.architecture.json
-python -m pytest -q
 ```
 
-The [synthetic example](examples/synthetic/README.md) needs no physical-design tools. It demonstrates the algorithm; it is not benchmark evidence. Use a fresh output directory for each run. See [installation](docs/installation.md) for dependencies and [usage](docs/usage.md) for real inputs and `pact-integrate`.
-
-## Current research status
-
-| Scope | Retained evidence |
-|---|---|
-| Implemented | Exact incremental M3/M5 solver, candidate-stateful evaluation, Stage-B activity lanes under physical budgets, scan-only export and independent ATPG replay |
-| Stage A measured | 19/19 selected records qualified; 27/30 indexed architectures qualified using the common Nangate45 backend |
-| Stage B measured | Nine qualified routed selections across s5378, s9234 and s15850; all pass their routed wire budgets |
-| End to end qualified | Frozen B2/B3T/B2 references and all nine Stage-B orders pass physical, serial and FAN collapsed-fault-class identity gates |
-| In progress | Reliable full-network hotspot prediction, uncollapsed fault-member identity enumeration and broader scaling |
-
-These claims come from the [Stage-A completion receipt](results/pact_oss_benchmark/topology_recovery_20261004/completion.json) and [Stage-B measured report](results/pact_stage_b/REPORT.md). Several predicted hotspot gains fail to transfer physically, and some selections remain dominated by the original comparison front. [Research status](docs/research_status.md) explains the scope and negative outcomes. The research program remains in progress.
-
-The current milestone is `PACT_END_TO_END_SOLUTION_QUALIFIED`; see the [canonical comparison](results/pact_end_to_end_20261004/REPORT.md) and [correctness-gate scope](docs/end_to_end_qualification.md). It reuses qualified physical runs and preserves every selected outcome.
-
-## Workflow
-
-```text
-Placed design + stored ATPG workload
-                 |
-                 v
-     Physical and activity evaluation
-                 |
-                 v
-      Constrained multi-objective search
-                 |
-                 v
-       Candidate scan architecture
-                 |
-                 v
- OpenROAD implementation + independent replay
-                 |
-                 v
-         Measured comparison
-```
-
-See [architecture](docs/architecture.md) and [methodology](docs/methodology.md). Physical qualification additionally requires the qualified Linux/WSL OpenROAD/ORFS, FAN_ATPG, simulation toolchain and exact physical inputs; these are not required for the synthetic example or package import.
-
-## Reproducing current results
+Choose a fresh output directory. This completes a numerical architecture search and topology check; it is not benchmark evidence. OpenROAD and FAN_ATPG are unnecessary for it. The full campaign/test harness targets Linux/WSL:
 
 ```sh
+PYTHONPATH=src:scripts:. python -m pytest -q
 python scripts/verify_reproducibility.py
 ```
 
-This checks retained input bindings, portable Stage-B bundles and saved architecture scores without starting a search or EDA campaign. [Reproducibility](docs/reproducibility.md) distinguishes portable replay from full physical reruns. [Stage-B method](docs/stage_b_method.md) documents the recorded search interface, while [benchmarks](docs/benchmarks.md) preserves exact upstream and local-repair provenance.
+The verifier checks retained hashes and independently replays 18 stored Stage-B architectures without EDA or new search. [Environment](docs/reproduction/environment.md) describes Python packages, compilers and exact tool pins. Physical reruns additionally need frozen ODB/SDC, technology/library inputs, qualified OpenROAD/ORFS, FAN_ATPG and simulator builds.
 
-## Repository and documentation
+## Repository map
 
 | Path | Purpose |
 |---|---|
-| `src/pact/`, `scripts/`, `tests/` | Current models, entry points, adapters and regression coverage |
-| `config/`, `experiments/`, `benchmarks/` | Schemas, physical settings and provenance |
-| `examples/` | Small self-contained usage example |
-| `artifacts/` | Minimal placed/workload inputs and structural fixtures |
-| `results/stage_a/`, `results/pact_stage_b/` | Compact comparisons, portable inputs and selected orders |
-| `docs/` | Canonical user and research documentation |
-| `reports/` | Scientific evidence and repository maintenance audits |
+| `src/pact/`, `scripts/`, `tests/` | Models, CLIs, adapters, registered campaign tools and regressions |
+| `config/`, `experiments/`, `benchmarks/` | Schemas, settings, benchmark identities and frozen protocols |
+| `examples/`, `artifacts/` | Small usage examples and required placed/workload fixtures |
+| `results/`, `reports/` | Compact canonical comparisons, architectures, qualification and provenance |
+| `docs/architecture/`, `docs/methodology/` | Implementation and objective/model/search definitions |
+| `docs/reproduction/`, `docs/experiments/` | Reproduction, history and negative findings |
+| `patches/upstream/` | Preserved tool repairs and source provenance |
+| `archives/`, `cleanup/` | External-archive index, verified storage actions and retention records |
 
-Start with [installation](docs/installation.md), [usage](docs/usage.md) and [research status](docs/research_status.md). Continue with the [experiment registry](docs/experiments.md), [development guide](docs/development.md) and concise [history](docs/history.md).
+Established source paths remain stable. Start with [usage](docs/usage.md), [troubleshooting](docs/troubleshooting.md) and [contributing](CONTRIBUTING.md). Historical gates belong in [experiment history](docs/experiments/history.md).
 
-## Limitations
+## Upstream work, citation and license
 
-Current measured evidence covers small Nangate45 designs, fixed workloads/placements and K=2. Bounded logic coverage and candidate capacitance errors limit hotspot prediction. The new gate establishes complete collapsed target-class identity equality with weights; individual uncollapsed class members are not enumerated. Switching proxies do not establish watts, IR-drop or signoff power/timing. No learned model is implemented.
+PACT required explicit OpenROAD endpoint/metadata, OpenSTA alias and FAN construction/reporting repairs. [Upstream provenance](docs/upstream.md) records scope, revisions, patches and discussions; local qualification does not imply an upstream merge.
 
-## Contributing, citation and license
-
-Contributions should preserve topology invariants, independent replay and the distinction between predicted and measured results; see [development](docs/development.md). Cite this repository, the exact revision and experiment export using [CITATION.cff](CITATION.cff); no publication DOI is declared. PACT code is [MIT licensed](LICENSE). External tools and imported assets retain their own attribution and licensing.
+Use [CITATION.cff](CITATION.cff) and cite the exact software revision, workload and experiment export. No publication DOI is declared. PACT code is [MIT licensed](LICENSE); external tools, libraries, PDKs and benchmarks retain their own licensing and attribution.

@@ -1,5 +1,15 @@
 # Research status
 
+Latest measurement, 6 October 2026: **`PACT_GATE10A_NO_MATERIAL_PHYSICAL_IMPACT`**, recommendation **FREEZE** PACT algorithm development under the tested basis. [Gate 10A](../reports/gate10a/report.md) separately preregistered nine frozen b14/b15 architectures from published Gate 09 parent `53ebab37fd76970d7c5e676b0caec13c7c16296e`; all nine qualify. No optimization, ATPG, placement, routing, extraction or replay was repeated.
+
+The motivating OpenROAD question was: “What is the practical impact of the 2.4% reduction? Does this translate in IR-drop or thermal hotspot improvement?” The tested full-precision Gate 09 primary H8 differences are distinct from that historical percentage. b14 CS_C1 versus B3T improves H8 by 5.6876% but worst static VDD drop by only 3 µV and dynamic power by 0.2321%. b15 CS_C1 versus B2 improves H8 by 1.6828%, worst static drop by 8 µV and dynamic power by 0.8226%. No PACT comparison meets the frozen requirement for both worst and p99 drop to improve by at least 1% and 100 µV, subject to power/current guardrails.
+
+Mean regional activity versus static IR has required Spearman values about 0.855–0.909 on b14 and 0.209–0.427 on b15; the all-eight-record proxy criterion fails. B5 reduces estimated power and static drop more at roughly 14–17% scan-wire cost, and remains a control. H4/H8 are not established as reliable cross-design predictors of material static PI benefit. The model uses measured transition rates, assumed nonclock duty, typical Liberty and ideal stripe-end VDD sources. Transient droop and ground bounce remain outside scope; segment current is measured but current density lacks qualified metal cross-section. **THERMAL_IMPACT_NOT_EVALUATED**.
+
+The next action is to retain and publish this negative validation result and freeze further algorithm/scaling work. Any renewed investigation would require a separate preregistered physical validation basis; none was executed in Gate 10A. The discussion response is [an unposted draft](../publication/openroad_discussion_gate10a_reply.md).
+
+The earlier status below is retained as historical context for the 4 October baseline.
+
 Baseline: `f2569d498cd5f26a88c4954ec163498eb3cf7d91`, 4 October 2026. This status uses saved records; cleanup is not a new research campaign.
 
 PACT asks whether legal scan transformations can trade physical cost against ATPG-derived switching/hotspots while preserving test behavior. The current deterministic method combines bounded search, exact scan-state replay, bounded simultaneous settled logic, candidate shared-net geometry and separate physical/activity coordinates. No learned model is implemented.

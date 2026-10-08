@@ -1,0 +1,387 @@
+{
+  "schema": "pact_gate10a_architecture_run_v1",
+  "status": "QUALIFIED",
+  "started_utc": "2026-10-06T03:45:11.092030+00:00",
+  "design": "b14_opt",
+  "architecture": "B3T",
+  "architecture_sha256": "b5ad1f56d2ad0db3f0a029144e5930c3c8a6a1bf70a553e76ef4be0bbb51ab12",
+  "label": "smoke_nominal_attempt4",
+  "nonclock_density_scale": 1.0,
+  "preregistered_commit": "b9869834a3479a57f256c83fa74a4617faab4af2",
+  "protocol": {
+    "path": "reports/gate10a/protocol.json",
+    "bytes": 2128,
+    "sha256": "8daee9660d95b2904053ebe6b3bdabe024d22d4388bb6f57ea6b23424c4291d4"
+  },
+  "selection": {
+    "path": "reports/gate10a/selected_architectures.json",
+    "bytes": 67710,
+    "sha256": "3299e85c55dc4de0f69d8663cb49a77abdabfaff9d7ffac2f021c3c474bc7e20"
+  },
+  "tool_provenance": {
+    "path": "reports/gate10a/tool_provenance.json",
+    "bytes": 10479,
+    "sha256": "acb5d3797f7f4537cf6dce3b8d86ac1e41e37e67e8c532f15c8027469a5063d7"
+  },
+  "scientific_stages_reexecuted": {
+    "ATPG": 0,
+    "PACT_search": 0,
+    "placement": 0,
+    "routing": 0,
+    "extraction": 0,
+    "replay": 0
+  },
+  "resource_admission": {
+    "host_available_memory_bytes": 1928663040,
+    "wsl_available_memory_bytes": 3473084416,
+    "output_disk_free_bytes": 17344860160,
+    "linux_disk_free_bytes": 938058567680
+  },
+  "input_verifications": [
+    {
+      "expected": {
+        "bytes": 1047137,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B3T/physical/5_2_route.odb.gz",
+        "sha256": "9114838298d70a2b0e6f7211e13369e121b8b65def75477436f782db2fb656fa"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B3T/physical/5_2_route.odb.gz",
+        "bytes": 1047137,
+        "sha256": "9114838298d70a2b0e6f7211e13369e121b8b65def75477436f782db2fb656fa"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 8469,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.sdc",
+        "sha256": "02f23f7e4653dbf8687ec7dcdb2c7095184a6b9337cfa90929dba3d4b0464455"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.sdc",
+        "bytes": 8469,
+        "sha256": "02f23f7e4653dbf8687ec7dcdb2c7095184a6b9337cfa90929dba3d4b0464455"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 1911772,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.odb",
+        "sha256": "21ded26bc80ff7a44859bcdd8daef1d50bcf6678fda2c1eba57d91faed9cc98c"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.odb",
+        "bytes": 1911772,
+        "sha256": "21ded26bc80ff7a44859bcdd8daef1d50bcf6678fda2c1eba57d91faed9cc98c"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/activity.counts.gz",
+        "bytes": 56176651,
+        "sha256": "0b3e9b0bdd971b2afba0e47b26846740030300098cca89020836347ebaf7d379"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/activity.counts.gz",
+        "bytes": 56176651,
+        "sha256": "0b3e9b0bdd971b2afba0e47b26846740030300098cca89020836347ebaf7d379"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 22635,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/counts.cfg",
+        "sha256": "3cbadbe9cce9f7e96dfcdceddbf0b23beb56702781ca21de335fb82598d5b330"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/counts.cfg",
+        "bytes": 22635,
+        "sha256": "3cbadbe9cce9f7e96dfcdceddbf0b23beb56702781ca21de335fb82598d5b330"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 9680647,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/cycles.json",
+        "sha256": "67159ccf7d1cfc8b7803fa048b2825f6c34f00547529ce12845d48ee700d0f80"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/cycles.json",
+        "bytes": 9680647,
+        "sha256": "67159ccf7d1cfc8b7803fa048b2825f6c34f00547529ce12845d48ee700d0f80"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 4563733,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/extracted.spef",
+        "sha256": "d30cd20b41e3a11956eab33fbf43c74f111264f2c5284bb0f063f9ac35db8e1d"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/extracted.spef",
+        "bytes": 4563733,
+        "sha256": "d30cd20b41e3a11956eab33fbf43c74f111264f2c5284bb0f063f9ac35db8e1d"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 511311,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/net_mapping.json",
+        "sha256": "8efc0f445072c5ea1039793c44b9ef41b4074afe670bf0043c87beed77708435"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/net_mapping.json",
+        "bytes": 511311,
+        "sha256": "8efc0f445072c5ea1039793c44b9ef41b4074afe670bf0043c87beed77708435"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 302828,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/routed.v",
+        "sha256": "6c3a464ecaaf46589bfcb4e9df9726822f2a391559e132e22b7c3dd3cad02096"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/routed.v",
+        "bytes": 302828,
+        "sha256": "6c3a464ecaaf46589bfcb4e9df9726822f2a391559e132e22b7c3dd3cad02096"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 17485490,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/stimulus.v",
+        "sha256": "e9f85fa646475789ed143c0223e40eadb639b8cfc3fbe5cdded64b6130a07d82"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/stimulus.v",
+        "bytes": 17485490,
+        "sha256": "e9f85fa646475789ed143c0223e40eadb639b8cfc3fbe5cdded64b6130a07d82"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "bytes": 633319,
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/workload.json",
+        "sha256": "8f5372db25c6eab897a3af09a8343153825598b469c445ce39bacac4fd6cd9b5"
+      },
+      "observed": {
+        "path": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/workload.json",
+        "bytes": 633319,
+        "sha256": "8f5372db25c6eab897a3af09a8343153825598b469c445ce39bacac4fd6cd9b5"
+      },
+      "status": "PASS"
+    }
+  ],
+  "activity_export": {
+    "path": "reports/gate10a/inputs/b14_opt/B3T/activity_export_receipt.json",
+    "bytes": 5770,
+    "sha256": "5f278f34d138708fc2057d7582f5bcf814bc644dab18d26c763fb3190e93b4d4"
+  },
+  "derived_activity_csv": {
+    "path": "reports/gate10a/inputs/b14_opt/B3T/net_activity_capacitance.csv",
+    "bytes": 312871,
+    "sha256": "2875aced18df962ce6c2b6f49b0bc271951fd37012c3385075ad15b718b6c7d2"
+  },
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/resources.txt",
+    "/usr/bin/openroad",
+    "-no_init",
+    "-exit",
+    "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/measurement_source.tcl"
+  ],
+  "environment_overrides": {
+    "GATE10A_LIBERTY": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+    "GATE10A_ODB": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/baselines/b14_opt/B3T/physical/5_2_route.odb.gz",
+    "GATE10A_SDC": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/fan_compound_connectivity/orfs/results/nangate45/b14_opt/phase0b_s11_B0/3_place.sdc",
+    "GATE10A_SPEF": "/mnt/d/PACT_EXPERIMENTS/results/pact_gate09_open_source_20261005/repair_attempts/python_transport/exact_activity/b14_opt/B3T/b14_opt/B3T/extracted.spef",
+    "GATE10A_SET_RC": "/root/pact-deps/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl",
+    "GATE10A_ACTIVITY_TCL": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/activity.tcl",
+    "GATE10A_OUTPUT": "/mnt/c/Users/Abhinav/OneDrive/Desktop/PACT/PACT/reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "execution_source_snapshots": [
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/runner_source.py",
+      "bytes": 17541,
+      "sha256": "d7b1d6f94f3fc32b51e1e059c7c2b6317f2a0b3a86c69a09d0be50268b387c0b"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/measurement_source.tcl",
+      "bytes": 7794,
+      "sha256": "184b1fdf9d0637a7a08fb1a47bb1198312353051daf2c491e84651b3d01e9a57"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/activity.tcl",
+      "bytes": 209419,
+      "sha256": "57f04459b4939613cca2ccc2903e8da01b8760d5da204af85f3cdbfa8a79c136"
+    }
+  ],
+  "wall_seconds": 6.003678527999995,
+  "returncode": 0,
+  "runtime": {
+    "CPU_user_seconds": 4.59,
+    "CPU_system_seconds": 0.48,
+    "peak_RSS_bytes": 186359808.0
+  },
+  "result": {
+    "power": {
+      "internal_w": 0.00013976478435040463,
+      "switching_w": 6.863871067253058e-05,
+      "leakage_w": 0.00010009437912650299,
+      "total_w": 0.0003084978741494382,
+      "dynamic_w": 0.0002084034950229352
+    },
+    "ir": {
+      "worst_drop_v": 0.0003210000000000157,
+      "mean_drop_v": 0.00018694164540824604,
+      "p50_drop_v": 0.00018700000000015926,
+      "p95_drop_v": 0.00025225000000012043,
+      "p99_drop_v": 0.00027100000000013225,
+      "raw_terminal_worst_drop_v": 0.0003210000000000157,
+      "powered_instances": 3136,
+      "voltage_rows": 3296,
+      "primary_population": "one worst terminal per nonphysical Liberty-powered instance",
+      "fraction_over_0.01_supply": 0.0,
+      "fraction_over_0.03_supply": 0.0,
+      "fraction_over_0.05_supply": 0.0
+    },
+    "current": {
+      "peak_segment_current_a": 4.377e-05,
+      "p50_segment_current_a": 6.208e-09,
+      "p95_segment_current_a": 2.5082999999999993e-06,
+      "p99_segment_current_a": 6.7547200000000885e-06,
+      "segments": 13315,
+      "current_density_status": "NOT_AVAILABLE_NO_QUALIFIED_CROSS_SECTION"
+    },
+    "pdn_geometry_sha256": "a712e719b5e7812af6d495a2f02d30a3596b9f25f6f15927a0186abf9392788e",
+    "sources_sha256": "5ee0af7f74873d17dc4c542d2a7aa399544b95bcb69c00e5369d25825b5607cf",
+    "bounds_um": [
+      0.0,
+      0.0,
+      114.59,
+      114.59
+    ],
+    "annotation": {
+      "unmeasured_nonclock_nets": 0
+    },
+    "native_power_report_json_structure": "dict"
+  },
+  "completed_utc": "2026-10-06T03:45:22.053318+00:00",
+  "outputs": [
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/activity.tcl",
+      "bytes": 209419,
+      "sha256": "57f04459b4939613cca2ccc2903e8da01b8760d5da204af85f3cdbfa8a79c136"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/activity_annotation.txt",
+      "bytes": 4452,
+      "sha256": "31b37f280bee8e53c78d70c26fa3294079c729173c64ea741ecb4b9c73d3f83d"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/annotated_pins.tsv",
+      "bytes": 643455,
+      "sha256": "658e40add89af217138694940a164a8e9424f386bad338a19b5f4eee5f131bbd"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/instance_drop.csv",
+      "bytes": 232833,
+      "sha256": "6ba8de005300b097ce489b2a4a2945712a8446209567153decd3a6e5f370de54"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/instance_power.csv",
+      "bytes": 347108,
+      "sha256": "7962545638b08febd187764df771620fd0a4391b797b54600df3a8c5d08b54fe"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/instance_voltage.csv",
+      "bytes": 146743,
+      "sha256": "c0528c69b65cf8126b572e1a2ed580a1eaf160904ec146375a55f2b98ad24900"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/measurement_source.tcl",
+      "bytes": 7794,
+      "sha256": "184b1fdf9d0637a7a08fb1a47bb1198312353051daf2c491e84651b3d01e9a57"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/native_power_units.json",
+      "bytes": 95,
+      "sha256": "4490f58f0486c849638b6738bec58486029907912ed32dd615e137be5061d376"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/openroad.log",
+      "bytes": 1297,
+      "sha256": "980013668809deab5e1cfbfd3656d8ae1df45c3c80e629a51f661a965152e34c"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/pdn_geometry.tsv",
+      "bytes": 39946,
+      "sha256": "275306973de112f8aa521793f02d88fbf4ca51aa7fcf896bc45d942378612c5d"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/pdn_geometry_canonical.tsv",
+      "bytes": 39946,
+      "sha256": "a712e719b5e7812af6d495a2f02d30a3596b9f25f6f15927a0186abf9392788e"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/power_report.json",
+      "bytes": 962,
+      "sha256": "167415e2ed5dedefc76c18ff47828c143cde9a29a98873551bab7dbc179cb531"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/power_report.txt",
+      "bytes": 1098,
+      "sha256": "9a8ebe920e330573a7808981fca6dfb7e588cde90b9c8f9a77f52a68e72010cc"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/resources.txt",
+      "bytes": 884,
+      "sha256": "d244d8d72ef5a79aad4df2665d38376cf70fdf1e329ac633e999456619465d66"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/runner_source.py",
+      "bytes": 17541,
+      "sha256": "d7b1d6f94f3fc32b51e1e059c7c2b6317f2a0b3a86c69a09d0be50268b387c0b"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/segment_current.csv",
+      "bytes": 744956,
+      "sha256": "cca39af0fd9c054a573bf6d6063cfc39f96a907df44778afb326ce4313a5e0e2"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/segment_current_normalized.csv",
+      "bytes": 534163,
+      "sha256": "b1c38f31b570f2db0f6dc72089c9ce9ef1bb40ab5e83888ef88630d488191ff2"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/sources.csv",
+      "bytes": 440,
+      "sha256": "5ee0af7f74873d17dc4c542d2a7aa399544b95bcb69c00e5369d25825b5607cf"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/started.json",
+      "bytes": 1090,
+      "sha256": "294cf7c0c9e371ade0809933e478328fd2ea2b19bc629e9184288ebff43c2a0f"
+    },
+    {
+      "path": "reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt4/unannotated_nets.tsv",
+      "bytes": 47,
+      "sha256": "3ded17989c3021555006e598777915dbeece092fcacca9484147bd21e7663be7"
+    }
+  ],
+  "disk_bytes": 2974269
+}

@@ -1,0 +1,9 @@
+# Validate frozen PACT activity against static power-integrity stress
+
+Gate 10A answers whether the frozen Gate 09 localized activity improvements produce a material physical benefit. Nine preregistered b14/b15 architectures qualify using verified routed designs, SPEF and original per-cycle count traces. The primary candidates reduce worst static VDD drop by 3 µV on b14 and 8 µV on b15, below the frozen 100 µV materiality threshold; the cross-design spatial proxy criterion also fails. The resulting classification is `PACT_GATE10A_NO_MATERIAL_PHYSICAL_IMPACT`, with a FREEZE recommendation for algorithm development under this measurement basis.
+
+The campaign uses fixed-duty activity-derived OpenSTA power and static PDNSim on the original PDN with ideal stripe-end supplies. It preserves all Gate 09 files, candidates and workloads and performs no new search, ATPG, placement, routing, extraction or replay. A common in-memory PG pin assignment repair is audited for unchanged physical geometry. Thermal and transient droop are not evaluated, and segment current is not current density.
+
+The branch contains separately committed preregistration, input qualification, smoke controls, all nine immutable run receipts/raw reports, complete 4×4/8×8 spatial vectors, registered correlations and decisions, figures, and an unposted maintainer-response draft. Provisional ingestion attempts and the failed native-sum parser report are preserved with explicit invalidation/archive mappings.
+
+Validation: 115 relevant Gate 10A/Gate 09/experiment-receipt tests pass in Linux; shared smoke shows reproducible exported outputs, positive linear nonclock switching response and fixed clock power. All nine selected run outputs pass independent hash/geometry audits. Final parent-integrity and independent scientific review receipts accompany the completed campaign.

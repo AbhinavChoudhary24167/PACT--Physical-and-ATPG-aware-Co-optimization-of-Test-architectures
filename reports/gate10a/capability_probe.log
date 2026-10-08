@@ -1,0 +1,151 @@
+OpenROAD 26Q2-1164-g08f67ee5ec 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+GATE10A_TOOL_VERSION 26Q2-1164-g08f67ee5ec
+GATE10A_COMMAND read_vcd PRESENT 1
+read_vcd [-scope scope] [-mode mode_name] filename  
+GATE10A_COMMAND read_saif PRESENT 1
+read_saif [-scope scope] filename  
+GATE10A_COMMAND report_power PRESENT 1
+report_power [-instances instances] [-highest_power_instances count]
+   [-scene scene] [-digits digits] [-format format] [> filename] [>> filename]  
+GATE10A_COMMAND report_activity_annotation PRESENT 1
+report_activity_annotation [-report_unannotated] [-report_annotated]  
+GATE10A_COMMAND set_power_activity PRESENT 1
+set_power_activity [-global] [-input] [-input_ports ports] [-pins pins]
+   [-activity activity | -density density] [-duty duty] [-clock clock] 
+GATE10A_COMMAND check_power_grid PRESENT 1
+check_power_grid -net power_net [-error_file error_file] [-floorplanning]
+   [-dont_require_terminals] 
+
+GATE10A_COMMAND analyze_power_grid PRESENT 1
+analyze_power_grid -net net_name [-corner corner] [-error_file error_file]
+   [-voltage_file voltage_file] [-enable_em] [-em_outfile em_file]
+   [-vsrc voltage_source_file] [-source_type FULL|BUMPS|STRAPS] [-allow_reuse] 
+
+GATE10A_COMMAND set_pdnsim_inst_power PRESENT 1
+set_pdnsim_inst_power -inst instance -power power [-corner corner] 
+GATE10A_COMMAND set_pdnsim_net_voltage PRESENT 1
+set_pdnsim_net_voltage -net net_name -voltage volt [-corner corner] 
+GATE10A_COMMAND set_pdnsim_source_settings PRESENT 1
+set_pdnsim_source_settings [-bump_dx pitch] [-bump_dy pitch] [-bump_size size]
+   [-bump_interval interval] [-strap_track_pitch pitch]
+   [-external_resistance resistance] 
+
+GATE10A_COMMAND write_pg_spice PRESENT 1
+write_pg_spice -net net_name [-vsrc vsrc_file] [-corner corner]
+   [-source_type FULL|BUMPS|STRAPS] spice_file 
+  
+GATE10A_COMMAND define_pdn_grid PRESENT 1
+define_pdn_grid [-name <name>] [-macro] [-existing]
+   [-grid_over_pg_pins|-grid_over_boundary]
+   [-voltage_domains <list_of_voltage_domains>]
+   [-orient <list_of_valid_orientations>] [-instances <list_of_instances>]
+   [-cells <list_of_cell_names> ] [-default] [-halo <list_of_halo_values>]
+   [-pins <list_of_pin_layers>] [-starts_with (POWER|GROUND)]
+   [-obstructions <list_of_layers>] [-power_switch_cell <name>]
+   [-power_control <signal_name>] [-power_control_network (STAR|DAISY)]
+   [-connect_to_pads] [-connect_to_pad_layers layers] 
+
+GATE10A_COMMAND add_pdn_stripe PRESENT 1
+add_pdn_stripe [-grid grid_name] -layer layer_name [-width width_value]
+   [-followpins] [-extend_to_core_ring] [-pitch pitch_value]
+   [-spacing spacing_value] [-offset offset_value] [-starts_with (POWER|GROUND)]
+   [-extend_to_boundary] [-snap_to_grid] [-number_of_straps count]
+   [-nets list_of_nets] [-allow_out_of_core] 
+
+GATE10A_COMMAND add_pdn_connect PRESENT 1
+add_pdn_connect [-grid grid_name] -layers list_of_2_layers
+   [-cut_pitch pitch_value] [-fixed_vias list_of_vias]
+   [-dont_use_vias list_of_vias] [-max_rows rows] [-max_columns columns]
+   [-ongrid ongrid_layers] [-split_cuts split_cuts_mapping]
+   [-split_cuts_staggered] 
+
+GATE10A_COMMAND pdngen PRESENT 1
+pdngen [-skip_trim] [-dont_add_pins] [-reset] [-ripup] [-report_only]
+   [-check_only] [-failed_via_report file] [-verbose] 
+
+GATE10A_COMMAND global_connect PRESENT 1
+global_connect [-force] [-verbose]  
+GATE10A_API sta::instance_power PRESENT 1
+GATE10A_API sta::design_power PRESENT 1
+GATE10A_API sta::power_units PRESENT 0
+GATE10A_API sta::power_ui_sta PRESENT 1
+GATE10A_API sta::power_sta_ui PRESENT 1
+GATE10A_API sta::activity PRESENT 0
+GATE10A_API sta::set_power_activity PRESENT 1
+GATE10A_API sta::pin_activity PRESENT 0
+GATE10A_API sta::net_pins PRESENT 1
+GATE10A_API sta::get_full_name PRESENT 1
+GATE10A_API sta::get_property PRESENT 1
+GATE10A_POWER_APIS ::sta::Net_is_power ::sta::design_power ::sta::format_power ::sta::instance_power ::sta::power_find_nan ::sta::power_sta_ui ::sta::power_ui_sta ::sta::read_power_activities ::sta::report_power ::sta::report_power_design ::sta::report_power_design_json ::sta::report_power_highest_insts ::sta::report_power_insts ::sta::report_power_insts_json ::sta::report_power_metric ::sta::set_max_dynamic_power ::sta::set_max_leakage_power ::sta::set_power_activity ::sta::set_power_global_activity ::sta::set_power_input_activity ::sta::set_power_input_port_activity ::sta::set_power_pin_activity ::sta::unset_power_activity ::sta::unset_power_global_activity ::sta::unset_power_input_activity ::sta::unset_power_input_port_activity ::sta::unset_power_pin_activity
+GATE10A_ACTIVITY_APIS ::sta::report_activity_annotation ::sta::report_activity_annotation_cmd ::sta::set_power_activity ::sta::set_power_global_activity ::sta::set_power_input_activity ::sta::set_power_input_port_activity ::sta::set_power_pin_activity ::sta::unset_power_activity ::sta::unset_power_global_activity ::sta::unset_power_input_activity ::sta::unset_power_input_port_activity ::sta::unset_power_pin_activity
+GATE10A_PROC sta::set_power_activity ARGS args
+
+  parse_key_args "set_power_activity" args  keys {-input_ports -pins -activity -density -duty -clock}  flags {-global -input}
+
+  check_argc_eq0 "set_power_activity" $args
+  if { [info exists keys(-activity)] && [info exists keys(-density)]  || ![info exists keys(-activity)] && ![info exists keys(-density)] } {
+    sta_error 306 "Specify -activity or -density."
+  }
+
+  set density 0.0
+  if { [info exists keys(-activity)] } {
+    set activity $keys(-activity)
+    check_positive_float "activity" $activity
+    if { [info exists keys(-clock)] } {
+      set clk [get_clock_warn "-clock" $keys(-clock)]
+    } else {
+      set clks [get_clocks]
+      if { $clks == {} } {
+        sta_error 307 "-activity requires a clock to be defined"
+      }
+    }
+    set density [expr $activity / [clock_min_period [cmd_mode_name]]]
+  }
+
+  if { [info exists keys(-density)] } {
+    set density $keys(-density)
+    check_positive_float "density" $density
+    set density [expr $density / [time_ui_sta 1.0]]
+    if { [info exists keys(-clock)] } {
+      sta_warn 308 "-clock ignored for -density"
+    }
+  }
+  set duty 0.5
+  if { [info exists keys(-duty)] } {
+    set duty $keys(-duty)
+    check_float "duty" $duty
+    if { $duty < 0.0 || $duty > 1.0 } {
+      sta_error 309 "duty should be 0.0 to 1.0"
+    }
+  }
+
+  if { [info exists flags(-global)] } {
+    set_power_global_activity $density $duty
+  }
+  if { [info exists flags(-input)] } {
+    set_power_input_activity $density $duty
+  }
+  if { [info exists keys(-input_ports)] } {
+    set ports [get_ports_error "input_ports" $keys(-input_ports)]
+    foreach port $ports {
+      if { [get_property $port "direction"] == "input" } {
+        if { [is_clock_src [get_port_pin $port]] } {
+          sta_warn 310 "activity cannot be set on clock ports."
+        } else {
+          set_power_input_port_activity $port $density $duty
+        }
+      }
+    }
+  }
+  if { [info exists keys(-pins)] } {
+    set pins [get_pins $keys(-pins)]
+    foreach pin $pins {
+      set_power_pin_activity $pin $density $duty
+    }
+  }
+
+GATE10A_END_PROC sta::set_power_activity
+GATE10A_API_COMPLETE

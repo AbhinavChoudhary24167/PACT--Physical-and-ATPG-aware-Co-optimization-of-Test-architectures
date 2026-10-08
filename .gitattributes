@@ -19,9 +19,16 @@ results/** whitespace=cr-at-eol
 *.gz -text
 reports/repository_cleanup/*.json text eol=lf
 reports/repository_cleanup/*.xml text eol=lf
+# Gate 10A preregistration, receipts and numeric exports bind exact bytes.
+reports/gate10a/** -text
+reports/gate10a/** whitespace=cr-at-eol
+publication/openroad_discussion_gate10a_reply.md -text
+publication/openroad_discussion_gate10a_reply.md whitespace=cr-at-eol
 # Intentionally retained inputs/measurement exports are data
 artifacts/raw/** linguist-generated=true
 results/** linguist-generated=true
 results/**/*.diff linguist-generated=false
 # Collector qualification binds its LF source bytes on Windows and WSL.
 /src/pact/activity/counts_vpi.cpp text eol=lf
+# Patch context prefixes and upstream whitespace are exact preservation data.
+patches/**/*.patch -text -whitespace

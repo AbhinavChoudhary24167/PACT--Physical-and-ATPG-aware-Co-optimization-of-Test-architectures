@@ -1,0 +1,39 @@
+{
+  "schema": "pact_gate10a_independent_numeric_support_v1",
+  "created_utc": "2026-10-06T03:53:54.0418388+00:00",
+  "status": "PASS",
+  "input": {
+    "path": "repo://reports/gate10a/runs/b14_opt/B3T/smoke_nominal_attempt6/instance_power.csv",
+    "bytes": 464840,
+    "sha256": "b01ff94e89e7a3b8232db593b96c9b9c03b6674365c3fcfe5655db9efec75057"
+  },
+  "runtime_observation": {
+    "shell": "PowerShell",
+    "command": "$rows=Import-Csv -LiteralPath reports\\gate10a\\runs\\b14_opt\\B3T\\smoke_nominal_attempt6\\instance_power.csv; $matched=0; $mismatched=0; foreach ($row in $rows) { foreach ($key in @('internal_w','switching_w','leakage_w')) { $value=[double]$row.$key; if ($value -eq [double][single]$value) { $matched++ } else { $mismatched++ } } }; [PSCustomObject]@{instances=$rows.Count;component_values_checked=($rows.Count*3);exact_float32_components=$matched;mismatches=$mismatched} | ConvertTo-Json",
+    "instances": 3296,
+    "component_values_checked": 9888,
+    "exact_float32_components": 9888,
+    "mismatches": 0,
+    "interpretation": "All exported nonnegative component values are exactly representable as IEEE binary32. Supports float32 component representation independently of a source-revision assumption. It does not alone prove the native aggregate reduction order."
+  },
+  "supporting_primary_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenSTA/master/include/sta/PowerClass.hh",
+      "reader_zero_based_lines": "77-89",
+      "excerpt": "float internal_{0.0}; float switching_{0.0}; float leakage_{0.0};",
+      "supports": "Current upstream PowerResult stores and exposes component powers as float."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenSTA/master/power/Power.cc",
+      "reader_zero_based_lines": "337-350;1510-1533;853-855",
+      "excerpt": "else if (global_activity_.isSet()) return global_activity_;",
+      "supports": "Current upstream JSON formatter writes PowerResult values directly; global activity overrides per-pin activity and suppresses propagation."
+    }
+  ],
+  "limitations": [
+    "Current upstream master is supporting inspection, not the installed OpenROAD binary source identity.",
+    "Web retrieval of declared installed OpenSTA revision 76c4d6df3537ccce331b5caa812196c3330ba7c4 returned cache-miss/internal-error responses.",
+    "Native SI JSON/instance consistency is separately admitted by the stable runner, using a population-derived binary32 gamma_n bound.",
+    "A WSL read-only cast probe was denied by the sandbox; the successful native PowerShell check supplies the evidence above."
+  ]
+}
