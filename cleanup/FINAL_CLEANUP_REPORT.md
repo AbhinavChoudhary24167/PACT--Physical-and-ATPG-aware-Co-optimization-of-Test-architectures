@@ -108,6 +108,8 @@ Cleanup branch pushed; draft PR #6 is open against main and remains unmerged bec
 ## Validation
 
 Before and after quarantine: **578 passed, 1 skipped** in the Linux harness.
+The same baseline skip reports a historical external architecture/weight set
+unavailable; cleanup did not introduce it.
 Three CLI help checks passed. The saved-input verifier passed all **674 evidence
 bindings** (472 unchanged hashes, 202 audited portable exports) and **18 architecture
 replays** across s5378/s9234/s15850. The documented 64-FF/two-chain, one-second
