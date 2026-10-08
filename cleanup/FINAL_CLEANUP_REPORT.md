@@ -101,7 +101,9 @@ not claimed. See [consistency audit](DOCUMENTATION_CONSISTENCY_AUDIT.md).
 
 ## GitHub status
 
-Branch not yet pushed; PR creation follows this report commit
+Cleanup branch pushed; draft PR #6 is open against main and remains unmerged because source reconciliation is incomplete.
+
+[Pull request #6](https://github.com/wellitsabhinav/PACT--Physical-and-ATPG-aware-Co-optimization-of-Test-architectures/pull/6).
 
 ## Validation
 
