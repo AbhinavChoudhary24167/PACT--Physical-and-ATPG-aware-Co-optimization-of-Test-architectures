@@ -30,3 +30,5 @@ results/** linguist-generated=true
 results/**/*.diff linguist-generated=false
 # Collector qualification binds its LF source bytes on Windows and WSL.
 /src/pact/activity/counts_vpi.cpp text eol=lf
+# Patch context prefixes and upstream whitespace are exact preservation data.
+patches/**/*.patch -text -whitespace
